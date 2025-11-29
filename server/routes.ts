@@ -12,6 +12,9 @@ import {
   insertIntegrationConfigSchema,
 } from "@shared/schema";
 import { z } from "zod";
+import { generateAIResponse, generateLeadScore } from "./services/ai";
+import { notifyNewEnquiry } from "./services/notifications";
+import { createClickUpTask, createApolloContact, integrationGuides } from "./services/integrations";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -23,6 +26,7 @@ export async function registerRoutes(
       const stats = await storage.getDashboardStats();
       res.json(stats);
     } catch (error) {
+      console.error('Dashboard stats error:', error);
       res.status(500).json({ error: "Failed to fetch dashboard stats" });
     }
   });
@@ -37,6 +41,7 @@ export async function registerRoutes(
       const enquiriesList = await storage.getEnquiries(filters);
       res.json(enquiriesList);
     } catch (error) {
+      console.error('Enquiries error:', error);
       res.status(500).json({ error: "Failed to fetch enquiries" });
     }
   });
@@ -56,7 +61,17 @@ export async function registerRoutes(
   app.post("/api/enquiries", async (req: Request, res: Response) => {
     try {
       const data = insertEnquirySchema.parse(req.body);
-      const enquiry = await storage.createEnquiry(data);
+      
+      const leadScore = await generateLeadScore({
+        inquiryType: data.inquiryType,
+        message: data.message,
+        countryOfInterest: data.countryOfInterest,
+      });
+      
+      const enquiry = await storage.createEnquiry({
+        ...data,
+        leadScore,
+      });
       
       await storage.createActivityLog({
         action: "created",
@@ -64,6 +79,27 @@ export async function registerRoutes(
         entityId: enquiry.id,
         details: { name: enquiry.name, email: enquiry.email },
       });
+      
+      notifyNewEnquiry(enquiry.id, {
+        name: enquiry.name,
+        email: enquiry.email,
+        inquiryType: enquiry.inquiryType,
+        countryOfInterest: enquiry.countryOfInterest || undefined,
+      }).catch(err => console.error('Notification error:', err));
+      
+      createClickUpTask(enquiry.id, {
+        name: enquiry.name,
+        email: enquiry.email,
+        inquiryType: enquiry.inquiryType,
+        message: enquiry.message || undefined,
+        countryOfInterest: enquiry.countryOfInterest || undefined,
+      }).catch(err => console.error('ClickUp error:', err));
+      
+      createApolloContact(enquiry.id, {
+        name: enquiry.name,
+        email: enquiry.email,
+        phone: enquiry.phone || undefined,
+      }).catch(err => console.error('Apollo error:', err));
       
       res.status(201).json(enquiry);
     } catch (error) {
@@ -399,6 +435,47 @@ export async function registerRoutes(
     } catch (error) {
       res.status(500).json({ error: "Failed to seed data" });
     }
+  });
+
+  app.post("/api/ai/chat", async (req: Request, res: Response) => {
+    try {
+      const { message, conversationHistory, sessionId } = req.body;
+      
+      if (!message || typeof message !== 'string') {
+        return res.status(400).json({ error: "Message is required" });
+      }
+      
+      const result = await generateAIResponse(message, conversationHistory || []);
+      
+      if (sessionId) {
+        await storage.createAIChatLog({
+          sessionId,
+          userMessage: message,
+          aiResponse: result.response,
+          intent: result.intent,
+          sentiment: result.sentiment,
+        });
+      }
+      
+      res.json(result);
+    } catch (error) {
+      console.error('AI chat error:', error);
+      res.status(500).json({ error: "Failed to generate AI response" });
+    }
+  });
+
+  app.get("/api/ai/chat-logs", async (req: Request, res: Response) => {
+    try {
+      const { sessionId } = req.query;
+      const logs = await storage.getAIChatLogs(sessionId as string | undefined);
+      res.json(logs);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch chat logs" });
+    }
+  });
+
+  app.get("/api/integration-guides", async (req: Request, res: Response) => {
+    res.json(integrationGuides);
   });
 
   return httpServer;

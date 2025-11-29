@@ -94,6 +94,7 @@ export const enquiries = pgTable("enquiries", {
   source: text("source").default("website"),
   status: text("status").notNull().default("new"),
   priority: text("priority").default("normal"),
+  leadScore: integer("lead_score"),
   assignedMemberId: text("assigned_member_id"),
   notes: text("notes"),
   clickupTaskId: text("clickup_task_id"),
