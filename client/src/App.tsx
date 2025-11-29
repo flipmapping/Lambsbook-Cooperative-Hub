@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Switch, Route } from 'wouter';
 import { queryClient } from './lib/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
@@ -17,6 +18,7 @@ import { SuccessStories } from '@/components/SuccessStories';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
+import Dashboard from '@/pages/Dashboard';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -38,10 +40,6 @@ function ImmigrationWebsite() {
 
   const scrollToContact = () => {
     sectionRefs.contact.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToEB3 = () => {
-    sectionRefs.eb3.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -91,13 +89,22 @@ function ImmigrationWebsite() {
   );
 }
 
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={ImmigrationWebsite} />
+      <Route path="/dashboard" component={Dashboard} />
+    </Switch>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LanguageProvider>
           <Toaster />
-          <ImmigrationWebsite />
+          <Router />
         </LanguageProvider>
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
 import { MessageCircle, Send } from 'lucide-react';
 import { SiWhatsapp, SiFacebook, SiTiktok } from 'react-icons/si';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,11 +16,11 @@ import {
 } from '@/components/ui/select';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { apiRequest } from '@/lib/queryClient';
 
 export function ContactSection() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -55,20 +56,37 @@ export function ContactSection() {
     },
   ];
 
+  const submitEnquiryMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      return apiRequest('POST', '/api/enquiries', {
+        name: data.name,
+        email: data.email,
+        phone: data.phone || undefined,
+        inquiryType: data.inquiry || 'general',
+        message: data.message || undefined,
+        source: 'website',
+        status: 'new',
+      });
+    },
+    onSuccess: () => {
+      toast({
+        title: 'Message Sent!',
+        description: 'We will get back to you within 24 hours.',
+      });
+      setFormData({ name: '', email: '', phone: '', inquiry: '', message: '' });
+    },
+    onError: () => {
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    },
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // todo: remove mock functionality - implement actual form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: 'Message Sent!',
-      description: 'We will get back to you within 24 hours.',
-    });
-    
-    setFormData({ name: '', email: '', phone: '', inquiry: '', message: '' });
-    setIsSubmitting(false);
+    submitEnquiryMutation.mutate(formData);
   };
 
   return (
@@ -197,8 +215,8 @@ export function ContactSection() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" disabled={isSubmitting} data-testid="button-contact-submit">
-                    {isSubmitting ? (
+                  <Button type="submit" className="w-full" disabled={submitEnquiryMutation.isPending} data-testid="button-contact-submit">
+                    {submitEnquiryMutation.isPending ? (
                       'Sending...'
                     ) : (
                       <>
