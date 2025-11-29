@@ -53,6 +53,9 @@ export interface IStorage {
 
   getAiConversations(sessionId?: string): Promise<AiConversation[]>;
   createAiConversation(conversation: InsertAiConversation): Promise<AiConversation>;
+  
+  getAIChatLogs(sessionId?: string): Promise<AiConversation[]>;
+  createAIChatLog(log: { sessionId: string; userMessage: string; aiResponse: string; intent?: string; sentiment?: string }): Promise<AiConversation>;
 
   getSiteContent(section?: string): Promise<SiteContent[]>;
   getSiteContentByKey(key: string): Promise<SiteContent | undefined>;
@@ -232,6 +235,20 @@ export class DatabaseStorage implements IStorage {
   async createAiConversation(conversation: InsertAiConversation): Promise<AiConversation> {
     const [created] = await db.insert(aiConversations).values(conversation).returning();
     return created;
+  }
+
+  async getAIChatLogs(sessionId?: string): Promise<AiConversation[]> {
+    return this.getAiConversations(sessionId);
+  }
+
+  async createAIChatLog(log: { sessionId: string; userMessage: string; aiResponse: string; intent?: string; sentiment?: string }): Promise<AiConversation> {
+    return this.createAiConversation({
+      sessionId: log.sessionId,
+      userMessage: log.userMessage,
+      aiResponse: log.aiResponse,
+      intent: log.intent,
+      sentiment: log.sentiment,
+    });
   }
 
   async getSiteContent(section?: string): Promise<SiteContent[]> {

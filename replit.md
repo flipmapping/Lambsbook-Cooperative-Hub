@@ -2,7 +2,17 @@
 
 ## Overview
 
-This is a multilingual immigration services website for Other Path Travel (in partnership with Glory International), focusing on EB-3 work visa programs and comprehensive immigration services. The application provides information about visa categories, services, success stories, and contact options across 7 languages (English, Vietnamese, Chinese, Japanese, Spanish, French, Portuguese).
+This is a multilingual immigration services website for Other Path Travel (in partnership with Glory International), focusing on EB-3 work visa programs and comprehensive immigration services. The application provides information about visa categories, services, success stories, and contact options across 7 languages (English, Vietnamese, Chinese, Japanese, Spanish, French, Portuguese) serving 8 countries (USA, Canada, UK, Australia, Vietnam, Malaysia, Taiwan, China).
+
+**Features:**
+- Complete immigration services website with responsive design
+- Admin dashboard for enquiry management
+- AI-powered customer service chatbot using OpenAI
+- Contact form integrated with database storage
+- Team member and partner management
+- Integration framework for ClickUp, Apollo.ai, Supabase, and Manus.ai
+- Notification system for auto-notifications
+- Dark/light mode support
 
 ## User Preferences
 
@@ -15,7 +25,7 @@ Preferred communication style: Simple, everyday language.
 **Framework & Build System**
 - React 18+ with TypeScript for type-safe component development
 - Vite as the build tool and development server for fast HMR and optimized production builds
-- Single-page application (SPA) architecture with client-side routing
+- Single-page application (SPA) architecture with client-side routing (wouter)
 
 **UI Component System**
 - shadcn/ui component library with Radix UI primitives for accessible, customizable components
@@ -34,11 +44,14 @@ Preferred communication style: Simple, everyday language.
 - Language switcher component with native language names
 - Translation keys stored in centralized i18n configuration
 
-**Component Structure**
-- Modular component architecture with clear separation of concerns
-- Section-based components (Hero, EB3Categories, Services, Countries, etc.)
-- Reusable UI primitives (Button, Card, Dialog, etc.)
-- Example components for development/testing purposes
+**Routes**
+- `/` - Main immigration services website
+- `/dashboard` - Admin dashboard for enquiry management
+
+**Key Components**
+- `AIChatWidget` - AI-powered customer support chatbot
+- `ContactSection` - Contact form with database integration
+- `Dashboard` - Admin panel with tabs for enquiries, members, partners, integrations
 
 ### Backend Architecture
 
@@ -47,71 +60,104 @@ Preferred communication style: Simple, everyday language.
 - Node.js HTTP server for handling requests
 - Middleware for JSON parsing, URL encoding, and request logging
 
-**Development vs Production**
-- Development: Vite middleware integration for HMR
-- Production: Static file serving from pre-built dist directory
-- Environment-aware configuration
+**API Endpoints**
 
-**Storage Layer**
-- In-memory storage implementation (MemStorage) as default
-- Interface-based storage design for easy database integration
-- User management with basic CRUD operations
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/dashboard/stats` | GET | Dashboard statistics |
+| `/api/enquiries` | GET/POST | List/Create enquiries |
+| `/api/enquiries/:id` | GET/PATCH | Get/Update single enquiry |
+| `/api/members` | GET/POST | List/Create team members |
+| `/api/members/:id` | GET/PATCH | Get/Update single member |
+| `/api/partners` | GET/POST | List/Create partners |
+| `/api/partners/:id` | GET/PATCH | Get/Update single partner |
+| `/api/countries` | GET/POST | List/Create countries |
+| `/api/services` | GET/POST | List/Create services |
+| `/api/follow-ups` | GET/POST | List/Create follow-ups |
+| `/api/ai/chat` | POST | AI chat endpoint |
+| `/api/ai/chat-logs` | GET | Get AI chat logs |
+| `/api/integrations` | GET/PUT | Integration configurations |
+| `/api/integration-guides` | GET | Get integration setup guides |
+| `/api/seed-data` | POST | Seed default data |
 
-**Session Management**
-- Prepared for session handling (connect-pg-simple dependency present)
-- Currently minimal user authentication implementation
+**Services**
+- `server/services/ai.ts` - OpenAI integration for chatbot and lead scoring
+- `server/services/notifications.ts` - Email/SMS notification system
+- `server/services/integrations.ts` - ClickUp, Apollo, Supabase, Manus integrations
 
 ### Data Storage Solutions
 
 **Database Configuration**
 - Drizzle ORM configured for PostgreSQL
-- Neon Database serverless driver (@neondatabase/serverless)
+- Neon Database serverless driver with WebSocket support
 - Schema location: `shared/schema.ts`
-- Migration output directory: `./migrations`
 
-**Current Schema**
-- Basic user table with UUID primary keys, username, and password fields
-- Zod validation schemas for type-safe data insertion
+**Database Tables**
+- `users` - User authentication
+- `countries` - Countries served (8 default)
+- `services` - Services offered (8 types)
+- `members` - Team members with country/service assignments
+- `partners` - Partner organizations with unique codes
+- `enquiries` - Customer enquiries with status tracking
+- `follow_ups` - Enquiry follow-up records
+- `notifications` - Email/SMS notification logs
+- `ai_conversations` - AI chat session logs
+- `site_content` - Dynamic site content
+- `integration_configs` - Third-party integration settings
+- `activity_logs` - Audit trail for all actions
 
-**Design Pattern**
-- Database connection URL from environment variable (DATABASE_URL)
-- Shared schema between client and server for type consistency
-- Prepared for Postgres but database may not be provisioned yet
+**Enquiry Statuses**
+- `new` - Just received
+- `contacted` - Initial contact made
+- `in_progress` - Being processed
+- `qualified` - Qualified lead
+- `converted` - Became a client
+- `closed` - Case closed
 
-### External Dependencies
+### External Integrations
 
-**UI & Styling**
-- Radix UI component primitives (accordion, dialog, dropdown, select, etc.)
-- Tailwind CSS with PostCSS for processing
-- class-variance-authority for component variant management
-- clsx/tailwind-merge for conditional class composition
+**Configured Integrations**
+- OpenAI (via Replit AI Integrations) - Customer chatbot and content suggestions
+- ClickUp - Task management for enquiry follow-ups (API ready)
+- Apollo.io - Lead enrichment and sales intelligence (API ready)
+- Supabase - External database sync for members/partners (API ready)
+- Manus.ai - AI agent automation (API ready)
 
-**Data & Validation**
-- zod for runtime type validation
-- drizzle-zod for database schema validation
-- react-hook-form with @hookform/resolvers for form management
+**Pending Integrations**
+- SendGrid - Email notifications
+- Twilio - SMS notifications
 
-**Development Tools**
-- TypeScript for static type checking
-- ESBuild for server bundling (production builds)
-- Replit-specific plugins for development experience
+### Environment Variables
 
-**Asset Management**
-- Static images stored in `attached_assets` directory
-- Separate folders for generated images vs stock images
-- Image imports via Vite alias system
+Required secrets:
+- `DATABASE_URL` - PostgreSQL connection string
+- `AI_INTEGRATIONS_OPENAI_API_KEY` - OpenAI API key (auto-configured via Replit)
+- `AI_INTEGRATIONS_OPENAI_BASE_URL` - OpenAI base URL (auto-configured)
 
-**Utilities**
-- date-fns for date manipulation
-- nanoid for unique ID generation
-- lucide-react for icons
-- react-icons for brand icons (social media)
+Optional (for integrations):
+- `CLICKUP_API_KEY` - ClickUp integration
+- `APOLLO_API_KEY` - Apollo.io integration
+- `SUPABASE_URL` - Supabase project URL
+- `SUPABASE_KEY` - Supabase API key
 
-**Key Architectural Decisions**
+### Key Architectural Decisions
 
 1. **Monorepo Structure**: Client, server, and shared code in single repository with path aliases for clean imports
 2. **Type Safety**: End-to-end TypeScript with shared types between frontend and backend
 3. **Component Library Choice**: shadcn/ui provides flexibility and customization while maintaining accessibility
-4. **Database Strategy**: Drizzle ORM chosen for type-safe queries and migrations; prepared for PostgreSQL but adaptable
-5. **Build Strategy**: Separate Vite build for client, ESBuild for server to optimize cold start times
-6. **i18n Approach**: Custom lightweight solution rather than heavy library for better control and performance
+4. **Database Strategy**: Drizzle ORM with Neon PostgreSQL serverless for type-safe queries
+5. **AI Integration**: OpenAI via Replit integration for customer chatbot and lead scoring
+6. **Notification Framework**: Prepared for SendGrid/Twilio with abstracted notification service
+7. **Integration Pattern**: Modular integration services for third-party tools
+
+## Recent Changes
+
+**November 2025:**
+- Added AI-powered customer chatbot widget
+- Implemented contact form with database storage
+- Created comprehensive admin dashboard with enquiry management
+- Set up notification service framework
+- Added integration framework for ClickUp, Apollo, Supabase, Manus
+- Fixed Neon database WebSocket connection
+- Added lead scoring for enquiries
+- Implemented activity logging for audit trail

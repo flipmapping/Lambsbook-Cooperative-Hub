@@ -18,6 +18,7 @@ import { SuccessStories } from '@/components/SuccessStories';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
+import { AIChatWidget } from '@/components/AIChatWidget';
 import Dashboard from '@/pages/Dashboard';
 
 function ImmigrationWebsite() {
@@ -85,6 +86,7 @@ function ImmigrationWebsite() {
       </main>
       
       <Footer />
+      <AIChatWidget />
     </div>
   );
 }
