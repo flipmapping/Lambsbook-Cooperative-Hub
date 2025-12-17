@@ -129,16 +129,33 @@ Preferred communication style: Simple, everyday language.
 
 ### Environment Variables
 
-Required secrets:
+**Required:**
 - `DATABASE_URL` - PostgreSQL connection string
 - `AI_INTEGRATIONS_OPENAI_API_KEY` - OpenAI API key (auto-configured via Replit)
 - `AI_INTEGRATIONS_OPENAI_BASE_URL` - OpenAI base URL (auto-configured)
 
-Optional (for integrations):
+**Email Notifications (via SMTP - cPanel compatible):**
+- `SMTP_HOST` - SMTP server hostname (e.g., `mail.example.com`)
+- `SMTP_PORT` - SMTP port (typically `587` for TLS or `465` for SSL)
+- `SMTP_USER` - SMTP username/email address
+- `SMTP_PASSWORD` - SMTP password
+- `SMTP_FROM_EMAIL` - From email address for notifications
+- `SMTP_FROM_NAME` - From name for notifications (default: "Other Path Travel")
+
+**Optional (for integrations):**
 - `CLICKUP_API_KEY` - ClickUp integration
-- `APOLLO_API_KEY` - Apollo.io integration
-- `SUPABASE_URL` - Supabase project URL
+- `SUPABASE_URL` - Supabase project URL (for member/partner sync)
 - `SUPABASE_KEY` - Supabase API key
+
+**Setup cPanel SMTP:**
+1. Log in to cPanel
+2. Go to Email Accounts > Mail
+3. Find your email account and note the SMTP details
+4. Use these in environment variables:
+   - Host: mail.yourdomain.com
+   - Port: 587 (for STARTTLS) or 465 (for SSL)
+   - Username: your full email address
+   - Password: your email password
 
 ### Key Architectural Decisions
 
