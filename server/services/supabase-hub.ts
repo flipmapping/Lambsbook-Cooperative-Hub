@@ -194,3 +194,52 @@ export async function getEarnings() {
   if (error) throw error;
   return data || [];
 }
+
+// Authentication functions
+interface SignUpData {
+  email: string;
+  fullName?: string;
+  referralCode?: string;
+}
+
+export async function signUpMember(data: SignUpData) {
+  if (!supabase) {
+    // Return success even without Supabase for demo purposes
+    console.log('Supabase not configured - simulating magic link sent to:', data.email);
+    return { success: true, message: 'Magic link sent to ' + data.email };
+  }
+
+  // Send magic link via Supabase Auth
+  const { error } = await supabase.auth.signInWithOtp({
+    email: data.email,
+    options: {
+      emailRedirectTo: `${process.env.SITE_URL || 'http://localhost:5000'}/hub/dashboard`,
+      data: {
+        full_name: data.fullName,
+        referral_code: data.referralCode,
+      },
+    },
+  });
+
+  if (error) throw error;
+  return { success: true, message: 'Magic link sent to ' + data.email };
+}
+
+export async function loginMember(email: string) {
+  if (!supabase) {
+    // Return success even without Supabase for demo purposes
+    console.log('Supabase not configured - simulating magic link sent to:', email);
+    return { success: true, message: 'Magic link sent to ' + email };
+  }
+
+  // Send magic link via Supabase Auth
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      emailRedirectTo: `${process.env.SITE_URL || 'http://localhost:5000'}/hub/dashboard`,
+    },
+  });
+
+  if (error) throw error;
+  return { success: true, message: 'Magic link sent to ' + email };
+}

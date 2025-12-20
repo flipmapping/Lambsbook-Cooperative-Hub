@@ -23,10 +23,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
   const authMutation = useMutation({
     mutationFn: async (data: { email: string; fullName?: string; referralCode?: string }) => {
-      return apiRequest(`/api/hub/auth/${mode}`, {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+      return apiRequest("POST", `/api/hub/auth/${mode}`, data);
     },
     onSuccess: () => {
       setEmailSent(true);
