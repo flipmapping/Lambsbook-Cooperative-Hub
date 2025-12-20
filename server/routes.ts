@@ -15,6 +15,16 @@ import { z } from "zod";
 import { generateAIResponse, generateLeadScore } from "./services/ai";
 import { notifyNewEnquiry } from "./services/notifications";
 import { createClickUpTask, createApolloContact, integrationGuides } from "./services/integrations";
+import { 
+  sendMagicLink, 
+  sendEmailOTP, 
+  verifyEmailOTP, 
+  signUpWithPassword,
+  signInWithPassword,
+  signOut,
+  resetPassword,
+  getUser,
+} from "./services/supabase-auth";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -64,8 +74,8 @@ export async function registerRoutes(
       
       const leadScore = await generateLeadScore({
         inquiryType: data.inquiryType,
-        message: data.message,
-        countryOfInterest: data.countryOfInterest,
+        message: data.message ?? undefined,
+        countryOfInterest: data.countryOfInterest ?? undefined,
       });
       
       const enquiry = await storage.createEnquiry({
@@ -476,6 +486,130 @@ export async function registerRoutes(
 
   app.get("/api/integration-guides", async (req: Request, res: Response) => {
     res.json(integrationGuides);
+  });
+
+  // ============================================================
+  // AUTHENTICATION ROUTES (Supabase Auth with Email 2FA)
+  // ============================================================
+
+  // Send magic link for passwordless login
+  app.post("/api/auth/magic-link", async (req: Request, res: Response) => {
+    try {
+      const { email } = req.body;
+      if (!email || typeof email !== 'string') {
+        return res.status(400).json({ error: "Email is required" });
+      }
+      const result = await sendMagicLink(email);
+      res.json(result);
+    } catch (error) {
+      console.error('Magic link error:', error);
+      res.status(500).json({ error: "Failed to send magic link" });
+    }
+  });
+
+  // Send email OTP for 2FA
+  app.post("/api/auth/send-otp", async (req: Request, res: Response) => {
+    try {
+      const { email } = req.body;
+      if (!email || typeof email !== 'string') {
+        return res.status(400).json({ error: "Email is required" });
+      }
+      const result = await sendEmailOTP(email);
+      res.json(result);
+    } catch (error) {
+      console.error('Send OTP error:', error);
+      res.status(500).json({ error: "Failed to send OTP" });
+    }
+  });
+
+  // Verify email OTP
+  app.post("/api/auth/verify-otp", async (req: Request, res: Response) => {
+    try {
+      const { email, token } = req.body;
+      if (!email || !token) {
+        return res.status(400).json({ error: "Email and token are required" });
+      }
+      const result = await verifyEmailOTP(email, token);
+      res.json(result);
+    } catch (error) {
+      console.error('Verify OTP error:', error);
+      res.status(500).json({ error: "Failed to verify OTP" });
+    }
+  });
+
+  // Sign up with email and password
+  app.post("/api/auth/signup", async (req: Request, res: Response) => {
+    try {
+      const { email, password, fullName, role } = req.body;
+      if (!email || !password) {
+        return res.status(400).json({ error: "Email and password are required" });
+      }
+      const result = await signUpWithPassword(email, password, { 
+        full_name: fullName,
+        role: role || 'member',
+      });
+      res.json(result);
+    } catch (error) {
+      console.error('Signup error:', error);
+      res.status(500).json({ error: "Failed to sign up" });
+    }
+  });
+
+  // Sign in with email and password
+  app.post("/api/auth/signin", async (req: Request, res: Response) => {
+    try {
+      const { email, password } = req.body;
+      if (!email || !password) {
+        return res.status(400).json({ error: "Email and password are required" });
+      }
+      const result = await signInWithPassword(email, password);
+      res.json(result);
+    } catch (error) {
+      console.error('Signin error:', error);
+      res.status(500).json({ error: "Failed to sign in" });
+    }
+  });
+
+  // Sign out
+  app.post("/api/auth/signout", async (req: Request, res: Response) => {
+    try {
+      const result = await signOut();
+      res.json(result);
+    } catch (error) {
+      console.error('Signout error:', error);
+      res.status(500).json({ error: "Failed to sign out" });
+    }
+  });
+
+  // Reset password
+  app.post("/api/auth/reset-password", async (req: Request, res: Response) => {
+    try {
+      const { email } = req.body;
+      if (!email) {
+        return res.status(400).json({ error: "Email is required" });
+      }
+      const result = await resetPassword(email);
+      res.json(result);
+    } catch (error) {
+      console.error('Reset password error:', error);
+      res.status(500).json({ error: "Failed to reset password" });
+    }
+  });
+
+  // Get current user (requires auth token)
+  app.get("/api/auth/me", async (req: Request, res: Response) => {
+    try {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: "No authorization token provided" });
+      }
+      const token = authHeader.split(' ')[1];
+      const result = await getUser(token);
+      res.json(result);
+    } catch (error) {
+      console.error('Get user error:', error);
+      res.status(500).json({ error: "Failed to get user" });
+    }
   });
 
   return httpServer;
