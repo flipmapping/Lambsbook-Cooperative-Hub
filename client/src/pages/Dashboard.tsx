@@ -4,8 +4,13 @@ import {
   LayoutDashboard, Users, Briefcase, MessageSquare, Settings, 
   Bell, BarChart3, Globe, FileText, Bot, Link2, LogOut,
   Plus, Filter, Search, ChevronDown, Mail, Phone, Calendar,
-  CheckCircle, Clock, AlertCircle, XCircle, ArrowRight
+  CheckCircle, Clock, AlertCircle, XCircle, ArrowRight,
+  Building2, Package, Percent, Globe2
 } from 'lucide-react';
+import { SBUManagement } from '@/components/admin/SBUManagement';
+import { ProgramsManagement } from '@/components/admin/ProgramsManagement';
+import { CommissionRulesManagement } from '@/components/admin/CommissionRulesManagement';
+import { LandingPagesManagement } from '@/components/admin/LandingPagesManagement';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -144,26 +149,59 @@ export default function Dashboard() {
   );
 
   const navItems = [
-    { id: 'overview', label: 'Overview', icon: LayoutDashboard },
-    { id: 'enquiries', label: 'Enquiries', icon: MessageSquare },
-    { id: 'members', label: 'Team Members', icon: Users },
-    { id: 'partners', label: 'Partners', icon: Briefcase },
-    { id: 'integrations', label: 'Integrations', icon: Link2 },
-    { id: 'ai-assistant', label: 'AI Assistant', icon: Bot },
-    { id: 'content', label: 'Site Content', icon: FileText },
-    { id: 'settings', label: 'Settings', icon: Settings },
+    { id: 'overview', label: 'Overview', icon: LayoutDashboard, section: 'main' },
+    { id: 'enquiries', label: 'Enquiries', icon: MessageSquare, section: 'main' },
+    { id: 'members', label: 'Team Members', icon: Users, section: 'main' },
+    { id: 'partners', label: 'Partners', icon: Briefcase, section: 'main' },
+    { id: 'sbus', label: 'Business Units', icon: Building2, section: 'hub' },
+    { id: 'programs', label: 'Programs', icon: Package, section: 'hub' },
+    { id: 'commissions', label: 'Commissions', icon: Percent, section: 'hub' },
+    { id: 'landing-pages', label: 'Landing Pages', icon: Globe2, section: 'hub' },
+    { id: 'integrations', label: 'Integrations', icon: Link2, section: 'settings' },
+    { id: 'ai-assistant', label: 'AI Assistant', icon: Bot, section: 'settings' },
+    { id: 'content', label: 'Site Content', icon: FileText, section: 'settings' },
+    { id: 'settings', label: 'Settings', icon: Settings, section: 'settings' },
   ];
 
   return (
     <div className="flex h-screen bg-background">
       <aside className="w-64 border-r bg-card hidden lg:block">
         <div className="p-4 border-b">
-          <h1 className="font-bold text-lg">Admin Dashboard</h1>
-          <p className="text-xs text-muted-foreground">Other Path Travel</p>
+          <h1 className="font-bold text-lg">Lambsbook Hub</h1>
+          <p className="text-xs text-muted-foreground">Admin Dashboard</p>
         </div>
         <ScrollArea className="h-[calc(100vh-80px)]">
           <nav className="p-2 space-y-1">
-            {navItems.map((item) => (
+            <p className="text-xs text-muted-foreground px-3 py-1">Main</p>
+            {navItems.filter(i => i.section === 'main').map((item) => (
+              <Button
+                key={item.id}
+                variant={activeTab === item.id ? 'secondary' : 'ghost'}
+                className="w-full justify-start gap-2"
+                onClick={() => setActiveTab(item.id)}
+                data-testid={`nav-${item.id}`}
+              >
+                <item.icon className="h-4 w-4" />
+                {item.label}
+              </Button>
+            ))}
+            <Separator className="my-2" />
+            <p className="text-xs text-muted-foreground px-3 py-1">Agentic Hub</p>
+            {navItems.filter(i => i.section === 'hub').map((item) => (
+              <Button
+                key={item.id}
+                variant={activeTab === item.id ? 'secondary' : 'ghost'}
+                className="w-full justify-start gap-2"
+                onClick={() => setActiveTab(item.id)}
+                data-testid={`nav-${item.id}`}
+              >
+                <item.icon className="h-4 w-4" />
+                {item.label}
+              </Button>
+            ))}
+            <Separator className="my-2" />
+            <p className="text-xs text-muted-foreground px-3 py-1">Configuration</p>
+            {navItems.filter(i => i.section === 'settings').map((item) => (
               <Button
                 key={item.id}
                 variant={activeTab === item.id ? 'secondary' : 'ghost'}
@@ -732,6 +770,22 @@ export default function Dashboard() {
 
             {activeTab === 'content' && (
               <ContentManagementTab />
+            )}
+
+            {activeTab === 'sbus' && (
+              <SBUManagement />
+            )}
+
+            {activeTab === 'programs' && (
+              <ProgramsManagement />
+            )}
+
+            {activeTab === 'commissions' && (
+              <CommissionRulesManagement />
+            )}
+
+            {activeTab === 'landing-pages' && (
+              <LandingPagesManagement />
             )}
 
             {activeTab === 'settings' && (
