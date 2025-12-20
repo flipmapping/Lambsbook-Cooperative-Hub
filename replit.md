@@ -167,7 +167,59 @@ Preferred communication style: Simple, everyday language.
 6. **Notification Framework**: Prepared for SendGrid/Twilio with abstracted notification service
 7. **Integration Pattern**: Modular integration services for third-party tools
 
+## Lambsbook Agentic Hub (Supabase)
+
+The platform now includes a comprehensive Supabase-based system for partner programs, referral tracking, and revenue sharing.
+
+### Supabase Tables (Master Schema)
+
+| Category | Tables |
+|----------|--------|
+| **SBUs** | `sbus` (5 Strategic Business Units) |
+| **Members** | `members`, `member_tutor_profiles`, `member_partner_links` |
+| **Programs** | `programs` (with parent-child hierarchy) |
+| **Commissions** | `commission_rule_sets`, `commission_rules` |
+| **Transactions** | `transactions`, `earnings`, `payout_batches` |
+| **Product Partners** | `program_partner_shares`, `product_contracts`, `contract_payment_stages`, `contract_partner_payments` |
+| **Existing** | `partners`, `collaborators`, `customer_referrals`, etc. |
+| **System** | `audit_log` |
+
+### SBUs (Strategic Business Units)
+
+1. **SBU 1**: Coffee Shop and Community House (Lady Jane)
+2. **SBU 2**: Education Project - Tropicana, CTBC, Lambsbook.net (Bill/Khai)
+3. **SBU 3**: Migration Consultancy & HR (Glory International partnership)
+4. **SBU 4**: Agricultural Products - Gac Puree, Rocket Stoves (Carl)
+5. **SBU 5**: Farmstay Community (Future)
+
+### Commission Structure
+
+- **Collaborator Tier 1**: 15% (first-level referrer)
+- **Collaborator Tier 2**: 15% (second-level referrer)
+- **Partner Fee**: 10% (school/program partner)
+- **Charity Reserve**: 10% (church planting/charity)
+- **Remainder**: Goes to Tutor (SBU2) or Platform (other SBUs)
+
+### Member Roles
+
+A single member can have multiple roles: `user`, `ambassador`, `collaborator`, `partner`, `tutor`, `admin`
+
+### Authentication
+
+- Magic Link via Supabase Auth
+- Email: support@lambsbook.net (SMTP configured)
+- Callback URL: `/auth/callback`
+
 ## Recent Changes
+
+**December 2025:**
+- Implemented Supabase master schema for Lambsbook Agentic Hub
+- Added 5 SBU structure from Grok design document
+- Created unified member system with multi-role support
+- Built program-specific commission rules with remainder logic
+- Added multi-partner product arrangements (supplier, processor, packager)
+- Implemented contract-based payment stages for products
+- Magic link authentication via Supabase Auth
 
 **November 2025:**
 - Added AI-powered customer chatbot widget
