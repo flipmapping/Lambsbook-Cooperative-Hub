@@ -40,3 +40,11 @@ externalPort = 80
 
 [agent]
 integrations = ["javascript_openai_ai_integrations:1.0.0"]
+
+[userenv]
+
+[userenv.production]
+APP_URL = "https://global-pathways--flipmapping.replit.app"
+
+[userenv.development]
+APP_URL = "https://global-pathways--flipmapping.replit.app"
