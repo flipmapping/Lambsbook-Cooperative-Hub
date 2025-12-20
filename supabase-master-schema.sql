@@ -129,39 +129,78 @@ CREATE TABLE IF NOT EXISTS member_partner_links (
 -- PART 4: PROGRAMS/PRODUCTS/SERVICES (linked to SBUs)
 -- ============================================================
 
--- Programs with parent-child hierarchy support
+-- Programs table - create if not exists, then add missing columns
 CREATE TABLE IF NOT EXISTS programs (
     program_id TEXT PRIMARY KEY,
-    
-    -- Parent program (for sub-programs)
-    parent_program_id TEXT REFERENCES programs(program_id),
-    
-    -- SBU linkage
-    sbu_id UUID REFERENCES sbus(id),
-    
-    -- Program details
-    program_type TEXT CHECK (program_type IN ('course', 'workshop', 'service', 'product', 'package', 'consultation', 'tutoring')),
     name TEXT NOT NULL,
-    name_translations JSONB, -- {"vi": "...", "zh": "...", etc.}
     description TEXT,
-    description_translations JSONB,
-    
-    -- Pricing
-    base_price DECIMAL(12,2),
-    price_currency TEXT DEFAULT 'USD',
-    
-    -- Duration (for courses/services)
-    duration_value INTEGER,
-    duration_unit TEXT CHECK (duration_unit IN ('hours', 'days', 'weeks', 'months', 'years')),
-    
-    -- Remainder recipient: 'tutor' for SBU2 tutoring, 'platform' for everything else
-    remainder_recipient TEXT DEFAULT 'platform' CHECK (remainder_recipient IN ('tutor', 'platform', 'partner')),
-    
     is_active BOOLEAN DEFAULT TRUE,
-    metadata JSONB,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- Add new columns to existing programs table (safe - won't fail if column exists)
+DO $$ 
+BEGIN
+    -- Add parent_program_id if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'parent_program_id') THEN
+        ALTER TABLE programs ADD COLUMN parent_program_id TEXT REFERENCES programs(program_id);
+    END IF;
+    
+    -- Add sbu_id if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'sbu_id') THEN
+        ALTER TABLE programs ADD COLUMN sbu_id UUID REFERENCES sbus(id);
+    END IF;
+    
+    -- Add program_type if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'program_type') THEN
+        ALTER TABLE programs ADD COLUMN program_type TEXT;
+    END IF;
+    
+    -- Add name_translations if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'name_translations') THEN
+        ALTER TABLE programs ADD COLUMN name_translations JSONB;
+    END IF;
+    
+    -- Add description_translations if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'description_translations') THEN
+        ALTER TABLE programs ADD COLUMN description_translations JSONB;
+    END IF;
+    
+    -- Add base_price if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'base_price') THEN
+        ALTER TABLE programs ADD COLUMN base_price DECIMAL(12,2);
+    END IF;
+    
+    -- Add price_currency if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'price_currency') THEN
+        ALTER TABLE programs ADD COLUMN price_currency TEXT DEFAULT 'USD';
+    END IF;
+    
+    -- Add duration_value if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'duration_value') THEN
+        ALTER TABLE programs ADD COLUMN duration_value INTEGER;
+    END IF;
+    
+    -- Add duration_unit if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'duration_unit') THEN
+        ALTER TABLE programs ADD COLUMN duration_unit TEXT;
+    END IF;
+    
+    -- Add remainder_recipient if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'remainder_recipient') THEN
+        ALTER TABLE programs ADD COLUMN remainder_recipient TEXT DEFAULT 'platform';
+    END IF;
+    
+    -- Add metadata if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'metadata') THEN
+        ALTER TABLE programs ADD COLUMN metadata JSONB;
+    END IF;
+    
+    -- Add updated_at if not exists
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'updated_at') THEN
+        ALTER TABLE programs ADD COLUMN updated_at TIMESTAMPTZ DEFAULT NOW();
+    END IF;
+END $$;
 
 -- ============================================================
 -- PART 5: PROGRAM-SPECIFIC COMMISSION RULES
