@@ -54,6 +54,9 @@ export async function sendEmailOTP(email: string): Promise<AuthResult> {
   }
 
   try {
+    console.log('Sending OTP to:', email);
+    console.log('Supabase URL:', supabaseUrl);
+    
     const { data, error } = await supabase.auth.signInWithOtp({
       email,
       options: {
@@ -62,16 +65,23 @@ export async function sendEmailOTP(email: string): Promise<AuthResult> {
     });
 
     if (error) {
-      console.error('Email OTP error:', error.message);
-      return { success: false, message: error.message, error: error.code };
+      console.error('Email OTP error details:', {
+        message: error.message,
+        status: error.status,
+        code: error.code,
+        name: error.name,
+      });
+      return { success: false, message: error.message, error: error.code || 'OTP_ERROR' };
     }
 
+    console.log('OTP sent successfully:', data);
     return { 
       success: true, 
       message: 'Verification code sent! Check your email.',
       data 
     };
   } catch (err) {
+    console.error('OTP exception:', err);
     const errorMsg = err instanceof Error ? err.message : 'Unknown error';
     return { success: false, message: errorMsg, error: 'UNKNOWN_ERROR' };
   }
