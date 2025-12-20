@@ -4,9 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Mail, Lock, ArrowLeft } from "lucide-react";
+import { Loader2, Mail, ArrowLeft, CheckCircle } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function Login() {
@@ -14,10 +13,7 @@ export default function Login() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [otp, setOtp] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
-  const [otpEmail, setOtpEmail] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
 
   const handleMagicLink = async () => {
     if (!email) {
@@ -29,83 +25,20 @@ export default function Login() {
       const result = await apiRequest("POST", "/api/auth/magic-link", { email });
       const data = await result.json();
       if (data.success) {
-        toast({ title: "Check your email", description: "We've sent you a magic link to sign in." });
+        setEmailSent(true);
+        toast({ title: "Check your email", description: "We've sent you a sign-in link." });
       } else {
         toast({ title: "Error", description: data.message, variant: "destructive" });
       }
     } catch (err) {
-      toast({ title: "Error", description: "Failed to send magic link", variant: "destructive" });
+      toast({ title: "Error", description: "Failed to send sign-in link", variant: "destructive" });
     }
     setIsLoading(false);
   };
 
-  const handleSendOTP = async () => {
-    if (!otpEmail) {
-      toast({ title: "Error", description: "Please enter your email", variant: "destructive" });
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const result = await apiRequest("POST", "/api/auth/send-otp", { email: otpEmail });
-      const data = await result.json();
-      if (data.success) {
-        setOtpSent(true);
-        toast({ title: "Code sent", description: "Check your email for the verification code." });
-      } else {
-        toast({ title: "Error", description: data.message, variant: "destructive" });
-      }
-    } catch (err) {
-      toast({ title: "Error", description: "Failed to send code", variant: "destructive" });
-    }
-    setIsLoading(false);
-  };
-
-  const handleVerifyOTP = async () => {
-    if (!otp) {
-      toast({ title: "Error", description: "Please enter the verification code", variant: "destructive" });
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const result = await apiRequest("POST", "/api/auth/verify-otp", { email: otpEmail, token: otp });
-      const data = await result.json();
-      if (data.success) {
-        if (data.data?.session?.access_token) {
-          localStorage.setItem("supabase_access_token", data.data.session.access_token);
-        }
-        toast({ title: "Success", description: "You're now logged in!" });
-        setLocation("/admin");
-      } else {
-        toast({ title: "Error", description: data.message, variant: "destructive" });
-      }
-    } catch (err) {
-      toast({ title: "Error", description: "Failed to verify code", variant: "destructive" });
-    }
-    setIsLoading(false);
-  };
-
-  const handlePasswordLogin = async () => {
-    if (!email || !password) {
-      toast({ title: "Error", description: "Please enter email and password", variant: "destructive" });
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const result = await apiRequest("POST", "/api/auth/signin", { email, password });
-      const data = await result.json();
-      if (data.success) {
-        if (data.data?.session?.access_token) {
-          localStorage.setItem("supabase_access_token", data.data.session.access_token);
-        }
-        toast({ title: "Success", description: "You're now logged in!" });
-        setLocation("/admin");
-      } else {
-        toast({ title: "Error", description: data.message, variant: "destructive" });
-      }
-    } catch (err) {
-      toast({ title: "Error", description: "Failed to sign in", variant: "destructive" });
-    }
-    setIsLoading(false);
+  const handleResend = () => {
+    setEmailSent(false);
+    setEmail("");
   };
 
   return (
@@ -125,136 +58,66 @@ export default function Login() {
           <CardHeader className="text-center">
             <CardTitle>Sign In</CardTitle>
             <CardDescription>
-              Choose your preferred sign-in method
+              Sign in with your email address
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="magic-link">
-              <TabsList className="grid w-full grid-cols-3 mb-4">
-                <TabsTrigger value="magic-link" data-testid="tab-magic-link">Magic Link</TabsTrigger>
-                <TabsTrigger value="otp" data-testid="tab-otp">Email Code</TabsTrigger>
-                <TabsTrigger value="password" data-testid="tab-password">Password</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="magic-link" className="space-y-4">
+            {!emailSent ? (
+              <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="magic-email">Email</Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
-                    id="magic-email"
+                    id="email"
                     type="email"
                     placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    data-testid="input-magic-email"
+                    onKeyDown={(e) => e.key === "Enter" && handleMagicLink()}
+                    data-testid="input-email"
                   />
                 </div>
                 <Button
                   className="w-full"
                   onClick={handleMagicLink}
                   disabled={isLoading}
-                  data-testid="button-send-magic-link"
+                  data-testid="button-send-link"
                 >
-                  {isLoading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Mail className="h-4 w-4 mr-2" />}
-                  Send Magic Link
+                  {isLoading ? (
+                    <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  ) : (
+                    <Mail className="h-4 w-4 mr-2" />
+                  )}
+                  Send Sign-in Link
                 </Button>
-              </TabsContent>
-
-              <TabsContent value="otp" className="space-y-4">
-                {!otpSent ? (
-                  <>
-                    <div className="space-y-2">
-                      <Label htmlFor="otp-email">Email</Label>
-                      <Input
-                        id="otp-email"
-                        type="email"
-                        placeholder="your@email.com"
-                        value={otpEmail}
-                        onChange={(e) => setOtpEmail(e.target.value)}
-                        data-testid="input-otp-email"
-                      />
-                    </div>
-                    <Button
-                      className="w-full"
-                      onClick={handleSendOTP}
-                      disabled={isLoading}
-                      data-testid="button-send-otp"
-                    >
-                      {isLoading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Mail className="h-4 w-4 mr-2" />}
-                      Send Verification Code
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <div className="space-y-2">
-                      <Label htmlFor="otp-code">Verification Code</Label>
-                      <Input
-                        id="otp-code"
-                        type="text"
-                        placeholder="Enter 6-digit code"
-                        value={otp}
-                        onChange={(e) => setOtp(e.target.value)}
-                        maxLength={6}
-                        data-testid="input-otp-code"
-                      />
-                      <p className="text-sm text-muted-foreground">
-                        Code sent to {otpEmail}
-                      </p>
-                    </div>
-                    <Button
-                      className="w-full"
-                      onClick={handleVerifyOTP}
-                      disabled={isLoading}
-                      data-testid="button-verify-otp"
-                    >
-                      {isLoading && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-                      Verify Code
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      className="w-full"
-                      onClick={() => setOtpSent(false)}
-                      data-testid="button-resend-otp"
-                    >
-                      Use different email
-                    </Button>
-                  </>
-                )}
-              </TabsContent>
-
-              <TabsContent value="password" className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="password-email">Email</Label>
-                  <Input
-                    id="password-email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    data-testid="input-password-email"
-                  />
+                <p className="text-sm text-muted-foreground text-center">
+                  We'll email you a secure link to sign in instantly.
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-4 text-center">
+                <div className="flex justify-center">
+                  <CheckCircle className="h-16 w-16 text-green-500" />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="password">Password</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="Enter password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    data-testid="input-password"
-                  />
+                <div>
+                  <h3 className="font-semibold text-lg">Check your email</h3>
+                  <p className="text-muted-foreground mt-1">
+                    We've sent a sign-in link to:
+                  </p>
+                  <p className="font-medium mt-1">{email}</p>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  Click the link in your email to sign in. The link expires in 1 hour.
+                </p>
                 <Button
+                  variant="outline"
                   className="w-full"
-                  onClick={handlePasswordLogin}
-                  disabled={isLoading}
-                  data-testid="button-password-login"
+                  onClick={handleResend}
+                  data-testid="button-try-again"
                 >
-                  {isLoading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Lock className="h-4 w-4 mr-2" />}
-                  Sign In
+                  Use a different email
                 </Button>
-              </TabsContent>
-            </Tabs>
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>
