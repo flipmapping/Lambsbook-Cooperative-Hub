@@ -63,8 +63,8 @@ export default function MemberDashboard() {
   });
 
   const copyReferralLink = () => {
-    if (member?.referral_code) {
-      const link = `${window.location.origin}/hub/signup?ref=${member.referral_code}`;
+    if (mockMember?.email) {
+      const link = `${window.location.origin}/hub/signup?ref=${encodeURIComponent(mockMember.email)}`;
       navigator.clipboard.writeText(link);
       toast({
         title: "Link Copied",
@@ -214,7 +214,7 @@ export default function MemberDashboard() {
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1 bg-muted rounded-md px-4 py-2 font-mono text-sm truncate">
-                {`${window.location.origin}/hub/signup?ref=${mockMember.referral_code}`}
+                {`${window.location.origin}/hub/signup?ref=${encodeURIComponent(mockMember.email)}`}
               </div>
               <div className="flex gap-2">
                 <Button onClick={copyReferralLink} data-testid="button-copy-link">
@@ -224,7 +224,7 @@ export default function MemberDashboard() {
               </div>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">
-              Your code: <span className="font-mono font-medium">{mockMember.referral_code}</span>
+              Your referrer email: <span className="font-mono font-medium">{mockMember.email}</span>
             </p>
           </CardContent>
         </Card>
