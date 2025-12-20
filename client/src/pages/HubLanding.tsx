@@ -1,136 +1,155 @@
+import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, TrendingUp, Gift, Building2, GraduationCap, Sprout, Home, Coffee } from "lucide-react";
+import { Users, TrendingUp, Gift, Building2, GraduationCap, Sprout, Home, Coffee, ArrowRight } from "lucide-react";
+import { HubHeader } from "@/components/HubHeader";
+import { HubConsultationForm } from "@/components/HubConsultationForm";
+import { useLanguage } from "@/lib/LanguageContext";
+import { useHubTranslation } from "@/lib/hubTranslations";
 
 const sbus = [
   {
     id: 1,
-    name: "Coffee Shop & Community",
+    nameKey: "hub_sbu1_name",
     icon: Coffee,
-    description: "Lady Jane's community gathering space",
+    descKey: "hub_sbu1_desc",
     color: "bg-amber-500/10 text-amber-600",
     href: "#",
   },
   {
     id: 2,
-    name: "Education Programs",
+    nameKey: "hub_sbu2_name",
     icon: GraduationCap,
-    description: "Tropicana, CTBC, Lambsbook.net tutoring",
+    descKey: "hub_sbu2_desc",
     color: "bg-blue-500/10 text-blue-600",
     href: "/hub/sbu/education",
   },
   {
     id: 3,
-    name: "Migration & HR",
+    nameKey: "hub_sbu3_name",
     icon: Building2,
-    description: "Glory International partnership - EB-3 visas",
+    descKey: "hub_sbu3_desc",
     color: "bg-purple-500/10 text-purple-600",
     href: "/",
   },
   {
     id: 4,
-    name: "Agricultural Products",
+    nameKey: "hub_sbu4_name",
     icon: Sprout,
-    description: "Gac Puree, Rocket Stoves by Carl",
+    descKey: "hub_sbu4_desc",
     color: "bg-green-500/10 text-green-600",
     href: "#",
   },
   {
     id: 5,
-    name: "Farmstay Community",
+    nameKey: "hub_sbu5_name",
     icon: Home,
-    description: "Future community living experience",
+    descKey: "hub_sbu5_desc",
     color: "bg-teal-500/10 text-teal-600",
     href: "#",
   },
 ];
 
-const benefits = [
+const benefitKeys = [
   {
     icon: TrendingUp,
-    title: "Earn Commissions",
-    description: "Earn up to 15% on tier 1 referrals and 15% on tier 2 referrals across all programs.",
+    titleKey: "hub_benefit1_title",
+    descKey: "hub_benefit1_desc",
   },
   {
     icon: Users,
-    title: "Build Your Network",
-    description: "Connect with partners and collaborators across 5 strategic business units.",
+    titleKey: "hub_benefit2_title",
+    descKey: "hub_benefit2_desc",
   },
   {
     icon: Gift,
-    title: "Exclusive Benefits",
-    description: "Access special programs, early opportunities, and community support.",
+    titleKey: "hub_benefit3_title",
+    descKey: "hub_benefit3_desc",
   },
 ];
 
+const inquiryOptions = [
+  { value: "general", labelKey: "hub_inquiry_general" },
+  { value: "partnership", labelKey: "hub_inquiry_partnership" },
+  { value: "referral", labelKey: "hub_inquiry_referral" },
+  { value: "support", labelKey: "hub_inquiry_support" },
+];
+
 export default function HubLanding() {
+  const { language } = useLanguage();
+  const { t } = useHubTranslation(language);
+
+  const sectionRefs = {
+    about: useRef<HTMLDivElement>(null),
+    programs: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null),
+  };
+
+  const handleNavigate = (section: string) => {
+    const ref = sectionRefs[section as keyof typeof sectionRefs];
+    if (ref?.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = () => {
+    sectionRefs.contact.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">LB</span>
-            </div>
-            <span className="font-semibold text-lg">Lambsbook Hub</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link href="/hub/login">
-              <Button variant="ghost" data-testid="button-hub-login">
-                Log In
-              </Button>
-            </Link>
-            <Link href="/hub/signup">
-              <Button data-testid="button-hub-signup">
-                Join Now
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <HubHeader 
+        onNavigate={handleNavigate}
+        brandName="Lambsbook Hub"
+        brandSubtitle={t('hub_tagline')}
+        homeLink="/hub"
+      />
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="container mx-auto text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Your Gateway to Global Opportunities
+          <h1 className="text-4xl md:text-5xl font-bold mb-6" data-testid="text-hero-title">
+            {t('hub_hero_title')}
           </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Join the Lambsbook Agentic Hub and unlock earning potential across education, 
-            migration services, agriculture, and community projects worldwide.
+          <p className="text-xl text-muted-foreground mb-8" data-testid="text-hero-subtitle">
+            {t('hub_hero_subtitle')}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/hub/signup">
               <Button size="lg" data-testid="button-hero-signup">
-                Start Earning Today
+                {t('hub_start_earning')}
               </Button>
             </Link>
-            <Link href="#programs">
-              <Button size="lg" variant="outline" data-testid="button-explore-programs">
-                Explore Programs
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={() => handleNavigate('programs')}
+              data-testid="button-explore-programs"
+            >
+              {t('hub_explore_programs')}
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section ref={sectionRefs.about} className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10">Why Join Lambsbook Hub?</h2>
+          <h2 className="text-2xl font-bold text-center mb-10" data-testid="text-benefits-title">
+            {t('hub_why_join')}
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
+            {benefitKeys.map((benefit, index) => (
               <Card key={index} className="text-center" data-testid={`card-benefit-${index}`}>
                 <CardHeader>
                   <div className="mx-auto h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">
                     <benefit.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">{benefit.title}</CardTitle>
+                  <CardTitle className="text-lg">{t(benefit.titleKey)}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+                  <p className="text-muted-foreground">{t(benefit.descKey)}</p>
                 </CardContent>
               </Card>
             ))}
@@ -139,11 +158,13 @@ export default function HubLanding() {
       </section>
 
       {/* SBUs Section */}
-      <section id="programs" className="py-16 px-4">
+      <section ref={sectionRefs.programs} id="programs" className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-4">Our Business Units</h2>
+          <h2 className="text-2xl font-bold text-center mb-4" data-testid="text-sbu-title">
+            {t('hub_our_sbus')}
+          </h2>
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Five strategic business units offering diverse opportunities for partners and collaborators.
+            {t('hub_sbu_subtitle')}
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sbus.map((sbu) => (
@@ -153,8 +174,8 @@ export default function HubLanding() {
                     <div className={`h-10 w-10 rounded-md ${sbu.color} flex items-center justify-center mb-2`}>
                       <sbu.icon className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-lg">{sbu.name}</CardTitle>
-                    <CardDescription>{sbu.description}</CardDescription>
+                    <CardTitle className="text-lg">{t(sbu.nameKey)}</CardTitle>
+                    <CardDescription>{t(sbu.descKey)}</CardDescription>
                   </CardHeader>
                 </Card>
               </Link>
@@ -166,15 +187,17 @@ export default function HubLanding() {
       {/* Commission Structure */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-center mb-10">Commission Structure</h2>
+          <h2 className="text-2xl font-bold text-center mb-10" data-testid="text-commission-title">
+            {t('hub_commission_title')}
+          </h2>
           <div className="grid md:grid-cols-4 gap-4 text-center">
             <Card data-testid="card-commission-tier1">
               <CardHeader className="pb-2">
                 <CardTitle className="text-3xl text-primary">15%</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-medium">Tier 1 Referral</p>
-                <p className="text-sm text-muted-foreground">Direct referrals</p>
+                <p className="font-medium">{t('hub_tier1')}</p>
+                <p className="text-sm text-muted-foreground">{t('hub_tier1_desc')}</p>
               </CardContent>
             </Card>
             <Card data-testid="card-commission-tier2">
@@ -182,8 +205,8 @@ export default function HubLanding() {
                 <CardTitle className="text-3xl text-primary">15%</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-medium">Tier 2 Referral</p>
-                <p className="text-sm text-muted-foreground">Second-level referrals</p>
+                <p className="font-medium">{t('hub_tier2')}</p>
+                <p className="text-sm text-muted-foreground">{t('hub_tier2_desc')}</p>
               </CardContent>
             </Card>
             <Card data-testid="card-commission-partner">
@@ -191,8 +214,8 @@ export default function HubLanding() {
                 <CardTitle className="text-3xl text-primary">10%</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-medium">Partner Fee</p>
-                <p className="text-sm text-muted-foreground">School/Program partners</p>
+                <p className="font-medium">{t('hub_partner_fee')}</p>
+                <p className="text-sm text-muted-foreground">{t('hub_partner_fee_desc')}</p>
               </CardContent>
             </Card>
             <Card data-testid="card-commission-charity">
@@ -200,8 +223,8 @@ export default function HubLanding() {
                 <CardTitle className="text-3xl text-primary">10%</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-medium">Charity Reserve</p>
-                <p className="text-sm text-muted-foreground">Community giving</p>
+                <p className="font-medium">{t('hub_charity')}</p>
+                <p className="text-sm text-muted-foreground">{t('hub_charity_desc')}</p>
               </CardContent>
             </Card>
           </div>
@@ -209,25 +232,67 @@ export default function HubLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-primary text-primary-foreground">
         <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-muted-foreground mb-8">
-            Join thousands of members earning across our programs. Sign up takes less than a minute.
+          <h2 className="text-3xl font-bold mb-4" data-testid="text-cta-title">
+            {t('hub_cta_title')}
+          </h2>
+          <p className="mb-8 opacity-90" data-testid="text-cta-desc">
+            {t('hub_cta_desc')}
           </p>
-          <Link href="/hub/signup">
-            <Button size="lg" data-testid="button-cta-signup">
-              Create Your Account
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link href="/hub/signup">
+              <Button size="lg" variant="secondary" data-testid="button-cta-signup">
+                {t('hub_create_account')}
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+              onClick={scrollToContact}
+              data-testid="button-cta-contact"
+            >
+              {t('hub_contact')}
             </Button>
-          </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section ref={sectionRefs.contact} className="py-16 px-4 bg-muted/30" id="contact">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-2xl font-bold text-center mb-4">{t('hub_free_consultation')}</h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+            {t('hub_consultation_desc')}
+          </p>
+          <HubConsultationForm 
+            inquiryOptions={inquiryOptions}
+            source="hub-landing"
+          />
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>© 2025 Lambsbook Agentic Hub. All rights reserved.</p>
-          <p className="mt-2">Contact: support@lambsbook.net</p>
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-sm text-muted-foreground">
+              © 2025 Lambsbook Agentic Hub. {t('hub_footer_rights')}
+            </div>
+            <div className="flex items-center gap-4 text-sm">
+              <Link href="/hub/sbu/education" className="text-muted-foreground hover:text-primary">
+                {t('hub_sbu2_name')}
+              </Link>
+              <Link href="/" className="text-muted-foreground hover:text-primary">
+                Other Path Travel
+              </Link>
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {t('hub_footer_contact')}: support@lambsbook.net
+            </div>
+          </div>
         </div>
       </footer>
     </div>
