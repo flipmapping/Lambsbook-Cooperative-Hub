@@ -612,5 +612,165 @@ export async function registerRoutes(
     }
   });
 
+  // ========================================
+  // Lambsbook Agentic Hub API Routes (Supabase)
+  // Note: These routes use a separate Supabase database for the Hub system
+  // which is distinct from the local PostgreSQL used for enquiries/members.
+  // ========================================
+  
+  const hubService = await import('./services/supabase-hub');
+
+  // SBUs
+  app.get("/api/hub/sbus", async (req: Request, res: Response) => {
+    try {
+      const sbus = await hubService.getSBUs();
+      res.json(sbus);
+    } catch (error) {
+      console.error('SBUs error:', error);
+      res.status(500).json({ error: "Failed to fetch SBUs" });
+    }
+  });
+
+  app.patch("/api/hub/sbus/:id", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubService.updateSBUSchema.parse(req.body);
+      const sbu = await hubService.updateSBU(req.params.id, validatedData);
+      res.json(sbu);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Update SBU error:', error);
+      res.status(500).json({ error: "Failed to update SBU" });
+    }
+  });
+
+  // Programs
+  app.get("/api/hub/programs", async (req: Request, res: Response) => {
+    try {
+      const programs = await hubService.getPrograms();
+      res.json(programs);
+    } catch (error) {
+      console.error('Programs error:', error);
+      res.status(500).json({ error: "Failed to fetch programs" });
+    }
+  });
+
+  app.post("/api/hub/programs", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubService.insertProgramSchema.parse(req.body);
+      const program = await hubService.createProgram(validatedData);
+      res.status(201).json(program);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Create program error:', error);
+      res.status(500).json({ error: "Failed to create program" });
+    }
+  });
+
+  app.patch("/api/hub/programs/:id", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubService.updateProgramSchema.parse(req.body);
+      const program = await hubService.updateProgram(req.params.id, validatedData);
+      res.json(program);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Update program error:', error);
+      res.status(500).json({ error: "Failed to update program" });
+    }
+  });
+
+  // Commission Rule Sets
+  app.get("/api/hub/commission-rule-sets", async (req: Request, res: Response) => {
+    try {
+      const ruleSets = await hubService.getCommissionRuleSets();
+      res.json(ruleSets);
+    } catch (error) {
+      console.error('Commission rule sets error:', error);
+      res.status(500).json({ error: "Failed to fetch commission rule sets" });
+    }
+  });
+
+  app.post("/api/hub/commission-rule-sets", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubService.insertCommissionRuleSetSchema.parse(req.body);
+      const ruleSet = await hubService.createCommissionRuleSet(validatedData);
+      res.status(201).json(ruleSet);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Create commission rule set error:', error);
+      res.status(500).json({ error: "Failed to create commission rule set" });
+    }
+  });
+
+  // Commission Rules
+  app.post("/api/hub/commission-rules", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubService.insertCommissionRuleSchema.parse(req.body);
+      const rule = await hubService.createCommissionRule(validatedData);
+      res.status(201).json(rule);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Create commission rule error:', error);
+      res.status(500).json({ error: "Failed to create commission rule" });
+    }
+  });
+
+  app.delete("/api/hub/commission-rules/:id", async (req: Request, res: Response) => {
+    try {
+      const idSchema = z.string().uuid();
+      idSchema.parse(req.params.id);
+      await hubService.deleteCommissionRule(req.params.id);
+      res.json({ success: true });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: "Invalid rule ID" });
+      }
+      console.error('Delete commission rule error:', error);
+      res.status(500).json({ error: "Failed to delete commission rule" });
+    }
+  });
+
+  // Hub Members
+  app.get("/api/hub/members", async (req: Request, res: Response) => {
+    try {
+      const members = await hubService.getHubMembers();
+      res.json(members);
+    } catch (error) {
+      console.error('Hub members error:', error);
+      res.status(500).json({ error: "Failed to fetch hub members" });
+    }
+  });
+
+  // Transactions
+  app.get("/api/hub/transactions", async (req: Request, res: Response) => {
+    try {
+      const transactions = await hubService.getTransactions();
+      res.json(transactions);
+    } catch (error) {
+      console.error('Transactions error:', error);
+      res.status(500).json({ error: "Failed to fetch transactions" });
+    }
+  });
+
+  // Earnings
+  app.get("/api/hub/earnings", async (req: Request, res: Response) => {
+    try {
+      const earnings = await hubService.getEarnings();
+      res.json(earnings);
+    } catch (error) {
+      console.error('Earnings error:', error);
+      res.status(500).json({ error: "Failed to fetch earnings" });
+    }
+  });
+
   return httpServer;
 }
