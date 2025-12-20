@@ -232,6 +232,187 @@ CREATE TABLE IF NOT EXISTS commission_rules (
 );
 
 -- ============================================================
+-- PART 5B: MULTI-PARTNER PRODUCT ARRANGEMENTS
+-- ============================================================
+
+-- Links multiple partners to a program/product with different roles
+CREATE TABLE IF NOT EXISTS program_partner_shares (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    
+    -- Which program/product
+    program_id TEXT NOT NULL REFERENCES programs(program_id),
+    
+    -- Which partner
+    partner_id UUID NOT NULL REFERENCES partners(id),
+    
+    -- Partner role in this product
+    partner_role TEXT NOT NULL CHECK (partner_role IN (
+        'supplier',           -- Raw material/produce supplier (e.g., farm)
+        'processor',          -- Processing partner (e.g., puree processing)
+        'packager',           -- Packaging partner
+        'distributor',        -- Distribution/logistics
+        'marketer',           -- Marketing/sales partner
+        'platform',           -- Lambsbook platform share
+        'other'
+    )),
+    
+    -- Share calculation
+    share_type TEXT NOT NULL CHECK (share_type IN ('percentage', 'fixed_per_unit', 'fixed_total')),
+    share_value DECIMAL(10,4) NOT NULL, -- e.g., 25.00 for 25%, or fixed amount
+    share_currency TEXT DEFAULT 'USD',
+    
+    -- What the share is calculated from
+    calculation_base TEXT DEFAULT 'agp' CHECK (calculation_base IN (
+        'gross',      -- Gross revenue
+        'net',        -- Net after platform fees
+        'agp',        -- Additional Gross Profit (after costs)
+        'profit'      -- Net profit
+    )),
+    
+    -- Priority for calculation order
+    priority INTEGER DEFAULT 100,
+    
+    is_active BOOLEAN DEFAULT TRUE,
+    notes TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    
+    UNIQUE(program_id, partner_id, partner_role)
+);
+
+-- ============================================================
+-- PART 5C: PRODUCT DELIVERY CONTRACTS & PAYMENT STAGES
+-- ============================================================
+
+-- Contracts for product delivery (e.g., Gac puree batches)
+CREATE TABLE IF NOT EXISTS product_contracts (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    contract_number TEXT UNIQUE,
+    
+    -- What product
+    program_id TEXT NOT NULL REFERENCES programs(program_id),
+    
+    -- Contract details
+    contract_name TEXT NOT NULL,
+    description TEXT,
+    
+    -- Quantities
+    total_quantity INTEGER,
+    quantity_unit TEXT, -- 'bottles', 'kg', 'cartons', 'containers'
+    
+    -- Financial
+    total_value DECIMAL(14,2) NOT NULL,
+    currency TEXT DEFAULT 'USD',
+    
+    -- Cost breakdown (for AGP calculation)
+    cost_of_goods DECIMAL(14,2),
+    processing_costs DECIMAL(14,2),
+    packaging_costs DECIMAL(14,2),
+    logistics_costs DECIMAL(14,2),
+    other_costs DECIMAL(14,2),
+    
+    -- Calculated AGP (Additional Gross Profit)
+    agp_amount DECIMAL(14,2), -- total_value - all costs
+    
+    -- Dates
+    start_date DATE,
+    end_date DATE,
+    
+    -- Status
+    status TEXT DEFAULT 'draft' CHECK (status IN ('draft', 'active', 'in_progress', 'completed', 'cancelled')),
+    
+    metadata JSONB,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Payment stages for contracts
+CREATE TABLE IF NOT EXISTS contract_payment_stages (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    
+    contract_id UUID NOT NULL REFERENCES product_contracts(id) ON DELETE CASCADE,
+    
+    -- Stage details
+    stage_number INTEGER NOT NULL,
+    stage_name TEXT NOT NULL, -- 'Advance', 'On Delivery', 'Final Settlement'
+    
+    -- Payment terms
+    payment_type TEXT NOT NULL CHECK (payment_type IN ('percentage', 'fixed')),
+    payment_value DECIMAL(10,4) NOT NULL, -- 30.00 for 30%, or fixed amount
+    payment_amount DECIMAL(14,2), -- Calculated amount
+    currency TEXT DEFAULT 'USD',
+    
+    -- Trigger conditions
+    trigger_type TEXT CHECK (trigger_type IN (
+        'on_signing',         -- Upon contract signing
+        'on_production',      -- When production starts
+        'on_delivery',        -- Upon delivery
+        'on_inspection',      -- After quality inspection
+        'on_invoice',         -- Upon invoicing
+        'milestone',          -- Custom milestone
+        'date'                -- Specific date
+    )),
+    trigger_date DATE,
+    trigger_description TEXT,
+    
+    -- Status
+    status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'due', 'paid', 'partial', 'cancelled')),
+    due_date DATE,
+    paid_date DATE,
+    paid_amount DECIMAL(14,2),
+    payment_reference TEXT,
+    
+    notes TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    
+    UNIQUE(contract_id, stage_number)
+);
+
+-- Partner payments from contracts (distributes AGP to partners)
+CREATE TABLE IF NOT EXISTS contract_partner_payments (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    
+    contract_id UUID NOT NULL REFERENCES product_contracts(id) ON DELETE CASCADE,
+    partner_id UUID NOT NULL REFERENCES partners(id),
+    share_rule_id UUID REFERENCES program_partner_shares(id),
+    
+    -- What role is being paid
+    partner_role TEXT,
+    
+    -- Payment details
+    share_amount DECIMAL(14,2) NOT NULL,
+    currency TEXT DEFAULT 'USD',
+    
+    -- Status
+    status TEXT DEFAULT 'accrued' CHECK (status IN ('accrued', 'approved', 'pending_payout', 'paid', 'cancelled')),
+    
+    paid_date DATE,
+    payment_reference TEXT,
+    
+    notes TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Indexes for new tables
+CREATE INDEX IF NOT EXISTS idx_program_partner_shares_program ON program_partner_shares(program_id);
+CREATE INDEX IF NOT EXISTS idx_program_partner_shares_partner ON program_partner_shares(partner_id);
+CREATE INDEX IF NOT EXISTS idx_product_contracts_program ON product_contracts(program_id);
+CREATE INDEX IF NOT EXISTS idx_product_contracts_status ON product_contracts(status);
+CREATE INDEX IF NOT EXISTS idx_contract_payment_stages_contract ON contract_payment_stages(contract_id);
+CREATE INDEX IF NOT EXISTS idx_contract_partner_payments_contract ON contract_partner_payments(contract_id);
+CREATE INDEX IF NOT EXISTS idx_contract_partner_payments_partner ON contract_partner_payments(partner_id);
+
+-- RLS for new tables
+ALTER TABLE program_partner_shares ENABLE ROW LEVEL SECURITY;
+ALTER TABLE product_contracts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE contract_payment_stages ENABLE ROW LEVEL SECURITY;
+ALTER TABLE contract_partner_payments ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Admins full access to program_partner_shares" ON program_partner_shares FOR ALL USING (true);
+CREATE POLICY "Admins full access to product_contracts" ON product_contracts FOR ALL USING (true);
+CREATE POLICY "Admins full access to contract_payment_stages" ON contract_payment_stages FOR ALL USING (true);
+CREATE POLICY "Admins full access to contract_partner_payments" ON contract_partner_payments FOR ALL USING (true);
+
+-- ============================================================
 -- EXAMPLE: How to set up commission rules for different programs
 -- ============================================================
 -- 
