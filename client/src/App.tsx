@@ -20,6 +20,8 @@ import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { AIChatWidget } from '@/components/AIChatWidget';
 import Dashboard from '@/pages/Dashboard';
+import AuthCallback from '@/pages/AuthCallback';
+import Login from '@/pages/Login';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -95,7 +97,10 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={ImmigrationWebsite} />
+      <Route path="/admin" component={Dashboard} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/login" component={Login} />
+      <Route path="/auth/callback" component={AuthCallback} />
     </Switch>
   );
 }
