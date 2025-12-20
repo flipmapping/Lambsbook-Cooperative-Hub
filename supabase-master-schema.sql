@@ -831,10 +831,18 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- ============================================================
--- MIGRATION NOTE: Sync existing data
+-- ONBOARDING PLAN (Fresh Start)
 -- ============================================================
--- After running this schema, you may want to:
--- 1. Migrate existing collaborators to members table
--- 2. Link existing partners to member_partner_links
--- 3. Map existing programs to SBUs
+-- 
+-- PHASE 1: Fresh Member Onboarding
+-- - Send email invitations to all members to join the new system
+-- - Members register via magic link → creates record in `members` table
+-- - Existing data NOT migrated - clean slate approach
+--
+-- PHASE 2: Legacy Lambsbook.net Integration (Later)
+-- - Enable Supabase members to access legacy website
+-- - Link auth via member email matching
+-- - Read-only access to historical data on lambsbook.net
+--
+-- NO DATA MIGRATION REQUIRED - onboarding via fresh email invites
 -- ============================================================
