@@ -779,7 +779,7 @@ export async function registerRoutes(
   const hubAuthSchema = z.object({
     email: z.string().email(),
     fullName: z.string().min(1).max(255).optional(),
-    referralCode: z.string().max(50).optional(),
+    referralCode: z.string().email().optional(), // Referrer's email address
   });
 
   app.post("/api/hub/auth/signup", async (req: Request, res: Response) => {

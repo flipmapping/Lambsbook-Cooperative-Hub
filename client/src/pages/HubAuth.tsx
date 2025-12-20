@@ -139,16 +139,17 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
               {mode === "signup" && (
                 <div className="space-y-2">
-                  <Label htmlFor="referralCode">Referral Code (Optional)</Label>
+                  <Label htmlFor="referralCode">Referrer Email (Optional)</Label>
                   <Input
                     id="referralCode"
-                    placeholder="Enter referral code"
+                    type="email"
+                    placeholder="referrer@example.com"
                     value={referralCode}
                     onChange={(e) => setReferralCode(e.target.value)}
-                    data-testid="input-referral-code"
+                    data-testid="input-referrer-email"
                   />
                   <p className="text-xs text-muted-foreground">
-                    Have a friend in the Hub? Enter their code to connect.
+                    Know someone in the Hub? Enter their email to connect as their referral.
                   </p>
                 </div>
               )}
