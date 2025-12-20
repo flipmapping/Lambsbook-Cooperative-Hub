@@ -209,25 +209,28 @@ END $$;
 -- Commission rule sets (one set per program or program group)
 CREATE TABLE IF NOT EXISTS commission_rule_sets (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    
-    -- What this rule set applies to (program-specific)
     set_name TEXT NOT NULL,
-    program_id TEXT REFERENCES programs(program_id), -- Required: each set belongs to a program
-    
-    -- If program has sub-programs, apply to all children?
+    program_id TEXT REFERENCES programs(program_id),
     apply_to_subprograms BOOLEAN DEFAULT TRUE,
-    
-    -- Who gets the remainder after all deductions
-    -- 'tutor' for SBU2 tutoring programs, 'platform' for everything else
-    remainder_recipient TEXT DEFAULT 'platform' CHECK (remainder_recipient IN ('tutor', 'platform', 'partner')),
-    
+    remainder_recipient TEXT DEFAULT 'platform',
     is_active BOOLEAN DEFAULT TRUE,
     notes TEXT,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Individual commission rules within a rule set
+-- Individual commission rules - NEW TABLE (different from old commission_rules)
+-- Drop old table if it exists and doesn't have rule_set_id (incompatible schema)
+DO $$
+BEGIN
+    -- Check if old commission_rules exists without rule_set_id
+    IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'commission_rules') 
+       AND NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'commission_rules' AND column_name = 'rule_set_id') THEN
+        -- Rename old table to preserve data
+        ALTER TABLE commission_rules RENAME TO commission_rules_legacy;
+    END IF;
+END $$;
+
 CREATE TABLE IF NOT EXISTS commission_rules (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     
@@ -238,25 +241,17 @@ CREATE TABLE IF NOT EXISTS commission_rules (
     rule_name TEXT NOT NULL,
     
     -- Who receives this commission
-    recipient_role TEXT NOT NULL CHECK (recipient_role IN (
-        'collaborator_tier1',  -- First-level referrer (15% default)
-        'collaborator_tier2',  -- Second-level referrer (15% default)
-        'partner',             -- Partner who brought the program (10% default)
-        'charity',             -- Church planting/charity reserve (10% default)
-        'tutor',               -- For SBU2 tutoring programs only
-        'platform'             -- Platform/admin net revenue
-    )),
+    recipient_role TEXT NOT NULL,
     
     -- Commission calculation
-    commission_type TEXT NOT NULL CHECK (commission_type IN ('percentage', 'fixed')),
-    commission_value DECIMAL(10,4) NOT NULL, -- e.g., 15.00 for 15%, or 100 for $100 fixed
+    commission_type TEXT NOT NULL,
+    commission_value DECIMAL(10,4) NOT NULL,
     commission_currency TEXT DEFAULT 'USD',
     
     -- Calculation base
-    calculation_base TEXT DEFAULT 'gross' CHECK (calculation_base IN ('gross', 'net', 'after_deductions')),
+    calculation_base TEXT DEFAULT 'gross',
     
-    -- Priority for stacking rules (lower = calculated first)
-    -- Charity first, then collaborators, then partner, then remainder
+    -- Priority for stacking rules
     priority INTEGER DEFAULT 100,
     
     -- Conditions for tiered commissions
@@ -269,6 +264,15 @@ CREATE TABLE IF NOT EXISTS commission_rules (
     notes TEXT,
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- Add rule_set_id to commission_rules if table exists but column doesn't
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'commission_rules') 
+       AND NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'commission_rules' AND column_name = 'rule_set_id') THEN
+        ALTER TABLE commission_rules ADD COLUMN rule_set_id UUID REFERENCES commission_rule_sets(id) ON DELETE CASCADE;
+    END IF;
+END $$;
 
 -- ============================================================
 -- PART 5B: MULTI-PARTNER PRODUCT ARRANGEMENTS
