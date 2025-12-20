@@ -129,19 +129,34 @@ CREATE TABLE IF NOT EXISTS member_partner_links (
 -- PART 4: PROGRAMS/PRODUCTS/SERVICES (linked to SBUs)
 -- ============================================================
 
--- Extend existing programs table or create if not exists
+-- Programs with parent-child hierarchy support
 CREATE TABLE IF NOT EXISTS programs (
     program_id TEXT PRIMARY KEY,
+    
+    -- Parent program (for sub-programs)
+    parent_program_id TEXT REFERENCES programs(program_id),
+    
+    -- SBU linkage
     sbu_id UUID REFERENCES sbus(id),
-    program_type TEXT CHECK (program_type IN ('course', 'workshop', 'service', 'product', 'package', 'consultation')),
+    
+    -- Program details
+    program_type TEXT CHECK (program_type IN ('course', 'workshop', 'service', 'product', 'package', 'consultation', 'tutoring')),
     name TEXT NOT NULL,
     name_translations JSONB, -- {"vi": "...", "zh": "...", etc.}
     description TEXT,
     description_translations JSONB,
+    
+    -- Pricing
     base_price DECIMAL(12,2),
     price_currency TEXT DEFAULT 'USD',
+    
+    -- Duration (for courses/services)
     duration_value INTEGER,
     duration_unit TEXT CHECK (duration_unit IN ('hours', 'days', 'weeks', 'months', 'years')),
+    
+    -- Remainder recipient: 'tutor' for SBU2 tutoring, 'platform' for everything else
+    remainder_recipient TEXT DEFAULT 'platform' CHECK (remainder_recipient IN ('tutor', 'platform', 'partner')),
+    
     is_active BOOLEAN DEFAULT TRUE,
     metadata JSONB,
     created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -149,34 +164,63 @@ CREATE TABLE IF NOT EXISTS programs (
 );
 
 -- ============================================================
--- PART 5: UNIFIED COMMISSION RULES
+-- PART 5: PROGRAM-SPECIFIC COMMISSION RULES
 -- ============================================================
 
--- Master commission rules table (replaces fragmented tables)
+-- Commission rule sets (one set per program or program group)
+CREATE TABLE IF NOT EXISTS commission_rule_sets (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    
+    -- What this rule set applies to (program-specific)
+    set_name TEXT NOT NULL,
+    program_id TEXT REFERENCES programs(program_id), -- Required: each set belongs to a program
+    
+    -- If program has sub-programs, apply to all children?
+    apply_to_subprograms BOOLEAN DEFAULT TRUE,
+    
+    -- Who gets the remainder after all deductions
+    -- 'tutor' for SBU2 tutoring programs, 'platform' for everything else
+    remainder_recipient TEXT DEFAULT 'platform' CHECK (remainder_recipient IN ('tutor', 'platform', 'partner')),
+    
+    is_active BOOLEAN DEFAULT TRUE,
+    notes TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Individual commission rules within a rule set
 CREATE TABLE IF NOT EXISTS commission_rules (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     
-    -- What this rule applies to
+    -- Which rule set this belongs to
+    rule_set_id UUID NOT NULL REFERENCES commission_rule_sets(id) ON DELETE CASCADE,
+    
+    -- Rule details
     rule_name TEXT NOT NULL,
-    program_id TEXT REFERENCES programs(program_id),
-    sbu_id UUID REFERENCES sbus(id),
-    partner_id UUID REFERENCES partners(id),
     
     -- Who receives this commission
-    recipient_role TEXT NOT NULL CHECK (recipient_role IN ('collaborator_tier1', 'collaborator_tier2', 'partner', 'tutor', 'charity', 'platform')),
+    recipient_role TEXT NOT NULL CHECK (recipient_role IN (
+        'collaborator_tier1',  -- First-level referrer (15% default)
+        'collaborator_tier2',  -- Second-level referrer (15% default)
+        'partner',             -- Partner who brought the program (10% default)
+        'charity',             -- Church planting/charity reserve (10% default)
+        'tutor',               -- For SBU2 tutoring programs only
+        'platform'             -- Platform/admin net revenue
+    )),
     
     -- Commission calculation
-    commission_type TEXT NOT NULL CHECK (commission_type IN ('percentage', 'fixed', 'remainder')),
+    commission_type TEXT NOT NULL CHECK (commission_type IN ('percentage', 'fixed')),
     commission_value DECIMAL(10,4) NOT NULL, -- e.g., 15.00 for 15%, or 100 for $100 fixed
     commission_currency TEXT DEFAULT 'USD',
     
     -- Calculation base
-    calculation_base TEXT DEFAULT 'gross' CHECK (calculation_base IN ('gross', 'net', 'profit', 'remainder')),
+    calculation_base TEXT DEFAULT 'gross' CHECK (calculation_base IN ('gross', 'net', 'after_deductions')),
     
     -- Priority for stacking rules (lower = calculated first)
+    -- Charity first, then collaborators, then partner, then remainder
     priority INTEGER DEFAULT 100,
     
-    -- Conditions
+    -- Conditions for tiered commissions
     min_volume INTEGER,
     max_volume INTEGER,
     valid_from DATE,
@@ -187,15 +231,32 @@ CREATE TABLE IF NOT EXISTS commission_rules (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Insert default commission rules based on Grok document
--- Online classes: 100% tutor - 10% charity - 15% tier1 - 15% tier2 - 10% partner
-INSERT INTO commission_rules (rule_name, recipient_role, commission_type, commission_value, priority, notes) VALUES
-    ('Default Charity Reserve', 'charity', 'percentage', 10.00, 10, 'Reserved for church planting or charity'),
-    ('Default Collaborator Tier 1', 'collaborator_tier1', 'percentage', 15.00, 20, 'First-level referrer commission'),
-    ('Default Collaborator Tier 2', 'collaborator_tier2', 'percentage', 15.00, 30, 'Second-level referrer commission'),
-    ('Default Partner Fee', 'partner', 'percentage', 10.00, 40, 'Partner (school) fee on referred students'),
-    ('Tutor Remainder', 'tutor', 'remainder', 100.00, 100, 'Tutor receives remainder after deductions')
-ON CONFLICT DO NOTHING;
+-- ============================================================
+-- EXAMPLE: How to set up commission rules for different programs
+-- ============================================================
+-- 
+-- EXAMPLE 1: SBU2 Online Tutoring Class (remainder → tutor)
+-- INSERT INTO commission_rule_sets (set_name, program_id, remainder_recipient) 
+-- VALUES ('Online English Class Rules', 'LAMBSBOOK-ENGLISH-101', 'tutor');
+-- 
+-- Then add rules:
+-- INSERT INTO commission_rules (rule_set_id, rule_name, recipient_role, commission_type, commission_value, priority) VALUES
+--   (rule_set_id, 'Charity Reserve', 'charity', 'percentage', 10.00, 10),
+--   (rule_set_id, 'Collaborator Tier 1', 'collaborator_tier1', 'percentage', 15.00, 20),
+--   (rule_set_id, 'Collaborator Tier 2', 'collaborator_tier2', 'percentage', 15.00, 30),
+--   (rule_set_id, 'Partner Fee', 'partner', 'percentage', 10.00, 40);
+-- Remainder (50%) automatically goes to tutor based on remainder_recipient
+--
+-- EXAMPLE 2: SBU4 Gac Product (remainder → platform)
+-- INSERT INTO commission_rule_sets (set_name, program_id, remainder_recipient) 
+-- VALUES ('Gac Puree Sales Rules', 'GAC-PUREE-500ML', 'platform');
+-- 
+-- Then add rules:
+-- INSERT INTO commission_rules (rule_set_id, rule_name, recipient_role, commission_type, commission_value, priority) VALUES
+--   (rule_set_id, 'Collaborator Tier 1', 'collaborator_tier1', 'percentage', 15.00, 10),
+--   (rule_set_id, 'Collaborator Tier 2', 'collaborator_tier2', 'percentage', 15.00, 20);
+-- Remainder (70%) goes to platform as net revenue
+-- ============================================================
 
 -- ============================================================
 -- PART 6: TRANSACTIONS (unified for all payment types)
@@ -355,7 +416,8 @@ CREATE INDEX IF NOT EXISTS idx_members_status ON members(status);
 CREATE INDEX IF NOT EXISTS idx_programs_sbu ON programs(sbu_id);
 CREATE INDEX IF NOT EXISTS idx_programs_type ON programs(program_type);
 
-CREATE INDEX IF NOT EXISTS idx_commission_rules_program ON commission_rules(program_id);
+CREATE INDEX IF NOT EXISTS idx_commission_rule_sets_program ON commission_rule_sets(program_id);
+CREATE INDEX IF NOT EXISTS idx_commission_rules_set ON commission_rules(rule_set_id);
 CREATE INDEX IF NOT EXISTS idx_commission_rules_role ON commission_rules(recipient_role);
 
 CREATE INDEX IF NOT EXISTS idx_transactions_program ON transactions(program_id);
@@ -385,6 +447,7 @@ ALTER TABLE members ENABLE ROW LEVEL SECURITY;
 ALTER TABLE member_tutor_profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE member_partner_links ENABLE ROW LEVEL SECURITY;
 ALTER TABLE programs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE commission_rule_sets ENABLE ROW LEVEL SECURITY;
 ALTER TABLE commission_rules ENABLE ROW LEVEL SECURITY;
 ALTER TABLE transactions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE earnings ENABLE ROW LEVEL SECURITY;
@@ -395,6 +458,7 @@ ALTER TABLE audit_log ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Admins full access to sbus" ON sbus FOR ALL USING (true);
 CREATE POLICY "Admins full access to members" ON members FOR ALL USING (true);
 CREATE POLICY "Admins full access to programs" ON programs FOR ALL USING (true);
+CREATE POLICY "Admins full access to commission_rule_sets" ON commission_rule_sets FOR ALL USING (true);
 CREATE POLICY "Admins full access to commission_rules" ON commission_rules FOR ALL USING (true);
 CREATE POLICY "Admins full access to transactions" ON transactions FOR ALL USING (true);
 CREATE POLICY "Admins full access to earnings" ON earnings FOR ALL USING (true);
@@ -478,7 +542,9 @@ RETURNS TABLE (
 ) AS $$
 DECLARE
     v_transaction RECORD;
+    v_rule_set RECORD;
     v_rule RECORD;
+    v_program RECORD;
     v_remaining DECIMAL(12,2);
     v_amount DECIMAL(12,2);
 BEGIN
@@ -489,21 +555,39 @@ BEGIN
         RETURN;
     END IF;
     
+    -- Get program details
+    SELECT * INTO v_program FROM programs WHERE program_id = v_transaction.program_id;
+    
+    -- Find applicable rule set (check program or parent program)
+    SELECT crs.* INTO v_rule_set 
+    FROM commission_rule_sets crs
+    WHERE crs.is_active = TRUE
+    AND (
+        crs.program_id = v_transaction.program_id
+        OR (crs.apply_to_subprograms = TRUE AND crs.program_id = v_program.parent_program_id)
+    )
+    ORDER BY 
+        CASE WHEN crs.program_id = v_transaction.program_id THEN 0 ELSE 1 END
+    LIMIT 1;
+    
+    IF NOT FOUND THEN
+        -- No rule set found, no commissions to calculate
+        RETURN;
+    END IF;
+    
     v_remaining := v_transaction.gross_amount;
     
     -- Apply rules in priority order
     FOR v_rule IN 
         SELECT * FROM commission_rules 
-        WHERE is_active = TRUE
-        AND (program_id IS NULL OR program_id = v_transaction.program_id)
+        WHERE rule_set_id = v_rule_set.id
+        AND is_active = TRUE
         ORDER BY priority ASC
     LOOP
         IF v_rule.commission_type = 'percentage' THEN
             v_amount := v_transaction.gross_amount * (v_rule.commission_value / 100);
         ELSIF v_rule.commission_type = 'fixed' THEN
             v_amount := v_rule.commission_value;
-        ELSIF v_rule.commission_type = 'remainder' THEN
-            v_amount := v_remaining;
         END IF;
         
         v_remaining := v_remaining - v_amount;
@@ -521,14 +605,45 @@ BEGIN
             amount := v_amount;
             rule_id := v_rule.id;
             RETURN NEXT;
-        ELSIF v_rule.recipient_role = 'tutor' AND v_transaction.provider_member_id IS NOT NULL THEN
-            member_id := v_transaction.provider_member_id;
-            earning_type := 'tutor_fee';
+        ELSIF v_rule.recipient_role = 'charity' THEN
+            -- Charity is tracked but not paid to a member
+            earning_type := 'charity_reserve';
             amount := v_amount;
             rule_id := v_rule.id;
-            RETURN NEXT;
+            -- Don't return this as member earning, tracked separately
+        ELSIF v_rule.recipient_role = 'partner' AND v_transaction.partner_id IS NOT NULL THEN
+            -- Find member linked to this partner
+            SELECT mpl.member_id INTO member_id 
+            FROM member_partner_links mpl 
+            WHERE mpl.partner_id = v_transaction.partner_id 
+            AND mpl.is_primary_contact = TRUE
+            LIMIT 1;
+            
+            IF member_id IS NOT NULL THEN
+                earning_type := 'partner_share';
+                amount := v_amount;
+                rule_id := v_rule.id;
+                RETURN NEXT;
+            END IF;
         END IF;
     END LOOP;
+    
+    -- Handle remainder based on rule_set.remainder_recipient
+    IF v_remaining > 0 THEN
+        IF v_rule_set.remainder_recipient = 'tutor' AND v_transaction.provider_member_id IS NOT NULL THEN
+            member_id := v_transaction.provider_member_id;
+            earning_type := 'tutor_fee';
+            amount := v_remaining;
+            rule_id := NULL;
+            RETURN NEXT;
+        ELSIF v_rule_set.remainder_recipient = 'platform' THEN
+            -- Platform remainder tracked as platform revenue (no member payout)
+            earning_type := 'platform_revenue';
+            amount := v_remaining;
+            rule_id := NULL;
+            -- Platform earnings tracked separately, not returned here
+        END IF;
+    END IF;
     
     RETURN;
 END;
