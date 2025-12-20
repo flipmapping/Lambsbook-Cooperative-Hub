@@ -22,6 +22,9 @@ import { AIChatWidget } from '@/components/AIChatWidget';
 import Dashboard from '@/pages/Dashboard';
 import AuthCallback from '@/pages/AuthCallback';
 import Login from '@/pages/Login';
+import HubLanding from '@/pages/HubLanding';
+import HubAuth from '@/pages/HubAuth';
+import MemberDashboard from '@/pages/MemberDashboard';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -101,6 +104,11 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
       <Route path="/auth/callback" component={AuthCallback} />
+      {/* Lambsbook Hub Routes */}
+      <Route path="/hub" component={HubLanding} />
+      <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
+      <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
+      <Route path="/hub/dashboard" component={MemberDashboard} />
     </Switch>
   );
 }

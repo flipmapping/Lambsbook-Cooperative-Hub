@@ -772,5 +772,100 @@ export async function registerRoutes(
     }
   });
 
+  // ========================================
+  // Hub Authentication Routes
+  // ========================================
+
+  const hubAuthSchema = z.object({
+    email: z.string().email(),
+    fullName: z.string().min(1).max(255).optional(),
+    referralCode: z.string().max(50).optional(),
+  });
+
+  app.post("/api/hub/auth/signup", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubAuthSchema.parse(req.body);
+      const result = await hubService.signUpMember(validatedData);
+      res.status(201).json(result);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Hub signup error:', error);
+      res.status(500).json({ error: "Failed to send magic link" });
+    }
+  });
+
+  app.post("/api/hub/auth/login", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubAuthSchema.parse(req.body);
+      const result = await hubService.loginMember(validatedData.email);
+      res.json(result);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error('Hub login error:', error);
+      res.status(500).json({ error: "Failed to send magic link" });
+    }
+  });
+
+  app.post("/api/hub/auth/logout", async (req: Request, res: Response) => {
+    try {
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to logout" });
+    }
+  });
+
+  // Member self-service endpoints
+  app.get("/api/hub/member/me", async (req: Request, res: Response) => {
+    try {
+      // For now, return demo data - in production this would check session
+      res.json({
+        id: "demo",
+        email: "demo@example.com",
+        full_name: "Demo User",
+        referral_code: "DEMO123",
+        roles: ["user", "collaborator"],
+        total_earnings: 1250.00,
+        pending_earnings: 350.00,
+        referral_count: 8,
+        programs_enrolled: 3,
+      });
+    } catch (error) {
+      console.error('Get member error:', error);
+      res.status(500).json({ error: "Failed to get member data" });
+    }
+  });
+
+  app.get("/api/hub/member/earnings", async (req: Request, res: Response) => {
+    try {
+      // Demo earnings data
+      res.json([
+        { id: "1", amount: 150, currency: "USD", program_name: "Tropicana English", type: "tier1_referral", status: "paid", created_at: "2025-12-15" },
+        { id: "2", amount: 75, currency: "USD", program_name: "CTBC Course", type: "tier2_referral", status: "paid", created_at: "2025-12-10" },
+        { id: "3", amount: 200, currency: "USD", program_name: "EB-3 Visa Service", type: "tier1_referral", status: "pending", created_at: "2025-12-18" },
+      ]);
+    } catch (error) {
+      console.error('Get earnings error:', error);
+      res.status(500).json({ error: "Failed to get earnings" });
+    }
+  });
+
+  app.get("/api/hub/member/referrals", async (req: Request, res: Response) => {
+    try {
+      // Demo referrals data
+      res.json([
+        { id: "1", name: "John Smith", email: "j***@example.com", tier: 1, status: "active", joined_at: "2025-11-20" },
+        { id: "2", name: "Maria Garcia", email: "m***@example.com", tier: 1, status: "active", joined_at: "2025-11-25" },
+        { id: "3", name: "David Lee", email: "d***@example.com", tier: 2, status: "active", joined_at: "2025-12-01" },
+      ]);
+    } catch (error) {
+      console.error('Get referrals error:', error);
+      res.status(500).json({ error: "Failed to get referrals" });
+    }
+  });
+
   return httpServer;
 }
