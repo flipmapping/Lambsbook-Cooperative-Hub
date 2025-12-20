@@ -10,6 +10,7 @@ const sbus = [
     icon: Coffee,
     description: "Lady Jane's community gathering space",
     color: "bg-amber-500/10 text-amber-600",
+    href: "#",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const sbus = [
     icon: GraduationCap,
     description: "Tropicana, CTBC, Lambsbook.net tutoring",
     color: "bg-blue-500/10 text-blue-600",
+    href: "/hub/sbu/education",
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const sbus = [
     icon: Building2,
     description: "Glory International partnership - EB-3 visas",
     color: "bg-purple-500/10 text-purple-600",
+    href: "/",
   },
   {
     id: 4,
@@ -31,6 +34,7 @@ const sbus = [
     icon: Sprout,
     description: "Gac Puree, Rocket Stoves by Carl",
     color: "bg-green-500/10 text-green-600",
+    href: "#",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const sbus = [
     icon: Home,
     description: "Future community living experience",
     color: "bg-teal-500/10 text-teal-600",
+    href: "#",
   },
 ];
 
@@ -142,15 +147,17 @@ export default function HubLanding() {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sbus.map((sbu) => (
-              <Card key={sbu.id} className="hover-elevate cursor-pointer" data-testid={`card-sbu-${sbu.id}`}>
-                <CardHeader>
-                  <div className={`h-10 w-10 rounded-md ${sbu.color} flex items-center justify-center mb-2`}>
-                    <sbu.icon className="h-5 w-5" />
-                  </div>
-                  <CardTitle className="text-lg">{sbu.name}</CardTitle>
-                  <CardDescription>{sbu.description}</CardDescription>
-                </CardHeader>
-              </Card>
+              <Link key={sbu.id} href={sbu.href}>
+                <Card className="hover-elevate cursor-pointer h-full" data-testid={`card-sbu-${sbu.id}`}>
+                  <CardHeader>
+                    <div className={`h-10 w-10 rounded-md ${sbu.color} flex items-center justify-center mb-2`}>
+                      <sbu.icon className="h-5 w-5" />
+                    </div>
+                    <CardTitle className="text-lg">{sbu.name}</CardTitle>
+                    <CardDescription>{sbu.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
