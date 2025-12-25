@@ -795,7 +795,13 @@ export async function registerRoutes(
       res.status(201).json(result);
     } catch (error) {
       if (error instanceof z.ZodError) {
+        console.error('Hub signup validation error:', error.errors);
         return res.status(400).json({ error: error.errors });
+      }
+      // Handle HubAuthError with proper status code
+      if (error && typeof error === 'object' && 'name' in error && error.name === 'HubAuthError') {
+        const hubError = error as unknown as { message: string; statusCode: number };
+        return res.status(hubError.statusCode).json({ error: hubError.message });
       }
       console.error('Hub signup error:', error);
       res.status(500).json({ error: "Failed to send magic link" });
@@ -847,7 +853,13 @@ export async function registerRoutes(
       res.json(result);
     } catch (error) {
       if (error instanceof z.ZodError) {
+        console.error('Hub login validation error:', error.errors);
         return res.status(400).json({ error: error.errors });
+      }
+      // Handle HubAuthError with proper status code
+      if (error && typeof error === 'object' && 'name' in error && error.name === 'HubAuthError') {
+        const hubError = error as unknown as { message: string; statusCode: number };
+        return res.status(hubError.statusCode).json({ error: hubError.message });
       }
       console.error('Hub login error:', error);
       res.status(500).json({ error: "Failed to send magic link" });

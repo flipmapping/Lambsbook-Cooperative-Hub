@@ -1,11 +1,22 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, AuthApiError } from '@supabase/supabase-js';
 import { z } from 'zod';
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 
+// Auth mode: 'supabase' for real email, 'mock' for development/testing
+// Auto-detect: use mock if SUPABASE credentials are missing or HUB_AUTH_MODE=mock
+const HUB_AUTH_MODE = process.env.HUB_AUTH_MODE || 'supabase';
+const useMockAuth = HUB_AUTH_MODE === 'mock' || !supabaseUrl || !supabaseKey;
+
 if (!supabaseUrl || !supabaseKey) {
-  console.warn('Supabase credentials not configured for Hub features');
+  console.warn('Supabase credentials not configured for Hub features - using mock auth mode');
+}
+
+if (useMockAuth) {
+  console.log('[Hub Auth] Running in MOCK mode - magic links will be simulated');
+} else {
+  console.log('[Hub Auth] Running in Supabase mode - real magic links will be sent');
 }
 
 const supabase = supabaseUrl && supabaseKey 
@@ -202,41 +213,93 @@ interface SignUpData {
   referrerEmail?: string;
 }
 
+// Custom error class for auth failures with actionable messages
+export class HubAuthError extends Error {
+  statusCode: number;
+  originalError?: unknown;
+  
+  constructor(message: string, statusCode: number = 500, originalError?: unknown) {
+    super(message);
+    this.name = 'HubAuthError';
+    this.statusCode = statusCode;
+    this.originalError = originalError;
+  }
+}
+
 export async function signUpMember(data: SignUpData) {
-  if (!supabase) {
-    // Return success even without Supabase for demo purposes
-    console.log('Supabase not configured - simulating magic link sent to:', data.email);
+  // Mock mode - simulate magic link for development/testing
+  if (useMockAuth) {
+    console.log('[Hub Auth MOCK] Magic link would be sent to:', data.email);
+    console.log('[Hub Auth MOCK] Full name:', data.fullName);
+    console.log('[Hub Auth MOCK] Referrer email:', data.referrerEmail || 'none');
+    
     return { 
       success: true, 
-      message: 'Magic link sent to ' + data.email,
-      referrerEmail: data.referrerEmail || null
+      message: `Magic link sent to ${data.email} (mock mode)`,
+      referrerEmail: data.referrerEmail || null,
+      referrerValid: !!data.referrerEmail, // Assume valid in mock mode
+      mockMode: true
     };
+  }
+
+  if (!supabase) {
+    throw new HubAuthError('Supabase not configured. Set HUB_AUTH_MODE=mock for development.', 503);
   }
 
   // Validate referrer email exists if provided (but don't block signup)
   let referrerValid = false;
   if (data.referrerEmail) {
-    const { data: referrer } = await supabase
-      .from('members')
-      .select('id, email')
-      .eq('email', data.referrerEmail)
-      .single();
-    referrerValid = !!referrer;
+    try {
+      const { data: referrer } = await supabase
+        .from('members')
+        .select('id, email')
+        .eq('email', data.referrerEmail)
+        .single();
+      referrerValid = !!referrer;
+    } catch (e) {
+      console.warn('[Hub Auth] Referrer validation failed, continuing anyway:', e);
+    }
   }
 
-  // Send magic link via Supabase Auth - ONLY email and redirect options
-  // Do NOT include referrerEmail in auth metadata to avoid validation issues
-  const { error } = await supabase.auth.signInWithOtp({
-    email: data.email,
-    options: {
-      emailRedirectTo: `${process.env.SITE_URL || 'http://localhost:5000'}/hub/auth/callback?referrer=${encodeURIComponent(data.referrerEmail || '')}`,
-      data: {
-        full_name: data.fullName,
+  // Send magic link via Supabase Auth
+  try {
+    const { error } = await supabase.auth.signInWithOtp({
+      email: data.email,
+      options: {
+        emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/auth/callback?referrer=${encodeURIComponent(data.referrerEmail || '')}`,
+        data: {
+          full_name: data.fullName,
+        },
       },
-    },
-  });
+    });
 
-  if (error) throw error;
+    if (error) {
+      console.error('[Hub Auth] Supabase signInWithOtp error:', error);
+      
+      // Provide actionable error messages based on error type
+      if (error instanceof AuthApiError) {
+        if (error.code === 'unexpected_failure' || error.message.includes('sending')) {
+          throw new HubAuthError(
+            'Email service unavailable. Please check Supabase email configuration or set HUB_AUTH_MODE=mock for testing.',
+            503,
+            error
+          );
+        }
+        if (error.code === 'over_email_send_rate_limit') {
+          throw new HubAuthError(
+            'Email rate limit reached. Please wait a few minutes before trying again.',
+            429,
+            error
+          );
+        }
+      }
+      throw new HubAuthError(`Authentication failed: ${error.message}`, 500, error);
+    }
+  } catch (e) {
+    if (e instanceof HubAuthError) throw e;
+    console.error('[Hub Auth] Unexpected error during signup:', e);
+    throw new HubAuthError('Failed to send magic link. Email service may be unavailable.', 503, e);
+  }
   
   return { 
     success: true, 
@@ -310,20 +373,54 @@ export async function getMemberByEmail(email: string) {
 }
 
 export async function loginMember(email: string) {
-  if (!supabase) {
-    // Return success even without Supabase for demo purposes
-    console.log('Supabase not configured - simulating magic link sent to:', email);
-    return { success: true, message: 'Magic link sent to ' + email };
+  // Mock mode - simulate magic link for development/testing
+  if (useMockAuth) {
+    console.log('[Hub Auth MOCK] Login magic link would be sent to:', email);
+    return { 
+      success: true, 
+      message: `Magic link sent to ${email} (mock mode)`,
+      mockMode: true
+    };
   }
 
-  // Send magic link via Supabase Auth
-  const { error } = await supabase.auth.signInWithOtp({
-    email,
-    options: {
-      emailRedirectTo: `${process.env.SITE_URL || 'http://localhost:5000'}/hub/dashboard`,
-    },
-  });
+  if (!supabase) {
+    throw new HubAuthError('Supabase not configured. Set HUB_AUTH_MODE=mock for development.', 503);
+  }
 
-  if (error) throw error;
+  try {
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/dashboard`,
+      },
+    });
+
+    if (error) {
+      console.error('[Hub Auth] Supabase login error:', error);
+      
+      if (error instanceof AuthApiError) {
+        if (error.code === 'unexpected_failure' || error.message.includes('sending')) {
+          throw new HubAuthError(
+            'Email service unavailable. Please check Supabase email configuration.',
+            503,
+            error
+          );
+        }
+        if (error.code === 'over_email_send_rate_limit') {
+          throw new HubAuthError(
+            'Email rate limit reached. Please wait a few minutes.',
+            429,
+            error
+          );
+        }
+      }
+      throw new HubAuthError(`Login failed: ${error.message}`, 500, error);
+    }
+  } catch (e) {
+    if (e instanceof HubAuthError) throw e;
+    console.error('[Hub Auth] Unexpected login error:', e);
+    throw new HubAuthError('Failed to send magic link.', 503, e);
+  }
+
   return { success: true, message: 'Magic link sent to ' + email };
 }
