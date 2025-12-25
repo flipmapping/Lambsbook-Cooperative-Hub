@@ -779,12 +779,18 @@ export async function registerRoutes(
   const hubAuthSchema = z.object({
     email: z.string().email(),
     fullName: z.string().min(1).max(255).optional(),
-    referralCode: z.string().email().optional(), // Referrer's email address
+    referrerEmail: z.string().email().optional().or(z.literal('')), // Referrer's email address (optional)
   });
 
   app.post("/api/hub/auth/signup", async (req: Request, res: Response) => {
     try {
-      const validatedData = hubAuthSchema.parse(req.body);
+      // Clean up empty referrerEmail
+      const body = { ...req.body };
+      if (body.referrerEmail === '') {
+        delete body.referrerEmail;
+      }
+      
+      const validatedData = hubAuthSchema.parse(body);
       const result = await hubService.signUpMember(validatedData);
       res.status(201).json(result);
     } catch (error) {
@@ -793,6 +799,44 @@ export async function registerRoutes(
       }
       console.error('Hub signup error:', error);
       res.status(500).json({ error: "Failed to send magic link" });
+    }
+  });
+  
+  // Link referrer to member after successful authentication
+  app.post("/api/hub/auth/link-referrer", async (req: Request, res: Response) => {
+    try {
+      const { memberEmail, referrerEmail } = req.body;
+      
+      if (!memberEmail || !referrerEmail) {
+        return res.status(400).json({ error: "Both memberEmail and referrerEmail are required" });
+      }
+      
+      const result = await hubService.linkReferrer(memberEmail, referrerEmail);
+      
+      if (!result.success) {
+        return res.status(400).json({ error: result.error });
+      }
+      
+      res.json(result);
+    } catch (error) {
+      console.error('Link referrer error:', error);
+      res.status(500).json({ error: "Failed to link referrer" });
+    }
+  });
+  
+  // Validate referrer email exists
+  app.get("/api/hub/auth/validate-referrer", async (req: Request, res: Response) => {
+    try {
+      const email = req.query.email as string;
+      if (!email) {
+        return res.status(400).json({ error: "Email is required" });
+      }
+      
+      const member = await hubService.getMemberByEmail(email);
+      res.json({ valid: !!member, member: member ? { email: member.email, name: member.full_name } : null });
+    } catch (error) {
+      console.error('Validate referrer error:', error);
+      res.status(500).json({ error: "Failed to validate referrer" });
     }
   });
 
