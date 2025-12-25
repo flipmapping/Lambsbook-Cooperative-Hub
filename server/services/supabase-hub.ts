@@ -199,30 +199,114 @@ export async function getEarnings() {
 interface SignUpData {
   email: string;
   fullName?: string;
-  referralCode?: string;
+  referrerEmail?: string;
 }
 
 export async function signUpMember(data: SignUpData) {
   if (!supabase) {
     // Return success even without Supabase for demo purposes
     console.log('Supabase not configured - simulating magic link sent to:', data.email);
-    return { success: true, message: 'Magic link sent to ' + data.email };
+    return { 
+      success: true, 
+      message: 'Magic link sent to ' + data.email,
+      referrerEmail: data.referrerEmail || null
+    };
   }
 
-  // Send magic link via Supabase Auth
+  // Validate referrer email exists if provided (but don't block signup)
+  let referrerValid = false;
+  if (data.referrerEmail) {
+    const { data: referrer } = await supabase
+      .from('members')
+      .select('id, email')
+      .eq('email', data.referrerEmail)
+      .single();
+    referrerValid = !!referrer;
+  }
+
+  // Send magic link via Supabase Auth - ONLY email and redirect options
+  // Do NOT include referrerEmail in auth metadata to avoid validation issues
   const { error } = await supabase.auth.signInWithOtp({
     email: data.email,
     options: {
-      emailRedirectTo: `${process.env.SITE_URL || 'http://localhost:5000'}/hub/dashboard`,
+      emailRedirectTo: `${process.env.SITE_URL || 'http://localhost:5000'}/hub/auth/callback?referrer=${encodeURIComponent(data.referrerEmail || '')}`,
       data: {
         full_name: data.fullName,
-        referral_code: data.referralCode,
       },
     },
   });
 
   if (error) throw error;
-  return { success: true, message: 'Magic link sent to ' + data.email };
+  
+  return { 
+    success: true, 
+    message: 'Magic link sent to ' + data.email,
+    referrerEmail: data.referrerEmail || null,
+    referrerValid
+  };
+}
+
+// Link referrer to new member after successful authentication
+export async function linkReferrer(memberEmail: string, referrerEmail: string) {
+  if (!supabase) {
+    console.log('Supabase not configured - simulating referrer link');
+    return { success: true, message: 'Referrer linked (simulated)' };
+  }
+
+  // Find the referrer by email
+  const { data: referrer, error: referrerError } = await supabase
+    .from('members')
+    .select('id, email, full_name')
+    .eq('email', referrerEmail)
+    .single();
+
+  if (referrerError || !referrer) {
+    return { success: false, error: 'Referrer not found with that email address' };
+  }
+
+  // Find the new member
+  const { data: member, error: memberError } = await supabase
+    .from('members')
+    .select('id, inviter_id')
+    .eq('email', memberEmail)
+    .single();
+
+  if (memberError || !member) {
+    return { success: false, error: 'Member not found' };
+  }
+
+  // Check if already linked
+  if (member.inviter_id) {
+    return { success: false, error: 'Already linked to a referrer' };
+  }
+
+  // Update member with inviter_id
+  const { error: updateError } = await supabase
+    .from('members')
+    .update({ inviter_id: referrer.id, updated_at: new Date().toISOString() })
+    .eq('id', member.id);
+
+  if (updateError) throw updateError;
+
+  return { 
+    success: true, 
+    message: `Successfully linked to referrer: ${referrer.full_name || referrer.email}`,
+    referrer: { id: referrer.id, email: referrer.email, name: referrer.full_name }
+  };
+}
+
+// Get member by email (for validating referrer)
+export async function getMemberByEmail(email: string) {
+  if (!supabase) return null;
+  
+  const { data, error } = await supabase
+    .from('members')
+    .select('id, email, full_name')
+    .eq('email', email)
+    .single();
+    
+  if (error) return null;
+  return data;
 }
 
 export async function loginMember(email: string) {

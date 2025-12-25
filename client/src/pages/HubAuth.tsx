@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useSearch } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { ArrowLeft, Mail, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowLeft, Mail, CheckCircle2, Loader2, UserCheck, AlertCircle } from "lucide-react";
 
 interface HubAuthProps {
   mode: "login" | "signup";
@@ -15,14 +15,54 @@ interface HubAuthProps {
 
 export default function HubAuth({ mode }: HubAuthProps) {
   const [, setLocation] = useLocation();
+  const search = useSearch();
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
-  const [referralCode, setReferralCode] = useState("");
+  const [referrerEmail, setReferrerEmail] = useState("");
+  const [referrerValidation, setReferrerValidation] = useState<{
+    checking: boolean;
+    valid: boolean | null;
+    name?: string;
+  }>({ checking: false, valid: null });
   const [emailSent, setEmailSent] = useState(false);
 
+  // Pre-fill referrer email from URL param (e.g., /hub/signup?ref=email@example.com)
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const ref = params.get('ref');
+    if (ref && mode === 'signup') {
+      setReferrerEmail(ref);
+    }
+  }, [search, mode]);
+
+  // Validate referrer email when it changes (debounced)
+  useEffect(() => {
+    if (!referrerEmail || referrerEmail.length < 5 || !referrerEmail.includes('@')) {
+      setReferrerValidation({ checking: false, valid: null });
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      setReferrerValidation({ checking: true, valid: null });
+      try {
+        const response = await fetch(`/api/hub/auth/validate-referrer?email=${encodeURIComponent(referrerEmail)}`);
+        const data = await response.json();
+        setReferrerValidation({ 
+          checking: false, 
+          valid: data.valid, 
+          name: data.member?.name 
+        });
+      } catch {
+        setReferrerValidation({ checking: false, valid: null });
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [referrerEmail]);
+
   const authMutation = useMutation({
-    mutationFn: async (data: { email: string; fullName?: string; referralCode?: string }) => {
+    mutationFn: async (data: { email: string; fullName?: string; referrerEmail?: string }) => {
       return apiRequest("POST", `/api/hub/auth/${mode}`, data);
     },
     onSuccess: () => {
@@ -47,10 +87,21 @@ export default function HubAuth({ mode }: HubAuthProps) {
       });
       return;
     }
+    
+    // Validate referrer email format if provided
+    if (referrerEmail && (!referrerEmail.includes('@') || referrerEmail.length < 5)) {
+      toast({
+        title: "Invalid referrer email",
+        description: "Please enter a valid email address for the referrer",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     authMutation.mutate({ 
       email, 
       fullName: mode === "signup" ? fullName : undefined,
-      referralCode: mode === "signup" ? referralCode : undefined,
+      referrerEmail: mode === "signup" && referrerEmail ? referrerEmail : undefined,
     });
   };
 
@@ -139,18 +190,44 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
               {mode === "signup" && (
                 <div className="space-y-2">
-                  <Label htmlFor="referralCode">Referrer Email (Optional)</Label>
-                  <Input
-                    id="referralCode"
-                    type="email"
-                    placeholder="referrer@example.com"
-                    value={referralCode}
-                    onChange={(e) => setReferralCode(e.target.value)}
-                    data-testid="input-referrer-email"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    Know someone in the Hub? Enter their email to connect as their referral.
-                  </p>
+                  <Label htmlFor="referrerEmail">Referrer Email (Optional)</Label>
+                  <div className="relative">
+                    <Input
+                      id="referrerEmail"
+                      type="email"
+                      placeholder="referrer@example.com"
+                      value={referrerEmail}
+                      onChange={(e) => setReferrerEmail(e.target.value)}
+                      className={referrerValidation.valid === false ? "border-amber-500" : referrerValidation.valid === true ? "border-green-500 pr-10" : ""}
+                      data-testid="input-referrer-email"
+                    />
+                    {referrerValidation.checking && (
+                      <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 animate-spin text-muted-foreground" />
+                    )}
+                    {referrerValidation.valid === true && !referrerValidation.checking && (
+                      <UserCheck className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-600" />
+                    )}
+                    {referrerValidation.valid === false && !referrerValidation.checking && (
+                      <AlertCircle className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-amber-500" />
+                    )}
+                  </div>
+                  {referrerValidation.valid === true && referrerValidation.name && (
+                    <p className="text-xs text-green-600 flex items-center gap-1">
+                      <CheckCircle2 className="h-3 w-3" />
+                      You'll be connected to: {referrerValidation.name}
+                    </p>
+                  )}
+                  {referrerValidation.valid === false && (
+                    <p className="text-xs text-amber-600 flex items-center gap-1">
+                      <AlertCircle className="h-3 w-3" />
+                      No member found with this email. You can still sign up and add a referrer later.
+                    </p>
+                  )}
+                  {referrerValidation.valid === null && !referrerValidation.checking && (
+                    <p className="text-xs text-muted-foreground">
+                      Know someone in the Hub? Enter their email to connect as their referral.
+                    </p>
+                  )}
                 </div>
               )}
 
