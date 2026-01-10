@@ -210,8 +210,23 @@ export async function getEarnings() {
 interface SignUpData {
   email: string;
   fullName?: string;
+  username?: string;
+  phone?: string;
   referrerEmail?: string;
 }
+
+// Validation schemas for signup
+const USERNAME_REGEX = /^[a-zA-Z0-9_-]{3,50}$/;
+const PHONE_REGEX = /^\+?[0-9]{7,15}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export const signUpValidationSchema = z.object({
+  email: z.string().regex(EMAIL_REGEX, 'Invalid email format'),
+  fullName: z.string().min(1, 'Full name is required').max(255).optional(),
+  username: z.string().regex(USERNAME_REGEX, 'Username must be 3-50 characters, alphanumeric with underscores/hyphens').optional(),
+  phone: z.string().regex(PHONE_REGEX, 'Phone must be 7-15 digits with optional + prefix').optional(),
+  referrerEmail: z.string().email().optional(),
+});
 
 // Custom error class for auth failures with actionable messages
 export class HubAuthError extends Error {
@@ -227,17 +242,26 @@ export class HubAuthError extends Error {
 }
 
 export async function signUpMember(data: SignUpData) {
+  // Server-side validation
+  const validation = signUpValidationSchema.safeParse(data);
+  if (!validation.success) {
+    const errorMsg = validation.error.errors.map(e => e.message).join(', ');
+    throw new HubAuthError(errorMsg, 400);
+  }
+
   // Mock mode - simulate magic link for development/testing
   if (useMockAuth) {
     console.log('[Hub Auth MOCK] Magic link would be sent to:', data.email);
     console.log('[Hub Auth MOCK] Full name:', data.fullName);
+    console.log('[Hub Auth MOCK] Username:', data.username);
+    console.log('[Hub Auth MOCK] Phone:', data.phone);
     console.log('[Hub Auth MOCK] Referrer email:', data.referrerEmail || 'none');
     
     return { 
       success: true, 
       message: `Magic link sent to ${data.email} (mock mode)`,
       referrerEmail: data.referrerEmail || null,
-      referrerValid: !!data.referrerEmail, // Assume valid in mock mode
+      referrerValid: !!data.referrerEmail,
       mockMode: true
     };
   }
@@ -246,8 +270,22 @@ export async function signUpMember(data: SignUpData) {
     throw new HubAuthError('Supabase not configured. Set HUB_AUTH_MODE=mock for development.', 503);
   }
 
+  // Check if username is already taken
+  if (data.username) {
+    const { data: existingUser } = await supabase
+      .from('profiles')
+      .select('id')
+      .eq('username', data.username)
+      .single();
+    
+    if (existingUser) {
+      throw new HubAuthError('Username is already taken. Please choose a different one.', 400);
+    }
+  }
+
   // Validate referrer email exists if provided (but don't block signup)
   let referrerValid = false;
+  let referrerId: string | null = null;
   if (data.referrerEmail) {
     try {
       const { data: referrer } = await supabase
@@ -256,6 +294,7 @@ export async function signUpMember(data: SignUpData) {
         .eq('email', data.referrerEmail)
         .single();
       referrerValid = !!referrer;
+      referrerId = referrer?.id || null;
     } catch (e) {
       console.warn('[Hub Auth] Referrer validation failed, continuing anyway:', e);
     }
@@ -269,6 +308,9 @@ export async function signUpMember(data: SignUpData) {
         emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/auth/callback?referrer=${encodeURIComponent(data.referrerEmail || '')}`,
         data: {
           full_name: data.fullName,
+          username: data.username,
+          phone: data.phone,
+          referrer_id: referrerId,
         },
       },
     });
@@ -292,6 +334,13 @@ export async function signUpMember(data: SignUpData) {
             error
           );
         }
+        if (error.code === 'user_already_exists') {
+          throw new HubAuthError(
+            'An account with this email already exists. Please log in instead.',
+            400,
+            error
+          );
+        }
       }
       throw new HubAuthError(`Authentication failed: ${error.message}`, 500, error);
     }
@@ -307,6 +356,44 @@ export async function signUpMember(data: SignUpData) {
     referrerEmail: data.referrerEmail || null,
     referrerValid
   };
+}
+
+// Update profile after successful auth callback
+export async function updateProfileAfterAuth(userId: string, data: {
+  email: string;
+  fullName?: string;
+  username?: string;
+  phone?: string;
+  referrerId?: string;
+}) {
+  if (!supabase) {
+    console.log('[Hub Auth] Mock mode - skipping profile update');
+    return { success: true };
+  }
+
+  try {
+    const { error } = await supabase
+      .from('profiles')
+      .upsert({
+        id: userId,
+        email: data.email,
+        full_name: data.fullName,
+        username: data.username,
+        phone: data.phone,
+        inviter_id: data.referrerId || null,
+        updated_at: new Date().toISOString(),
+      }, { onConflict: 'id' });
+
+    if (error) {
+      console.error('[Hub Auth] Profile update error:', error);
+      throw error;
+    }
+
+    return { success: true };
+  } catch (e) {
+    console.error('[Hub Auth] Failed to update profile:', e);
+    throw new HubAuthError('Failed to update profile', 500, e);
+  }
 }
 
 // Link referrer to new member after successful authentication
