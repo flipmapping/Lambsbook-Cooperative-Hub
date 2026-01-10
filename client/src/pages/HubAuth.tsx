@@ -7,19 +7,67 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { ArrowLeft, Mail, CheckCircle2, Loader2, UserCheck, AlertCircle } from "lucide-react";
+import { ArrowLeft, Mail, CheckCircle2, Loader2, UserCheck, AlertCircle, User, Phone } from "lucide-react";
 
 interface HubAuthProps {
   mode: "login" | "signup";
+}
+
+// Validation patterns
+const USERNAME_REGEX = /^[a-zA-Z0-9_-]{3,50}$/;
+const PHONE_REGEX = /^\+?[0-9]{7,15}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Validation helpers
+function validateUsername(username: string): string | null {
+  if (!username) return "Username is required";
+  if (username.length < 3) return "Username must be at least 3 characters";
+  if (username.length > 50) return "Username must be 50 characters or less";
+  if (!USERNAME_REGEX.test(username)) return "Username can only contain letters, numbers, underscores, and hyphens";
+  return null;
+}
+
+function validatePhone(phone: string): string | null {
+  if (!phone) return "Phone number is required";
+  const normalized = phone.replace(/[\s\-().]/g, '');
+  if (!PHONE_REGEX.test(normalized)) return "Please enter a valid phone number (7-15 digits, optional + prefix)";
+  return null;
+}
+
+function validateEmail(email: string): string | null {
+  if (!email) return "Email is required";
+  if (!EMAIL_REGEX.test(email)) return "Please enter a valid email address";
+  return null;
+}
+
+function normalizePhone(phone: string): string {
+  return phone.replace(/[\s\-().]/g, '');
+}
+
+interface FormErrors {
+  username?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  fullName?: string | null;
 }
 
 export default function HubAuth({ mode }: HubAuthProps) {
   const [, setLocation] = useLocation();
   const search = useSearch();
   const { toast } = useToast();
+  
+  // Form fields
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
   const [referrerEmail, setReferrerEmail] = useState("");
+  
+  // Validation state
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  
+  // Referrer validation
   const [referrerValidation, setReferrerValidation] = useState<{
     checking: boolean;
     valid: boolean | null;
@@ -61,8 +109,45 @@ export default function HubAuth({ mode }: HubAuthProps) {
     return () => clearTimeout(timer);
   }, [referrerEmail]);
 
+  // Real-time validation on blur
+  const handleBlur = (field: string) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+    
+    if (mode === 'signup') {
+      const newErrors = { ...errors };
+      
+      switch (field) {
+        case 'username':
+          newErrors.username = validateUsername(username);
+          break;
+        case 'phone':
+          newErrors.phone = validatePhone(phone);
+          break;
+        case 'email':
+          newErrors.email = validateEmail(email);
+          break;
+        case 'fullName':
+          newErrors.fullName = fullName.trim() ? null : "Full name is required";
+          break;
+      }
+      
+      setErrors(newErrors);
+    } else {
+      // Login only validates email
+      if (field === 'email') {
+        setErrors({ email: validateEmail(email) });
+      }
+    }
+  };
+
   const authMutation = useMutation({
-    mutationFn: async (data: { email: string; fullName?: string; referrerEmail?: string }) => {
+    mutationFn: async (data: { 
+      email: string; 
+      fullName?: string; 
+      username?: string;
+      phone?: string;
+      referrerEmail?: string 
+    }) => {
       return apiRequest("POST", `/api/hub/auth/${mode}`, data);
     },
     onSuccess: () => {
@@ -79,30 +164,67 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) {
-      toast({
-        title: "Email required",
-        description: "Please enter your email address",
-        variant: "destructive",
-      });
-      return;
-    }
     
-    // Validate referrer email format if provided
-    if (referrerEmail && (!referrerEmail.includes('@') || referrerEmail.length < 5)) {
-      toast({
-        title: "Invalid referrer email",
-        description: "Please enter a valid email address for the referrer",
-        variant: "destructive",
+    if (mode === 'signup') {
+      // Validate all fields
+      const emailError = validateEmail(email);
+      const usernameError = validateUsername(username);
+      const phoneError = validatePhone(phone);
+      const fullNameError = fullName.trim() ? null : "Full name is required";
+      
+      const newErrors: FormErrors = {
+        email: emailError,
+        username: usernameError,
+        phone: phoneError,
+        fullName: fullNameError,
+      };
+      
+      setErrors(newErrors);
+      setTouched({ email: true, username: true, phone: true, fullName: true });
+      
+      // Check if any errors
+      if (emailError || usernameError || phoneError || fullNameError) {
+        toast({
+          title: "Please fix the errors",
+          description: "Check the form for validation errors",
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      // Validate referrer email format if provided
+      if (referrerEmail && (!referrerEmail.includes('@') || referrerEmail.length < 5)) {
+        toast({
+          title: "Invalid referrer email",
+          description: "Please enter a valid email address for the referrer",
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      authMutation.mutate({ 
+        email, 
+        fullName,
+        username,
+        phone: normalizePhone(phone),
+        referrerEmail: referrerEmail || undefined,
       });
-      return;
+    } else {
+      // Login - only validate email
+      const emailError = validateEmail(email);
+      if (emailError) {
+        setErrors({ email: emailError });
+        setTouched({ email: true });
+        toast({
+          title: "Invalid email",
+          description: emailError,
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      authMutation.mutate({ email });
     }
-    
-    authMutation.mutate({ 
-      email, 
-      fullName: mode === "signup" ? fullName : undefined,
-      referrerEmail: mode === "signup" && referrerEmail ? referrerEmail : undefined,
-    });
   };
 
   if (emailSent) {
@@ -163,29 +285,99 @@ export default function HubAuth({ mode }: HubAuthProps) {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               {mode === "signup" && (
-                <div className="space-y-2">
-                  <Label htmlFor="fullName">Full Name</Label>
-                  <Input
-                    id="fullName"
-                    placeholder="Enter your full name"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    data-testid="input-full-name"
-                  />
-                </div>
+                <>
+                  <div className="space-y-2">
+                    <Label htmlFor="fullName">Full Name *</Label>
+                    <Input
+                      id="fullName"
+                      placeholder="Enter your full name"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      onBlur={() => handleBlur('fullName')}
+                      className={touched.fullName && errors.fullName ? "border-destructive" : ""}
+                      data-testid="input-full-name"
+                    />
+                    {touched.fullName && errors.fullName && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="h-3 w-3" />
+                        {errors.fullName}
+                      </p>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="username">Username *</Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        id="username"
+                        placeholder="your_username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value.toLowerCase())}
+                        onBlur={() => handleBlur('username')}
+                        className={`pl-9 ${touched.username && errors.username ? "border-destructive" : ""}`}
+                        data-testid="input-username"
+                      />
+                    </div>
+                    {touched.username && errors.username ? (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="h-3 w-3" />
+                        {errors.username}
+                      </p>
+                    ) : (
+                      <p className="text-xs text-muted-foreground">
+                        3-50 characters: letters, numbers, underscores, hyphens
+                      </p>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number *</Label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="+84 363 192 508"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        onBlur={() => handleBlur('phone')}
+                        className={`pl-9 ${touched.phone && errors.phone ? "border-destructive" : ""}`}
+                        data-testid="input-phone"
+                      />
+                    </div>
+                    {touched.phone && errors.phone ? (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="h-3 w-3" />
+                        {errors.phone}
+                      </p>
+                    ) : (
+                      <p className="text-xs text-muted-foreground">
+                        Include country code (e.g., +84 for Vietnam)
+                      </p>
+                    )}
+                  </div>
+                </>
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
+                <Label htmlFor="email">Email Address *</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
+                  onBlur={() => handleBlur('email')}
+                  className={touched.email && errors.email ? "border-destructive" : ""}
                   data-testid="input-email"
                 />
+                {touched.email && errors.email && (
+                  <p className="text-xs text-destructive flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               {mode === "signup" && (

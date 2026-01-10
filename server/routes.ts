@@ -779,7 +779,9 @@ export async function registerRoutes(
   const hubAuthSchema = z.object({
     email: z.string().email(),
     fullName: z.string().min(1).max(255).optional(),
-    referrerEmail: z.string().email().optional().or(z.literal('')), // Referrer's email address (optional)
+    username: z.string().regex(/^[a-zA-Z0-9_-]{3,50}$/, 'Username must be 3-50 characters: letters, numbers, underscores, hyphens').optional(),
+    phone: z.string().regex(/^\+?[0-9]{7,15}$/, 'Phone must be 7-15 digits with optional + prefix').optional(),
+    referrerEmail: z.string().email().optional().or(z.literal('')),
   });
 
   app.post("/api/hub/auth/signup", async (req: Request, res: Response) => {
