@@ -946,7 +946,28 @@ export async function registerRoutes(
   // Create a new hub partner (onboarding)
   app.post("/api/hub/partners", async (req: Request, res: Response) => {
     try {
-      const partner = await hubPartnerService.createHubPartner(req.body);
+      const { sbuId, roles, company, name, email, phone, capabilities, notes } = req.body;
+      
+      // Basic validation
+      if (!sbuId || !name || !email) {
+        return res.status(400).json({ error: "Missing required fields: sbuId, name, and email are required" });
+      }
+      
+      if (!roles || !Array.isArray(roles) || roles.length === 0) {
+        return res.status(400).json({ error: "At least one role is required" });
+      }
+      
+      const partner = await hubPartnerService.createHubPartner({
+        sbuId,
+        roles,
+        company: company || name, // Use name as company if not provided
+        name,
+        email,
+        phone: phone || null,
+        capabilities: capabilities || null,
+        notes: notes || null,
+        status: "pending",
+      });
       res.status(201).json(partner);
     } catch (error) {
       console.error('Create hub partner error:', error);
