@@ -24,6 +24,7 @@ import AuthCallback from '@/pages/AuthCallback';
 import Login from '@/pages/Login';
 import HubLanding from '@/pages/HubLanding';
 import HubAuth from '@/pages/HubAuth';
+import HubAuthCallback from '@/pages/HubAuthCallback';
 import MemberDashboard from '@/pages/MemberDashboard';
 import SBUEducation from '@/pages/SBUEducation';
 import TropicanaProgram from '@/pages/TropicanaProgram';
@@ -110,6 +111,7 @@ function Router() {
       <Route path="/hub" component={HubLanding} />
       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
+      <Route path="/hub/auth/callback" component={HubAuthCallback} />
       <Route path="/hub/dashboard" component={MemberDashboard} />
       <Route path="/hub/sbu/education" component={SBUEducation} />
       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
