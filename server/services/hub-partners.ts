@@ -273,7 +273,25 @@ export async function updateShareAllocations(
     description?: string;
   }>
 ): Promise<{ success: boolean; error?: string; allocations?: PartnerShareAllocation[] }> {
-  // Validate total percentage
+  // Validate no negative values
+  const hasNegative = allocations.some(a => a.shareValue < 0);
+  if (hasNegative) {
+    return { 
+      success: false, 
+      error: "Allocation values cannot be negative" 
+    };
+  }
+  
+  // Validate no values over 100
+  const hasOver100 = allocations.some(a => a.shareType === "percentage" && a.shareValue > 100);
+  if (hasOver100) {
+    return { 
+      success: false, 
+      error: "Percentage values cannot exceed 100%" 
+    };
+  }
+  
+  // Validate total percentage equals 100%
   const percentageAllocations = allocations.filter(a => a.shareType === "percentage");
   const total = percentageAllocations.reduce((sum, a) => sum + a.shareValue, 0);
   
