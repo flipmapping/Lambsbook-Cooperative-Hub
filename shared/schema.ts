@@ -197,3 +197,124 @@ export const activityLogs = pgTable("activity_logs", {
 export const insertActivityLogSchema = createInsertSchema(activityLogs).omit({ id: true, createdAt: true });
 export type InsertActivityLog = z.infer<typeof insertActivityLogSchema>;
 export type ActivityLog = typeof activityLogs.$inferSelect;
+
+// ============================================
+// Hub Partner & Revenue Sharing Schema
+// ============================================
+
+// Value chain roles for partners
+export const valueChainRoles = [
+  'supplier',
+  'processor', 
+  'packager',
+  'distributor',
+  'retailer',
+  'tutor',
+  'school',
+  'platform',
+  'collaborator',
+  'referrer'
+] as const;
+export type ValueChainRole = typeof valueChainRoles[number];
+
+// Revenue model types
+export const revenueModelTypes = ['percentage', 'fixed_fee'] as const;
+export type RevenueModelType = typeof revenueModelTypes[number];
+
+// SBU types
+export const sbuTypes = ['sbu1', 'sbu2', 'sbu3', 'sbu4', 'sbu5'] as const;
+export type SBUType = typeof sbuTypes[number];
+
+// Hub Partners - partners engaged with specific SBUs
+export const hubPartners = pgTable("hub_partners", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone"),
+  company: text("company"),
+  sbuId: text("sbu_id").notNull(), // sbu2, sbu4, etc.
+  roles: text("roles").array().notNull(), // value chain roles
+  capabilities: text("capabilities"), // description of what they provide
+  status: text("status").notNull().default("pending"), // pending, approved, active, inactive
+  bankDetails: jsonb("bank_details"), // for payments
+  documents: text("documents").array(), // uploaded document URLs
+  notes: text("notes"),
+  approvedBy: text("approved_by"),
+  approvedAt: timestamp("approved_at"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export const insertHubPartnerSchema = createInsertSchema(hubPartners).omit({ 
+  id: true, 
+  createdAt: true, 
+  updatedAt: true,
+  approvedAt: true 
+});
+export type InsertHubPartner = z.infer<typeof insertHubPartnerSchema>;
+export type HubPartner = typeof hubPartners.$inferSelect;
+
+// Hub Products - products/programs with revenue sharing
+export const hubProducts = pgTable("hub_products", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  sbuId: text("sbu_id").notNull(),
+  name: text("name").notNull(),
+  description: text("description"),
+  productType: text("product_type").notNull(), // 'product', 'program', 'service'
+  wholesalePrice: integer("wholesale_price"), // in smallest currency unit
+  retailPrice: integer("retail_price"),
+  currency: text("currency").default("VND"),
+  revenueModel: text("revenue_model").notNull().default("percentage"), // percentage or fixed_fee
+  isActive: boolean("is_active").default(true),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export const insertHubProductSchema = createInsertSchema(hubProducts).omit({ 
+  id: true, 
+  createdAt: true, 
+  updatedAt: true 
+});
+export type InsertHubProduct = z.infer<typeof insertHubProductSchema>;
+export type HubProduct = typeof hubProducts.$inferSelect;
+
+// Partner Share Allocations - percentage/fee allocations per product
+export const partnerShareAllocations = pgTable("partner_share_allocations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  productId: text("product_id").notNull(),
+  partnerId: text("partner_id"), // null for platform/collaborator defaults
+  role: text("role").notNull(), // value chain role
+  shareType: text("share_type").notNull().default("percentage"), // percentage or fixed
+  shareValue: integer("share_value").notNull(), // percentage (0-100) or fixed amount
+  description: text("description"),
+  isDefault: boolean("is_default").default(false), // template allocation
+  isActive: boolean("is_active").default(true),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export const insertPartnerShareAllocationSchema = createInsertSchema(partnerShareAllocations).omit({ 
+  id: true, 
+  createdAt: true, 
+  updatedAt: true 
+});
+export type InsertPartnerShareAllocation = z.infer<typeof insertPartnerShareAllocationSchema>;
+export type PartnerShareAllocation = typeof partnerShareAllocations.$inferSelect;
+
+// Validation schema for share allocation with 100% validation
+export const shareAllocationValidationSchema = z.object({
+  productId: z.string().min(1),
+  allocations: z.array(z.object({
+    partnerId: z.string().nullable(),
+    role: z.enum(valueChainRoles),
+    shareType: z.enum(['percentage', 'fixed']),
+    shareValue: z.number().min(0).max(100),
+    description: z.string().optional(),
+  })),
+}).refine((data) => {
+  const percentageAllocations = data.allocations.filter(a => a.shareType === 'percentage');
+  const total = percentageAllocations.reduce((sum, a) => sum + a.shareValue, 0);
+  return total === 100;
+}, {
+  message: "Percentage allocations must total exactly 100%",
+});

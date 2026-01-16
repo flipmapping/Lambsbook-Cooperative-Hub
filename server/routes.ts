@@ -925,5 +925,110 @@ export async function registerRoutes(
     }
   });
 
+  // ========================================
+  // Hub Partner & Revenue Sharing Routes
+  // ========================================
+
+  const hubPartnerService = await import('./services/hub-partners');
+
+  // Get all hub partners (optionally filter by SBU)
+  app.get("/api/hub/partners", async (req: Request, res: Response) => {
+    try {
+      const sbuId = req.query.sbuId as string | undefined;
+      const partners = await hubPartnerService.getHubPartners(sbuId);
+      res.json(partners);
+    } catch (error) {
+      console.error('Get hub partners error:', error);
+      res.status(500).json({ error: "Failed to get partners" });
+    }
+  });
+
+  // Create a new hub partner (onboarding)
+  app.post("/api/hub/partners", async (req: Request, res: Response) => {
+    try {
+      const partner = await hubPartnerService.createHubPartner(req.body);
+      res.status(201).json(partner);
+    } catch (error) {
+      console.error('Create hub partner error:', error);
+      res.status(500).json({ error: "Failed to create partner" });
+    }
+  });
+
+  // Update a hub partner
+  app.patch("/api/hub/partners/:id", async (req: Request, res: Response) => {
+    try {
+      const partner = await hubPartnerService.updateHubPartner(req.params.id, req.body);
+      if (!partner) {
+        return res.status(404).json({ error: "Partner not found" });
+      }
+      res.json(partner);
+    } catch (error) {
+      console.error('Update hub partner error:', error);
+      res.status(500).json({ error: "Failed to update partner" });
+    }
+  });
+
+  // Get all hub products (optionally filter by SBU)
+  app.get("/api/hub/products", async (req: Request, res: Response) => {
+    try {
+      const sbuId = req.query.sbuId as string | undefined;
+      const products = await hubPartnerService.getHubProducts(sbuId);
+      res.json(products);
+    } catch (error) {
+      console.error('Get hub products error:', error);
+      res.status(500).json({ error: "Failed to get products" });
+    }
+  });
+
+  // Get a product with its share allocations
+  app.get("/api/hub/products/:id/allocations", async (req: Request, res: Response) => {
+    try {
+      const result = await hubPartnerService.getProductWithAllocations(req.params.id);
+      if (!result) {
+        return res.status(404).json({ error: "Product not found" });
+      }
+      res.json(result);
+    } catch (error) {
+      console.error('Get product allocations error:', error);
+      res.status(500).json({ error: "Failed to get product allocations" });
+    }
+  });
+
+  // Update share allocations for a product (with 100% validation)
+  app.put("/api/hub/products/:id/allocations", async (req: Request, res: Response) => {
+    try {
+      const result = await hubPartnerService.updateShareAllocations(req.params.id, req.body.allocations);
+      if (!result.success) {
+        return res.status(400).json({ error: result.error });
+      }
+      res.json(result);
+    } catch (error) {
+      console.error('Update share allocations error:', error);
+      res.status(500).json({ error: "Failed to update share allocations" });
+    }
+  });
+
+  // Get value chain summary for an SBU
+  app.get("/api/hub/value-chain/:sbuId", async (req: Request, res: Response) => {
+    try {
+      const summary = await hubPartnerService.getValueChainSummary(req.params.sbuId);
+      res.json(summary);
+    } catch (error) {
+      console.error('Get value chain error:', error);
+      res.status(500).json({ error: "Failed to get value chain" });
+    }
+  });
+
+  // Get available value chain roles
+  app.get("/api/hub/value-chain-roles", async (req: Request, res: Response) => {
+    try {
+      const roles = hubPartnerService.getValueChainRoles();
+      res.json(roles);
+    } catch (error) {
+      console.error('Get value chain roles error:', error);
+      res.status(500).json({ error: "Failed to get value chain roles" });
+    }
+  });
+
   return httpServer;
 }
