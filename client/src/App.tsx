@@ -28,6 +28,8 @@ import HubAuthCallback from '@/pages/HubAuthCallback';
 import MemberDashboard from '@/pages/MemberDashboard';
 import SBUEducation from '@/pages/SBUEducation';
 import TropicanaProgram from '@/pages/TropicanaProgram';
+import PartnerOnboarding from '@/pages/PartnerOnboarding';
+import AdminRevenueConsole from '@/pages/AdminRevenueConsole';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -115,6 +117,8 @@ function Router() {
       <Route path="/hub/dashboard" component={MemberDashboard} />
       <Route path="/hub/sbu/education" component={SBUEducation} />
       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
+      <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+      <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
     </Switch>
   );
 }
