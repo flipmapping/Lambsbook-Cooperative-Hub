@@ -212,6 +212,15 @@ A single member can have multiple roles: `user`, `ambassador`, `collaborator`, `
 
 ## Recent Changes
 
+**January 2026:**
+- Built partner onboarding prototype with in-memory storage for rapid iteration
+- Created PartnerOnboarding page for SBU 2 (Education) and SBU 4 (Agri Products)
+- Created AdminRevenueConsole page for managing partner share allocations
+- Added API routes: /api/hub/partners, /api/hub/products, /api/hub/value-chain/:sbuId
+- Implemented 100% allocation validation for revenue sharing
+- Added value chain roles: supplier, processor, packager, distributor, retailer, tutor, school, platform, collaborator, referrer
+- Default products seeded: Online Classes ($5/month), Vocational Training, Overseas Study ($1000), Deligac Noodles, Gac Powder
+
 **December 2025:**
 - Implemented Supabase master schema for Lambsbook Agentic Hub
 - Added 5 SBU structure from Grok design document
