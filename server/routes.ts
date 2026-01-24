@@ -1051,5 +1051,78 @@ export async function registerRoutes(
     }
   });
 
+  // ========================================
+  // Education Feedback Agent Routes
+  // ========================================
+
+  const educationFeedbackService = await import('./services/education-feedback');
+
+  // List all documents in the Master Templates folder
+  app.get("/api/education/documents", async (req: Request, res: Response) => {
+    try {
+      const documents = await educationFeedbackService.listMasterTemplates();
+      res.json(documents);
+    } catch (error) {
+      console.error('List documents error:', error);
+      res.status(500).json({ error: error instanceof Error ? error.message : "Failed to list documents" });
+    }
+  });
+
+  // Get document preview with validation status
+  app.get("/api/education/documents/:id/preview", async (req: Request, res: Response) => {
+    try {
+      const preview = await educationFeedbackService.getDocumentPreview(req.params.id);
+      res.json(preview);
+    } catch (error) {
+      console.error('Document preview error:', error);
+      res.status(500).json({ error: error instanceof Error ? error.message : "Failed to get document preview" });
+    }
+  });
+
+  // Generate feedback for a specific document
+  app.post("/api/education/documents/:id/feedback", async (req: Request, res: Response) => {
+    try {
+      const result = await educationFeedbackService.generateFeedbackForDocument(req.params.id);
+      res.json(result);
+    } catch (error) {
+      console.error('Generate feedback error:', error);
+      res.status(500).json({ error: error instanceof Error ? error.message : "Failed to generate feedback" });
+    }
+  });
+
+  // Process all pending documents
+  app.post("/api/education/process-all", async (req: Request, res: Response) => {
+    try {
+      const results = await educationFeedbackService.processAllPendingDocuments();
+      res.json({
+        total: results.length,
+        successful: results.filter(r => r.success).length,
+        failed: results.filter(r => !r.success).length,
+        results
+      });
+    } catch (error) {
+      console.error('Process all documents error:', error);
+      res.status(500).json({ error: error instanceof Error ? error.message : "Failed to process documents" });
+    }
+  });
+
+  // Check folder connection status
+  app.get("/api/education/status", async (req: Request, res: Response) => {
+    try {
+      const folderId = await educationFeedbackService.findMasterTemplatesFolder();
+      res.json({
+        connected: !!folderId,
+        folderId,
+        folderName: 'Lambsbook – Master Templates'
+      });
+    } catch (error) {
+      console.error('Check status error:', error);
+      res.status(500).json({ 
+        connected: false, 
+        error: error instanceof Error ? error.message : "Failed to check folder status" 
+      });
+    }
+  });
+
   return httpServer;
 }
