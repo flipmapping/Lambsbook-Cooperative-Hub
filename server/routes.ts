@@ -1124,5 +1124,35 @@ export async function registerRoutes(
     }
   });
 
+  // Generate feedback from transcript submission (MVP UI endpoint)
+  // This route acts as a thin adapter to the Education Feedback Engine
+  app.post("/api/education/generate-feedback", async (req: Request, res: Response) => {
+    try {
+      // Call the Education Feedback Engine service
+      const result = await educationFeedbackService.generateFeedbackFromTranscript({
+        transcript_text: req.body.transcript_text,
+        youtube_url: req.body.youtube_url,
+        assessment_framework: req.body.assessment_framework,
+        skill_type: req.body.skill_type,
+        current_level: req.body.current_level,
+        target_level: req.body.target_level
+      });
+
+      // Return the result from the engine
+      if (result.status === 'error') {
+        return res.status(400).json(result);
+      }
+      
+      res.json(result);
+
+    } catch (error) {
+      console.error('Generate feedback error:', error);
+      res.status(500).json({ 
+        status: "error", 
+        error: error instanceof Error ? error.message : "Failed to generate feedback" 
+      });
+    }
+  });
+
   return httpServer;
 }
