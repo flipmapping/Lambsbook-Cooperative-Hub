@@ -330,3 +330,228 @@ export async function getDocumentPreview(docId: string): Promise<{
     validation
   };
 }
+
+// ========================================
+// Direct Transcript Processing (MVP UI)
+// ========================================
+
+export interface TranscriptFeedbackRequest {
+  transcript_text?: string;
+  youtube_url?: string;
+  assessment_framework: string;
+  skill_type: string;
+  current_level?: string;
+  target_level?: string;
+}
+
+export interface TranscriptFeedbackResult {
+  status: 'success' | 'error';
+  feedback?: string;
+  google_doc_url?: string;
+  error?: string;
+  message?: string;
+}
+
+// Valid assessment frameworks
+const VALID_FRAMEWORKS = [
+  'ielts_academic',
+  'ielts_general',
+  'business_communication',
+  'workplace_english',
+  'presentation_skills'
+];
+
+// Valid skill types
+const VALID_SKILL_TYPES = ['speaking', 'writing'];
+
+// Framework display names
+const FRAMEWORK_DISPLAY_NAMES: Record<string, string> = {
+  'ielts_academic': 'IELTS Academic',
+  'ielts_general': 'IELTS General',
+  'business_communication': 'Business Communication',
+  'workplace_english': 'Workplace English',
+  'presentation_skills': 'Presentation Skills'
+};
+
+// Level display names
+const LEVEL_DISPLAY_NAMES: Record<string, string> = {
+  'band_3_4': 'Band 3-4',
+  'band_5_6': 'Band 5-6',
+  'band_6_7': 'Band 6-7',
+  'band_5': 'Band 5',
+  'band_6_5': 'Band 6.5',
+  'band_7': 'Band 7',
+  'band_8': 'Band 8'
+};
+
+// Validate transcript feedback request
+export function validateTranscriptRequest(request: TranscriptFeedbackRequest): { valid: boolean; errors: string[] } {
+  const errors: string[] = [];
+
+  if (!request.transcript_text && !request.youtube_url) {
+    errors.push('Please provide either a transcript or a YouTube URL');
+  }
+
+  if (!request.assessment_framework) {
+    errors.push('Assessment framework is required');
+  } else if (!VALID_FRAMEWORKS.includes(request.assessment_framework)) {
+    errors.push(`Invalid assessment framework. Valid options: ${VALID_FRAMEWORKS.join(', ')}`);
+  }
+
+  if (!request.skill_type) {
+    errors.push('Skill type is required');
+  } else if (!VALID_SKILL_TYPES.includes(request.skill_type)) {
+    errors.push(`Invalid skill type. Valid options: ${VALID_SKILL_TYPES.join(', ')}`);
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors
+  };
+}
+
+// Generate feedback from direct transcript input (MVP UI)
+export async function generateFeedbackFromTranscript(
+  request: TranscriptFeedbackRequest
+): Promise<TranscriptFeedbackResult> {
+  try {
+    // Validate request
+    const validation = validateTranscriptRequest(request);
+    if (!validation.valid) {
+      return {
+        status: 'error',
+        error: validation.errors.join('; ')
+      };
+    }
+
+    // Build metadata for the prompt
+    const frameworkName = FRAMEWORK_DISPLAY_NAMES[request.assessment_framework] || request.assessment_framework;
+    const currentLevelName = request.current_level ? LEVEL_DISPLAY_NAMES[request.current_level] || request.current_level : 'Not specified';
+    const targetLevelName = request.target_level ? LEVEL_DISPLAY_NAMES[request.target_level] || request.target_level : 'Not specified';
+    const skillTypeName = request.skill_type.charAt(0).toUpperCase() + request.skill_type.slice(1);
+
+    // Build user prompt with metadata
+    const userPrompt = `
+DOCUMENT METADATA:
+- Assessment Framework: ${frameworkName}
+- Skill Focus: ${skillTypeName}
+- Target Level/Band: ${targetLevelName}
+- Current Level: ${currentLevelName}
+
+TASK TYPE: ${request.skill_type.toUpperCase()}
+
+STUDENT SUBMISSION:
+${request.transcript_text || `[YouTube Video: ${request.youtube_url}]`}
+
+Please generate comprehensive feedback following the exact output structure specified.`;
+
+    // Call OpenAI using the same prompt as the document-based engine
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        { role: "system", content: FEEDBACK_AGENT_PROMPT },
+        { role: "user", content: userPrompt }
+      ],
+      temperature: 0.7,
+      max_tokens: 3000
+    });
+
+    const feedback = response.choices[0]?.message?.content || 'Unable to generate feedback';
+
+    // Try to create a Google Doc with the feedback
+    let googleDocUrl: string | undefined;
+    try {
+      googleDocUrl = await createFeedbackGoogleDoc(feedback, {
+        framework: frameworkName,
+        skillType: skillTypeName,
+        targetLevel: targetLevelName
+      });
+    } catch (docError) {
+      console.warn('Could not create Google Doc, returning feedback directly:', docError);
+      // Continue without Google Doc URL if creation fails
+    }
+
+    return {
+      status: 'success',
+      feedback,
+      message: googleDocUrl 
+        ? 'Feedback generated and saved to Google Docs' 
+        : 'Feedback generated successfully',
+      google_doc_url: googleDocUrl
+    };
+
+  } catch (error) {
+    console.error('Error generating transcript feedback:', error);
+    return {
+      status: 'error',
+      error: error instanceof Error ? error.message : 'Failed to generate feedback'
+    };
+  }
+}
+
+// Create a new Google Doc with the generated feedback
+async function createFeedbackGoogleDoc(
+  feedbackContent: string,
+  metadata: { framework: string; skillType: string; targetLevel: string }
+): Promise<string> {
+  const { getUncachableGoogleDriveClient, getGoogleDocsClient } = await import('./google-drive');
+  
+  const drive = await getUncachableGoogleDriveClient();
+  const docs = await getGoogleDocsClient();
+  
+  // Generate a timestamp for the document title
+  const timestamp = new Date().toISOString().split('T')[0];
+  const title = `Feedback - ${metadata.framework} ${metadata.skillType} - ${timestamp}`;
+  
+  // Create a new document in Google Drive
+  const fileMetadata = {
+    name: title,
+    mimeType: 'application/vnd.google-apps.document'
+  };
+  
+  const file = await drive.files.create({
+    requestBody: fileMetadata,
+    fields: 'id, webViewLink'
+  });
+  
+  const docId = file.data.id;
+  const docUrl = file.data.webViewLink;
+  
+  if (!docId) {
+    throw new Error('Failed to create Google Doc');
+  }
+  
+  // Build the document content
+  const documentContent = `
+LAMBSBOOK EDUCATION FEEDBACK
+Generated: ${new Date().toLocaleString()}
+
+Framework: ${metadata.framework}
+Skill Type: ${metadata.skillType}
+Target Level: ${metadata.targetLevel}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${feedbackContent}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by Lambsbook Education Feedback Engine
+`;
+
+  // Insert the content into the document
+  await docs.documents.batchUpdate({
+    documentId: docId,
+    requestBody: {
+      requests: [
+        {
+          insertText: {
+            location: { index: 1 },
+            text: documentContent
+          }
+        }
+      ]
+    }
+  });
+  
+  return docUrl || `https://docs.google.com/document/d/${docId}/edit`;
+}

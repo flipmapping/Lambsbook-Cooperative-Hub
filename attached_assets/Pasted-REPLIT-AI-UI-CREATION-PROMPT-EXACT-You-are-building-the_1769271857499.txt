@@ -1,0 +1,124 @@
+REPLIT AI — UI CREATION PROMPT (EXACT)
+
+You are building the minimal MVP UI for the Education Program Business Unit of Lambsbook Agentic Hub.
+
+The purpose of this UI is to allow English teachers to submit student transcripts and trigger an existing Education Feedback Engine.
+
+⚠️ Important constraints:
+
+This UI must NOT contain assessment or evaluation logic
+
+All feedback logic is handled by the Education Feedback Engine module
+
+This UI only collects inputs, calls the engine, and displays output
+
+Functional Requirements
+
+Create a simple web UI with the following inputs:
+
+Student Input
+
+A multiline text area labeled:
+“Student Transcript (paste full transcript here)”
+
+A single-line text input labeled:
+“YouTube Video URL (optional)”
+
+Assessment Configuration
+
+Dropdown: Assessment Framework
+Options:
+
+IELTS Academic
+
+IELTS General
+
+Business Communication
+
+Workplace English
+
+Presentation Skills
+
+Dropdown: Skill Type
+Options:
+
+Speaking
+
+Writing
+
+Dropdown: Current Level (optional)
+Options:
+
+Band 3–4
+
+Band 5–6
+
+Band 6–7
+
+Dropdown: Target Level (optional)
+Options:
+
+Band 5
+
+Band 6.5
+
+Band 7
+
+Band 8
+
+Add a primary action button labeled:
+“Generate Structured Feedback”
+
+Processing Logic
+
+When the button is clicked:
+
+Validate that either a transcript or YouTube URL is provided
+
+Package all inputs into a single JSON payload
+
+Send the payload to the Education Feedback Engine module
+
+The payload must include:
+
+transcript_text
+
+youtube_url
+
+assessment_framework
+
+skill_type
+
+current_level
+
+target_level
+
+Output Handling
+
+The Education Feedback Engine will return:
+
+status
+
+google_doc_url
+
+Display to the user:
+
+A success or error message
+
+A clickable link labeled:
+“Open Feedback Google Document”
+
+UI Scope
+
+Single page only
+
+No authentication required
+
+No database persistence required
+
+Styling should be clean, minimal, and professional
+
+Architecture Note
+
+This UI is a client of the Education Feedback Engine and must treat it as a black box.
+The UI must be easy to later embed inside the Lambsbook Agentic Hub website under the Education Program Business Unit.
