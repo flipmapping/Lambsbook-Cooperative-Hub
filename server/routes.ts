@@ -1130,10 +1130,12 @@ export async function registerRoutes(
     try {
       // Call the Education Feedback Engine service
       const result = await educationFeedbackService.generateFeedbackFromTranscript({
+        task_prompt: req.body.task_prompt,
         transcript_text: req.body.transcript_text,
         youtube_url: req.body.youtube_url,
         assessment_framework: req.body.assessment_framework,
         skill_type: req.body.skill_type,
+        speaking_part: req.body.speaking_part,
         current_level: req.body.current_level,
         target_level: req.body.target_level
       });

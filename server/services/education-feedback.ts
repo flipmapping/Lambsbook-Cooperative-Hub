@@ -336,10 +336,12 @@ export async function getDocumentPreview(docId: string): Promise<{
 // ========================================
 
 export interface TranscriptFeedbackRequest {
+  task_prompt?: string;
   transcript_text?: string;
   youtube_url?: string;
   assessment_framework: string;
   skill_type: string;
+  speaking_part?: string;
   current_level?: string;
   target_level?: string;
 }
@@ -410,6 +412,13 @@ export function validateTranscriptRequest(request: TranscriptFeedbackRequest): {
   };
 }
 
+// Speaking part display names
+const SPEAKING_PART_DISPLAY_NAMES: Record<string, string> = {
+  'part_1': 'Part 1 - Introduction',
+  'part_2': 'Part 2 - Cue Card',
+  'part_3': 'Part 3 - Discussion'
+};
+
 // Generate feedback from direct transcript input (MVP UI)
 export async function generateFeedbackFromTranscript(
   request: TranscriptFeedbackRequest
@@ -429,19 +438,40 @@ export async function generateFeedbackFromTranscript(
     const currentLevelName = request.current_level ? LEVEL_DISPLAY_NAMES[request.current_level] || request.current_level : 'Not specified';
     const targetLevelName = request.target_level ? LEVEL_DISPLAY_NAMES[request.target_level] || request.target_level : 'Not specified';
     const skillTypeName = request.skill_type.charAt(0).toUpperCase() + request.skill_type.slice(1);
+    const speakingPartName = request.speaking_part ? SPEAKING_PART_DISPLAY_NAMES[request.speaking_part] || request.speaking_part : null;
+
+    // Determine if task prompt is missing for IELTS tasks
+    const isIELTS = request.assessment_framework === 'ielts_academic' || request.assessment_framework === 'ielts_general';
+    const hasTaskPrompt = request.task_prompt && request.task_prompt.trim().length > 0;
+    const taskPromptMissingNote = isIELTS && !hasTaskPrompt 
+      ? "Task prompt not provided. Feedback focuses on language quality.\n\n"
+      : "";
+
+    // Build the task prompt section
+    const taskPromptSection = hasTaskPrompt 
+      ? `\nEXAMINER QUESTION / TASK PROMPT:\n${request.task_prompt}\n` 
+      : "";
 
     // Build user prompt with metadata
     const userPrompt = `
 DOCUMENT METADATA:
 - Assessment Framework: ${frameworkName}
-- Skill Focus: ${skillTypeName}
+- Skill Focus: ${skillTypeName}${speakingPartName ? ` (${speakingPartName})` : ''}
 - Target Level/Band: ${targetLevelName}
 - Current Level: ${currentLevelName}
-
+- Task Prompt Provided: ${hasTaskPrompt ? 'Yes' : 'No'}
+${taskPromptSection}
 TASK TYPE: ${request.skill_type.toUpperCase()}
 
 STUDENT SUBMISSION:
 ${request.transcript_text || `[YouTube Video: ${request.youtube_url}]`}
+
+${!hasTaskPrompt && isIELTS ? `IMPORTANT: No task prompt was provided. Focus your feedback primarily on:
+- Fluency & Coherence
+- Lexical Resource  
+- Grammar & Accuracy
+- Organisation
+Reduce confidence in any Task Response/Achievement judgments and note this limitation.` : ''}
 
 Please generate comprehensive feedback following the exact output structure specified.`;
 
@@ -456,7 +486,10 @@ Please generate comprehensive feedback following the exact output structure spec
       max_tokens: 3000
     });
 
-    const feedback = response.choices[0]?.message?.content || 'Unable to generate feedback';
+    const rawFeedback = response.choices[0]?.message?.content || 'Unable to generate feedback';
+    
+    // Prepend the task prompt missing note if applicable
+    const feedback = taskPromptMissingNote + rawFeedback;
 
     // Try to create a Google Doc with the feedback
     let googleDocUrl: string | undefined;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useMutation } from "@tanstack/react-query";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Loader2, FileText, ExternalLink, CheckCircle, AlertCircle } from "lucide-react";
+import { Loader2, FileText, ExternalLink, CheckCircle, AlertCircle, AlertTriangle } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -33,21 +33,52 @@ interface FeedbackResponse {
 
 export default function TranscriptSubmission() {
   const { toast } = useToast();
+  const [taskPrompt, setTaskPrompt] = useState("");
   const [transcript, setTranscript] = useState("");
   const [youtubeUrl, setYoutubeUrl] = useState("");
   const [assessmentFramework, setAssessmentFramework] = useState("");
   const [skillType, setSkillType] = useState("");
+  const [speakingPart, setSpeakingPart] = useState("");
   const [currentLevel, setCurrentLevel] = useState("");
   const [targetLevel, setTargetLevel] = useState("");
   const [result, setResult] = useState<FeedbackResponse | null>(null);
 
+  // Check if task prompt warning should be shown
+  const taskPromptWarning = useMemo(() => {
+    const isIELTS = assessmentFramework === "ielts_academic" || assessmentFramework === "ielts_general";
+    const hasTaskPrompt = taskPrompt.trim().length > 0;
+    
+    if (!isIELTS) return null;
+    
+    // Writing always needs task prompt
+    if (skillType === "writing" && !hasTaskPrompt) {
+      return "For accurate IELTS scoring and task-response evaluation, please include the original examiner question or task prompt. Feedback will otherwise focus mainly on language quality.";
+    }
+    
+    // Speaking Part 2 & 3 only - strongly recommend task prompt
+    // No warning for Part 1 or when part is not selected
+    if (skillType === "speaking" && (speakingPart === "part_2" || speakingPart === "part_3") && !hasTaskPrompt) {
+      return "For accurate IELTS scoring and task-response evaluation, please include the original examiner question or task prompt. Feedback will otherwise focus mainly on language quality.";
+    }
+    
+    return null;
+  }, [assessmentFramework, skillType, speakingPart, taskPrompt]);
+
+  // Show speaking part selector only for IELTS speaking
+  const showSpeakingPart = useMemo(() => {
+    const isIELTS = assessmentFramework === "ielts_academic" || assessmentFramework === "ielts_general";
+    return isIELTS && skillType === "speaking";
+  }, [assessmentFramework, skillType]);
+
   const generateFeedbackMutation = useMutation({
     mutationFn: async () => {
       const payload = {
+        task_prompt: taskPrompt.trim() || null,
         transcript_text: transcript.trim(),
         youtube_url: youtubeUrl.trim() || null,
         assessment_framework: assessmentFramework,
         skill_type: skillType,
+        speaking_part: speakingPart || null,
         current_level: currentLevel || null,
         target_level: targetLevel || null,
       };
@@ -116,10 +147,12 @@ export default function TranscriptSubmission() {
   };
 
   const handleReset = () => {
+    setTaskPrompt("");
     setTranscript("");
     setYoutubeUrl("");
     setAssessmentFramework("");
     setSkillType("");
+    setSpeakingPart("");
     setCurrentLevel("");
     setTargetLevel("");
     setResult(null);
@@ -147,15 +180,45 @@ export default function TranscriptSubmission() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
+          {/* Task Prompt Section - NEW */}
+          <div className="space-y-2">
+            <Label htmlFor="task-prompt" data-testid="label-task-prompt">
+              Examiner Question(s) / Task Prompt
+            </Label>
+            <Textarea
+              id="task-prompt"
+              placeholder="Paste the exact IELTS question(s), cue card, or writing task..."
+              value={taskPrompt}
+              onChange={(e) => setTaskPrompt(e.target.value)}
+              className="min-h-[100px]"
+              data-testid="input-task-prompt"
+            />
+            <p className="text-xs text-muted-foreground" data-testid="text-task-prompt-helper">
+              Paste the exact IELTS question(s), cue card, or writing task. Required for IELTS Writing and Speaking Part 2 & 3.
+            </p>
+          </div>
+
+          {/* Task Prompt Warning */}
+          {taskPromptWarning && (
+            <Alert className="border-amber-200 bg-amber-50 dark:bg-amber-950 dark:border-amber-800" data-testid="alert-task-prompt-warning">
+              <AlertTriangle className="h-4 w-4 text-amber-600" />
+              <AlertDescription className="text-amber-800 dark:text-amber-200" data-testid="text-warning-message">
+                {taskPromptWarning}
+              </AlertDescription>
+            </Alert>
+          )}
+
           {/* Student Input Section */}
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="transcript" data-testid="label-transcript">
-                Student Transcript (paste full transcript here)
+                {skillType === "writing" ? "Writing Submission" : "Speaking Transcript"} (paste full content here)
               </Label>
               <Textarea
                 id="transcript"
-                placeholder="Paste the student's speaking or writing transcript here..."
+                placeholder={skillType === "writing" 
+                  ? "Paste the student's writing submission here..." 
+                  : "Paste the student's speaking transcript here..."}
                 value={transcript}
                 onChange={(e) => setTranscript(e.target.value)}
                 className="min-h-[150px]"
@@ -205,7 +268,10 @@ export default function TranscriptSubmission() {
                 <Label htmlFor="skill-type" data-testid="label-skill">
                   Skill Type
                 </Label>
-                <Select value={skillType} onValueChange={setSkillType}>
+                <Select value={skillType} onValueChange={(value) => {
+                  setSkillType(value);
+                  if (value !== "speaking") setSpeakingPart("");
+                }}>
                   <SelectTrigger id="skill-type" data-testid="select-skill">
                     <SelectValue placeholder="Select skill type" />
                   </SelectTrigger>
@@ -215,6 +281,25 @@ export default function TranscriptSubmission() {
                   </SelectContent>
                 </Select>
               </div>
+
+              {/* Speaking Part selector - only for IELTS Speaking */}
+              {showSpeakingPart && (
+                <div className="space-y-2">
+                  <Label htmlFor="speaking-part" data-testid="label-speaking-part">
+                    Speaking Part
+                  </Label>
+                  <Select value={speakingPart} onValueChange={setSpeakingPart}>
+                    <SelectTrigger id="speaking-part" data-testid="select-speaking-part">
+                      <SelectValue placeholder="Select speaking part" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="part_1" data-testid="option-part-1">Part 1 - Introduction</SelectItem>
+                      <SelectItem value="part_2" data-testid="option-part-2">Part 2 - Cue Card</SelectItem>
+                      <SelectItem value="part_3" data-testid="option-part-3">Part 3 - Discussion</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
 
               <div className="space-y-2">
                 <Label htmlFor="current-level" data-testid="label-current">

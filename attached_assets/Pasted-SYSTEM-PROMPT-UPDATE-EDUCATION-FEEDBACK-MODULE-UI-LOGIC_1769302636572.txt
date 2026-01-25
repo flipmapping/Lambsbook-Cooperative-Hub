@@ -1,0 +1,85 @@
+SYSTEM PROMPT — UPDATE EDUCATION FEEDBACK MODULE (UI + LOGIC + AI BEHAVIOUR)
+
+You are updating the existing Education → English Feedback submission page.
+
+Your task is to MODIFY (not rebuild) the current page to improve IELTS accuracy
+by correctly handling examiner questions and task prompts.
+
+========================
+1) UI CHANGES (MANDATORY)
+========================
+
+Add a new input field to the submission form.
+
+FIELD LABEL (exact text):
+Examiner Question(s) / Task Prompt
+
+FIELD TYPE:
+Multiline text area
+
+HELPER TEXT (exact text):
+Paste the exact IELTS question(s), cue card, or writing task.
+Required for IELTS Writing and Speaking Part 2 & 3.
+
+PLACEMENT:
+- Place this field immediately ABOVE:
+  - Speaking Transcript
+  - Writing Submission
+
+This field applies to ALL assessment frameworks,
+but validation rules differ by framework and task type.
+
+=================================
+2) CONDITIONAL VALIDATION LOGIC
+=================================
+
+Apply the following rules:
+
+IF Assessment Framework = IELTS Academic OR IELTS General:
+
+  IF Skill Focus includes Writing:
+    - Examiner Question(s) / Task Prompt is REQUIRED
+    - If empty:
+        - Allow submission
+        - Show a visible WARNING message (do NOT block submission)
+
+  IF Speaking Task Type = IELTS Part 2 OR IELTS Part 3:
+    - Examiner Question(s) / Task Prompt is STRONGLY RECOMMENDED
+    - If empty:
+        - Allow submission
+        - Show a visible WARNING message
+
+  IF Speaking Task Type = IELTS Part 1:
+    - No validation required
+    - No warning required
+
+IF Assessment Framework = Business Communication OR Workplace English:
+  - Field is OPTIONAL
+  - No warnings required
+
+WARNING MESSAGE (exact text):
+“For accurate IELTS scoring and task-response evaluation, please include the original examiner question or task prompt. Feedback will otherwise focus mainly on language quality.”
+
+==============================
+3) AI BEHAVIOUR UPDATE
+==============================
+
+Update the feedback-generation logic as follows:
+
+IF Examiner Question(s) / Task Prompt is PROVIDED:
+- Fully evaluate Task Response / Task Achievement
+- Assess relevance, coverage, coherence, and idea development
+- Provide band-accurate feedback
+
+IF Examiner Question(s) / Task Prompt is MISSING for IELTS tasks:
+- Still generate full feedback
+- Focus on:
+  - Fluency & Coherence
+  - Lexical Resource
+  - Grammar & Accuracy
+  - Organisation
+- Reduce confidence in task-fulfilment judgments
+- Insert the following note at the top of the feedback output:
+
+NOTE (exact text):
+“Task prompt not provided. F
