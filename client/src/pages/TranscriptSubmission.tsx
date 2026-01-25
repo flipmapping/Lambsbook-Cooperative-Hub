@@ -228,7 +228,7 @@ export default function TranscriptSubmission() {
 
             <div className="space-y-2">
               <Label htmlFor="youtube-url" data-testid="label-youtube">
-                YouTube Video URL (optional)
+                YouTube Video URL (extract transcript automatically)
               </Label>
               <Input
                 id="youtube-url"
@@ -238,6 +238,9 @@ export default function TranscriptSubmission() {
                 onChange={(e) => setYoutubeUrl(e.target.value)}
                 data-testid="input-youtube-url"
               />
+              <p className="text-xs text-muted-foreground">
+                Paste a YouTube link to automatically extract its transcript. This is optional if you've already pasted the transcript above.
+              </p>
             </div>
           </div>
 
