@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -306,10 +308,64 @@ export default function TranscriptSubmission() {
                   <div className="border rounded-lg p-4 bg-muted/30" data-testid="section-feedback">
                     <h3 className="font-semibold mb-3" data-testid="text-feedback-heading">Generated Feedback</h3>
                     <div 
-                      className="prose prose-sm dark:prose-invert max-w-none whitespace-pre-wrap text-sm"
+                      className="prose prose-sm dark:prose-invert max-w-none text-sm feedback-content"
                       data-testid="text-feedback-content"
                     >
-                      {result.feedback}
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          table: ({ children }) => (
+                            <div className="overflow-x-auto my-4">
+                              <table className="w-full border-collapse border border-border text-left text-sm">
+                                {children}
+                              </table>
+                            </div>
+                          ),
+                          thead: ({ children }) => (
+                            <thead className="bg-muted">{children}</thead>
+                          ),
+                          th: ({ children }) => (
+                            <th className="border border-border px-3 py-2 font-semibold">{children}</th>
+                          ),
+                          td: ({ children }) => (
+                            <td className="border border-border px-3 py-2 align-top">{children}</td>
+                          ),
+                          tr: ({ children }) => (
+                            <tr className="even:bg-muted/50">{children}</tr>
+                          ),
+                          p: ({ children }) => (
+                            <p className="mb-3">{children}</p>
+                          ),
+                          h1: ({ children }) => (
+                            <h1 className="text-xl font-bold mt-6 mb-3">{children}</h1>
+                          ),
+                          h2: ({ children }) => (
+                            <h2 className="text-lg font-bold mt-5 mb-2">{children}</h2>
+                          ),
+                          h3: ({ children }) => (
+                            <h3 className="text-base font-semibold mt-4 mb-2">{children}</h3>
+                          ),
+                          ul: ({ children }) => (
+                            <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>
+                          ),
+                          ol: ({ children }) => (
+                            <ol className="list-decimal pl-5 mb-3 space-y-1">{children}</ol>
+                          ),
+                          li: ({ children }) => (
+                            <li className="mb-1">{children}</li>
+                          ),
+                          strong: ({ children }) => (
+                            <strong className="font-semibold">{children}</strong>
+                          ),
+                          blockquote: ({ children }) => (
+                            <blockquote className="border-l-4 border-primary pl-4 italic my-3 text-muted-foreground">
+                              {children}
+                            </blockquote>
+                          ),
+                        }}
+                      >
+                        {result.feedback}
+                      </ReactMarkdown>
                     </div>
                   </div>
                 )}
