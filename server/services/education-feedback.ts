@@ -10,6 +10,7 @@ import {
   parseDocumentMetadata,
   extractSubmissionSections
 } from './google-drive';
+import { extractYoutubeTranscript } from './youtube-transcript';
 
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
@@ -433,6 +434,34 @@ export async function generateFeedbackFromTranscript(
       };
     }
 
+    // If YouTube URL provided but no transcript, extract the transcript
+    let transcriptText = request.transcript_text || '';
+    let youtubeNote = '';
+    
+    if (request.youtube_url && !transcriptText.trim()) {
+      console.log('Extracting transcript from YouTube:', request.youtube_url);
+      const youtubeResult = await extractYoutubeTranscript(request.youtube_url);
+      
+      if (youtubeResult.success && youtubeResult.transcript) {
+        transcriptText = youtubeResult.transcript;
+        youtubeNote = '(Transcript extracted from YouTube video)\n\n';
+        console.log('Successfully extracted transcript, length:', transcriptText.length);
+      } else {
+        return {
+          status: 'error',
+          error: youtubeResult.error || 'Failed to extract transcript from YouTube video. Please paste the transcript manually.'
+        };
+      }
+    }
+
+    // Ensure we have content to analyze
+    if (!transcriptText.trim()) {
+      return {
+        status: 'error',
+        error: 'No transcript content available. Please provide a transcript or a valid YouTube video with captions.'
+      };
+    }
+
     // Build metadata for the prompt
     const frameworkName = FRAMEWORK_DISPLAY_NAMES[request.assessment_framework] || request.assessment_framework;
     const currentLevelName = request.current_level ? LEVEL_DISPLAY_NAMES[request.current_level] || request.current_level : 'Not specified';
@@ -464,7 +493,7 @@ ${taskPromptSection}
 TASK TYPE: ${request.skill_type.toUpperCase()}
 
 STUDENT SUBMISSION:
-${request.transcript_text || `[YouTube Video: ${request.youtube_url}]`}
+${youtubeNote}${transcriptText}
 
 ${!hasTaskPrompt && isIELTS ? `IMPORTANT: No task prompt was provided. Focus your feedback primarily on:
 - Fluency & Coherence
