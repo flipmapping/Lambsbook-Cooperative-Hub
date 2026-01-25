@@ -12,6 +12,20 @@ import {
 } from './google-drive';
 import { extractYoutubeTranscript } from './youtube-transcript';
 
+// Remove timestamps from transcripts for cleaner analysis
+function removeTimestamps(text: string): string {
+  // Remove common timestamp formats:
+  // [00:00] or [0:00] or [00:00:00]
+  // (00:00) or (0:00) or (00:00:00)
+  // 00:00 or 0:00 or 00:00:00 at start of lines
+  // 0:00 - or 00:00 - patterns
+  return text
+    .replace(/\[?\(?\d{1,2}:\d{2}(?::\d{2})?\)?\]?\s*[-–—]?\s*/g, '')
+    .replace(/^\d{1,2}:\d{2}(?::\d{2})?\s*[-–—]?\s*/gm, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
   baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
@@ -57,8 +71,15 @@ A. OVERALL PERFORMANCE SNAPSHOT
 - Top 3 priorities for improvement
 
 B. DETAILED FEEDBACK TABLE
-Create a markdown table with columns:
+Create a PROPERLY FORMATTED markdown table. The table MUST:
+- Have consistent column alignment
+- Use proper markdown syntax with | separators
+- Include the header separator row with dashes (e.g., |---|---|---|)
+
+Format EXACTLY like this:
 | Original Excerpt | Improved Version | Explanation & Upgrade Strategy |
+|------------------|------------------|--------------------------------|
+| "example text" | "improved text" | Explanation here |
 
 Rules:
 - Use the student's original ideas
@@ -66,6 +87,8 @@ Rules:
 - Explain patterns and strategies, not just corrections
 - Prioritize high-impact improvements
 - Include 5-8 rows
+- Keep each cell content concise (under 100 characters when possible)
+- Use quotation marks around excerpts for clarity
 
 C. MODEL RESPONSE (TARGET LEVEL)
 - Provide a full model response at the target band/level
@@ -453,6 +476,10 @@ export async function generateFeedbackFromTranscript(
         };
       }
     }
+
+    // Remove timestamps from transcript for cleaner analysis
+    transcriptText = removeTimestamps(transcriptText);
+    console.log('Transcript after timestamp removal, length:', transcriptText.length);
 
     // Ensure we have content to analyze
     if (!transcriptText.trim()) {

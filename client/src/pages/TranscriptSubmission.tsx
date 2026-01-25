@@ -239,7 +239,7 @@ export default function TranscriptSubmission() {
                 data-testid="input-youtube-url"
               />
               <p className="text-xs text-muted-foreground">
-                Paste a YouTube link to automatically extract its transcript. This is optional if you've already pasted the transcript above.
+                Optional: Paste a YouTube link ONLY if it provides accessible captions which allow automatic transcript extraction.
               </p>
             </div>
           </div>
