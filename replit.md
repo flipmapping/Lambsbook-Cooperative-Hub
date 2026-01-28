@@ -213,6 +213,18 @@ A single member can have multiple roles: `user`, `ambassador`, `collaborator`, `
 ## Recent Changes
 
 **January 2026:**
+- **Education Hub is now the primary landing page** - Route "/" shows Lambsbook Hub with Education focus
+- Legacy immigration website accessible at /immigration route
+- Removed Migration/HR (SBU3) from landing page (4 active SBUs now: Education, Coffee, Agri, Farmstay)
+- Coffee Shop and Farmstay SBUs display "Coming Soon" badges and are non-clickable
+- Added **Free Trial Usage Limits** for Education Feedback Engine:
+  - Anonymous visitors: 3 free uses tracked in localStorage
+  - Authenticated members: Unlimited access
+  - Uses `useFeedbackUsage` hook with auth detection via localStorage tokens
+  - Sign-up prompt displayed when limit reached
+- Added AI Feedback Tool promotion section on Education SBU page with link to /hub/education/submit
+- YouTube transcript extraction with automatic caption fetching
+- Timestamp removal for cleaner AI analysis
 - Built partner onboarding prototype with in-memory storage for rapid iteration
 - Created PartnerOnboarding page for SBU 2 (Education) and SBU 4 (Agri Products)
 - Created AdminRevenueConsole page for managing partner share allocations
