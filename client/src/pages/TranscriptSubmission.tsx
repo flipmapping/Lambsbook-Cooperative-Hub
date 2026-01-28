@@ -2,14 +2,17 @@ import { useState, useMemo } from "react";
 import { useMutation } from "@tanstack/react-query";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Loader2, FileText, ExternalLink, CheckCircle, AlertCircle, AlertTriangle } from "lucide-react";
+import { useFeedbackUsage } from "@/hooks/useFeedbackUsage";
+import { Loader2, FileText, ExternalLink, CheckCircle, AlertCircle, AlertTriangle, Lock, Sparkles } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -42,6 +45,9 @@ export default function TranscriptSubmission() {
   const [currentLevel, setCurrentLevel] = useState("");
   const [targetLevel, setTargetLevel] = useState("");
   const [result, setResult] = useState<FeedbackResponse | null>(null);
+
+  // Usage tracking - automatically checks auth status via localStorage
+  const { remainingUses, hasReachedLimit, canUse, incrementUsage, refreshAuth, maxFreeUses, isLoading: usageLoading, isAuthenticated } = useFeedbackUsage();
 
   // Check if task prompt warning should be shown
   const taskPromptWarning = useMemo(() => {
@@ -88,7 +94,13 @@ export default function TranscriptSubmission() {
     },
     onSuccess: (data: FeedbackResponse) => {
       setResult(data);
-      if (data.status === "success") {
+      if (data.status === "success" && (data.feedback || data.google_doc_url)) {
+        incrementUsage();
+        toast({
+          title: "Feedback Generated",
+          description: "Your feedback document is ready.",
+        });
+      } else if (data.status === "success") {
         toast({
           title: "Feedback Generated",
           description: "Your feedback document is ready.",
@@ -115,6 +127,18 @@ export default function TranscriptSubmission() {
   });
 
   const handleSubmit = () => {
+    // Refresh auth status before checking limit to catch same-tab logins
+    const currentlyAuthenticated = refreshAuth();
+    
+    if (!currentlyAuthenticated && !canUse) {
+      toast({
+        title: "Usage Limit Reached",
+        description: "Sign up for a free account to continue using the feedback engine.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     if (!transcript.trim() && !youtubeUrl.trim()) {
       toast({
         title: "Validation Error",
@@ -161,15 +185,53 @@ export default function TranscriptSubmission() {
   return (
     <div className="container mx-auto p-6 max-w-2xl">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold" data-testid="text-page-title">
-          Education Feedback Engine
-        </h1>
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <h1 className="text-3xl font-bold" data-testid="text-page-title">
+            Education Feedback Engine
+          </h1>
+          {!usageLoading && remainingUses !== Infinity && (
+            <Badge 
+              variant={hasReachedLimit ? "destructive" : "secondary"} 
+              className="text-sm"
+              data-testid="badge-remaining-uses"
+            >
+              <Sparkles className="h-3 w-3 mr-1" />
+              {hasReachedLimit ? "0" : remainingUses} / {maxFreeUses} free uses remaining
+            </Badge>
+          )}
+        </div>
         <p className="text-muted-foreground mt-1">
           Submit student transcripts for AI-powered feedback generation
         </p>
       </div>
 
-      <Card data-testid="card-submission-form">
+      {/* Usage Limit Reached Alert */}
+      {hasReachedLimit && (
+        <Card className="mb-6 border-amber-200 bg-amber-50 dark:bg-amber-950 dark:border-amber-800" data-testid="card-limit-reached">
+          <CardContent className="pt-6">
+            <div className="flex items-start gap-4">
+              <div className="h-12 w-12 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center shrink-0">
+                <Lock className="h-6 w-6 text-amber-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-lg mb-1" data-testid="text-limit-title">
+                  Free Trial Complete
+                </h3>
+                <p className="text-muted-foreground mb-4" data-testid="text-limit-description">
+                  You've used all {maxFreeUses} free feedback analyses. Create a free account to get unlimited access to the Education Feedback Engine.
+                </p>
+                <Link href="/hub/signup">
+                  <Button data-testid="button-signup-cta">
+                    Create Free Account
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      <Card data-testid="card-submission-form" className={hasReachedLimit ? "opacity-60 pointer-events-none" : ""}>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
