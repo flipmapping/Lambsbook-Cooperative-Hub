@@ -13,7 +13,8 @@ import {
   Building2,
   Heart,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 import { HubHeader } from '@/components/HubHeader';
 import { HubConsultationForm } from '@/components/HubConsultationForm';
@@ -229,8 +230,59 @@ export default function SBUEducation() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* AI Feedback Tool Section */}
       <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="overflow-hidden" data-testid="card-ai-feedback-tool">
+            <div className="md:flex">
+              <div className="md:w-2/3 p-6">
+                <Badge className="mb-3" data-testid="badge-free-trial">
+                  <Sparkles className="h-3 w-3 mr-1" />
+                  3 Free Uses
+                </Badge>
+                <h3 className="text-2xl font-bold mb-3" data-testid="text-ai-tool-title">
+                  AI-Powered Feedback Engine
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Get instant, detailed feedback on IELTS speaking and writing. Our AI analyzes transcripts and provides band scores, improvement suggestions, and personalized study tips.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                    IELTS Academic & General Training
+                  </li>
+                  <li className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                    Speaking Parts 1, 2 & 3 analysis
+                  </li>
+                  <li className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                    YouTube transcript extraction
+                  </li>
+                </ul>
+                <Link href="/hub/education/submit">
+                  <Button size="lg" data-testid="button-try-feedback">
+                    Try Feedback Engine
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+              <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-700 p-6 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <div className="h-20 w-20 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <Sparkles className="h-10 w-10" />
+                  </div>
+                  <p className="font-semibold">Instant AI Analysis</p>
+                  <p className="text-sm text-blue-100">Powered by GPT-4</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-center mb-10" data-testid="text-why-title">
             {t('edu_why_title')}
