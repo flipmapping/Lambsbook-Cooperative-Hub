@@ -106,23 +106,32 @@ function ImmigrationWebsite() {
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={ImmigrationWebsite} />
+      {/* Main landing - Education Hub (primary) */}
+      <Route path="/" component={HubLanding} />
+      <Route path="/hub" component={HubLanding} />
+      
+      {/* Admin routes */}
       <Route path="/admin" component={Dashboard} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
       <Route path="/auth/callback" component={AuthCallback} />
-      {/* Lambsbook Hub Routes */}
-      <Route path="/hub" component={HubLanding} />
+      
+      {/* Hub authentication */}
       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
       <Route path="/hub/auth/callback" component={HubAuthCallback} />
       <Route path="/hub/dashboard" component={MemberDashboard} />
+      
+      {/* Education programs */}
       <Route path="/hub/sbu/education" component={SBUEducation} />
       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
       <Route path="/hub/education/feedback" component={EducationFeedback} />
       <Route path="/hub/education/submit" component={TranscriptSubmission} />
+      
+      {/* Legacy immigration page (accessible but not primary) */}
+      <Route path="/immigration" component={ImmigrationWebsite} />
     </Switch>
   );
 }

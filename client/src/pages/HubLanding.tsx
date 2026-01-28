@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, TrendingUp, Gift, Building2, GraduationCap, Sprout, Home, Coffee, ArrowRight } from "lucide-react";
+import { Users, TrendingUp, Gift, GraduationCap, Sprout, Home, Coffee, ArrowRight } from "lucide-react";
 import { HubHeader } from "@/components/HubHeader";
 import { HubConsultationForm } from "@/components/HubConsultationForm";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -10,28 +10,23 @@ import { useHubTranslation } from "@/lib/hubTranslations";
 
 const sbus = [
   {
-    id: 1,
-    nameKey: "hub_sbu1_name",
-    icon: Coffee,
-    descKey: "hub_sbu1_desc",
-    color: "bg-amber-500/10 text-amber-600",
-    href: "#",
-  },
-  {
     id: 2,
     nameKey: "hub_sbu2_name",
     icon: GraduationCap,
     descKey: "hub_sbu2_desc",
     color: "bg-blue-500/10 text-blue-600",
     href: "/hub/sbu/education",
+    active: true,
   },
   {
-    id: 3,
-    nameKey: "hub_sbu3_name",
-    icon: Building2,
-    descKey: "hub_sbu3_desc",
-    color: "bg-purple-500/10 text-purple-600",
-    href: "/",
+    id: 1,
+    nameKey: "hub_sbu1_name",
+    icon: Coffee,
+    descKey: "hub_sbu1_desc",
+    color: "bg-amber-500/10 text-amber-600",
+    href: null,
+    active: false,
+    comingSoon: true,
   },
   {
     id: 4,
@@ -39,7 +34,8 @@ const sbus = [
     icon: Sprout,
     descKey: "hub_sbu4_desc",
     color: "bg-green-500/10 text-green-600",
-    href: "#",
+    href: "/hub/partner-onboarding",
+    active: true,
   },
   {
     id: 5,
@@ -47,7 +43,9 @@ const sbus = [
     icon: Home,
     descKey: "hub_sbu5_desc",
     color: "bg-teal-500/10 text-teal-600",
-    href: "#",
+    href: null,
+    active: false,
+    comingSoon: true,
   },
 ];
 
@@ -167,19 +165,41 @@ export default function HubLanding() {
             {t('hub_sbu_subtitle')}
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sbus.map((sbu) => (
-              <Link key={sbu.id} href={sbu.href}>
-                <Card className="hover-elevate cursor-pointer h-full" data-testid={`card-sbu-${sbu.id}`}>
+            {sbus.map((sbu) => {
+              const cardContent = (
+                <Card 
+                  className={`h-full ${sbu.active ? 'hover-elevate cursor-pointer' : 'opacity-70'}`} 
+                  data-testid={`card-sbu-${sbu.id}`}
+                >
                   <CardHeader>
                     <div className={`h-10 w-10 rounded-md ${sbu.color} flex items-center justify-center mb-2`}>
                       <sbu.icon className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-lg">{t(sbu.nameKey)}</CardTitle>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      {t(sbu.nameKey)}
+                      {sbu.comingSoon && (
+                        <span 
+                          className="text-xs bg-muted px-2 py-0.5 rounded-full text-muted-foreground font-normal"
+                          data-testid={`text-sbu-coming-soon-${sbu.id}`}
+                        >
+                          Coming Soon
+                        </span>
+                      )}
+                    </CardTitle>
                     <CardDescription>{t(sbu.descKey)}</CardDescription>
                   </CardHeader>
                 </Card>
-              </Link>
-            ))}
+              );
+              
+              if (sbu.href) {
+                return (
+                  <Link key={sbu.id} href={sbu.href}>
+                    {cardContent}
+                  </Link>
+                );
+              }
+              return <div key={sbu.id}>{cardContent}</div>;
+            })}
           </div>
         </div>
       </section>
@@ -250,7 +270,7 @@ export default function HubLanding() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-primary-foreground text-primary-foreground"
               onClick={scrollToContact}
               data-testid="button-cta-contact"
             >
@@ -285,8 +305,8 @@ export default function HubLanding() {
               <Link href="/hub/sbu/education" className="text-muted-foreground hover:text-primary">
                 {t('hub_sbu2_name')}
               </Link>
-              <Link href="/" className="text-muted-foreground hover:text-primary">
-                Other Path Travel
+              <Link href="/immigration" className="text-muted-foreground hover:text-primary">
+                Immigration Services
               </Link>
             </div>
             <div className="text-sm text-muted-foreground">
