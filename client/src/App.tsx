@@ -33,6 +33,7 @@ import AdminRevenueConsole from '@/pages/AdminRevenueConsole';
 import EducationFeedback from '@/pages/EducationFeedback';
 import TranscriptSubmission from '@/pages/TranscriptSubmission';
 import HubAdminDashboard from '@/pages/HubAdminDashboard';
+import MemberHub from '@/pages/MemberHub';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -122,6 +123,7 @@ function Router() {
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
       <Route path="/hub/auth/callback" component={HubAuthCallback} />
       <Route path="/hub/dashboard" component={MemberDashboard} />
+      <Route path="/hub/member" component={MemberHub} />
       
       {/* Education programs */}
       <Route path="/hub/sbu/education" component={SBUEducation} />

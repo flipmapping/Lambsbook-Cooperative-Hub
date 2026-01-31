@@ -26,6 +26,7 @@ import {
   getUser,
 } from "./services/supabase-auth";
 import adminRoutes from "./routes/admin";
+import memberRoutes from "./routes/member";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -33,6 +34,7 @@ export async function registerRoutes(
 ): Promise<Server> {
   
   app.use("/api/admin", adminRoutes);
+  app.use("/api/member", memberRoutes);
 
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
     try {
