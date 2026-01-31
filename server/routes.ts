@@ -25,12 +25,15 @@ import {
   resetPassword,
   getUser,
 } from "./services/supabase-auth";
+import adminRoutes from "./routes/admin";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
   
+  app.use("/api/admin", adminRoutes);
+
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
     try {
       const stats = await storage.getDashboardStats();
