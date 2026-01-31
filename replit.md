@@ -169,40 +169,45 @@ Preferred communication style: Simple, everyday language.
 
 ## Lambsbook Agentic Hub (Supabase)
 
-The platform now includes a comprehensive Supabase-based system for partner programs, referral tracking, and revenue sharing.
+The platform uses Supabase for member management, referral tracking, and earnings distribution.
 
-### Supabase Tables (Master Schema)
+### Supabase Schema (Canonical - January 2026)
 
-| Category | Tables |
-|----------|--------|
-| **SBUs** | `sbus` (5 Strategic Business Units) |
-| **Members** | `members`, `member_tutor_profiles`, `member_partner_links` |
-| **Programs** | `programs` (with parent-child hierarchy) |
-| **Commissions** | `commission_rule_sets`, `commission_rules` |
-| **Transactions** | `transactions`, `earnings`, `payout_batches` |
-| **Product Partners** | `program_partner_shares`, `product_contracts`, `contract_payment_stages`, `contract_partner_payments` |
-| **Existing** | `partners`, `collaborators`, `customer_referrals`, etc. |
-| **System** | `audit_log` |
+**Enum Types:**
+- `membership_status`: free, paid
+- `activity_status`: active, inactive
+- `collaboration_status`: active, paused
+- `linked_by_type`: invitee, invitor, admin
+- `revenue_base`: fee, sales, gross_margin
+- `trigger_condition`: payment, attendance, completion, conversion
+- `tutor_type`: school, freelance, volunteer
+- `tutor_status`: unverified, verified, partner_educator
+- `earning_status`: pending, paid, paused
+
+**Tables:**
+
+| Table | Purpose |
+|-------|---------|
+| `members` | Core users with membership status, referral tracking (invitor_id), activity status |
+| `collaborations` | Referral relationships (invitee → invitor) with status |
+| `programs` | SBU programs with revenue_base and trigger_condition |
+| `program_eligibility` | Links members to eligible programs |
+| `subscriptions` | Member subscription pricing and renewal tracking |
+| `tutors` | Tutor profiles (school/freelance/volunteer) linked to members |
+| `earnings` | Commission records with earning_status (pending/paid/paused) |
+| `activity_logs` | Member activity tracking |
+
+**Key Constraints:**
+- `members.invitor_id` is immutable once set (trigger enforced)
+- `collaborations.invitee_id` is unique (one collaboration per member)
+- RLS enabled on `members` and `earnings` tables
 
 ### SBUs (Strategic Business Units)
 
-1. **SBU 1**: Coffee Shop and Community House (Lady Jane)
-2. **SBU 2**: Education Project - Tropicana, CTBC, Lambsbook.net (Bill/Khai)
-3. **SBU 3**: Migration Consultancy & HR (Glory International partnership)
-4. **SBU 4**: Agricultural Products - Gac Puree, Rocket Stoves (Carl)
-5. **SBU 5**: Farmstay Community (Future)
-
-### Commission Structure
-
-- **Collaborator Tier 1**: 15% (first-level referrer)
-- **Collaborator Tier 2**: 15% (second-level referrer)
-- **Partner Fee**: 10% (school/program partner)
-- **Charity Reserve**: 10% (church planting/charity)
-- **Remainder**: Goes to Tutor (SBU2) or Platform (other SBUs)
-
-### Member Roles
-
-A single member can have multiple roles: `user`, `ambassador`, `collaborator`, `partner`, `tutor`, `admin`
+1. **SBU 1**: Coffee Shop and Community House (Coming Soon)
+2. **SBU 2**: Education Project - Lambsbook.net (Primary Focus)
+3. **SBU 4**: Agricultural Products - Gac Puree, Deligac (Active)
+4. **SBU 5**: Farmstay Community (Coming Soon)
 
 ### Authentication
 
