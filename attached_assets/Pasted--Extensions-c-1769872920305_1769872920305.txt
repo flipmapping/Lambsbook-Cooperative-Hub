@@ -1,0 +1,190 @@
+-- =====================================
+-- Extensions
+-- =====================================
+create extension if not exists "pgcrypto";
+
+-- =====================================
+-- ENUM TYPES
+-- =====================================
+create type membership_status as enum ('free', 'paid');
+create type activity_status as enum ('active', 'inactive');
+
+create type collaboration_status as enum ('active', 'paused');
+create type linked_by_type as enum ('invitee', 'invitor', 'admin');
+
+create type revenue_base as enum ('fee', 'sales', 'gross_margin');
+create type trigger_condition as enum ('payment', 'attendance', 'completion', 'conversion');
+
+create type tutor_type as enum ('school', 'freelance', 'volunteer');
+create type tutor_status as enum ('unverified', 'verified', 'partner_educator');
+
+create type earning_status as enum ('pending', 'paid', 'paused');
+
+-- =====================================
+-- MEMBERS
+-- =====================================
+create table members (
+  id uuid primary key default gen_random_uuid(),
+  member_type text not null,
+  membership_status membership_status not null default 'free',
+
+  subscription_price_at_signup numeric,
+  subscription_renewal_date date,
+
+  join_date timestamptz not null default now(),
+  last_activity_at timestamptz,
+  activity_status activity_status not null default 'active',
+
+  invitor_id uuid,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+
+  constraint fk_invitor foreign key (invitor_id) references members(id),
+  constraint no_self_invite check (invitor_id is null or invitor_id <> id)
+);
+
+-- =====================================
+-- COLLABORATIONS
+-- =====================================
+create table collaborations (
+  id uuid primary key default gen_random_uuid(),
+  invitee_id uuid not null unique,
+  invitor_id uuid not null,
+
+  linked_at timestamptz not null default now(),
+  linked_by linked_by_type not null,
+  status collaboration_status not null default 'active',
+
+  constraint fk_invitee foreign key (invitee_id) references members(id) on delete cascade,
+  constraint fk_invitor foreign key (invitor_id) references members(id),
+  constraint no_self_collaboration check (invitee_id <> invitor_id)
+);
+
+-- =====================================
+-- PROGRAMS
+-- =====================================
+create table programs (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  sbu text not null,
+
+  revenue_base revenue_base not null,
+  trigger_condition trigger_condition not null,
+
+  is_active boolean not null default true,
+  created_at timestamptz not null default now()
+);
+
+-- =====================================
+-- PROGRAM ELIGIBILITY
+-- =====================================
+create table program_eligibility (
+  id uuid primary key default gen_random_uuid(),
+  member_id uuid not null,
+  program_id uuid not null,
+
+  eligible boolean not null default true,
+  assigned_at timestamptz not null default now(),
+
+  constraint fk_member foreign key (member_id) references members(id) on delete cascade,
+  constraint fk_program foreign key (program_id) references programs(id),
+  constraint unique_member_program unique (member_id, program_id)
+);
+
+-- =====================================
+-- SUBSCRIPTIONS
+-- =====================================
+create table subscriptions (
+  id uuid primary key default gen_random_uuid(),
+  member_id uuid not null,
+
+  price numeric not null,
+  price_locked_at timestamptz not null,
+  renewal_date date not null,
+  status text not null,
+
+  constraint fk_member_subscription foreign key (member_id)
+    references members(id) on delete cascade
+);
+
+-- =====================================
+-- TUTORS
+-- =====================================
+create table tutors (
+  id uuid primary key default gen_random_uuid(),
+  member_id uuid not null unique,
+
+  tutor_type tutor_type not null,
+  tutor_status tutor_status not null default 'unverified',
+
+  free_class_minutes_last_30_days integer not null default 0,
+  updated_at timestamptz not null default now(),
+
+  constraint fk_member_tutor foreign key (member_id)
+    references members(id) on delete cascade
+);
+
+-- =====================================
+-- EARNINGS
+-- =====================================
+create table earnings (
+  id uuid primary key default gen_random_uuid(),
+
+  member_id uuid not null,
+  program_id uuid not null,
+  source_member_id uuid not null,
+
+  amount numeric not null,
+  earning_status earning_status not null default 'pending',
+  period date not null,
+  created_at timestamptz not null default now(),
+
+  constraint fk_earning_member foreign key (member_id) references members(id),
+  constraint fk_source_member foreign key (source_member_id) references members(id),
+  constraint fk_program foreign key (program_id) references programs(id)
+);
+
+-- =====================================
+-- ACTIVITY LOGS
+-- =====================================
+create table activity_logs (
+  id uuid primary key default gen_random_uuid(),
+  member_id uuid not null,
+  activity_type text not null,
+  created_at timestamptz not null default now(),
+
+  constraint fk_activity_member foreign key (member_id)
+    references members(id) on delete cascade
+);
+
+-- =====================================
+-- INVITOR IMMUTABILITY TRIGGER
+-- =====================================
+create or replace function prevent_invitor_update()
+returns trigger as $$
+begin
+  if old.invitor_id is not null then
+    raise exception 'invitor_id is immutable once set';
+  end if;
+  return new;
+end;
+$$ language plpgsql;
+
+create trigger lock_invitor
+before update of invitor_id on members
+for each row
+execute function prevent_invitor_update();
+
+-- =====================================
+-- ROW LEVEL SECURITY (SAFE DEFAULTS)
+-- =====================================
+alter table members enable row level security;
+alter table earnings enable row level security;
+
+create policy member_self_read
+on members for select
+using (id = auth.uid());
+
+create policy earnings_self_read
+on earnings for select
+using (member_id = auth.uid());
