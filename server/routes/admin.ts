@@ -1,0 +1,462 @@
+import { Router, Request, Response } from 'express';
+import { supabaseDAL } from '../lib';
+import type {
+  ProgramInsert, ProgramUpdate,
+  ProgramEligibilityInsert,
+  MemberUpdate,
+  EarningUpdate,
+  TutorUpdate,
+  MembershipStatus, ActivityStatus, TutorStatus
+} from '../lib/supabase-types';
+
+const router = Router();
+
+const INACTIVITY_THRESHOLD_MONTHS = parseInt(process.env.INACTIVITY_THRESHOLD_MONTHS || '3', 10);
+
+router.get('/programs', async (_req: Request, res: Response) => {
+  try {
+    const programs = await supabaseDAL.getAllPrograms();
+    res.json(programs);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch programs';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.post('/programs', async (req: Request, res: Response) => {
+  try {
+    const data: ProgramInsert = {
+      name: req.body.name,
+      sbu: req.body.sbu,
+      revenue_base: req.body.revenue_base,
+      trigger_condition: req.body.trigger_condition,
+      is_active: req.body.is_active ?? true,
+    };
+    const program = await supabaseDAL.createProgram(data);
+    res.status(201).json(program);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to create program';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/programs/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const data: ProgramUpdate = {};
+    if (req.body.name !== undefined) data.name = req.body.name;
+    if (req.body.sbu !== undefined) data.sbu = req.body.sbu;
+    if (req.body.revenue_base !== undefined) data.revenue_base = req.body.revenue_base;
+    if (req.body.trigger_condition !== undefined) data.trigger_condition = req.body.trigger_condition;
+    if (req.body.is_active !== undefined) data.is_active = req.body.is_active;
+
+    const program = await supabaseDAL.updateProgram(id, data);
+    res.json(program);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to update program';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/programs/:id/activate', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const program = await supabaseDAL.updateProgram(id, { is_active: true });
+    res.json(program);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to activate program';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/programs/:id/deactivate', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const program = await supabaseDAL.updateProgram(id, { is_active: false });
+    res.json(program);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to deactivate program';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/program-eligibility', async (req: Request, res: Response) => {
+  try {
+    const { member_id } = req.query;
+    if (member_id && typeof member_id === 'string') {
+      const eligibility = await supabaseDAL.getProgramEligibilityByMember(member_id);
+      res.json(eligibility);
+    } else {
+      res.status(400).json({ error: 'member_id query parameter required' });
+    }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch eligibility';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.post('/program-eligibility', async (req: Request, res: Response) => {
+  try {
+    const member = await supabaseDAL.getMemberById(req.body.member_id);
+    if (!member) {
+      return res.status(404).json({ error: 'Member not found' });
+    }
+
+    const data: ProgramEligibilityInsert = {
+      member_id: req.body.member_id,
+      program_id: req.body.program_id,
+      eligible: req.body.eligible ?? true,
+    };
+    const eligibility = await supabaseDAL.createProgramEligibility(data);
+    res.status(201).json(eligibility);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to create eligibility';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/program-eligibility/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const eligibility = await supabaseDAL.updateProgramEligibility(id, {
+      eligible: req.body.eligible,
+    });
+    res.json(eligibility);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to update eligibility';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.delete('/program-eligibility/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await supabaseDAL.deleteProgramEligibility(id);
+    res.json({ success: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to delete eligibility';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/members', async (req: Request, res: Response) => {
+  try {
+    let members = await supabaseDAL.getAllMembers();
+
+    const { membership_status, activity_status } = req.query;
+    if (membership_status && typeof membership_status === 'string') {
+      members = members.filter(m => m.membership_status === membership_status);
+    }
+    if (activity_status && typeof activity_status === 'string') {
+      members = members.filter(m => m.activity_status === activity_status);
+    }
+
+    res.json(members);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch members';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/members/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const member = await supabaseDAL.getMemberById(id);
+    if (!member) {
+      return res.status(404).json({ error: 'Member not found' });
+    }
+    res.json(member);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch member';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/members/:id/invitees', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const invitees = await supabaseDAL.getDirectInvitees(id);
+    res.json(invitees);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch invitees';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/members/:id/membership', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { membership_status } = req.body as { membership_status: MembershipStatus };
+
+    if (!['free', 'paid'].includes(membership_status)) {
+      return res.status(400).json({ error: 'Invalid membership_status' });
+    }
+
+    const member = await supabaseDAL.updateMember(id, { membership_status });
+    res.json(member);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to update membership';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/members/:id/activity', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { activity_status } = req.body as { activity_status: ActivityStatus };
+
+    if (!['active', 'inactive'].includes(activity_status)) {
+      return res.status(400).json({ error: 'Invalid activity_status' });
+    }
+
+    const member = await supabaseDAL.updateMember(id, { activity_status });
+
+    if (activity_status === 'inactive') {
+      await supabaseDAL.pauseEarningsForInactiveMember(id);
+    } else {
+      await supabaseDAL.resumeEarningsForActiveMember(id);
+    }
+
+    res.json(member);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to update activity status';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/collaborations', async (_req: Request, res: Response) => {
+  try {
+    const collaborations = await supabaseDAL.getAllCollaborations();
+    res.json(collaborations);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch collaborations';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/activity-config', async (_req: Request, res: Response) => {
+  res.json({
+    inactivity_threshold_months: INACTIVITY_THRESHOLD_MONTHS,
+  });
+});
+
+router.post('/activity-decay/check', async (_req: Request, res: Response) => {
+  try {
+    const members = await supabaseDAL.getAllMembers();
+    const thresholdDate = new Date();
+    thresholdDate.setMonth(thresholdDate.getMonth() - INACTIVITY_THRESHOLD_MONTHS);
+
+    let deactivatedCount = 0;
+    for (const member of members) {
+      if (member.activity_status === 'active') {
+        const lastActivity = member.last_activity_at ? new Date(member.last_activity_at) : new Date(member.join_date);
+        if (lastActivity < thresholdDate) {
+          await supabaseDAL.updateMember(member.id, { activity_status: 'inactive' });
+          await supabaseDAL.pauseEarningsForInactiveMember(member.id);
+          deactivatedCount++;
+        }
+      }
+    }
+
+    res.json({ 
+      checked: members.length, 
+      deactivated: deactivatedCount,
+      threshold_months: INACTIVITY_THRESHOLD_MONTHS 
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to run activity decay check';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/earnings', async (req: Request, res: Response) => {
+  try {
+    let earnings = await supabaseDAL.getAllEarnings();
+
+    const { member_id, program_id, earning_status, period } = req.query;
+    
+    if (member_id && typeof member_id === 'string') {
+      earnings = earnings.filter(e => e.member_id === member_id);
+    }
+    if (program_id && typeof program_id === 'string') {
+      earnings = earnings.filter(e => e.program_id === program_id);
+    }
+    if (earning_status && typeof earning_status === 'string') {
+      earnings = earnings.filter(e => e.earning_status === earning_status);
+    }
+    if (period && typeof period === 'string') {
+      earnings = earnings.filter(e => e.period === period);
+    }
+
+    res.json(earnings);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch earnings';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/earnings/:id/pause', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const earning = await supabaseDAL.getEarningById(id);
+    if (!earning) {
+      return res.status(404).json({ error: 'Earning not found' });
+    }
+    if (earning.earning_status === 'paid') {
+      return res.status(400).json({ error: 'Cannot pause a paid earning' });
+    }
+
+    const updated = await supabaseDAL.updateEarning(id, { earning_status: 'paused' });
+    res.json(updated);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to pause earning';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/earnings/:id/resume', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const earning = await supabaseDAL.getEarningById(id);
+    if (!earning) {
+      return res.status(404).json({ error: 'Earning not found' });
+    }
+    if (earning.earning_status !== 'paused') {
+      return res.status(400).json({ error: 'Only paused earnings can be resumed' });
+    }
+
+    const member = await supabaseDAL.getMemberById(earning.member_id);
+    if (member && member.activity_status === 'inactive') {
+      return res.status(400).json({ error: 'Cannot resume earning for inactive member' });
+    }
+
+    const updated = await supabaseDAL.updateEarning(id, { earning_status: 'pending' });
+    res.json(updated);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to resume earning';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/tutors', async (req: Request, res: Response) => {
+  try {
+    const { tutor_status } = req.query;
+    let tutors = await supabaseDAL.getAllTutors();
+
+    if (tutor_status && typeof tutor_status === 'string') {
+      tutors = tutors.filter(t => t.tutor_status === tutor_status);
+    }
+
+    res.json(tutors);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch tutors';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.patch('/tutors/:id/status', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { tutor_status } = req.body as { tutor_status: TutorStatus };
+
+    if (!['unverified', 'verified', 'partner_educator'].includes(tutor_status)) {
+      return res.status(400).json({ error: 'Invalid tutor_status' });
+    }
+
+    const tutor = await supabaseDAL.updateTutor(id, { tutor_status });
+    res.json(tutor);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to update tutor status';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.post('/tutors/check-free-class-requirement', async (_req: Request, res: Response) => {
+  try {
+    const FREE_CLASS_MINUTES_REQUIRED = 30;
+    const tutors = await supabaseDAL.getAllTutors();
+    
+    let demotedCount = 0;
+    for (const tutor of tutors) {
+      if (tutor.tutor_status === 'verified' && tutor.free_class_minutes_last_30_days < FREE_CLASS_MINUTES_REQUIRED) {
+        await supabaseDAL.updateTutor(tutor.id, { tutor_status: 'unverified' });
+        demotedCount++;
+      }
+    }
+
+    res.json({ 
+      checked: tutors.length, 
+      demoted: demotedCount,
+      required_minutes: FREE_CLASS_MINUTES_REQUIRED 
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to check free class requirement';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/activity-logs', async (req: Request, res: Response) => {
+  try {
+    const { member_id, limit } = req.query;
+    const limitNum = limit ? parseInt(limit as string, 10) : 500;
+
+    if (member_id && typeof member_id === 'string') {
+      const logs = await supabaseDAL.getActivityLogsByMember(member_id, limitNum);
+      res.json(logs);
+    } else {
+      const logs = await supabaseDAL.getAllActivityLogs(limitNum);
+      res.json(logs);
+    }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch activity logs';
+    res.status(500).json({ error: message });
+  }
+});
+
+router.get('/stats', async (_req: Request, res: Response) => {
+  try {
+    const [members, programs, earnings, tutors, collaborations] = await Promise.all([
+      supabaseDAL.getAllMembers(),
+      supabaseDAL.getAllPrograms(),
+      supabaseDAL.getAllEarnings(),
+      supabaseDAL.getAllTutors(),
+      supabaseDAL.getAllCollaborations(),
+    ]);
+
+    res.json({
+      members: {
+        total: members.length,
+        free: members.filter(m => m.membership_status === 'free').length,
+        paid: members.filter(m => m.membership_status === 'paid').length,
+        active: members.filter(m => m.activity_status === 'active').length,
+        inactive: members.filter(m => m.activity_status === 'inactive').length,
+      },
+      programs: {
+        total: programs.length,
+        active: programs.filter(p => p.is_active).length,
+      },
+      earnings: {
+        total: earnings.length,
+        pending: earnings.filter(e => e.earning_status === 'pending').length,
+        paid: earnings.filter(e => e.earning_status === 'paid').length,
+        paused: earnings.filter(e => e.earning_status === 'paused').length,
+        totalAmount: earnings.reduce((sum, e) => sum + Number(e.amount), 0),
+      },
+      tutors: {
+        total: tutors.length,
+        unverified: tutors.filter(t => t.tutor_status === 'unverified').length,
+        verified: tutors.filter(t => t.tutor_status === 'verified').length,
+        partner_educator: tutors.filter(t => t.tutor_status === 'partner_educator').length,
+      },
+      collaborations: {
+        total: collaborations.length,
+        active: collaborations.filter(c => c.status === 'active').length,
+      },
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch stats';
+    res.status(500).json({ error: message });
+  }
+});
+
+export default router;

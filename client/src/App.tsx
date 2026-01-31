@@ -32,6 +32,7 @@ import PartnerOnboarding from '@/pages/PartnerOnboarding';
 import AdminRevenueConsole from '@/pages/AdminRevenueConsole';
 import EducationFeedback from '@/pages/EducationFeedback';
 import TranscriptSubmission from '@/pages/TranscriptSubmission';
+import HubAdminDashboard from '@/pages/HubAdminDashboard';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -127,6 +128,7 @@ function Router() {
       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
+      <Route path="/hub/admin" component={HubAdminDashboard} />
       <Route path="/hub/education/feedback" component={EducationFeedback} />
       <Route path="/hub/education/submit" component={TranscriptSubmission} />
       
