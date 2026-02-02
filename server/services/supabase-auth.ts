@@ -1,14 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  console.warn('Supabase credentials not configured. Auth features will be disabled.');
+if (!supabaseUrl || !supabaseServiceRoleKey) {
+  console.warn('[Supabase Auth] Service role key not configured. Auth features will be disabled.');
 }
 
-export const supabase = supabaseUrl && supabaseKey 
-  ? createClient(supabaseUrl, supabaseKey)
+// Use service role key for auth operations that create/manage users (server-only)
+export const supabase = supabaseUrl && supabaseServiceRoleKey 
+  ? createClient(supabaseUrl, supabaseServiceRoleKey)
   : null;
 
 export interface AuthResult {
