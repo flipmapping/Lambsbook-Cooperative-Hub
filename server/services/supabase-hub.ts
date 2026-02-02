@@ -2,15 +2,16 @@ import { createClient, AuthApiError } from '@supabase/supabase-js';
 import { z } from 'zod';
 
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 // Auth mode: 'supabase' for real email, 'mock' for development/testing
 // Auto-detect: use mock if SUPABASE credentials are missing or HUB_AUTH_MODE=mock
 const HUB_AUTH_MODE = process.env.HUB_AUTH_MODE || 'supabase';
-const useMockAuth = HUB_AUTH_MODE === 'mock' || !supabaseUrl || !supabaseKey;
+const useMockAuth = HUB_AUTH_MODE === 'mock' || !supabaseUrl || !supabaseServiceRoleKey;
 
-if (!supabaseUrl || !supabaseKey) {
-  console.warn('Supabase credentials not configured for Hub features - using mock auth mode');
+if (!supabaseUrl || !supabaseServiceRoleKey) {
+  console.warn('[Hub] Service role key not configured - using mock auth mode');
 }
 
 if (useMockAuth) {
@@ -19,8 +20,14 @@ if (useMockAuth) {
   console.log('[Hub Auth] Running in Supabase mode - real magic links will be sent');
 }
 
-const supabase = supabaseUrl && supabaseKey 
-  ? createClient(supabaseUrl, supabaseKey)
+// Service role client for auth operations that create users (server-only)
+const supabaseAuth = supabaseUrl && supabaseServiceRoleKey 
+  ? createClient(supabaseUrl, supabaseServiceRoleKey)
+  : null;
+
+// Anon client for non-user-creation queries (respects RLS)
+const supabase = supabaseUrl && supabaseAnonKey 
+  ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
 
 // Validation schemas for Hub entities
@@ -300,9 +307,13 @@ export async function signUpMember(data: SignUpData) {
     }
   }
 
-  // Send magic link via Supabase Auth
+  // Send magic link via Supabase Auth (using service role client for user creation)
+  if (!supabaseAuth) {
+    throw new HubAuthError('Supabase auth not configured. Set HUB_AUTH_MODE=mock for development.', 503);
+  }
+  
   try {
-    const { error } = await supabase.auth.signInWithOtp({
+    const { error } = await supabaseAuth.auth.signInWithOtp({
       email: data.email,
       options: {
         emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/auth/callback?referrer=${encodeURIComponent(data.referrerEmail || '')}`,
@@ -470,12 +481,12 @@ export async function loginMember(email: string) {
     };
   }
 
-  if (!supabase) {
-    throw new HubAuthError('Supabase not configured. Set HUB_AUTH_MODE=mock for development.', 503);
+  if (!supabaseAuth) {
+    throw new HubAuthError('Supabase auth not configured. Set HUB_AUTH_MODE=mock for development.', 503);
   }
 
   try {
-    const { error } = await supabase.auth.signInWithOtp({
+    const { error } = await supabaseAuth.auth.signInWithOtp({
       email,
       options: {
         emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/dashboard`,
