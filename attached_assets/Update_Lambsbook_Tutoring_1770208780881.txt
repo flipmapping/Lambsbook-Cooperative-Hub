@@ -1,0 +1,79 @@
+Update the “Lambsbook.net Tutoring” program under
+/ hub / sbu / education
+
+Part A — Program Card Update
+
+1. Remove the text “Coming Soon” from the Lambsbook.net Tutoring program card.
+2. Add a primary action button labeled:
+   “Learn More”
+3. When clicked, the button should navigate to a new internal route:
+   /hub/sbu/education/lambsbook-tutoring
+
+Ensure:
+- Button styling matches existing CTA buttons on the platform
+- No external links are used
+
+---
+
+Part B — Create New Landing Page
+Route:
+  /hub/sbu/education/lambsbook-tutoring
+
+Use the SAME layout, spacing, typography, and navigation as other Hub pages
+(do not introduce a new landing page design).
+
+Page Sections (top to bottom):
+
+1. Page Header
+   Title:
+     “Lambsbook Online Tutoring”
+   Subtitle:
+     “Learn with verified tutors, improve faster with AI feedback, and join a collaborative education hub.”
+
+2. AI English Feedback Engine Section
+   Title:
+     “Unlimited AI English Feedback”
+   Content:
+     - Explain that members can use the AI English Feedback Engine
+       for speaking and writing practice
+     - Emphasize:
+       • Instant feedback
+       • Unlimited usage
+       • Useful for students, teachers, and tutors
+   Include:
+     - A clear callout that this tool is available upon joining Lambsbook
+
+3. Why Join Lambsbook Tutoring
+   Bullet points:
+     - Learn from verified Lambsbook tutors
+     - Access free trial classes every week
+     - Affordable monthly subscription
+     - Part of a larger collaborative education hub
+
+4. How Onboarding Works
+   Step-style layout:
+     Step 1: Join Lambsbook as a member (free)
+     Step 2: Explore tutors and attend free trial classes
+     Step 3: Subscribe to access full tutoring and collaboration benefits
+
+5. Call to Action
+   Button:
+     “Get Started with Lambsbook”
+   Behavior:
+     - If user is not logged in → go to signup / onboarding
+     - If logged in → go to tutor discovery or hub home
+
+---
+
+Part C — Implementation Rules
+
+- Reuse existing components wherever possible
+- Do not hardcode long text strings inside components;
+  store copy in a config/constants file
+- Ensure responsive layout for desktop and mobile
+- Do not change backend logic or auth flows
+
+Return:
+- New route implementation
+- Updated program card component
+- Any config/constants added
