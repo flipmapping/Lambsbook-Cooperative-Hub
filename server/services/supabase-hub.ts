@@ -457,16 +457,20 @@ export async function linkReferrer(memberEmail: string, referrerEmail: string) {
 }
 
 // Get member by email (for validating referrer)
+// Uses service role client to bypass RLS for internal lookups
 export async function getMemberByEmail(email: string) {
-  if (!supabase) return null;
+  if (!supabaseAuth) return null;
   
-  const { data, error } = await supabase
+  const { data, error } = await supabaseAuth
     .from('members')
-    .select('id, email, full_name')
+    .select('id, email, full_name, invitor_id, member_type, activity_status')
     .eq('email', email)
     .single();
     
-  if (error) return null;
+  if (error) {
+    console.log('[Hub] getMemberByEmail error:', error.message);
+    return null;
+  }
   return data;
 }
 
