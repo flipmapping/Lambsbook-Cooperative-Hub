@@ -217,6 +217,12 @@ The platform uses Supabase for member management, referral tracking, and earning
 
 ## Recent Changes
 
+**February 2026:**
+- **Dashboard terminology corrections** - Updated Member and Admin dashboards to clearly separate Collaboration (Invitor–Invitee permanent relationships) from Referrals (purchase-based transactional attribution)
+- MemberDashboard: Added "Your Collaborations" and "Your Referral Links" sections with proper explanatory copy
+- HubAdminDashboard: Added "Collaboration Graph" and "Referral Earnings & Attribution" sections with Constitution-aligned explanations
+- Fixed all UI copy that conflated invitation with referral - now clearly states "Referrals do not change collaboration relationships"
+
 **January 2026:**
 - **Education Hub is now the primary landing page** - Route "/" shows Lambsbook Hub with Education focus
 - Legacy immigration website accessible at /immigration route
