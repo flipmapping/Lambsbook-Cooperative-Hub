@@ -33,13 +33,18 @@ interface Earning {
   created_at: string;
 }
 
-interface Referral {
+interface Invitee {
   id: string;
   name: string;
   email: string;
-  tier: number;
   status: string;
   joined_at: string;
+}
+
+interface Invitor {
+  id: string;
+  name: string;
+  email: string;
 }
 
 export default function MemberDashboard() {
@@ -57,9 +62,14 @@ export default function MemberDashboard() {
     queryKey: ["/api/hub/member/earnings"],
   });
 
-  // Fetch referrals
-  const { data: referrals = [], isLoading: referralsLoading } = useQuery<Referral[]>({
-    queryKey: ["/api/hub/member/referrals"],
+  // Fetch invitees (collaborators)
+  const { data: invitees = [], isLoading: inviteesLoading } = useQuery<Invitee[]>({
+    queryKey: ["/api/hub/member/invitees"],
+  });
+
+  // Fetch invitor (who invited this member)
+  const { data: invitor } = useQuery<Invitor | null>({
+    queryKey: ["/api/hub/member/invitor"],
   });
 
   const copyReferralLink = () => {
@@ -101,11 +111,12 @@ export default function MemberDashboard() {
     { id: "3", amount: 200, currency: "USD", program_name: "EB-3 Visa Service", type: "tier1_referral", status: "pending", created_at: "2025-12-18" },
   ];
 
-  const mockReferrals: Referral[] = referrals.length ? referrals : [
-    { id: "1", name: "John Smith", email: "j***@example.com", tier: 1, status: "active", joined_at: "2025-11-20" },
-    { id: "2", name: "Maria Garcia", email: "m***@example.com", tier: 1, status: "active", joined_at: "2025-11-25" },
-    { id: "3", name: "David Lee", email: "d***@example.com", tier: 2, status: "active", joined_at: "2025-12-01" },
+  const mockInvitees: Invitee[] = invitees.length ? invitees : [
+    { id: "1", name: "John Smith", email: "j***@example.com", status: "active", joined_at: "2025-11-20" },
+    { id: "2", name: "Maria Garcia", email: "m***@example.com", status: "active", joined_at: "2025-11-25" },
   ];
+
+  const mockInvitor: Invitor | null = invitor || null;
 
   if (memberLoading) {
     return (
@@ -182,14 +193,14 @@ export default function MemberDashboard() {
             </CardContent>
           </Card>
 
-          <Card data-testid="card-referrals">
+          <Card data-testid="card-collaborators">
             <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Referrals</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Collaborators</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{mockMember.referral_count}</div>
-              <p className="text-xs text-muted-foreground">People you've referred</p>
+              <div className="text-2xl font-bold">{mockInvitees.length}</div>
+              <p className="text-xs text-muted-foreground">Members you've invited</p>
             </CardContent>
           </Card>
 
@@ -205,11 +216,73 @@ export default function MemberDashboard() {
           </Card>
         </div>
 
-        {/* Referral Link */}
-        <Card className="mb-8" data-testid="card-referral-link">
+        {/* Your Collaborations Section */}
+        <Card className="mb-6" data-testid="card-collaborations">
           <CardHeader>
-            <CardTitle className="text-lg">Your Referral Link</CardTitle>
-            <CardDescription>Share this link to earn commissions on referrals</CardDescription>
+            <CardTitle className="text-lg">Your Collaborations</CardTitle>
+            <CardDescription>
+              Long-term collaboration relationships within Lambsbook
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {/* Invitor Info */}
+            {mockInvitor ? (
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="text-sm text-muted-foreground mb-1">Your Invitor</p>
+                <div className="flex items-center gap-3">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <User className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">{mockInvitor.name}</p>
+                    <p className="text-sm text-muted-foreground">{mockInvitor.email}</p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="text-sm text-muted-foreground">
+                  You have no invitor. You can still invite existing members who do not yet have an invitor to collaborate with you.
+                </p>
+              </div>
+            )}
+
+            {/* Invitees List */}
+            <div>
+              <p className="text-sm font-medium mb-2">Your Collaborators ({mockInvitees.length})</p>
+              {mockInvitees.length > 0 ? (
+                <div className="space-y-2">
+                  {mockInvitees.slice(0, 3).map((invitee) => (
+                    <div key={invitee.id} className="flex items-center justify-between p-2 border rounded-lg" data-testid={`invitee-${invitee.id}`}>
+                      <div className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                          <User className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-sm">{invitee.name}</p>
+                          <p className="text-xs text-muted-foreground">{invitee.email}</p>
+                        </div>
+                      </div>
+                      <Badge variant="outline" className="text-xs">{invitee.status}</Badge>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground">
+                  You have no collaborators yet. Collaborators are members you invite to work together inside Lambsbook.
+                </p>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Your Referral Links Section */}
+        <Card className="mb-8" data-testid="card-referral-links">
+          <CardHeader>
+            <CardTitle className="text-lg">Your Referral Links</CardTitle>
+            <CardDescription>
+              Share referral links to earn when products, programs, or services are purchased
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -224,7 +297,8 @@ export default function MemberDashboard() {
               </div>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">
-              Your referrer email: <span className="font-mono font-medium">{mockMember.email}</span>
+              <span className="font-medium">Note:</span> Referrals do not change collaboration relationships. 
+              Earnings are triggered only when a purchase occurs through your link.
             </p>
           </CardContent>
         </Card>
@@ -240,9 +314,9 @@ export default function MemberDashboard() {
               <TrendingUp className="h-4 w-4 mr-2" />
               Earnings
             </TabsTrigger>
-            <TabsTrigger value="referrals" data-testid="tab-referrals">
+            <TabsTrigger value="collaborations" data-testid="tab-collaborations">
               <Users className="h-4 w-4 mr-2" />
-              Referrals
+              Collaborations
             </TabsTrigger>
           </TabsList>
 
@@ -275,38 +349,60 @@ export default function MemberDashboard() {
                 </CardContent>
               </Card>
 
-              {/* Recent Referrals */}
+              {/* Recent Collaborators */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Recent Referrals</CardTitle>
+                  <CardTitle className="text-lg">Your Collaborators</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {mockReferrals.slice(0, 5).map((referral) => (
-                      <div key={referral.id} className="flex items-center justify-between" data-testid={`referral-${referral.id}`}>
-                        <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
-                            <User className="h-4 w-4" />
+                    {mockInvitees.length > 0 ? (
+                      mockInvitees.slice(0, 5).map((invitee) => (
+                        <div key={invitee.id} className="flex items-center justify-between" data-testid={`collab-${invitee.id}`}>
+                          <div className="flex items-center gap-3">
+                            <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                              <User className="h-4 w-4" />
+                            </div>
+                            <div>
+                              <p className="font-medium">{invitee.name}</p>
+                              <p className="text-sm text-muted-foreground">{invitee.email}</p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="font-medium">{referral.name}</p>
-                            <p className="text-sm text-muted-foreground">{referral.email}</p>
-                          </div>
+                          <Badge variant="outline">{invitee.status}</Badge>
                         </div>
-                        <Badge variant="outline">Tier {referral.tier}</Badge>
-                      </div>
-                    ))}
+                      ))
+                    ) : (
+                      <p className="text-sm text-muted-foreground">
+                        No collaborators yet. Collaborations are long-term relationships separate from referrals.
+                      </p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             </div>
+
+            {/* Referral Links Quick Reference */}
+            <Card className="mt-6">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg">Referral Links</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Share referral links to earn when purchases occur. Referrals do not change collaboration relationships.
+                </p>
+                <Button variant="outline" size="sm" onClick={copyReferralLink} data-testid="button-copy-referral-overview">
+                  <Copy className="h-4 w-4 mr-2" />
+                  Copy Referral Link
+                </Button>
+              </CardContent>
+            </Card>
           </TabsContent>
 
           <TabsContent value="earnings">
             <Card>
               <CardHeader>
                 <CardTitle>Earnings History</CardTitle>
-                <CardDescription>All your earnings from referrals and programs</CardDescription>
+                <CardDescription>All your earnings from purchases through your referral links</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -333,31 +429,87 @@ export default function MemberDashboard() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="referrals">
-            <Card>
+          <TabsContent value="collaborations">
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Your Invitor */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Your Invitor</CardTitle>
+                  <CardDescription>The member who invited you to collaborate</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {mockInvitor ? (
+                    <div className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg">
+                      <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <User className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">{mockInvitor.name}</p>
+                        <p className="text-sm text-muted-foreground">{mockInvitor.email}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-muted-foreground">
+                      You have no invitor. Your collaboration relationships are independent of your referral activity.
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* Collaboration Info */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>About Collaborations</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="text-sm text-muted-foreground space-y-2">
+                    <p>Collaboration is a long-term relationship between members within Lambsbook.</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Each member can have only one invitor</li>
+                      <li>You can invite multiple members to collaborate</li>
+                      <li>Collaboration creates passive earning relationships</li>
+                      <li>Referrals do not change collaboration relationships</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* All Collaborators */}
+            <Card className="mt-6">
               <CardHeader>
-                <CardTitle>Your Referral Network</CardTitle>
-                <CardDescription>People who joined through your link</CardDescription>
+                <CardTitle>Your Collaborators</CardTitle>
+                <CardDescription>Members you have invited to collaborate with you</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {mockReferrals.map((referral) => (
-                    <div key={referral.id} className="flex items-center justify-between border-b pb-3 last:border-0" data-testid={`referral-row-${referral.id}`}>
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
-                          <User className="h-5 w-5" />
+                  {mockInvitees.length > 0 ? (
+                    mockInvitees.map((invitee) => (
+                      <div key={invitee.id} className="flex items-center justify-between border-b pb-3 last:border-0" data-testid={`collab-row-${invitee.id}`}>
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
+                            <User className="h-5 w-5" />
+                          </div>
+                          <div>
+                            <p className="font-medium">{invitee.name}</p>
+                            <p className="text-sm text-muted-foreground">{invitee.email}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-medium">{referral.name}</p>
-                          <p className="text-sm text-muted-foreground">{referral.email}</p>
+                        <div className="text-right">
+                          <Badge variant="outline" className="mb-1">{invitee.status}</Badge>
+                          <p className="text-xs text-muted-foreground">Joined {invitee.joined_at}</p>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <Badge variant="outline" className="mb-1">Tier {referral.tier}</Badge>
-                        <p className="text-xs text-muted-foreground">Joined {referral.joined_at}</p>
-                      </div>
+                    ))
+                  ) : (
+                    <div className="text-center py-6">
+                      <Users className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
+                      <p className="text-muted-foreground mb-2">You have no collaborators yet.</p>
+                      <p className="text-sm text-muted-foreground">
+                        Invite existing members who do not yet have an invitor to collaborate with you.
+                      </p>
                     </div>
-                  ))}
+                  )}
                 </div>
               </CardContent>
             </Card>
