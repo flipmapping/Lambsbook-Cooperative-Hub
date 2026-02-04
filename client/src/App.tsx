@@ -34,6 +34,7 @@ import EducationFeedback from '@/pages/EducationFeedback';
 import TranscriptSubmission from '@/pages/TranscriptSubmission';
 import HubAdminDashboard from '@/pages/HubAdminDashboard';
 import MemberHub from '@/pages/MemberHub';
+import LambsbookTutoring from '@/pages/LambsbookTutoring';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -127,6 +128,7 @@ function Router() {
       
       {/* Education programs */}
       <Route path="/hub/sbu/education" component={SBUEducation} />
+      <Route path="/hub/sbu/education/lambsbook-tutoring" component={LambsbookTutoring} />
       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />

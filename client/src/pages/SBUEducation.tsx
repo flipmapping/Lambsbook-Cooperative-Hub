@@ -47,9 +47,8 @@ const programs = [
     icon: BookOpen,
     description: 'Online tutoring and academic support for students worldwide',
     location: 'Online',
-    href: '#',
+    href: '/hub/sbu/education/lambsbook-tutoring',
     color: 'bg-purple-500/10 text-purple-600',
-    comingSoon: true,
   },
 ];
 
