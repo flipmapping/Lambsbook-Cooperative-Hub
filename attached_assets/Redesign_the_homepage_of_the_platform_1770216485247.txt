@@ -1,0 +1,61 @@
+Redesign the homepage of the platform at:
+https://global-pathways--flipmapping.replit.app/hub
+
+Apply the following changes carefully and holistically:
+
+1. Platform Name
+
+Rename the platform everywhere to “Lambsbook Collaborative Hub”.
+
+2. Hero Section (Above the Fold)
+
+Headline:
+“Open Collaboration Economy
+Empowering Learning, Growth, and Shared Success”
+
+Subheadline:
+“Lambsbook Collaborative Hub is a cooperative platform where individuals and organizations form long-term collaboration relationships — and share the value created across education, migration, commerce, and more.”
+
+Primary CTA: Join as a Free Member
+
+Secondary CTA: Learn How Collaboration Works
+
+3. How Collaboration Works Section
+
+Add a clear, simple explanation describing Lambsbook as a collaboration-based platform (not affiliate or referral marketing).
+
+Explain that members can invite others to collaborate, that collaboration relationships are long-term, established once, and cannot be bypassed or replaced.
+
+Emphasize trust, transparency, real programs, and shared value creation over time.
+
+Avoid mentioning commissions, payouts, or numerical incentives.
+
+Include a short FAQ section answering common questions about collaboration, trust, and participation.
+
+4. Business Units Section
+
+Title: “Our Strategic Business Units”
+
+Remove the card:
+“Coffee Shop & Community – Lady Jane’s community gathering space (Coming Soon)”
+
+Update Agricultural Products card to:
+Healthy Food from Nature
+“Organic Fruits, Vegetables and Noodles”
+
+Update Farmstay Communities card sub-text to:
+“Partner with us to build farmstay communities for ecotourism, elderly care centers, and co-create education and farming cooperatives.”
+
+Add a Learn more link on Farmstay Communities leading to a new vision page.
+
+5. Tone & Design
+
+Use a calm, cooperative, trustworthy tone.
+
+Avoid sales language or income promises.
+
+Present Lambsbook as a cooperative operating system rather than a marketing platform.
+
+Ensure the page feels welcoming, global, and mission-driven.
+
+The goal is to align the homepage fully with a permissionless collaboration economy built on long-term relationships, education, and shared success.

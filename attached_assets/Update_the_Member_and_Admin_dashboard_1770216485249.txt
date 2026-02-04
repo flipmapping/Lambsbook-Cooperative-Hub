@@ -1,0 +1,84 @@
+Update the Member and Admin dashboards to fully align with the Lambsbook Constitution by clearly separating:
+
+1) Collaboration (Invitor–Invitee relationship)
+2) Referrals (earning from purchases, regardless of membership status)
+
+Do NOT introduce new business logic. This is a UI + copy + state alignment task only.
+
+────────────────────────
+PART A — TERMINOLOGY CORRECTION (CRITICAL)
+────────────────────────
+
+Replace all user-facing text that implies:
+“Invitation = referral”
+
+Specifically REMOVE or REWRITE phrases like:
+- “No invitees yet. Share your referral link to grow your network.”
+- “Invite people to earn”
+- “Referral = collaborator”
+
+NEW DEFINITIONS TO ENCODE IN UI COPY:
+
+• Collaboration (Invitor–Invitee)
+  - Can only happen AFTER someone is already a Lambsbook member
+  - Each member can have only ONE invitor
+  - A member can invite multiple invitees
+  - Collaboration creates long-term passive earning relationships
+
+• Referral
+  - Any member can share referral links
+  - Referral links can be shared with:
+    • Non-members
+    • Existing members
+  - Earnings are triggered only when a purchase occurs
+  - Referrals do NOT change invitor–invitee relationships
+
+────────────────────────
+PART B — MEMBER DASHBOARD UPDATES
+────────────────────────
+
+1. Replace the current “Invitees / Referral” widget with TWO CLEAR SECTIONS:
+
+SECTION 1: “Your Collaborations”
+- If the member has no invitees, show:
+  “You have no collaborators yet.
+   Collaborators are members you invite to work together inside Lambsbook.”
+
+- If the member already has an invitor:
+  Display:
+  “Your Invitor: [Member Name / ID]”
+
+- If the member can still invite others:
+  Show:
+  “Invite existing members who do not yet have an invitor to collaborate with you.”
+
+2. Add a separate section:
+SECTION 2: “Your Referral Links”
+- Text:
+  “Share referral links to earn when products, programs, or services are purchased.”
+- This section should:
+  - Always be visible
+  - NOT reference collaboration or invitees
+  - Clearly state: “Referrals do not change collaboration relationships.”
+
+────────────────────────
+PART C — ADMIN DASHBOARD UPDATES
+────────────────────────
+
+In Admin views:
+- Clearly label:
+  “Collaboration Graph (Invitor–Invitee)”
+- Separately label:
+  “Referral Earnings & Attribution”
+
+Remove any admin UI copy that:
+- Suggests referrals create collaborators
+- Treats invitees as referrals
+
+Admins should be able to:
+- See collaboration lineage
+- See referral-based earnings independently
+
+────────────────────────
+PART D — LANGUAGE MENU FIX
+─────────────────

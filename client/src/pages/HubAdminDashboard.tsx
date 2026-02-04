@@ -222,10 +222,11 @@ export default function HubAdminDashboard() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid grid-cols-6 w-full max-w-2xl" data-testid="tabs-admin">
+        <TabsList className="flex flex-wrap w-full max-w-3xl gap-1" data-testid="tabs-admin">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
           <TabsTrigger value="programs" data-testid="tab-programs">Programs</TabsTrigger>
           <TabsTrigger value="members" data-testid="tab-members">Members</TabsTrigger>
+          <TabsTrigger value="collaborations" data-testid="tab-collaborations">Collaborations</TabsTrigger>
           <TabsTrigger value="earnings" data-testid="tab-earnings">Earnings</TabsTrigger>
           <TabsTrigger value="tutors" data-testid="tab-tutors">Tutors</TabsTrigger>
           <TabsTrigger value="settings" data-testid="tab-settings">Settings</TabsTrigger>
@@ -242,7 +243,7 @@ export default function HubAdminDashboard() {
                 <StatCard title="Total Earnings" value={`$${stats.earnings.totalAmount.toFixed(2)}`} icon={DollarSign} subtitle={`${stats.earnings.pending} pending`} />
                 <StatCard title="Verified Tutors" value={stats.tutors.verified + stats.tutors.partner_educator} icon={GraduationCap} subtitle={`${stats.tutors.unverified} unverified`} />
               </div>
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-3">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Member Breakdown</CardTitle>
@@ -256,13 +257,26 @@ export default function HubAdminDashboard() {
                 </Card>
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Earnings Breakdown</CardTitle>
+                    <CardTitle className="text-lg">Referral Earnings</CardTitle>
+                    <CardDescription className="text-xs">Purchase-based earnings attribution</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="flex justify-between"><span>Pending</span><Badge variant="secondary">{stats.earnings.pending}</Badge></div>
                     <div className="flex justify-between"><span>Paid</span><Badge className="bg-green-500">{stats.earnings.paid}</Badge></div>
                     <div className="flex justify-between"><span>Paused</span><Badge variant="destructive">{stats.earnings.paused}</Badge></div>
-                    <div className="flex justify-between"><span>Collaborations</span><Badge variant="outline">{stats.collaborations.active} active</Badge></div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Collaboration Graph</CardTitle>
+                    <CardDescription className="text-xs">Invitor–Invitee relationships</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="flex justify-between"><span>Total Collaborations</span><Badge variant="outline">{stats.collaborations.total}</Badge></div>
+                    <div className="flex justify-between"><span>Active</span><Badge className="bg-green-500">{stats.collaborations.active}</Badge></div>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Collaborations are independent of referral earnings
+                    </p>
                   </CardContent>
                 </Card>
               </div>
@@ -399,11 +413,77 @@ export default function HubAdminDashboard() {
           </Card>
         </TabsContent>
 
+        <TabsContent value="collaborations" className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Collaboration Graph (Invitor–Invitee)</CardTitle>
+                <CardDescription>
+                  View member collaboration lineage. Each member can have only one invitor, 
+                  but can invite multiple members.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {members.filter(m => m.invitor_id).slice(0, 10).map((member) => (
+                    <div key={member.id} className="flex items-center justify-between p-3 border rounded-lg" data-testid={`collab-row-${member.id}`}>
+                      <div>
+                        <div className="font-medium text-sm">{member.member_type || 'Member'}</div>
+                        <div className="text-xs text-muted-foreground">
+                          ID: {member.id.slice(0, 8)}...
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-muted-foreground">Invitor</div>
+                        <Badge variant="outline" className="text-xs">
+                          {member.invitor_id?.slice(0, 8)}...
+                        </Badge>
+                      </div>
+                    </div>
+                  ))}
+                  {members.filter(m => m.invitor_id).length === 0 && (
+                    <div className="text-center py-4 text-muted-foreground">
+                      No collaboration relationships found
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>About Collaborations</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p className="font-medium text-foreground">Key Concepts:</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li><strong>Collaboration</strong> = Invitor–Invitee relationship (permanent)</li>
+                    <li>Each member can have only ONE invitor</li>
+                    <li>A member can invite multiple invitees</li>
+                    <li>Creates long-term passive earning relationships</li>
+                  </ul>
+                  <p className="font-medium text-foreground mt-4">vs. Referrals:</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li><strong>Referral</strong> = Purchase attribution (transactional)</li>
+                    <li>Any member can share referral links</li>
+                    <li>Earnings triggered by purchases only</li>
+                    <li>Does NOT change collaboration relationships</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
         <TabsContent value="earnings" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Earnings Oversight</CardTitle>
-              <CardDescription>View and manage earnings by status</CardDescription>
+              <CardTitle>Referral Earnings & Attribution</CardTitle>
+              <CardDescription>
+                Earnings triggered by purchases through referral links. 
+                <span className="block text-xs mt-1">Note: Referrals do not create collaboration relationships.</span>
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex gap-4 mb-4">
