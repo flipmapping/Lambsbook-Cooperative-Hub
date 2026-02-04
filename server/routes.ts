@@ -884,18 +884,55 @@ export async function registerRoutes(
   // Member self-service endpoints
   app.get("/api/hub/member/me", async (req: Request, res: Response) => {
     try {
-      // For now, return demo data - in production this would check session
-      res.json({
-        id: "demo",
-        email: "demo@example.com",
-        full_name: "Demo User",
-        referral_code: "DEMO123",
-        roles: ["user", "collaborator"],
-        total_earnings: 1250.00,
-        pending_earnings: 350.00,
-        referral_count: 8,
-        programs_enrolled: 3,
-      });
+      // Extract Bearer token from Authorization header
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: "No authorization token provided" });
+      }
+      
+      const token = authHeader.substring(7); // Remove "Bearer " prefix
+      
+      // Validate token and get user info from Supabase
+      const authResult = await getUser(token);
+      if (!authResult.success || !authResult.data?.user) {
+        return res.status(401).json({ error: "Invalid or expired token" });
+      }
+      
+      const userEmail = authResult.data.user.email;
+      if (!userEmail) {
+        return res.status(401).json({ error: "User email not found" });
+      }
+      
+      // Fetch member data from Supabase
+      const member = await hubService.getMemberByEmail(userEmail);
+      
+      if (member) {
+        // Return real member data from Supabase
+        res.json({
+          id: member.id,
+          email: member.email,
+          full_name: member.full_name || userEmail.split('@')[0],
+          referral_code: member.id.slice(0, 8).toUpperCase(),
+          roles: ["user", "collaborator"],
+          total_earnings: 0, // Will be calculated from earnings table
+          pending_earnings: 0,
+          referral_count: 0,
+          programs_enrolled: 0,
+        });
+      } else {
+        // User is authenticated but not yet in members table - return basic info
+        res.json({
+          id: authResult.data.user.id,
+          email: userEmail,
+          full_name: userEmail.split('@')[0],
+          referral_code: authResult.data.user.id.slice(0, 8).toUpperCase(),
+          roles: ["user"],
+          total_earnings: 0,
+          pending_earnings: 0,
+          referral_count: 0,
+          programs_enrolled: 0,
+        });
+      }
     } catch (error) {
       console.error('Get member error:', error);
       res.status(500).json({ error: "Failed to get member data" });
@@ -904,26 +941,86 @@ export async function registerRoutes(
 
   app.get("/api/hub/member/earnings", async (req: Request, res: Response) => {
     try {
-      // Demo earnings data
-      res.json([
-        { id: "1", amount: 150, currency: "USD", program_name: "Tropicana English", type: "tier1_referral", status: "paid", created_at: "2025-12-15" },
-        { id: "2", amount: 75, currency: "USD", program_name: "CTBC Course", type: "tier2_referral", status: "paid", created_at: "2025-12-10" },
-        { id: "3", amount: 200, currency: "USD", program_name: "EB-3 Visa Service", type: "tier1_referral", status: "pending", created_at: "2025-12-18" },
-      ]);
+      // Extract Bearer token from Authorization header
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: "No authorization token provided" });
+      }
+      
+      const token = authHeader.substring(7);
+      const authResult = await getUser(token);
+      if (!authResult.success || !authResult.data?.user) {
+        return res.status(401).json({ error: "Invalid or expired token" });
+      }
+      
+      // Return empty array for now - will fetch from Supabase earnings table in future
+      res.json([]);
     } catch (error) {
       console.error('Get earnings error:', error);
       res.status(500).json({ error: "Failed to get earnings" });
     }
   });
 
+  app.get("/api/hub/member/invitees", async (req: Request, res: Response) => {
+    try {
+      // Extract Bearer token from Authorization header
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: "No authorization token provided" });
+      }
+      
+      const token = authHeader.substring(7);
+      const authResult = await getUser(token);
+      if (!authResult.success || !authResult.data?.user) {
+        return res.status(401).json({ error: "Invalid or expired token" });
+      }
+      
+      // Return empty array for now - will fetch from Supabase collaborations table in future
+      res.json([]);
+    } catch (error) {
+      console.error('Get invitees error:', error);
+      res.status(500).json({ error: "Failed to get invitees" });
+    }
+  });
+
+  app.get("/api/hub/member/invitor", async (req: Request, res: Response) => {
+    try {
+      // Extract Bearer token from Authorization header
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: "No authorization token provided" });
+      }
+      
+      const token = authHeader.substring(7);
+      const authResult = await getUser(token);
+      if (!authResult.success || !authResult.data?.user) {
+        return res.status(401).json({ error: "Invalid or expired token" });
+      }
+      
+      // Return null for now - will fetch from Supabase members.invitor_id in future
+      res.json(null);
+    } catch (error) {
+      console.error('Get invitor error:', error);
+      res.status(500).json({ error: "Failed to get invitor" });
+    }
+  });
+
   app.get("/api/hub/member/referrals", async (req: Request, res: Response) => {
     try {
-      // Demo referrals data
-      res.json([
-        { id: "1", name: "John Smith", email: "j***@example.com", tier: 1, status: "active", joined_at: "2025-11-20" },
-        { id: "2", name: "Maria Garcia", email: "m***@example.com", tier: 1, status: "active", joined_at: "2025-11-25" },
-        { id: "3", name: "David Lee", email: "d***@example.com", tier: 2, status: "active", joined_at: "2025-12-01" },
-      ]);
+      // Extract Bearer token from Authorization header
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: "No authorization token provided" });
+      }
+      
+      const token = authHeader.substring(7);
+      const authResult = await getUser(token);
+      if (!authResult.success || !authResult.data?.user) {
+        return res.status(401).json({ error: "Invalid or expired token" });
+      }
+      
+      // Return empty array for now - will fetch from Supabase in future
+      res.json([]);
     } catch (error) {
       console.error('Get referrals error:', error);
       res.status(500).json({ error: "Failed to get referrals" });
