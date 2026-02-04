@@ -65,6 +65,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: 'General Inquiry',
     hub_inquiry_partnership: 'Partnership Inquiry',
     hub_inquiry_referral: 'Referral Program',
+    hub_inquiry_collaboration: 'Collaboration Inquiry',
     hub_inquiry_support: 'Support',
 
     // Education SBU
@@ -183,6 +184,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: 'Yêu cầu Chung',
     hub_inquiry_partnership: 'Yêu cầu Hợp tác',
     hub_inquiry_referral: 'Chương trình Giới thiệu',
+    hub_inquiry_collaboration: 'Yêu cầu Cộng tác',
     hub_inquiry_support: 'Hỗ trợ',
 
     edu_hero_title: 'Biến đổi Tương lai qua Giáo dục',
@@ -299,6 +301,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: '一般咨询',
     hub_inquiry_partnership: '合作咨询',
     hub_inquiry_referral: '推荐计划',
+    hub_inquiry_collaboration: '合作咨询',
     hub_inquiry_support: '支持',
 
     edu_hero_title: '通过教育改变您的未来',
@@ -415,6 +418,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: '一般的なお問い合わせ',
     hub_inquiry_partnership: 'パートナーシップお問い合わせ',
     hub_inquiry_referral: '紹介プログラム',
+    hub_inquiry_collaboration: 'コラボレーションのお問い合わせ',
     hub_inquiry_support: 'サポート',
 
     edu_hero_title: '教育で未来を変える',
@@ -531,6 +535,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: 'Consulta General',
     hub_inquiry_partnership: 'Consulta de Asociación',
     hub_inquiry_referral: 'Programa de Referidos',
+    hub_inquiry_collaboration: 'Consulta de Colaboración',
     hub_inquiry_support: 'Soporte',
 
     edu_hero_title: 'Transforma Tu Futuro a Través de la Educación',
@@ -647,6 +652,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: 'Demande Générale',
     hub_inquiry_partnership: 'Demande de Partenariat',
     hub_inquiry_referral: 'Programme de Parrainage',
+    hub_inquiry_collaboration: 'Demande de Collaboration',
     hub_inquiry_support: 'Support',
 
     edu_hero_title: 'Transformez Votre Avenir par l\'Éducation',
@@ -763,6 +769,7 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_general: 'Consulta Geral',
     hub_inquiry_partnership: 'Consulta de Parceria',
     hub_inquiry_referral: 'Programa de Indicação',
+    hub_inquiry_collaboration: 'Consulta de Colaboração',
     hub_inquiry_support: 'Suporte',
 
     edu_hero_title: 'Transforme Seu Futuro Através da Educação',
