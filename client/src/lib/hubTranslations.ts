@@ -72,6 +72,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: 'Referral Program',
     hub_inquiry_collaboration: 'Collaboration Inquiry',
     hub_inquiry_support: 'Support',
+    
+    // How Collaboration Works section
+    hub_collab_title: 'How Collaboration Works',
+    hub_collab_subtitle: 'Lambsbook is built on a simple principle: when people collaborate authentically, everyone benefits. We\'re not an affiliate network or a marketing platform — we\'re a cooperative ecosystem.',
+    hub_collab_principle1_title: 'Long-term Relationships',
+    hub_collab_principle1_desc: 'Collaboration relationships are established once and cannot be bypassed or replaced. This creates lasting bonds of trust and mutual support.',
+    hub_collab_principle2_title: 'Trust & Transparency',
+    hub_collab_principle2_desc: 'Every relationship and contribution is recorded and respected. There are no hidden structures or unexpected changes.',
+    hub_collab_principle3_title: 'Shared Value Creation',
+    hub_collab_principle3_desc: 'When value is created through education, commerce, or community programs, it flows naturally to those who contributed — fairly and consistently.',
+    hub_collab_principle4_title: 'Grow Together Over Time',
+    hub_collab_principle4_desc: 'Unlike one-time transactions, collaboration compounds over time as your network and contributions grow alongside the platform.',
+    hub_trust_title: 'A Platform Built on Trust',
+    hub_trust_desc1: 'When you invite someone to collaborate on Lambsbook, you\'re not just sharing a link — you\'re forming a lasting partnership. This relationship remains throughout your journey on the platform, creating a network of mutual support and shared success.',
+    hub_trust_desc2: 'We believe in real programs, genuine education, and authentic community building. There are no quick schemes or empty promises — just honest collaboration that creates real value for everyone involved.',
+    
+    // FAQ section
+    hub_faq_title: 'Frequently Asked Questions',
+    hub_faq1_q: 'What is a collaboration relationship?',
+    hub_faq1_a: 'A collaboration relationship is a permanent connection between two members. When you invite someone to join Lambsbook, that relationship is established for life. Both parties benefit when either contributes to or participates in platform activities.',
+    hub_faq2_q: 'How is this different from affiliate or referral marketing?',
+    hub_faq2_a: 'Traditional referral programs focus on one-time rewards for bringing customers. Lambsbook\'s collaboration model creates lasting partnerships where members work together, share knowledge, and benefit from each other\'s growth over time — not just from a single transaction.',
+    hub_faq3_q: 'Can collaboration relationships be changed or bypassed?',
+    hub_faq3_a: 'No. Once established, collaboration relationships are permanent and cannot be altered. This ensures trust and fairness — your collaborators will always remain connected to you.',
+    hub_faq4_q: 'How do I participate and create value?',
+    hub_faq4_a: 'You can participate by joining education programs, connecting others to valuable opportunities, partnering in business units, or contributing your skills and knowledge. Every genuine contribution creates shared value.',
+    hub_faq5_q: 'Is there a cost to join?',
+    hub_faq5_a: 'Joining Lambsbook as a member is free. You can explore programs, build relationships, and participate in the community at no cost. Paid subscriptions unlock additional benefits and services.',
+    
+    // SBU section
+    hub_sbu_title: 'Our Strategic Business Units',
+    hub_sbu_desc: 'Lambsbook operates through focused business units, each creating value in education, agriculture, and community development.',
+    hub_sbu_education: 'Education Programs',
+    hub_sbu_education_desc: 'Online tutoring, vocational training, and overseas study pathways',
+    hub_sbu_food: 'Healthy Food from Nature',
+    hub_sbu_food_desc: 'Organic fruits, vegetables and noodles',
+    hub_sbu_farmstay: 'Farmstay Communities',
+    hub_sbu_farmstay_desc: 'Partner with us to build farmstay communities for ecotourism, elderly care centers, and co-create education and farming cooperatives.',
+    hub_sbu_learn_more: 'Learn more',
+    
+    // Our Commitment section
+    hub_commitment_title: 'Our Commitment',
+    hub_commitment1: 'Trust & Transparency',
+    hub_commitment2: 'Long-term Relationships',
+    hub_commitment3: 'Real Education Programs',
+    hub_commitment4: 'Shared Success',
+    
+    // CTA section
+    hub_cta_join_title: 'Join the Collaboration Economy',
+    hub_cta_join_desc: 'Be part of a global community that believes in cooperation, shared growth, and creating value together.',
+    hub_cta_join_button: 'Join as a Free Member',
+    hub_cta_contact_button: 'Contact Us',
+    
+    // Get in Touch section
+    hub_contact_title: 'Get in Touch',
+    hub_contact_desc: 'Have questions about collaboration or our programs? We\'re here to help you get started.',
+    
+    // Footer
+    hub_footer_education: 'Education Programs',
+    hub_footer_farmstay: 'Farmstay Vision',
 
     // Education SBU
     edu_hero_title: 'Transform Your Future Through Education',
@@ -196,6 +256,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: 'Chương trình Giới thiệu',
     hub_inquiry_collaboration: 'Yêu cầu Cộng tác',
     hub_inquiry_support: 'Hỗ trợ',
+    
+    // How Collaboration Works section
+    hub_collab_title: 'Cách Hợp tác Hoạt động',
+    hub_collab_subtitle: 'Lambsbook được xây dựng trên nguyên tắc đơn giản: khi mọi người hợp tác chân thành, ai cũng được hưởng lợi. Chúng tôi không phải là mạng lưới liên kết hay nền tảng tiếp thị — chúng tôi là hệ sinh thái hợp tác.',
+    hub_collab_principle1_title: 'Mối quan hệ Dài hạn',
+    hub_collab_principle1_desc: 'Mối quan hệ hợp tác được thiết lập một lần và không thể bị bỏ qua hoặc thay thế. Điều này tạo ra sự gắn kết bền vững của niềm tin và hỗ trợ lẫn nhau.',
+    hub_collab_principle2_title: 'Tin tưởng & Minh bạch',
+    hub_collab_principle2_desc: 'Mọi mối quan hệ và đóng góp đều được ghi nhận và tôn trọng. Không có cấu trúc ẩn hay thay đổi bất ngờ.',
+    hub_collab_principle3_title: 'Tạo Giá trị Chung',
+    hub_collab_principle3_desc: 'Khi giá trị được tạo ra thông qua giáo dục, thương mại, hoặc chương trình cộng đồng, nó tự nhiên chảy đến những người đã đóng góp — công bằng và nhất quán.',
+    hub_collab_principle4_title: 'Cùng Phát triển theo Thời gian',
+    hub_collab_principle4_desc: 'Không giống như giao dịch một lần, sự hợp tác tích lũy theo thời gian khi mạng lưới và đóng góp của bạn phát triển cùng với nền tảng.',
+    hub_trust_title: 'Nền tảng Được Xây dựng trên Niềm tin',
+    hub_trust_desc1: 'Khi bạn mời ai đó hợp tác trên Lambsbook, bạn không chỉ chia sẻ một liên kết — bạn đang hình thành một quan hệ đối tác lâu dài. Mối quan hệ này tồn tại suốt hành trình của bạn trên nền tảng, tạo ra mạng lưới hỗ trợ lẫn nhau và thành công chung.',
+    hub_trust_desc2: 'Chúng tôi tin vào các chương trình thực sự, giáo dục chân chính, và xây dựng cộng đồng đích thực. Không có những kế hoạch nhanh hay lời hứa rỗng — chỉ có sự hợp tác trung thực tạo ra giá trị thực cho tất cả mọi người.',
+    
+    // FAQ section
+    hub_faq_title: 'Câu hỏi Thường gặp',
+    hub_faq1_q: 'Mối quan hệ hợp tác là gì?',
+    hub_faq1_a: 'Mối quan hệ hợp tác là kết nối vĩnh viễn giữa hai thành viên. Khi bạn mời ai đó tham gia Lambsbook, mối quan hệ đó được thiết lập suốt đời. Cả hai bên đều được hưởng lợi khi bất kỳ ai đóng góp hoặc tham gia các hoạt động của nền tảng.',
+    hub_faq2_q: 'Điều này khác với tiếp thị liên kết hay giới thiệu như thế nào?',
+    hub_faq2_a: 'Các chương trình giới thiệu truyền thống tập trung vào phần thưởng một lần cho việc mang khách hàng. Mô hình hợp tác của Lambsbook tạo ra các quan hệ đối tác lâu dài, nơi các thành viên làm việc cùng nhau, chia sẻ kiến thức, và hưởng lợi từ sự phát triển của nhau theo thời gian.',
+    hub_faq3_q: 'Có thể thay đổi hoặc bỏ qua mối quan hệ hợp tác không?',
+    hub_faq3_a: 'Không. Một khi đã thiết lập, mối quan hệ hợp tác là vĩnh viễn và không thể thay đổi. Điều này đảm bảo sự tin tưởng và công bằng — những người cộng tác của bạn sẽ luôn gắn kết với bạn.',
+    hub_faq4_q: 'Làm thế nào để tham gia và tạo giá trị?',
+    hub_faq4_a: 'Bạn có thể tham gia bằng cách tham gia các chương trình giáo dục, kết nối người khác với các cơ hội có giá trị, hợp tác trong các đơn vị kinh doanh, hoặc đóng góp kỹ năng và kiến thức của bạn. Mỗi đóng góp chân thành đều tạo ra giá trị chung.',
+    hub_faq5_q: 'Có mất phí để tham gia không?',
+    hub_faq5_a: 'Tham gia Lambsbook với tư cách thành viên là miễn phí. Bạn có thể khám phá các chương trình, xây dựng mối quan hệ, và tham gia cộng đồng mà không mất phí. Các gói đăng ký trả phí mở khóa thêm các lợi ích và dịch vụ.',
+    
+    // SBU section
+    hub_sbu_title: 'Các Đơn vị Kinh doanh Chiến lược',
+    hub_sbu_desc: 'Lambsbook hoạt động thông qua các đơn vị kinh doanh tập trung, mỗi đơn vị tạo giá trị trong giáo dục, nông nghiệp và phát triển cộng đồng.',
+    hub_sbu_education: 'Chương trình Giáo dục',
+    hub_sbu_education_desc: 'Gia sư trực tuyến, đào tạo nghề, và lộ trình du học',
+    hub_sbu_food: 'Thực phẩm Lành mạnh từ Thiên nhiên',
+    hub_sbu_food_desc: 'Trái cây, rau củ và mì hữu cơ',
+    hub_sbu_farmstay: 'Cộng đồng Farmstay',
+    hub_sbu_farmstay_desc: 'Hợp tác với chúng tôi để xây dựng các cộng đồng farmstay cho du lịch sinh thái, trung tâm chăm sóc người cao tuổi, và đồng sáng tạo các hợp tác xã giáo dục và nông nghiệp.',
+    hub_sbu_learn_more: 'Tìm hiểu thêm',
+    
+    // Our Commitment section
+    hub_commitment_title: 'Cam kết của Chúng tôi',
+    hub_commitment1: 'Tin tưởng & Minh bạch',
+    hub_commitment2: 'Mối quan hệ Dài hạn',
+    hub_commitment3: 'Chương trình Giáo dục Thực sự',
+    hub_commitment4: 'Thành công Chung',
+    
+    // CTA section
+    hub_cta_join_title: 'Tham gia Nền Kinh tế Hợp tác',
+    hub_cta_join_desc: 'Trở thành một phần của cộng đồng toàn cầu tin vào sự hợp tác, tăng trưởng chung, và cùng nhau tạo ra giá trị.',
+    hub_cta_join_button: 'Tham gia Miễn phí',
+    hub_cta_contact_button: 'Liên hệ Chúng tôi',
+    
+    // Get in Touch section
+    hub_contact_title: 'Liên hệ',
+    hub_contact_desc: 'Có câu hỏi về hợp tác hoặc chương trình của chúng tôi? Chúng tôi sẵn sàng giúp bạn bắt đầu.',
+    
+    // Footer
+    hub_footer_education: 'Chương trình Giáo dục',
+    hub_footer_farmstay: 'Tầm nhìn Farmstay',
 
     edu_hero_title: 'Biến đổi Tương lai qua Giáo dục',
     edu_hero_subtitle: 'Đào tạo nghệ thuật ẩm thực, khách sạn quốc tế và lộ trình nghề nghiệp với chứng chỉ được công nhận toàn cầu',
@@ -318,6 +438,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: '推荐计划',
     hub_inquiry_collaboration: '合作咨询',
     hub_inquiry_support: '支持',
+    
+    // How Collaboration Works section
+    hub_collab_title: '合作如何运作',
+    hub_collab_subtitle: 'Lambsbook建立在一个简单的原则上：当人们真诚合作时，每个人都会受益。我们不是联盟网络或营销平台——我们是一个合作生态系统。',
+    hub_collab_principle1_title: '长期关系',
+    hub_collab_principle1_desc: '合作关系一旦建立就不能被绕过或替换。这创造了持久的信任和相互支持的纽带。',
+    hub_collab_principle2_title: '信任与透明',
+    hub_collab_principle2_desc: '每一个关系和贡献都被记录和尊重。没有隐藏的结构或意外的变化。',
+    hub_collab_principle3_title: '共享价值创造',
+    hub_collab_principle3_desc: '当通过教育、商业或社区项目创造价值时，它自然地流向那些做出贡献的人——公平且一致。',
+    hub_collab_principle4_title: '共同成长',
+    hub_collab_principle4_desc: '与一次性交易不同，合作随着时间的推移而累积，您的网络和贡献与平台一起成长。',
+    hub_trust_title: '建立在信任上的平台',
+    hub_trust_desc1: '当您邀请某人在Lambsbook上合作时，您不仅仅是分享一个链接——您正在形成一种持久的伙伴关系。这种关系将贯穿您在平台上的整个旅程，创造一个相互支持和共同成功的网络。',
+    hub_trust_desc2: '我们相信真正的项目、真正的教育和真正的社区建设。没有快速计划或空洞的承诺——只有创造真正价值的诚实合作。',
+    
+    // FAQ section
+    hub_faq_title: '常见问题',
+    hub_faq1_q: '什么是合作关系？',
+    hub_faq1_a: '合作关系是两个成员之间的永久连接。当您邀请某人加入Lambsbook时，这种关系就终身建立了。当任何一方贡献或参与平台活动时，双方都会受益。',
+    hub_faq2_q: '这与联盟或推荐营销有何不同？',
+    hub_faq2_a: '传统的推荐计划专注于带来客户的一次性奖励。Lambsbook的合作模式创造持久的伙伴关系，成员共同工作、分享知识，并从彼此的成长中受益——不仅仅是单次交易。',
+    hub_faq3_q: '合作关系可以更改或绕过吗？',
+    hub_faq3_a: '不能。一旦建立，合作关系是永久的，不能更改。这确保了信任和公平——您的合作者将永远与您保持联系。',
+    hub_faq4_q: '如何参与并创造价值？',
+    hub_faq4_a: '您可以通过参加教育项目、将他人与有价值的机会联系起来、在业务单位中合作，或贡献您的技能和知识来参与。每一个真诚的贡献都会创造共享价值。',
+    hub_faq5_q: '加入需要费用吗？',
+    hub_faq5_a: '以成员身份加入Lambsbook是免费的。您可以免费探索项目、建立关系和参与社区。付费订阅可解锁额外的福利和服务。',
+    
+    // SBU section
+    hub_sbu_title: '我们的战略业务单位',
+    hub_sbu_desc: 'Lambsbook通过专注的业务单位运营，每个单位在教育、农业和社区发展中创造价值。',
+    hub_sbu_education: '教育项目',
+    hub_sbu_education_desc: '在线辅导、职业培训和留学途径',
+    hub_sbu_food: '来自大自然的健康食品',
+    hub_sbu_food_desc: '有机水果、蔬菜和面条',
+    hub_sbu_farmstay: '农场住宿社区',
+    hub_sbu_farmstay_desc: '与我们合作建设生态旅游农场住宿社区、养老中心，共同创建教育和农业合作社。',
+    hub_sbu_learn_more: '了解更多',
+    
+    // Our Commitment section
+    hub_commitment_title: '我们的承诺',
+    hub_commitment1: '信任与透明',
+    hub_commitment2: '长期关系',
+    hub_commitment3: '真正的教育项目',
+    hub_commitment4: '共同成功',
+    
+    // CTA section
+    hub_cta_join_title: '加入合作经济',
+    hub_cta_join_desc: '成为相信合作、共同成长和共同创造价值的全球社区的一部分。',
+    hub_cta_join_button: '免费加入会员',
+    hub_cta_contact_button: '联系我们',
+    
+    // Get in Touch section
+    hub_contact_title: '联系我们',
+    hub_contact_desc: '对合作或我们的项目有疑问？我们随时帮助您开始。',
+    
+    // Footer
+    hub_footer_education: '教育项目',
+    hub_footer_farmstay: '农场住宿愿景',
 
     edu_hero_title: '通过教育改变您的未来',
     edu_hero_subtitle: '国际烹饪艺术、酒店培训和获得全球认可证书的职业路径',
@@ -440,6 +620,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: '紹介プログラム',
     hub_inquiry_collaboration: 'コラボレーションのお問い合わせ',
     hub_inquiry_support: 'サポート',
+    
+    // How Collaboration Works section
+    hub_collab_title: 'コラボレーションの仕組み',
+    hub_collab_subtitle: 'Lambsbookはシンプルな原則に基づいています：人々が誠実に協力するとき、誰もが恩恵を受けます。私たちはアフィリエイトネットワークやマーケティングプラットフォームではありません — 私たちは協力的なエコシステムです。',
+    hub_collab_principle1_title: '長期的な関係',
+    hub_collab_principle1_desc: 'コラボレーション関係は一度確立されると、バイパスや置き換えはできません。これにより、信頼と相互支援の永続的な絆が生まれます。',
+    hub_collab_principle2_title: '信頼と透明性',
+    hub_collab_principle2_desc: 'すべての関係と貢献が記録され、尊重されます。隠れた構造や予期せぬ変更はありません。',
+    hub_collab_principle3_title: '共有価値の創造',
+    hub_collab_principle3_desc: '教育、商業、またはコミュニティプログラムを通じて価値が創造されると、それは貢献した人々に自然に流れます — 公平かつ一貫して。',
+    hub_collab_principle4_title: '時間とともに成長',
+    hub_collab_principle4_desc: '一回限りの取引とは異なり、コラボレーションはネットワークと貢献がプラットフォームとともに成長するにつれて、時間とともに複利効果を発揮します。',
+    hub_trust_title: '信頼の上に築かれたプラットフォーム',
+    hub_trust_desc1: 'Lambsbookで誰かを協力に招待するとき、あなたは単にリンクを共有しているのではありません — あなたは永続的なパートナーシップを形成しています。この関係はプラットフォームでの旅を通じて続き、相互支援と共同成功のネットワークを作ります。',
+    hub_trust_desc2: '私たちは本物のプログラム、真の教育、そして本物のコミュニティ構築を信じています。簡単なスキームや空約束はありません — すべての人に本当の価値を創造する誠実なコラボレーションだけがあります。',
+    
+    // FAQ section
+    hub_faq_title: 'よくある質問',
+    hub_faq1_q: 'コラボレーション関係とは何ですか？',
+    hub_faq1_a: 'コラボレーション関係は、2人のメンバー間の永続的なつながりです。Lambsbookに誰かを招待すると、その関係は一生確立されます。どちらかが貢献したりプラットフォーム活動に参加したりすると、両者が恩恵を受けます。',
+    hub_faq2_q: 'アフィリエイトやリファラルマーケティングとどう違いますか？',
+    hub_faq2_a: '従来のリファラルプログラムは、顧客を連れてくることに対する一回限りの報酬に焦点を当てています。Lambsbookのコラボレーションモデルは、メンバーが一緒に働き、知識を共有し、時間をかけてお互いの成長から恩恵を受ける永続的なパートナーシップを作ります。',
+    hub_faq3_q: 'コラボレーション関係は変更またはバイパスできますか？',
+    hub_faq3_a: 'いいえ。一度確立されると、コラボレーション関係は永続的で変更できません。これにより信頼と公平性が保証されます — あなたのコラボレーターは常にあなたとつながっています。',
+    hub_faq4_q: 'どのように参加して価値を創造しますか？',
+    hub_faq4_a: '教育プログラムに参加したり、他の人を価値ある機会につなげたり、ビジネスユニットでパートナーを組んだり、スキルや知識を貢献したりすることで参加できます。すべての誠実な貢献が共有価値を創造します。',
+    hub_faq5_q: '参加にコストはかかりますか？',
+    hub_faq5_a: 'Lambsbookへのメンバーとしての参加は無料です。プログラムの探索、関係の構築、コミュニティへの参加を無料で行えます。有料サブスクリプションで追加の特典とサービスが利用可能になります。',
+    
+    // SBU section
+    hub_sbu_title: '戦略的ビジネスユニット',
+    hub_sbu_desc: 'Lambsbookは、教育、農業、コミュニティ開発で価値を創造する集中的なビジネスユニットを通じて運営されています。',
+    hub_sbu_education: '教育プログラム',
+    hub_sbu_education_desc: 'オンライン家庭教師、職業訓練、海外留学パスウェイ',
+    hub_sbu_food: '自然からの健康食品',
+    hub_sbu_food_desc: 'オーガニックフルーツ、野菜、麺類',
+    hub_sbu_farmstay: 'ファームステイコミュニティ',
+    hub_sbu_farmstay_desc: 'エコツーリズム、高齢者ケアセンター、教育と農業協同組合の共同創造のためのファームステイコミュニティを私たちと一緒に構築しましょう。',
+    hub_sbu_learn_more: '詳細を見る',
+    
+    // Our Commitment section
+    hub_commitment_title: '私たちのコミットメント',
+    hub_commitment1: '信頼と透明性',
+    hub_commitment2: '長期的な関係',
+    hub_commitment3: '本物の教育プログラム',
+    hub_commitment4: '共同成功',
+    
+    // CTA section
+    hub_cta_join_title: 'コラボレーション経済に参加',
+    hub_cta_join_desc: '協力、共同成長、そして価値の共同創造を信じるグローバルコミュニティの一員になりましょう。',
+    hub_cta_join_button: '無料メンバーとして参加',
+    hub_cta_contact_button: 'お問い合わせ',
+    
+    // Get in Touch section
+    hub_contact_title: 'お問い合わせ',
+    hub_contact_desc: 'コラボレーションやプログラムについてご質問がありますか？始めるお手伝いをいたします。',
+    
+    // Footer
+    hub_footer_education: '教育プログラム',
+    hub_footer_farmstay: 'ファームステイビジョン',
 
     edu_hero_title: '教育で未来を変える',
     edu_hero_subtitle: '国際的な調理芸術、ホスピタリティトレーニング、グローバル認定資格へのキャリアパス',
@@ -562,6 +802,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: 'Programa de Referidos',
     hub_inquiry_collaboration: 'Consulta de Colaboración',
     hub_inquiry_support: 'Soporte',
+    
+    // How Collaboration Works section
+    hub_collab_title: 'Cómo Funciona la Colaboración',
+    hub_collab_subtitle: 'Lambsbook se basa en un principio simple: cuando las personas colaboran auténticamente, todos se benefician. No somos una red de afiliados ni una plataforma de marketing — somos un ecosistema cooperativo.',
+    hub_collab_principle1_title: 'Relaciones a Largo Plazo',
+    hub_collab_principle1_desc: 'Las relaciones de colaboración se establecen una vez y no pueden ser eludidas ni reemplazadas. Esto crea vínculos duraderos de confianza y apoyo mutuo.',
+    hub_collab_principle2_title: 'Confianza y Transparencia',
+    hub_collab_principle2_desc: 'Cada relación y contribución se registra y respeta. No hay estructuras ocultas ni cambios inesperados.',
+    hub_collab_principle3_title: 'Creación de Valor Compartido',
+    hub_collab_principle3_desc: 'Cuando se crea valor a través de educación, comercio o programas comunitarios, fluye naturalmente hacia quienes contribuyeron — de manera justa y consistente.',
+    hub_collab_principle4_title: 'Crecer Juntos con el Tiempo',
+    hub_collab_principle4_desc: 'A diferencia de las transacciones únicas, la colaboración se compone con el tiempo a medida que tu red y contribuciones crecen junto con la plataforma.',
+    hub_trust_title: 'Una Plataforma Construida sobre la Confianza',
+    hub_trust_desc1: 'Cuando invitas a alguien a colaborar en Lambsbook, no solo estás compartiendo un enlace — estás formando una asociación duradera. Esta relación permanece durante tu viaje en la plataforma, creando una red de apoyo mutuo y éxito compartido.',
+    hub_trust_desc2: 'Creemos en programas reales, educación genuina y construcción de comunidad auténtica. No hay esquemas rápidos ni promesas vacías — solo colaboración honesta que crea valor real para todos los involucrados.',
+    
+    // FAQ section
+    hub_faq_title: 'Preguntas Frecuentes',
+    hub_faq1_q: '¿Qué es una relación de colaboración?',
+    hub_faq1_a: 'Una relación de colaboración es una conexión permanente entre dos miembros. Cuando invitas a alguien a unirse a Lambsbook, esa relación se establece de por vida. Ambas partes se benefician cuando cualquiera contribuye o participa en actividades de la plataforma.',
+    hub_faq2_q: '¿En qué se diferencia del marketing de afiliados o referidos?',
+    hub_faq2_a: 'Los programas de referidos tradicionales se centran en recompensas únicas por traer clientes. El modelo de colaboración de Lambsbook crea asociaciones duraderas donde los miembros trabajan juntos, comparten conocimiento y se benefician del crecimiento mutuo a lo largo del tiempo.',
+    hub_faq3_q: '¿Se pueden cambiar o eludir las relaciones de colaboración?',
+    hub_faq3_a: 'No. Una vez establecidas, las relaciones de colaboración son permanentes y no pueden alterarse. Esto garantiza confianza y equidad — tus colaboradores siempre permanecerán conectados contigo.',
+    hub_faq4_q: '¿Cómo participo y creo valor?',
+    hub_faq4_a: 'Puedes participar uniéndote a programas educativos, conectando a otros con oportunidades valiosas, asociándote en unidades de negocio o contribuyendo con tus habilidades y conocimientos. Cada contribución genuina crea valor compartido.',
+    hub_faq5_q: '¿Hay algún costo para unirse?',
+    hub_faq5_a: 'Unirse a Lambsbook como miembro es gratis. Puedes explorar programas, construir relaciones y participar en la comunidad sin costo. Las suscripciones de pago desbloquean beneficios y servicios adicionales.',
+    
+    // SBU section
+    hub_sbu_title: 'Nuestras Unidades de Negocio Estratégicas',
+    hub_sbu_desc: 'Lambsbook opera a través de unidades de negocio enfocadas, cada una creando valor en educación, agricultura y desarrollo comunitario.',
+    hub_sbu_education: 'Programas Educativos',
+    hub_sbu_education_desc: 'Tutoría en línea, formación vocacional y vías de estudio en el extranjero',
+    hub_sbu_food: 'Alimentos Saludables de la Naturaleza',
+    hub_sbu_food_desc: 'Frutas, verduras y fideos orgánicos',
+    hub_sbu_farmstay: 'Comunidades Farmstay',
+    hub_sbu_farmstay_desc: 'Asóciate con nosotros para construir comunidades farmstay para ecoturismo, centros de cuidado de ancianos y co-crear cooperativas educativas y agrícolas.',
+    hub_sbu_learn_more: 'Saber más',
+    
+    // Our Commitment section
+    hub_commitment_title: 'Nuestro Compromiso',
+    hub_commitment1: 'Confianza y Transparencia',
+    hub_commitment2: 'Relaciones a Largo Plazo',
+    hub_commitment3: 'Programas Educativos Reales',
+    hub_commitment4: 'Éxito Compartido',
+    
+    // CTA section
+    hub_cta_join_title: 'Únete a la Economía Colaborativa',
+    hub_cta_join_desc: 'Sé parte de una comunidad global que cree en la cooperación, el crecimiento compartido y la creación de valor juntos.',
+    hub_cta_join_button: 'Únete como Miembro Gratis',
+    hub_cta_contact_button: 'Contáctanos',
+    
+    // Get in Touch section
+    hub_contact_title: 'Ponte en Contacto',
+    hub_contact_desc: '¿Tienes preguntas sobre colaboración o nuestros programas? Estamos aquí para ayudarte a comenzar.',
+    
+    // Footer
+    hub_footer_education: 'Programas Educativos',
+    hub_footer_farmstay: 'Visión Farmstay',
 
     edu_hero_title: 'Transforma Tu Futuro a Través de la Educación',
     edu_hero_subtitle: 'Artes culinarias internacionales, formación en hostelería y trayectorias profesionales con certificaciones reconocidas globalmente',
@@ -684,6 +984,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: 'Programme de Parrainage',
     hub_inquiry_collaboration: 'Demande de Collaboration',
     hub_inquiry_support: 'Support',
+    
+    // How Collaboration Works section
+    hub_collab_title: 'Comment Fonctionne la Collaboration',
+    hub_collab_subtitle: 'Lambsbook repose sur un principe simple : quand les gens collaborent authentiquement, tout le monde en bénéficie. Nous ne sommes pas un réseau d\'affiliation ni une plateforme marketing — nous sommes un écosystème coopératif.',
+    hub_collab_principle1_title: 'Relations à Long Terme',
+    hub_collab_principle1_desc: 'Les relations de collaboration sont établies une fois et ne peuvent être contournées ni remplacées. Cela crée des liens durables de confiance et de soutien mutuel.',
+    hub_collab_principle2_title: 'Confiance et Transparence',
+    hub_collab_principle2_desc: 'Chaque relation et contribution est enregistrée et respectée. Il n\'y a pas de structures cachées ni de changements inattendus.',
+    hub_collab_principle3_title: 'Création de Valeur Partagée',
+    hub_collab_principle3_desc: 'Quand la valeur est créée à travers l\'éducation, le commerce ou les programmes communautaires, elle coule naturellement vers ceux qui ont contribué — équitablement et de manière cohérente.',
+    hub_collab_principle4_title: 'Grandir Ensemble au Fil du Temps',
+    hub_collab_principle4_desc: 'Contrairement aux transactions ponctuelles, la collaboration se compose au fil du temps à mesure que votre réseau et vos contributions grandissent avec la plateforme.',
+    hub_trust_title: 'Une Plateforme Construite sur la Confiance',
+    hub_trust_desc1: 'Quand vous invitez quelqu\'un à collaborer sur Lambsbook, vous ne partagez pas seulement un lien — vous formez un partenariat durable. Cette relation perdure tout au long de votre parcours sur la plateforme, créant un réseau de soutien mutuel et de succès partagé.',
+    hub_trust_desc2: 'Nous croyons en de vrais programmes, une éducation authentique et une construction de communauté sincère. Il n\'y a pas de schémas rapides ni de promesses vides — juste une collaboration honnête qui crée une vraie valeur pour tous.',
+    
+    // FAQ section
+    hub_faq_title: 'Questions Fréquemment Posées',
+    hub_faq1_q: 'Qu\'est-ce qu\'une relation de collaboration ?',
+    hub_faq1_a: 'Une relation de collaboration est une connexion permanente entre deux membres. Quand vous invitez quelqu\'un à rejoindre Lambsbook, cette relation est établie pour la vie. Les deux parties bénéficient quand l\'une contribue ou participe aux activités de la plateforme.',
+    hub_faq2_q: 'En quoi est-ce différent du marketing d\'affiliation ou de parrainage ?',
+    hub_faq2_a: 'Les programmes de parrainage traditionnels se concentrent sur des récompenses uniques pour amener des clients. Le modèle de collaboration de Lambsbook crée des partenariats durables où les membres travaillent ensemble, partagent leurs connaissances et bénéficient de la croissance mutuelle au fil du temps.',
+    hub_faq3_q: 'Les relations de collaboration peuvent-elles être modifiées ou contournées ?',
+    hub_faq3_a: 'Non. Une fois établies, les relations de collaboration sont permanentes et ne peuvent être modifiées. Cela garantit la confiance et l\'équité — vos collaborateurs resteront toujours connectés à vous.',
+    hub_faq4_q: 'Comment puis-je participer et créer de la valeur ?',
+    hub_faq4_a: 'Vous pouvez participer en rejoignant des programmes éducatifs, en connectant d\'autres personnes à des opportunités précieuses, en vous associant dans des unités commerciales, ou en contribuant avec vos compétences et connaissances. Chaque contribution sincère crée une valeur partagée.',
+    hub_faq5_q: 'Y a-t-il un coût pour rejoindre ?',
+    hub_faq5_a: 'Rejoindre Lambsbook en tant que membre est gratuit. Vous pouvez explorer les programmes, construire des relations et participer à la communauté sans frais. Les abonnements payants débloquent des avantages et services supplémentaires.',
+    
+    // SBU section
+    hub_sbu_title: 'Nos Unités Commerciales Stratégiques',
+    hub_sbu_desc: 'Lambsbook opère à travers des unités commerciales focalisées, chacune créant de la valeur dans l\'éducation, l\'agriculture et le développement communautaire.',
+    hub_sbu_education: 'Programmes Éducatifs',
+    hub_sbu_education_desc: 'Tutorat en ligne, formation professionnelle et voies d\'études à l\'étranger',
+    hub_sbu_food: 'Alimentation Saine de la Nature',
+    hub_sbu_food_desc: 'Fruits, légumes et nouilles biologiques',
+    hub_sbu_farmstay: 'Communautés Farmstay',
+    hub_sbu_farmstay_desc: 'Associez-vous à nous pour construire des communautés farmstay pour l\'écotourisme, les centres de soins pour personnes âgées, et co-créer des coopératives éducatives et agricoles.',
+    hub_sbu_learn_more: 'En savoir plus',
+    
+    // Our Commitment section
+    hub_commitment_title: 'Notre Engagement',
+    hub_commitment1: 'Confiance et Transparence',
+    hub_commitment2: 'Relations à Long Terme',
+    hub_commitment3: 'Vrais Programmes Éducatifs',
+    hub_commitment4: 'Succès Partagé',
+    
+    // CTA section
+    hub_cta_join_title: 'Rejoignez l\'Économie Collaborative',
+    hub_cta_join_desc: 'Faites partie d\'une communauté mondiale qui croit en la coopération, la croissance partagée et la création de valeur ensemble.',
+    hub_cta_join_button: 'Rejoindre en tant que Membre Gratuit',
+    hub_cta_contact_button: 'Contactez-nous',
+    
+    // Get in Touch section
+    hub_contact_title: 'Contactez-nous',
+    hub_contact_desc: 'Des questions sur la collaboration ou nos programmes ? Nous sommes là pour vous aider à démarrer.',
+    
+    // Footer
+    hub_footer_education: 'Programmes Éducatifs',
+    hub_footer_farmstay: 'Vision Farmstay',
 
     edu_hero_title: 'Transformez Votre Avenir par l\'Éducation',
     edu_hero_subtitle: 'Arts culinaires internationaux, formation en hôtellerie et parcours professionnels avec des certifications reconnues mondialement',
@@ -806,6 +1166,66 @@ export const hubTranslations: Record<Language, Record<string, string>> = {
     hub_inquiry_referral: 'Programa de Indicação',
     hub_inquiry_collaboration: 'Consulta de Colaboração',
     hub_inquiry_support: 'Suporte',
+    
+    // How Collaboration Works section
+    hub_collab_title: 'Como a Colaboração Funciona',
+    hub_collab_subtitle: 'Lambsbook é construído sobre um princípio simples: quando as pessoas colaboram autenticamente, todos se beneficiam. Não somos uma rede de afiliados ou uma plataforma de marketing — somos um ecossistema cooperativo.',
+    hub_collab_principle1_title: 'Relacionamentos de Longo Prazo',
+    hub_collab_principle1_desc: 'Relacionamentos de colaboração são estabelecidos uma vez e não podem ser contornados ou substituídos. Isso cria laços duradouros de confiança e apoio mútuo.',
+    hub_collab_principle2_title: 'Confiança e Transparência',
+    hub_collab_principle2_desc: 'Cada relacionamento e contribuição é registrado e respeitado. Não há estruturas ocultas ou mudanças inesperadas.',
+    hub_collab_principle3_title: 'Criação de Valor Compartilhado',
+    hub_collab_principle3_desc: 'Quando valor é criado através de educação, comércio ou programas comunitários, ele flui naturalmente para aqueles que contribuíram — de forma justa e consistente.',
+    hub_collab_principle4_title: 'Crescer Juntos ao Longo do Tempo',
+    hub_collab_principle4_desc: 'Ao contrário de transações únicas, a colaboração se compõe ao longo do tempo à medida que sua rede e contribuições crescem junto com a plataforma.',
+    hub_trust_title: 'Uma Plataforma Construída sobre Confiança',
+    hub_trust_desc1: 'Quando você convida alguém para colaborar no Lambsbook, você não está apenas compartilhando um link — você está formando uma parceria duradoura. Esse relacionamento permanece ao longo de sua jornada na plataforma, criando uma rede de apoio mútuo e sucesso compartilhado.',
+    hub_trust_desc2: 'Acreditamos em programas reais, educação genuína e construção de comunidade autêntica. Não há esquemas rápidos ou promessas vazias — apenas colaboração honesta que cria valor real para todos os envolvidos.',
+    
+    // FAQ section
+    hub_faq_title: 'Perguntas Frequentes',
+    hub_faq1_q: 'O que é um relacionamento de colaboração?',
+    hub_faq1_a: 'Um relacionamento de colaboração é uma conexão permanente entre dois membros. Quando você convida alguém para se juntar ao Lambsbook, esse relacionamento é estabelecido para toda a vida. Ambas as partes se beneficiam quando qualquer uma contribui ou participa de atividades da plataforma.',
+    hub_faq2_q: 'Como isso é diferente de marketing de afiliados ou indicação?',
+    hub_faq2_a: 'Programas de indicação tradicionais focam em recompensas únicas por trazer clientes. O modelo de colaboração do Lambsbook cria parcerias duradouras onde os membros trabalham juntos, compartilham conhecimento e se beneficiam do crescimento mútuo ao longo do tempo.',
+    hub_faq3_q: 'Os relacionamentos de colaboração podem ser alterados ou contornados?',
+    hub_faq3_a: 'Não. Uma vez estabelecidos, os relacionamentos de colaboração são permanentes e não podem ser alterados. Isso garante confiança e justiça — seus colaboradores sempre permanecerão conectados a você.',
+    hub_faq4_q: 'Como posso participar e criar valor?',
+    hub_faq4_a: 'Você pode participar entrando em programas educacionais, conectando outros a oportunidades valiosas, fazendo parcerias em unidades de negócios ou contribuindo com suas habilidades e conhecimentos. Cada contribuição genuína cria valor compartilhado.',
+    hub_faq5_q: 'Há algum custo para participar?',
+    hub_faq5_a: 'Participar do Lambsbook como membro é gratuito. Você pode explorar programas, construir relacionamentos e participar da comunidade sem custo. Assinaturas pagas desbloqueiam benefícios e serviços adicionais.',
+    
+    // SBU section
+    hub_sbu_title: 'Nossas Unidades de Negócio Estratégicas',
+    hub_sbu_desc: 'Lambsbook opera através de unidades de negócio focadas, cada uma criando valor em educação, agricultura e desenvolvimento comunitário.',
+    hub_sbu_education: 'Programas Educacionais',
+    hub_sbu_education_desc: 'Tutoria online, treinamento vocacional e caminhos de estudo no exterior',
+    hub_sbu_food: 'Alimentos Saudáveis da Natureza',
+    hub_sbu_food_desc: 'Frutas, vegetais e macarrão orgânicos',
+    hub_sbu_farmstay: 'Comunidades Farmstay',
+    hub_sbu_farmstay_desc: 'Faça parceria conosco para construir comunidades farmstay para ecoturismo, centros de cuidados para idosos e co-criar cooperativas educacionais e agrícolas.',
+    hub_sbu_learn_more: 'Saiba mais',
+    
+    // Our Commitment section
+    hub_commitment_title: 'Nosso Compromisso',
+    hub_commitment1: 'Confiança e Transparência',
+    hub_commitment2: 'Relacionamentos de Longo Prazo',
+    hub_commitment3: 'Programas Educacionais Reais',
+    hub_commitment4: 'Sucesso Compartilhado',
+    
+    // CTA section
+    hub_cta_join_title: 'Junte-se à Economia Colaborativa',
+    hub_cta_join_desc: 'Faça parte de uma comunidade global que acredita em cooperação, crescimento compartilhado e criação de valor juntos.',
+    hub_cta_join_button: 'Participe como Membro Gratuito',
+    hub_cta_contact_button: 'Fale Conosco',
+    
+    // Get in Touch section
+    hub_contact_title: 'Entre em Contato',
+    hub_contact_desc: 'Tem perguntas sobre colaboração ou nossos programas? Estamos aqui para ajudá-lo a começar.',
+    
+    // Footer
+    hub_footer_education: 'Programas Educacionais',
+    hub_footer_farmstay: 'Visão Farmstay',
 
     edu_hero_title: 'Transforme Seu Futuro Através da Educação',
     edu_hero_subtitle: 'Artes culinárias internacionais, treinamento em hotelaria e caminhos de carreira com certificações reconhecidas globalmente',
