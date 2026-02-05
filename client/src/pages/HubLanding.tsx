@@ -150,16 +150,16 @@ export default function HubLanding() {
       <section className="py-24 px-4 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
         <div className="container mx-auto text-center max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" data-testid="text-hero-title">
-            Open Collaboration Economy
-            <span className="block text-primary mt-2">Empowering Learning, Growth, and Shared Success</span>
+            {t('hub_hero_main_title')}
+            <span className="block text-primary mt-2">{t('hub_hero_main_subtitle')}</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-subtitle">
-            Lambsbook Collaborative Hub is a cooperative platform where individuals and organizations form long-term collaboration relationships — and share the value created across education, migration, commerce, and more.
+            {t('hub_hero_description')}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/hub/signup">
               <Button size="lg" data-testid="button-hero-signup">
-                Join as a Free Member
+                {t('hub_join_free')}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -169,7 +169,7 @@ export default function HubLanding() {
               onClick={scrollToCollaboration}
               data-testid="button-learn-collaboration"
             >
-              Learn How Collaboration Works
+              {t('hub_learn_collaboration')}
             </Button>
           </div>
         </div>
