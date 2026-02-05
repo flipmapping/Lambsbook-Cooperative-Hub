@@ -1,5 +1,7 @@
-import { createContext, useContext, useState, type ReactNode } from 'react';
-import { type Language, useTranslation } from './i18n';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { type Language, useTranslation, languages } from './i18n';
+
+const LANGUAGE_STORAGE_KEY = 'lambsbook.language';
 
 interface LanguageContextType {
   language: Language;
@@ -9,9 +11,30 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+function getStoredLanguage(): Language {
+  if (typeof window === 'undefined') return 'en';
+  const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  if (stored && languages.some(l => l.code === stored)) {
+    return stored as Language;
+  }
+  return 'en';
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>(getStoredLanguage);
   const { t } = useTranslation(language);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+  };
+
+  useEffect(() => {
+    const stored = getStoredLanguage();
+    if (stored !== language) {
+      setLanguageState(stored);
+    }
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
