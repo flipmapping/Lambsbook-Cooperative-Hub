@@ -26,6 +26,51 @@ function requireAuth(req: Request, res: Response): ReturnType<typeof createAuthe
   return createAuthenticatedClient(token);
 }
 
+router.post('/ensure', async (req: Request, res: Response) => {
+  const supabase = requireAuth(req, res);
+  if (!supabase) return;
+
+  try {
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
+    if (userError || !user) {
+      return res.status(401).json({ error: 'Invalid session' });
+    }
+
+    const { data: existing } = await supabase
+      .from('members')
+      .select('id, email, member_type, membership_status')
+      .eq('id', user.id)
+      .single();
+
+    if (existing) {
+      return res.json({ member: existing, created: false });
+    }
+
+    const { data: newMember, error: insertError } = await supabase
+      .from('members')
+      .insert({
+        id: user.id,
+        email: user.email,
+        member_type: 'standard',
+        membership_status: 'free',
+        activity_status: 'active',
+        join_date: new Date().toISOString(),
+      })
+      .select()
+      .single();
+
+    if (insertError) {
+      console.error('Ensure member insert error:', insertError);
+      return res.status(500).json({ error: insertError.message });
+    }
+
+    res.json({ member: newMember, created: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to ensure member';
+    res.status(500).json({ error: message });
+  }
+});
+
 router.get('/profile', async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
