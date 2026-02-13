@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -127,48 +127,6 @@ export default function HubLanding() {
   const faqItems = getFaqItems(t);
   const commitments = getCommitments(t);
 
-  const [debugUser, setDebugUser] = useState<{ id: string; email: string } | null>(null);
-  const [debugLoading, setDebugLoading] = useState(true);
-  const [debugMessage, setDebugMessage] = useState('');
-
-  useEffect(() => {
-    const checkUser = async () => {
-      const keys = ['supabase.auth.token', 'hub_access_token', 'supabase_access_token'];
-      let token: string | null = null;
-      for (const k of keys) {
-        const v = localStorage.getItem(k);
-        if (!v) continue;
-        try {
-          const p = JSON.parse(v);
-          const t = p?.currentSession?.access_token || p?.access_token || p;
-          if (typeof t === 'string' && t.length > 20) { token = t; break; }
-        } catch {
-          if (typeof v === 'string' && v.length > 20) { token = v; break; }
-        }
-      }
-      if (!token) {
-        setDebugMessage('No user logged in');
-        setDebugLoading(false);
-        return;
-      }
-      try {
-        const res = await fetch('/api/debug-auth-user', {
-          headers: { 'Authorization': `Bearer ${token}` },
-        });
-        const data = await res.json();
-        if (data.user) {
-          setDebugUser(data.user);
-        } else {
-          setDebugMessage(data.message || 'No user logged in');
-        }
-      } catch {
-        setDebugMessage('Error checking auth');
-      }
-      setDebugLoading(false);
-    };
-    checkUser();
-  }, []);
-
   const sectionRefs = {
     about: useRef<HTMLDivElement>(null),
     programs: useRef<HTMLDivElement>(null),
@@ -199,19 +157,6 @@ export default function HubLanding() {
         brandSubtitle="Open Collaboration Economy"
         homeLink="/hub"
       />
-
-      {/* DEBUG BANNER - TEMPORARY */}
-      <div className="bg-yellow-100 dark:bg-yellow-900/30 border-b border-yellow-300 dark:border-yellow-700 px-4 py-2 text-center text-sm font-mono" data-testid="debug-auth-banner">
-        {debugLoading ? (
-          <span className="text-yellow-700 dark:text-yellow-300">Checking auth...</span>
-        ) : debugUser ? (
-          <span className="text-green-700 dark:text-green-300">
-            Logged in — user.id: <strong>{debugUser.id}</strong> | email: <strong>{debugUser.email}</strong>
-          </span>
-        ) : (
-          <span className="text-red-700 dark:text-red-300">{debugMessage}</span>
-        )}
-      </div>
 
       {/* Hero Section */}
       <section className="py-24 px-4 bg-gradient-to-br from-primary/10 via-primary/5 to-background">

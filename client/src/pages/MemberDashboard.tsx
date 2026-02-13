@@ -7,9 +7,15 @@ import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import { 
   Home, DollarSign, Users, Gift, Copy, ExternalLink, 
-  TrendingUp, Clock, CheckCircle2, LogOut, User, Settings
+  TrendingUp, Clock, CheckCircle2, LogOut, User, Settings, AlertCircle
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+interface FinancialSummary {
+  net_balance: number;
+  total_credits: number;
+  total_debits: number;
+}
 
 interface MemberData {
   id: string;
@@ -47,27 +53,28 @@ interface Invitor {
   email: string;
 }
 
+
 export default function MemberDashboard() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("overview");
 
-  // Fetch member data
+  const { data: financialData, isLoading: financialLoading, error: financialError } = useQuery<{ summary: FinancialSummary | null }>({
+    queryKey: ['/api/member/financial-summary'],
+  });
+
   const { data: member, isLoading: memberLoading } = useQuery<MemberData>({
     queryKey: ["/api/hub/member/me"],
   });
 
-  // Fetch earnings
   const { data: earnings = [], isLoading: earningsLoading } = useQuery<Earning[]>({
     queryKey: ["/api/hub/member/earnings"],
   });
 
-  // Fetch invitees (collaborators)
   const { data: invitees = [], isLoading: inviteesLoading } = useQuery<Invitee[]>({
     queryKey: ["/api/hub/member/invitees"],
   });
 
-  // Fetch invitor (who invited this member)
   const { data: invitor } = useQuery<Invitor | null>({
     queryKey: ["/api/hub/member/invitor"],
   });
@@ -169,51 +176,85 @@ export default function MemberDashboard() {
           </div>
         </div>
 
-        {/* Quick Stats */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <Card data-testid="card-total-earnings">
-            <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Total Earnings</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">${mockMember.total_earnings.toFixed(2)}</div>
-              <p className="text-xs text-muted-foreground">Lifetime earnings</p>
-            </CardContent>
-          </Card>
-
-          <Card data-testid="card-pending-earnings">
-            <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Pending</CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">${mockMember.pending_earnings.toFixed(2)}</div>
-              <p className="text-xs text-muted-foreground">Awaiting payout</p>
-            </CardContent>
-          </Card>
-
-          <Card data-testid="card-collaborators">
-            <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Collaborators</CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockInvitees.length}</div>
-              <p className="text-xs text-muted-foreground">Members you've invited</p>
-            </CardContent>
-          </Card>
-
-          <Card data-testid="card-programs">
-            <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Programs</CardTitle>
-              <Gift className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockMember.programs_enrolled}</div>
-              <p className="text-xs text-muted-foreground">Active enrollments</p>
-            </CardContent>
-          </Card>
+        {/* Financial Summary */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-8">
+          {financialLoading ? (
+            <>
+              <Card data-testid="card-net-balance">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">Net Balance</CardTitle>
+                  <DollarSign className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold animate-pulse text-muted-foreground">...</div>
+                </CardContent>
+              </Card>
+              <Card data-testid="card-total-credits">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">Total Credits</CardTitle>
+                  <TrendingUp className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold animate-pulse text-muted-foreground">...</div>
+                </CardContent>
+              </Card>
+              <Card data-testid="card-total-debits">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">Total Debits</CardTitle>
+                  <Clock className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold animate-pulse text-muted-foreground">...</div>
+                </CardContent>
+              </Card>
+            </>
+          ) : financialError || (financialData && !financialData.summary) ? (
+            <Card className="sm:col-span-3" data-testid="card-no-financial-data">
+              <CardContent className="py-6 text-center">
+                <AlertCircle className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                <p className="text-muted-foreground">No financial data found.</p>
+              </CardContent>
+            </Card>
+          ) : financialData?.summary ? (
+            <>
+              <Card data-testid="card-net-balance">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">Net Balance</CardTitle>
+                  <DollarSign className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold" data-testid="text-net-balance">
+                    ${financialData.summary.net_balance.toFixed(2)}
+                  </div>
+                  <p className="text-xs text-muted-foreground">Credits minus debits</p>
+                </CardContent>
+              </Card>
+              <Card data-testid="card-total-credits">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">Total Credits</CardTitle>
+                  <TrendingUp className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold" data-testid="text-total-credits">
+                    ${financialData.summary.total_credits.toFixed(2)}
+                  </div>
+                  <p className="text-xs text-muted-foreground">All earnings received</p>
+                </CardContent>
+              </Card>
+              <Card data-testid="card-total-debits">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 gap-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">Total Debits</CardTitle>
+                  <Clock className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold" data-testid="text-total-debits">
+                    ${financialData.summary.total_debits.toFixed(2)}
+                  </div>
+                  <p className="text-xs text-muted-foreground">All payments made</p>
+                </CardContent>
+              </Card>
+            </>
+          ) : null}
         </div>
 
         {/* Your Collaborations Section */}
