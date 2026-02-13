@@ -37,32 +37,42 @@ export async function registerRoutes(
   app.use("/api/member", memberRoutes);
 
   app.get("/api/debug-auth", async (req: Request, res: Response) => {
-    try {
-      const authHeader = req.headers.authorization;
-      if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({ error: 'Missing or invalid Authorization header. Send Bearer <access_token>' });
-      }
-      const accessToken = authHeader.replace('Bearer ', '');
-      const supabaseUrl = process.env.SUPABASE_URL;
-      const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
-      if (!supabaseUrl || !supabaseAnonKey) {
-        return res.status(500).json({ error: 'SUPABASE_URL or SUPABASE_ANON_KEY not configured' });
-      }
-      const response = await fetch(`${supabaseUrl}/rest/v1/rpc/_debug_auth_context`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseAnonKey,
-          'Authorization': `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({}),
-      });
-      const data = await response.json();
-      res.json({ status: response.status, data });
-    } catch (error: any) {
-      console.error('Debug auth error:', error);
-      res.status(500).json({ error: error.message });
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+    if (!supabaseUrl || !supabaseAnonKey) {
+      return res.status(500).json({ error: 'SUPABASE_URL or SUPABASE_ANON_KEY not configured' });
     }
+    res.setHeader('Content-Type', 'text/html');
+    res.send(`<!DOCTYPE html>
+<html><head><title>Debug Auth Context</title>
+<style>body{font-family:monospace;padding:24px;background:#1a1a2e;color:#e0e0e0}
+pre{background:#16213e;padding:16px;border-radius:8px;overflow:auto;white-space:pre-wrap}
+h2{color:#a8d8ea}.error{color:#ff6b6b}.ok{color:#6bff6b}</style></head>
+<body><h2>Supabase _debug_auth_context</h2><pre id="out">Loading...</pre>
+<script>
+(async()=>{
+  const el=document.getElementById('out');
+  const keys=['supabase.auth.token','hub_access_token','supabase_access_token'];
+  let token=null;
+  for(const k of keys){
+    const v=localStorage.getItem(k);
+    if(!v)continue;
+    try{const p=JSON.parse(v);token=p?.currentSession?.access_token||p?.access_token||p;if(typeof token==='string')break;}
+    catch{if(typeof v==='string'&&v.length>20){token=v;break;}}
+  }
+  if(!token){el.innerHTML='<span class="error">No Supabase token found in localStorage.\\nPlease log in first.</span>';return;}
+  el.textContent='Token found, calling _debug_auth_context...';
+  try{
+    const r=await fetch('${supabaseUrl}/rest/v1/rpc/_debug_auth_context',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':'${supabaseAnonKey}','Authorization':'Bearer '+token},
+      body:'{}'
+    });
+    const d=await r.json();
+    el.innerHTML='<span class="ok">Status: '+r.status+'</span>\\n\\n'+JSON.stringify(d,null,2);
+  }catch(e){el.innerHTML='<span class="error">Error: '+e.message+'</span>';}
+})();
+</script></body></html>`);
   });
 
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
