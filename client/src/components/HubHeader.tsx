@@ -93,6 +93,11 @@ export function HubHeader({
               {t('hub_free_consultation')}
             </Button>
           )}
+          <Link href="/hub/login">
+            <Button variant="ghost" size="sm" className="hidden sm:inline-flex" data-testid="button-header-signin">
+              {t('hub_login')}
+            </Button>
+          </Link>
           <Link href="/hub/signup">
             <Button variant="outline" size="sm" className="hidden sm:inline-flex" data-testid="button-header-join">
               {t('hub_join_now')}
@@ -139,6 +144,26 @@ export function HubHeader({
                   >
                     {t('hub_free_consultation')}
                   </Button>
+                  <Link href="/hub/login">
+                    <Button
+                      variant="ghost"
+                      className="justify-start w-full mt-2"
+                      onClick={() => setIsOpen(false)}
+                      data-testid="mobile-nav-signin"
+                    >
+                      {t('hub_login')}
+                    </Button>
+                  </Link>
+                  <Link href="/hub/signup">
+                    <Button
+                      variant="outline"
+                      className="justify-start w-full"
+                      onClick={() => setIsOpen(false)}
+                      data-testid="mobile-nav-join"
+                    >
+                      {t('hub_join_now')}
+                    </Button>
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
