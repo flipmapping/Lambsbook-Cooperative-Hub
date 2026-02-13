@@ -5,17 +5,8 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-// Auth mode: 'supabase' for real email, 'mock' for development/testing
-// Auto-detect: use mock if SUPABASE credentials are missing or HUB_AUTH_MODE=mock
-const HUB_AUTH_MODE = process.env.HUB_AUTH_MODE || 'supabase';
-const useMockAuth = HUB_AUTH_MODE === 'mock' || !supabaseUrl || !supabaseServiceRoleKey;
-
 if (!supabaseUrl || !supabaseServiceRoleKey) {
-  console.warn('[Hub] Service role key not configured - using mock auth mode');
-}
-
-if (useMockAuth) {
-  console.log('[Hub Auth] Running in MOCK mode - magic links will be simulated');
+  console.warn('[Hub] Service role key not configured - auth features will be disabled');
 } else {
   console.log('[Hub Auth] Running in Supabase mode - real magic links will be sent');
 }
@@ -256,25 +247,8 @@ export async function signUpMember(data: SignUpData) {
     throw new HubAuthError(errorMsg, 400);
   }
 
-  // Mock mode - simulate magic link for development/testing
-  if (useMockAuth) {
-    console.log('[Hub Auth MOCK] Magic link would be sent to:', data.email);
-    console.log('[Hub Auth MOCK] Full name:', data.fullName);
-    console.log('[Hub Auth MOCK] Username:', data.username);
-    console.log('[Hub Auth MOCK] Phone:', data.phone);
-    console.log('[Hub Auth MOCK] Referrer email:', data.referrerEmail || 'none');
-    
-    return { 
-      success: true, 
-      message: `Magic link sent to ${data.email} (mock mode)`,
-      referrerEmail: data.referrerEmail || null,
-      referrerValid: !!data.referrerEmail,
-      mockMode: true
-    };
-  }
-
   if (!supabase) {
-    throw new HubAuthError('Supabase not configured. Set HUB_AUTH_MODE=mock for development.', 503);
+    throw new HubAuthError('Supabase not configured.', 503);
   }
 
   // Check if username is already taken
@@ -309,7 +283,7 @@ export async function signUpMember(data: SignUpData) {
 
   // Send magic link via Supabase Auth (using service role client for user creation)
   if (!supabaseAuth) {
-    throw new HubAuthError('Supabase auth not configured. Set HUB_AUTH_MODE=mock for development.', 503);
+    throw new HubAuthError('Supabase auth not configured.', 503);
   }
   
   try {
@@ -333,7 +307,7 @@ export async function signUpMember(data: SignUpData) {
       if (error instanceof AuthApiError) {
         if (error.code === 'unexpected_failure' || error.message.includes('sending')) {
           throw new HubAuthError(
-            'Email service unavailable. Please check Supabase email configuration or set HUB_AUTH_MODE=mock for testing.',
+            'Email service unavailable. Please check Supabase email configuration.',
             503,
             error
           );
@@ -378,8 +352,7 @@ export async function updateProfileAfterAuth(userId: string, data: {
   referrerId?: string;
 }) {
   if (!supabase) {
-    console.log('[Hub Auth] Mock mode - skipping profile update');
-    return { success: true };
+    throw new HubAuthError('Supabase not configured.', 503);
   }
 
   try {
@@ -410,8 +383,7 @@ export async function updateProfileAfterAuth(userId: string, data: {
 // Link referrer to new member after successful authentication
 export async function linkReferrer(memberEmail: string, referrerEmail: string) {
   if (!supabase) {
-    console.log('Supabase not configured - simulating referrer link');
-    return { success: true, message: 'Referrer linked (simulated)' };
+    throw new HubAuthError('Supabase not configured.', 503);
   }
 
   // Find the referrer by email
@@ -475,18 +447,8 @@ export async function getMemberByEmail(email: string) {
 }
 
 export async function loginMember(email: string) {
-  // Mock mode - simulate magic link for development/testing
-  if (useMockAuth) {
-    console.log('[Hub Auth MOCK] Login magic link would be sent to:', email);
-    return { 
-      success: true, 
-      message: `Magic link sent to ${email} (mock mode)`,
-      mockMode: true
-    };
-  }
-
   if (!supabaseAuth) {
-    throw new HubAuthError('Supabase auth not configured. Set HUB_AUTH_MODE=mock for development.', 503);
+    throw new HubAuthError('Supabase auth not configured.', 503);
   }
 
   try {

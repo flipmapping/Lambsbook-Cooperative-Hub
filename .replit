@@ -48,4 +48,3 @@ APP_URL = "https://global-pathways--flipmapping.replit.app"
 
 [userenv.development]
 APP_URL = "https://global-pathways--flipmapping.replit.app"
-HUB_AUTH_MODE = "supabase"

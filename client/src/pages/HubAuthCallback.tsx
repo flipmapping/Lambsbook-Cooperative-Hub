@@ -33,7 +33,6 @@ export default function HubAuthCallback() {
         }
 
         if (accessToken) {
-          // Store tokens in localStorage for Supabase client
           const tokenData = {
             access_token: accessToken,
             refresh_token: refreshToken,
@@ -42,7 +41,18 @@ export default function HubAuthCallback() {
           
           localStorage.setItem("supabase.auth.token", JSON.stringify(tokenData));
           
-          // Notify backend about successful auth (optional: link referrer)
+          try {
+            await fetch("/api/member/ensure", {
+              method: "POST",
+              headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${accessToken}`
+              },
+            });
+          } catch (e) {
+            console.warn("Failed to ensure member:", e);
+          }
+
           if (referrer) {
             try {
               await fetch("/api/hub/auth/link-referrer", {
@@ -60,7 +70,6 @@ export default function HubAuthCallback() {
 
           setStatus("success");
           
-          // Redirect to dashboard after short delay
           setTimeout(() => {
             setLocation("/hub/dashboard");
           }, 1500);
