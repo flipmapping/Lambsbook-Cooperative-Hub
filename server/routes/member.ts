@@ -273,6 +273,41 @@ router.post('/programs/:id/deselect', async (req: Request, res: Response) => {
   }
 });
 
+router.get('/financial-summary', async (req: Request, res: Response) => {
+  const supabase = requireAuth(req, res);
+  if (!supabase) return;
+
+  try {
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
+    if (userError || !user) {
+      return res.status(401).json({ error: 'Invalid session' });
+    }
+
+    const { data, error } = await supabase.rpc('get_my_member_financial_summary');
+
+    if (error) {
+      console.error('Financial summary RPC error:', error);
+      return res.status(500).json({ error: error.message });
+    }
+
+    if (!data || (Array.isArray(data) && data.length === 0)) {
+      return res.json({ summary: null });
+    }
+
+    const row = Array.isArray(data) ? data[0] : data;
+    res.json({
+      summary: {
+        net_balance: Number(row.net_balance ?? 0),
+        total_credits: Number(row.total_credits ?? 0),
+        total_debits: Number(row.total_debits ?? 0),
+      },
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch financial summary';
+    res.status(500).json({ error: message });
+  }
+});
+
 router.get('/earnings', async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
