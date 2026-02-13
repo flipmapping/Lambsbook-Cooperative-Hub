@@ -36,6 +36,35 @@ export async function registerRoutes(
   app.use("/api/admin", adminRoutes);
   app.use("/api/member", memberRoutes);
 
+  app.get("/api/debug-auth", async (req: Request, res: Response) => {
+    try {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'Missing or invalid Authorization header. Send Bearer <access_token>' });
+      }
+      const accessToken = authHeader.replace('Bearer ', '');
+      const supabaseUrl = process.env.SUPABASE_URL;
+      const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+      if (!supabaseUrl || !supabaseAnonKey) {
+        return res.status(500).json({ error: 'SUPABASE_URL or SUPABASE_ANON_KEY not configured' });
+      }
+      const response = await fetch(`${supabaseUrl}/rest/v1/rpc/_debug_auth_context`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': supabaseAnonKey,
+          'Authorization': `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({}),
+      });
+      const data = await response.json();
+      res.json({ status: response.status, data });
+    } catch (error: any) {
+      console.error('Debug auth error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
     try {
       const stats = await storage.getDashboardStats();
