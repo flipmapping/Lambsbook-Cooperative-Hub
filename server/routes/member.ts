@@ -26,6 +26,67 @@ function requireAuth(req: Request, res: Response): ReturnType<typeof createAuthe
   return createAuthenticatedClient(token);
 }
 
+router.get('/debug-session', async (req: Request, res: Response) => {
+  const token = getAccessToken(req);
+  console.log('[DEBUG] /api/member/debug-session called');
+  console.log('[DEBUG] Token present:', !!token);
+  console.log('[DEBUG] Token prefix:', token ? token.substring(0, 20) + '...' : 'none');
+
+  if (!isSupabaseMemberConfigured()) {
+    console.log('[DEBUG] Supabase member client NOT configured');
+    return res.json({ error: 'Supabase not configured', tokenPresent: !!token });
+  }
+
+  if (!token) {
+    console.log('[DEBUG] No token provided');
+    return res.json({ error: 'No token', tokenPresent: false });
+  }
+
+  const supabase = createAuthenticatedClient(token);
+
+  try {
+    const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+    console.log('[DEBUG] getSession result:', JSON.stringify({ 
+      hasSession: !!sessionData?.session,
+      sessionUser: sessionData?.session?.user?.email,
+      sessionError: sessionError?.message 
+    }));
+
+    const { data: userData, error: userError } = await supabase.auth.getUser();
+    console.log('[DEBUG] getUser result:', JSON.stringify({
+      hasUser: !!userData?.user,
+      userEmail: userData?.user?.email,
+      userId: userData?.user?.id,
+      userError: userError?.message
+    }));
+
+    const { data: rpcData, error: rpcError } = await supabase.rpc('get_my_member_financial_summary');
+    console.log('[DEBUG] RPC get_my_member_financial_summary result:', JSON.stringify({ rpcData, rpcError: rpcError?.message }));
+
+    res.json({
+      tokenPresent: true,
+      session: {
+        hasSession: !!sessionData?.session,
+        userEmail: sessionData?.session?.user?.email,
+        error: sessionError?.message || null,
+      },
+      user: {
+        hasUser: !!userData?.user,
+        email: userData?.user?.email,
+        id: userData?.user?.id,
+        error: userError?.message || null,
+      },
+      rpc: {
+        data: rpcData,
+        error: rpcError?.message || null,
+      },
+    });
+  } catch (err) {
+    console.error('[DEBUG] Exception:', err);
+    res.json({ error: String(err), tokenPresent: true });
+  }
+});
+
 router.post('/ensure', async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
