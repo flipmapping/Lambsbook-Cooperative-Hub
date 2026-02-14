@@ -60,8 +60,9 @@ router.get('/debug-session', async (req: Request, res: Response) => {
       userError: userError?.message
     }));
 
-    const { data: rpcData, error: rpcError } = await supabase.rpc('get_my_member_financial_summary');
-    console.log('[DEBUG] RPC get_my_member_financial_summary result:', JSON.stringify({ rpcData, rpcError: rpcError?.message }));
+    const mehClient = createAuthenticatedClient(token, 'meh');
+    const { data: rpcData, error: rpcError } = await mehClient.rpc('get_my_member_financial_summary');
+    console.log('[DEBUG] RPC meh.get_my_member_financial_summary result:', JSON.stringify({ rpcData, rpcError: rpcError?.message }));
 
     res.json({
       tokenPresent: true,
@@ -389,7 +390,9 @@ router.get('/financial-summary', async (req: Request, res: Response) => {
       return res.status(401).json({ error: 'Invalid session' });
     }
 
-    const { data, error } = await supabase.rpc('get_my_member_financial_summary');
+    const token = getAccessToken(req)!;
+    const mehClient = createAuthenticatedClient(token, 'meh');
+    const { data, error } = await mehClient.rpc('get_my_member_financial_summary');
 
     if (error) {
       console.error('Financial summary RPC error:', error);
