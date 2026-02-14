@@ -29,12 +29,13 @@ export function isSupabaseMemberConfigured(): boolean {
   return supabaseMember !== null;
 }
 
-export function createAuthenticatedClient(accessToken: string): SupabaseClient {
+export function createAuthenticatedClient(accessToken: string, schema?: string): SupabaseClient<any, any, any> {
   if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error('Supabase not configured');
   }
   
   return createClient(supabaseUrl, supabaseAnonKey, {
+    db: { schema: schema || 'public' },
     global: {
       headers: {
         Authorization: `Bearer ${accessToken}`,
