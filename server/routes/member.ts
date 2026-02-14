@@ -381,21 +381,35 @@ router.post('/programs/:id/deselect', async (req: Request, res: Response) => {
 });
 
 router.get('/financial-summary', async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+  const token = getAccessToken(req);
+  if (!token) {
+    return res.status(401).json({ error: 'Authentication required' });
+  }
+
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
 
   try {
-    const { data: { user }, error: userError } = await supabase.auth.getUser();
+    const anonClient = createAuthenticatedClient(token);
+
+    const { data: { user }, error: userError } = await anonClient.auth.getUser();
     if (userError || !user) {
+      console.log('[financial-summary] auth.getUser() failed:', userError?.message);
       return res.status(401).json({ error: 'Invalid session' });
     }
 
-    const token = getAccessToken(req)!;
+    console.log('[financial-summary] auth.uid() =', user.id, '| email =', user.email);
+
     const mehClient = createAuthenticatedClient(token, 'meh');
+
+    console.log('[financial-summary] Calling meh.get_my_member_financial_summary via anon key + user JWT');
     const { data, error } = await mehClient.rpc('get_my_member_financial_summary');
 
+    console.log('[financial-summary] RPC response:', JSON.stringify({ data, error: error?.message || null }));
+
     if (error) {
-      console.error('Financial summary RPC error:', error);
+      console.error('[financial-summary] RPC error:', error);
       return res.status(500).json({ error: error.message });
     }
 
@@ -413,6 +427,7 @@ router.get('/financial-summary', async (req: Request, res: Response) => {
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch financial summary';
+    console.error('[financial-summary] Exception:', message);
     res.status(500).json({ error: message });
   }
 });
