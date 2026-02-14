@@ -455,7 +455,7 @@ export async function loginMember(email: string) {
     const { error } = await supabaseAuth.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/dashboard`,
+        emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/auth/callback`,
       },
     });
 
