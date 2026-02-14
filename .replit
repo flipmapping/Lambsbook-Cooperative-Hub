@@ -48,3 +48,5 @@ APP_URL = "https://global-pathways--flipmapping.replit.app"
 
 [userenv.development]
 APP_URL = "https://global-pathways--flipmapping.replit.app"
+
+[userenv.shared]

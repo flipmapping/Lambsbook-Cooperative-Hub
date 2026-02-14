@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -66,6 +66,46 @@ export default function MemberDashboard() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("overview");
+
+  useEffect(() => {
+    const debugSession = async () => {
+      console.log('=== DASHBOARD DEBUG START ===');
+
+      const rawToken = localStorage.getItem('supabase.auth.token');
+      console.log('[DEBUG] localStorage supabase.auth.token:', rawToken);
+
+      let accessToken: string | null = null;
+      if (rawToken) {
+        try {
+          const parsed = JSON.parse(rawToken);
+          accessToken = parsed.access_token || null;
+          console.log('[DEBUG] Parsed access_token present:', !!accessToken);
+          console.log('[DEBUG] Token type:', parsed.token_type);
+          console.log('[DEBUG] Access token prefix:', accessToken ? accessToken.substring(0, 30) + '...' : 'none');
+        } catch (e) {
+          console.error('[DEBUG] Failed to parse token from localStorage:', e);
+        }
+      } else {
+        console.log('[DEBUG] No token in localStorage');
+      }
+
+      if (accessToken) {
+        try {
+          const res = await fetch('/api/member/debug-session', {
+            headers: { 'Authorization': `Bearer ${accessToken}` },
+          });
+          const data = await res.json();
+          console.log('[DEBUG] /api/member/debug-session response:', JSON.stringify(data, null, 2));
+        } catch (e) {
+          console.error('[DEBUG] Failed to call debug-session:', e);
+        }
+      }
+
+      console.log('=== DASHBOARD DEBUG END ===');
+    };
+
+    debugSession();
+  }, []);
 
   const { data: profileData, isLoading: profileLoading, error: profileError } = useQuery<ProfileData>({
     queryKey: ['/api/member/profile'],
