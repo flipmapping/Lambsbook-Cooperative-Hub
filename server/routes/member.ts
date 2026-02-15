@@ -5,6 +5,7 @@ import { executeFinancialRpc } from '../services/financial-executor';
 import { requireSuperAdmin } from '../middleware/requireSuperAdmin';
 import { blockSbuInjection } from '../middleware/blockSbuInjection';
 import { executeGovernanceRpc } from '../services/governance-executor';
+import { governanceRateLimit } from '../middleware/governanceRateLimit';
 
 const router = Router();
 
@@ -525,6 +526,7 @@ router.post(
   attachUserContext,
   requireSuperAdmin,
   blockSbuInjection,
+  governanceRateLimit,
   async (req, res) => {
     try {
       const user = (req as any).user;
@@ -551,6 +553,7 @@ router.post(
   attachUserContext,
   requireSuperAdmin,
   blockSbuInjection,
+  governanceRateLimit,
   async (req, res) => {
     try {
       const user = (req as any).user;
@@ -584,6 +587,7 @@ router.post(
   attachUserContext,
   requireSuperAdmin,
   blockSbuInjection,
+  governanceRateLimit,
   async (req, res) => {
     try {
       const user = (req as any).user;
