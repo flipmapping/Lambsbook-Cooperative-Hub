@@ -610,6 +610,39 @@ router.post(
   }
 );
 
+router.post(
+  "/admin/set-minimum-capital",
+  attachUserContext,
+  requireSuperAdmin,
+  blockSbuInjection,
+  async (req, res) => {
+    try {
+      const user = (req as any).user;
+
+      const { threshold } = req.body;
+
+      if (typeof threshold !== "number" || threshold <= 0) {
+        return res.status(400).json({ error: "threshold must be positive number" });
+      }
+
+      const result = await executeGovernanceRpc(
+        user,
+        "set_minimum_capital",
+        { p_threshold: threshold }
+      );
+
+      res.json({
+        success: true,
+        minimum_capital_threshold: threshold,
+        result
+      });
+
+    } catch (error: any) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+);
+
 router.get(
   "/admin/governance-status",
   attachUserContext,
