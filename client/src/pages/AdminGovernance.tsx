@@ -3,8 +3,6 @@ import { Link } from 'wouter';
 import { ArrowLeft, Shield, AlertTriangle, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { getQueryFn } from '@/lib/queryClient';
-
 interface GovernanceData {
   capital_adequacy: Record<string, any> | null;
   liquidity_status: Record<string, any> | null;
@@ -58,7 +56,6 @@ function DataCard({ title, data }: { title: string; data: any }) {
 export default function AdminGovernance() {
   const { data, isLoading, error } = useQuery<GovernanceData>({
     queryKey: ['/api/member/admin/governance-status'],
-    queryFn: getQueryFn({ on401: 'throw' }),
   });
 
   if (isLoading) {

@@ -31,37 +31,6 @@ function requireAuth(req: Request, res: Response): ReturnType<typeof createAuthe
   return createAuthenticatedClient(token);
 }
 
-router.get('/debug-session', attachUserContext, async (req: Request, res: Response) => {
-  const userId = (req as any).user.id;
-  const token = (req as any).user.token;
-
-  if (!isSupabaseMemberConfigured()) {
-    return res.json({ error: 'Supabase not configured', tokenPresent: !!token });
-  }
-
-  try {
-    const rpcData = await executeFinancialRpc(
-      (req as any).user,
-      "get_my_member_financial_summary",
-      {}
-    );
-
-    res.json({
-      tokenPresent: true,
-      user: {
-        id: userId,
-      },
-      rpc: {
-        data: rpcData,
-        error: null,
-      },
-    });
-  } catch (err) {
-    console.error('[DEBUG] Exception:', err);
-    res.json({ error: String(err), tokenPresent: true });
-  }
-});
-
 router.post('/ensure', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
