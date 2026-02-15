@@ -36,6 +36,7 @@ import HubAdminDashboard from '@/pages/HubAdminDashboard';
 import MemberHub from '@/pages/MemberHub';
 import LambsbookTutoring from '@/pages/LambsbookTutoring';
 import FarmstayVision from '@/pages/FarmstayVision';
+import AdminGovernance from '@/pages/AdminGovernance';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -135,6 +136,7 @@ function Router() {
       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
       <Route path="/hub/admin" component={HubAdminDashboard} />
+      <Route path="/hub/admin/governance" component={AdminGovernance} />
       <Route path="/hub/education/feedback" component={EducationFeedback} />
       <Route path="/hub/education/submit" component={TranscriptSubmission} />
       
