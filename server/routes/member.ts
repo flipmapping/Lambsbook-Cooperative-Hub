@@ -2,6 +2,8 @@ import { Router, Request, Response } from 'express';
 import { createAuthenticatedClient, isSupabaseMemberConfigured } from '../lib/supabase-member-client';
 import { attachUserContext } from '../middleware/attachUserContext';
 import { executeFinancialRpc } from '../services/financial-executor';
+import { requireSuperAdmin } from '../middleware/requireSuperAdmin';
+import { blockSbuInjection } from '../middleware/blockSbuInjection';
 
 const router = Router();
 
@@ -547,5 +549,25 @@ router.post('/activity/log', attachUserContext, async (req: Request, res: Respon
     res.status(500).json({ error: message });
   }
 });
+
+router.post(
+  "/admin/close-period",
+  attachUserContext,
+  requireSuperAdmin,
+  blockSbuInjection,
+  async (req, res) => {
+    try {
+      const result = await executeFinancialRpc(
+        (req as any).user,
+        "close_financial_period",
+        {}
+      );
+
+      res.json({ success: true, result });
+    } catch (error: any) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+);
 
 export default router;
