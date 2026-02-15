@@ -60,6 +60,7 @@ function DataCard({ title, data }: { title: string; data: any }) {
 export default function AdminGovernance() {
   const { toast } = useToast();
   const [closingPeriod, setClosingPeriod] = useState(false);
+  const [togglingOverride, setTogglingOverride] = useState(false);
 
   const { data, isLoading, error } = useQuery<GovernanceData>({
     queryKey: ['/api/member/admin/governance-status'],
@@ -89,6 +90,38 @@ export default function AdminGovernance() {
       });
     } finally {
       setClosingPeriod(false);
+    }
+  };
+
+  const overrideEnabled = data?.system_config?.financial_override_enabled ?? false;
+
+  const handleToggleOverride = async () => {
+    const action = overrideEnabled ? 'disable' : 'enable';
+    const confirmed = window.confirm(
+      `Are you sure you want to ${action} the financial override? This changes capital enforcement protections.`
+    );
+    if (!confirmed) return;
+
+    setTogglingOverride(true);
+    try {
+      const res = await apiRequest('POST', '/api/member/admin/toggle-override', {
+        enabled: !overrideEnabled,
+      });
+      const result = await res.json();
+      await queryClient.invalidateQueries({ queryKey: ['/api/member/admin/governance-status'] });
+      toast({
+        title: 'Override Updated',
+        description: result.message || `Financial override ${!overrideEnabled ? 'enabled' : 'disabled'}.`,
+      });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to toggle override';
+      toast({
+        title: 'Error',
+        description: message,
+        variant: 'destructive',
+      });
+    } finally {
+      setTogglingOverride(false);
     }
   };
 
@@ -165,6 +198,32 @@ export default function AdminGovernance() {
             >
               {closingPeriod && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
               Close Financial Period
+            </Button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm">Financial Override Control</CardTitle>
+            <CardDescription className="text-sm">
+              Toggle capital enforcement protections for the current SBU.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {overrideEnabled && (
+              <div className="rounded-md border border-destructive bg-destructive/10 p-3" data-testid="banner-override-active">
+                <p className="text-sm font-medium text-destructive">
+                  Financial override is ACTIVE. Capital enforcement protections are relaxed.
+                </p>
+              </div>
+            )}
+            <Button
+              variant={overrideEnabled ? 'destructive' : 'outline'}
+              onClick={handleToggleOverride}
+              disabled={togglingOverride}
+              data-testid="button-toggle-override"
+            >
+              {togglingOverride && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              {overrideEnabled ? 'Disable Financial Override' : 'Enable Financial Override'}
             </Button>
           </CardContent>
         </Card>
