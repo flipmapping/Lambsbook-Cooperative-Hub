@@ -11,14 +11,28 @@ export async function executeGovernanceRpc(
 
   const supabase = createAuthenticatedClient(user.token, "meh");
 
-  const { data, error } = await supabase.rpc(rpcName, {
+  const executionParams = {
     ...params,
     p_sbu_id: user.sbu_id
-  });
+  };
+
+  const { data, error } = await supabase.rpc(rpcName, executionParams);
 
   if (error) {
     throw error;
   }
+
+  // Governance Audit Log (Application Layer)
+  console.log(
+    JSON.stringify({
+      type: "GOVERNANCE_ACTION",
+      timestamp: new Date().toISOString(),
+      executed_by: user.id,
+      sbu_id: user.sbu_id,
+      rpc: rpcName,
+      params: executionParams
+    })
+  );
 
   return data;
 }
