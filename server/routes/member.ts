@@ -577,6 +577,39 @@ router.post(
   }
 );
 
+router.post(
+  "/admin/toggle-override",
+  attachUserContext,
+  requireSuperAdmin,
+  blockSbuInjection,
+  async (req, res) => {
+    try {
+      const user = (req as any).user;
+
+      const { enabled } = req.body;
+
+      if (typeof enabled !== "boolean") {
+        return res.status(400).json({ error: "enabled must be boolean" });
+      }
+
+      const result = await executeGovernanceRpc(
+        user,
+        "toggle_override",
+        { p_enabled: enabled }
+      );
+
+      res.json({
+        success: true,
+        override_enabled: enabled,
+        result
+      });
+
+    } catch (error: any) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+);
+
 router.get(
   "/admin/governance-status",
   attachUserContext,
