@@ -4,6 +4,7 @@ import { attachUserContext } from '../middleware/attachUserContext';
 import { executeFinancialRpc } from '../services/financial-executor';
 import { requireSuperAdmin } from '../middleware/requireSuperAdmin';
 import { blockSbuInjection } from '../middleware/blockSbuInjection';
+import { executeGovernanceRpc } from '../services/governance-executor';
 
 const router = Router();
 
@@ -557,13 +558,19 @@ router.post(
   blockSbuInjection,
   async (req, res) => {
     try {
-      const result = await executeFinancialRpc(
-        (req as any).user,
+      const user = (req as any).user;
+
+      const result = await executeGovernanceRpc(
+        user,
         "close_financial_period",
         {}
       );
 
-      res.json({ success: true, result });
+      res.json({
+        success: true,
+        result
+      });
+
     } catch (error: any) {
       res.status(400).json({ error: error.message });
     }
