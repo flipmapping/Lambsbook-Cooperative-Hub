@@ -61,6 +61,8 @@ export default function AdminGovernance() {
   const { toast } = useToast();
   const [closingPeriod, setClosingPeriod] = useState(false);
   const [togglingOverride, setTogglingOverride] = useState(false);
+  const [updatingThreshold, setUpdatingThreshold] = useState(false);
+  const [thresholdInput, setThresholdInput] = useState<string>('');
 
   const { data, isLoading, error } = useQuery<GovernanceData>({
     queryKey: ['/api/member/admin/governance-status'],
@@ -122,6 +124,41 @@ export default function AdminGovernance() {
       });
     } finally {
       setTogglingOverride(false);
+    }
+  };
+
+  const currentThreshold = data?.system_config?.minimum_capital_adequacy_threshold ?? 0;
+  const thresholdValue = thresholdInput === '' ? currentThreshold : Number(thresholdInput);
+  const thresholdUnchanged = thresholdValue === currentThreshold;
+  const thresholdInvalid = isNaN(thresholdValue) || thresholdValue <= 0;
+
+  const handleUpdateThreshold = async () => {
+    const confirmed = window.confirm(
+      `Are you sure you want to set the minimum capital adequacy threshold to ${thresholdValue}?`
+    );
+    if (!confirmed) return;
+
+    setUpdatingThreshold(true);
+    try {
+      const res = await apiRequest('POST', '/api/member/admin/set-minimum-capital', {
+        threshold: thresholdValue,
+      });
+      const result = await res.json();
+      await queryClient.invalidateQueries({ queryKey: ['/api/member/admin/governance-status'] });
+      setThresholdInput('');
+      toast({
+        title: 'Threshold Updated',
+        description: result.message || `Minimum capital adequacy threshold set to ${thresholdValue}.`,
+      });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to update threshold';
+      toast({
+        title: 'Error',
+        description: message,
+        variant: 'destructive',
+      });
+    } finally {
+      setUpdatingThreshold(false);
     }
   };
 
@@ -224,6 +261,33 @@ export default function AdminGovernance() {
             >
               {togglingOverride && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
               {overrideEnabled ? 'Disable Financial Override' : 'Enable Financial Override'}
+            </Button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm">Minimum Capital Adequacy Threshold</CardTitle>
+            <CardDescription className="text-sm">
+              Current threshold: <span className="font-mono font-medium" data-testid="text-current-threshold">{currentThreshold}</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <input
+              type="number"
+              step="0.01"
+              min="0.01"
+              value={thresholdInput === '' ? currentThreshold : thresholdInput}
+              onChange={(e) => setThresholdInput(e.target.value)}
+              className="flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              data-testid="input-threshold"
+            />
+            <Button
+              onClick={handleUpdateThreshold}
+              disabled={updatingThreshold || thresholdUnchanged || thresholdInvalid}
+              data-testid="button-update-threshold"
+            >
+              {updatingThreshold && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              Update Minimum Capital Threshold
             </Button>
           </CardContent>
         </Card>
