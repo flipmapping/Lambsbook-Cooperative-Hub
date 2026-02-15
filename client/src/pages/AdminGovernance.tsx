@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'wouter';
 import { ArrowLeft, Shield, AlertTriangle, Loader2 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { apiRequest, queryClient } from '@/lib/queryClient';
+import { useToast } from '@/hooks/use-toast';
+
 interface GovernanceData {
   capital_adequacy: Record<string, any> | null;
   liquidity_status: Record<string, any> | null;
@@ -54,9 +58,39 @@ function DataCard({ title, data }: { title: string; data: any }) {
 }
 
 export default function AdminGovernance() {
+  const { toast } = useToast();
+  const [closingPeriod, setClosingPeriod] = useState(false);
+
   const { data, isLoading, error } = useQuery<GovernanceData>({
     queryKey: ['/api/member/admin/governance-status'],
   });
+
+  const handleClosePeriod = async () => {
+    const confirmed = window.confirm(
+      'Are you sure you want to close the current financial period? This action is irreversible.'
+    );
+    if (!confirmed) return;
+
+    setClosingPeriod(true);
+    try {
+      const res = await apiRequest('POST', '/api/member/admin/close-period');
+      const result = await res.json();
+      await queryClient.invalidateQueries({ queryKey: ['/api/member/admin/governance-status'] });
+      toast({
+        title: 'Period Closed',
+        description: result.message || 'Financial period closed successfully.',
+      });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to close period';
+      toast({
+        title: 'Error',
+        description: message,
+        variant: 'destructive',
+      });
+    } finally {
+      setClosingPeriod(false);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -111,6 +145,29 @@ export default function AdminGovernance() {
         <DataCard title="Clearing Aging" data={data?.clearing_aging} />
         <DataCard title="Integrity Check" data={data?.integrity_check} />
         <DataCard title="System Configuration" data={data?.system_config} />
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm">Close Financial Period</CardTitle>
+            <CardDescription className="text-sm">
+              Finalize the current accounting period. All pending transactions will be settled.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-destructive mb-4" data-testid="text-close-warning">
+              This action is irreversible.
+            </p>
+            <Button
+              variant="destructive"
+              onClick={handleClosePeriod}
+              disabled={closingPeriod}
+              data-testid="button-close-period"
+            >
+              {closingPeriod && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              Close Financial Period
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
