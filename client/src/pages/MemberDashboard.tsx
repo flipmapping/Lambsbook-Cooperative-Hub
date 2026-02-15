@@ -21,6 +21,7 @@ interface ProfileData {
   user: {
     id: string;
     email: string;
+    is_super_admin?: boolean;
   };
   member: {
     id: string;

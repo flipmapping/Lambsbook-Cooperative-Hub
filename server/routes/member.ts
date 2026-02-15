@@ -120,7 +120,7 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
       throw error;
     }
 
-    res.json({ user: { id: userId }, member });
+    res.json({ user: { id: userId, is_super_admin: (req as any).user.is_super_admin }, member });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch profile';
     res.status(500).json({ error: message });
