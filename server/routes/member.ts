@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { createAuthenticatedClient, isSupabaseMemberConfigured } from '../lib/supabase-member-client';
 import { attachUserContext } from '../middleware/attachUserContext';
+import { executeFinancialRpc } from '../services/financial-executor';
 
 const router = Router();
 
@@ -341,14 +342,11 @@ router.get('/financial-summary', attachUserContext, async (req: Request, res: Re
   }
 
   try {
-    const token = (req as any).user.token;
-
-    const mehClient = createAuthenticatedClient(token, 'meh');
-    const { data, error } = await mehClient.rpc('get_my_member_financial_summary');
-
-    if (error) {
-      return res.status(500).json({ error: error.message });
-    }
+    const data = await executeFinancialRpc(
+      (req as any).user,
+      "export_financial_system_state",
+      {}
+    );
 
     if (!data || (Array.isArray(data) && data.length === 0)) {
       return res.json({ summary: null });
