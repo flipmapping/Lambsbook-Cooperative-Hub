@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { createAuthenticatedClient, isSupabaseMemberConfigured } from '../lib/supabase-member-client';
+import { attachUserContext } from '../middleware/attachUserContext';
 
 const router = Router();
 
@@ -26,7 +27,7 @@ function requireAuth(req: Request, res: Response): ReturnType<typeof createAuthe
   return createAuthenticatedClient(token);
 }
 
-router.get('/debug-session', async (req: Request, res: Response) => {
+router.get('/debug-session', attachUserContext, async (req: Request, res: Response) => {
   const token = getAccessToken(req);
   console.log('[DEBUG] /api/member/debug-session called');
   console.log('[DEBUG] Token present:', !!token);
@@ -88,7 +89,7 @@ router.get('/debug-session', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/ensure', async (req: Request, res: Response) => {
+router.post('/ensure', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -133,7 +134,7 @@ router.post('/ensure', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/profile', async (req: Request, res: Response) => {
+router.get('/profile', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -160,7 +161,7 @@ router.get('/profile', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/subscription', async (req: Request, res: Response) => {
+router.get('/subscription', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -200,7 +201,7 @@ router.get('/subscription', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/collaboration', async (req: Request, res: Response) => {
+router.get('/collaboration', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -238,7 +239,7 @@ router.get('/collaboration', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/programs', async (req: Request, res: Response) => {
+router.get('/programs', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -289,7 +290,7 @@ router.get('/programs', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/programs/:id/select', async (req: Request, res: Response) => {
+router.post('/programs/:id/select', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -355,7 +356,7 @@ router.post('/programs/:id/select', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/programs/:id/deselect', async (req: Request, res: Response) => {
+router.post('/programs/:id/deselect', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -380,7 +381,7 @@ router.post('/programs/:id/deselect', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/financial-summary', async (req: Request, res: Response) => {
+router.get('/financial-summary', attachUserContext, async (req: Request, res: Response) => {
   const token = getAccessToken(req);
   if (!token) {
     return res.status(401).json({ error: 'Authentication required' });
@@ -432,7 +433,7 @@ router.get('/financial-summary', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/earnings', async (req: Request, res: Response) => {
+router.get('/earnings', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -491,7 +492,7 @@ router.get('/earnings', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/tutor-profile', async (req: Request, res: Response) => {
+router.get('/tutor-profile', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -526,7 +527,7 @@ router.get('/tutor-profile', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/activity', async (req: Request, res: Response) => {
+router.get('/activity', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
@@ -579,7 +580,7 @@ router.get('/activity', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/activity/log', async (req: Request, res: Response) => {
+router.post('/activity/log', attachUserContext, async (req: Request, res: Response) => {
   const supabase = requireAuth(req, res);
   if (!supabase) return;
 
