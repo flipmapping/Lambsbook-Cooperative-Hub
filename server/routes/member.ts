@@ -570,4 +570,58 @@ router.post(
   }
 );
 
+router.get(
+  "/admin/governance-status",
+  attachUserContext,
+  requireSuperAdmin,
+  async (req, res) => {
+    try {
+      const user = (req as any).user;
+
+      const supabase = createAuthenticatedClient(user.token, "meh");
+
+      const [
+        capitalResult,
+        liquidityResult,
+        clearingResult,
+        integrityResult,
+        configResult
+      ] = await Promise.all([
+        supabase.from("v_capital_adequacy_ratio")
+          .select("*")
+          .eq("sbu_id", user.sbu_id)
+          .single(),
+
+        supabase.from("v_sbu_liquidity_status")
+          .select("*")
+          .eq("sbu_id", user.sbu_id)
+          .single(),
+
+        supabase.from("v_clearing_aging")
+          .select("*")
+          .eq("sbu_id", user.sbu_id),
+
+        supabase.from("v_financial_integrity_check")
+          .select("*")
+          .single(),
+
+        supabase.from("system_config")
+          .select("minimum_capital_adequacy_threshold, financial_override_enabled")
+          .single()
+      ]);
+
+      res.json({
+        capital_adequacy: capitalResult.data,
+        liquidity_status: liquidityResult.data,
+        clearing_aging: clearingResult.data,
+        integrity_check: integrityResult.data,
+        system_config: configResult.data
+      });
+
+    } catch (error: any) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+);
+
 export default router;
