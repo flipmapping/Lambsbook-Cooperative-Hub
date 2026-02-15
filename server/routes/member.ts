@@ -37,8 +37,11 @@ router.get('/debug-session', attachUserContext, async (req: Request, res: Respon
   }
 
   try {
-    const mehClient = createAuthenticatedClient(token, 'meh');
-    const { data: rpcData, error: rpcError } = await mehClient.rpc('get_my_member_financial_summary');
+    const rpcData = await executeFinancialRpc(
+      (req as any).user,
+      "get_my_member_financial_summary",
+      {}
+    );
 
     res.json({
       tokenPresent: true,
@@ -47,7 +50,7 @@ router.get('/debug-session', attachUserContext, async (req: Request, res: Respon
       },
       rpc: {
         data: rpcData,
-        error: rpcError?.message || null,
+        error: null,
       },
     });
   } catch (err) {
