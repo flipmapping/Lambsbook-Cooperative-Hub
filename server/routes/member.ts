@@ -28,55 +28,21 @@ function requireAuth(req: Request, res: Response): ReturnType<typeof createAuthe
 }
 
 router.get('/debug-session', attachUserContext, async (req: Request, res: Response) => {
-  const token = getAccessToken(req);
-  console.log('[DEBUG] /api/member/debug-session called');
-  console.log('[DEBUG] Token present:', !!token);
-  console.log('[DEBUG] Token prefix:', token ? token.substring(0, 20) + '...' : 'none');
+  const userId = (req as any).user.id;
+  const token = (req as any).user.token;
 
   if (!isSupabaseMemberConfigured()) {
-    console.log('[DEBUG] Supabase member client NOT configured');
     return res.json({ error: 'Supabase not configured', tokenPresent: !!token });
   }
 
-  if (!token) {
-    console.log('[DEBUG] No token provided');
-    return res.json({ error: 'No token', tokenPresent: false });
-  }
-
-  const supabase = createAuthenticatedClient(token);
-
   try {
-    const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
-    console.log('[DEBUG] getSession result:', JSON.stringify({ 
-      hasSession: !!sessionData?.session,
-      sessionUser: sessionData?.session?.user?.email,
-      sessionError: sessionError?.message 
-    }));
-
-    const { data: userData, error: userError } = await supabase.auth.getUser();
-    console.log('[DEBUG] getUser result:', JSON.stringify({
-      hasUser: !!userData?.user,
-      userEmail: userData?.user?.email,
-      userId: userData?.user?.id,
-      userError: userError?.message
-    }));
-
     const mehClient = createAuthenticatedClient(token, 'meh');
     const { data: rpcData, error: rpcError } = await mehClient.rpc('get_my_member_financial_summary');
-    console.log('[DEBUG] RPC meh.get_my_member_financial_summary result:', JSON.stringify({ rpcData, rpcError: rpcError?.message }));
 
     res.json({
       tokenPresent: true,
-      session: {
-        hasSession: !!sessionData?.session,
-        userEmail: sessionData?.session?.user?.email,
-        error: sessionError?.message || null,
-      },
       user: {
-        hasUser: !!userData?.user,
-        email: userData?.user?.email,
-        id: userData?.user?.id,
-        error: userError?.message || null,
+        id: userId,
       },
       rpc: {
         data: rpcData,
@@ -94,15 +60,12 @@ router.post('/ensure', attachUserContext, async (req: Request, res: Response) =>
   if (!supabase) return;
 
   try {
-    const { data: { user }, error: userError } = await supabase.auth.getUser();
-    if (userError || !user) {
-      return res.status(401).json({ error: 'Invalid session' });
-    }
+    const userId = (req as any).user.id;
 
     const { data: existing } = await supabase
       .from('members')
       .select('id, email, member_type, membership_status')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     if (existing) {
@@ -112,8 +75,7 @@ router.post('/ensure', attachUserContext, async (req: Request, res: Response) =>
     const { data: newMember, error: insertError } = await supabase
       .from('members')
       .insert({
-        id: user.id,
-        email: user.email,
+        id: userId,
         member_type: 'standard',
         membership_status: 'free',
         activity_status: 'active',
@@ -139,22 +101,19 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
   if (!supabase) return;
 
   try {
-    const { data: { user }, error: userError } = await supabase.auth.getUser();
-    if (userError || !user) {
-      return res.status(401).json({ error: 'Invalid session' });
-    }
+    const userId = (req as any).user.id;
 
     const { data: member, error } = await supabase
       .from('members')
       .select('*')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     if (error && error.code !== 'PGRST116') {
       throw error;
     }
 
-    res.json({ user, member });
+    res.json({ user: { id: userId }, member });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch profile';
     res.status(500).json({ error: message });
@@ -166,19 +125,18 @@ router.get('/subscription', attachUserContext, async (req: Request, res: Respons
   if (!supabase) return;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: member } = await supabase
       .from('members')
       .select('id, membership_status, subscription_price_at_signup, subscription_renewal_date')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     const { data: subscriptions } = await supabase
       .from('subscriptions')
       .select('*')
-      .eq('member_id', user.id)
+      .eq('member_id', userId)
       .order('renewal_date', { ascending: false });
 
     res.json({
@@ -206,19 +164,18 @@ router.get('/collaboration', attachUserContext, async (req: Request, res: Respon
   if (!supabase) return;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: asInvitee } = await supabase
       .from('collaborations')
       .select('*, invitor:invitor_id(id, member_type)')
-      .eq('invitee_id', user.id)
+      .eq('invitee_id', userId)
       .single();
 
     const { data: asInvitor } = await supabase
       .from('collaborations')
       .select('*, invitee:invitee_id(id, member_type)')
-      .eq('invitor_id', user.id);
+      .eq('invitor_id', userId);
 
     res.json({
       invitor: asInvitee?.invitor || null,
@@ -244,13 +201,12 @@ router.get('/programs', attachUserContext, async (req: Request, res: Response) =
   if (!supabase) return;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: member } = await supabase
       .from('members')
       .select('membership_status')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     const { data: programs } = await supabase
@@ -262,7 +218,7 @@ router.get('/programs', attachUserContext, async (req: Request, res: Response) =
     const { data: eligibility } = await supabase
       .from('program_eligibility')
       .select('*')
-      .eq('member_id', user.id);
+      .eq('member_id', userId);
 
     const eligibilityMap = new Map(
       (eligibility || []).map(e => [e.program_id, e])
@@ -296,20 +252,19 @@ router.post('/programs/:id/select', attachUserContext, async (req: Request, res:
 
   try {
     const { id: programId } = req.params;
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: member } = await supabase
       .from('members')
       .select('membership_status')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     if (member?.membership_status !== 'paid') {
       const { data: currentEligibility } = await supabase
         .from('program_eligibility')
         .select('*')
-        .eq('member_id', user.id)
+        .eq('member_id', userId)
         .eq('eligible', true);
 
       if ((currentEligibility || []).length >= 2) {
@@ -322,7 +277,7 @@ router.post('/programs/:id/select', attachUserContext, async (req: Request, res:
     const { data: existing } = await supabase
       .from('program_eligibility')
       .select('*')
-      .eq('member_id', user.id)
+      .eq('member_id', userId)
       .eq('program_id', programId)
       .single();
 
@@ -341,7 +296,7 @@ router.post('/programs/:id/select', attachUserContext, async (req: Request, res:
     const { data, error } = await supabase
       .from('program_eligibility')
       .insert({
-        member_id: user.id,
+        member_id: userId,
         program_id: programId,
         eligible: true,
       })
@@ -362,13 +317,12 @@ router.post('/programs/:id/deselect', attachUserContext, async (req: Request, re
 
   try {
     const { id: programId } = req.params;
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data, error } = await supabase
       .from('program_eligibility')
       .update({ eligible: false })
-      .eq('member_id', user.id)
+      .eq('member_id', userId)
       .eq('program_id', programId)
       .select()
       .single();
@@ -382,35 +336,17 @@ router.post('/programs/:id/deselect', attachUserContext, async (req: Request, re
 });
 
 router.get('/financial-summary', attachUserContext, async (req: Request, res: Response) => {
-  const token = getAccessToken(req);
-  if (!token) {
-    return res.status(401).json({ error: 'Authentication required' });
-  }
-
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
 
   try {
-    const anonClient = createAuthenticatedClient(token);
-
-    const { data: { user }, error: userError } = await anonClient.auth.getUser();
-    if (userError || !user) {
-      console.log('[financial-summary] auth.getUser() failed:', userError?.message);
-      return res.status(401).json({ error: 'Invalid session' });
-    }
-
-    console.log('[financial-summary] auth.uid() =', user.id, '| email =', user.email);
+    const token = (req as any).user.token;
 
     const mehClient = createAuthenticatedClient(token, 'meh');
-
-    console.log('[financial-summary] Calling meh.get_my_member_financial_summary via anon key + user JWT');
     const { data, error } = await mehClient.rpc('get_my_member_financial_summary');
 
-    console.log('[financial-summary] RPC response:', JSON.stringify({ data, error: error?.message || null }));
-
     if (error) {
-      console.error('[financial-summary] RPC error:', error);
       return res.status(500).json({ error: error.message });
     }
 
@@ -428,7 +364,6 @@ router.get('/financial-summary', attachUserContext, async (req: Request, res: Re
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch financial summary';
-    console.error('[financial-summary] Exception:', message);
     res.status(500).json({ error: message });
   }
 });
@@ -438,13 +373,12 @@ router.get('/earnings', attachUserContext, async (req: Request, res: Response) =
   if (!supabase) return;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: member } = await supabase
       .from('members')
       .select('activity_status')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     if (member?.activity_status === 'inactive') {
@@ -458,7 +392,7 @@ router.get('/earnings', attachUserContext, async (req: Request, res: Response) =
     const { data: earnings } = await supabase
       .from('earnings')
       .select('*, program:program_id(name, sbu)')
-      .eq('member_id', user.id)
+      .eq('member_id', userId)
       .order('created_at', { ascending: false });
 
     const summary = {
@@ -497,13 +431,12 @@ router.get('/tutor-profile', attachUserContext, async (req: Request, res: Respon
   if (!supabase) return;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: tutor } = await supabase
       .from('tutors')
       .select('*')
-      .eq('member_id', user.id)
+      .eq('member_id', userId)
       .single();
 
     const isVisible = tutor && ['verified', 'partner_educator'].includes(tutor.tutor_status);
@@ -532,19 +465,18 @@ router.get('/activity', attachUserContext, async (req: Request, res: Response) =
   if (!supabase) return;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: member } = await supabase
       .from('members')
       .select('activity_status, last_activity_at, join_date')
-      .eq('id', user.id)
+      .eq('id', userId)
       .single();
 
     const { data: logs } = await supabase
       .from('activity_logs')
       .select('*')
-      .eq('member_id', user.id)
+      .eq('member_id', userId)
       .order('created_at', { ascending: false })
       .limit(10);
 
@@ -586,13 +518,12 @@ router.post('/activity/log', attachUserContext, async (req: Request, res: Respon
 
   try {
     const { activity_type } = req.body;
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return res.status(401).json({ error: 'Invalid session' });
+    const userId = (req as any).user.id;
 
     const { data: log, error } = await supabase
       .from('activity_logs')
       .insert({
-        member_id: user.id,
+        member_id: userId,
         activity_type: activity_type || 'general',
       })
       .select()
@@ -607,7 +538,7 @@ router.post('/activity/log', attachUserContext, async (req: Request, res: Respon
         activity_status: 'active',
         updated_at: new Date().toISOString(),
       })
-      .eq('id', user.id);
+      .eq('id', userId);
 
     res.json({ success: true, log });
   } catch (error) {
