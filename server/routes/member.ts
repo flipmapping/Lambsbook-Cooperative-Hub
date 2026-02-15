@@ -343,57 +343,16 @@ router.get('/financial-summary', attachUserContext, async (req: Request, res: Re
 });
 
 router.get('/earnings', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
-
   try {
-    const userId = (req as any).user.id;
+    const user = (req as any).user;
 
-    const { data: member } = await supabase
-      .from('members')
-      .select('activity_status')
-      .eq('id', userId)
-      .single();
+    const result = await executeFinancialRpc(
+      user,
+      "get_member_earnings",
+      {}
+    );
 
-    if (member?.activity_status === 'inactive') {
-      return res.json({
-        earnings: [],
-        hidden: true,
-        message: 'Your earnings are hidden because your account is inactive. Complete an activity to reactivate.',
-      });
-    }
-
-    const { data: earnings } = await supabase
-      .from('earnings')
-      .select('*, program:program_id(name, sbu)')
-      .eq('member_id', userId)
-      .order('created_at', { ascending: false });
-
-    const summary = {
-      pending: 0,
-      paid: 0,
-      paused: 0,
-      total: 0,
-    };
-
-    (earnings || []).forEach(e => {
-      const amount = Number(e.amount);
-      summary.total += amount;
-      if (e.earning_status === 'pending') summary.pending += amount;
-      if (e.earning_status === 'paid') summary.paid += amount;
-      if (e.earning_status === 'paused') summary.paused += amount;
-    });
-
-    res.json({
-      earnings: earnings || [],
-      summary,
-      hidden: false,
-      status_explanation: {
-        pending: 'Awaiting payout processing',
-        paid: 'Successfully paid out',
-        paused: 'Temporarily paused due to inactivity or admin action',
-      },
-    });
+    res.json(result);
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch earnings';
     res.status(500).json({ error: message });
