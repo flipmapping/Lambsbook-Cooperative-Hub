@@ -33,6 +33,7 @@ import adminRoutes from "./routes/admin";
 import memberRoutes from "./routes/member";
 import financialRoutes from "./routes/financialRoutes";
 import governanceRoute from "./routes/governanceRoute";
+import devTestAuthRoutes from "./routes/devTestAuth";
 import { detectPlatformAdmin } from "./middleware/requirePlatformAdmin";
 
 import { requireSBURole } from "./middleware/requireSBURole";
@@ -46,6 +47,7 @@ export async function registerRoutes(
   app.use("/api/member", memberRoutes);
   app.use(financialRoutes);
   app.use(governanceRoute);
+  app.use("/dev", devTestAuthRoutes);
 
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
     try {
