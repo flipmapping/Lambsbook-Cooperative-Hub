@@ -72,9 +72,12 @@ export default function MemberDashboard() {
     queryKey: ['/api/member/profile'],
   });
 
-  const { data: financialData, isLoading: financialLoading } = useQuery<{ summary: FinancialSummary | null }>({
-    queryKey: ['/api/member/financial-summary'],
-  });
+  // Temporarily disabled — financial-summary fetch commented out
+  // const { data: financialData, isLoading: financialLoading } = useQuery<{ summary: FinancialSummary | null }>({
+  //   queryKey: ['/api/member/financial-summary'],
+  // });
+  const financialData = undefined as { summary: FinancialSummary | null } | undefined;
+  const financialLoading = false;
 
   const { data: collaborationData } = useQuery<CollaborationData>({
     queryKey: ['/api/member/collaboration'],
