@@ -1,6 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import { createClient } from "@supabase/supabase-js";
 
+export interface AuthenticatedRequest extends Request {
+  user?: { id: string; [key: string]: any };
+}
+
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!

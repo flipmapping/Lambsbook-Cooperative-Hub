@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { requireAuth } from "../middleware/requireAuth";
 import { requireSBUAccess, SBURequest } from "../middleware/requireSBUAccess";
-import { postTransaction } from "../dal/financial";
+import { requireSBURole } from "../middleware/requireSBURole";
+import { postTransaction, closeFinancialPeriod } from "../dal/financial";
 
 const router = Router();
 

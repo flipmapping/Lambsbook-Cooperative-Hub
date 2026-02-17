@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { getUserClient } from "../supabaseClients";
+import { getUserClient } from "../lib/supabaseClients";
 
 export interface PlatformRequest extends Request {
   isPlatformAdmin?: boolean;
