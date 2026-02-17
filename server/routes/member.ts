@@ -113,3 +113,5 @@ router.get('/subscription', attachUserContext, async (req: Request, res: Respons
     res.status(500).json({ error: message });
   }
 });
+
+export default router;
