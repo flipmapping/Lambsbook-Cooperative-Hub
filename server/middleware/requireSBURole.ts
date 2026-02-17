@@ -1,0 +1,78 @@
+import { Request, Response, NextFunction } from "express";
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseAdmin = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
+export function requireSBURole(allowedRoles: string[]) {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const userId = (req as any).user?.id;
+      const sbuId = (req as any).sbu_id;
+
+      if (!userId || !sbuId) {
+        return res.status(401).json({
+          error: "Unauthorized: Missing authentication context.",
+        });
+      }
+
+      const { data, error } = await supabaseAdmin
+        .from("core.sbu_members")
+        .select("role")
+        .eq("user_id", userId)
+        .eq("sbu_id", sbuId)
+        .single();
+
+      if (error || !data) {
+        await logAuthorizationFailure(userId, sbuId, "not_member");
+        return res.status(403).json({
+          error: "Access denied: Not a member of this SBU.",
+        });
+      }
+
+     // 🔹 Platform Admin Override
+const isPlatformAdmin = await supabaseAdmin
+  .from("core.platform_admins")
+  .select("user_id")
+  .eq("user_id", userId)
+  .single();
+
+if (!isPlatformAdmin.data) {
+  if (!allowedRoles.includes(data.role)) {
+    await logAuthorizationFailure(
+      userId,
+      sbuId,
+      `insufficient_role:${data.role}`
+    );
+    return res.status(403).json({
+      error: "Access denied: Insufficient SBU role.",
+    });
+  }
+}
+
+
+      next();
+    } catch (err) {
+      return res.status(500).json({
+        error: "Authorization enforcement failure.",
+      });
+    }
+  };
+}
+
+async function logAuthorizationFailure(
+  userId: string,
+  sbuId: string,
+  reason: string
+) {
+  await supabaseAdmin.from("core.system_audit_log").insert({
+    actor_user_id: userId,
+    sbu_id: sbuId,
+    action: "authorization_denied",
+    metadata: {
+      reason,
+    },
+  });
+}
