@@ -4,25 +4,17 @@ import { attachUserContext } from '../middleware/attachUserContext';
 
 const router = Router();
 
-function getAccessToken(req: Request): string | null {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return null;
-  }
-  return authHeader.slice(7);
-}
-
 router.get('/test-auth', attachUserContext, async (req: Request, res: Response) => {
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
 
-  const accessToken = getAccessToken(req);
-  if (!accessToken) {
+  const user = (req as any).user;
+  if (!user?.token) {
     return res.status(401).json({ error: 'Authentication required' });
   }
 
-  const supabase = createAuthenticatedClient(accessToken, 'meh');
+  const supabase = createAuthenticatedClient(user.token, 'meh');
 
   const { data, error } = await supabase
     .from('accounts')
