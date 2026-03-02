@@ -37,6 +37,7 @@ import MemberHub from '@/pages/MemberHub';
 import LambsbookTutoring from '@/pages/LambsbookTutoring';
 import FarmstayVision from '@/pages/FarmstayVision';
 import AdminGovernance from '@/pages/AdminGovernance';
+import ResetPassword from '@/pages/ResetPassword';
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -125,6 +126,7 @@ function Router() {
       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+      <Route path="/auth/reset" component={ResetPassword} />
       <Route path="/hub/dashboard" component={MemberDashboard} />
       <Route path="/hub/member" component={MemberHub} />
       

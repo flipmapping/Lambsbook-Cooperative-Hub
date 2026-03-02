@@ -868,6 +868,7 @@ export async function registerRoutes(
 
   const hubAuthSchema = z.object({
     email: z.string().email(),
+    password: z.string().min(8, "Password must be at least 8 characters").optional(),
     fullName: z.string().min(1).max(255).optional(),
     username: z
       .string()
@@ -979,14 +980,13 @@ export async function registerRoutes(
   app.post("/api/hub/auth/login", async (req: Request, res: Response) => {
     try {
       const validatedData = hubAuthSchema.parse(req.body);
-      const result = await hubService.loginMember(validatedData.email);
+      const result = await hubService.loginMember(validatedData.email, validatedData.password);
       res.json(result);
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error("Hub login validation error:", error.errors);
         return res.status(400).json({ error: error.errors });
       }
-      // Handle HubAuthError with proper status code
       if (
         error &&
         typeof error === "object" &&
@@ -1002,7 +1002,66 @@ export async function registerRoutes(
           .json({ error: hubError.message });
       }
       console.error("Hub login error:", error);
-      res.status(500).json({ error: "Failed to send magic link" });
+      res.status(500).json({ error: "Login failed" });
+    }
+  });
+
+  app.post("/api/hub/auth/forgot-password", async (req: Request, res: Response) => {
+    try {
+      const { email } = req.body;
+      if (!email) {
+        return res.status(400).json({ error: "Email is required" });
+      }
+      const result = await hubService.forgotPassword(email);
+      res.json(result);
+    } catch (error) {
+      if (
+        error &&
+        typeof error === "object" &&
+        "name" in error &&
+        error.name === "HubAuthError"
+      ) {
+        const hubError = error as unknown as {
+          message: string;
+          statusCode: number;
+        };
+        return res
+          .status(hubError.statusCode)
+          .json({ error: hubError.message });
+      }
+      console.error("Forgot password error:", error);
+      res.status(500).json({ error: "Failed to send password reset email" });
+    }
+  });
+
+  app.post("/api/hub/auth/reset-password", async (req: Request, res: Response) => {
+    try {
+      const { accessToken, newPassword } = req.body;
+      if (!accessToken || !newPassword) {
+        return res.status(400).json({ error: "Access token and new password are required" });
+      }
+      if (newPassword.length < 8) {
+        return res.status(400).json({ error: "Password must be at least 8 characters" });
+      }
+      const result = await hubService.resetPassword(accessToken, newPassword);
+      res.json(result);
+    } catch (error) {
+      if (
+        error &&
+        typeof error === "object" &&
+        "name" in error &&
+        error.name === "HubAuthError"
+      ) {
+        const hubError = error as unknown as {
+          message: string;
+          statusCode: number;
+        };
+        return res
+          .status(hubError.statusCode)
+          .json({ error: hubError.message });
+      }
+      console.error("Reset password error:", error);
+      res.status(500).json({ error: "Failed to reset password" });
     }
   });
 

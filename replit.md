@@ -217,6 +217,14 @@ The platform uses Supabase for member management, referral tracking, and earning
 
 ## Recent Changes
 
+**March 2026:**
+- **Auth UX: Password-based signup/login** - Replaced magic link auth with password-based flow
+  - Sign Up: Added Password and Confirm Password fields with mismatch validation, show/hide toggles, and min 8-char requirement. Backend uses `supabase.auth.signUp` with email+password
+  - Sign In: Added Password field. Backend uses `supabase.auth.signInWithPassword`. Session tokens returned directly (no magic link needed)
+  - Forgot Password: Added "Forgot password?" link on login page. Opens email-entry form that calls `supabase.auth.resetPasswordForEmail`
+  - Reset Password page (`/auth/reset`): New page for setting a new password after clicking the reset link from email. Handles both hash and query param token formats
+- Fixed pre-existing module resolution issue: removed stale `@supabase/` directory in workspace root that shadowed the npm package
+
 **February 2026:**
 - **Dashboard terminology corrections** - Updated Member and Admin dashboards to clearly separate Collaboration (Invitor–Invitee permanent relationships) from Referrals (purchase-based transactional attribution)
 - MemberDashboard: Added "Your Collaborations" and "Your Referral Links" sections with proper explanatory copy

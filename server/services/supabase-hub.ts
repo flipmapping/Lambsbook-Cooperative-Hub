@@ -207,6 +207,7 @@ export async function getEarnings() {
 // Authentication functions
 interface SignUpData {
   email: string;
+  password?: string;
   fullName?: string;
   username?: string;
   phone?: string;
@@ -281,14 +282,18 @@ export async function signUpMember(data: SignUpData) {
     }
   }
 
-  // Send magic link via Supabase Auth (using service role client for user creation)
   if (!supabaseAuth) {
     throw new HubAuthError('Supabase auth not configured.', 503);
   }
+
+  if (!data.password || data.password.length < 8) {
+    throw new HubAuthError('Password must be at least 8 characters.', 400);
+  }
   
   try {
-    const { error } = await supabaseAuth.auth.signInWithOtp({
+    const { data: signUpResult, error } = await supabaseAuth.auth.signUp({
       email: data.email,
+      password: data.password,
       options: {
         emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/auth/callback?referrer=${encodeURIComponent(data.referrerEmail || '')}`,
         data: {
@@ -301,17 +306,9 @@ export async function signUpMember(data: SignUpData) {
     });
 
     if (error) {
-      console.error('[Hub Auth] Supabase signInWithOtp error:', error);
+      console.error('[Hub Auth] Supabase signUp error:', error);
       
-      // Provide actionable error messages based on error type
       if (error instanceof AuthApiError) {
-        if (error.code === 'unexpected_failure' || error.message.includes('sending')) {
-          throw new HubAuthError(
-            'Email service unavailable. Please check Supabase email configuration.',
-            503,
-            error
-          );
-        }
         if (error.code === 'over_email_send_rate_limit') {
           throw new HubAuthError(
             'Email rate limit reached. Please wait a few minutes before trying again.',
@@ -319,28 +316,41 @@ export async function signUpMember(data: SignUpData) {
             error
           );
         }
-        if (error.code === 'user_already_exists') {
+        if (error.code === 'user_already_exists' || error.message.includes('already registered')) {
           throw new HubAuthError(
             'An account with this email already exists. Please log in instead.',
             400,
             error
           );
         }
+        if (error.code === 'weak_password') {
+          throw new HubAuthError(
+            'Password is too weak. Please choose a stronger password.',
+            400,
+            error
+          );
+        }
       }
-      throw new HubAuthError(`Authentication failed: ${error.message}`, 500, error);
+      throw new HubAuthError(`Sign up failed: ${error.message}`, 500, error);
     }
+
+    const needsConfirmation = signUpResult?.user?.identities?.length === 0 ||
+      signUpResult?.user?.confirmation_sent_at != null;
+
+    return { 
+      success: true, 
+      message: needsConfirmation 
+        ? 'Account created! Please check your email to confirm your account.'
+        : 'Account created successfully.',
+      needsConfirmation,
+      referrerEmail: data.referrerEmail || null,
+      referrerValid
+    };
   } catch (e) {
     if (e instanceof HubAuthError) throw e;
     console.error('[Hub Auth] Unexpected error during signup:', e);
-    throw new HubAuthError('Failed to send magic link. Email service may be unavailable.', 503, e);
+    throw new HubAuthError('Failed to create account. Please try again.', 503, e);
   }
-  
-  return { 
-    success: true, 
-    message: 'Magic link sent to ' + data.email,
-    referrerEmail: data.referrerEmail || null,
-    referrerValid
-  };
 }
 
 // Update profile after successful auth callback
@@ -446,33 +456,42 @@ export async function getMemberByEmail(email: string) {
   return data;
 }
 
-export async function loginMember(email: string) {
+export async function loginMember(email: string, password?: string) {
   if (!supabaseAuth) {
     throw new HubAuthError('Supabase auth not configured.', 503);
   }
 
+  if (!password) {
+    throw new HubAuthError('Password is required.', 400);
+  }
+
   try {
-    const { error } = await supabaseAuth.auth.signInWithOtp({
+    const { data, error } = await supabaseAuth.auth.signInWithPassword({
       email,
-      options: {
-        emailRedirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/hub/auth/callback`,
-      },
+      password,
     });
 
     if (error) {
       console.error('[Hub Auth] Supabase login error:', error);
       
       if (error instanceof AuthApiError) {
-        if (error.code === 'unexpected_failure' || error.message.includes('sending')) {
+        if (error.message.includes('Invalid login credentials') || error.code === 'invalid_credentials') {
           throw new HubAuthError(
-            'Email service unavailable. Please check Supabase email configuration.',
-            503,
+            'Invalid email or password. Please try again.',
+            401,
+            error
+          );
+        }
+        if (error.message.includes('Email not confirmed')) {
+          throw new HubAuthError(
+            'Please confirm your email address before logging in. Check your inbox for a confirmation link.',
+            401,
             error
           );
         }
         if (error.code === 'over_email_send_rate_limit') {
           throw new HubAuthError(
-            'Email rate limit reached. Please wait a few minutes.',
+            'Too many attempts. Please wait a few minutes.',
             429,
             error
           );
@@ -480,11 +499,83 @@ export async function loginMember(email: string) {
       }
       throw new HubAuthError(`Login failed: ${error.message}`, 500, error);
     }
+
+    return { 
+      success: true, 
+      message: 'Login successful',
+      session: {
+        access_token: data.session?.access_token,
+        refresh_token: data.session?.refresh_token,
+        token_type: 'bearer',
+      }
+    };
   } catch (e) {
     if (e instanceof HubAuthError) throw e;
     console.error('[Hub Auth] Unexpected login error:', e);
-    throw new HubAuthError('Failed to send magic link.', 503, e);
+    throw new HubAuthError('Login failed. Please try again.', 503, e);
+  }
+}
+
+export async function forgotPassword(email: string) {
+  if (!supabaseAuth) {
+    throw new HubAuthError('Supabase auth not configured.', 503);
   }
 
-  return { success: true, message: 'Magic link sent to ' + email };
+  try {
+    const { error } = await supabaseAuth.auth.resetPasswordForEmail(email, {
+      redirectTo: `${process.env.SITE_URL || process.env.APP_URL || 'http://localhost:5000'}/auth/reset`,
+    });
+
+    if (error) {
+      console.error('[Hub Auth] Password reset error:', error);
+      if (error instanceof AuthApiError && error.code === 'over_email_send_rate_limit') {
+        throw new HubAuthError('Too many requests. Please wait a few minutes.', 429, error);
+      }
+      throw new HubAuthError(`Failed to send reset email: ${error.message}`, 500, error);
+    }
+
+    return { success: true, message: 'If an account exists with this email, a reset link has been sent.' };
+  } catch (e) {
+    if (e instanceof HubAuthError) throw e;
+    console.error('[Hub Auth] Unexpected forgot password error:', e);
+    throw new HubAuthError('Failed to send reset email.', 503, e);
+  }
+}
+
+export async function resetPassword(accessToken: string, newPassword: string) {
+  if (!supabaseAuth) {
+    throw new HubAuthError('Supabase auth not configured.', 503);
+  }
+
+  try {
+    const supabaseWithToken = createClient(
+      supabaseUrl!,
+      supabaseAnonKey || supabaseServiceRoleKey!,
+      {
+        global: {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        },
+      }
+    );
+
+    const { error } = await supabaseWithToken.auth.updateUser({
+      password: newPassword,
+    });
+
+    if (error) {
+      console.error('[Hub Auth] Reset password error:', error);
+      if (error.message.includes('same password')) {
+        throw new HubAuthError('New password must be different from your current password.', 400, error);
+      }
+      throw new HubAuthError(`Failed to reset password: ${error.message}`, 500, error);
+    }
+
+    return { success: true, message: 'Password has been reset successfully.' };
+  } catch (e) {
+    if (e instanceof HubAuthError) throw e;
+    console.error('[Hub Auth] Unexpected reset password error:', e);
+    throw new HubAuthError('Failed to reset password.', 503, e);
+  }
 }

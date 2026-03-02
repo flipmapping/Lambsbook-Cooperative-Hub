@@ -1,7 +1,12 @@
+import path from "path";
 import type { Express } from "express";
 
 export function serveStatic(app: Express) {
+  const distPath = path.resolve(process.cwd(), "dist/public");
+
+  app.use(express.static(distPath));
+
   app.get("*", (_req, res) => {
-    res.send("NEW PRODUCTION SERVER IS RUNNING");
+    res.sendFile(path.join(distPath, "index.html"));
   });
 }
