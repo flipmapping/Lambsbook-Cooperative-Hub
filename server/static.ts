@@ -1,5 +1,5 @@
+import express, { Express } from "express";
 import path from "path";
-import type { Express } from "express";
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(process.cwd(), "dist/public");

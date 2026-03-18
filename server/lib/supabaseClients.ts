@@ -1,11 +1,23 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
-const SUPABASE_URL = process.env.SUPABASE_URL as string
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY as string
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY as string
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 
-if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !SUPABASE_ANON_KEY) {
-  throw new Error('Supabase environment variables are not properly configured.')
+function assertSupabaseEnvForUserClient() {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    throw new Error(
+      "Supabase user client is not properly configured. Missing SUPABASE_URL or SUPABASE_ANON_KEY."
+    );
+  }
+}
+
+function assertSupabaseEnvForServiceClient() {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error(
+      "Supabase service client is not properly configured. Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY."
+    );
+  }
 }
 
 /**
@@ -14,10 +26,12 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !SUPABASE_ANON_KEY) {
  */
 export function getUserClient(jwt: string): SupabaseClient {
   if (!jwt) {
-    throw new Error('Missing JWT for user client.')
+    throw new Error("Missing JWT for user client.");
   }
 
-  return createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+  assertSupabaseEnvForUserClient();
+
+  return createClient(SUPABASE_URL!, SUPABASE_ANON_KEY!, {
     global: {
       headers: {
         Authorization: `Bearer ${jwt}`,
@@ -27,7 +41,7 @@ export function getUserClient(jwt: string): SupabaseClient {
       persistSession: false,
       autoRefreshToken: false,
     },
-  })
+  });
 }
 
 /**
@@ -35,12 +49,14 @@ export function getUserClient(jwt: string): SupabaseClient {
  * Bypasses RLS. Must NEVER be exposed to route handlers directly.
  */
 function createServiceClient(): SupabaseClient {
-  return createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+  assertSupabaseEnvForServiceClient();
+
+  return createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!, {
     auth: {
       persistSession: false,
       autoRefreshToken: false,
     },
-  })
+  });
 }
 
 /**
@@ -49,5 +65,12 @@ function createServiceClient(): SupabaseClient {
  * never inside Express route files.
  */
 export function getServiceClient(): SupabaseClient {
-  return createServiceClient()
+  return createServiceClient();
+}
+
+/**
+ * Non-throwing diagnostics helper.
+ */
+export function isSupabaseConfigured(): boolean {
+  return Boolean(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY && SUPABASE_ANON_KEY);
 }

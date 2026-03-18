@@ -1072,7 +1072,133 @@ export async function registerRoutes(
       res.status(500).json({ error: "Failed to logout" });
     }
   });
+// step 1
+  // --------------------------------------------------
+  // Get pending invitation for current user
+  // --------------------------------------------------
+  app.get("/api/hub/member/invitations", async (req: Request, res: Response) => {
+    try {
+      const user = (req as any).user;
 
+      if (!user?.id) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+
+      const supabaseAdmin = req.app.get("supabaseAdmin");
+
+      const { data, error } = await supabaseAdmin
+        .from("member_invitations")
+        .select("id, inviter_member_id, status, created_at")
+        .eq("invited_user_id", user.id)
+        .eq("status", "pending")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Failed to fetch invitation" });
+      }
+
+      return res.json({
+        invitation: data || null,
+      });
+
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: "Server error" });
+    }
+  });
+  // step 2
+  // --------------------------------------------------
+  // Accept invitation
+  // --------------------------------------------------
+  app.post("/api/hub/member/accept-invitation", async (req: Request, res: Response) => {
+    try {
+      const user = (req as any).user;
+      const { invitationId } = req.body;
+
+      if (!user?.id) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+
+      if (!invitationId) {
+        return res.status(400).json({ message: "Missing invitationId" });
+      }
+
+      const supabaseAdmin = req.app.get("supabaseAdmin");
+      // --------------------------------------------------
+      // Issue invitation
+      // --------------------------------------------------
+      app.post("/api/hub/member/issue-invitation", async (req: Request, res: Response) => {
+        try {
+          const user = (req as any).user;
+          const { invitedUserId } = req.body;
+
+          if (!user?.id) {
+            return res.status(401).json({ message: "Unauthorized" });
+          }
+
+          if (!invitedUserId) {
+            return res.status(400).json({ message: "Missing invitedUserId" });
+          }
+
+          const supabaseAdmin = req.app.get("supabaseAdmin");
+
+          const { error } = await supabaseAdmin.rpc(
+            "issue_member_invitation",
+            { p_invited_user_id: invitedUserId }
+          );
+
+          if (error) {
+            console.error(error);
+            return res.status(500).json({ message: error.message });
+          }
+
+          return res.json({ success: true });
+
+        } catch (err) {
+          console.error(err);
+          return res.status(500).json({ message: "Server error" });
+        }
+      });
+      // SECURITY CHECK — ensure invitation belongs to this user
+      const { data: invitation, error: fetchError } = await supabaseAdmin
+        .from("member_invitations")
+        .select("id, invited_user_id, status")
+        .eq("id", invitationId)
+        .maybeSingle();
+
+      if (fetchError || !invitation) {
+        return res.status(404).json({ message: "Invitation not found" });
+      }
+
+      if (invitation.invited_user_id !== user.id) {
+        return res.status(403).json({ message: "Not your invitation" });
+      }
+
+      if (invitation.status !== "pending") {
+        return res.status(400).json({ message: "Invitation already processed" });
+      }
+
+      // Call database function
+      const { error: rpcError } = await supabaseAdmin.rpc(
+        "accept_member_invitation",
+        { p_invitation_id: invitationId }
+      );
+
+      if (rpcError) {
+        console.error(rpcError);
+        return res.status(500).json({ message: rpcError.message });
+      }
+
+      return res.json({ success: true });
+
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: "Server error" });
+    }
+  });
   // Member self-service endpoints
   app.get("/api/hub/member/me", async (req: Request, res: Response) => {
     try {
