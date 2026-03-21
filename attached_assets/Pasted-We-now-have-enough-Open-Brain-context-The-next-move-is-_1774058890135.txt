@@ -1,0 +1,119 @@
+We now have enough Open Brain context. The next move is to gather the live Supabase implementation truth pack before writing any more payout SQL.
+
+STRICT RULES
+- Read-only inspection only
+- No implementation SQL yet
+- No assumptions
+- No redesign
+- We are inspecting only the exact payout surface needed for execute_inviter_incentive_payout(...)
+
+TASK
+Gather the exact live truth for the following objects and return one deduplicated implementation truth pack.
+
+STEP 1 — economic_events exact live structure
+Return exact live columns for:
+- public.economic_events
+
+Include:
+- column_name
+- data_type
+- udt_name
+- is_nullable
+- column_default
+
+Also return:
+- primary key
+- foreign keys
+- check constraints, if any
+
+STEP 2 — post_journal_entry exact live signature
+Return:
+- schema name
+- function name
+- exact argument list
+- return type
+- full function definition/source if available
+
+If there are overloads, return all of them.
+
+STEP 3 — execute_inviter_incentive_accrual exact live source
+Return the full live function definition/source for:
+- public.execute_inviter_incentive_accrual(...)
+
+If there are overloads, return all of them.
+
+STEP 4 — event_account_policy exact live structure and relevant rows
+Return exact live columns for:
+- public.event_account_policy
+
+Include:
+- column_name
+- data_type
+- udt_name
+- is_nullable
+- column_default
+
+Then return all live rows for:
+- inviter_incentive_accrual
+- inviter_incentive_payout
+- tutor_payout
+
+STEP 5 — earnings exact live structure
+Return exact live columns for:
+- public.earnings
+
+Include:
+- column_name
+- data_type
+- udt_name
+- is_nullable
+- column_default
+
+Also return:
+- primary key
+- foreign keys
+- check constraints, if any
+
+STEP 6 — programs exact live structure
+Return exact live columns for:
+- public.programs
+
+Include:
+- column_name
+- data_type
+- udt_name
+- is_nullable
+- column_default
+
+We need this only to confirm how sbu_id is derived for payout event creation.
+
+STEP 7 — sample live event row shapes
+Return one representative live row each for:
+- economic_events.event_type = 'program_enrollment_payment'
+- economic_events.event_type = 'inviter_incentive_accrual'
+- economic_events.event_type = 'tutor_payout'
+
+Return actual columns and values, but redact only if a value is genuinely sensitive.
+The purpose is to reveal the true row shape used by live events so we do not invent insert columns.
+
+STEP 8 — settlement posting helper
+Return the exact live signature and definition/source for:
+- resolve_open_settlement_posting_date()
+
+STEP 9 — final implementation-safe truth pack
+After all inspections above, provide one final section titled exactly:
+
+IMPLEMENTATION-SAFE FACTS FOR execute_inviter_incentive_payout(...)
+
+That section must contain only:
+1. exact live columns the payout function must read/write
+2. exact functions it must call
+3. exact event row shape it should mirror
+4. exact policy rows it will rely on
+5. exact provenance rule it should use
+6. any single remaining unknown, if one truly still exists
+
+Do not write implementation SQL yet.
+Do not speculate.
+Do not fill gaps with assumed column names.
+Return verified live truth only.

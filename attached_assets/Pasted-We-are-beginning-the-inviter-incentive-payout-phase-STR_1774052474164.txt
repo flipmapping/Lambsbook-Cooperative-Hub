@@ -1,0 +1,57 @@
+We are beginning the inviter incentive payout phase.
+
+STRICT RULES
+- Follow G-Protocol: do not assume schema, enum values, policies, or function signatures.
+- Do not redesign accrual.
+- Do not weaken governance.
+- Do not bypass financial kernel.
+- Do not write implementation SQL yet.
+- First inspect live structures only.
+
+TASK
+Inspect and report the exact live truth for the payout precedent and dependencies required for inviter incentive payout.
+
+STEP 1 — INSPECT EXISTING PAYOUT PRECEDENT
+Find and show the full live definition/source for:
+- public.execute_tutor_payout(...)
+If there are overloads, show all of them.
+
+STEP 2 — INSPECT EARNINGS TABLE
+Inspect the exact live columns, defaults, constraints, and foreign keys for:
+- public.earnings
+We need to confirm whether anything in earnings distinguishes payoutable earning classes or payout assumptions.
+
+STEP 3 — INSPECT ECONOMIC EVENT ENUM
+Inspect the exact live values of:
+- economic_event_type
+Confirm whether:
+- inviter_incentive_payout
+already exists.
+
+STEP 4 — INSPECT EVENT ACCOUNT POLICY
+Inspect the exact live structure and relevant rows for:
+- public.event_account_policy
+Show whether there is already policy coverage for:
+- inviter_incentive_payout
+and also show the tutor payout policy rows so we can mirror the pattern exactly.
+
+STEP 5 — INSPECT SETTLEMENT ENFORCEMENT PRECEDENT
+Inspect the exact live functions involved in payout-period enforcement, including any functions used by tutor payout, such as:
+- resolve_open_settlement_posting_date()
+- enforce_settlement_posting_boundary(...)
+and any payout function calls that prove the live posting pattern.
+
+OUTPUT FORMAT
+Return:
+1. Verified live facts only
+2. Exact function names/signatures
+3. Exact enum status
+4. Exact policy coverage status
+5. A minimal conclusion:
+   - what already exists
+   - what is missing
+   - whether we can safely implement execute_inviter_incentive_payout next
+
+Do not propose UI.
+Do not produce speculative SQL.
+Inspection only.
