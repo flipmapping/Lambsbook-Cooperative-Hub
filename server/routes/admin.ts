@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { supabaseDAL } from '../lib';
+import { createAuthenticatedClient } from '../lib/supabase-member-client';
 import type {
   ProgramInsert, ProgramUpdate,
   ProgramEligibilityInsert,
@@ -456,6 +457,47 @@ router.get('/stats', async (_req: Request, res: Response) => {
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch stats';
     res.status(500).json({ error: message });
+  }
+});
+
+router.post('/enrollment-payment', async (req: Request, res: Response) => {
+  try {
+    const jwt = req.headers.authorization?.replace('Bearer ', '').trim();
+
+    if (!jwt) {
+      return res.status(401).json({ error: 'Missing authorization token' });
+    }
+
+    const { member_id, program_id, amount, reference } = req.body;
+
+    if (!member_id || !program_id || amount === undefined) {
+      return res.status(400).json({ error: 'member_id, program_id, and amount are required' });
+    }
+
+    if (typeof amount !== 'number' || amount <= 0) {
+      return res.status(400).json({ error: 'amount must be a positive number' });
+    }
+
+    const supabase = createAuthenticatedClient(jwt, 'public');
+
+    const { data, error } = await supabase.rpc(
+      'create_program_enrollment_payment_event',
+      {
+        p_member_id: member_id,
+        p_program_id: program_id,
+        p_amount: amount,
+        p_reference: reference || null,
+      }
+    );
+
+    if (error) {
+      return res.status(400).json({ error: error.message });
+    }
+
+    return res.status(201).json({ data });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to create enrollment payment';
+    return res.status(500).json({ error: message });
   }
 });
 
