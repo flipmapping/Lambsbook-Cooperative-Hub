@@ -1,0 +1,94 @@
+We are now in the Lambsbook Cooperative Hub Replit implementation phase.
+
+STRICT RULES
+- Do not write feature code yet
+- Do not redesign financial or governance architecture
+- Do not invent tables, triggers, or wrappers
+- Do not bypass RPC boundaries
+- Do not assume file paths, routes, components, or Supabase patterns
+- First inspect exact existing app structure and report truth only
+
+VERIFIED CONTRACTS TO PRESERVE
+1. Canonical membership is meh.members
+2. Program participation gate is public.program_eligibility
+3. Upstream wrapper is public.create_program_enrollment_payment_event(
+     p_member_id uuid,
+     p_program_id uuid,
+     p_amount numeric,
+     p_reference text default null
+   )
+4. Do not insert directly into economic_events
+5. economic_events is source of truth
+6. approval of draft program_enrollment_payment drives downstream derivation
+7. accrual and payout are already validated and must not be redesigned
+
+TASK: STRUCTURE INSPECTION ONLY
+
+Please inspect the actual main Hub codebase and return a precise implementation anchoring report.
+
+STEP A — FIND APP ENTRY AND ROUTE STRUCTURE
+Search the repo and identify:
+- package.json
+- app directory or pages directory
+- protected area routes
+- admin routes
+- dashboard routes
+- any members/programs related pages
+
+Use shell/path inspection commands rather than manual browsing where possible.
+
+STEP B — FIND SUPABASE ACCESS PATTERNS
+Search for:
+- createClient
+- createBrowserClient
+- createServerClient
+- supabase.from(
+- supabase.rpc(
+- any shared lib files for Supabase
+
+Return:
+- exact file paths
+- which Supabase client pattern is used
+- one or two concrete existing examples of RPC invocation in the main app
+
+STEP C — FIND REUSABLE UI/DOMAIN COMPONENTS
+Search for any existing files/components related to:
+- members
+- programs
+- eligibility
+- admin forms
+- tables
+- selectors
+- dialogs
+- protected server actions or API handlers
+
+Return only what actually exists.
+
+STEP D — RECOMMEND THE SINGLE BEST IMPLEMENTATION LOCATION
+After inspection, recommend exactly one minimal place to implement the first Hub admin workflow:
+1. select member
+2. select program
+3. assign or confirm eligibility
+4. create enrollment payment draft via public.create_program_enrollment_payment_event(...)
+5. show created draft result clearly
+
+OUTPUT FORMAT
+Return in this exact structure:
+
+1. ROUTE / FILE STRUCTURE FOUND
+- exact relevant paths only
+
+2. SUPABASE PATTERN FOUND
+- exact files
+- exact invocation pattern
+- whether RPC calls already exist
+
+3. REUSABLE UI PIECES FOUND
+- exact files/components only
+
+4. BEST IMPLEMENTATION ANCHOR
+- one exact file or one exact new route to create
+- brief reason why it is the minimal production-aligned place
+
+5. DO NOT IMPLEMENT YET
+- stop after inspection report
