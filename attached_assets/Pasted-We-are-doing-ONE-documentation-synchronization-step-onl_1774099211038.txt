@@ -1,0 +1,89 @@
+We are doing ONE documentation / synchronization step only.
+
+Do not change backend code.
+Do not change existing UI behavior.
+Do not build new features.
+Do not redesign routes.
+
+TASK
+Create a small internal UI/UX synchronization document inside the Hub repo to anchor alignment between:
+1. Hub admin dashboard
+2. Onboarding/member dashboard
+
+TARGET FILE
+Create a markdown file in a sensible internal docs location, for example one of:
+- docs/dashboard-sync-contract.md
+- docs/ui/dashboard-sync-contract.md
+
+Use the best fitting existing docs location if one already exists.
+
+OBJECTIVE
+Document the shared dashboard interaction contract so the onboarding app can mirror the same UX logic without inventing new behavior.
+
+INCLUDE THESE SECTIONS
+
+1. PURPOSE
+- Hub is source of truth for workflow behavior
+- Onboarding mirrors the same UX logic in simplified member-facing form
+
+2. SHARED DOMAIN TERMS
+Define exact terms to use consistently:
+- member
+- program
+- eligibility
+- enrollment
+- enrollment payment draft
+- invitation
+- incentive
+Avoid alternate naming that could drift
+
+3. ENROLLMENT WORKFLOW CONTRACT
+Document the shared interaction sequence:
+- select member/program in admin context or current program in member context
+- check eligibility
+- assign eligibility if admin-only and missing
+- create enrollment payment draft through backend route
+- display returned result truthfully
+- do not imply approval/accrual/payout in this first workflow
+
+4. SHARED UI STATES
+Define shared visual states both apps should conceptually support:
+- idle
+- missing selection
+- checking eligibility
+- eligible
+- not eligible
+- assigning eligibility
+- creating draft
+- success
+- error
+
+5. ROLE SPLIT
+Document what belongs only in Hub admin UI vs what belongs in onboarding/member UI:
+- admin can assign eligibility
+- member cannot
+- admin sees raw returned draft result
+- member sees simplified pending/draft confirmation
+- both must preserve same backend truth
+
+6. CURRENT IMPLEMENTATION ANCHORS
+Record exact current Hub anchors:
+- client/src/components/admin/EnrollmentWorkflow.tsx
+- client/src/pages/HubAdminDashboard.tsx
+- POST /api/admin/enrollment-payment
+- GET/POST /api/admin/program-eligibility
+
+7. RULES TO PREVENT DRIFT
+Examples:
+- no direct client Supabase writes
+- no duplicate eligibility logic
+- no alternate enrollment terminology
+- no bypass of backend route boundaries
+
+OUTPUT FORMAT
+Return:
+1. Exact file path created
+2. Full markdown content
+3. Brief note on why this will help keep Hub and onboarding synchronized
+
+STOP after this documentation step
