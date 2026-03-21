@@ -1,0 +1,115 @@
+We are implementing the next ONE step only.
+
+Do not redesign the dashboard.
+Do not create a new page.
+Do not add direct Supabase client calls in the browser.
+Reuse existing HubAdminDashboard data and patterns.
+
+TASK
+Add a new minimal "Enrollment" tab inside:
+
+client/src/pages/HubAdminDashboard.tsx
+
+OBJECTIVE
+Build the first Hub admin UI workflow to:
+1. select a member
+2. select a program
+3. check whether eligibility already exists for that member + program
+4. assign eligibility if missing using the existing POST /api/admin/program-eligibility route
+5. create the enrollment payment draft using POST /api/admin/enrollment-payment
+6. clearly show the created draft event result
+
+IMPLEMENTATION RULES
+
+1. Reuse already-fetched members and programs already available in HubAdminDashboard.tsx
+2. Add exactly one new TabsTrigger value:
+   - enrollment
+3. Add one corresponding TabsContent block
+4. Use existing UI primitives already present in the codebase where appropriate:
+   - select
+   - input
+   - button
+   - badge
+   - card/table if already idiomatic in this file
+5. Use the existing app mutation/fetch pattern:
+   - apiRequest(...)
+   - react-query mutation style already used in this dashboard or nearby admin pages
+
+UI BEHAVIOR
+
+A. Member selector
+- dropdown of members
+
+B. Program selector
+- dropdown of programs
+
+C. Amount input
+- numeric positive input
+- default can be blank
+
+D. Reference input
+- optional text input
+
+E. Eligibility check
+- when member is selected, fetch existing eligibility via:
+  GET /api/admin/program-eligibility?member_id=<member_id>
+- determine whether the selected program is already assigned
+- show clear status:
+  - Eligible
+  - Not yet eligible
+  - Select member and program first
+
+F. Eligibility action
+- if selected program is not yet eligible, show button:
+  Assign Eligibility
+- use existing POST /api/admin/program-eligibility
+- after success, refresh eligibility state for that member
+- do not create duplicate eligibility rows
+
+G. Enrollment payment action
+- button:
+  Create Enrollment Payment Draft
+- enabled only when:
+  - member selected
+  - program selected
+  - amount > 0
+  - eligibility confirmed for selected program
+- POST to:
+  /api/admin/enrollment-payment
+  with:
+  {
+    member_id,
+    program_id,
+    amount,
+    reference
+  }
+
+H. Result display
+After success, clearly display returned draft event result, including as available:
+- id
+- status
+- event_type
+- sbu_id
+- program_id
+- source_member_id
+- source_amount
+- reference
+If the RPC returns a slightly different shape, display the actual returned fields truthfully.
+
+IMPORTANT
+- Keep the UI minimal
+- No approval flow yet
+- No accrual/payout UI
+- No redesign of financial lifecycle
+- No direct economic_events access from client code
+
+OUTPUT FORMAT
+
+Return:
+1. Exact file sections changed in HubAdminDashboard.tsx
+2. Any new imports added
+3. Full code for the new enrollment tab block
+4. Any small helper state/hooks added
+5. Brief note of any assumptions avoided
+
+STOP after this UI step
