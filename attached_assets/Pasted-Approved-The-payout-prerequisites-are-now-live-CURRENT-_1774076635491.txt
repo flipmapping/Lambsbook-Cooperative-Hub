@@ -1,0 +1,55 @@
+Approved. The payout prerequisites are now live.
+
+CURRENT TASK
+Implement Step 3 only:
+
+Create:
+public.execute_inviter_incentive_payout(p_earning_id uuid)
+
+STRICT RULES
+- Do not redesign accrual.
+- Do not bypass financial kernel.
+- Do not insert journal_batches or ledger_lines directly.
+- Mirror the live execute_inviter_incentive_accrual pattern structurally.
+- Use the verified live economic_events row shape only:
+  id, sbu_id, program_id, event_type, reference, created_by, created_at, status, reverses_event_id, approved_by, approved_at, source_member_id, source_amount
+- Use SBU as system actor for created_by, approved_by, and posted_by.
+- Use resolve_open_settlement_posting_date() for posting date.
+- Use post_journal_entry(...) exactly as live:
+  (p_event_id uuid, p_program_id uuid, p_sbu_id uuid, p_currency text, p_posted_by uuid, p_posting_date date, p_lines jsonb)
+- Do not implement batch payout.
+- Do not perform validation execution yet.
+
+REQUIRED FUNCTION BEHAVIOR
+1. Lock the target earnings row.
+2. Validate:
+   - earning exists
+   - earning_status = 'earned'
+   - journal_id IS NOT NULL
+   - source_event_id IS NOT NULL
+3. Resolve and validate payout provenance using live truth:
+   - earnings has no earning_type
+   - provenance must be derived through earnings.source_event_id -> economic_events.id
+   - reject non-inviter-incentive cases
+4. Resolve sbu_id from programs using earning.program_id.
+5. Resolve posting date via resolve_open_settlement_posting_date().
+6. Insert economic_events row for inviter_incentive_payout using the live event shape.
+7. Approve that event using the same structural pattern as live accrual executor.
+8. Resolve payout accounts through event_account_policy + accounts, mirroring the live accrual executor pattern.
+9. Build p_lines JSONB for:
+   - LIABILITY debit
+   - ASSET credit
+10. Post through post_journal_entry(...).
+11. Only after successful posting:
+   - update earnings.earning_status = 'paid'
+   - update earnings.journal_id = returned payout batch id
+12. Return the payout batch id.
+
+OUTPUT
+Return only:
+1. exact SQL for public.execute_inviter_incentive_payout(p_earning_id uuid)
+2. a short note explaining the provenance guard used
+3. one exact SQL test call for the next step
+
+Do not run the test yet.
+Do not implement the batch wrapper yet.
