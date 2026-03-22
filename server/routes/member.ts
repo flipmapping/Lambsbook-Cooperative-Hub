@@ -155,4 +155,37 @@ router.post('/enrollment', attachUserContext, async (req: Request, res: Response
   }
 });
 
+router.get('/enrollment/eligibility', attachUserContext, async (req: Request, res: Response) => {
+  const supabase = requireAuth(req, res);
+  if (!supabase) return;
+
+  try {
+    const member_id = (req as any).user.id;
+
+    const { data, error } = await supabase
+      .from('program_eligibility')
+      .select('program_id, programs!inner ( id, name, is_active )')
+      .eq('member_id', member_id)
+      .eq('eligible', true);
+
+    if (error) {
+      return res.status(400).json({ error: error.message });
+    }
+
+    const programs = (data ?? [])
+      .filter((row: any) => row.programs?.is_active === true)
+      .map((row: any) => ({
+        program_id: row.program_id,
+        program_name: row.programs.name,
+        eligibility_state: 'eligible',
+        can_start_enrollment: true,
+      }));
+
+    return res.json({ programs });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to fetch eligibility';
+    return res.status(500).json({ error: message });
+  }
+});
+
 export default router;
