@@ -114,4 +114,45 @@ router.get('/subscription', attachUserContext, async (req: Request, res: Respons
   }
 });
 
+router.post('/enrollment', attachUserContext, async (req: Request, res: Response) => {
+  const supabase = requireAuth(req, res);
+  if (!supabase) return;
+
+  const { program_id } = req.body;
+
+  if (!program_id) {
+    return res.status(400).json({ error: 'program_id is required' });
+  }
+
+  try {
+    const member_id = (req as any).user.id;
+    const client = createAuthenticatedClient((req as any).user.token, 'public');
+
+    const { data, error } = await client.rpc(
+      'create_program_enrollment_payment_event',
+      {
+        p_member_id: member_id,
+        p_program_id: program_id,
+        p_amount: 0,
+        p_reference: null,
+      }
+    );
+
+    if (error) {
+      return res.status(400).json({ error: error.message });
+    }
+
+    const enrollment_request_id = typeof data === 'string' ? data : (data as any)?.id ?? data;
+
+    return res.status(201).json({
+      enrollment_request_id,
+      status: 'draft',
+      message: 'Enrollment request created. You are now part of this program.',
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to create enrollment request';
+    return res.status(500).json({ error: message });
+  }
+});
+
 export default router;
