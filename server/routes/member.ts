@@ -188,9 +188,21 @@ router.get('/enrollment/eligibility', attachUserContext, async (req: Request, re
   }
 });
 
-router.post('/invitations', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+router.post('/invitations', async (req: Request, res: Response) => {
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: { code: 'SERVICE_UNAVAILABLE', message: 'Service is not configured.' } });
+  }
+
+  const token = getAccessToken(req);
+  if (!token) {
+    return res.status(401).json({ error: { code: 'UNAUTHENTICATED', message: 'Authentication is required.' } });
+  }
+
+  const authClient = createAuthenticatedClient(token);
+  const { data: userData, error: userError } = await authClient.auth.getUser();
+  if (userError || !userData?.user) {
+    return res.status(401).json({ error: { code: 'UNAUTHENTICATED', message: 'Authentication is required.' } });
+  }
 
   const { invitedEmail } = req.body;
 
@@ -205,7 +217,7 @@ router.post('/invitations', attachUserContext, async (req: Request, res: Respons
   }
 
   try {
-    const client = createAuthenticatedClient((req as any).user.token, 'public');
+    const client = createAuthenticatedClient(token, 'public');
 
     const { data, error } = await client.rpc('issue_member_invitation', {
       p_invited_user_id: null,
