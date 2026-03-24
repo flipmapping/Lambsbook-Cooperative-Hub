@@ -1173,10 +1173,6 @@ export async function registerRoutes(
         return res.status(404).json({ message: "Invitation not found" });
       }
 
-      if (invitation.invited_user_id !== user.id) {
-        return res.status(403).json({ message: "Not your invitation" });
-      }
-
       if (invitation.status !== "pending") {
         return res.status(400).json({ message: "Invitation already processed" });
       }
@@ -1189,11 +1185,39 @@ export async function registerRoutes(
 
       if (rpcError) {
         console.error('[accept-invitation] RPC error:', rpcError.code, rpcError.message);
+
         const msg = (rpcError.message ?? '').toLowerCase();
 
-        // P0001 is Postgres's generic RAISE EXCEPTION code — must classify by message first.
+        // 1. AUTHORIZATION FIRST (CRITICAL — PREVENT INFORMATION LEAK)
+        if (
+          rpcError.code === '42501' ||
+          msg.includes('not authorized') ||
+          msg.includes('not your invitation') ||
+          msg.includes('permission denied')
+        ) {
+          return res.status(403).json({
+            error: {
+              code: 'NOT_ALLOWED',
+              message: 'You are not authorized to accept this invitation.'
+            }
+          });
+        }
 
-        // Already accepted, expired, or no longer pending
+        // 2. NOT FOUND
+        if (
+          msg.includes('not found') ||
+          msg.includes('does not exist') ||
+          msg.includes('no invitation')
+        ) {
+          return res.status(404).json({
+            error: {
+              code: 'INVITATION_NOT_FOUND',
+              message: 'Invitation not found.'
+            }
+          });
+        }
+
+        // 3. STATE (ONLY AFTER AUTHORIZATION PASSES)
         if (
           rpcError.code === '23514' ||
           msg.includes('already accepted') ||
@@ -1204,46 +1228,17 @@ export async function registerRoutes(
           return res.status(409).json({
             error: {
               code: 'INVITATION_ALREADY_PROCESSED',
-              message: 'This invitation has already been accepted or is no longer valid.',
-            },
+              message: 'This invitation has already been accepted or is no longer valid.'
+            }
           });
         }
 
-        // DB-level ownership / permission mismatch
-        if (
-          rpcError.code === '42501' ||
-          msg.includes('not authorized') ||
-          msg.includes('not your invitation') ||
-          msg.includes('permission denied')
-        ) {
-          return res.status(403).json({
-            error: {
-              code: 'NOT_ALLOWED',
-              message: 'You are not authorized to accept this invitation.',
-            },
-          });
-        }
-
-        // Invitation not found at DB level
-        if (
-          msg.includes('not found') ||
-          msg.includes('does not exist') ||
-          msg.includes('no invitation')
-        ) {
-          return res.status(404).json({
-            error: {
-              code: 'INVITATION_NOT_FOUND',
-              message: 'Invitation not found.',
-            },
-          });
-        }
-
-        // All other DB errors — never leak raw Postgres message
+        // 4. FALLBACK (NO RAW POSTGRES LEAK)
         return res.status(500).json({
           error: {
             code: 'INTERNAL_ERROR',
-            message: 'Failed to accept invitation.',
-          },
+            message: 'Failed to accept invitation.'
+          }
         });
       }
 

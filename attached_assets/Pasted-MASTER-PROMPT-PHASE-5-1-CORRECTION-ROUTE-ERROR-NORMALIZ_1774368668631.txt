@@ -1,0 +1,134 @@
+MASTER PROMPT — PHASE 5.1 CORRECTION (ROUTE ERROR NORMALIZATION FIX)
+
+--------------------------------
+1. CONTEXT
+--------------------------------
+
+Route:
+POST /api/hub/member/accept-invitation
+File: server/routes.ts
+
+The route already calls:
+public.accept_member_invitation(p_invitation_id uuid)
+
+DB function is VERIFIED and CORRECT.
+
+Current issue exists ONLY in route-level logic.
+
+--------------------------------
+2. SINGLE TASK
+--------------------------------
+
+Apply TWO precise corrections to the route:
+
+A. REMOVE invalid preflight ownership check  
+B. FIX error normalization ordering to prevent authorization leakage
+
+--------------------------------
+3. REQUIRED CHANGES
+--------------------------------
+
+### CHANGE 1 — REMOVE THIS BLOCK (MANDATORY)
+
+Locate and DELETE:
+
+if (row.invited_user_id !== user.id) {
+  return res.status(403).json({ message: "Not your invitation" });
+}
+
+Reason:
+- Breaks email-bound invitations (invited_user_id = null)
+- Violates canonical rule: identity enforcement belongs ONLY in DB
+
+--------------------------------
+
+### CHANGE 2 — REPLACE ERROR NORMALIZATION BLOCK
+
+Find the RPC error handling block:
+
+if (rpcError) {
+  ...
+}
+
+REPLACE ENTIRE BLOCK with:
+
+if (rpcError) {
+  console.error('[accept-invitation] RPC error:', rpcError.code, rpcError.message);
+
+  const msg = (rpcError.message ?? '').toLowerCase();
+
+  // 1. AUTHORIZATION FIRST (CRITICAL — PREVENT INFORMATION LEAK)
+  if (
+    rpcError.code === '42501' ||
+    msg.includes('not authorized') ||
+    msg.includes('not your invitation') ||
+    msg.includes('permission denied')
+  ) {
+    return res.status(403).json({
+      error: {
+        code: 'NOT_ALLOWED',
+        message: 'You are not authorized to accept this invitation.'
+      }
+    });
+  }
+
+  // 2. NOT FOUND
+  if (
+    msg.includes('not found') ||
+    msg.includes('does not exist') ||
+    msg.includes('no invitation')
+  ) {
+    return res.status(404).json({
+      error: {
+        code: 'INVITATION_NOT_FOUND',
+        message: 'Invitation not found.'
+      }
+    });
+  }
+
+  // 3. STATE (ONLY AFTER AUTHORIZATION PASSES)
+  if (
+    rpcError.code === '23514' ||
+    msg.includes('already accepted') ||
+    msg.includes('already processed') ||
+    msg.includes('not pending') ||
+    msg.includes('expired')
+  ) {
+    return res.status(409).json({
+      error: {
+        code: 'INVITATION_ALREADY_PROCESSED',
+        message: 'This invitation has already been accepted or is no longer valid.'
+      }
+    });
+  }
+
+  // 4. FALLBACK (NO RAW POSTGRES LEAK)
+  return res.status(500).json({
+    error: {
+      code: 'INTERNAL_ERROR',
+      message: 'Failed to accept invitation.'
+    }
+  });
+}
+
+--------------------------------
+4. STRICT RULES
+--------------------------------
+
+- DO NOT modify the database function
+- DO NOT add new fields or tables
+- DO NOT reintroduce ownership checks in route
+- DO NOT change Gateway behavior
+- DO NOT leak raw rpcError.message to response
+- ONLY apply the two corrections above
+
+--------------------------------
+5. GOAL
+--------------------------------
+
+Make the route:
+
+- fully compatible with email-bound invitations
+- free of authorization information leaks
+- aligned with DB as the single source of truth
+- fully normalized for HTTP response contracts
