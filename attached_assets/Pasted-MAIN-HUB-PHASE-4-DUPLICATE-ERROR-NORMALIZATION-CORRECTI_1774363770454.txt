@@ -1,0 +1,157 @@
+MAIN HUB — PHASE 4 DUPLICATE ERROR NORMALIZATION CORRECTION
+
+STRICT MODE
+- Do NOT change schema
+- Do NOT change SQL functions
+- Do NOT redesign lifecycle
+- Do NOT change success response
+- Do NOT change Gateway or UI code
+
+--------------------------------
+1. OBJECTIVE
+--------------------------------
+
+Correct the duplicate invitation error path for:
+
+POST /api/member/invitations
+
+so that a duplicate email invitation returns the correct field-scoped normalized error instead of a banner-level membership error.
+
+--------------------------------
+2. VERIFIED FACTS
+--------------------------------
+
+Client/Gateway behavior is already verified correct:
+
+- request payload contains only:
+  {
+    "invitedEmail": "<email>"
+  }
+
+- Authorization header is present
+
+- UI displays inline error only when:
+  error.field === "invitedEmail"
+
+Current defect:
+- duplicate invitation attempt is surfacing as banner error:
+  "You must be a member to issue invitations."
+
+This indicates the Hub is normalizing the duplicate path incorrectly.
+
+--------------------------------
+3. REQUIRED CORRECTION
+--------------------------------
+
+Inspect the exact error normalization path in:
+
+POST /api/member/invitations
+
+and correct it so that duplicate invitation conflicts return:
+
+HTTP 409
+{
+  "error": {
+    "code": "DUPLICATE_INVITATION",
+    "message": "<clear factual duplicate message>",
+    "field": "invitedEmail"
+  }
+}
+
+Requirements:
+- field must be exactly "invitedEmail"
+- status must be 409
+- message must be neutral and factual
+- do not leak raw Postgres text
+- do not misclassify duplicate as NOT_ALLOWED / membership failure
+
+--------------------------------
+4. NORMALIZATION RULES
+--------------------------------
+
+Keep these classes distinct:
+
+A. Unauthenticated
+401
+{
+  "error": {
+    "code": "UNAUTHENTICATED",
+    "message": "Authentication is required."
+  }
+}
+
+B. Invalid email input
+400
+{
+  "error": {
+    "code": "INVALID_EMAIL",
+    "message": "A valid email is required.",
+    "field": "invitedEmail"
+  }
+}
+
+C. Duplicate invitation / email conflict
+409
+{
+  "error": {
+    "code": "DUPLICATE_INVITATION",
+    "message": "A pending invitation already exists for this email.",
+    "field": "invitedEmail"
+  }
+}
+
+D. Not allowed / issuer not canonical member
+403
+{
+  "error": {
+    "code": "NOT_ALLOWED",
+    "message": "You must be a member to issue invitations."
+  }
+}
+
+Do NOT collapse C into D.
+
+--------------------------------
+5. INSPECTION FIRST
+--------------------------------
+
+Before editing, inspect only:
+- the current /api/member/invitations route
+- the RPC error object shape returned on duplicate
+- the exact normalization branch/order
+- whether duplicate detection is being shadowed by a broader forbidden/not-allowed mapping
+
+Determine the exact cause before editing.
+
+--------------------------------
+6. STRICT NON-GOALS
+--------------------------------
+
+Do NOT:
+- modify Gateway
+- modify InviteEntryModal
+- modify SQL/RPC definitions
+- add duplicate pre-check queries
+- redesign route structure
+- change success envelope
+- add delivery/token/expiry behavior
+
+--------------------------------
+7. REQUIRED OUTPUT
+--------------------------------
+
+Return exactly:
+
+1. FILES CHANGED
+2. ROOT CAUSE
+3. WHAT WAS CORRECTED
+4. CONTRACT CHECK
+5. MANUAL TEST STEPS
+6. FINAL RESULT
+
+FINAL RESULT must be:
+PHASE 4 DUPLICATE ERROR NORMALIZATION CORRECTION COMPLETE
+
+--------------------------------
+8. START NOW
+--------------------------------

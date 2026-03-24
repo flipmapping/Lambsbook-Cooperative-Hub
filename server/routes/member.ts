@@ -225,26 +225,44 @@ router.post('/invitations', async (req: Request, res: Response) => {
     });
 
     if (error) {
-      if (error.code === '23505') {
+      const msg = (error.message ?? '').toLowerCase();
+
+      // Check for duplicate BEFORE the generic P0001 guard — P0001 is used by Postgres
+      // for ALL RAISE EXCEPTION calls and would otherwise shadow duplicate errors.
+      if (
+        error.code === '23505' ||
+        msg.includes('duplicate') ||
+        msg.includes('already') ||
+        msg.includes('pending') ||
+        msg.includes('exists')
+      ) {
         return res.status(409).json({
           error: {
             code: 'DUPLICATE_INVITATION',
-            message: 'An invitation to this email already exists or the user is already a member',
+            message: 'A pending invitation already exists for this email.',
+            field: 'invitedEmail',
           },
         });
       }
-      if (error.code === '42501' || error.code === 'P0001' || error.message?.toLowerCase().includes('not a member')) {
+
+      if (
+        error.code === '42501' ||
+        msg.includes('not a member') ||
+        msg.includes('not allowed') ||
+        msg.includes('permission denied')
+      ) {
         return res.status(403).json({
           error: {
             code: 'NOT_ALLOWED',
-            message: 'You must be a member to issue invitations',
+            message: 'You must be a member to issue invitations.',
           },
         });
       }
+
       return res.status(500).json({
         error: {
           code: 'INTERNAL_ERROR',
-          message: 'Failed to issue invitation',
+          message: 'Failed to issue invitation.',
         },
       });
     }
