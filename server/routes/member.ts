@@ -188,4 +188,74 @@ router.get('/enrollment/eligibility', attachUserContext, async (req: Request, re
   }
 });
 
+router.post('/invitations', attachUserContext, async (req: Request, res: Response) => {
+  const supabase = requireAuth(req, res);
+  if (!supabase) return;
+
+  const { invitedEmail } = req.body;
+
+  if (!invitedEmail || typeof invitedEmail !== 'string' || invitedEmail.trim() === '') {
+    return res.status(400).json({
+      error: {
+        code: 'INVALID_EMAIL',
+        message: 'invitedEmail is required and must be a non-empty string',
+        field: 'invitedEmail',
+      },
+    });
+  }
+
+  try {
+    const client = createAuthenticatedClient((req as any).user.token, 'public');
+
+    const { data, error } = await client.rpc('issue_member_invitation', {
+      p_invited_user_id: null,
+      p_invited_email: invitedEmail.trim(),
+    });
+
+    if (error) {
+      if (error.code === '23505') {
+        return res.status(409).json({
+          error: {
+            code: 'DUPLICATE_INVITATION',
+            message: 'An invitation to this email already exists or the user is already a member',
+          },
+        });
+      }
+      if (error.code === '42501' || error.code === 'P0001' || error.message?.toLowerCase().includes('not a member')) {
+        return res.status(403).json({
+          error: {
+            code: 'NOT_ALLOWED',
+            message: 'You must be a member to issue invitations',
+          },
+        });
+      }
+      return res.status(500).json({
+        error: {
+          code: 'INTERNAL_ERROR',
+          message: 'Failed to issue invitation',
+        },
+      });
+    }
+
+    const row = typeof data === 'object' && data !== null ? data : {};
+
+    return res.status(201).json({
+      invitation: {
+        id: (row as any).id ?? null,
+        invitedUserId: (row as any).invited_user_id ?? null,
+        invitedEmail: (row as any).invited_email ?? invitedEmail.trim(),
+        status: (row as any).status ?? 'pending',
+        createdAt: (row as any).created_at ?? null,
+      },
+    });
+  } catch (err) {
+    return res.status(500).json({
+      error: {
+        code: 'INTERNAL_ERROR',
+        message: 'An unexpected error occurred',
+      },
+    });
+  }
+});
+
 export default router;

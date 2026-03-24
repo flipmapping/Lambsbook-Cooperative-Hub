@@ -1,0 +1,162 @@
+MAIN HUB — TASK B IMPLEMENTATION (REPLIT BACKEND ONLY)
+
+STRICT MODE
+- Do NOT change schema
+- Do NOT change SQL functions
+- Do NOT redesign lifecycle
+- Do NOT add delivery logic
+- Do NOT infer identity or membership state
+
+--------------------------------
+OBJECTIVE
+--------------------------------
+
+Expose canonical email-based invitation issuance via Hub API.
+
+--------------------------------
+INSPECTION FIRST (MANDATORY)
+--------------------------------
+
+Before coding, inspect:
+
+- existing authenticated Hub API route pattern
+  (e.g. /api/member/enrollment or similar)
+
+- how Authorization header is validated
+
+- how Supabase server client is created (service role or user context)
+
+- how existing endpoints call Supabase RPC / database
+
+- existing response format and error normalization pattern
+
+DO NOT assume patterns — reuse existing ones.
+
+--------------------------------
+IMPLEMENT
+--------------------------------
+
+Create or confirm endpoint:
+
+POST /api/member/invitations
+
+--------------------------------
+REQUEST
+--------------------------------
+
+Accept ONLY:
+
+{
+  "invitedEmail": "person@example.com"
+}
+
+--------------------------------
+AUTH
+--------------------------------
+
+- Require authenticated caller
+- Use existing Hub auth pattern
+- Reject if no valid user/session
+
+--------------------------------
+VALIDATION (API LEVEL ONLY)
+--------------------------------
+
+- invitedEmail must exist
+- must be string
+- must not be empty
+
+DO NOT:
+- check if user exists
+- check if member exists
+- check duplicates
+- apply business logic
+
+--------------------------------
+CANONICAL CALL
+--------------------------------
+
+Call Supabase using existing server pattern:
+
+public.issue_member_invitation(
+  p_invited_user_id := null,
+  p_invited_email   := invitedEmail
+)
+
+--------------------------------
+SUCCESS RESPONSE
+--------------------------------
+
+HTTP 201
+
+{
+  "invitation": {
+    "id": "...",
+    "invitedUserId": null,
+    "invitedEmail": "...",
+    "status": "pending",
+    "createdAt": "..."
+  }
+}
+
+--------------------------------
+ERROR RESPONSE
+--------------------------------
+
+Return normalized error envelope:
+
+{
+  "error": {
+    "code": "<stable_code>",
+    "message": "<human readable>",
+    "field": "invitedEmail" // only for email-specific issues
+  }
+}
+
+Rules:
+- DO NOT leak raw Postgres errors
+- DO NOT fabricate field errors for auth/permission issues
+
+--------------------------------
+STATUS CODES
+--------------------------------
+
+Use:
+- 201 → success
+- 400 → invalid request
+- 401 → unauthenticated
+- 403 → not allowed (non-member)
+- 409 → conflict (duplicate / already member)
+- 500 → unexpected error
+
+--------------------------------
+DO NOT IMPLEMENT
+--------------------------------
+
+- email sending
+- invitation links
+- token exposure
+- expiry logic
+- acceptance logic
+- user lookup
+- member lookup
+- duplicate logic in API layer
+
+--------------------------------
+OUTPUT FORMAT (MANDATORY)
+--------------------------------
+
+Return exactly:
+
+1. FILES CHANGED
+2. WHAT WAS IMPLEMENTED
+3. CONTRACT CHECK
+4. MANUAL TEST STEPS
+5. FINAL RESULT
+
+FINAL RESULT must be:
+PHASE 4B IMPLEMENTATION COMPLETE
+
+--------------------------------
+START NOW
+--------------------------------
