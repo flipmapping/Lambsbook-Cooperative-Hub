@@ -1188,15 +1188,70 @@ export async function registerRoutes(
       );
 
       if (rpcError) {
-        console.error(rpcError);
-        return res.status(500).json({ message: rpcError.message });
+        console.error('[accept-invitation] RPC error:', rpcError.code, rpcError.message);
+        const msg = (rpcError.message ?? '').toLowerCase();
+
+        // P0001 is Postgres's generic RAISE EXCEPTION code — must classify by message first.
+
+        // Already accepted, expired, or no longer pending
+        if (
+          rpcError.code === '23514' ||
+          msg.includes('already accepted') ||
+          msg.includes('already processed') ||
+          msg.includes('not pending') ||
+          msg.includes('expired')
+        ) {
+          return res.status(409).json({
+            error: {
+              code: 'INVITATION_ALREADY_PROCESSED',
+              message: 'This invitation has already been accepted or is no longer valid.',
+            },
+          });
+        }
+
+        // DB-level ownership / permission mismatch
+        if (
+          rpcError.code === '42501' ||
+          msg.includes('not authorized') ||
+          msg.includes('not your invitation') ||
+          msg.includes('permission denied')
+        ) {
+          return res.status(403).json({
+            error: {
+              code: 'NOT_ALLOWED',
+              message: 'You are not authorized to accept this invitation.',
+            },
+          });
+        }
+
+        // Invitation not found at DB level
+        if (
+          msg.includes('not found') ||
+          msg.includes('does not exist') ||
+          msg.includes('no invitation')
+        ) {
+          return res.status(404).json({
+            error: {
+              code: 'INVITATION_NOT_FOUND',
+              message: 'Invitation not found.',
+            },
+          });
+        }
+
+        // All other DB errors — never leak raw Postgres message
+        return res.status(500).json({
+          error: {
+            code: 'INTERNAL_ERROR',
+            message: 'Failed to accept invitation.',
+          },
+        });
       }
 
       return res.json({ success: true });
 
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: "Server error" });
+      return res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'Server error.' } });
     }
   });
   // Member self-service endpoints
