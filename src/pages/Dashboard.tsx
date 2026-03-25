@@ -8,6 +8,15 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const rawSession = localStorage.getItem("supabase.auth.token") || "null";
+    console.log("RAW_LOCALSTORAGE_SESSION:", rawSession);
+    try {
+      const parsedSession = JSON.parse(rawSession);
+      console.log("PARSED_LOCALSTORAGE_SESSION:", parsedSession);
+      console.log("ACCESS_TOKEN:", parsedSession?.access_token || null);
+    } catch (e) {
+      console.log("SESSION_PARSE_ERROR:", e);
+    }
     async function loadEarnings() {
       try {
         const total = await fetchTotalEarnings();
