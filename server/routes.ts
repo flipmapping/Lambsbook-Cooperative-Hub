@@ -1072,7 +1072,7 @@ export async function registerRoutes(
       res.status(500).json({ error: "Failed to logout" });
     }
   });
-// step 1
+  // step 1
   // --------------------------------------------------
   // Get pending invitation for current user
   // --------------------------------------------------
@@ -1084,7 +1084,36 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
 
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+
+      const token = authHeader.replace("Bearer ", "").trim();
+      const authResult = await getUser(token);
+
+      if (!authResult.success || !authResult.data?.user) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+
+      const userEmail = authResult.data.user.email;
+      if (!userEmail) {
+        return res.status(401).json({ error: "User email not found" });
+      }
+
       const supabaseAdmin = req.app.get("supabaseAdmin");
+
+      const { error: bindError } = await supabaseAdmin
+        .from("member_invitations")
+        .update({ invited_user_id: user.id })
+        .eq("status", "pending")
+        .is("invited_user_id", null)
+        .eq("invited_email", userEmail);
+
+      if (bindError) {
+        console.error(bindError);
+        return res.status(500).json({ message: "Failed to bind invitation" });
+      }
 
       const { data, error } = await supabaseAdmin
         .from("member_invitations")
@@ -1103,16 +1132,12 @@ export async function registerRoutes(
       return res.json({
         invitation: data || null,
       });
-
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: "Server error" });
     }
   });
-  // step 2
-  // --------------------------------------------------
-  // Accept invitation
-  // --------------------------------------------------
+
   app.post("/api/hub/member/accept-invitation", async (req: Request, res: Response) => {
     try {
       const user = (req as any).user;
