@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiRequest } from "@/lib/queryClient";
 
 type State =
   | "loading"
@@ -16,7 +17,7 @@ export default function MemberDashboard() {
     const checkAccess = async () => {
       try {
         // Step 1 — check if already member
-        const res = await fetch("/api/hub/member/me");
+        const res = await apiRequest("GET", "/api/hub/member/me");
 
         if (res.ok) {
           const data = await res.json();
@@ -28,7 +29,7 @@ export default function MemberDashboard() {
         }
 
         // Step 2 — check invitation
-        const invRes = await fetch("/api/hub/member/invitations");
+        const invRes = await apiRequest("GET", "/api/hub/member/invitations");
 
         if (invRes.ok) {
           const invData = await invRes.json();
@@ -53,29 +54,19 @@ export default function MemberDashboard() {
   }, []);
 
   const acceptInvitation = async () => {
-    if (!invitationId) return;
+      if (!invitationId) return;
 
-    try {
-      const res = await fetch("/api/hub/member/accept-invitation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ invitationId }),
-      });
+      try {
+        await apiRequest("POST", "/api/hub/member/accept-invitation", {
+          invitationId,
+        });
 
-      if (!res.ok) {
-        const err = await res.json();
-        alert(err.message || "Failed to accept invitation");
-        return;
+        window.location.reload();
+      } catch (err: any) {
+        console.error(err);
+        alert(err?.message || "Error accepting invitation");
       }
-
-      window.location.reload();
-    } catch (err) {
-      console.error(err);
-      alert("Error accepting invitation");
-    }
-  };
+    };
 
   // ---------------- UI ----------------
 
