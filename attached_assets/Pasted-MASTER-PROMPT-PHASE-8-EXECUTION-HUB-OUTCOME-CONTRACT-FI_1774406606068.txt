@@ -1,0 +1,149 @@
+MASTER PROMPT — PHASE 8 EXECUTION (HUB OUTCOME CONTRACT FIRST)
+
+--------------------------------
+1. ROLE (CRITICAL)
+--------------------------------
+
+You are the Main Hub execution chat.
+
+You are implementing under Master Hub authority.
+
+You do NOT redesign the phase.
+You do NOT expand scope.
+You do NOT add interpretation.
+
+You must implement only the governed Phase 8 Hub contract.
+
+--------------------------------
+2. PHASE
+--------------------------------
+
+Phase 8 — Post-Acceptance Outcome Surface
+
+This is a truth exposure phase.
+Hub contract must be implemented before any UI work begins.
+
+--------------------------------
+3. LOCKED OBJECTIVE
+--------------------------------
+
+Expose a minimal, governed, read-only confirmation of completed invitation acceptance so the user can understand what has happened using Hub-derived truth only.
+
+--------------------------------
+4. LOCKED ENDPOINT
+--------------------------------
+
+Implement:
+
+GET /api/member/invitations/:invitationId/outcome
+
+--------------------------------
+5. LOCKED SUCCESS CONTRACT
+--------------------------------
+
+Return exactly:
+
+{
+  "invitationId": "uuid",
+  "status": "accepted",
+  "acceptedAt": "timestamp"
+}
+
+Do NOT add:
+- inviterMemberId
+- member objects
+- relationship objects
+- nextStep
+- message
+- flags
+- derived semantics
+
+--------------------------------
+6. HARD RULES
+--------------------------------
+
+Must be:
+
+- read-only
+- DB-derived
+- normalized
+- minimal
+- deterministic
+
+Must NOT:
+
+- reinterpret lifecycle
+- expose DB-shaped payloads
+- infer relationship meaning
+- add continuation logic
+- add social, network, community, referral, reward, or incentive semantics
+
+--------------------------------
+7. ERROR BOUNDARY
+--------------------------------
+
+Hub governs:
+- acceptance truth
+- identity binding
+- outcome retrieval
+
+Gateway/route layer may normalize transport-level errors only,
+but must not reinterpret lifecycle semantics.
+
+--------------------------------
+8. REQUIRED NON-SUCCESS BEHAVIOR
+--------------------------------
+
+If invitation does not exist:
+404
+
+If invitation exists but is not accepted:
+409
+
+Do not invent extra semantic states.
+
+--------------------------------
+9. REQUIRED WORKFLOW
+--------------------------------
+
+Step 1:
+Inspect existing member invitation route structure and current acceptance-related route patterns before writing code.
+
+Step 2:
+Implement only the new GET outcome route.
+
+Step 3:
+Match existing route conventions and envelope style where transport-safe.
+
+Step 4:
+Return exact changed file list and exact route code.
+
+--------------------------------
+10. OUTPUT FORMAT
+--------------------------------
+
+Provide only:
+
+1. files changed
+2. exact route implementation
+3. exact response contract
+4. exact non-success behavior
+5. confirmation that no extra fields or semantics were added
+
+--------------------------------
+11. DO NOT TOUCH
+--------------------------------
+
+- acceptance RPC
+- acceptance lifecycle logic
+- invitation discovery route
+- review route
+- onboarding UI
+- dashboard handoff behavior
+- downstream relationship surfaces
+
+--------------------------------
+12. START
+--------------------------------
+
+Inspect first. Then implement only the Phase 8 Hub outcome contract.

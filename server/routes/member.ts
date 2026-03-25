@@ -288,4 +288,39 @@ router.post('/invitations', async (req: Request, res: Response) => {
   }
 });
 
+router.get('/invitations/:invitationId/outcome', attachUserContext, async (req: Request, res: Response) => {
+  const supabase = requireAuth(req, res);
+  if (!supabase) return;
+
+  const { invitationId } = req.params;
+
+  try {
+    const { data, error } = await supabase
+      .from('member_invitations')
+      .select('id, status, accepted_at')
+      .eq('id', invitationId)
+      .maybeSingle();
+
+    if (error) {
+      return res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'Failed to retrieve invitation outcome.' } });
+    }
+
+    if (!data) {
+      return res.status(404).json({ error: { code: 'INVITATION_NOT_FOUND', message: 'Invitation not found.' } });
+    }
+
+    if (data.status !== 'accepted') {
+      return res.status(409).json({ error: { code: 'INVITATION_NOT_ACCEPTED', message: 'Invitation has not been accepted.' } });
+    }
+
+    return res.json({
+      invitationId: data.id,
+      status: 'accepted',
+      acceptedAt: data.accepted_at,
+    });
+  } catch (err) {
+    return res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'Server error.' } });
+  }
+});
+
 export default router;
