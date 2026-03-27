@@ -1,8 +1,8 @@
 import { Router, Request, Response } from 'express';
 import { supabaseDAL } from '../lib';
 import { createAuthenticatedClient } from '../lib/supabase-member-client';
-import { attachUserContext } from "../middleware/attachUserContext";
 import type {
+import { attachUserContext } from "../middleware/attachUserContext";
   ProgramInsert, ProgramUpdate,
   ProgramEligibilityInsert,
   MemberUpdate,

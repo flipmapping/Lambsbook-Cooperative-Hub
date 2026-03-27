@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { requireAuth } from "../middleware/requireAuth";
 import { requireSBUAccess, SBURequest } from "../middleware/requireSBUAccess";
 import { requireSBURole } from "../middleware/requireSBURole";
 import { postTransaction, closeFinancialPeriod } from "../dal/financial";
@@ -7,6 +8,7 @@ const router = Router();
 
 router.post(
   "/api/sbu/:sbu_id/transactions",
+  requireAuth,
   requireSBUAccess,
   requireSBURole(["finance"]),
   async (req: SBURequest, res) => {
@@ -41,6 +43,7 @@ router.post(
 );
 router.post(
   "/api/sbu/:sbu_id/close-period",
+  requireAuth,
   requireSBUAccess,
   requireSBURole(["admin", "owner"]),
   async (req: SBURequest, res) => {

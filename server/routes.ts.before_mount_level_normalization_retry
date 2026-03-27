@@ -47,8 +47,8 @@ export async function registerRoutes(
   app.use(detectPlatformAdmin);
   app.use("/api/admin", adminRoutes);
   app.use("/api/member", memberRoutes);
-  app.use(attachUserContext, financialRoutes);
-  app.use(attachUserContext, governanceRoute);
+  app.use(financialRoutes);
+  app.use(governanceRoute);
   app.use("/dev", devTestAuthRoutes);
 
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {

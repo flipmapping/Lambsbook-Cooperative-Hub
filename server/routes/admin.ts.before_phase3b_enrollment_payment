@@ -1,7 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { supabaseDAL } from '../lib';
 import { createAuthenticatedClient } from '../lib/supabase-member-client';
-import { attachUserContext } from "../middleware/attachUserContext";
 import type {
   ProgramInsert, ProgramUpdate,
   ProgramEligibilityInsert,
@@ -461,11 +460,11 @@ router.get('/stats', async (_req: Request, res: Response) => {
   }
 });
 
-router.post('/enrollment-payment', attachUserContext, async (req: Request, res: Response) => {
+router.post('/enrollment-payment', async (req: Request, res: Response) => {
   try {
-    const user = (req as any).user;
+    const jwt = req.headers.authorization?.replace('Bearer ', '').trim();
 
-    if (!user?.token) {
+    if (!jwt) {
       return res.status(401).json({ error: 'Missing authorization token' });
     }
 
@@ -479,7 +478,7 @@ router.post('/enrollment-payment', attachUserContext, async (req: Request, res: 
       return res.status(400).json({ error: 'amount must be a positive number' });
     }
 
-    const supabase = createAuthenticatedClient(user.token, 'public');
+    const supabase = createAuthenticatedClient(jwt, 'public');
 
     const { data, error } = await supabase.rpc(
       'create_program_enrollment_payment_event',

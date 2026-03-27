@@ -9,35 +9,15 @@ import { governanceRateLimit } from '../middleware/governanceRateLimit';
 
 const router = Router();
 
-function getAccessToken(req: Request): string | null {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return null;
-  }
-  return authHeader.slice(7);
-}
-
-function requireAuth(req: Request, res: Response): ReturnType<typeof createAuthenticatedClient> | null {
-  if (!isSupabaseMemberConfigured()) {
-    res.status(503).json({ error: 'Supabase not configured' });
-    return null;
-  }
-  
-  const token = getAccessToken(req);
-  if (!token) {
-    res.status(401).json({ error: 'Authentication required' });
-    return null;
-  }
-  
-  return createAuthenticatedClient(token);
-}
-
 router.post('/ensure', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
 
   try {
-    const userId = (req as any).user.id;
+    const user = (req as any).user;
+    const userId = user.id;
+    const supabase = createAuthenticatedClient(user.token);
 
     const { data: existing } = await supabase
       .from('members')
@@ -74,11 +54,14 @@ router.post('/ensure', attachUserContext, async (req: Request, res: Response) =>
 });
 
 router.get('/profile', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
 
   try {
-    const userId = (req as any).user.id;
+    const user = (req as any).user;
+    const userId = user.id;
+    const supabase = createAuthenticatedClient(user.token);
 
     const { data: member, error } = await supabase
       .from('members')
@@ -115,8 +98,9 @@ router.get('/subscription', attachUserContext, async (req: Request, res: Respons
 });
 
 router.post('/enrollment', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
 
   const { program_id } = req.body;
 
@@ -125,8 +109,9 @@ router.post('/enrollment', attachUserContext, async (req: Request, res: Response
   }
 
   try {
-    const member_id = (req as any).user.id;
-    const client = createAuthenticatedClient((req as any).user.token, 'public');
+    const user = (req as any).user;
+    const member_id = user.id;
+    const client = createAuthenticatedClient(user.token, 'public');
 
     const { data, error } = await client.rpc(
       'create_program_enrollment_payment_event',
@@ -156,11 +141,14 @@ router.post('/enrollment', attachUserContext, async (req: Request, res: Response
 });
 
 router.get('/enrollment/eligibility', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
 
   try {
-    const member_id = (req as any).user.id;
+    const user = (req as any).user;
+    const member_id = user.id;
+    const supabase = createAuthenticatedClient(user.token);
 
     const { data, error } = await supabase
       .from('program_eligibility')
@@ -188,22 +176,12 @@ router.get('/enrollment/eligibility', attachUserContext, async (req: Request, re
   }
 });
 
-router.post('/invitations', async (req: Request, res: Response) => {
+router.post('/invitations', attachUserContext, async (req: Request, res: Response) => {
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: { code: 'SERVICE_UNAVAILABLE', message: 'Service is not configured.' } });
   }
 
-  const token = getAccessToken(req);
-  if (!token) {
-    return res.status(401).json({ error: { code: 'UNAUTHENTICATED', message: 'Authentication is required.' } });
-  }
-
-  const authClient = createAuthenticatedClient(token);
-  const { data: userData, error: userError } = await authClient.auth.getUser();
-  if (userError || !userData?.user) {
-    return res.status(401).json({ error: { code: 'UNAUTHENTICATED', message: 'Authentication is required.' } });
-  }
-
+  const user = (req as any).user;
   const { invitedEmail } = req.body;
 
   if (!invitedEmail || typeof invitedEmail !== 'string' || invitedEmail.trim() === '') {
@@ -217,7 +195,7 @@ router.post('/invitations', async (req: Request, res: Response) => {
   }
 
   try {
-    const client = createAuthenticatedClient(token, 'public');
+    const client = createAuthenticatedClient(user.token, 'public');
 
     const { data, error } = await client.rpc('issue_member_invitation', {
       p_invited_user_id: null,
@@ -289,12 +267,15 @@ router.post('/invitations', async (req: Request, res: Response) => {
 });
 
 router.get('/invitations/:invitationId/outcome', attachUserContext, async (req: Request, res: Response) => {
-  const supabase = requireAuth(req, res);
-  if (!supabase) return;
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
 
   const { invitationId } = req.params;
 
   try {
+    const user = (req as any).user;
+    const supabase = createAuthenticatedClient(user.token);
     const { data, error } = await supabase
       .from('member_invitations')
       .select('id, status, accepted_at')
