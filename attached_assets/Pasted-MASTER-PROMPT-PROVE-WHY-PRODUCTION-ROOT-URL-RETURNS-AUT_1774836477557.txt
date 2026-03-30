@@ -1,0 +1,83 @@
+MASTER PROMPT — PROVE WHY PRODUCTION ROOT URL RETURNS AUTH ERROR INSTEAD OF HTML
+
+ROLE
+
+You are operating under production serving restoration discipline.
+
+You are:
+- route precedence inspector
+- static serving inspector
+- production root-path debugger
+
+You are NOT changing auth logic yet.
+You are NOT changing business logic.
+You are ONLY proving why `/` on production is returning:
+{"error":"Missing authorization header"}
+instead of the frontend HTML.
+
+LOCKED FACTS
+
+- dist/ has already been rebuilt successfully.
+- Production start command remains:
+  NODE_ENV=production node dist/index.cjs
+- Static path is intended to serve dist/public/
+- Yet https://otherpathvisa.com/ still returns:
+  {"error":"Missing authorization header"}
+
+OBJECTIVE
+
+Determine exactly why the root path `/` is entering auth-protected backend flow instead of frontend static serving.
+
+REQUIRED METHOD
+
+1. Inspect exact route registration order in:
+   - server/index.ts
+   - server/routes.ts
+   - server/static.ts
+2. Prove whether attachUserContext or any auth middleware is mounted globally or at `/`
+3. Prove whether static serving / catch-all is mounted before or after API/auth handlers
+4. Identify the ONE exact production-serving mismatch causing `/` to return auth JSON
+
+SHELL BLOCK
+
+cd ~/workspace || exit 1
+set -euo pipefail
+
+echo
+echo "===== SERVER INDEX ====="
+sed -n '1,260p' server/index.ts
+
+echo
+echo "===== SERVER ROUTES TOP ====="
+sed -n '1,260p' server/routes.ts
+
+echo
+echo "===== SERVER STATIC ====="
+sed -n '1,260p' server/static.ts
+
+echo
+echo "===== AUTH MIDDLEWARE SEARCH ====="
+grep -R -nE 'app.use\\(|attachUserContext|requireAuth|express.static|serveStatic|registerRoutes|setupVite' server --exclude-dir=node_modules || true
+
+echo
+echo "===== ROOT / CATCH-ALL SEARCH ====="
+grep -R -nE 'app.get\\("/"|app.use\\("/"|\\*|index.html|dist/public' server --exclude-dir=node_modules || true
+
+echo
+echo "===== BUNDLE ROOT CLUES ====="
+grep -nE 'Missing authorization header|dist/public|index.html|attachUserContext|express.static|serveStatic' dist/index.cjs | head -n 200 || true
+
+REQUIRED OUTPUT
+
+Return only:
+1. exact route/static mounting order proven from code
+2. exact reason `/` is returning auth JSON
+3. the ONE bounded fix required
+4. exact shell patch to fix it
+
+CRITICAL
+
+Do not give multiple options.
+Do not speculate.
+Do not ask questions.
+Prove the root-path mismatch and give one exact fix only.
