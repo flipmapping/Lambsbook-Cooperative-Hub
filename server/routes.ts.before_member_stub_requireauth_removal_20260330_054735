@@ -38,6 +38,7 @@ import { detectPlatformAdmin } from "./middleware/requirePlatformAdmin";
 
 import { requireSBURole } from "./middleware/requireSBURole";
 import { attachUserContext } from "./middleware/attachUserContext";
+import { requireAuth } from "./middleware/requireAuth";
 
 import type { AuthenticatedRequest } from "./types/requestContext";
 import { createAuthenticatedClient } from "./lib/supabase-member-client";
@@ -49,8 +50,8 @@ export async function registerRoutes(
   app.use(detectPlatformAdmin);
   app.use("/api/admin", adminRoutes);
   app.use("/api/member", memberRoutes);
-  app.use(attachUserContext, financialRoutes);
-  app.use(attachUserContext, governanceRoute);
+  app.use(financialRoutes);
+  app.use(governanceRoute);
   app.use("/dev", devTestAuthRoutes);
 
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
@@ -1080,10 +1081,9 @@ export async function registerRoutes(
   // --------------------------------------------------
   // Get pending invitation for current user
   // --------------------------------------------------
-  app.get("/api/hub/member/invitations", attachUserContext, async (req: Request, res: Response) => {
+  app.get("/api/hub/member/invitations", attachUserContext, async (req: AuthenticatedRequest, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
-      const user = authReq.user;
+      const user = req.user;
 
       if (!user?.id) {
         return res.status(401).json({ message: "Unauthorized" });
@@ -1136,10 +1136,9 @@ export async function registerRoutes(
     }
   });
 
-  app.post("/api/hub/member/accept-invitation", attachUserContext, async (req: Request, res: Response) => {
+  app.post("/api/hub/member/accept-invitation", attachUserContext, async (req: AuthenticatedRequest, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
-      const user = authReq.user;
+      const user = (req as any).user;
       const { invitationId } = req.body;
 
       if (!user?.id) {
@@ -1265,10 +1264,9 @@ export async function registerRoutes(
   // --------------------------------------------------
   // Issue invitation
   // --------------------------------------------------
-  app.post("/api/hub/member/issue-invitation", attachUserContext, async (req: Request, res: Response) => {
+  app.post("/api/hub/member/issue-invitation", async (req: Request, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
-      const user = authReq.user;
+      const user = (req as any).user;
       const { invitedUserId } = req.body;
 
       if (!user?.id) {
@@ -1300,10 +1298,9 @@ export async function registerRoutes(
   });
 
   // Member self-service endpoints
-  app.get("/api/hub/member/me", attachUserContext, async (req: Request, res: Response) => {
+  app.get("/api/hub/member/me", attachUserContext, async (req: AuthenticatedRequest, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
-      const user = authReq.user;
+      const user = req.user;
       if (!user) {
         return res.status(401).json({ error: "Unauthorized" });
       }
@@ -1351,9 +1348,8 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/hub/member/earnings", attachUserContext, async (req: Request, res: Response) => {
+  app.get("/api/hub/member/earnings", attachUserContext, requireAuth, async (req: Request, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
 
       // Return empty array for now - will fetch from Supabase earnings table in future
       res.json([]);
@@ -1363,9 +1359,8 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/hub/member/invitees", attachUserContext, async (req: Request, res: Response) => {
+  app.get("/api/hub/member/invitees", attachUserContext, requireAuth, async (req: Request, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
 
       // Return empty array for now - will fetch from Supabase collaborations table in future
       res.json([]);
@@ -1375,9 +1370,8 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/hub/member/invitor", attachUserContext, async (req: Request, res: Response) => {
+  app.get("/api/hub/member/invitor", attachUserContext, requireAuth, async (req: Request, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
 
       // Return null for now - will fetch from Supabase members.invitor_id in future
       res.json(null);
@@ -1387,9 +1381,8 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/hub/member/referrals", attachUserContext, async (req: Request, res: Response) => {
+  app.get("/api/hub/member/referrals", attachUserContext, requireAuth, async (req: Request, res: Response) => {
     try {
-      const authReq = req as AuthenticatedRequest;
 
       // Return empty array for now - will fetch from Supabase in future
       res.json([]);

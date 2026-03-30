@@ -1,9 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import type { AuthenticatedRequest } from "../types/requestContext";
 import { createAuthenticatedClient } from "../lib/supabase-member-client";
 
 export async function attachUserContext(req: Request, res: Response, next: NextFunction) {
-  const authReq = req as AuthenticatedRequest;
   console.log("AUTH HEADER:", req.headers.authorization);
   try {
     const authHeader = req.headers.authorization;
@@ -35,7 +33,7 @@ export async function attachUserContext(req: Request, res: Response, next: NextF
     }
 
     // Attach structured identity to request
-    authReq.user = {
+    (req as any).user = {
       id: userId,
       sbu_id: profile.sbu_id,
       role: profile.role,

@@ -1,9 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import type { AuthenticatedRequest } from "../types/requestContext";
 
 export function requireSuperAdmin(req: Request, res: Response, next: NextFunction) {
-  const authReq = req as AuthenticatedRequest;
-  const user = authReq.user;
+  const user = (req as any).user;
 
   if (!user || user.is_super_admin !== true) {
     return res.status(403).json({

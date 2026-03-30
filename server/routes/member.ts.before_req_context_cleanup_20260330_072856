@@ -1,5 +1,4 @@
 import { Router, Request, Response } from 'express';
-import type { AuthenticatedRequest } from '../types/requestContext';
 import { createAuthenticatedClient, isSupabaseMemberConfigured } from '../lib/supabase-member-client';
 import { attachUserContext } from '../middleware/attachUserContext';
 import { executeFinancialRpc } from '../services/financial-executor';
@@ -11,13 +10,12 @@ import { governanceRateLimit } from '../middleware/governanceRateLimit';
 const router = Router();
 
 router.post('/ensure', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
 
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
     const userId = user.id;
     const supabase = createAuthenticatedClient(user.token);
 
@@ -56,13 +54,12 @@ router.post('/ensure', attachUserContext, async (req: Request, res: Response) =>
 });
 
 router.get('/profile', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
 
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
     const userId = user.id;
     const supabase = createAuthenticatedClient(user.token);
 
@@ -76,7 +73,7 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
       throw error;
     }
 
-    res.json({ user: { id: userId, is_super_admin: authReq.user.is_super_admin }, member });
+    res.json({ user: { id: userId, is_super_admin: (req as any).user.is_super_admin }, member });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to fetch profile';
     res.status(500).json({ error: message });
@@ -84,9 +81,8 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
 });
 
 router.get('/subscription', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
 
     const result = await executeFinancialRpc(
       user,
@@ -102,7 +98,6 @@ router.get('/subscription', attachUserContext, async (req: Request, res: Respons
 });
 
 router.post('/enrollment', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
@@ -114,7 +109,7 @@ router.post('/enrollment', attachUserContext, async (req: Request, res: Response
   }
 
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
     const member_id = user.id;
     const client = createAuthenticatedClient(user.token, 'public');
 
@@ -146,13 +141,12 @@ router.post('/enrollment', attachUserContext, async (req: Request, res: Response
 });
 
 router.get('/enrollment/eligibility', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
 
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
     const member_id = user.id;
     const supabase = createAuthenticatedClient(user.token);
 
@@ -183,12 +177,11 @@ router.get('/enrollment/eligibility', attachUserContext, async (req: Request, re
 });
 
 router.post('/invitations', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: { code: 'SERVICE_UNAVAILABLE', message: 'Service is not configured.' } });
   }
 
-  const user = authReq.user;
+  const user = (req as any).user;
   const { invitedEmail } = req.body;
 
   if (!invitedEmail || typeof invitedEmail !== 'string' || invitedEmail.trim() === '') {
@@ -274,7 +267,6 @@ router.post('/invitations', attachUserContext, async (req: Request, res: Respons
 });
 
 router.get('/invitations/:invitationId/outcome', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
@@ -282,7 +274,7 @@ router.get('/invitations/:invitationId/outcome', attachUserContext, async (req: 
   const { invitationId } = req.params;
 
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
     const supabase = createAuthenticatedClient(user.token);
     const { data, error } = await supabase
       .from('member_invitations')

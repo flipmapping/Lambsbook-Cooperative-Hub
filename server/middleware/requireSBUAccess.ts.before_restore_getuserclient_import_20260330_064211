@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express'
-import { getUserClient } from '../lib/supabaseClients'
 import type { AuthenticatedRequest } from '../types/requestContext'
 
 export interface SBURequest extends AuthenticatedRequest {

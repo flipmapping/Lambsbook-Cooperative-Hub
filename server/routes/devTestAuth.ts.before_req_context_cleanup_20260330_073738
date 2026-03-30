@@ -1,17 +1,15 @@
 import { Router, Request, Response } from 'express';
-import type { AuthenticatedRequest } from '../types/requestContext';
 import { createAuthenticatedClient, isSupabaseMemberConfigured } from '../lib/supabase-member-client';
 import { attachUserContext } from '../middleware/attachUserContext';
 
 const router = Router();
 
 router.get('/test-auth', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   if (!isSupabaseMemberConfigured()) {
     return res.status(503).json({ error: 'Supabase not configured' });
   }
 
-  const user = authReq.user;
+  const user = (req as any).user;
   if (!user?.token) {
     return res.status(401).json({ error: 'Authentication required' });
   }

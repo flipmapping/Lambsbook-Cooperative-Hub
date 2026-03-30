@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import { createClient } from "@supabase/supabase-js";
-import type { SBURequest } from "./requireSBUAccess";
 
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL!,
@@ -9,11 +8,9 @@ const supabaseAdmin = createClient(
 
 export function requireSBURole(allowedRoles: string[]) {
   return async (req: Request, res: Response, next: NextFunction) => {
-    const sbuReq = req as SBURequest;
-
     try {
-      const userId = sbuReq.user?.id;
-      const sbuId = sbuReq.sbu_id;
+      const userId = (req as any).user?.id;
+      const sbuId = (req as any).sbu_id;
 
       if (!userId || !sbuId) {
         return res.status(401).json({

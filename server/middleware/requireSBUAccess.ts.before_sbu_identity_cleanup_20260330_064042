@@ -14,8 +14,33 @@ export async function requireSBUAccess(
   const sbuReq = req as SBURequest
 
   try {
+    // Locked doctrine note:
+    // this fallback still exists in live code and should be removed in a later bounded step.
+    // This patch is only for Express boundary typing.
     if (!sbuReq.user?.id || !sbuReq.user?.token) {
-      return res.status(401).json({ error: 'User not authenticated' })
+      const authHeader = sbuReq.headers.authorization
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'User not authenticated' })
+      }
+
+      const bearerToken = authHeader.slice(7).trim()
+      if (!bearerToken) {
+        return res.status(401).json({ error: 'User not authenticated' })
+      }
+
+      let client
+      try {
+        client = getUserClient(bearerToken)
+      } catch {
+        return res.status(503).json({ error: 'Auth service not configured' })
+      }
+
+      const { data: userData, error: userError } = await client.auth.getUser()
+      if (userError || !userData?.user) {
+        return res.status(401).json({ error: 'User not authenticated' })
+      }
+
+      sbuReq.user = { id: userData.user.id, token: bearerToken } as any
     }
 
     const { sbu_id } = sbuReq.params

@@ -1,5 +1,4 @@
 import { Router, Request, Response } from 'express';
-import type { AuthenticatedRequest } from '../types/requestContext';
 import { supabaseDAL } from '../lib';
 import { createAuthenticatedClient } from '../lib/supabase-member-client';
 import { attachUserContext } from "../middleware/attachUserContext";
@@ -463,9 +462,8 @@ router.get('/stats', async (_req: Request, res: Response) => {
 });
 
 router.post('/enrollment-payment', attachUserContext, async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
   try {
-    const user = authReq.user;
+    const user = (req as any).user;
 
     if (!user?.token) {
       return res.status(401).json({ error: 'Missing authorization token' });
