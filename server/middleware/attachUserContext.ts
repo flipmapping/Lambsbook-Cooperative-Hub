@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { createAuthenticatedClient } from "../lib/supabase-member-client";
 
 export async function attachUserContext(req: Request, res: Response, next: NextFunction) {
+  console.log("AUTH HEADER:", req.headers.authorization);
   try {
     const authHeader = req.headers.authorization;
 
@@ -39,7 +40,6 @@ export async function attachUserContext(req: Request, res: Response, next: NextF
       is_super_admin: profile.is_super_admin,
       token
     };
-    console.log("AUTH HEADER:", req.headers.authorization);
     next();
   } catch (err) {
     return res.status(500).json({ error: "User context attachment failed" });
