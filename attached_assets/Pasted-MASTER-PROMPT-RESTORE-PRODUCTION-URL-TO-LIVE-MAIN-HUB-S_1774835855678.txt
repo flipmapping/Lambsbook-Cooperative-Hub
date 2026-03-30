@@ -1,0 +1,155 @@
+MASTER PROMPT — RESTORE PRODUCTION URL TO LIVE MAIN HUB SERVING PATH
+
+ROLE
+
+You are operating under strict production restoration discipline.
+
+You are:
+- deployment path inspector
+- production serving restorer
+- exact-match shell executor
+
+You are NOT redesigning the app.
+You are NOT changing auth logic.
+You are NOT changing route behavior.
+You are ONLY restoring the production URL serving path so the live domain serves the correct app.
+
+OBJECTIVE
+
+Restore `https://otherpathvisa.com` so it serves the intended live Main Hub app instead of the broken production state.
+
+LOCKED CONTEXT
+
+- Preview URL currently renders the proper website.
+- Production URL is returning unauthorized/misaligned behavior and appears out of sync with the working preview/live code state.
+- We must first prove the current serving/build/deploy wiring before making any production-serving mutation.
+- Do not touch business logic, auth middleware, or route handlers in this step unless inspection proves production startup/build path itself is wrong.
+
+REQUIRED OUTPUT
+
+1. First perform shell-only inspection.
+2. Then provide the ONE exact restoration action.
+3. Then verify the production-serving configuration after mutation.
+
+SHELL DISCIPLINE
+
+- inspection-first
+- exact-match
+- bounded
+- fail-closed
+- no whole-project rewrites
+- no speculative edits
+- backup before mutation
+- verify after mutation
+
+STEP 1 — INSPECT LIVE SERVING / BUILD / DEPLOY SURFACE
+
+Run shell commands to inspect all of the following exactly:
+
+- package.json scripts
+- replit config files
+- any deployment config
+- server startup entry
+- static serving path
+- Vite/Next build output path
+- domain/prod run command references
+- whether production serves `dist`, `dist/public`, `build`, `web/.next`, etc.
+
+Use shell commands only.
+
+Required shell block:
+
+cd ~/workspace || exit 1
+set -euo pipefail
+
+echo
+echo "===== PWD ====="
+pwd
+
+echo
+echo "===== ROOT FILES ====="
+ls -la
+
+echo
+echo "===== PACKAGE SCRIPTS ====="
+cat package.json
+
+echo
+echo "===== REPLIT / DEPLOY CONFIG ====="
+[ -f .replit ] && { echo "--- .replit ---"; cat .replit; } || true
+find . -maxdepth 2 \( -name "replit.*" -o -name "*deploy*" -o -name "Dockerfile" -o -name "dockerfile" \) -print
+
+echo
+echo "===== BUILD / START ENTRY SEARCH ====="
+grep -R -nE 'dist/public|serveStatic|express.static|vite|next start|next dev|\\.next|build directory|NODE_ENV=production|tsx server/index.ts|dist/index|server/index.ts' . --exclude-dir=node_modules --exclude-dir=.git || true
+
+echo
+echo "===== SERVER ENTRY ====="
+sed -n '1,240p' server/index.ts || true
+
+echo
+echo "===== ROUTES STATIC SERVE SEARCH ====="
+grep -R -nE 'serveStatic|express.static|dist/public|\\.next|vite' server client web --exclude-dir=node_modules || true
+
+echo
+echo "===== VITE CONFIG ====="
+[ -f vite.config.ts ] && sed -n '1,240p' vite.config.ts || true
+
+echo
+echo "===== WEB APP PACKAGE ====="
+[ -f web/package.json ] && sed -n '1,240p' web/package.json || true
+
+echo
+echo "===== NEXT CONFIG ====="
+find web -maxdepth 2 \( -name "next.config.*" -o -name "next.config.ts" -o -name "next.config.js" \) -print -exec sed -n '1,240p' {} \;
+
+STEP 2 — DIAGNOSE
+
+Based only on inspected evidence, determine:
+
+- what build artifact production is supposed to serve
+- what command production is supposed to run
+- what is currently mismatched
+- whether production domain is likely serving the wrong entry/build/output
+
+STEP 3 — APPLY ONE BOUNDED RESTORATION
+
+Only after inspection, apply the minimal exact restoration needed to make production serve the correct build/output path.
+
+Examples of acceptable restoration types if proven by inspection:
+- fix production start script
+- fix static serving path
+- fix build output reference
+- fix `.replit` run/deploy command
+- fix package.json production script
+
+Do NOT:
+- touch auth logic
+- touch API routes
+- touch DB logic
+- touch middleware
+- introduce new architecture
+
+STEP 4 — VERIFY
+
+After mutation, print exact proof of:
+- changed file(s)
+- changed command/path
+- resulting production run/build command
+- resulting serving path
+
+FINAL RESPONSE FORMAT
+
+Return only:
+1. files changed
+2. exact shell-applied restoration
+3. exact verification result
+4. final verdict whether production URL serving path is now correctly aligned for redeploy
+
+CRITICAL
+
+Do not skip inspection.
+Do not propose multiple options.
+Do not ask me questions.
+Do not make assumptions.
+Give one optimal restoration only.
