@@ -1136,7 +1136,7 @@ export async function registerRoutes(
     }
   });
 
-  app.post("/api/hub/member/accept-invitation", attachUserContext, async (req: AuthenticatedRequest, res: Response) => {
+  app.post("/api/hub/member/accept-invitation", async (req: Request, res: Response) => {
     try {
       const user = (req as any).user;
       const { invitationId } = req.body;
