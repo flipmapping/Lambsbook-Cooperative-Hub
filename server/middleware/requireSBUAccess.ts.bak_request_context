@@ -1,8 +1,19 @@
-import { Response, NextFunction } from 'express'
+import { Request, Response, NextFunction } from 'express'
 import { getUserClient } from '../lib/supabaseClients'
-import type { AuthenticatedRequest } from '../types/requestContext'
 
-export async function requireSBUAccess(req: AuthenticatedRequest, res: Response, next: NextFunction) {
+export interface AuthenticatedRequest extends Request {
+  user?: { id: string; token?: string; [key: string]: any }
+}
+
+export interface SBURequest extends AuthenticatedRequest {
+  sbu_id?: string
+}
+
+export async function requireSBUAccess(
+  req: SBURequest,
+  res: Response,
+  next: NextFunction
+) {
   try {
     const { sbu_id } = req.params
 
@@ -10,7 +21,7 @@ export async function requireSBUAccess(req: AuthenticatedRequest, res: Response,
       return res.status(400).json({ error: 'Missing sbu_id in route parameters' })
     }
 
-    const token = req.user.token.trim()
+    const token = req.user?.token?.trim()
 
     if (!token) {
       return res.status(401).json({ error: 'Missing JWT token' })

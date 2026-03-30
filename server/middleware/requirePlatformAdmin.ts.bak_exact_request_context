@@ -1,21 +1,24 @@
-import { Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 import { getUserClient } from "../lib/supabaseClients";
-import type { AuthenticatedRequest } from "../types/requestContext";
+
+export interface PlatformRequest extends Request {
+  isPlatformAdmin?: boolean;
+}
 
 export async function detectPlatformAdmin(
-  req: AuthenticatedRequest,
+  req: PlatformRequest,
   _res: Response,
   next: NextFunction
 ) {
   try {
-    const token = req.user?.token?.trim();
+    const jwt = req.headers.authorization?.replace("Bearer ", "").trim();
 
-    if (!token) {
+    if (!jwt) {
       req.isPlatformAdmin = false;
       return next();
     }
 
-    const supabase = getUserClient(token);
+    const supabase = getUserClient(jwt);
 
     const { data, error } = await supabase
       .from("platform_admins")

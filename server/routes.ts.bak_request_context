@@ -40,9 +40,6 @@ import { requireSBURole } from "./middleware/requireSBURole";
 import { attachUserContext } from "./middleware/attachUserContext";
 import { requireAuth } from "./middleware/requireAuth";
 
-import type { AuthenticatedRequest } from "./types/requestContext";
-import { createAuthenticatedClient } from "./lib/supabase-member-client";
-import { getSupabaseAdmin } from "./lib/supabase-client";
 export async function registerRoutes(
   httpServer: Server,
   app: Express,
@@ -1081,22 +1078,21 @@ export async function registerRoutes(
   // --------------------------------------------------
   // Get pending invitation for current user
   // --------------------------------------------------
-  app.get("/api/hub/member/invitations", attachUserContext, async (req: AuthenticatedRequest, res: Response) => {
+  app.get("/api/hub/member/invitations", attachUserContext, requireAuth, async (req: Request, res: Response) => {
     try {
-      const user = req.user;
+      const user = (req as any).user;
 
       if (!user?.id) {
         return res.status(401).json({ message: "Unauthorized" });
       }
 
-      const supabase = createAuthenticatedClient(user.token);
-      const { data: userEmail, error: userEmailError } = await supabase.rpc("get_my_auth_email");
 
-      if (userEmailError || !userEmail) {
+      const userEmail = user.email;
+      if (!userEmail) {
         return res.status(401).json({ error: "User email not found" });
       }
 
-      const supabaseAdmin = getSupabaseAdmin();
+      const supabaseAdmin = req.app.get("supabaseAdmin");
 
       const { error: bindError } = await supabaseAdmin
         .from("member_invitations")
@@ -1128,11 +1124,8 @@ export async function registerRoutes(
         invitation: data || null,
       });
     } catch (err) {
-      console.error("member/invitations route error:", err);
-      return res.status(500).json({
-        message: "Server error",
-        debug: err instanceof Error ? err.stack || err.message : String(err),
-      });
+      console.error(err);
+      return res.status(500).json({ message: "Server error" });
     }
   });
 
@@ -1149,7 +1142,7 @@ export async function registerRoutes(
         return res.status(400).json({ message: "Missing invitationId" });
       }
 
-      const supabaseAdmin = getSupabaseAdmin();
+      const supabaseAdmin = req.app.get("supabaseAdmin");
 
       // SECURITY CHECK — ensure invitation belongs to this user
       const { data: invitation, error: fetchError } = await supabaseAdmin
@@ -1255,7 +1248,7 @@ export async function registerRoutes(
         return res.status(400).json({ message: "Missing invitedUserId" });
       }
 
-      const supabaseAdmin = getSupabaseAdmin();
+      const supabaseAdmin = req.app.get("supabaseAdmin");
 
       const { error } = await supabaseAdmin.rpc(
         "issue_member_invitation",
@@ -1276,17 +1269,15 @@ export async function registerRoutes(
   });
 
   // Member self-service endpoints
-  app.get("/api/hub/member/me", attachUserContext, async (req: AuthenticatedRequest, res: Response) => {
+  app.get("/api/hub/member/me", attachUserContext, requireAuth, async (req: Request, res: Response) => {
     try {
       const user = req.user;
       if (!user) {
         return res.status(401).json({ error: "Unauthorized" });
       }
 
-      const supabase = createAuthenticatedClient(user.token);
-      const { data: userEmail, error: userEmailError } = await supabase.rpc("get_my_auth_email");
-
-      if (userEmailError || !userEmail) {
+      const userEmail = user.email;
+      if (!userEmail) {
         return res.status(401).json({ error: "User email not found" });
       }
 
