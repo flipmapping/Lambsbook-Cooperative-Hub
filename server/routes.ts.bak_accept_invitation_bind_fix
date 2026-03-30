@@ -1151,28 +1151,6 @@ export async function registerRoutes(
 
       const supabaseAdmin = getSupabaseAdmin();
 
-      // BIND INVITATION TO CURRENT USER (REQUIRED BEFORE RPC)
-      const supabaseUser = createAuthenticatedClient(user.token);
-      const { data: userEmail, error: emailError } = await supabaseUser.rpc("get_my_auth_email");
-
-      if (emailError || !userEmail) {
-        return res.status(401).json({ message: "User email not found" });
-      }
-
-      const { data: bindData, error: bindError } = await supabaseAdmin
-        .from("member_invitations")
-        .update({ invited_user_id: user.id })
-        .eq("id", invitationId)
-        .is("invited_user_id", null)
-        .eq("invited_email", userEmail)
-        .select("id")
-        .maybeSingle();
-
-      if (bindError) {
-        console.error("[accept-invitation] bind error:", bindError);
-        return res.status(500).json({ message: "Failed to bind invitation" });
-      }
-
       // SECURITY CHECK — ensure invitation belongs to this user
       const { data: invitation, error: fetchError } = await supabaseAdmin
         .from("member_invitations")
