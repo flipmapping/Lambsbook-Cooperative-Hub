@@ -1189,7 +1189,7 @@ export async function registerRoutes(
       }
 
       // Call database function
-      const { error: rpcError } = await supabaseUser.rpc(
+      const { error: rpcError } = await supabaseAdmin.rpc(
         "accept_member_invitation",
         { p_invitation_id: invitationId }
       );
