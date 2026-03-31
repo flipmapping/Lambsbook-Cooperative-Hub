@@ -1136,9 +1136,6 @@ export async function registerRoutes(
     }
   });
 
-  /*
-  PHASE 1 CONTAINMENT — HUB MEMBER ROUTES DISABLED
-
   app.post("/api/hub/member/accept-invitation", attachUserContext, async (req: Request, res: Response) => {
     try {
       const authReq = req as AuthenticatedRequest;
@@ -1401,9 +1398,6 @@ export async function registerRoutes(
       res.status(500).json({ error: "Failed to get referrals" });
     }
   });
-
-
-  */
 
   // ========================================
   // Hub Partner & Revenue Sharing Routes

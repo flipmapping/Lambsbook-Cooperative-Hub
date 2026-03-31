@@ -144,10 +144,7 @@ router.post('/enrollment', attachUserContext, async (req: Request, res: Response
       return res.status(400).json({ error: error.message });
     }
 
-    const enrollment_row = typeof data === 'object' && data !== null ? data : null;
-    const enrollment_request_id = typeof data === 'string'
-      ? data
-      : (enrollment_row as { id?: unknown } | null)?.id ?? data;
+    const enrollment_request_id = typeof data === 'string' ? data : (data as any)?.id ?? data;
 
     return res.status(201).json({
       enrollment_request_id,
@@ -267,21 +264,15 @@ router.post('/invitations', attachUserContext, async (req: Request, res: Respons
       });
     }
 
-    const row: {
-      id?: unknown;
-      invited_user_id?: unknown;
-      invited_email?: unknown;
-      status?: unknown;
-      created_at?: unknown;
-    } = typeof data === 'object' && data !== null ? data : {};
+    const row = typeof data === 'object' && data !== null ? data : {};
 
     return res.status(201).json({
       invitation: {
-        id: row.id ?? null,
-        invitedUserId: row.invited_user_id ?? null,
-        invitedEmail: row.invited_email ?? invitedEmail.trim(),
-        status: row.status ?? 'pending',
-        createdAt: row.created_at ?? null,
+        id: (row as any).id ?? null,
+        invitedUserId: (row as any).invited_user_id ?? null,
+        invitedEmail: (row as any).invited_email ?? invitedEmail.trim(),
+        status: (row as any).status ?? 'pending',
+        createdAt: (row as any).created_at ?? null,
       },
     });
   } catch (err) {
@@ -293,177 +284,6 @@ router.post('/invitations', attachUserContext, async (req: Request, res: Respons
     });
   }
 });
-
-
-router.post('/accept-invitation', attachUserContext, async (req: Request, res: Response) => {
-  try {
-    const authReq = req as AuthenticatedRequest;
-    const user = authReq.user;
-    const { invitationId } = req.body;
-
-    if (!user?.id) {
-      return res.status(401).json({ message: 'Unauthorized' });
-    }
-
-    if (!invitationId) {
-      return res.status(400).json({ message: 'Missing invitationId' });
-    }
-
-    const supabaseUser = createAuthenticatedClient(user.token);
-    const { data: userEmail, error: emailError } = await supabaseUser.rpc('get_my_auth_email');
-
-    if (emailError || !userEmail) {
-      return res.status(401).json({ message: 'User email not found' });
-    }
-
-    const bindClient = createAuthenticatedClient(user.token, 'public');
-    const { error: bindError } = await bindClient
-      .from('member_invitations')
-      .update({ invited_user_id: user.id })
-      .eq('id', invitationId)
-      .is('invited_user_id', null)
-      .eq('invited_email', userEmail);
-
-    if (bindError) {
-      console.error('[accept-invitation] bind error:', bindError);
-      return res.status(500).json({ message: 'Failed to bind invitation' });
-    }
-
-    const { data: invitation, error: fetchError } = await bindClient
-      .from('member_invitations')
-      .select('id, invited_user_id, status')
-      .eq('id', invitationId)
-      .maybeSingle();
-
-    if (fetchError || !invitation) {
-      return res.status(404).json({ message: 'Invitation not found' });
-    }
-
-    if (invitation.status !== 'pending') {
-      return res.status(400).json({ message: 'Invitation already processed' });
-    }
-
-    const { error: rpcError } = await supabaseUser.rpc(
-      'accept_member_invitation',
-      { p_invitation_id: invitationId }
-    );
-
-    if (rpcError) {
-      console.error('[accept-invitation] RPC error:', rpcError.code, rpcError.message);
-
-      const msg = (rpcError.message ?? '').toLowerCase();
-
-      if (
-        rpcError.code === '42501' ||
-        msg.includes('not authorized') ||
-        msg.includes('not your invitation') ||
-        msg.includes('permission denied')
-      ) {
-        return res.status(403).json({
-          error: {
-            code: 'NOT_ALLOWED',
-            message: 'You are not authorized to accept this invitation.'
-          }
-        });
-      }
-
-      if (
-        msg.includes('not found') ||
-        msg.includes('does not exist') ||
-        msg.includes('no invitation')
-      ) {
-        return res.status(404).json({
-          error: {
-            code: 'INVITATION_NOT_FOUND',
-            message: 'Invitation not found.'
-          }
-        });
-      }
-
-      if (
-        rpcError.code === '23514' ||
-        msg.includes('already accepted') ||
-        msg.includes('already processed') ||
-        msg.includes('not pending') ||
-        msg.includes('expired')
-      ) {
-        return res.status(409).json({
-          error: {
-            code: 'INVITATION_ALREADY_PROCESSED',
-            message: 'This invitation has already been accepted or is no longer valid.'
-          }
-        });
-      }
-
-      return res.status(500).json({
-        error: {
-          code: 'INTERNAL_ERROR',
-          message: 'Failed to accept invitation.'
-        }
-      });
-    }
-
-    return res.json({ success: true });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'Server error.' } });
-  }
-});
-
-router.get('/me', attachUserContext, async (req: Request, res: Response) => {
-  try {
-    const authReq = req as AuthenticatedRequest;
-    const user = authReq.user;
-
-    if (!user?.id) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-
-    const supabaseMeh = createAuthenticatedClient(user.token, 'meh');
-
-    const { data: memberRow, error: memberError } = await supabaseMeh
-      .from('members')
-      .select('id, invitor_id')
-      .eq('user_id', user.id)
-      .maybeSingle();
-
-    if (memberError) {
-      console.error('[member/me] member lookup error:', memberError);
-      return res.status(500).json({ error: 'Failed to get member data' });
-    }
-
-    if (!memberRow?.id) {
-      return res.status(404).json({ error: 'Member not found' });
-    }
-
-    const memberId = memberRow.id;
-    const invitorMemberId = memberRow.invitor_id ?? null;
-
-    const { data: inviteeRows, error: inviteesError } = await supabaseMeh
-      .from('members')
-      .select('id')
-      .eq('invitor_id', memberId);
-
-    if (inviteesError) {
-      console.error('[member/me] invitees lookup error:', inviteesError);
-      return res.status(500).json({ error: 'Failed to get member data' });
-    }
-
-    const invitees = (inviteeRows ?? []).map((row: { id: string }) => ({
-      memberId: row.id,
-    }));
-
-    return res.json({
-      memberId,
-      invitor: invitorMemberId ? { memberId: invitorMemberId } : null,
-      invitees,
-    });
-  } catch (error) {
-    console.error('[member/me] route error:', error);
-    return res.status(500).json({ error: 'Failed to get member data' });
-  }
-});
-
 
 router.get('/invitations/:invitationId/outcome', attachUserContext, async (req: Request, res: Response) => {
   const authReq = req as AuthenticatedRequest;
