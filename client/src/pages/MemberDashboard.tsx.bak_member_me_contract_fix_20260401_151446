@@ -22,7 +22,7 @@ export default function MemberDashboard() {
         if (res.ok) {
           const data = await res.json();
 
-          if (data?.roles?.includes("collaborator")) {
+          if (data?.member) {
             setState("member");
             return;
           }
