@@ -57,7 +57,7 @@ export default function MemberDashboard() {
       if (!invitationId) return;
 
       try {
-        await apiRequest("POST", "/api/member/accept-invitation", {
+        await apiRequest("POST", "/api/hub/member/accept-invitation", {
           invitationId,
         });
 

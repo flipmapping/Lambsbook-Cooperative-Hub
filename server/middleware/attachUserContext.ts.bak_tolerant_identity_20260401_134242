@@ -8,12 +8,8 @@ export async function attachUserContext(req: Request, res: Response, next: NextF
   try {
     const authHeader = req.headers.authorization;
 
-    if (!authHeader) {
-      return next();
-    }
-
-    if (!authHeader.startsWith("Bearer ")) {
-      return res.status(401).json({ error: "Invalid authorization header" });
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ error: "Missing authorization header" });
     }
 
     const token = authHeader.replace("Bearer ", "");
