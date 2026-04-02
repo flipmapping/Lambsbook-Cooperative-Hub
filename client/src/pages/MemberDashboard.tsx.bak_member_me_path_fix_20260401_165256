@@ -17,7 +17,7 @@ export default function MemberDashboard() {
     const checkAccess = async () => {
       try {
         // Step 1 — check if already member
-        const res = await apiRequest("GET", "/api/member/me");
+        const res = await apiRequest("GET", "/api/hub/member/me");
 
         if (res.ok) {
           const data = await res.json();
