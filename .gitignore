@@ -3,4 +3,19 @@ dist
 .DS_Store
 server/public
 vite.config.ts.*
+
+# Archives and logs
 *.tar.gz
+*.log
+
+# Local backup artifacts
+*.bak_*
+*.before_*
+
+# Local backup folders
+backups/
+backup-secure/
+
+# Private recovery and local-only artifacts
+_private_*
+
