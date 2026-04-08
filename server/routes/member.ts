@@ -44,14 +44,14 @@ router.post('/ensure', attachUserContext, async (req: Request, res: Response) =>
       .single();
 
     if (insertError) {
-      console.error('Ensure member insert error:', insertError);
-      return res.status(500).json({ error: insertError.message });
+      console.error('[POST /ensure] insert error:', insertError);
+      return res.status(500).json({ error: 'Failed to ensure member' });
     }
 
     res.json({ member: newMember, created: true });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Failed to ensure member';
-    res.status(500).json({ error: message });
+    console.error('[POST /ensure] internal error:', error);
+    res.status(500).json({ error: 'Failed to ensure member' });
   }
 });
 
@@ -78,8 +78,8 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
 
     res.json({ user: { id: userId, is_super_admin: authReq.user.is_super_admin }, member });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Failed to fetch profile';
-    res.status(500).json({ error: message });
+    console.error('[GET /profile] internal error:', error);
+    res.status(500).json({ error: 'Failed to fetch profile' });
   }
 });
 
@@ -108,8 +108,8 @@ router.get('/subscription', attachUserContext, async (req: Request, res: Respons
 
     res.json(result);
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Failed to fetch subscription';
-    res.status(500).json({ error: message });
+    console.error('[GET /subscription] internal error:', error);
+    res.status(500).json({ error: 'Failed to fetch subscription' });
   }
 });
 
