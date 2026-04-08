@@ -7,7 +7,8 @@ type State =
   | "loading"
   | "member"
   | "invited"
-  | "no_invitation";
+  | "no_invitation"
+  | "error";
 
 export default function MemberDashboard() {
   const [state, setState] = useState<State>("loading");
@@ -15,39 +16,50 @@ export default function MemberDashboard() {
 
   useEffect(() => {
     const checkAccess = async () => {
+      let meRes: Response;
       try {
-        // Step 1 — check if already member
-        const res = await apiRequest("GET", "/api/hub/member/me");
-
-        if (res.ok) {
-          const data = await res.json();
-
-          if (data?.member) {
-            setState("member");
-            return;
-          }
-        }
-
-        // Step 2 — check invitation
-        const invRes = await apiRequest("GET", "/api/hub/member/invitations");
-
-        if (invRes.ok) {
-          const invData = await invRes.json();
-
-          if (invData?.invitation) {
-            setInvitationId(invData.invitation.id);
-            setState("invited");
-            return;
-          }
-        }
-
-        // Step 3 — no invitation
-        setState("no_invitation");
-
+        meRes = await apiRequest("GET", "/api/member/me");
       } catch (err) {
-        console.error(err);
-        setState("no_invitation");
+        console.error("[MemberDashboard] member/me request failed:", err);
+        setState("error");
+        return;
       }
+
+      if (meRes.ok) {
+        setState("member");
+        return;
+      }
+
+      if (meRes.status !== 404) {
+        console.error("[MemberDashboard] member/me unexpected status:", meRes.status);
+        setState("error");
+        return;
+      }
+
+      let invRes: Response;
+      try {
+        invRes = await apiRequest("GET", "/api/member/pending-invitation");
+      } catch (err) {
+        console.error("[MemberDashboard] pending-invitation request failed:", err);
+        setState("error");
+        return;
+      }
+
+      if (!invRes.ok) {
+        console.error("[MemberDashboard] pending-invitation unexpected status:", invRes.status);
+        setState("error");
+        return;
+      }
+
+      const invData = await invRes.json();
+
+      if (invData?.invitation) {
+        setInvitationId(invData.invitation.id);
+        setState("invited");
+        return;
+      }
+
+      setState("no_invitation");
     };
 
     checkAccess();
@@ -57,7 +69,7 @@ export default function MemberDashboard() {
       if (!invitationId) return;
 
       try {
-        await apiRequest("POST", "/api/hub/member/accept-invitation", {
+        await apiRequest("POST", "/api/member/accept-invitation", {
           invitationId,
         });
 
@@ -72,6 +84,15 @@ export default function MemberDashboard() {
 
   if (state === "loading") {
     return <div style={{ padding: 20 }}>Loading...</div>;
+  }
+
+  if (state === "error") {
+    return (
+      <div style={{ padding: 20 }}>
+        <h2>Something went wrong</h2>
+        <p>Unable to load your membership status. Please try again later.</p>
+      </div>
+    );
   }
 
   if (state === "no_invitation") {
