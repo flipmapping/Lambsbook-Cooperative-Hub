@@ -117,6 +117,10 @@ export default function MemberDashboard() {
   }
 
   // state === "member"
-  window.location.href = "/hub/member";
-  return <div style={{ padding: 20 }}>Redirecting...</div>;
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>Member Dashboard</h1>
+      <p>Welcome to Lambsbook Cooperative Hub.</p>
+    </div>
+  );
 }

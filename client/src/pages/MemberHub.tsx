@@ -131,7 +131,14 @@ interface ActivityData {
 }
 
 function getAuthToken(): string | null {
-  return localStorage.getItem('hub_access_token') || localStorage.getItem('supabase_access_token');
+  try {
+    const tokenData = localStorage.getItem("supabase.auth.token");
+    if (!tokenData) return null;
+    const parsed = JSON.parse(tokenData);
+    return parsed.access_token || null;
+  } catch {
+    return null;
+  }
 }
 
 async function fetchWithAuth(url: string) {
