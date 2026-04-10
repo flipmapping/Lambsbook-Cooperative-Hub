@@ -63,20 +63,32 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
 
   try {
     const user = authReq.user;
-    const userId = user.id;
-    const supabase = createAuthenticatedClient(user.token);
+    const supabaseMeh = createAuthenticatedClient(user.token, 'meh');
+    const supabaseUser = createAuthenticatedClient(user.token);
 
-    const { data: member, error } = await supabase
+    const { data: member, error: memberError } = await supabaseMeh
       .from('members')
-      .select('*')
-      .eq('id', userId)
-      .single();
+      .select('id, member_type, membership_status, activity_status, subscription_price_at_signup, subscription_renewal_date, join_date, last_activity_at')
+      .eq('user_id', user.id)
+      .maybeSingle();
 
-    if (error && error.code !== 'PGRST116') {
-      throw error;
+    if (memberError) {
+      throw memberError;
     }
 
-    res.json({ user: { id: userId, is_super_admin: authReq.user.is_super_admin }, member });
+    const { data: userEmail, error: emailError } = await supabaseUser.rpc('get_my_auth_email');
+
+    if (emailError) {
+      throw emailError;
+    }
+
+    res.json({
+      user: {
+        id: user.id,
+        email: userEmail ?? null,
+      },
+      member: member ?? null,
+    });
   } catch (error) {
     console.error('[GET /profile] internal error:', error);
     res.status(500).json({ error: 'Failed to fetch profile' });
@@ -85,28 +97,38 @@ router.get('/profile', attachUserContext, async (req: Request, res: Response) =>
 
 router.get('/subscription', attachUserContext, async (req: Request, res: Response) => {
   const authReq = req as AuthenticatedRequest;
+  if (!isSupabaseMemberConfigured()) {
+    return res.status(503).json({ error: 'Supabase not configured' });
+  }
+
   try {
     const user = authReq.user;
+    const supabaseMeh = createAuthenticatedClient(user.token, 'meh');
 
-    if (!user.sbu_id || !user.role || typeof user.is_super_admin !== 'boolean') {
-      return res.status(400).json({ error: 'Incomplete user context for financial RPC' });
+    const { data: member, error: memberError } = await supabaseMeh
+      .from('members')
+      .select('membership_status, subscription_price_at_signup, subscription_renewal_date')
+      .eq('user_id', user.id)
+      .maybeSingle();
+
+    if (memberError) {
+      throw memberError;
     }
 
-    const rpcUser = {
-      id: user.id,
-      sbu_id: user.sbu_id,
-      role: user.role,
-      is_super_admin: user.is_super_admin,
-      token: user.token,
-    };
-
-    const result = await executeFinancialRpc(
-      rpcUser,
-      "get_member_subscription",
-      {}
-    );
-
-    res.json(result);
+    res.json({
+      member: member ?? null,
+      subscriptions: [],
+      benefits: {
+        free: {
+          earning_programs: 2,
+          description: 'Free tier with limited program access',
+        },
+        paid: {
+          earning_programs: 'unlimited',
+          description: 'Paid tier with full access to all programs and features',
+        },
+      },
+    });
   } catch (error) {
     console.error('[GET /subscription] internal error:', error);
     res.status(500).json({ error: 'Failed to fetch subscription' });

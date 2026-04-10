@@ -284,7 +284,7 @@ export default function MemberHub() {
         <div>
           <h1 className="text-3xl font-bold" data-testid="text-page-title">Member Dashboard</h1>
           <p className="text-muted-foreground">
-            {profile?.user?.email || "Loading..."}
+            {profile?.user?.email || "Member account"}
           </p>
         </div>
         <Badge 
