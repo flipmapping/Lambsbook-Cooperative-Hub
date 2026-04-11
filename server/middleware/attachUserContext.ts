@@ -30,17 +30,19 @@ export async function attachUserContext(req: Request, res: Response, next: NextF
       .eq("user_id", userId)
       .single();
 
-    if (profileError || !profile) {
-      return res.status(403).json({ error: "User profile not found" });
-    }
+    const hasProfile = !!profile && !profileError;
 
     // Attach structured identity to request
     authReq.user = {
       id: userId,
-      sbu_id: profile.sbu_id,
-      role: profile.role,
-      is_super_admin: profile.is_super_admin,
-      token
+      token,
+      ...(hasProfile
+        ? {
+            sbu_id: profile.sbu_id,
+            role: profile.role,
+            is_super_admin: profile.is_super_admin,
+          }
+        : {}),
     };
     next();
   } catch (err) {
