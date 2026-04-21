@@ -4,7 +4,7 @@ import ContributionCard from "@/components/contributions/ContributionCard";
 export default function ContributionActivity() {
   return (
     <div className="mt-6">
-      <h2 className="mb-3 text-lg font-semibold">Contribution Activity</h2>
+      <h2 className="mb-3 text-lg font-semibold">Program Contributions</h2>
 
       <div className="space-y-3">
         {MOCK_CONTRIBUTIONS.map((c) => (
