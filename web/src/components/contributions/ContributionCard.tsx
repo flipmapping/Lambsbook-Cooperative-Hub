@@ -15,6 +15,21 @@ export default function ContributionCard({ contribution }: ContributionCardProps
         interactionState={contribution.interactionState}
         pipelineStage={contribution.pipelineStage}
       />
+
+      <div className="mt-2 text-xs text-slate-500 space-y-1">
+        {contribution.interactionState === "uninitiated" && (
+          <div>Not yet shared</div>
+        )}
+        {contribution.interactionState === "initiated" && (
+          <div>Shared for consideration</div>
+        )}
+        {contribution.seconders && contribution.seconders.length > 0 && (
+          <div>
+            Recognized by {contribution.seconders.length} {contribution.seconders.length === 1 ? "member" : "members"}
+          </div>
+        )}
+      </div>
+
     </div>
   );
 }
