@@ -32,33 +32,11 @@ export const VISIBLE_STAGE_TRANSITIONS: Readonly<
   archived: [],
 } as const;
 
-export interface ElevationReadiness {
-  hasInitiator: boolean;
-  seconderCount: number;
-  meetsMinimumSeconders: boolean;
-  canEnterPipeline: boolean;
-}
-
-export function getElevationReadiness(contribution: Contribution): ElevationReadiness {
-  const hasInitiator = Boolean(contribution.initiator?.memberId);
-  const seconderCount = contribution.seconders.length;
-  const meetsMinimumSeconders = seconderCount >= 2;
-
-  return {
-    hasInitiator,
-    seconderCount,
-    meetsMinimumSeconders,
-    canEnterPipeline: hasInitiator && meetsMinimumSeconders,
-  };
-}
-
 export function getStageProgressionConditions(stage: PipelineStage): string[] {
   switch (stage) {
     case "expressed":
       return [
-        "Contribution has entered pipeline",
-        "Initiator is recorded",
-        "At least 2 seconders are recorded",
+        "Contribution is visibly in shared progression",
       ];
     case "acknowledged":
       return [
@@ -86,12 +64,6 @@ export function getStageProgressionConditions(stage: PipelineStage): string[] {
 
 export function isInPipeline(contribution: Contribution): boolean {
   return Boolean(contribution.pipelineStage);
-}
-
-export function canEnterExpressed(contribution: Contribution): boolean {
-  if (contribution.pipelineStage) return false;
-  const readiness = getElevationReadiness(contribution);
-  return readiness.canEnterPipeline;
 }
 
 export function canTransitionToAcknowledged(contribution: Contribution): boolean {
