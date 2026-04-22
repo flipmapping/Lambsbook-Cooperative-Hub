@@ -2,6 +2,7 @@ import type { Contribution } from "@/types/contribution";
 
 export const MOCK_CONTRIBUTIONS: Contribution[] = [
   {
+    interactionState: "uninitiated",
     id: "contrib_001",
     title: "Prepare local welcome notes for visiting educators",
     description:
@@ -24,6 +25,36 @@ export const MOCK_CONTRIBUTIONS: Contribution[] = [
     },
   },
   {
+    interactionState: "initiated",
+    id: "contrib_003",
+    title: "Coordinate initial meeting for visiting educators",
+    description:
+      "Arrange timing and basic coordination for an upcoming educator visit.",
+    contributionType: "coordination",
+
+    createdAt: "2026-04-20T08:45:00.000Z",
+    createdByMemberId: "member_020",
+    createdByDisplayName: "Member E",
+
+    initiator: {
+      memberId: "member_020",
+      displayName: "Member E",
+      initiatedAt: "2026-04-20T08:50:00.000Z",
+    },
+
+    partners: [],
+    seconders: [],
+    evidence: [],
+    stageHistory: [],
+
+    programLink: {
+      linked: false,
+      linkType: "placeholder",
+      note: "No program link established",
+    },
+  },
+  {
+    interactionState: "expressed",
     id: "contrib_002",
     title: "Host visiting educators for one afternoon",
     description:

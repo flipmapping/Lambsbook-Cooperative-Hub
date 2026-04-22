@@ -1,3 +1,4 @@
+import type { InteractionState } from "./contribution-state";
 export type ContributionType =
   | "service"
   | "resource"
@@ -68,6 +69,7 @@ export interface ContributionInitiator {
 }
 
 export interface Contribution {
+  interactionState: InteractionState;
   id: string;
   title: string;
   description: string;

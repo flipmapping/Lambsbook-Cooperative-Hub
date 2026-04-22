@@ -11,7 +11,10 @@ export default function ContributionCard({ contribution }: ContributionCardProps
       <div className="font-medium text-slate-900">{contribution.title}</div>
       <div className="text-sm text-slate-600">{contribution.description}</div>
 
-      <PipelineStageBadge pipelineStage={contribution.pipelineStage} />
+      <PipelineStageBadge
+        interactionState={contribution.interactionState}
+        pipelineStage={contribution.pipelineStage}
+      />
     </div>
   );
 }

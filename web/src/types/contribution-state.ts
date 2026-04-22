@@ -1,3 +1,12 @@
+export type InteractionState =
+  | "uninitiated"
+  | "initiated"
+  | "expressed"
+  | "acknowledged"
+  | "engaged"
+  | "materialized"
+  | "archived";
+
 import type { Contribution, PipelineStage } from "@/types/contribution";
 
 export const ALLOWED_PIPELINE_STATES: readonly PipelineStage[] = [
