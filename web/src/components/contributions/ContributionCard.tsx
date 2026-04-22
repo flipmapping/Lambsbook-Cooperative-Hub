@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Contribution } from "@/types/contribution";
 import PipelineStageBadge from "@/components/contributions/PipelineStageBadge";
 
@@ -6,6 +7,8 @@ type ContributionCardProps = {
 };
 
 export default function ContributionCard({ contribution }: ContributionCardProps) {
+  const [hasLocallySeconded, setHasLocallySeconded] = useState(false);
+
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-3">
       <div className="font-medium text-slate-900">{contribution.title}</div>
@@ -28,6 +31,19 @@ export default function ContributionCard({ contribution }: ContributionCardProps
             Recognized by {contribution.seconders.length} {contribution.seconders.length === 1 ? "member" : "members"}
           </div>
         )}
+        {hasLocallySeconded && (
+          <div className="text-slate-600">Your recognition is recorded locally for this view only.</div>
+        )}
+      </div>
+
+      <div className="mt-3">
+        <button
+          type="button"
+          className="rounded border border-slate-300 px-2 py-1 text-xs text-slate-700"
+          onClick={() => setHasLocallySeconded((value) => !value)}
+        >
+          {hasLocallySeconded ? "Withdraw local recognition" : "Recognize locally"}
+        </button>
       </div>
 
     </div>
