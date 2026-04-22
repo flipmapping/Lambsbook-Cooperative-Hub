@@ -8,6 +8,7 @@ type ContributionCardProps = {
 
 export default function ContributionCard({ contribution }: ContributionCardProps) {
   const [hasLocallySeconded, setHasLocallySeconded] = useState(false);
+  const [hasLocallyInitiated, setHasLocallyInitiated] = useState(false);
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-3">
@@ -26,6 +27,9 @@ export default function ContributionCard({ contribution }: ContributionCardProps
         {contribution.interactionState === "initiated" && (
           <div>Shared for consideration</div>
         )}
+        {hasLocallyInitiated && (
+          <div className="text-xs text-slate-400">Your sharing is recorded locally for consideration in this view only.</div>
+        )}
         {contribution.seconders && contribution.seconders.length > 0 && (
           <div>
             Recognized by {contribution.seconders.length} {contribution.seconders.length === 1 ? "member" : "members"}
@@ -36,13 +40,20 @@ export default function ContributionCard({ contribution }: ContributionCardProps
         )}
       </div>
 
-      <div className="mt-3">
+      <div className="mt-3 flex flex-wrap gap-2">
         <button
           type="button"
           className="rounded border border-slate-300 px-2 py-1 text-xs text-slate-700"
           onClick={() => setHasLocallySeconded((value) => !value)}
         >
           {hasLocallySeconded ? "Withdraw local recognition" : "Recognize locally"}
+        </button>
+        <button
+          type="button"
+          className="rounded border border-slate-300 px-2 py-1 text-xs text-slate-700"
+          onClick={() => setHasLocallyInitiated((value) => !value)}
+        >
+          {hasLocallyInitiated ? "Withdraw local sharing" : "Share locally for consideration"}
         </button>
       </div>
 
