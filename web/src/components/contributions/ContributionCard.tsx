@@ -32,7 +32,7 @@ export default function ContributionCard({ contribution }: ContributionCardProps
           </div>
         )}
         {hasLocallySeconded && (
-          <div className="text-slate-600">Your recognition is recorded locally for this view only.</div>
+          <div className="text-xs text-slate-400">Your recognition is recorded locally for this view only.</div>
         )}
       </div>
 
