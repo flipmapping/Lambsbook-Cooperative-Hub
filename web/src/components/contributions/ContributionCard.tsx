@@ -10,6 +10,7 @@ export default function ContributionCard({ contribution }: ContributionCardProps
   const [hasLocallySeconded, setHasLocallySeconded] = useState(false);
   const [hasLocallyInitiated, setHasLocallyInitiated] = useState(false);
   const [hasLocallyClarified, setHasLocallyClarified] = useState(false);
+  const [hasLocallyAcknowledged, setHasLocallyAcknowledged] = useState(false);
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-3">
@@ -42,6 +43,9 @@ export default function ContributionCard({ contribution }: ContributionCardProps
         {hasLocallyClarified && (
           <div className="text-xs text-slate-400">Local clarification for this view only.</div>
         )}
+        {hasLocallyAcknowledged && (
+          <div className="text-xs text-slate-300">Seen in this view only.</div>
+        )}
       </div>
 
       <div className="mt-3 flex flex-wrap gap-2">
@@ -65,6 +69,13 @@ export default function ContributionCard({ contribution }: ContributionCardProps
           onClick={() => setHasLocallyClarified((value) => !value)}
         >
           {hasLocallyClarified ? "Hide local clarification" : "Show local clarification"}
+        </button>
+        <button
+          type="button"
+          className="rounded border border-slate-200 px-2 py-1 text-xs text-slate-500"
+          onClick={() => setHasLocallyAcknowledged((value) => !value)}
+        >
+          {hasLocallyAcknowledged ? "Unmark local acknowledgment" : "Mark as seen locally"}
         </button>
       </div>
 
