@@ -11,6 +11,7 @@ import { CooperativeActivitySection } from "@/components/dashboard/CooperativeAc
 import { ProgramsSection } from "@/components/dashboard/ProgramsSection";
 import { RelationshipTrustSection } from "@/components/dashboard/RelationshipTrustSection";
 import { ActivityFeed } from "@/components/activity/ActivityFeed";
+import NotificationPreferencesPanel from "@/components/notifications/NotificationPreferencesPanel";
 import ContributionActivity from "@/components/contributions/ContributionActivity";
 import { PipelineDetailPanel } from "@/components/dashboard/PipelineDetailPanel";
 import { SubmitIdeaModal } from "@/components/dashboard/SubmitIdeaModal";
@@ -427,6 +428,9 @@ export default function DashboardPage() {
 
       <div className="mt-6">
         <ActivityFeed />
+        <div className="mt-4">
+          <NotificationPreferencesPanel />
+        </div>
       </div>
 
       <ContributionActivity />
