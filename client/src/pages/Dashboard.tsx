@@ -40,6 +40,7 @@ import { useToast } from '@/hooks/use-toast';
 import { queryClient, apiRequest } from '@/lib/queryClient';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import type { Enquiry, Member, Partner, Country, Service } from '@shared/schema';
+import NotificationPreferencesPanel from "@/components/notifications/NotificationPreferencesPanel";
 
 type DashboardStats = {
   totalEnquiries: number;
@@ -259,6 +260,10 @@ export default function Dashboard() {
                   <Card data-testid="stat-total-enquiries">
                     <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
                       <CardTitle className="text-sm font-medium">Total Enquiries</CardTitle>
+
+                  <div className="mt-4">
+                    <NotificationPreferencesPanel />
+                  </div>
                       <MessageSquare className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
