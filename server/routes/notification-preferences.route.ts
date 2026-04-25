@@ -1,0 +1,55 @@
+import { Router } from "express";
+import { storage } from "../storage";
+import { attachUserContext } from "../middleware/attachUserContext";
+
+const router = Router();
+
+// GET preferences
+router.get("/", async (req, res) => {
+    console.log("DEBUG_NOTIFICATION_ROUTE_HIT");
+  try {
+    // DEV_BYPASS_USER
+    const recipientId = "dev-user";
+    const recipientType = "member";
+
+        const data = await storage.getNotificationPreferences(
+      String(recipientId),
+      String(recipientType)
+    );
+
+    res.json(data || null);
+  } catch (err) {
+    console.error(err);
+    console.error("FULL_ERROR:", err);
+    res.status(500).json({ error: String(err) });
+  }
+});
+
+// UPSERT preferences
+router.post("/", async (req, res) => {
+  try {
+    const { enabled, channel } = req.body;
+    // DEV_BYPASS_USER
+    const recipientId = "dev-user";
+    const recipientType = "member";
+
+    if (!channel) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const data = await storage.upsertNotificationPreferences({
+      recipientId,
+      recipientType,
+      enabled: enabled ?? true,
+      channel,
+    });
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    console.error("FULL_ERROR:", err);
+    res.status(500).json({ error: String(err) });
+  }
+});
+
+export default router;

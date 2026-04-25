@@ -12,6 +12,7 @@ import {
   type IntegrationConfig, type InsertIntegrationConfig, integrationConfigs,
   type ActivityLog, type InsertActivityLog, activityLogs,
 } from "@shared/schema";
+import { notificationPreferences, InsertNotificationPreferences } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, sql } from "drizzle-orm";
 
@@ -206,6 +207,43 @@ export class DatabaseStorage implements IStorage {
   async updateFollowUp(id: string, followUp: Partial<InsertFollowUp>): Promise<FollowUp | undefined> {
     const [updated] = await db.update(followUps).set(followUp).where(eq(followUps.id, id)).returning();
     return updated;
+  }
+
+  
+  async getNotificationPreferences(recipientId: string, recipientType: string) {
+    const [row] = await db
+      .select()
+      .from(notificationPreferences)
+      .where(and(
+        eq(notificationPreferences.recipientId, recipientId),
+        eq(notificationPreferences.recipientType, recipientType)
+      ));
+
+    return row;
+  }
+
+  async upsertNotificationPreferences(data: InsertNotificationPreferences) {
+    const existing = await this.getNotificationPreferences(data.recipientId, data.recipientType);
+
+    if (existing) {
+      const [updated] = await db
+        .update(notificationPreferences)
+        .set(data)
+        .where(and(
+        eq(notificationPreferences.recipientId, data.recipientId),
+        eq(notificationPreferences.recipientType, data.recipientType)
+      ))
+        .returning();
+
+      return updated;
+    }
+
+    const [created] = await db
+      .insert(notificationPreferences)
+      .values(data)
+      .returning();
+
+    return created;
   }
 
   async getNotifications(recipientId?: string): Promise<Notification[]> {

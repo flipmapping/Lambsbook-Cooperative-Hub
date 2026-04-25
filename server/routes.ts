@@ -34,6 +34,7 @@ import memberRoutes from "./routes/member";
 import financialRoutes from "./routes/financialRoutes";
 import governanceRoute from "./routes/governanceRoute";
 import devTestAuthRoutes from "./routes/devTestAuth";
+import notificationPreferencesRoute from "./routes/notification-preferences.route";
 import { detectPlatformAdmin } from "./middleware/requirePlatformAdmin";
 
 import { requireSBURole } from "./middleware/requireSBURole";
@@ -49,9 +50,16 @@ export async function registerRoutes(
   app.use(detectPlatformAdmin);
   app.use("/api/admin", adminRoutes);
   app.use("/api/member", memberRoutes);
+  app.use("/api/notification-preferences", notificationPreferencesRoute);
   app.use(financialRoutes);
   app.use(governanceRoute);
   app.use("/dev", devTestAuthRoutes);
+
+  
+  app.get("/api/__probe", (req, res) => {
+    console.log("DEBUG_API_PROBE_HIT");
+    res.json({ ok: true, source: "express" });
+  });
 
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
     try {

@@ -261,9 +261,6 @@ export default function Dashboard() {
                     <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
                       <CardTitle className="text-sm font-medium">Total Enquiries</CardTitle>
 
-                  <div className="mt-4">
-                    <NotificationPreferencesPanel />
-                  </div>
                       <MessageSquare className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
@@ -310,6 +307,10 @@ export default function Dashboard() {
                       </p>
                     </CardContent>
                   </Card>
+                </div>
+
+                <div className="mt-4">
+                  <NotificationPreferencesPanel />
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-2">

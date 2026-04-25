@@ -4,13 +4,15 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development tsx server/index.ts",
+    "dev": "bash scripts/runtime-guard.sh",
     "brain:capture": "tsx scripts/brain-capture.ts",
     "brain:search": "tsx scripts/brain-search.ts",
     "build": "tsx script/build.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "truth:gate": "bash scripts/run-truth-gate.sh",
+    "dev:guarded": "bash scripts/runtime-guard.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
