@@ -4,7 +4,6 @@ import { createAuthenticatedClient } from "../lib/supabase-member-client";
 
 export async function attachUserContext(req: Request, res: Response, next: NextFunction) {
   const authReq = req as AuthenticatedRequest;
-  console.log("AUTH HEADER:", req.headers.authorization);
   try {
     const authHeader = req.headers.authorization;
 

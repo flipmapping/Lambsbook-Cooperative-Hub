@@ -28,12 +28,12 @@ router.get("/", async (req, res) => {
 // UPSERT preferences
 router.post("/", async (req, res) => {
   try {
-    const { enabled, channel } = req.body;
+const { enabled, channel, channels } = req.body;
     // DEV_BYPASS_USER
     const recipientId = "dev-user";
     const recipientType = "member";
 
-    if (!channel) {
+    if (!channel && !channels) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
@@ -41,7 +41,11 @@ router.post("/", async (req, res) => {
       recipientId,
       recipientType,
       enabled: enabled ?? true,
-      channel,
+      channel: channel ?? (channels?.email ? "email" : "in_app"),
+      channels: channels ?? {
+        email: channel === "email",
+        in_app: channel === "in_app",
+         },
     });
 
     res.json(data);
