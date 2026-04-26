@@ -2,7 +2,7 @@ import { Router } from "express";
 
 const router = Router();
 
-router.get("/notification-preferences", async (req, res) => {
+router.get("/", async (req, res) => {
   res.json({ success: true, message: "Notification preferences endpoint live" });
 });
 
