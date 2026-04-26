@@ -1,9 +1,9 @@
 import OpenAI from "openai";
-
-// REMOVED: unsafe top-level init
-  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
 });
+
 
 const systemPrompt = `You are a helpful customer service assistant for Other Path Travel, a global partner of Glory International. 
 You specialize in immigration services, particularly the EB3 Work Visa Program for the United States.

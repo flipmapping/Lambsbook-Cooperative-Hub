@@ -2,6 +2,10 @@
 // Reads Google Docs from Lambsbook Master Templates and generates AI feedback
 
 import OpenAI from "openai";
+const openai = new OpenAI({
+  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+});
 import { 
   findFolderByName, 
   listDocsInFolder, 
@@ -26,10 +30,6 @@ function removeTimestamps(text: string): string {
     .trim();
 }
 
-// REMOVED: unsafe top-level init
-  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
-  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
-});
 
 const MASTER_TEMPLATES_FOLDER = 'Lambsbook – Master Templates';
 
