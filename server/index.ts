@@ -3,7 +3,15 @@ import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 
+
 const app = express();
+
+app.use((req, res, next) => {
+  console.log("INCOMING REQUEST TRACE:", req.method, req.url);
+  next();
+});
+
+
 const httpServer = createServer(app);
 
 declare module "http" {
