@@ -10,12 +10,12 @@ export default function RequireAuth({ children }: RequireAuthProps) {
 
   // Loading state
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Checking access...</div>
   }
 
   // Not authenticated → block (no redirect yet)
   if (!data.isAuthenticated) {
-    return <div>Unauthorized</div>
+    return (<div>Access not available<div><button onClick={() => window.location.reload()}>Retry</button></div></div>)
   }
 
   // Authenticated → render children
