@@ -23,6 +23,16 @@ router.get('/test-auth', attachUserContext, async (req: Request, res: Response) 
     .select('id')
     .limit(1);
 
+  // --- MEMBERS PROBE ---
+  const { data: membersData, error: membersError } = await supabase
+    .from('members')
+    .select('id')
+    .limit(1);
+
+  console.log("MEMBERS_CHECK", { membersData, membersError });
+  // --- END PROBE ---
+
+
   if (error) {
     return res.json({ stage: 'rls_failed', error });
   }
