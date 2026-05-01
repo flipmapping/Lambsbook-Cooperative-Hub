@@ -55,12 +55,6 @@ export async function registerRoutes(
   app.use(governanceRoute);
   app.use("/dev", devTestAuthRoutes);
 
-  
-  app.get("/api/__probe", (req, res) => {
-    console.log("DEBUG_API_PROBE_HIT");
-    res.json({ ok: true, source: "express" });
-  });
-
   app.get("/api/dashboard/stats", async (req: Request, res: Response) => {
     try {
       const stats = await storage.getDashboardStats();
@@ -988,35 +982,6 @@ export async function registerRoutes(
       }
     },
   );
-
-  app.post("/api/hub/auth/login", async (req: Request, res: Response) => {
-    try {
-      const validatedData = hubAuthSchema.parse(req.body);
-      const result = await hubService.loginMember(validatedData.email, validatedData.password);
-      res.json(result);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        console.error("Hub login validation error:", error.errors);
-        return res.status(400).json({ error: error.errors });
-      }
-      if (
-        error &&
-        typeof error === "object" &&
-        "name" in error &&
-        error.name === "HubAuthError"
-      ) {
-        const hubError = error as unknown as {
-          message: string;
-          statusCode: number;
-        };
-        return res
-          .status(hubError.statusCode)
-          .json({ error: hubError.message });
-      }
-      console.error("Hub login error:", error);
-      res.status(500).json({ error: "Login failed" });
-    }
-  });
 
   app.post("/api/hub/auth/forgot-password", async (req: Request, res: Response) => {
     try {
