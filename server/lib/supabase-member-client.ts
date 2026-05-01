@@ -15,7 +15,6 @@ let supabaseMember: SupabaseClient | null = null;
 
 if (supabaseUrl && supabaseAnonKey) {
   supabaseMember = createClient(supabaseUrl, supabaseAnonKey);
-  console.log('[Supabase Member] Client initialized with anon key');
 }
 
 export function getSupabaseMember(): SupabaseClient {

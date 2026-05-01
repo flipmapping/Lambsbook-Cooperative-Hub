@@ -1,13 +1,23 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
+import { setupVite } from "./vite";
 import { createServer } from "http";
+
 
 
 const app = express();
 
+// 🔐 health check route (must be fast and unconditional)
+app.get("/health", (_req, res) => {
+  res.status(200).send("ok");
+});
+
+
+
+
+
 app.use((req, res, next) => {
-  console.log("INCOMING REQUEST TRACE:", req.method, req.url);
   next();
 });
 
@@ -38,7 +48,6 @@ export function log(message: string, source = "express") {
     hour12: true,
   });
 
-  console.log(`${formattedTime} [${source}] ${message}`);
 }
 
 app.use((req, res, next) => {
@@ -67,8 +76,7 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
-  await registerRoutes(httpServer, app);
+  // registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -81,18 +89,18 @@ app.use((req, res, next) => {
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (process.env.NODE_ENV === "production") {
+  console.log("NODE_ENV:", process.env.NODE_ENV);
+if (process.env.NODE_ENV === "production") {
     serveStatic(app);
   } else {
-    const { setupVite } = await import("./vite");
-    await setupVite(httpServer, app);
+    setupVite(httpServer, app);
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || "5000", 10);
+  const port = process.env.PORT ? Number(process.env.PORT) : 5000;
   httpServer.listen(
     {
       port,
@@ -100,7 +108,6 @@ app.use((req, res, next) => {
       reusePort: true,
     },
     () => {
-      log(`serving on port ${port}`);
+      log(`PORT ENV: ${process.env.PORT} | USING: ${port}`);
     },
   );
-})();

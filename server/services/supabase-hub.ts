@@ -464,13 +464,7 @@ export async function signUpMember(data: SignUpData) {
       needsConfirmation,
       referrerEmail: data.referrerEmail || null,
       referrerValid,
-      session: signUpResult?.session
-        ? {
-            access_token: signUpResult.session.access_token,
-            refresh_token: signUpResult.session.refresh_token,
-            token_type: "bearer",
-          }
-        : null,
+      session: null,
       user: signUpResult?.user
         ? {
             id: signUpResult.user.id,
@@ -639,7 +633,7 @@ export async function loginMember(email: string, password?: string) {
 
         if (error.message.includes("Email not confirmed")) {
           throw new HubAuthError(
-            "Please confirm your email address before logging in. Check your inbox for a confirmation link.",
+            "Please confirm your email address before logging in.",
             401,
             error,
           );
@@ -660,11 +654,7 @@ export async function loginMember(email: string, password?: string) {
     return {
       success: true,
       message: "Login successful",
-      session: {
-        access_token: data.session?.access_token,
-        refresh_token: data.session?.refresh_token,
-        token_type: "bearer",
-      },
+      session: null,
     };
   } catch (e) {
     if (e instanceof HubAuthError) throw e;
@@ -672,6 +662,7 @@ export async function loginMember(email: string, password?: string) {
     throw new HubAuthError("Login failed. Please try again.", 503, e);
   }
 }
+
 
 export async function forgotPassword(email: string) {
   if (!supabaseAuth) {
@@ -770,3 +761,4 @@ export async function resetPassword(accessToken: string, newPassword: string) {
     throw new HubAuthError("Failed to reset password.", 503, e);
   }
 }
+

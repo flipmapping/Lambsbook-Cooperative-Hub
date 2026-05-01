@@ -20,7 +20,6 @@ if (supabaseUrl && supabaseServiceRoleKey) {
       persistSession: false,
     },
   });
-  console.log('[Supabase] Admin client initialized with service role key');
 }
 
 export function getSupabaseAdmin(): SupabaseClient {
