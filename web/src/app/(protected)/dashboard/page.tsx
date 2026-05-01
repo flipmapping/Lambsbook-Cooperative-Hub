@@ -129,16 +129,6 @@ export default function DashboardPage() {
       };
   }, []);
 
-  useEffect(() => {
-    if (entryState === "unauthenticated") {
-      router.replace("/auth/sign-in");
-      return;
-    }
-
-    if (entryState === "invited_pending_acceptance" && pendingInvitationId) {
-      router.replace(`/dashboard/invitations/${pendingInvitationId}`);
-    }
-  }, [entryState, pendingInvitationId, router]);
 
   useEffect(() => {
     if (!latestFeedback) return;

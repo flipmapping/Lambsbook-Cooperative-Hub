@@ -29,7 +29,6 @@ router.get('/test-auth', attachUserContext, async (req: Request, res: Response) 
     .select('id')
     .limit(1);
 
-  console.log("MEMBERS_CHECK", { membersData, membersError });
   // --- END PROBE ---
 
 

@@ -417,25 +417,6 @@ export async function signUpMember(data: SignUpData) {
       },
     });
 
-    console.log("[Hub Auth Debug] signup email =", data.email);
-    console.log("[Hub Auth Debug] signup error =", error);
-    console.log(
-      "[Hub Auth Debug] signup user id =",
-      signUpResult?.user?.id || null,
-    );
-    console.log(
-      "[Hub Auth Debug] signup user email =",
-      signUpResult?.user?.email || null,
-    );
-    console.log(
-      "[Hub Auth Debug] signup session exists =",
-      !!signUpResult?.session,
-    );
-    console.log(
-      "[Hub Auth Debug] signup confirmation sent at =",
-      signUpResult?.user?.confirmation_sent_at || null,
-    );
-
     if (error) {
       console.error("[Hub Auth] Supabase signUp error:", error);
 

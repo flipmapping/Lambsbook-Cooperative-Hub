@@ -55,9 +55,6 @@ export async function sendEmailOTP(email: string): Promise<AuthResult> {
   }
 
   try {
-    console.log('Sending OTP to:', email);
-    console.log('Supabase URL:', supabaseUrl);
-    
     const { data, error } = await supabase.auth.signInWithOtp({
       email,
       options: {
@@ -75,7 +72,6 @@ export async function sendEmailOTP(email: string): Promise<AuthResult> {
       return { success: false, message: error.message, error: error.code || 'OTP_ERROR' };
     }
 
-    console.log('OTP sent successfully:', data);
     return { 
       success: true, 
       message: 'Verification code sent! Check your email.',
