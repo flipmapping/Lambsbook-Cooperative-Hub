@@ -1,0 +1,104 @@
+Deployment diagnosis is complete.
+
+Canonical conclusion:
+
+* application/runtime topology is now correct
+* build pipeline is now correct
+* deployment failure is caused by stale deployment ownership metadata
+* current deployment still boots obsolete historical command:
+  node dist/index.cjs
+* deployment ownership must now be explicitly restored in `.replit`
+
+TASK:
+Perform ONE bounded deployment ownership restoration only.
+
+DO NOT:
+
+* modify runtime code
+* modify frontend/backend logic
+* modify build pipeline
+* introduce new deployment systems
+* recreate deployment unless absolutely necessary
+* touch unrelated files
+
+REQUIRED EXECUTION DISCIPLINE:
+
+* backup first
+* bounded mutation only
+* immediate textual verification after mutation
+
+STEP 1 — Backup Exact Deployment Ownership File
+
+```bash id="m4rq8v"
+cp .replit .replit.bak_deployment_restore_$(date +%Y%m%d_%H%M%S)
+```
+
+STEP 2 — Restore Canonical Deployment Ownership
+
+Add EXACTLY this block to `.replit`:
+
+```ini id="x7vk3m"
+[deployment]
+deploymentTarget = "cloudrun"
+build = ["npm", "run", "build"]
+run = ["npm", "start"]
+```
+
+Preserve existing:
+
+* run = "npm run dev"
+* [env]
+* [[ports]]
+* all existing non-deployment configuration
+
+STEP 3 — Verify Exact Final Ownership
+
+Run:
+
+```bash id="q5rx2n"
+cat .replit
+```
+
+Verify:
+
+* deployment block exists exactly once
+* build command is:
+  npm run build
+* run command is:
+  npm start
+* existing dev runtime command still exists
+
+STEP 4 — Verify Production Start Contract Still Correct
+
+Run:
+
+```bash id="k8xp4m"
+cat package.json | grep '"start"'
+```
+
+Expected:
+
+```text id="v2rk8q"
+"start": "NODE_ENV=production node dist/index.js"
+```
+
+STEP 5 — Commit ONLY Deployment Ownership Restoration
+
+```bash id="r4xk8n"
+git add .replit
+
+git commit -m "Restore canonical deployment ownership"
+
+git push
+```
+
+STEP 6 — Trigger Fresh Redeploy
+
+After redeploy starts, inspect deployment logs and return ONLY:
+
+1. actual deployment boot command
+2. whether logs now show:
+
+   * node dist/index.js
+   * NODE_ENV: production
+3. first runtime error if any
