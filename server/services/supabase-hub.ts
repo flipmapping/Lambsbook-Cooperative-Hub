@@ -1,4 +1,5 @@
 import { createClient, AuthApiError } from "@supabase/supabase-js";
+import ws from "ws";
 import { z } from "zod";
 
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -24,6 +25,9 @@ const supabaseAuth =
           autoRefreshToken: false,
           persistSession: false,
         },
+        realtime: {
+          transport: ws,
+        },
       })
     : null;
 
@@ -37,6 +41,9 @@ const supabase =
         auth: {
           autoRefreshToken: false,
           persistSession: false,
+        },
+        realtime: {
+          transport: ws,
         },
       })
     : null;
@@ -725,6 +732,9 @@ export async function resetPassword(accessToken: string, newPassword: string) {
         auth: {
           autoRefreshToken: false,
           persistSession: false,
+        },
+        realtime: {
+          transport: ws,
         },
       },
     );
