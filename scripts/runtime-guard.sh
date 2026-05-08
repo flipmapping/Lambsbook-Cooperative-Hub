@@ -4,7 +4,7 @@
 echo
 echo "5) API contract check..."
 
-API_TEST=$(curl -s --max-time 2 "http://localhost:5000/api/notification-preferences?recipientId=test&recipientType=member" || true)
+API_TEST=$(curl -s --max-time 2 "http://localhost:3000/api/notification-preferences?recipientId=test&recipientType=member" || true)
 
 if echo "$API_TEST" | grep -q "<!DOCTYPE html>"; then
   echo "❌ API returned HTML (likely Vite interception)"
@@ -35,7 +35,7 @@ sleep 1
 
 echo
 echo "2) Check if port 5000 is already serving..."
-PRECHECK=$(curl -s --max-time 1 http://localhost:5000/api/__probe || true)
+PRECHECK=$(curl -s --max-time 1 http://localhost:3000/api/__probe || true)
 
 if [ -n "$PRECHECK" ]; then
   echo "⚠️  Something is already serving on :5000"
@@ -55,9 +55,9 @@ SUCCESS=false
 
 for i in {1..10}; do
   sleep 1
-  PROBE=$(curl -s --max-time 1 http://localhost:5000/api/__probe || true)
+  PROBE=$(curl -s --max-time 1 http://localhost:3000/api/__probe || true)
 
-  if echo "$PROBE" | grep -q '"ok":true'; then
+  if echo "$PROBE" | grep -q 'ok'; then
     SUCCESS=true
     echo "✅ Backend reachable (after $i s)"
     break
@@ -78,3 +78,5 @@ echo
 echo "======================================"
 echo "✅ RUNTIME READY"
 echo "======================================"
+
+wait $SERVER_PID

@@ -21,3 +21,5 @@ _private_*
 
 tmp/
 *.bak*
+
+web/.next/
