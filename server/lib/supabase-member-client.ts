@@ -1,4 +1,5 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import ws from "ws";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
@@ -14,7 +15,11 @@ if (!supabaseAnonKey) {
 let supabaseMember: SupabaseClient | null = null;
 
 if (supabaseUrl && supabaseAnonKey) {
-  supabaseMember = createClient(supabaseUrl, supabaseAnonKey);
+  supabaseMember = createClient(supabaseUrl, supabaseAnonKey, {
+    realtime: {
+      transport: ws,
+    },
+  });
 }
 
 export function getSupabaseMember(): SupabaseClient {
@@ -39,6 +44,9 @@ export function createAuthenticatedClient(accessToken: string, schema?: string):
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
+    },
+    realtime: {
+      transport: ws,
     },
   });
 }

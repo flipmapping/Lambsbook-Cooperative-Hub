@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import ws from "ws";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -9,7 +10,11 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 
 // Use service role key for auth operations that create/manage users (server-only)
 export const supabase = supabaseUrl && supabaseServiceRoleKey 
-  ? createClient(supabaseUrl, supabaseServiceRoleKey)
+  ? createClient(supabaseUrl, supabaseServiceRoleKey, {
+    realtime: {
+      transport: ws,
+    },
+  })
   : null;
 
 export interface AuthResult {

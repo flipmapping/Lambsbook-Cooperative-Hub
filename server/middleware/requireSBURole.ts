@@ -1,10 +1,16 @@
 import { Request, Response, NextFunction } from "express";
 import { createClient } from "@supabase/supabase-js";
+import ws from "ws";
 import type { SBURequest } from "./requireSBUAccess";
 
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  {
+    realtime: {
+      transport: ws,
+    },
+  }
 );
 
 export function requireSBURole(allowedRoles: string[]) {
