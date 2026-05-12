@@ -731,7 +731,7 @@ export default function MemberHub() {
                     </div>
                     <div className="p-4 border rounded-lg">
                       <div className="text-sm text-muted-foreground">Status</div>
-                      <div className="text-xl font-bold capitalize">{tutorProfile.tutor.tutor_status.replace('_', ' ')}</div>
+                      <div className="text-xl font-bold capitalize">{tutorProfile?.tutor?.tutor_status?.replace?.('_', ' ')}</div>
                     </div>
                     <div className="p-4 border rounded-lg">
                       <div className="text-sm text-muted-foreground">Free Class Minutes (30 days)</div>
