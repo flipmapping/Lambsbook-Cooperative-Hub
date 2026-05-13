@@ -18,6 +18,12 @@ export async function attachUserContext(req: Request, res: Response, next: NextF
     const { data: userData, error: userError } = await supabase.auth.getUser();
 
     if (userError || !userData?.user) {
+      console.error("[attachUserContext] auth.getUser failed", {
+        hasUser: !!userData?.user,
+        userErrorMessage: userError?.message,
+        userErrorStatus: userError?.status,
+      });
+
       return res.status(401).json({ error: "Invalid or expired token" });
     }
 
