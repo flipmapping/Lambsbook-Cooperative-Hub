@@ -1,0 +1,13 @@
+=== GIT STATUS ===
+On branch restoration/d71607f_coherence_recovery
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	quarantine/
+	snapshots/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+=== RECENT COMMITS ===
+c9ddac0 stabilization: contain MemberHub tutor_status render fracture
+36818da Lock stabilization-phase runtime doctrine
+252992f Capture architectural recovery doctrine from restoration archaeology
