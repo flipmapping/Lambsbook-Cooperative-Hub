@@ -661,7 +661,7 @@ export async function loginMember(email: string, password?: string) {
     return {
       success: true,
       message: "Login successful",
-      session: null,
+      session: data.session,
     };
   } catch (e) {
     if (e instanceof HubAuthError) throw e;
