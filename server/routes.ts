@@ -983,7 +983,34 @@ export async function registerRoutes(
     },
   );
 
-  app.post("/api/hub/auth/forgot-password", async (req: Request, res: Response) => {
+  
+  app.post("/api/hub/auth/login", async (req: Request, res: Response) => {
+    try {
+      const validatedData = hubAuthSchema.parse(req.body);
+      const result = await hubService.loginMember(validatedData.email, validatedData.password);
+      res.json(result);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        console.error("Hub login validation error:", error.errors);
+        return res.status(400).json({ error: error.errors });
+      }
+      if (
+        error &&
+        typeof error === "object" &&
+        "name" in error &&
+        error.name === "HubAuthError"
+      ) {
+        const hubError = error;
+        return res
+          .status(hubError.statusCode)
+          .json({ error: hubError.message });
+      }
+      console.error("Hub login error:", error);
+      res.status(500).json({ error: "Login failed" });
+    }
+  });
+
+app.post("/api/hub/auth/forgot-password", async (req: Request, res: Response) => {
     try {
       const { email } = req.body;
       if (!email) {

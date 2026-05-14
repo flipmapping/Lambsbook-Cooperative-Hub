@@ -228,6 +228,15 @@ export default function MemberHub() {
     enabled: isAuthenticated,
   });
 
+  const isDashboardLoading =
+    profileLoading ||
+    subscriptionLoading ||
+    collaborationLoading ||
+    programsLoading ||
+    earningsLoading ||
+    tutorLoading ||
+    activityLoading;
+
   const selectProgramMutation = useMutation({
     mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/select`),
     onSuccess: () => {
@@ -245,6 +254,13 @@ export default function MemberHub() {
       queryClient.invalidateQueries({ queryKey: ["/api/member/programs"] });
       toast({ title: "Program deselected" });
     },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive"
+      });
+    },
   });
 
   const logActivityMutation = useMutation({
@@ -253,6 +269,13 @@ export default function MemberHub() {
       queryClient.invalidateQueries({ queryKey: ["/api/member/activity"] });
       queryClient.invalidateQueries({ queryKey: ["/api/member/earnings"] });
       toast({ title: "Activity logged", description: "Your account is now active" });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive"
+      });
     },
   });
 
@@ -274,6 +297,17 @@ export default function MemberHub() {
             </div>
           </CardContent>
         </Card>
+      </div>
+    );
+  }
+
+  if (isDashboardLoading) {
+    return (
+      <div className="container mx-auto p-6 max-w-5xl">
+        <div className="text-center py-12">
+          <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-muted-foreground" />
+          <p className="text-muted-foreground">Loading member dashboard...</p>
+        </div>
       </div>
     );
   }
