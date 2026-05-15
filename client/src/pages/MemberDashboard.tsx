@@ -87,6 +87,15 @@ export default function MemberDashboard() {
     return <div style={{ padding: 20 }}>Preparing your dashboard…</div>;
   }
 
+  if (state === "unauthenticated") {
+    return (
+      <div style={{ padding: 20 }}>
+        <h2>Authentication required</h2>
+        <p>Please sign in to continue to your dashboard.</p>
+      </div>
+    );
+  }
+
   if (state === "error") {
     return (
       <div style={{ padding: 20 }}>
@@ -115,11 +124,17 @@ export default function MemberDashboard() {
     );
   }
 
-  // state === "member"
-  return (
-    <div style={{ padding: 20 }}>
-      <h1>Member Dashboard</h1>
-      <p>Your cooperative membership and participation surfaces are ready.</p>
-    </div>
-  );
+  if (state === "member") {
+    return (
+      <div style={{ padding: 20 }}>
+        <h1>Member Dashboard</h1>
+        <p>
+          As a cooperative member, you can take part in the available dashboard
+          actions in this view.
+        </p>
+      </div>
+    );
+  }
+
+  return null;
 }
