@@ -306,8 +306,33 @@ export default function MemberHub() {
       <div className="container mx-auto p-6 max-w-5xl">
         <div className="text-center py-12">
           <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-muted-foreground" />
-          <p className="text-muted-foreground">Loading member dashboard...</p>
+          <p className="text-muted-foreground">
+            Preparing your operational member dashboard...
+          </p>
         </div>
+      </div>
+    );
+  }
+
+  if (
+    !profile ||
+    !subscription ||
+    !collaboration ||
+    !programs ||
+    !earnings ||
+    !tutorProfile ||
+    !activity
+  ) {
+    return (
+      <div className="container mx-auto p-6 max-w-5xl">
+        <Alert variant="destructive">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertTitle>Dashboard unavailable</AlertTitle>
+          <AlertDescription>
+            Some operational dashboard data could not be loaded.
+            Please refresh and try again.
+          </AlertDescription>
+        </Alert>
       </div>
     );
   }
