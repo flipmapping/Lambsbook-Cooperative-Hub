@@ -1,9 +1,10 @@
-modules = ["nodejs-20", "web", "postgresql-16"]
+modules = ["nodejs-20", "postgresql-16", "python-3.11", "web"]
 run = "npm run dev"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
 channel = "stable-24_05"
+packages = ["supabase-cli"]
 
 [deployment]
 deploymentTarget = "autoscale"
@@ -39,8 +40,18 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 37131
-externalPort = 3000
+localPort = 5001
+externalPort = 3001
 
 [agent]
-integrations = ["javascript_openai_ai_integrations:1.0.0"]
+integrations = ["javascript_openai_ai_integrations:1.0.0", "google-drive:1.0.0"]
+
+[userenv]
+
+[userenv.production]
+APP_URL = "https://global-pathways--flipmapping.replit.app"
+
+[userenv.development]
+APP_URL = "https://global-pathways--flipmapping.replit.app"
+
+[userenv.shared]
