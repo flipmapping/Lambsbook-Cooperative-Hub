@@ -5,9 +5,10 @@ import { apiRequest } from "@/lib/queryClient";
 
 type State =
   | "loading"
+  | "unauthenticated"
   | "member"
-  | "invited"
-  | "no_invitation"
+  | "invited_pending_acceptance"
+  | "non_member_no_invitation"
   | "error";
 
 export default function MemberDashboard() {
@@ -55,11 +56,11 @@ export default function MemberDashboard() {
 
       if (invData?.invitation) {
         setInvitationId(invData.invitation.id);
-        setState("invited");
+        setState("invited_pending_acceptance");
         return;
       }
 
-      setState("no_invitation");
+      setState("non_member_no_invitation");
     };
 
     checkAccess();
@@ -83,32 +84,30 @@ export default function MemberDashboard() {
   // ---------------- UI ----------------
 
   if (state === "loading") {
-    return <div style={{ padding: 20 }}>Loading...</div>;
+    return <div style={{ padding: 20 }}>Preparing your dashboard…</div>;
   }
 
   if (state === "error") {
     return (
       <div style={{ padding: 20 }}>
-        <h2>Something went wrong</h2>
-        <p>Unable to load your membership status. Please try again later.</p>
+        <h2>We could not prepare your dashboard right now.</h2>
       </div>
     );
   }
 
-  if (state === "no_invitation") {
+  if (state === "non_member_no_invitation") {
     return (
       <div style={{ padding: 20 }}>
-        <h2>You are not yet a cooperative member</h2>
-        <p>You need an invitation to join the Lambsbook Cooperative.</p>
+        <h2>Membership pending</h2>
+        <p>You can explore the dashboard and share a local idea here. Other cooperative actions will become available once you are a member.</p>
       </div>
     );
   }
 
-  if (state === "invited") {
+  if (state === "invited_pending_acceptance") {
     return (
       <div style={{ padding: 20 }}>
-        <h2>You have been invited</h2>
-        <p>Accept your invitation to join the cooperative.</p>
+        <h2>Taking you to your invitation…</h2>
         <button onClick={acceptInvitation}>
           Accept Invitation
         </button>
@@ -120,7 +119,7 @@ export default function MemberDashboard() {
   return (
     <div style={{ padding: 20 }}>
       <h1>Member Dashboard</h1>
-      <p>Welcome to Lambsbook Cooperative Hub.</p>
+      <p>Your cooperative membership and participation surfaces are ready.</p>
     </div>
   );
 }
