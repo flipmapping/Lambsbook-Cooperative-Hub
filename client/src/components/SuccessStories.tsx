@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useLanguage } from '@/lib/LanguageContext';
 
-import familyImage from '@assets/generated_images_webp/happy_immigrant_family_american_home.webp';
+
 
 export function SuccessStories() {
   const { t, language } = useLanguage();

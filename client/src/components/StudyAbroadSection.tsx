@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
 
-import studentsImage from '@assets/generated_images_webp/international_students_university_campus.webp';
+
 
 interface StudyAbroadSectionProps {
   onContact: () => void;

@@ -2,14 +2,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
 
-import usaImage from '@assets/generated_images_webp/nyc_skyline_with_statue_of_liberty.webp';
-import canadaImage from '@assets/stock_images/canadian_landscape_w_f2194763.jpg';
-import australiaImage from '@assets/stock_images/sydney_opera_house_a_994f1251.jpg';
-import ukImage from '@assets/stock_images/london_big_ben_uk_la_dd5ee0fa.jpg';
-import vietnamImage from '@assets/stock_images/vietnam_ha_long_bay__2ba05574.jpg';
-import malaysiaImage from '@assets/stock_images/malaysia_kuala_lumpu_fe72cecf.jpg';
-import taiwanImage from '@assets/stock_images/taiwan_taipei_101_to_50b4deb6.jpg';
-import chinaImage from '@assets/stock_images/china_great_wall_sce_6172830d.jpg';
+
+
+
+
+
+
+
+
 
 interface CountriesSectionProps {
   onContact: () => void;
@@ -18,7 +18,23 @@ interface CountriesSectionProps {
 export function CountriesSection({ onContact }: CountriesSectionProps) {
   const { t } = useLanguage();
 
-  const countries = [
+const heroImage = 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1200&auto=format&fit=crop';
+const hotelImage = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop';
+const healthcareImage = 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop';
+const foodImage = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop';
+const studentsImage = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop';
+const familyImage = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200&auto=format&fit=crop';
+
+  const usaImage = 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1200&auto=format&fit=crop';
+const canadaImage = 'https://images.unsplash.com/photo-1503614472-8c93d56e92c1?q=80&w=1200&auto=format&fit=crop';
+const australiaImage = 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1200&auto=format&fit=crop';
+const ukImage = 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1200&auto=format&fit=crop';
+const vietnamImage = 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop';
+const malaysiaImage = 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=1200&auto=format&fit=crop';
+const taiwanImage = 'https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop';
+const chinaImage = 'https://images.unsplash.com/photo-1547981609-4b6bf67db7bf?q=80&w=1200&auto=format&fit=crop';
+
+const countries = [
     { name: 'USA', image: usaImage, flag: '🇺🇸' },
     { name: 'Canada', image: canadaImage, flag: '🇨🇦' },
     { name: 'UK', image: ukImage, flag: '🇬🇧' },

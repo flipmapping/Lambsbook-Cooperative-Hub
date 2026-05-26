@@ -1,9 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/lib/LanguageContext';
 
-import hotelImage from '@assets/generated_images_webp/hotel_hospitality_worker_professional.webp';
-import healthcareImage from '@assets/generated_images_webp/healthcare_caregiver_professional_setting.webp';
-import foodImage from '@assets/generated_images_webp/food_service_kitchen_worker.webp';
+
+
+
 
 export function JobCategoriesSection() {
   const { t, language } = useLanguage();
