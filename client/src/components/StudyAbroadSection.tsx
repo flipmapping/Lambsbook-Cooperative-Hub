@@ -11,6 +11,9 @@ interface StudyAbroadSectionProps {
 export function StudyAbroadSection({ onContact }: StudyAbroadSectionProps) {
   const { language } = useLanguage();
 
+  const studentsImage =
+    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop';
+
   const title = language === 'en' ? 'Study Abroad Programs' 
     : language === 'vi' ? 'Chương trình Du học' 
     : language === 'zh' ? '留学项目' 
