@@ -1,0 +1,210 @@
+client/src/components/AdvantagesSection.tsx:      title: t('advantages_jobs'),
+client/src/components/AdvantagesSection.tsx:      description: t('advantages_jobs_desc'),
+client/src/components/AdvantagesSection.tsx:      title: t('advantages_lawyers'),
+client/src/components/AdvantagesSection.tsx:      description: t('advantages_lawyers_desc'),
+client/src/components/AdvantagesSection.tsx:      title: t('advantages_support'),
+client/src/components/AdvantagesSection.tsx:      description: t('advantages_support_desc'),
+client/src/components/AdvantagesSection.tsx:      title: t('advantages_onestop'),
+client/src/components/AdvantagesSection.tsx:      description: t('advantages_onestop_desc'),
+client/src/components/AdvantagesSection.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('advantages_title')}</h2>
+client/src/components/ContactSection.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact_title')}</h2>
+client/src/components/ContactSection.tsx:            {t('contact_subtitle')}
+client/src/components/ContactSection.tsx:                  {t('hero_consultation')}
+client/src/components/ContactSection.tsx:                    {t('contact_subtitle')}
+client/src/components/ContactSection.tsx:                  {t('contact_form_submit')}
+client/src/components/ContactSection.tsx:                    <Label htmlFor="name">{t('contact_form_name')}</Label>
+client/src/components/ContactSection.tsx:                      <Label htmlFor="email">{t('contact_form_email')}</Label>
+client/src/components/ContactSection.tsx:                      <Label htmlFor="phone">{t('contact_form_phone')}</Label>
+client/src/components/ContactSection.tsx:                    <Label htmlFor="inquiry">{t('contact_form_inquiry')}</Label>
+client/src/components/ContactSection.tsx:                        <SelectValue placeholder={t('contact_form_inquiry')} />
+client/src/components/ContactSection.tsx:                        <SelectItem value="eb3">{t('contact_inquiry_eb3')}</SelectItem>
+client/src/components/ContactSection.tsx:                        <SelectItem value="study">{t('contact_inquiry_study')}</SelectItem>
+client/src/components/ContactSection.tsx:                        <SelectItem value="work">{t('contact_inquiry_work')}</SelectItem>
+client/src/components/ContactSection.tsx:                        <SelectItem value="job">{t('contact_inquiry_job')}</SelectItem>
+client/src/components/ContactSection.tsx:                        <SelectItem value="general">{t('contact_inquiry_general')}</SelectItem>
+client/src/components/ContactSection.tsx:                    <Label htmlFor="message">{t('contact_form_message')}</Label>
+client/src/components/ContactSection.tsx:                        {t('contact_form_submit')}
+client/src/components/CountriesSection.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('countries_title')}</h2>
+client/src/components/CountriesSection.tsx:            {t('countries_subtitle')}
+client/src/components/CountriesSection.tsx:                  {t('country_contact')}
+client/src/components/EB3Categories.tsx:      title: t('eb3_professionals'),
+client/src/components/EB3Categories.tsx:      description: t('eb3_professionals_desc'),
+client/src/components/EB3Categories.tsx:      title: t('eb3_skilled'),
+client/src/components/EB3Categories.tsx:      description: t('eb3_skilled_desc'),
+client/src/components/EB3Categories.tsx:      title: t('eb3_unskilled'),
+client/src/components/EB3Categories.tsx:      description: t('eb3_unskilled_desc'),
+client/src/components/EB3Categories.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('eb3_title')}</h2>
+client/src/components/EB3Categories.tsx:            {t('eb3_subtitle')}
+client/src/components/EB3Categories.tsx:                  {t('eb3_learn_more')}
+client/src/components/FAQSection.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('faq_title')}</h2>
+client/src/components/FAQSection.tsx:            {t('faq_subtitle')}
+client/src/components/Footer.tsx:    t('service_work_visa'),
+client/src/components/Footer.tsx:    t('service_job_placement'),
+client/src/components/Footer.tsx:    t('service_study_abroad'),
+client/src/components/Footer.tsx:    t('service_scholarship'),
+client/src/components/Footer.tsx:    t('service_visa'),
+client/src/components/Footer.tsx:              {t('footer_about_text')}
+client/src/components/Footer.tsx:            <h4 className="font-semibold mb-4">{t('footer_services')}</h4>
+client/src/components/Footer.tsx:            <h4 className="font-semibold mb-4">{t('footer_countries')}</h4>
+client/src/components/Footer.tsx:            <h4 className="font-semibold mb-4">{t('footer_contact')}</h4>
+client/src/components/Footer.tsx:          <p>&copy; {new Date().getFullYear()} Other Path Travel. {t('footer_rights')}</p>
+client/src/components/Header.tsx:    { key: 'home', label: t('nav_home') },
+client/src/components/Header.tsx:    { key: 'eb3', label: t('nav_eb3') },
+client/src/components/Header.tsx:    { key: 'services', label: t('nav_services') },
+client/src/components/Header.tsx:    { key: 'countries', label: t('nav_countries') },
+client/src/components/Header.tsx:    { key: 'success', label: t('nav_success') },
+client/src/components/Header.tsx:    { key: 'faq', label: t('nav_faq') },
+client/src/components/Header.tsx:    { key: 'contact', label: t('nav_contact') },
+client/src/components/Header.tsx:            {t('hero_consultation')}
+client/src/components/Header.tsx:                  {t('hero_consultation')}
+client/src/components/HeroSection.tsx:          {t('hero_title')}
+client/src/components/HeroSection.tsx:          {t('hero_subtitle')}
+client/src/components/HeroSection.tsx:            {t('hero_cta')}
+client/src/components/HeroSection.tsx:            {t('hero_consultation')}
+client/src/components/HeroSection.tsx:          <span>{t('hero_trusted')}</span>
+client/src/components/HubConsultationForm.tsx:          <CardTitle className="text-xl">{t('hub_connect_with_us')}</CardTitle>
+client/src/components/HubConsultationForm.tsx:          <CardTitle className="text-xl">{t('hub_or_message_us')}</CardTitle>
+client/src/components/HubConsultationForm.tsx:              <Label htmlFor="name">{t('hub_full_name')}</Label>
+client/src/components/HubConsultationForm.tsx:                <Label htmlFor="email">{t('hub_email')}</Label>
+client/src/components/HubConsultationForm.tsx:                <Label htmlFor="phone">{t('hub_phone')}</Label>
+client/src/components/HubConsultationForm.tsx:              <Label htmlFor="inquiry">{t('hub_inquiry_type')}</Label>
+client/src/components/HubConsultationForm.tsx:                  <SelectValue placeholder={t('hub_inquiry_type')} />
+client/src/components/HubConsultationForm.tsx:                      {t(option.labelKey)}
+client/src/components/HubConsultationForm.tsx:              <Label htmlFor="message">{t('hub_message')}</Label>
+client/src/components/HubConsultationForm.tsx:                  {t('hub_send_message')}
+client/src/components/HubHeader.tsx:                {t('hub_about')}
+client/src/components/HubHeader.tsx:                {t('hub_programs')}
+client/src/components/HubHeader.tsx:                {t('hub_contact')}
+client/src/components/HubHeader.tsx:              {t('hub_free_consultation')}
+client/src/components/HubHeader.tsx:              {t('hub_login')}
+client/src/components/HubHeader.tsx:              {t('hub_join_now')}
+client/src/components/HubHeader.tsx:                    {t('hub_about')}
+client/src/components/HubHeader.tsx:                    {t('hub_programs')}
+client/src/components/HubHeader.tsx:                    {t('hub_contact')}
+client/src/components/HubHeader.tsx:                    {t('hub_free_consultation')}
+client/src/components/HubHeader.tsx:                      {t('hub_login')}
+client/src/components/HubHeader.tsx:                      {t('hub_join_now')}
+client/src/components/ProcessSection.tsx:    { icon: FileSignature, title: t('process_step1'), description: t('process_step1_desc') },
+client/src/components/ProcessSection.tsx:    { icon: BookOpen, title: t('process_step2'), description: t('process_step2_desc') },
+client/src/components/ProcessSection.tsx:    { icon: FileCheck, title: t('process_step3'), description: t('process_step3_desc') },
+client/src/components/ProcessSection.tsx:    { icon: FileText, title: t('process_step4'), description: t('process_step4_desc') },
+client/src/components/ProcessSection.tsx:    { icon: Stamp, title: t('process_step5'), description: t('process_step5_desc') },
+client/src/components/ProcessSection.tsx:    { icon: Home, title: t('process_step6'), description: t('process_step6_desc') },
+client/src/components/ProcessSection.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('process_title')}</h2>
+client/src/components/ProcessSection.tsx:            {t('process_subtitle')}
+client/src/components/ServicesSection.tsx:      title: t('service_work_visa'),
+client/src/components/ServicesSection.tsx:      description: t('service_work_visa_desc'),
+client/src/components/ServicesSection.tsx:      title: t('service_job_placement'),
+client/src/components/ServicesSection.tsx:      description: t('service_job_placement_desc'),
+client/src/components/ServicesSection.tsx:      title: t('service_study_abroad'),
+client/src/components/ServicesSection.tsx:      description: t('service_study_abroad_desc'),
+client/src/components/ServicesSection.tsx:      title: t('service_scholarship'),
+client/src/components/ServicesSection.tsx:      description: t('service_scholarship_desc'),
+client/src/components/ServicesSection.tsx:      title: t('service_visa'),
+client/src/components/ServicesSection.tsx:      description: t('service_visa_desc'),
+client/src/components/ServicesSection.tsx:      title: t('service_immigration'),
+client/src/components/ServicesSection.tsx:      description: t('service_immigration_desc'),
+client/src/components/ServicesSection.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('services_title')}</h2>
+client/src/components/ServicesSection.tsx:            {t('services_subtitle')}
+client/src/components/SuccessStories.tsx:          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('success_title')}</h2>
+client/src/components/SuccessStories.tsx:            {t('success_subtitle')}
+client/src/pages/FarmstayVision.tsx:              © 2025 Lambsbook Collaborative Hub. {t('hub_footer_rights')}
+client/src/pages/FarmstayVision.tsx:              {t('hub_footer_contact')}: support@lambsbook.net
+client/src/pages/HubLanding.tsx:    name: t('hub_sbu_education'),
+client/src/pages/HubLanding.tsx:    description: t('hub_sbu_education_desc'),
+client/src/pages/HubLanding.tsx:    name: t('hub_sbu_food'),
+client/src/pages/HubLanding.tsx:    description: t('hub_sbu_food_desc'),
+client/src/pages/HubLanding.tsx:    name: t('hub_sbu_farmstay'),
+client/src/pages/HubLanding.tsx:    description: t('hub_sbu_farmstay_desc'),
+client/src/pages/HubLanding.tsx:    title: t('hub_collab_principle1_title'),
+client/src/pages/HubLanding.tsx:    description: t('hub_collab_principle1_desc'),
+client/src/pages/HubLanding.tsx:    title: t('hub_collab_principle2_title'),
+client/src/pages/HubLanding.tsx:    description: t('hub_collab_principle2_desc'),
+client/src/pages/HubLanding.tsx:    title: t('hub_collab_principle3_title'),
+client/src/pages/HubLanding.tsx:    description: t('hub_collab_principle3_desc'),
+client/src/pages/HubLanding.tsx:    title: t('hub_collab_principle4_title'),
+client/src/pages/HubLanding.tsx:    description: t('hub_collab_principle4_desc'),
+client/src/pages/HubLanding.tsx:    question: t('hub_faq1_q'),
+client/src/pages/HubLanding.tsx:    answer: t('hub_faq1_a'),
+client/src/pages/HubLanding.tsx:    question: t('hub_faq2_q'),
+client/src/pages/HubLanding.tsx:    answer: t('hub_faq2_a'),
+client/src/pages/HubLanding.tsx:    question: t('hub_faq3_q'),
+client/src/pages/HubLanding.tsx:    answer: t('hub_faq3_a'),
+client/src/pages/HubLanding.tsx:    question: t('hub_faq4_q'),
+client/src/pages/HubLanding.tsx:    answer: t('hub_faq4_a'),
+client/src/pages/HubLanding.tsx:    question: t('hub_faq5_q'),
+client/src/pages/HubLanding.tsx:    answer: t('hub_faq5_a'),
+client/src/pages/HubLanding.tsx:  t('hub_commitment1'),
+client/src/pages/HubLanding.tsx:  t('hub_commitment2'),
+client/src/pages/HubLanding.tsx:  t('hub_commitment3'),
+client/src/pages/HubLanding.tsx:  t('hub_commitment4'),
+client/src/pages/HubLanding.tsx:            {t('hub_hero_main_title')}
+client/src/pages/HubLanding.tsx:            <span className="block text-primary mt-2">{t('hub_hero_main_subtitle')}</span>
+client/src/pages/HubLanding.tsx:            {t('hub_hero_description')}
+client/src/pages/HubLanding.tsx:                {t('hub_join_free')}
+client/src/pages/HubLanding.tsx:              {t('hub_learn_collaboration')}
+client/src/pages/HubLanding.tsx:              {t('hub_collab_title')}
+client/src/pages/HubLanding.tsx:              {t('hub_collab_subtitle')}
+client/src/pages/HubLanding.tsx:                  <h3 className="text-xl font-semibold mb-3">{t('hub_trust_title')}</h3>
+client/src/pages/HubLanding.tsx:                    {t('hub_trust_desc1')}
+client/src/pages/HubLanding.tsx:                    {t('hub_trust_desc2')}
+client/src/pages/HubLanding.tsx:              <h3 className="text-xl font-semibold">{t('hub_faq_title')}</h3>
+client/src/pages/HubLanding.tsx:            {t('hub_sbu_title')}
+client/src/pages/HubLanding.tsx:            {t('hub_sbu_desc')}
+client/src/pages/HubLanding.tsx:                        {t('hub_sbu_learn_more')}
+client/src/pages/HubLanding.tsx:          <h2 className="text-2xl font-bold mb-8">{t('hub_commitment_title')}</h2>
+client/src/pages/HubLanding.tsx:            {t('hub_cta_join_title')}
+client/src/pages/HubLanding.tsx:            {t('hub_cta_join_desc')}
+client/src/pages/HubLanding.tsx:                {t('hub_cta_join_button')}
+client/src/pages/HubLanding.tsx:              {t('hub_cta_contact_button')}
+client/src/pages/HubLanding.tsx:          <h2 className="text-2xl font-bold text-center mb-4">{t('hub_contact_title')}</h2>
+client/src/pages/HubLanding.tsx:            {t('hub_contact_desc')}
+client/src/pages/HubLanding.tsx:              © 2025 Lambsbook Collaborative Hub. {t('hub_footer_rights')}
+client/src/pages/HubLanding.tsx:                {t('hub_footer_education')}
+client/src/pages/HubLanding.tsx:                {t('hub_footer_farmstay')}
+client/src/pages/HubLanding.tsx:              {t('hub_footer_contact')}: support@lambsbook.net
+client/src/pages/SBUEducation.tsx:            {t('edu_hero_title')}
+client/src/pages/SBUEducation.tsx:            {t('edu_hero_subtitle')}
+client/src/pages/SBUEducation.tsx:              {t('hub_free_consultation')}
+client/src/pages/SBUEducation.tsx:              {t('hub_programs')}
+client/src/pages/SBUEducation.tsx:            {t('edu_trusted')}
+client/src/pages/SBUEducation.tsx:            {t('edu_about_title')}
+client/src/pages/SBUEducation.tsx:            {t('edu_about_text')}
+client/src/pages/SBUEducation.tsx:                    <CardTitle className="text-lg">{t(benefit.titleKey)}</CardTitle>
+client/src/pages/SBUEducation.tsx:                    <CardDescription className="mt-1">{t(benefit.descKey)}</CardDescription>
+client/src/pages/SBUEducation.tsx:            {t('edu_programs_title')}
+client/src/pages/SBUEducation.tsx:            {t('edu_programs_subtitle')}
+client/src/pages/SBUEducation.tsx:                        {t('hub_learn_more')}
+client/src/pages/SBUEducation.tsx:            {t('edu_why_title')}
+client/src/pages/SBUEducation.tsx:                {t('hub_join_now')}
+client/src/pages/SBUEducation.tsx:              {t('hub_contact')}
+client/src/pages/SBUEducation.tsx:          <h2 className="text-2xl font-bold text-center mb-4">{t('hub_free_consultation')}</h2>
+client/src/pages/SBUEducation.tsx:              © 2025 Lambsbook Education. {t('hub_footer_rights')}
+client/src/pages/SBUEducation.tsx:              {t('hub_footer_contact')}: support@lambsbook.net
+client/src/pages/TropicanaProgram.tsx:            {t('trop_hero_title')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_hero_subtitle')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_hero_desc')}
+client/src/pages/TropicanaProgram.tsx:              {t('hub_apply_now')}
+client/src/pages/TropicanaProgram.tsx:              {t('hub_programs')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_about_title')}
+client/src/pages/TropicanaProgram.tsx:            <p>{t('trop_about_text')}</p>
+client/src/pages/TropicanaProgram.tsx:                {t('trop_vision')}
+client/src/pages/TropicanaProgram.tsx:              <p className="text-muted-foreground">{t('trop_vision_text')}</p>
+client/src/pages/TropicanaProgram.tsx:            {t('trop_programs_title')}
+client/src/pages/TropicanaProgram.tsx:                  <CardTitle className="text-lg">{t(program.titleKey)}</CardTitle>
+client/src/pages/TropicanaProgram.tsx:                  <CardDescription>{t(program.descKey)}</CardDescription>
+client/src/pages/TropicanaProgram.tsx:              {t('trop_pathway_title')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_pathway_text')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_testimonial_title')}
+client/src/pages/TropicanaProgram.tsx:                {t('trop_testimonial_text')}
+client/src/pages/TropicanaProgram.tsx:                — {t('trop_testimonial_author')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_partners_title')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_partners_subtitle')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_cta_title')}
+client/src/pages/TropicanaProgram.tsx:            {t('trop_cta_text')}
+client/src/pages/TropicanaProgram.tsx:              {t('hub_apply_now')}
+client/src/pages/TropicanaProgram.tsx:          <h2 className="text-2xl font-bold text-center mb-4">{t('hub_free_consultation')}</h2>
+client/src/pages/TropicanaProgram.tsx:              © 2025 Tropicana Academy via Lambsbook Hub. {t('hub_footer_rights')}
+client/src/pages/TropicanaProgram.tsx:              {t('hub_footer_contact')}: support@lambsbook.net
+client/src/pages/LambsbookTutoring.tsx:              © 2025 Lambsbook.net. {t('hub_footer_rights')}
+client/src/pages/LambsbookTutoring.tsx:              {t('hub_footer_contact')}: support@lambsbook.net

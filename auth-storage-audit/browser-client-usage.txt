@@ -1,0 +1,4 @@
+client/src/lib/supabase/client.ts:import { createBrowserClient } from "@supabase/ssr";
+client/src/lib/supabase/client.ts:  return createBrowserClient(
+web/src/lib/supabase/client.ts:import { createBrowserClient } from "@supabase/ssr";
+web/src/lib/supabase/client.ts:  return createBrowserClient(

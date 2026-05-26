@@ -1,0 +1,5 @@
+client/src/lib/queryClient.ts:    const tokenData = localStorage.getItem("supabase.auth.token");
+client/src/pages/HubAuth.tsx:            "supabase.auth.token",
+client/src/pages/HubAuth.tsx:          "supabase.auth.token",
+client/src/pages/HubAuthCallback.tsx:        localStorage.setItem("supabase.auth.token", JSON.stringify(tokenData));
+client/src/pages/MemberHub.tsx:    const tokenData = localStorage.getItem("supabase.auth.token");

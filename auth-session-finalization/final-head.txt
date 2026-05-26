@@ -1,0 +1,1 @@
+512c0e8 Bridge legacy auth storage into Supabase session lifecycle

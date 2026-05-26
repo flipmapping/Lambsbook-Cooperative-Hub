@@ -1,0 +1,260 @@
+import { useState, useEffect } from "react";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { queryClient } from "@/lib/queryClient";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Progress } from "@/components/ui/progress";
+import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
+import { 
+  User, CreditCard, Users, BookOpen, DollarSign, 
+  GraduationCap, Activity, AlertTriangle, CheckCircle,
+  ArrowUpCircle, Clock, Eye, EyeOff, RefreshCw
+} from "lucide-react";
+
+type MembershipStatus = "free" | "paid";
+type ActivityStatus = "active" | "inactive";
+type TutorStatus = "unverified" | "verified" | "partner_educator";
+type EarningStatus = "pending" | "paid" | "paused";
+
+interface MemberProfile {
+  user: { id: string; email: string };
+  member: {
+    id: string;
+    member_type: string;
+    membership_status: MembershipStatus;
+    activity_status: ActivityStatus;
+    subscription_price_at_signup: number | null;
+    subscription_renewal_date: string | null;
+    join_date: string;
+    last_activity_at: string | null;
+  } | null;
+}
+
+interface SubscriptionData {
+  member: {
+    membership_status: MembershipStatus;
+    subscription_price_at_signup: number | null;
+    subscription_renewal_date: string | null;
+  } | null;
+  subscriptions: Array<{
+    id: string;
+    price: number;
+    renewal_date: string;
+    status: string;
+  }>;
+  benefits: {
+    free: { earning_programs: number; description: string };
+    paid: { earning_programs: string; description: string };
+  };
+}
+
+interface CollaborationData {
+  invitor: { id: string; member_type: string } | null;
+  collaboration_status: string | null;
+  invitees: Array<{
+    id: string;
+    invitee: { id: string; member_type: string };
+    status: string;
+  }>;
+  explanation: {
+    how_it_works: string;
+    earning_flow: string;
+    status_meaning: { active: string; paused: string };
+    trust_continuation: string;
+  };
+}
+
+const TRUST_CONTINUATION_MESSAGE =
+  "Invite trusted people into your network.";
+
+interface ProgramsData {
+  programs: Array<{
+    id: string;
+    name: string;
+    sbu: string;
+    revenue_base: string;
+    trigger_condition: string;
+    eligibility: { eligible: boolean } | null;
+    can_earn: boolean;
+  }>;
+  membership_status: MembershipStatus;
+  selected_count: number;
+  max_selectable: number | string;
+  can_select_more: boolean;
+}
+
+interface EarningsData {
+  earnings: Array<{
+    id: string;
+    amount: number;
+    earning_status: EarningStatus;
+    period: string;
+    program: { name: string; sbu: string };
+  }>;
+  summary: {
+    pending: number;
+    paid: number;
+    paused: number;
+    total: number;
+  };
+  hidden: boolean;
+  message?: string;
+  status_explanation: Record<string, string>;
+}
+
+interface TutorData {
+  tutor: {
+    id: string;
+    tutor_type: string;
+    tutor_status: TutorStatus;
+    free_class_minutes_last_30_days: number;
+  } | null;
+  is_visible: boolean;
+  visibility_explanation: {
+    requirement: string;
+    free_class: string;
+    status_levels: Record<string, string>;
+  };
+}
+
+interface ActivityData {
+  activity_status: ActivityStatus;
+  last_activity_at: string | null;
+  recent_logs: Array<{
+    id: string;
+    activity_type: string;
+    created_at: string;
+  }>;
+  warning: { message: string; consequence: string; action: string } | null;
+  reactivation: { message: string; consequence: string; action: string } | null;
+  inactivity_threshold: string;
+}
+
+function getAuthToken(): string | null {
+  try {
+    const tokenData = localStorage.getItem("supabase.auth.token");
+    if (!tokenData) return null;
+    const parsed = JSON.parse(tokenData);
+    return parsed.access_token || null;
+  } catch {
+    return null;
+  }
+}
+
+async function fetchWithAuth(url: string) {
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
+  
+  const res = await fetch(url, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || res.statusText);
+  }
+  return res.json();
+}
+
+async function postWithAuth(url: string, data?: unknown) {
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
+  
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: data ? JSON.stringify(data) : undefined,
+  });
+  
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || res.statusText);
+  }
+  return res.json();
+}
+
+export default function MemberHub() {
+  const { toast } = useToast();
+  const [activeTab, setActiveTab] = useState("overview");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = getAuthToken();
+    setIsAuthenticated(!!token);
+  }, []);
+
+  const { data: profile, isLoading: profileLoading } = useQuery({
+    queryKey: ["/api/member/me"],
+    queryFn: () => fetchWithAuth("/api/member/me"),
+    enabled: isAuthenticated,
+  });
+
+  const isDashboardLoading =
+    profileLoading || false;
+
+  const selectProgramMutation = useMutation({
+    mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/select`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/member/programs"] });
+      toast({ title: "Program selected" });
+    },
+    onError: (error: Error) => {
+      toast({ title: "Error", description: error.message, variant: "destructive" });
+    },
+  });
+
+  const deselectProgramMutation = useMutation({
+    mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/deselect`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/member/programs"] });
+      toast({ title: "Program deselected" });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive"
+      });
+    },
+  });
+
+  const logActivityMutation = useMutation({
+    mutationFn: () => postWithAuth("/api/member/activity/log", { activity_type: "manual_check_in" }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/member/activity"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/member/earnings"] });
+      toast({ title: "Activity logged", description: "Your account is now active" });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive"
+      });
+    },
+  });
+
+  if (!isAuthenticated) {
+    return (
+      <div className="container mx-auto p-6 max-w-4xl">
+        <Card className="text-center py-12">
+          <CardContent>
+            <User className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+            <h2 className="text-2xl font-bold mb-2">Welcome to Lambsbook Hub</h2>
+            <p className="text-muted-foreground mb-6">Please sign in to access your member dashboard.</p>
+            <div className="flex justify-center gap-4">
+              <Link href="/hub/login">
+                <Button data-testid="button-login">Sign In</Button>
+              </Link>
+              <Link href="/hub/signup">
+                <Button variant="outline" data-testid="button-signup">Create Account</Button>
+              </Link>
+            </div>
+          </CardContent>

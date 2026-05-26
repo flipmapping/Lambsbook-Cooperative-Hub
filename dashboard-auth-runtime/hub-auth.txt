@@ -1,0 +1,320 @@
+import { useState, useEffect } from "react";
+import { Link, useLocation, useSearch } from "wouter";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import {
+  ArrowLeft,
+  Mail,
+  CheckCircle2,
+  Loader2,
+  UserCheck,
+  AlertCircle,
+  User,
+  Phone,
+  Lock,
+  Eye,
+  EyeOff,
+} from "lucide-react";
+
+interface HubAuthProps {
+  mode: "login" | "signup";
+}
+
+const USERNAME_REGEX = /^[a-zA-Z0-9_-]{3,50}$/;
+const PHONE_REGEX = /^\+?[0-9]{7,15}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validateUsername(username: string): string | null {
+  if (!username) return "Username is required";
+  if (username.length < 3) return "Username must be at least 3 characters";
+  if (username.length > 50) return "Username must be 50 characters or less";
+  if (!USERNAME_REGEX.test(username)) {
+    return "Username can only contain letters, numbers, underscores, and hyphens";
+  }
+  return null;
+}
+
+function validatePhone(phone: string): string | null {
+  if (!phone) return "Phone number is required";
+  const normalized = phone.replace(/[\s\-().]/g, "");
+  if (!PHONE_REGEX.test(normalized)) {
+    return "Please enter a valid phone number (7-15 digits, optional + prefix)";
+  }
+  return null;
+}
+
+function validateEmail(email: string): string | null {
+  if (!email) return "Email is required";
+  if (!EMAIL_REGEX.test(email)) return "Please enter a valid email address";
+  return null;
+}
+
+function normalizePhone(phone: string): string {
+  return phone.replace(/[\s\-().]/g, "");
+}
+
+interface FormErrors {
+  username?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  fullName?: string | null;
+  password?: string | null;
+  confirmPassword?: string | null;
+}
+
+export default function HubAuth({ mode }: HubAuthProps) {
+  const [, setLocation] = useLocation();
+  const search = useSearch();
+  const { toast } = useToast();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
+  const [referrerEmail, setReferrerEmail] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState("");
+
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const [referrerValidation, setReferrerValidation] = useState<{
+    checking: boolean;
+    valid: boolean | null;
+    name?: string;
+  }>({ checking: false, valid: null });
+
+  const [emailSent, setEmailSent] = useState(false);
+  const [signupSuccess, setSignupSuccess] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const ref = params.get("ref");
+    if (ref && mode === "signup") {
+      setReferrerEmail(ref);
+    }
+  }, [search, mode]);
+
+  useEffect(() => {
+    if (
+      !referrerEmail ||
+      referrerEmail.length < 5 ||
+      !referrerEmail.includes("@")
+    ) {
+      setReferrerValidation({ checking: false, valid: null });
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      setReferrerValidation({ checking: true, valid: null });
+      try {
+        const response = await fetch(
+          `/api/hub/auth/validate-referrer?email=${encodeURIComponent(referrerEmail)}`,
+        );
+        const data = await response.json();
+        setReferrerValidation({
+          checking: false,
+          valid: data.valid,
+          name: data.member?.name,
+        });
+      } catch {
+        setReferrerValidation({ checking: false, valid: null });
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [referrerEmail]);
+
+  const handleBlur = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+
+    const newErrors = { ...errors };
+
+    switch (field) {
+      case "username":
+        newErrors.username = validateUsername(username);
+        break;
+      case "phone":
+        newErrors.phone = validatePhone(phone);
+        break;
+      case "email":
+        newErrors.email = validateEmail(email);
+        break;
+      case "fullName":
+        newErrors.fullName = fullName.trim() ? null : "Full name is required";
+        break;
+      case "password":
+        newErrors.password =
+          password.length < 8 ? "Password must be at least 8 characters" : null;
+        if (mode === "signup" && confirmPassword && touched.confirmPassword) {
+          newErrors.confirmPassword =
+            password !== confirmPassword ? "Passwords do not match" : null;
+        }
+        break;
+      case "confirmPassword":
+        newErrors.confirmPassword =
+          password !== confirmPassword ? "Passwords do not match" : null;
+        break;
+    }
+
+    setErrors(newErrors);
+  };
+
+  const authMutation = useMutation({
+    mutationFn: async (data: {
+      email: string;
+      password: string;
+      fullName?: string;
+      username?: string;
+      phone?: string;
+      referrerEmail?: string;
+    }) => {
+      const res = await apiRequest("POST", `/api/hub/auth/${mode}`, data);
+      return res.json();
+    },
+    onSuccess: (result) => {
+      if (mode === "signup") {
+        if (result.needsConfirmation === false && result.session) {
+          localStorage.setItem(
+            "supabase.auth.token",
+            JSON.stringify(result.session),
+          );
+          setLocation("/hub/dashboard");
+        } else {
+          setSignupSuccess(true);
+        }
+        return;
+      }
+
+      if (result.session) {
+        localStorage.setItem(
+          "supabase.auth.token",
+          JSON.stringify(result.session),
+        );
+        setLocation("/hub/dashboard");
+      }
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message || "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const forgotPasswordMutation = useMutation({
+    mutationFn: async (emailValue: string) => {
+      const res = await apiRequest("POST", "/api/hub/auth/forgot-password", {
+        email: emailValue,
+      });
+      return res.json();
+    },
+    onSuccess: () => {
+      setEmailSent(true);
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send reset email.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (mode === "signup") {
+      const emailError = validateEmail(email);
+      const usernameError = validateUsername(username);
+      const phoneError = validatePhone(phone);
+      const fullNameError = fullName.trim() ? null : "Full name is required";
+      const passwordError =
+        password.length < 8 ? "Password must be at least 8 characters" : null;
+      const confirmPasswordError =
+        password !== confirmPassword ? "Passwords do not match" : null;
+
+      const newErrors: FormErrors = {
+        email: emailError,
+        username: usernameError,
+        phone: phoneError,
+        fullName: fullNameError,
+        password: passwordError,
+        confirmPassword: confirmPasswordError,
+      };
+
+      setErrors(newErrors);
+      setTouched({
+        email: true,
+        username: true,
+        phone: true,
+        fullName: true,
+        password: true,
+        confirmPassword: true,
+      });
+
+      if (
+        emailError ||
+        usernameError ||
+        phoneError ||
+        fullNameError ||
+        passwordError ||
+        confirmPasswordError
+      ) {
+        toast({
+          title: "Please fix the errors",
+          description: "Check the form for validation errors",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (
+        referrerEmail &&
+        (!referrerEmail.includes("@") || referrerEmail.length < 5)
+      ) {
+        toast({
+          title: "Invalid referrer email",
+          description: "Please enter a valid email address for the referrer",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      authMutation.mutate({
+        email,
+        password,
+        fullName,
+        username,
+        phone: normalizePhone(phone),
+        referrerEmail: referrerEmail || undefined,
+      });
+    } else {
+      const emailError = validateEmail(email);
+      const passwordError =
+        password.length < 8 ? "Password must be at least 8 characters" : null;
+
+      if (emailError || passwordError) {
+        setErrors({ email: emailError, password: passwordError });
+        setTouched({ email: true, password: true });
+        return;
+      }
+
+      authMutation.mutate({ email, password });

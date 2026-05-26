@@ -1,0 +1,2 @@
+client/src/pages/HubDashboard.tsx:    supabase.auth.getSession().then(({ data: { session } }) => {
+web/src/app/(protected)/dashboard/page.tsx:    supabase.auth.getSession().then(({ data: { session } }) => {

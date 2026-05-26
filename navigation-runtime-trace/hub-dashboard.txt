@@ -1,0 +1,260 @@
+import { useEffect, useMemo, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
+import {
+  DashboardHeroCurrentPosition,
+  DashboardTopBar,
+  IdeaPipelineSection,
+  MyContributionsSection,
+  CooperativeActivitySection,
+  ProgramsSection,
+  RelationshipTrustSection,
+  ActivityFeed,
+  NotificationPreferencesPanel,
+  ContributionActivity,
+  PipelineDetailPanel,
+  SubmitIdeaModal,
+  LearningHistorySection,
+  IELTSSection,
+  MultilingualSection,
+  NotificationBell,
+} from "@/components/dashboard/stubs";
+import { InvitationAcceptanceSection } from "@/components/dashboard/InvitationAcceptanceSection";
+import { dashboardMockData, groupPipelineByStage } from "@/components/dashboard/mockData";
+import type {
+  CooperativeActivityItem,
+  DashboardEntryState,
+  HeroFeedback,
+  InteractionCapability,
+  LocalFeedback,
+  PipelineItem,
+  PipelineViewMode,
+} from "@/components/dashboard/types";
+
+const HUB_API_BASE = import.meta.env.VITE_HUB_API_BASE_URL ?? "";
+
+function makeFeedback(message: string): LocalFeedback {
+  return {
+    id: `feedback-${Date.now()}`,
+    message,
+    tone: "success",
+  };
+}
+
+export default function HubDashboard() {
+  console.log("CANONICAL_RUNTIME_MARKER");
+  const [entryState, setEntryState] = useState<DashboardEntryState>("loading");
+  const [pendingInvitationId, setPendingInvitationId] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<PipelineViewMode>("all");
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const [pipelineItems, setPipelineItems] = useState<PipelineItem[]>(dashboardMockData.pipelineItems);
+  const [discussionJoinedIds, setDiscussionJoinedIds] = useState<string[]>([]);
+  const [supportedIds, setSupportedIds] = useState<string[]>([]);
+  const [adoptionConsideredIds, setAdoptionConsideredIds] = useState<string[]>([]);
+  const [isSubmitIdeaOpen, setIsSubmitIdeaOpen] = useState(false);
+  const [latestFeedback, setLatestFeedback] = useState<LocalFeedback | null>(null);
+  const [localActivity, setLocalActivity] = useState<CooperativeActivityItem[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const supabase = createClient();
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (cancelled) return;
+
+      const token = session?.access_token ?? "";
+
+      if (!token) {
+        setEntryState("unauthenticated");
+        return;
+      }
+
+      fetch(`${HUB_API_BASE}/api/member/me`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            if (!cancelled) {
+              setErrorMessage(null);
+              setEntryState("member");
+            }
+            return null;
+          }
+
+          if (res.status === 401 || res.status === 403) {
+            if (!cancelled) {
+              setErrorMessage(null);
+              setEntryState("unauthenticated");
+            }
+            return null;
+          }
+
+          if (res.status === 404) {
+            return fetch(`${HUB_API_BASE}/api/member/pending-invitation`, {
+              headers: { Authorization: `Bearer ${token}` },
+            }).then(async (r) => ({
+              status: r.status,
+              body: await r.json().catch(() => ({})),
+            }));
+          }
+
+          if (!cancelled) {
+            setErrorMessage("Unable to load dashboard state.");
+            setEntryState("error");
+          }
+          return null;
+        })
+        .then((result) => {
+          if (!result || cancelled) return;
+
+          if (result.status !== 200) {
+            setErrorMessage("Unable to load invitation state.");
+            setEntryState("error");
+            return;
+          }
+
+          if (result.body?.invitation?.id) {
+            setPendingInvitationId(result.body.invitation.id);
+            setEntryState("invited_pending_acceptance");
+          } else {
+            setPendingInvitationId(null);
+            setEntryState("non_member_no_invitation");
+          }
+        })
+        .catch(() => {
+          if (!cancelled) {
+            setErrorMessage("Unable to load dashboard state.");
+            setEntryState("error");
+          }
+        });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!latestFeedback) return;
+
+    const timeout = window.setTimeout(() => {
+      setLatestFeedback(null);
+    }, 2200);
+
+    return () => window.clearTimeout(timeout);
+  }, [latestFeedback]);
+
+  const grouped = useMemo(() => groupPipelineByStage(pipelineItems), [pipelineItems]);
+
+  const filteredItems =
+    viewMode === "all"
+      ? pipelineItems
+      : grouped[viewMode] || [];
+
+  const selectedItem =
+    pipelineItems.find((item) => item.id === selectedItemId) ?? null;
+
+  const isMember = entryState === "member";
+
+  const capability: InteractionCapability = isMember
+    ? {
+        canSubmitIdea: true,
+        canJoinDiscussion: true,
+        canShowSupport: true,
+        canConsiderAdoption: true,
+        explanation:
+          "As a cooperative member, you can take part in the available dashboard actions in this view.",
+      }
+    : {
+        canSubmitIdea: true,
+        canJoinDiscussion: false,
+        canShowSupport: false,
+        canConsiderAdoption: false,
+        explanation:
+          "You can share a local idea here. Other cooperative actions stay read-only until membership is available.",
+      };
+
+  const contributionCards = [
+    {
+      label: "Ideas Submitted",
+      value: pipelineItems.filter((item) => item.id.startsWith("idea-local-")).length,
+      helper: "Local ideas added during this dashboard session.",
+    },
+    {
+      label: "Discussions Joined",
+      value: discussionJoinedIds.length,
+      helper: "Local discussion participation toggled from the detail panel.",
+    },
+    {
+      label: "Refinements Made",
+      value: dashboardMockData.contributions.refinementsMade,
+      helper: "Static mock refinement count for this slice.",
+    },
+    {
+      label: "Supports Given",
+      value: supportedIds.length,
+      helper: "Local support actions reflected immediately in the workflow.",
+    },
+  ];
+
+  const combinedActivity = [...localActivity, ...dashboardMockData.cooperativeActivity];
+
+  const heroFeedback: HeroFeedback | null = latestFeedback
+    ? {
+        title: "Local workflow updated",
+        summary: latestFeedback.message,
+        chipLabel: "Local feedback",
+      }
+    : null;
+
+  const pushActivity = (item: CooperativeActivityItem) => {
+    setLocalActivity((current) => [item, ...current].slice(0, 8));
+  };
+
+  const handleSubmitIdea = (payload: {
+    title: string;
+    summary: string;
+    authorLabel: string;
+  }) => {
+    const newId = `idea-local-${Date.now()}`;
+
+    const newItem: PipelineItem = {
+      id: newId,
+      title: payload.title,
+      summary: payload.summary,
+      stage: "idea",
+      authorLabel: payload.authorLabel,
+      supportCount: 0,
+      discussionCount: 0,
+      isMemberActionable: isMember,
+    };
+
+    setPipelineItems((current) => [newItem, ...current]);
+    setViewMode("all");
+    setSelectedItemId(newId);
+    setIsSubmitIdeaOpen(false);
+
+    const feedback = makeFeedback(`Idea "${payload.title}" was added to the local pipeline.`);
+    setLatestFeedback(feedback);
+
+    pushActivity({
+      id: `activity-idea-${Date.now()}`,
+      type: "idea",
+      title: "Local idea submitted",
+      summary: `A new local idea, "${payload.title}", entered the Idea stage.`,
+      timestampLabel: "Just now",
+    });
+  };
+
+  const handleJoinDiscussion = (itemId: string) => {
+    const item = pipelineItems.find((entry) => entry.id === itemId);
+    if (!item || !capability.canJoinDiscussion) return;
+
+    const hasJoined = discussionJoinedIds.includes(itemId);
+
+    setDiscussionJoinedIds((current) =>
+      hasJoined ? current.filter((id) => id !== itemId) : [...current, itemId]
+    );
+
