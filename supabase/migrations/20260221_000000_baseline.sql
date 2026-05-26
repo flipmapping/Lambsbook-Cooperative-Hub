@@ -1,0 +1,6 @@
+-- BASELINE MIGRATION
+-- Date: 2026-02-21
+-- Description:
+-- This migration establishes the canonical baseline.
+-- All schema objects existing prior to this point
+-- are considered version 0 and governed from here onward.

@@ -1,0 +1,6 @@
+client/src/components/HeroSection.tsx:import heroImage from '@assets/generated_images_webp/nyc_skyline_with_statue_of_liberty.webp';
+client/src/components/JobCategoriesSection.tsx:import hotelImage from '@assets/generated_images_webp/hotel_hospitality_worker_professional.webp';
+client/src/components/JobCategoriesSection.tsx:import healthcareImage from '@assets/generated_images_webp/healthcare_caregiver_professional_setting.webp';
+client/src/components/JobCategoriesSection.tsx:import foodImage from '@assets/generated_images_webp/food_service_kitchen_worker.webp';
+client/src/components/StudyAbroadSection.tsx:import studentsImage from '@assets/generated_images_webp/international_students_university_campus.webp';
+client/src/components/SuccessStories.tsx:import familyImage from '@assets/generated_images_webp/happy_immigrant_family_american_home.webp';

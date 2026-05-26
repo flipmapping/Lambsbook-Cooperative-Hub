@@ -1,0 +1,2 @@
+5:import usaImage from '@assets/stock_images/canadian_landscape_w_f2194763.jpg';
+22:    { name: 'USA', image: usaImage, flag: '🇺🇸' },

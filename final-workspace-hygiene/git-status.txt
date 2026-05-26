@@ -1,0 +1,22 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	design_guidelines.md
+	docs/
+	files.zip
+	final-workspace-hygiene/
+	replit.md
+	script/
+	src/
+	supabase-collaborator-tables.sql
+	supabase-fix-auth-trigger.sql
+	supabase-master-schema.sql
+	supabase-partner-programs-schema.sql
+	supabase-partner-revenue-sharing.sql
+	supabase-profiles-table.sql
+	supabase/
+	web/.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
