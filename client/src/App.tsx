@@ -5,6 +5,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { LanguageProvider } from '@/lib/LanguageContext';
+import { createClient } from '@/lib/supabase/client';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { EB3Categories } from '@/components/EB3Categories';
@@ -161,7 +162,31 @@ function Router() {
   );
 }
 
+
 function App() {
+
+  useRef(null);
+
+  //
+  // SUPABASE_SESSION_BRIDGE
+  //
+  try {
+    const raw = localStorage.getItem('supabase.auth.token');
+
+    if (raw) {
+      const parsed = JSON.parse(raw);
+
+      if (parsed?.access_token && parsed?.refresh_token) {
+        const supabase = createClient();
+
+        supabase.auth.setSession({
+          access_token: parsed.access_token,
+          refresh_token: parsed.refresh_token,
+        }).catch(() => {});
+      }
+    }
+  } catch {}
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
