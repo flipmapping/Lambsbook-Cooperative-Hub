@@ -1,0 +1,74 @@
+import { Router, Request } from "express";
+import { requireSBUAccess, SBURequest } from "../middleware/requireSBUAccess";
+import { requireSBURole } from "../middleware/requireSBURole";
+import { postTransaction, closeFinancialPeriod } from "../dal/financial";
+
+const router = Router();
+
+router.post(
+  "/api/sbu/:sbu_id/transactions",
+  requireSBUAccess,
+  requireSBURole(["finance"]),
+  async (req: Request, res) => {
+    const sbuReq = req as SBURequest;
+    try {
+      const token = sbuReq.user?.token?.trim();
+
+      if (!token || !sbuReq.sbu_id) {
+        return res.status(400).json({ error: "Invalid request context" });
+      }
+
+      const { transaction_type, amount, description } = req.body;
+
+      if (!transaction_type || typeof amount !== "number") {
+        return res.status(400).json({ error: "Invalid transaction payload" });
+      }
+
+      const result = await postTransaction(token, {
+        sbu_id: sbuReq.sbu_id,
+        transaction_type,
+        amount,
+        description,
+      });
+
+      return res.status(200).json({ success: true, data: result });
+    } catch (err: any) {
+      return res.status(400).json({
+        success: false,
+        error: err.message || "Transaction failed",
+      });
+    }
+  },
+);
+router.post(
+  "/api/sbu/:sbu_id/close-period",
+  requireSBUAccess,
+  requireSBURole(["admin", "owner"]),
+  async (req: Request, res) => {
+    const sbuReq = req as SBURequest;
+    try {
+      const token = sbuReq.user?.token?.trim();
+
+      if (!token || !sbuReq.sbu_id) {
+        return res.status(400).json({
+          success: false,
+          error: "Invalid request context",
+        });
+      }
+
+      const result = await closeFinancialPeriod(token, sbuReq.sbu_id);
+
+      return res.status(200).json({
+        success: true,
+        data: result,
+      });
+    } catch (err: any) {
+      return res.status(400).json({
+        success: false,
+        error: err.message || "Close period failed",
+      });
+    }
+  }
+);
+
+export default router;

@@ -1,0 +1,39 @@
+import { Request, Response, NextFunction } from "express";
+import { getUserClient } from "../lib/supabaseClients";
+import type { AuthenticatedRequest } from "../types/requestContext";
+
+export async function detectPlatformAdmin(
+  req: Request,
+  _res: Response,
+  next: NextFunction
+) {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    const token = authReq.user?.token?.trim();
+
+    if (!token) {
+      authReq.isPlatformAdmin = false;
+      return next();
+    }
+
+    const supabase = getUserClient(token);
+
+    const { data, error } = await supabase
+      .from("platform_admins")
+      .select("user_id")
+      .eq("user_id", authReq.user?.id)
+      .single();
+
+    if (error || !data) {
+      authReq.isPlatformAdmin = false;
+    } else {
+      authReq.isPlatformAdmin = true;
+    }
+
+    return next();
+  } catch {
+    const authReq = req as AuthenticatedRequest;
+    authReq.isPlatformAdmin = false;
+    return next();
+  }
+}

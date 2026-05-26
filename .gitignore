@@ -1,0 +1,42 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+
+# Archives and logs
+*.tar.gz
+*.log
+
+# Local backup artifacts
+*.bak_*
+*.before_*
+
+# Local backup folders
+backups/
+backup-secure/
+
+# Private recovery and local-only artifacts
+_private_*
+
+tmp/
+*.bak*
+
+web/.next/
+
+# Canonical repository hygiene
+.next/
+dist/
+coverage/
+runtime-archive/
+runtime-convergence-phase*/
+topology-convergence/
+convergence-batching/
+operational-validation/
+final-runtime-certification/
+openbrain-migration-packet/
+preservation-truth-inventory/
+git-history-cleanup/
+git-transport-diagnostics/
+git-final-diagnostics/
+.git.backup.before-filter-repo/
