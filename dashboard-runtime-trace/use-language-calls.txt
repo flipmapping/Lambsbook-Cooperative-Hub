@@ -1,0 +1,9 @@
+client/src/components/AdvantagesSection.tsx:  const { t } = useLanguage();
+client/src/components/ContactSection.tsx:  const { t } = useLanguage();
+client/src/components/CountriesSection.tsx:  const { t } = useLanguage();
+client/src/components/EB3Categories.tsx:  const { t } = useLanguage();
+client/src/components/Footer.tsx:  const { t } = useLanguage();
+client/src/components/Header.tsx:  const { t } = useLanguage();
+client/src/components/HeroSection.tsx:  const { t } = useLanguage();
+client/src/components/ProcessSection.tsx:  const { t } = useLanguage();
+client/src/components/ServicesSection.tsx:  const { t } = useLanguage();

@@ -1,0 +1,2 @@
+14:  const studentsImage =
+75:                src={studentsImage}
