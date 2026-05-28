@@ -1,0 +1,17 @@
+./server/lib/supabase-dal.ts:328:      .from('program_eligibility')
+./server/lib/supabase-dal.ts:332:        eligible: data.eligible ?? true,
+./server/lib/supabase-dal.ts:346:      .from('program_eligibility')
+./server/lib/supabase-dal.ts:359:      .from('program_eligibility')
+./server/lib/supabase-dal.ts:374:      .from('program_eligibility')
+./server/lib/supabase-types.ts:93:  eligible: boolean;
+./server/lib/supabase-types.ts:100:  eligible?: boolean;
+./server/lib/supabase-types.ts:104:  eligible?: boolean;
+./server/routes/admin.ts:111:      eligible: req.body.eligible ?? true,
+./server/routes/admin.ts:125:      eligible: req.body.eligible,
+./server/services/ai.ts:85:  if (lowerMessage.includes('requirement') || lowerMessage.includes('qualify') || lowerMessage.includes('eligible')) {
+./client/src/components/admin/EnrollmentWorkflow.tsx:29:  eligible: boolean;
+./client/src/components/admin/EnrollmentWorkflow.tsx:61:        eligible: true,
+./client/src/components/admin/EnrollmentWorkflow.tsx:105:      ? memberEligibility.some((e) => e.program_id === enrollProgramId && e.eligible)
+./client/src/components/admin/EnrollmentWorkflow.tsx:221:                    Not yet eligible
+./client/src/pages/MemberHub.tsx:81:    eligibility: { eligible: boolean } | null;
+./supabase-partner-revenue-sharing.sql:7:-- Catalog of revenue-share eligible items (programs, products, services)

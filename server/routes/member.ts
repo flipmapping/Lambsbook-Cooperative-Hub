@@ -15,7 +15,6 @@ const supabaseDAL = new SupabaseDAL();
 const attachUserContextSafe = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
   // If no Authorization header → skip middleware entirely
   if (!req.headers.authorization) {
-    req.user = undefined;
     return next();
   }
 

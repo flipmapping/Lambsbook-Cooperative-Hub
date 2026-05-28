@@ -1,0 +1,30 @@
+./server/lib/supabase-dal.ts:32:        invitor_id: data.invitor_id ?? null,
+./server/lib/supabase-dal.ts:123:    if (data.invitee_id === data.invitor_id) {
+./server/lib/supabase-dal.ts:136:        invitor_id: data.invitor_id,
+./server/lib/supabase-dal.ts:186:      .eq('invitor_id', invitorId)
+./server/lib/supabase-dal.ts:570:    if (!collaboration || collaboration.invitor_id !== data.member_id) {
+./server/lib/supabase-types.ts:21:  invitor_id: string | null;
+./server/lib/supabase-types.ts:31:  invitor_id?: string | null;
+./server/lib/supabase-types.ts:46:  invitor_id: string;
+./server/lib/supabase-types.ts:54:  invitor_id: string;
+./server/routes/member.ts:94:      .from("member_invitations")
+./server/routes/member.ts:95:      .update({ invited_user_id: user.id })
+./server/routes/member.ts:97:      .is("invited_user_id", null)
+./server/routes/member.ts:101:      .from("member_invitations")
+./server/routes/member.ts:103:      .eq("invited_user_id", user.id)
+./server/routes/member.ts:170:          p_invited_user_id: null,
+./server/routes/member.ts:265:        "accept_member_invitation",
+./server/services/supabase-hub.ts:599:    .select("id, email, full_name, invitor_id, member_type, activity_status")
+./server/routes.ts:1114:        .from("member_invitations")
+./server/routes.ts:1115:        .update({ invited_user_id: user.id })
+./server/routes.ts:1117:        .is("invited_user_id", null)
+./server/routes.ts:1129:        .from("member_invitations")
+./server/routes.ts:1130:        .select("id, invited_user_id, status")
+./server/routes.ts:1144:        "accept_member_invitation",
+./server/routes.ts:1236:        { p_invited_user_id: invitedUserId }
+./server/routes.ts:1332:      // Return null for now - will fetch from Supabase members.invitor_id in future
+./client/src/pages/HubAdminDashboard.tsx:33:  invitor_id: string | null;
+./client/src/pages/HubAdminDashboard.tsx:372:                          {member.invitor_id && ` | Invitor: ${member.invitor_id.slice(0, 8)}...`}
+./client/src/pages/HubAdminDashboard.tsx:430:                  {members.filter(m => m.invitor_id).slice(0, 10).map((member) => (
+./client/src/pages/HubAdminDashboard.tsx:441:                          {member.invitor_id?.slice(0, 8)}...
+./client/src/pages/HubAdminDashboard.tsx:446:                  {members.filter(m => m.invitor_id).length === 0 && (

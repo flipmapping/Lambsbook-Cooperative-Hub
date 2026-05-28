@@ -1,0 +1,150 @@
+client/src/components/admin/EnrollmentWorkflow.tsx:15:  member_type: string;
+client/src/components/admin/EnrollmentWorkflow.tsx:27:  member_id: string;
+client/src/components/admin/EnrollmentWorkflow.tsx:33:  members: Member[];
+client/src/components/admin/EnrollmentWorkflow.tsx:37:export function EnrollmentWorkflow({ members, programs }: EnrollmentWorkflowProps) {
+client/src/components/admin/EnrollmentWorkflow.tsx:46:  const { data: memberEligibility = [], isLoading: eligibilityLoading } = useQuery<ProgramEligibility[]>({
+client/src/components/admin/EnrollmentWorkflow.tsx:49:      const res = await fetch(`/api/admin/program-eligibility?member_id=${enrollMemberId}`);
+client/src/components/admin/EnrollmentWorkflow.tsx:57:    mutationFn: async ({ member_id, program_id }: { member_id: string; program_id: string }) => {
+client/src/components/admin/EnrollmentWorkflow.tsx:59:        member_id,
+client/src/components/admin/EnrollmentWorkflow.tsx:76:      member_id,
+client/src/components/admin/EnrollmentWorkflow.tsx:81:      member_id: string;
+client/src/components/admin/EnrollmentWorkflow.tsx:87:        member_id,
+client/src/components/admin/EnrollmentWorkflow.tsx:105:      ? memberEligibility.some((e) => e.program_id === enrollProgramId && e.eligible)
+client/src/components/admin/EnrollmentWorkflow.tsx:122:            Select a member and program, confirm eligibility, then create the payment draft event.
+client/src/components/admin/EnrollmentWorkflow.tsx:128:            <Label htmlFor="enroll-member">Member</Label>
+client/src/components/admin/EnrollmentWorkflow.tsx:136:              <SelectTrigger id="enroll-member" data-testid="select-enroll-member">
+client/src/components/admin/EnrollmentWorkflow.tsx:137:                <SelectValue placeholder="Select a member..." />
+client/src/components/admin/EnrollmentWorkflow.tsx:140:                {members.map((m) => (
+client/src/components/admin/EnrollmentWorkflow.tsx:141:                  <SelectItem key={m.id} value={m.id} data-testid={`option-member-${m.id}`}>
+client/src/components/admin/EnrollmentWorkflow.tsx:142:                    {m.member_type} — {m.id.slice(0, 8)}...
+client/src/components/admin/EnrollmentWorkflow.tsx:206:                  Select member and program first
+client/src/components/admin/EnrollmentWorkflow.tsx:228:                        member_id: enrollMemberId,
+client/src/components/admin/EnrollmentWorkflow.tsx:252:                  member_id: enrollMemberId,
+client/src/components/admin/EnrollmentWorkflow.tsx:270:                Requires: member, program, amount &gt; 0, and confirmed eligibility.
+client/src/components/dashboard/types.ts:4:  | "member"
+client/src/components/dashboard/types.ts:5:  | "invited_pending_acceptance"
+client/src/components/dashboard/types.ts:6:  | "non_member_no_invitation"
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:4:// Mounts inside HubDashboard for entryState === "invited_pending_acceptance".
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:10:// - No entryState mutation — acceptance triggers onAccepted callback only
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:16:// - Calls existing POST /api/member/accept-invitation with { invitationId }
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:21:// - onAccepted: () => void — signals HubDashboard to transition to member state
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:53:      const res = await fetch(`${HUB_API_BASE}/api/member/accept-invitation`, {
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:120:          invitation activates your membership and unlocks full cooperative
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:124:          Invitation acceptance is the sole membership activation surface.
+client/src/lib/hubTranslations.ts:67:    hub_cta_desc: 'Join thousands of members earning across our programs. Sign up takes less than a minute.',
+client/src/lib/hubTranslations.ts:94:    hub_faq1_a: 'A collaboration relationship is a permanent connection between two members. When you invite someone to join Lambsbook, that relationship is established for life. Both parties benefit when either contributes to or participates in platform activities.',
+client/src/lib/hubTranslations.ts:96:    hub_faq2_a: 'Traditional referral programs focus on one-time rewards for bringing customers. Lambsbook\'s collaboration model creates lasting partnerships where members work together, share knowledge, and benefit from each other\'s growth over time — not just from a single transaction.',
+client/src/lib/hubTranslations.ts:102:    hub_faq5_a: 'Joining Lambsbook as a member is free. You can explore programs, build relationships, and participate in the community at no cost. Paid subscriptions unlock additional benefits and services.',
+client/src/lib/lambsbookTutoringContent.ts:12:      "Unlimited usage for members",
+client/src/lib/lambsbookTutoringContent.ts:55:    memberPath: "/hub/dashboard",
+client/src/pages/AdminGovernance.tsx:68:    queryKey: ['/api/member/admin/governance-status'],
+client/src/pages/AdminGovernance.tsx:79:      const res = await apiRequest('POST', '/api/member/admin/close-period');
+client/src/pages/AdminGovernance.tsx:81:      await queryClient.invalidateQueries({ queryKey: ['/api/member/admin/governance-status'] });
+client/src/pages/AdminGovernance.tsx:109:      const res = await apiRequest('POST', '/api/member/admin/toggle-override', {
+client/src/pages/AdminGovernance.tsx:113:      await queryClient.invalidateQueries({ queryKey: ['/api/member/admin/governance-status'] });
+client/src/pages/AdminGovernance.tsx:143:      const res = await apiRequest('POST', '/api/member/admin/set-minimum-capital', {
+client/src/pages/AdminGovernance.tsx:147:      await queryClient.invalidateQueries({ queryKey: ['/api/member/admin/governance-status'] });
+client/src/pages/HubAdminDashboard.tsx:30:  member_type: string;
+client/src/pages/HubAdminDashboard.tsx:31:  membership_status: MembershipStatus;
+client/src/pages/HubAdminDashboard.tsx:49:  member_id: string;
+client/src/pages/HubAdminDashboard.tsx:58:  member_id: string;
+client/src/pages/HubAdminDashboard.tsx:65:  members: { total: number; free: number; paid: number; active: number; inactive: number };
+client/src/pages/HubAdminDashboard.tsx:75:  const [memberFilter, setMemberFilter] = useState<{ membership?: string; activity?: string }>({});
+client/src/pages/HubAdminDashboard.tsx:83:  const { data: members = [], isLoading: membersLoading } = useQuery<Member[]>({
+client/src/pages/HubAdminDashboard.tsx:84:    queryKey: ["/api/admin/members", memberFilter],
+client/src/pages/HubAdminDashboard.tsx:101:      const res = await apiRequest("PATCH", `/api/admin/members/${id}/membership`, { membership_status: status });
+client/src/pages/HubAdminDashboard.tsx:105:      queryClient.invalidateQueries({ queryKey: ["/api/admin/members"] });
+client/src/pages/HubAdminDashboard.tsx:113:      const res = await apiRequest("PATCH", `/api/admin/members/${id}/activity`, { activity_status: status });
+client/src/pages/HubAdminDashboard.tsx:117:      queryClient.invalidateQueries({ queryKey: ["/api/admin/members"] });
+client/src/pages/HubAdminDashboard.tsx:178:      queryClient.invalidateQueries({ queryKey: ["/api/admin/members"] });
+client/src/pages/HubAdminDashboard.tsx:182:        description: `Checked ${data.checked} members, deactivated ${data.deactivated}` 
+client/src/pages/HubAdminDashboard.tsx:220:          <p className="text-muted-foreground">Manage programs, members, earnings, and tutors</p>
+client/src/pages/HubAdminDashboard.tsx:229:          <TabsTrigger value="members" data-testid="tab-members">Members</TabsTrigger>
+client/src/pages/HubAdminDashboard.tsx:243:                <StatCard title="Total Members" value={stats.members.total} icon={Users} subtitle={`${stats.members.active} active`} />
+client/src/pages/HubAdminDashboard.tsx:254:                    <div className="flex justify-between"><span>Free Members</span><Badge variant="secondary">{stats.members.free}</Badge></div>
+client/src/pages/HubAdminDashboard.tsx:255:                    <div className="flex justify-between"><span>Paid Members</span><Badge variant="default">{stats.members.paid}</Badge></div>
+client/src/pages/HubAdminDashboard.tsx:256:                    <div className="flex justify-between"><span>Active</span><Badge className="bg-green-500">{stats.members.active}</Badge></div>
+client/src/pages/HubAdminDashboard.tsx:257:                    <div className="flex justify-between"><span>Inactive</span><Badge variant="destructive">{stats.members.inactive}</Badge></div>
+client/src/pages/HubAdminDashboard.tsx:333:        <TabsContent value="members" className="space-y-4">
+client/src/pages/HubAdminDashboard.tsx:337:              <CardDescription>View and manage member status</CardDescription>
+client/src/pages/HubAdminDashboard.tsx:341:                <Select onValueChange={(v) => setMemberFilter(prev => ({ ...prev, membership: v === "all" ? undefined : v }))}>
+client/src/pages/HubAdminDashboard.tsx:342:                  <SelectTrigger className="w-40" data-testid="select-membership-filter">
+client/src/pages/HubAdminDashboard.tsx:362:              {membersLoading ? (
+client/src/pages/HubAdminDashboard.tsx:363:                <div className="text-center py-4">Loading members...</div>
+client/src/pages/HubAdminDashboard.tsx:366:                  {members.map((member) => (
+client/src/pages/HubAdminDashboard.tsx:367:                    <div key={member.id} className="flex items-center justify-between p-3 border rounded-lg" data-testid={`member-row-${member.id}`}>
+client/src/pages/HubAdminDashboard.tsx:369:                        <div className="font-medium">{member.member_type}</div>
+client/src/pages/HubAdminDashboard.tsx:371:                          Joined: {new Date(member.join_date).toLocaleDateString()}
+client/src/pages/HubAdminDashboard.tsx:372:                          {member.invitor_id && ` | Invitor: ${member.invitor_id.slice(0, 8)}...`}
+client/src/pages/HubAdminDashboard.tsx:376:                        <Badge variant={member.membership_status === "paid" ? "default" : "secondary"}>
+client/src/pages/HubAdminDashboard.tsx:377:                          {member.membership_status}
+client/src/pages/HubAdminDashboard.tsx:379:                        <Badge variant={member.activity_status === "active" ? "default" : "destructive"}>
+client/src/pages/HubAdminDashboard.tsx:380:                          {member.activity_status}
+client/src/pages/HubAdminDashboard.tsx:386:                            id: member.id, 
+client/src/pages/HubAdminDashboard.tsx:387:                            status: member.membership_status === "paid" ? "free" : "paid" 
+client/src/pages/HubAdminDashboard.tsx:390:                          data-testid={`button-toggle-membership-${member.id}`}
+client/src/pages/HubAdminDashboard.tsx:392:                          {member.membership_status === "paid" ? <ArrowDownCircle className="h-4 w-4" /> : <ArrowUpCircle className="h-4 w-4" />}
+client/src/pages/HubAdminDashboard.tsx:398:                            id: member.id, 
+client/src/pages/HubAdminDashboard.tsx:399:                            status: member.activity_status === "active" ? "inactive" : "active" 
+client/src/pages/HubAdminDashboard.tsx:402:                          data-testid={`button-toggle-activity-${member.id}`}
+client/src/pages/HubAdminDashboard.tsx:404:                          {member.activity_status === "active" ? <UserX className="h-4 w-4" /> : <UserCheck className="h-4 w-4" />}
+client/src/pages/HubAdminDashboard.tsx:409:                  {members.length === 0 && (
+client/src/pages/HubAdminDashboard.tsx:410:                    <div className="text-center py-4 text-muted-foreground">No members found</div>
+client/src/pages/HubAdminDashboard.tsx:424:                  View permanent cooperative relationship lineage. Each member has one originating cooperative relationship, 
+client/src/pages/HubAdminDashboard.tsx:425:                  but can invite multiple members.
+client/src/pages/HubAdminDashboard.tsx:430:                  {members.filter(m => m.invitor_id).slice(0, 10).map((member) => (
+client/src/pages/HubAdminDashboard.tsx:431:                    <div key={member.id} className="flex items-center justify-between p-3 border rounded-lg" data-testid={`collab-row-${member.id}`}>
+client/src/pages/HubAdminDashboard.tsx:433:                        <div className="font-medium text-sm">{member.member_type || 'Member'}</div>
+client/src/pages/HubAdminDashboard.tsx:435:                          ID: {member.id.slice(0, 8)}...
+client/src/pages/HubAdminDashboard.tsx:441:                          {member.invitor_id?.slice(0, 8)}...
+client/src/pages/HubAdminDashboard.tsx:446:                  {members.filter(m => m.invitor_id).length === 0 && (
+client/src/pages/HubAdminDashboard.tsx:464:                    <li>Each member can have only ONE invitor</li>
+client/src/pages/HubAdminDashboard.tsx:465:                    <li>A member can invite multiple invitees</li>
+client/src/pages/HubAdminDashboard.tsx:471:                    <li>Any member can share referral links</li>
+client/src/pages/HubAdminDashboard.tsx:513:                          Period: {earning.period} | Member: {earning.member_id.slice(0, 8)}...
+client/src/pages/HubAdminDashboard.tsx:594:                          Free class: {tutor.free_class_minutes_last_30_days} mins | Member: {tutor.member_id.slice(0, 8)}...
+client/src/pages/HubAdminDashboard.tsx:657:                  This will mark inactive members and pause their pending earnings.
+client/src/pages/HubAdminDashboard.tsx:685:          <EnrollmentWorkflow members={members} programs={programs} />
+client/src/pages/HubAuth.tsx:134:          name: data.member?.name,
+client/src/pages/HubAuth.tsx:739:                      No member found with this email. You can still sign up and
+client/src/pages/Dashboard.tsx:94:  const { data: members = [] } = useQuery<Member[]>({
+client/src/pages/Dashboard.tsx:95:    queryKey: ['/api/members'],
+client/src/pages/Dashboard.tsx:127:      return apiRequest('POST', '/api/members', data);
+client/src/pages/Dashboard.tsx:130:      queryClient.invalidateQueries({ queryKey: ['/api/members'] });
+client/src/pages/Dashboard.tsx:155:    { id: 'members', label: 'Team Members', icon: Users, section: 'main' },
+client/src/pages/Dashboard.tsx:306:                        {stats?.totalMembers || 0} members, {stats?.totalPartners || 0} partners
+client/src/pages/Dashboard.tsx:356:                      <Button variant="outline" className="justify-start" onClick={() => setIsAddMemberOpen(true)} data-testid="button-add-member">
+client/src/pages/Dashboard.tsx:534:                                <SelectValue placeholder="Select member" />
+client/src/pages/Dashboard.tsx:537:                                {members.map((member) => (
+client/src/pages/Dashboard.tsx:538:                                  <SelectItem key={member.id} value={member.id}>{member.name}</SelectItem>
+client/src/pages/Dashboard.tsx:568:            {activeTab === 'members' && (
+client/src/pages/Dashboard.tsx:572:                  <Button onClick={() => setIsAddMemberOpen(true)} data-testid="button-add-member-top">
+client/src/pages/Dashboard.tsx:579:                  {members.map((member) => (
+client/src/pages/Dashboard.tsx:580:                    <Card key={member.id} data-testid={`card-member-${member.id}`}>
+client/src/pages/Dashboard.tsx:584:                            <h4 className="font-semibold">{member.name}</h4>
+client/src/pages/Dashboard.tsx:585:                            <p className="text-sm text-muted-foreground">{member.role}</p>
+client/src/pages/Dashboard.tsx:586:                            <p className="text-sm text-muted-foreground mt-1">{member.email}</p>
+client/src/pages/Dashboard.tsx:587:                            {member.phone && <p className="text-sm text-muted-foreground">{member.phone}</p>}
+client/src/pages/Dashboard.tsx:589:                          <Badge variant={member.isActive ? 'default' : 'secondary'}>
+client/src/pages/Dashboard.tsx:590:                            {member.isActive ? 'Active' : 'Inactive'}
+client/src/pages/Dashboard.tsx:594:                          Code: {member.code}
+client/src/pages/Dashboard.tsx:599:                  {members.length === 0 && (
+client/src/pages/Dashboard.tsx:603:                        <h3 className="font-semibold mb-2">No team members yet</h3>
+client/src/pages/Dashboard.tsx:604:                        <p className="text-muted-foreground mb-4">Add team members to assign enquiries</p>
+client/src/pages/Dashboard.tsx:618:                      <DialogDescription>Add a new member to your team</DialogDescription>
+client/src/pages/Dashboard.tsx:633:                          <Label htmlFor="member-name">Name</Label>
+client/src/pages/Dashboard.tsx:634:                          <Input id="member-name" name="name" required data-testid="input-member-name" />
+client/src/pages/Dashboard.tsx:637:                          <Label htmlFor="member-email">Email</Label>
+client/src/pages/Dashboard.tsx:638:                          <Input id="member-email" name="email" type="email" required data-testid="input-member-email" />
+client/src/pages/Dashboard.tsx:641:                          <Label htmlFor="member-phone">Phone</Label>
+client/src/pages/Dashboard.tsx:642:                          <Input id="member-phone" name="phone" data-testid="input-member-phone" />
+client/src/pages/Dashboard.tsx:645:                          <Label htmlFor="member-role">Role</Label>
+client/src/pages/Dashboard.tsx:647:                            <SelectTrigger data-testid="select-member-role">
+client/src/pages/Dashboard.tsx:661:                        <Button type="submit" disabled={createMemberMutation.isPending} data-testid="button-submit-member">
+client/src/pages/Dashboard.tsx:874:              Sync member and partner data with your Supabase database for unified management.
+client/src/pages/Dashboard.tsx:884:          <CardDescription>Configure how team members receive notifications</CardDescription>
+client/src/pages/MemberHub.tsx:25:  member: {
+client/src/pages/MemberHub.tsx:27:    member_type: string;
+client/src/pages/MemberHub.tsx:28:    membership_status: MembershipStatus;
+client/src/pages/MemberHub.tsx:38:  member: {
+client/src/pages/MemberHub.tsx:39:    membership_status: MembershipStatus;

@@ -1,0 +1,62 @@
+client/src/components/ThemeToggle.tsx:9:    const savedTheme = localStorage.getItem('theme');
+client/src/components/ThemeToggle.tsx:20:    localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
+client/src/components/notifications/NotificationPreferencesPanel.tsx:10:  const token = localStorage.getItem("token") || "";
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:49:        ? localStorage.getItem("sb-access-token") ?? ""
+client/src/lib/LanguageContext.tsx:16:  const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+client/src/lib/LanguageContext.tsx:29:    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+client/src/lib/queryClient.ts:12:    const tokenData = localStorage.getItem("supabase.auth.token");
+client/src/pages/AuthCallback.tsx:30:          localStorage.setItem("supabase_access_token", accessToken);
+client/src/pages/AuthCallback.tsx:32:            localStorage.setItem("supabase_refresh_token", refreshToken);
+client/src/pages/HubAuth.tsx:194:          localStorage.setItem(
+client/src/pages/HubAuth.tsx:195:            "supabase.auth.token",
+client/src/pages/HubAuth.tsx:206:        localStorage.setItem(
+client/src/pages/HubAuth.tsx:207:          "supabase.auth.token",
+client/src/pages/HubAuthCallback.tsx:59:        localStorage.setItem("supabase.auth.token", JSON.stringify(tokenData));
+client/src/pages/TranscriptSubmission.tsx:49:  // Usage tracking - automatically checks auth status via localStorage
+client/src/pages/MemberHub.tsx:139:    const tokenData = localStorage.getItem("supabase.auth.token");
+client/src/pages/HubDashboard.tsx:64:    supabase.auth.getSession().then(({ data: { session } }) => {
+client/src/pages/LambsbookTutoring.tsx:42:    return localStorage.getItem('hub_member_id') || localStorage.getItem('hub_auth_token');
+client/src/hooks/useFeedbackUsage.ts:14:    return AUTH_TOKEN_KEYS.some(key => !!localStorage.getItem(key));
+client/src/hooks/useFeedbackUsage.ts:37:        const stored = localStorage.getItem(STORAGE_KEY);
+client/src/hooks/useFeedbackUsage.ts:71:      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+client/src/App.tsx:174:    const raw = localStorage.getItem('supabase.auth.token');
+client/src/App.tsx:182:        supabase.auth.setSession({
+server/lib/getUserEmailFromToken.ts:5: * Uses JWT from req.user.token.
+server/lib/getUserEmailFromToken.ts:6: * Does NOT mutate req.user.
+server/lib/getUserEmailFromToken.ts:15:  const { data, error } = await supabase.auth.getUser();
+server/middleware/attachUserContext.ts:5:export async function attachUserContext(req: Request, res: Response, next: NextFunction) {
+server/middleware/attachUserContext.ts:22:    const { data: userData, error: userError } = await supabase.auth.getUser();
+server/middleware/attachUserContext.ts:25:      console.error("[attachUserContext] auth.getUser failed", {
+server/routes/admin.ts:5:import { attachUserContext } from "../middleware/attachUserContext";
+server/routes/admin.ts:465:router.post('/enrollment-payment', attachUserContext, async (req: Request, res: Response) => {
+server/routes/devTestAuth.ts:4:import { attachUserContext } from '../middleware/attachUserContext';
+server/routes/devTestAuth.ts:8:router.get('/test-auth', attachUserContext, async (req: Request, res: Response) => {
+server/routes/member.ts:2:import { attachUserContext } from "../middleware/attachUserContext";
+server/routes/member.ts:15:const attachUserContextSafe = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+server/routes/member.ts:18:    req.user = undefined;
+server/routes/member.ts:23:  return attachUserContext(req as any, res as any, next);
+server/routes/member.ts:29:router.get("/me", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+server/routes/member.ts:31:    const user = req.user;
+server/routes/member.ts:69:router.get("/pending-invitation", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+server/routes/member.ts:71:    const user = req.user;
+server/routes/member.ts:134:router.post("/invitations", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+server/routes/member.ts:136:    const user = req.user;
+server/routes/member.ts:241:router.post("/accept-invitation", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+server/routes/member.ts:243:    const user = req.user;
+server/services/supabase-auth.ts:33:    const { data, error } = await supabase.auth.signInWithOtp({
+server/services/supabase-auth.ts:63:    const { data, error } = await supabase.auth.signInWithOtp({
+server/services/supabase-auth.ts:98:    const { data, error } = await supabase.auth.verifyOtp({
+server/services/supabase-auth.ts:129:    const { data, error } = await supabase.auth.signUp({
+server/services/supabase-auth.ts:163:    const { data, error } = await supabase.auth.signInWithPassword({
+server/services/supabase-auth.ts:193:    const { error } = await supabase.auth.signOut();
+server/services/supabase-auth.ts:213:    const { data: { user }, error } = await supabase.auth.getUser(accessToken);
+server/services/supabase-auth.ts:240:    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+server/routes.ts:31:} from "./services/supabase-auth";
+server/routes.ts:41:import { attachUserContext } from "./middleware/attachUserContext";
+server/routes.ts:1089:  app.post("/api/hub/member/accept-invitation", attachUserContext, async (req: Request, res: Response) => {
+server/routes.ts:1218:  app.post("/api/hub/member/issue-invitation", attachUserContext, async (req: Request, res: Response) => {
+server/routes.ts:1253:  app.get("/api/hub/member/me", attachUserContext, async (req: Request, res: Response) => {
+server/routes.ts:1304:  app.get("/api/hub/member/earnings", attachUserContext, async (req: Request, res: Response) => {
+server/routes.ts:1316:  app.get("/api/hub/member/invitees", attachUserContext, async (req: Request, res: Response) => {
+server/routes.ts:1328:  app.get("/api/hub/member/invitor", attachUserContext, async (req: Request, res: Response) => {
+server/routes.ts:1340:  app.get("/api/hub/member/referrals", attachUserContext, async (req: Request, res: Response) => {

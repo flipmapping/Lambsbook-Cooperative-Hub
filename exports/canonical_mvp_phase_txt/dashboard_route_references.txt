@@ -1,0 +1,24 @@
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:4:// Mounts inside HubDashboard for entryState === "invited_pending_acceptance".
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:11:// - No routing — HubDashboard controls state transition after acceptance
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:20:// - pendingInvitationId: string — passed from HubDashboard state
+client/src/components/dashboard/InvitationAcceptanceSection.tsx:21:// - onAccepted: () => void — signals HubDashboard to transition to member state
+client/src/lib/lambsbookTutoringContent.ts:55:    memberPath: "/hub/dashboard",
+client/src/pages/AdminGovernance.tsx:186:        <Link href="/hub/dashboard">
+client/src/pages/AdminGovernance.tsx:200:          <Link href="/hub/dashboard">
+client/src/pages/HubAuth.tsx:198:          setLocation("/hub/dashboard");
+client/src/pages/HubAuth.tsx:210:        setLocation("/hub/dashboard");
+client/src/pages/HubAuthCallback.tsx:79:          setLocation("/hub/dashboard");
+client/src/pages/MemberDashboard.tsx:14:export default function MemberDashboard() {
+client/src/pages/MemberDashboard.tsx:27:        console.error("[MemberDashboard] member/me request failed:", err);
+client/src/pages/MemberDashboard.tsx:33:        console.error("[MemberDashboard] member/me unexpected status:", meRes.status);
+client/src/pages/MemberDashboard.tsx:42:        console.error("[MemberDashboard] pending-invitation request failed:", err);
+client/src/pages/MemberDashboard.tsx:48:        console.error("[MemberDashboard] pending-invitation unexpected status:", invRes.status);
+client/src/pages/dashboard/InvitationAcceptancePage.tsx:23:      window.location.assign("/hub/dashboard");
+client/src/pages/HubDashboard.tsx:43:export default function HubDashboard() {
+client/src/pages/LambsbookTutoring.tsx:47:      navigate('/hub/dashboard');
+client/src/App.tsx:29:import MemberDashboard from '@/pages/MemberDashboard';
+client/src/App.tsx:36:import HubDashboard from "@/pages/HubDashboard";
+client/src/App.tsx:130:      <Route path="/dashboard" component={HubDashboard} />
+client/src/App.tsx:139:      <Route path="/hub/dashboard" component={HubDashboard} />
+client/src/App.tsx:144:      <Route path="/hub/accept-invitation" component={HubDashboard} />
+client/src/App.tsx:145:      <Route path="/hub/member" component={HubDashboard} />

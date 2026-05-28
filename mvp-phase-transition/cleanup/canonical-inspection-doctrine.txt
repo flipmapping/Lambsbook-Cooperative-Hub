@@ -1,0 +1,35 @@
+
+ALL FUTURE ARCHITECTURAL INSPECTIONS MUST EXCLUDE:
+
+- dist
+- build
+- .next
+- node_modules
+- coverage
+- .cache
+- tmp
+- temp
+- generated
+- attached_assets
+- recovery
+- archive
+- preservation
+- quarantine
+
+MANDATORY INSPECTION CHARACTERISTICS:
+
+- bounded
+- source-only
+- architecture-targeted
+- fail-closed
+- deterministic
+- scoped
+
+FORBIDDEN:
+
+- grep everything
+- unbounded recursive scans
+- generated artifact traversal
+- topology archaeology without scope boundaries
+- preservation/runtime artifact convergence scans
+

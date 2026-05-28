@@ -1,0 +1,53 @@
+./server/lib/supabase-dal.ts:244:        is_active: data.is_active ?? true,
+./server/lib/supabase-types.ts:69:  is_active: boolean;
+./server/lib/supabase-types.ts:78:  is_active?: boolean;
+./server/lib/supabase-types.ts:86:  is_active?: boolean;
+./server/routes/admin.ts:36:      is_active: req.body.is_active ?? true,
+./server/routes/admin.ts:54:    if (req.body.is_active !== undefined) data.is_active = req.body.is_active;
+./server/routes/admin.ts:67:    const program = await supabaseDAL.updateProgram(id, { is_active: true });
+./server/routes/admin.ts:78:    const program = await supabaseDAL.updateProgram(id, { is_active: false });
+./server/routes/admin.ts:439:        active: programs.filter(p => p.is_active).length,
+./server/services/supabase-hub.ts:104:    is_active: z.boolean().default(true),
+./server/services/supabase-hub.ts:121:    is_active: z.boolean().default(true),
+./server/services/supabase-hub.ts:140:    is_active: z.boolean().default(true),
+./client/src/components/admin/CommissionRulesManagement.tsx:37:  is_active: boolean;
+./client/src/components/admin/CommissionRulesManagement.tsx:49:  is_active: boolean;
+./client/src/components/admin/CommissionRulesManagement.tsx:83:    is_active: true,
+./client/src/components/admin/CommissionRulesManagement.tsx:88:    is_active: true,
+./client/src/components/admin/CommissionRulesManagement.tsx:107:      setRuleSetForm({ remainder_recipient: 'platform', apply_to_subprograms: true, is_active: true });
+./client/src/components/admin/CommissionRulesManagement.tsx:122:      setRuleForm({ commission_type: 'percentage', priority: 100, is_active: true });
+./client/src/components/admin/CommissionRulesManagement.tsx:151:      is_active: true 
+./client/src/components/admin/CommissionRulesManagement.tsx:216:                      <Badge variant={ruleSet.is_active ? 'default' : 'secondary'}>
+./client/src/components/admin/CommissionRulesManagement.tsx:217:                        {ruleSet.is_active ? 'Active' : 'Inactive'}
+./client/src/components/admin/EnrollmentWorkflow.tsx:22:  is_active: boolean;
+./client/src/components/admin/EnrollmentWorkflow.tsx:163:                {programs.filter((p) => p.is_active).map((p) => (
+./client/src/components/admin/LandingPagesManagement.tsx:16:  is_active: boolean;
+./client/src/components/admin/LandingPagesManagement.tsx:65:  const activePrograms = programs.filter(p => p.is_active);
+./client/src/components/admin/ProgramsManagement.tsx:46:  is_active: boolean;
+./client/src/components/admin/ProgramsManagement.tsx:72:    is_active: true,
+./client/src/components/admin/ProgramsManagement.tsx:117:      is_active: true,
+./client/src/components/admin/ProgramsManagement.tsx:225:                      <Badge variant={program.is_active ? 'default' : 'outline'}>
+./client/src/components/admin/ProgramsManagement.tsx:226:                        {program.is_active ? 'Active' : 'Inactive'}
+./client/src/components/admin/ProgramsManagement.tsx:437:                  value={form.is_active ? 'active' : 'inactive'}
+./client/src/components/admin/ProgramsManagement.tsx:438:                  onValueChange={(value) => setForm({ ...form, is_active: value === 'active' })}
+./client/src/pages/HubAdminDashboard.tsx:44:  is_active: boolean;
+./client/src/pages/HubAdminDashboard.tsx:309:                        <Badge variant={program.is_active ? "default" : "secondary"}>
+./client/src/pages/HubAdminDashboard.tsx:310:                          {program.is_active ? "Active" : "Inactive"}
+./client/src/pages/HubAdminDashboard.tsx:314:                          variant={program.is_active ? "destructive" : "default"}
+./client/src/pages/HubAdminDashboard.tsx:315:                          onClick={() => toggleProgramMutation.mutate({ id: program.id, activate: !program.is_active })}
+./client/src/pages/HubAdminDashboard.tsx:319:                          {program.is_active ? <XCircle className="h-4 w-4" /> : <CheckCircle className="h-4 w-4" />}
+./shared/schema.ts:29:  isActive: boolean("is_active").default(true),
+./shared/schema.ts:42:  isActive: boolean("is_active").default(true),
+./shared/schema.ts:58:  isActive: boolean("is_active").default(true),
+./shared/schema.ts:77:  isActive: boolean("is_active").default(true),
+./shared/schema.ts:300:  isActive: boolean("is_active").default(true),
+./shared/schema.ts:323:  isActive: boolean("is_active").default(true),
+./supabase-master-schema.sql:112:    is_active BOOLEAN DEFAULT TRUE,
+./supabase-master-schema.sql:137:    is_active BOOLEAN DEFAULT TRUE,
+./supabase-master-schema.sql:216:    is_active BOOLEAN DEFAULT TRUE,
+./supabase-master-schema.sql:263:    is_active BOOLEAN DEFAULT TRUE,
+./supabase-master-schema.sql:318:    is_active BOOLEAN DEFAULT TRUE,
+./supabase-master-schema.sql:788:    WHERE crs.is_active = TRUE
+./supabase-master-schema.sql:808:        AND is_active = TRUE
+./supabase-partner-programs-schema.sql:54:    is_active BOOLEAN DEFAULT TRUE,
+./supabase-partner-revenue-sharing.sql:30:  is_active BOOLEAN DEFAULT TRUE,
