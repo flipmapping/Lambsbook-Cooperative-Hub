@@ -1,0 +1,1 @@
+- [Deploy backup-guard trap](deploy-backup-guard-trap.md) — prebuild guard exits 1 on .bak files in runtime roots; gitignored but deploy scans live workspace, so deploys keep failing.

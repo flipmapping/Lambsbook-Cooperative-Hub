@@ -2,7 +2,6 @@ import { Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useLanguage } from '@/lib/LanguageContext';
-import { familyImage } from '@/lib/imageConstants';
 
 
 

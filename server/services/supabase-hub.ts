@@ -1,6 +1,7 @@
 import { createClient, AuthApiError } from "@supabase/supabase-js";
 import ws from "ws";
 import { z } from "zod";
+import type { WebSocketLikeConstructor } from '@supabase/realtime-js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
@@ -26,7 +27,7 @@ const supabaseAuth =
           persistSession: false,
         },
         realtime: {
-          transport: ws,
+          transport: ws as unknown as WebSocketLikeConstructor,
         },
       })
     : null;
@@ -43,7 +44,7 @@ const supabase =
           persistSession: false,
         },
         realtime: {
-          transport: ws,
+          transport: ws as unknown as WebSocketLikeConstructor,
         },
       })
     : null;
@@ -734,7 +735,7 @@ export async function resetPassword(accessToken: string, newPassword: string) {
           persistSession: false,
         },
         realtime: {
-          transport: ws,
+          transport: ws as unknown as WebSocketLikeConstructor,
         },
       },
     );

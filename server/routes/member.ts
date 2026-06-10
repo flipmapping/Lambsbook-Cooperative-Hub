@@ -1,4 +1,4 @@
-import { Router, Response, NextFunction } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import { attachUserContext } from "../middleware/attachUserContext";
 import type { AuthenticatedRequest } from "../types/requestContext";
 import {
@@ -12,7 +12,7 @@ const router = Router();
 const supabaseDAL = new SupabaseDAL();
 
 // Corrected non-blocking wrapper
-const attachUserContextSafe = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+const attachUserContextSafe = (req: Request, res: Response, next: NextFunction) => {
   // If no Authorization header → skip middleware entirely
   if (!req.headers.authorization) {
     return next();
@@ -25,9 +25,10 @@ const attachUserContextSafe = (req: AuthenticatedRequest, res: Response, next: N
 /**
  * GET /api/member/me
  */
-router.get("/me", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+router.get("/me", attachUserContextSafe, async (req: Request, res: Response) => {
   try {
-    const user = req.user;
+    const authReq = req as AuthenticatedRequest;
+const user = authReq.user;
 
     if (!user?.id) {
       return res.status(401).json({
@@ -65,9 +66,10 @@ router.get("/me", attachUserContextSafe, async (req: AuthenticatedRequest, res: 
 /**
  * GET /api/member/pending-invitation
  */
-router.get("/pending-invitation", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+router.get("/pending-invitation", attachUserContextSafe, async (req: Request, res: Response) => {
   try {
-    const user = req.user;
+    const authReq = req as AuthenticatedRequest;
+const user = authReq.user;
 
     if (!user?.id || !user?.token) {
       return res.status(401).json({
@@ -130,9 +132,10 @@ router.get("/pending-invitation", attachUserContextSafe, async (req: Authenticat
 /**
  * POST /api/member/invitations
  */
-router.post("/invitations", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+router.post("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {
   try {
-    const user = req.user;
+    const authReq = req as AuthenticatedRequest;
+const user = authReq.user;
 
     if (!user?.token || !user?.id) {
       return res.status(401).json({
@@ -237,9 +240,10 @@ router.post("/invitations", attachUserContextSafe, async (req: AuthenticatedRequ
 /**
  * POST /api/member/accept-invitation
  */
-router.post("/accept-invitation", attachUserContextSafe, async (req: AuthenticatedRequest, res: Response) => {
+router.post("/accept-invitation", attachUserContextSafe, async (req: Request, res: Response) => {
   try {
-    const user = req.user;
+    const authReq = req as AuthenticatedRequest;
+const user = authReq.user;
 
     if (!user?.token || !user?.id) {
       return res.status(401).json({
@@ -343,5 +347,101 @@ router.post("/accept-invitation", attachUserContextSafe, async (req: Authenticat
     });
   }
 });
+
+router.get(
+  "/trusted-relationships",
+  attachUserContextSafe,
+  async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+const user = authReq.user;
+
+      if (!user?.id) {
+        return res.status(401).json({
+          error: "Unauthorized"
+        });
+      }
+
+      const member =
+        await supabaseDAL.getMemberByUserId(user.id);
+
+      if (!member) {
+        return res.status(404).json({
+          error: "Member not found"
+        });
+      }
+
+      const invitor =
+        member.invitor_id
+          ? await supabaseDAL.getMemberById(member.invitor_id)
+          : null;
+
+      const invitees =
+        await supabaseDAL.getDirectInvitees(member.id);
+
+      return res.json({
+        invitor: invitor
+          ? {
+              id: invitor.id
+            }
+          : null,
+
+        invitees: invitees.map(invitee => ({
+          id: invitee.id
+        }))
+      });
+
+    } catch (err) {
+      console.error(err);
+
+      return res.status(500).json({
+        error: "Failed to fetch trusted relationships"
+      });
+    }
+  }
+);
+
+router.get(
+  "/recent-participation",
+  attachUserContextSafe,
+  async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+const user = authReq.user;
+
+      if (!user?.id) {
+        return res.status(401).json({
+          error: "Unauthorized"
+        });
+      }
+
+      const member =
+        await supabaseDAL.getMemberByUserId(user.id);
+
+      if (!member) {
+        return res.status(404).json({
+          error: "Member not found"
+        });
+      }
+
+      const recent_logs =
+        await supabaseDAL.getActivityLogsByMember(member.id);
+
+      return res.json({
+        activity_status: member.activity_status,
+        last_activity_at: member.last_activity_at,
+        recent_logs
+      });
+
+    } catch (err) {
+      console.error(err);
+
+      return res.status(500).json({
+        error: "Failed to fetch participation"
+      });
+    }
+  }
+);
+
 
 export default router;

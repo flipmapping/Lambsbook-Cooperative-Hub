@@ -469,7 +469,7 @@ export default function HubDashboard() {
       <div id="pipeline">
         <IdeaPipelineSection
           items={filteredItems}
-          onItemSelect={(item) => setSelectedItemId(item.id)}
+          onItemSelect={(item: { id: string }) => setSelectedItemId(item.id)}
           capability={capability}
           selectedItemId={selectedItemId}
         />

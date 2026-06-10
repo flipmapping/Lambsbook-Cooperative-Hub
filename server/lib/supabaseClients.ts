@@ -1,5 +1,6 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import ws from "ws";
+import type { WebSocketLikeConstructor } from '@supabase/realtime-js';
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -43,7 +44,7 @@ export function getUserClient(jwt: string): SupabaseClient {
       autoRefreshToken: false,
     },
     realtime: {
-      transport: ws,
+      transport: ws as unknown as WebSocketLikeConstructor,
     },
   });
 }
@@ -61,7 +62,7 @@ function createServiceClient(): SupabaseClient {
       autoRefreshToken: false,
     },
     realtime: {
-      transport: ws,
+      transport: ws as unknown as WebSocketLikeConstructor,
     },
   });
 }

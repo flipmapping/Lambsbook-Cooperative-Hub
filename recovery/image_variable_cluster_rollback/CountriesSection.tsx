@@ -1,12 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
-import {
-  hotelImage,
-  healthcareImage,
-  foodImage,
-  familyImage,
-} from '@/lib/imageConstants';
 
 
 
@@ -25,7 +19,11 @@ export function CountriesSection({ onContact }: CountriesSectionProps) {
   const { t } = useLanguage();
 
 const heroImage = 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1200&auto=format&fit=crop';
+const hotelImage = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop';
+const healthcareImage = 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop';
+const foodImage = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop';
 const studentsImage = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop';
+const familyImage = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200&auto=format&fit=crop';
 
   const usaImage = 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1200&auto=format&fit=crop';
 const canadaImage = 'https://images.unsplash.com/photo-1503614472-8c93d56e92c1?q=80&w=1200&auto=format&fit=crop';

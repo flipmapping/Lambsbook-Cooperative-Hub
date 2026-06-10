@@ -1,10 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/lib/LanguageContext';
-import {
-  hotelImage,
-  healthcareImage,
-  foodImage,
-} from '@/lib/imageConstants';
 
 
 

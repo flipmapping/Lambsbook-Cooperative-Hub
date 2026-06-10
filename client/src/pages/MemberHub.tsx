@@ -64,12 +64,8 @@ interface CollaborationData {
     how_it_works: string;
     earning_flow: string;
     status_meaning: { active: string; paused: string };
-    trust_continuation: string;
   };
 }
-
-const TRUST_CONTINUATION_MESSAGE =
-  "Invite trusted people into your network.";
 
 interface ProgramsData {
   programs: Array<{
@@ -196,8 +192,16 @@ export default function MemberHub() {
     enabled: isAuthenticated,
   });
 
+  const { data: activity, isLoading: activityLoading } = useQuery<ActivityData>({
+    queryKey: ["/api/member/recent-participation"],
+    queryFn: () => fetchWithAuth("/api/member/recent-participation"),
+    enabled: isAuthenticated,
+  });
+
   const isDashboardLoading =
-    profileLoading || false;
+    profileLoading ||
+    activityLoading ||
+    false;
 
   const selectProgramMutation = useMutation({
     mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/select`),
@@ -280,7 +284,10 @@ export default function MemberHub() {
     profile: !!profile,
   });
 
-  if (false) {
+  if (
+    !profile ||
+    false
+  ) {
     return (
       <div className="container mx-auto p-6 max-w-5xl space-y-4">
 
@@ -354,21 +361,12 @@ export default function MemberHub() {
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-
         <TabsList className="grid grid-cols-2 w-full" data-testid="tabs-member">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
           <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
-
-          <Alert>
-            <Users className="h-4 w-4" />
-            <AlertTitle>Trusted Relationships</AlertTitle>
-            <AlertDescription>
-              {TRUST_CONTINUATION_MESSAGE}
-            </AlertDescription>
-          </Alert>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card data-testid="stat-card-membership">
               <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
@@ -534,6 +532,33 @@ export default function MemberHub() {
                 </Badge>
               </div>
 
+
+
+              <div className="grid md:grid-cols-2 gap-4 pt-4">
+                <Card className={profile?.member?.membership_status === "free" ? "border-primary" : ""}>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Free Tier</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Access available according to your membership status.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className={profile?.member?.membership_status === "paid" ? "border-primary" : ""}>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Paid Tier</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Full access available for paid members.
+                    </p>
+                    <div className="mt-4">
+                      <Badge>Unlimited programs</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </CardContent>
           </Card>
         </TabsContent>

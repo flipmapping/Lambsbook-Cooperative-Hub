@@ -73,6 +73,7 @@ app.use((req, res, next) => {
   next();
 });
 
+async function bootstrap() {
 registerRoutes(httpServer, app);
 
 app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -115,4 +116,12 @@ if (!port) {
       log(`PORT ENV: ${process.env.PORT} | USING: ${port}`);
     },
   );
+
+}
+
+bootstrap().catch((error) => {
+  console.error("Bootstrap failure:", error);
+  process.exit(1);
+});
+
 // build timestamp: Fri May  1 03:30:48 PM UTC 2026
