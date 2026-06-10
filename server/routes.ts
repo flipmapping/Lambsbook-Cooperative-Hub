@@ -43,6 +43,7 @@ import { attachUserContext } from "./middleware/attachUserContext";
 import type { AuthenticatedRequest } from "./types/requestContext";
 import { createAuthenticatedClient } from "./lib/supabase-member-client";
 import { getSupabaseAdmin } from "./lib/supabase-client";
+import { supabaseDAL } from "./lib";
 export async function registerRoutes(
   httpServer: Server,
   app: Express,
@@ -1000,7 +1001,10 @@ export async function registerRoutes(
         "name" in error &&
         error.name === "HubAuthError"
       ) {
-        const hubError = error;
+        const hubError = error as unknown as {
+            message: string;
+            statusCode: number;
+          };
         return res
           .status(hubError.statusCode)
           .json({ error: hubError.message });
@@ -1304,9 +1308,22 @@ app.post("/api/hub/auth/forgot-password", async (req: Request, res: Response) =>
   app.get("/api/hub/member/earnings", attachUserContext, async (req: Request, res: Response) => {
     try {
       const authReq = req as AuthenticatedRequest;
+      const user = authReq.user;
 
-      // Return empty array for now - will fetch from Supabase earnings table in future
-      res.json([]);
+      if (!user?.id) {
+        return res.status(401).json({ error: "Unauthorized" });
+      }
+
+      const member = await supabaseDAL.getMemberByUserId(user.id);
+
+      if (!member) {
+        return res.json([]);
+      }
+
+      const earnings =
+        await supabaseDAL.getEarningsByMember(member.id);
+
+      return res.json(earnings);
     } catch (error) {
       console.error("Get earnings error:", error);
       res.status(500).json({ error: "Failed to get earnings" });
