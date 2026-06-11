@@ -143,6 +143,7 @@ function Router() {
       />
       <Route path="/hub/accept-invitation" component={HubDashboard} />
       <Route path="/hub/member" component={HubDashboard} />
+      <Route path="/hub/member-preview" component={MemberHub} />
       
       {/* Education programs */}
       <Route path="/hub/sbu/education" component={SBUEducation} />
