@@ -198,9 +198,16 @@ export default function MemberHub() {
     enabled: isAuthenticated,
   });
 
+  const { data: earnings, isLoading: earningsLoading } = useQuery<any>({
+    queryKey: ["/api/member/earnings"],
+    queryFn: () => fetchWithAuth("/api/member/earnings"),
+    enabled: isAuthenticated,
+  });
+
   const isDashboardLoading =
     profileLoading ||
     activityLoading ||
+    earningsLoading ||
     false;
 
   const selectProgramMutation = useMutation({
@@ -361,9 +368,10 @@ export default function MemberHub() {
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid grid-cols-2 w-full" data-testid="tabs-member">
+        <TabsList className="grid grid-cols-3 w-full" data-testid="tabs-member">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
           <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
+          <TabsTrigger value="earnings" data-testid="tab-earnings">Earnings</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -559,6 +567,48 @@ export default function MemberHub() {
                   </CardContent>
                 </Card>
               </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="earnings" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Earnings</CardTitle>
+              <CardDescription>
+                Cooperative earnings recorded for your member account
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent>
+              {!earnings?.length ? (
+                <div className="text-sm text-muted-foreground">
+                  No earnings recorded yet.
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {earnings.map((earning: any) => (
+                    <div
+                      key={earning.id}
+                      className="flex items-center justify-between border rounded-lg p-3"
+                    >
+                      <div>
+                        <div className="font-medium">
+                          $ {earning.amount}
+                        </div>
+
+                        <div className="text-xs text-muted-foreground">
+                          Status: {earning.earning_status}
+                        </div>
+
+                        <div className="text-xs text-muted-foreground">
+                          Period: {earning.period}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </CardContent>
           </Card>
         </TabsContent>

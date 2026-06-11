@@ -444,4 +444,43 @@ const user = authReq.user;
 );
 
 
+
+
+router.get(
+  "/earnings",
+  attachUserContextSafe,
+  async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+      const user = authReq.user;
+
+      if (!user?.id) {
+        return res.status(401).json({
+          error: "Unauthorized"
+        });
+      }
+
+      const member =
+        await supabaseDAL.getMemberByUserId(user.id);
+
+      if (!member) {
+        return res.json([]);
+      }
+
+      const earnings =
+        await supabaseDAL.getEarningsByMember(member.id);
+
+      return res.json(earnings);
+
+    } catch (err) {
+      console.error(err);
+
+      return res.status(500).json({
+        error: "Failed to fetch earnings"
+      });
+    }
+  }
+);
+
+
 export default router;
