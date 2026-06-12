@@ -204,10 +204,24 @@ export default function MemberHub() {
     enabled: isAuthenticated,
   });
 
+  const { data: invitationData, isLoading: invitationLoading } = useQuery<any>({
+    queryKey: ["/api/member/pending-invitation"],
+    queryFn: () => fetchWithAuth("/api/member/pending-invitation"),
+    enabled: isAuthenticated,
+  });
+
+  const { data: relationshipsData, isLoading: relationshipsLoading } = useQuery<any>({
+    queryKey: ["/api/member/trusted-relationships"],
+    queryFn: () => fetchWithAuth("/api/member/trusted-relationships"),
+    enabled: isAuthenticated,
+  });
+
   const isDashboardLoading =
     profileLoading ||
     activityLoading ||
     earningsLoading ||
+    invitationLoading ||
+    relationshipsLoading ||
     false;
 
   const selectProgramMutation = useMutation({
@@ -242,6 +256,25 @@ export default function MemberHub() {
       queryClient.invalidateQueries({ queryKey: ["/api/member/activity"] });
       queryClient.invalidateQueries({ queryKey: ["/api/member/earnings"] });
       toast({ title: "Activity logged", description: "Your account is now active" });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive"
+      });
+    },
+  });
+
+  const acceptInvitationMutation = useMutation({
+    mutationFn: () =>
+      postWithAuth("/api/member/accept-invitation", {
+        invitationId: invitationData?.invitation?.id
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/member/pending-invitation"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/member/me"] });
+      toast({ title: "Invitation accepted" });
     },
     onError: (error: Error) => {
       toast({
@@ -368,10 +401,13 @@ export default function MemberHub() {
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid grid-cols-3 w-full" data-testid="tabs-member">
+        <TabsList className="grid grid-cols-6 w-full" data-testid="tabs-member">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
           <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
           <TabsTrigger value="earnings" data-testid="tab-earnings">Earnings</TabsTrigger>
+          <TabsTrigger value="invitations" data-testid="tab-invitations">Invitations</TabsTrigger>
+          <TabsTrigger value="relationships" data-testid="tab-relationships">Relationships</TabsTrigger>
+          <TabsTrigger value="workspace" data-testid="tab-workspace">Workspace</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -609,6 +645,168 @@ export default function MemberHub() {
                   ))}
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="invitations" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Invitations</CardTitle>
+              <CardDescription>
+                Membership invitations and invitation status
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent>
+              {!invitationData?.has_pending_invitation ? (
+                <div className="text-sm text-muted-foreground">
+                  No pending invitation.
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  <div className="border rounded-lg p-3">
+                    <div className="font-medium">
+                      Invitation Found
+                    </div>
+
+                    <div className="text-xs text-muted-foreground">
+                      ID: {invitationData?.invitation?.id}
+                    </div>
+
+                    <div className="text-xs text-muted-foreground">
+                      Status: {invitationData?.invitation?.status}
+                    </div>
+
+                    <div className="text-xs text-muted-foreground">
+                      Created: {invitationData?.invitation?.created_at}
+                    </div>
+
+                    <Button
+                      className="mt-3"
+                      onClick={() => acceptInvitationMutation.mutate()}
+                      disabled={acceptInvitationMutation.isPending}
+                    >
+                      Accept Invitation
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="relationships" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Trusted Relationships</CardTitle>
+              <CardDescription>
+                Invitor and direct invitee relationships
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className="space-y-4">
+
+              <div className="border rounded-lg p-3">
+                <div className="font-medium">
+                  Invitor
+                </div>
+
+                <div className="text-sm text-muted-foreground">
+                  {relationshipsData?.invitor?.id || "No invitor recorded"}
+                </div>
+
+                <div className="text-xs text-muted-foreground mt-2">
+                  Direct relationship source
+                </div>
+              </div>
+
+              <div className="border rounded-lg p-3">
+                <div className="font-medium">
+                  Direct Invitees
+                </div>
+
+                <div className="text-xs text-muted-foreground">
+                  Count: {relationshipsData?.invitees?.length || 0}
+                </div>
+
+                {!relationshipsData?.invitees?.length ? (
+                  <div className="text-sm text-muted-foreground">
+                    No invitees recorded.
+                  </div>
+                ) : (
+                  <div className="space-y-2 mt-2">
+                    {relationshipsData.invitees.map((invitee:any) => (
+                      <div
+                        key={invitee.id}
+                        className="text-sm border rounded p-2"
+                      >
+                        {invitee.id}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="workspace" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Workspace</CardTitle>
+              <CardDescription>
+                Cooperative participation and operational modules
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent>
+              <div className="grid gap-3 md:grid-cols-2">
+
+                <a href="/hub/dashboard#pipeline" className="block border rounded-lg p-3">
+                  <div className="font-medium">Idea Pipeline</div>
+                  <div className="text-xs text-muted-foreground">
+                    Cooperative idea lifecycle
+                  </div>
+                </a>
+
+                <div className="border rounded-lg p-3">
+                  <div className="font-medium">My Contributions</div>
+                  <div className="text-xs text-muted-foreground">
+                    Contribution participation
+                  </div>
+                </div>
+
+                <div className="border rounded-lg p-3">
+                  <div className="font-medium">Programs</div>
+                  <div className="text-xs text-muted-foreground">
+                    Cooperative programs
+                  </div>
+                </div>
+
+                <div className="border rounded-lg p-3">
+                  <div className="font-medium">Learning History</div>
+                  <div className="text-xs text-muted-foreground">
+                    Learning participation
+                  </div>
+                </div>
+
+                <div className="border rounded-lg p-3">
+                  <div className="font-medium">IELTS</div>
+                  <div className="text-xs text-muted-foreground">
+                    IELTS workspace
+                  </div>
+                </div>
+
+                <div className="border rounded-lg p-3">
+                  <div className="font-medium">Multilingual</div>
+                  <div className="text-xs text-muted-foreground">
+                    Language workspace
+                  </div>
+                </div>
+
+              </div>
             </CardContent>
           </Card>
         </TabsContent>

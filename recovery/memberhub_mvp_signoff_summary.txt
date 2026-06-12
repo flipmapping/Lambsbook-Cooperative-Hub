@@ -1,0 +1,31 @@
+MEMBERHUB_MVP_SIGNOFF_V1
+
+STATUS
+SIGNED_OFF
+
+TABS
+- Overview
+- Membership
+- Earnings
+- Invitations
+- Relationships
+- Workspace
+
+CANONICAL ENDPOINTS
+- /api/member/me
+- /api/member/recent-participation
+- /api/member/earnings
+- /api/member/pending-invitation
+- /api/member/trusted-relationships
+
+BUILD
+PASS
+
+RUNTIME ENFORCEMENT
+PASS
+
+TOPOLOGY
+PASS
+
+BACKUP FILES
+0
