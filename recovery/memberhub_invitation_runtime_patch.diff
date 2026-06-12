@@ -1,0 +1,138 @@
+diff --git a/client/src/pages/MemberHub.tsx b/client/src/pages/MemberHub.tsx
+index d66778e..007d298 100644
+--- a/client/src/pages/MemberHub.tsx
++++ b/client/src/pages/MemberHub.tsx
+@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/badge";
+ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+ import { Progress } from "@/components/ui/progress";
++import { Dialog, DialogContent } from "@/components/ui/dialog";
++import { Input } from "@/components/ui/input";
+ import { useToast } from "@/hooks/use-toast";
+ import { Link } from "wouter";
+ import { 
+@@ -180,6 +182,9 @@ export default function MemberHub() {
+   const { toast } = useToast();
+   const [activeTab, setActiveTab] = useState("overview");
+   const [isAuthenticated, setIsAuthenticated] = useState(false);
++  const [inviteModalOpen, setInviteModalOpen] = useState(false);
++  const [invitedEmail, setInvitedEmail] = useState("");
++  const [inviteLink, setInviteLink] = useState("");
+ 
+   useEffect(() => {
+     const token = getAuthToken();
+@@ -266,6 +271,33 @@ export default function MemberHub() {
+     },
+   });
+ 
++  const createInvitationMutation = useMutation({
++    mutationFn: () =>
++      postWithAuth("/api/member/invitations", {
++        invitedEmail
++      }),
++    onSuccess: (data:any) => {
++      setInviteLink(
++        data?.inviteUrl ||
++        data?.invitationUrl ||
++        data?.url ||
++        data?.link ||
++        ""
++      );
++
++      toast({
++        title: "Invitation created"
++      });
++    },
++    onError: (error: Error) => {
++      toast({
++        title: "Error",
++        description: error.message,
++        variant: "destructive"
++      });
++    }
++  });
++
+   const acceptInvitationMutation = useMutation({
+     mutationFn: () =>
+       postWithAuth("/api/member/accept-invitation", {
+@@ -602,8 +634,7 @@ export default function MemberHub() {
+                     </div>
+                   </CardContent>
+                 </Card>
+-              </div>
+-            </CardContent>
++              </div></CardContent>
+           </Card>
+         </TabsContent>
+ 
+@@ -659,6 +690,14 @@ export default function MemberHub() {
+             </CardHeader>
+ 
+             <CardContent>
++
++              <Button
++                className="mb-4"
++                onClick={() => setInviteModalOpen(true)}
++              >
++                Generate Invitation
++              </Button>
++
+               {!invitationData?.has_pending_invitation ? (
+                 <div className="text-sm text-muted-foreground">
+                   No pending invitation.
+@@ -692,6 +731,55 @@ export default function MemberHub() {
+                   </div>
+                 </div>
+               )}
++
++              <Dialog
++                open={inviteModalOpen}
++                onOpenChange={setInviteModalOpen}
++              >
++                <DialogContent>
++                  <div className="space-y-4">
++
++                    <Input
++                      type="email"
++                      value={invitedEmail}
++                      onChange={(e) => setInvitedEmail(e.target.value)}
++                      placeholder="Invitee email"
++                    />
++
++                    <Button
++                      onClick={() => createInvitationMutation.mutate()}
++                      disabled={createInvitationMutation.isPending}
++                    >
++                      Create Invitation
++                    </Button>
++
++                    {inviteLink && (
++                      <div className="space-y-2">
++                        <div className="text-xs">
++                          Invite Link
++                        </div>
++
++                        <div className="text-xs break-all">
++                          {inviteLink}
++                        </div>
++
++                        <Button
++                          variant="outline"
++                          onClick={() =>
++                            navigator.clipboard.writeText(inviteLink)
++                          }
++                        >
++                          Copy Link
++                        </Button>
++                      </div>
++                    )}
++
++                  </div>
++                </DialogContent>
++              </Dialog>
++
++            
++
+             </CardContent>
+           </Card>
+         </TabsContent>
