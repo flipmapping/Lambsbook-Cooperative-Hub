@@ -187,3 +187,22 @@ export interface ActivityLogInsert {
   member_id: string;
   activity_type: string;
 }
+
+export interface GatewayInvitation {
+  id: string;
+  token: string;
+  inviter_user_id: string;
+  inviter_email: string;
+  status: string;
+  expires_at: string;
+  accepted_by_user_id: string | null;
+  accepted_by_email: string | null;
+  accepted_at: string | null;
+  created_at: string;
+}
+
+export interface GatewayInvitationInsert {
+  token: string;
+  inviter_user_id: string;
+  inviter_email: string;
+}

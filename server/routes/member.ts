@@ -1,4 +1,5 @@
 import { Router, Request, Response, NextFunction } from "express";
+import { randomUUID } from "crypto";
 import { attachUserContext } from "../middleware/attachUserContext";
 import type { AuthenticatedRequest } from "../types/requestContext";
 import {
@@ -162,64 +163,35 @@ const user = authReq.user;
       });
     }
 
+    const token = randomUUID();
+
     const supabase =
       getUserClient(user.token);
 
-    const { data, error } =
-      await supabase.rpc(
-        "issue_member_invitation",
-        {
-          p_invited_user_id: null,
-          p_invited_email: invitedEmail,
-          p_program_id: null
-        }
-      );
+    const { data: userEmail, error: userEmailError } =
+      await supabase.rpc("get_my_auth_email");
 
-    if (error) {
-      console.error(
-        "ISSUE_MEMBER_INVITATION_ERROR",
-        error
-      );
-
-      const message =
-        error.message || "";
-
-      if (
-        message.toLowerCase().includes("duplicate") ||
-        message.toLowerCase().includes("already")
-      ) {
-        return res.status(409).json({
-          error: {
-            code: "DUPLICATE_INVITATION",
-            message,
-            field: "invitedEmail"
-          }
-        });
-      }
-
-      if (
-        message.toLowerCase().includes("not allowed") ||
-        message.toLowerCase().includes("forbidden")
-      ) {
-        return res.status(403).json({
-          error: {
-            code: "NOT_ALLOWED",
-            message
-          }
-        });
-      }
-
-      return res.status(500).json({
+    if (userEmailError || !userEmail) {
+      return res.status(401).json({
         error: {
-          code: "INVITATION_ISSUE_FAILED",
-          message:
-            message || "Failed to issue invitation"
+          code: "EMAIL_NOT_FOUND",
+          message: "User email not found"
         }
       });
     }
 
-    return res.json({
-      invitation: data
+    const data =
+      await supabaseDAL.createGatewayInvitation({
+        token,
+        inviter_user_id: user.id,
+        inviter_email: userEmail
+      });
+
+    const inviteUrl =
+      `https://onboarding-gateway.replit.app/auth/sign-up?invite=${token}`;
+
+    return res.status(201).json({
+      inviteUrl
     });
 
   } catch (err) {

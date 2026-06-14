@@ -136,14 +136,13 @@ function Router() {
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
       <Route path="/hub/auth/callback" component={HubAuthCallback} />
       <Route path="/auth/reset" component={ResetPassword} />
-      <Route path="/hub/dashboard" component={HubDashboard} />
+      <Route path="/hub/dashboard" component={MemberHub} />
       <Route
         path="/dashboard/invitations/:invitationId"
         component={InvitationAcceptancePage}
       />
       <Route path="/hub/accept-invitation" component={HubDashboard} />
       <Route path="/hub/member" component={HubDashboard} />
-      <Route path="/hub/member-preview" component={MemberHub} />
       
       {/* Education programs */}
       <Route path="/hub/sbu/education" component={SBUEducation} />

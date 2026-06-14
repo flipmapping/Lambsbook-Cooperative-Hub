@@ -8,6 +8,7 @@ import type {
   Tutor, TutorInsert, TutorUpdate,
   Earning, EarningInsert, EarningUpdate,
   ActivityLog, ActivityLogInsert,
+  GatewayInvitation, GatewayInvitationInsert,
   TutorStatus
 } from './supabase-types';
 
@@ -776,6 +777,32 @@ export class SupabaseDAL {
 
     if (error) throw new Error(`Failed to get invitees: ${error.message}`);
     return data || [];
+  }
+
+  async createGatewayInvitation(
+    data: GatewayInvitationInsert
+  ): Promise<GatewayInvitation> {
+    this.ensureConfigured();
+
+    const supabase = getSupabaseAdmin();
+
+    const { data: invitation, error } = await supabase
+      .from('gateway_invitations')
+      .insert({
+        token: data.token,
+        inviter_user_id: data.inviter_user_id,
+        inviter_email: data.inviter_email,
+      })
+      .select()
+      .single();
+
+    if (error) {
+      throw new Error(
+        `Failed to create gateway invitation: ${error.message}`
+      );
+    }
+
+    return invitation;
   }
 }
 
