@@ -62,8 +62,17 @@ export interface CollaborationUpdate {
 
 export interface Program {
   id: string;
+  program_id: string;
   name: string;
-  sbu: string;
+
+  sbu_id: string;
+
+  // compatibility alias
+  sbu?: string;
+
+  program_type: string | null;
+  description: string | null;
+
   revenue_base: RevenueBase;
   trigger_condition: TriggerCondition;
   is_active: boolean;
@@ -71,16 +80,36 @@ export interface Program {
 }
 
 export interface ProgramInsert {
+  program_id: string;
+
   name: string;
-  sbu: string;
+
+  sbu_id?: string;
+
+  // compatibility alias
+  sbu?: string;
+
+  program_type?: string | null;
+  description?: string | null;
+
   revenue_base: RevenueBase;
   trigger_condition: TriggerCondition;
   is_active?: boolean;
 }
 
 export interface ProgramUpdate {
+  program_id?: string;
+
   name?: string;
+
+  sbu_id?: string;
+
+  // compatibility alias
   sbu?: string;
+
+  program_type?: string | null;
+  description?: string | null;
+
   revenue_base?: RevenueBase;
   trigger_condition?: TriggerCondition;
   is_active?: boolean;

@@ -29,8 +29,11 @@ router.get('/programs', async (_req: Request, res: Response) => {
 router.post('/programs', async (req: Request, res: Response) => {
   try {
     const data: ProgramInsert = {
+      program_id: req.body.program_id,
       name: req.body.name,
-      sbu: req.body.sbu,
+      sbu_id: req.body.sbu_id ?? req.body.sbu,
+      program_type: req.body.program_type ?? null,
+      description: req.body.description ?? null,
       revenue_base: req.body.revenue_base,
       trigger_condition: req.body.trigger_condition,
       is_active: req.body.is_active ?? true,
@@ -47,8 +50,12 @@ router.patch('/programs/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const data: ProgramUpdate = {};
+    if (req.body.program_id !== undefined) data.program_id = req.body.program_id;
     if (req.body.name !== undefined) data.name = req.body.name;
-    if (req.body.sbu !== undefined) data.sbu = req.body.sbu;
+    if (req.body.sbu_id !== undefined) data.sbu_id = req.body.sbu_id;
+    else if (req.body.sbu !== undefined) data.sbu_id = req.body.sbu;
+    if (req.body.program_type !== undefined) data.program_type = req.body.program_type;
+    if (req.body.description !== undefined) data.description = req.body.description;
     if (req.body.revenue_base !== undefined) data.revenue_base = req.body.revenue_base;
     if (req.body.trigger_condition !== undefined) data.trigger_condition = req.body.trigger_condition;
     if (req.body.is_active !== undefined) data.is_active = req.body.is_active;
