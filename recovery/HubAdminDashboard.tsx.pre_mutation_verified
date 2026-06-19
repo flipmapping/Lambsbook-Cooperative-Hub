@@ -17,7 +17,6 @@ import {
   Plus, CheckCircle, XCircle, Clock
 } from "lucide-react";
 import { EnrollmentWorkflow } from "@/components/admin/EnrollmentWorkflow";
-import { ProgramsManagement } from "@/components/admin/ProgramsManagement";
 
 type MembershipStatus = "free" | "paid";
 type ActivityStatus = "active" | "inactive";
@@ -288,7 +287,47 @@ export default function HubAdminDashboard() {
         </TabsContent>
 
         <TabsContent value="programs" className="space-y-4">
-          <ProgramsManagement />
+          <Card>
+            <CardHeader>
+              <CardTitle>Program Management</CardTitle>
+              <CardDescription>Create, activate, and deactivate programs</CardDescription>
+            </CardHeader>
+            <CardContent>
+              {programsLoading ? (
+                <div className="text-center py-4">Loading programs...</div>
+              ) : (
+                <div className="space-y-3">
+                  {programs.map((program) => (
+                    <div key={program.id} className="flex items-center justify-between p-3 border rounded-lg" data-testid={`program-row-${program.id}`}>
+                      <div>
+                        <div className="font-medium">{program.name}</div>
+                        <div className="text-sm text-muted-foreground">
+                          SBU: {program.sbu} | Revenue: {program.revenue_base} | Trigger: {program.trigger_condition}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge variant={program.is_active ? "default" : "secondary"}>
+                          {program.is_active ? "Active" : "Inactive"}
+                        </Badge>
+                        <Button
+                          size="sm"
+                          variant={program.is_active ? "destructive" : "default"}
+                          onClick={() => toggleProgramMutation.mutate({ id: program.id, activate: !program.is_active })}
+                          disabled={toggleProgramMutation.isPending}
+                          data-testid={`button-toggle-program-${program.id}`}
+                        >
+                          {program.is_active ? <XCircle className="h-4 w-4" /> : <CheckCircle className="h-4 w-4" />}
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                  {programs.length === 0 && (
+                    <div className="text-center py-4 text-muted-foreground">No programs found</div>
+                  )}
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </TabsContent>
 
         <TabsContent value="members" className="space-y-4">
