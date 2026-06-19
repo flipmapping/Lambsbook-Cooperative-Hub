@@ -1,0 +1,12 @@
+DISC-RUNTIME-003
+
+Goal:
+Identify which Admin tab triggers
+/api/admin/members/[object Object]
+
+Method:
+Observe Network tab only.
+
+No source inspection.
+No code changes.
+No redeploy.
