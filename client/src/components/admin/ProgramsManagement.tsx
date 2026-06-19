@@ -326,13 +326,13 @@ export function ProgramsManagement() {
                 <Label>Parent Program</Label>
                 <Select
                   value={form.parent_program_id || ''}
-                  onValueChange={(value) => setForm({ ...form, parent_program_id: value || null })}
+                  onValueChange={(value) => setForm({ ...form, parent_program_id: value === "ROOT" ? null : value })}
                 >
                   <SelectTrigger data-testid="select-program-parent">
                     <SelectValue placeholder="None (top-level)" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">None (top-level)</SelectItem>
+                    <SelectItem value="ROOT">None (top-level)</SelectItem>
                     {parentPrograms.filter(p => p.program_id !== form.program_id).map((p) => (
                       <SelectItem key={p.program_id} value={p.program_id}>
                         {p.name}
