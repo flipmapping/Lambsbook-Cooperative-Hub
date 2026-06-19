@@ -150,8 +150,9 @@ export async function getSBUs() {
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("sbus")
+    .schema("meh")
     .select("*")
-    .order("sbu_number");
+    .order("name");
   if (error) throw error;
   return data || [];
 }
