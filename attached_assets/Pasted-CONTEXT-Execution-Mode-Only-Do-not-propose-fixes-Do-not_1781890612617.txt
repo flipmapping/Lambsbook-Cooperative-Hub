@@ -1,0 +1,149 @@
+CONTEXT
+
+Execution Mode Only.
+
+Do not propose fixes.
+Do not propose cleanup actions.
+Do not speculate.
+
+We are localizing an environment-level startup blocker.
+
+CURRENT CERTIFIED EVIDENCE
+
+Repository:
+
+* Workspace size ≈ 1.1G
+* node_modules ≈ 1.0G
+* recovery artifacts ≈ 5.9M
+* backup quarantine ≈ 3.7M
+
+Filesystem:
+
+Workspace filesystem:
+
+df -h .
+
+Size: 256G
+Used: 1.1G
+Avail: 254G
+
+/tmp filesystem:
+
+df -h /tmp
+
+Size: 32G
+Used: 5.1G
+Avail: 27G
+
+Permissions:
+
+stat /tmp/tsx-1000
+
+Type: directory
+Owner: runner
+Mode: 0755
+
+test -w /tmp/tsx-1000
+
+Result:
+WRITABLE
+
+Object Creation Tests:
+
+echo test > quota-check.txt
+
+SUCCESS
+
+echo test > /tmp/chatgpt-tmp-test
+
+Result:
+Disk quota exceeded
+
+mkdir /tmp/chatgpt-tmp-dir
+
+Result:
+Disk quota exceeded
+
+touch /tmp/tsx-1000/chatgpt-test
+
+Result:
+Disk quota exceeded
+
+TSX Failure:
+
+npx tsx --version
+
+Outputs:
+
+tsx v4.20.5
+
+Then crashes:
+
+createIpcServer(...)
+listen UNKNOWN
+/tmp/tsx-1000/<pid>.pipe
+
+Application Status:
+
+server/index.ts never reached
+Express never started
+Port 5000 never bound
+/api/hub/sbus never executed
+
+Additional Evidence:
+
+mount | grep /tmp
+
+/dev/vdc on /tmp type btrfs (rw,...)
+
+lsattr -d /tmp /tmp/tsx-1000
+
+No special attributes
+
+Visible /tmp contents:
+
+du -sh /tmp/*
+
+≈ 376K total visible usage
+
+But filesystem reports:
+
+/tmp Used = 5.1G
+
+Deleted-open-file check:
+
+lsof +L1
+
+No output
+
+REQUEST
+
+Provide ONLY diagnostic inspections.
+
+Do NOT provide repairs.
+
+Do NOT provide cleanup commands.
+
+Do NOT provide workarounds.
+
+Determine:
+
+1. What Replit-specific quota/accounting system could produce:
+
+   * /tmp writable
+   * object creation denied
+   * filesystem mostly empty
+   * filesystem reports 5.1G used
+
+2. Which exact commands should be executed next to gather authoritative evidence.
+
+3. Prioritize commands that reveal:
+
+   * hidden storage consumers
+   * Replit project quotas
+   * runner-user quotas
+   * container overlay usage
+   * btrfs accounting state
+   * sandbox limits
+
+Return evidence-gathering steps only.
