@@ -147,10 +147,10 @@ export const insertCommissionRuleSchema = z
 /* -------------------------------------------------------------------------- */
 
 export async function getSBUs() {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("sbus")
+  if (!supabaseAuth) return [];
+  const { data, error } = await supabaseAuth
     .schema("meh")
+    .from("sbus")
     .select("*")
     .order("name");
   if (error) throw error;
