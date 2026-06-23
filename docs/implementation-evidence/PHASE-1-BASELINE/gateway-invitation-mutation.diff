@@ -1,0 +1,96 @@
+diff --git a/server/lib/supabase-dal.ts b/server/lib/supabase-dal.ts
+index 58d67ce..5a6f1a6 100644
+--- a/server/lib/supabase-dal.ts
++++ b/server/lib/supabase-dal.ts
+@@ -808,6 +808,9 @@ export class SupabaseDAL {
+         token: data.token,
+         inviter_user_id: data.inviter_user_id,
+         inviter_email: data.inviter_email,
++        invited_email: data.invited_email ?? null,
++        phone_number: data.phone_number ?? null,
++        note: data.note ?? null,
+       })
+       .select()
+       .single();
+diff --git a/server/lib/supabase-types.ts b/server/lib/supabase-types.ts
+index 46309bd..f2b1085 100644
+--- a/server/lib/supabase-types.ts
++++ b/server/lib/supabase-types.ts
+@@ -234,4 +234,7 @@ export interface GatewayInvitationInsert {
+   token: string;
+   inviter_user_id: string;
+   inviter_email: string;
++  invited_email?: string | null;
++  phone_number?: string | null;
++  note?: string | null;
+ }
+diff --git a/server/routes/member.ts b/server/routes/member.ts
+index 579d073..edbcfda 100644
+--- a/server/routes/member.ts
++++ b/server/routes/member.ts
+@@ -150,19 +150,51 @@ const user = authReq.user;
+     const invitedEmail =
+       req.body?.invitedEmail;
+ 
++    const phoneNumber =
++      req.body?.phoneNumber;
++
++    const note =
++      req.body?.note;
++
+     if (
+-      !invitedEmail ||
++      invitedEmail !== undefined &&
+       typeof invitedEmail !== "string"
+     ) {
+       return res.status(400).json({
+         error: {
+           code: "INVALID_EMAIL",
+-          message: "Valid invitedEmail is required",
++          message: "invitedEmail must be a string",
+           field: "invitedEmail"
+         }
+       });
+     }
+ 
++    if (
++      phoneNumber !== undefined &&
++      typeof phoneNumber !== "string"
++    ) {
++      return res.status(400).json({
++        error: {
++          code: "INVALID_PHONE_NUMBER",
++          message: "phoneNumber must be a string",
++          field: "phoneNumber"
++        }
++      });
++    }
++
++    if (
++      note !== undefined &&
++      typeof note !== "string"
++    ) {
++      return res.status(400).json({
++        error: {
++          code: "INVALID_NOTE",
++          message: "note must be a string",
++          field: "note"
++        }
++      });
++    }
++
+     const token = randomUUID();
+ 
+     const supabase =
+@@ -184,7 +216,10 @@ const user = authReq.user;
+       await supabaseDAL.createGatewayInvitation({
+         token,
+         inviter_user_id: user.id,
+-        inviter_email: userEmail
++        inviter_email: userEmail,
++        invited_email: invitedEmail ?? null,
++        phone_number: phoneNumber ?? null,
++        note: note ?? null
+       });
+ 
+     const inviteUrl =

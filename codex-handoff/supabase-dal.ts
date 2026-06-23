@@ -808,9 +808,6 @@ export class SupabaseDAL {
         token: data.token,
         inviter_user_id: data.inviter_user_id,
         inviter_email: data.inviter_email,
-        invited_email: data.invited_email ?? null,
-        phone_number: data.phone_number ?? null,
-        note: data.note ?? null,
       })
       .select()
       .single();

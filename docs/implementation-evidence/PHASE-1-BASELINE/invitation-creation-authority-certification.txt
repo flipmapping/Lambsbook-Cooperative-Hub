@@ -1,0 +1,253 @@
+client/src/pages/MemberHub.tsx-254-      });
+client/src/pages/MemberHub.tsx-255-    },
+client/src/pages/MemberHub.tsx-256-  });
+client/src/pages/MemberHub.tsx-257-
+client/src/pages/MemberHub.tsx-258-  const logActivityMutation = useMutation({
+client/src/pages/MemberHub.tsx-259-    mutationFn: () => postWithAuth("/api/member/activity/log", { activity_type: "manual_check_in" }),
+client/src/pages/MemberHub.tsx-260-    onSuccess: () => {
+client/src/pages/MemberHub.tsx-261-      queryClient.invalidateQueries({ queryKey: ["/api/member/activity"] });
+client/src/pages/MemberHub.tsx-262-      queryClient.invalidateQueries({ queryKey: ["/api/member/earnings"] });
+client/src/pages/MemberHub.tsx-263-      toast({ title: "Activity logged", description: "Your account is now active" });
+client/src/pages/MemberHub.tsx-264-    },
+client/src/pages/MemberHub.tsx-265-    onError: (error: Error) => {
+client/src/pages/MemberHub.tsx-266-      toast({
+client/src/pages/MemberHub.tsx-267-        title: "Error",
+client/src/pages/MemberHub.tsx-268-        description: error.message,
+client/src/pages/MemberHub.tsx-269-        variant: "destructive"
+client/src/pages/MemberHub.tsx-270-      });
+client/src/pages/MemberHub.tsx-271-    },
+client/src/pages/MemberHub.tsx-272-  });
+client/src/pages/MemberHub.tsx-273-
+client/src/pages/MemberHub.tsx:274:  const createInvitationMutation = useMutation({
+client/src/pages/MemberHub.tsx-275-    mutationFn: () =>
+client/src/pages/MemberHub.tsx:276:      postWithAuth("/api/member/invitations", {
+client/src/pages/MemberHub.tsx-277-        invitedEmail
+client/src/pages/MemberHub.tsx-278-      }),
+client/src/pages/MemberHub.tsx-279-    onSuccess: (data:any) => {
+client/src/pages/MemberHub.tsx-280-      setInviteLink(
+client/src/pages/MemberHub.tsx:281:        data?.inviteUrl ||
+client/src/pages/MemberHub.tsx-282-        data?.invitationUrl ||
+client/src/pages/MemberHub.tsx-283-        data?.url ||
+client/src/pages/MemberHub.tsx-284-        data?.link ||
+client/src/pages/MemberHub.tsx-285-        ""
+client/src/pages/MemberHub.tsx-286-      );
+client/src/pages/MemberHub.tsx-287-
+client/src/pages/MemberHub.tsx-288-      toast({
+client/src/pages/MemberHub.tsx-289-        title: "Invitation created"
+client/src/pages/MemberHub.tsx-290-      });
+client/src/pages/MemberHub.tsx-291-    },
+client/src/pages/MemberHub.tsx-292-    onError: (error: Error) => {
+client/src/pages/MemberHub.tsx-293-      toast({
+client/src/pages/MemberHub.tsx-294-        title: "Error",
+client/src/pages/MemberHub.tsx-295-        description: error.message,
+client/src/pages/MemberHub.tsx-296-        variant: "destructive"
+client/src/pages/MemberHub.tsx-297-      });
+client/src/pages/MemberHub.tsx-298-    }
+client/src/pages/MemberHub.tsx-299-  });
+client/src/pages/MemberHub.tsx-300-
+client/src/pages/MemberHub.tsx-301-  const acceptInvitationMutation = useMutation({
+client/src/pages/MemberHub.tsx-302-    mutationFn: () =>
+client/src/pages/MemberHub.tsx-303-      postWithAuth("/api/member/accept-invitation", {
+client/src/pages/MemberHub.tsx-304-        invitationId: invitationData?.invitation?.id
+client/src/pages/MemberHub.tsx-305-      }),
+client/src/pages/MemberHub.tsx-306-    onSuccess: () => {
+client/src/pages/MemberHub.tsx-307-      queryClient.invalidateQueries({ queryKey: ["/api/member/pending-invitation"] });
+client/src/pages/MemberHub.tsx-308-      queryClient.invalidateQueries({ queryKey: ["/api/member/me"] });
+client/src/pages/MemberHub.tsx-309-      toast({ title: "Invitation accepted" });
+client/src/pages/MemberHub.tsx-310-    },
+client/src/pages/MemberHub.tsx-311-    onError: (error: Error) => {
+client/src/pages/MemberHub.tsx-312-      toast({
+client/src/pages/MemberHub.tsx-313-        title: "Error",
+client/src/pages/MemberHub.tsx-314-        description: error.message,
+client/src/pages/MemberHub.tsx-315-        variant: "destructive"
+client/src/pages/MemberHub.tsx-316-      });
+client/src/pages/MemberHub.tsx-317-    },
+client/src/pages/MemberHub.tsx-318-  });
+client/src/pages/MemberHub.tsx-319-
+client/src/pages/MemberHub.tsx-320-  if (!isAuthenticated) {
+client/src/pages/MemberHub.tsx-321-    return (
+--
+client/src/pages/MemberHub.tsx-730-                    </Button>
+client/src/pages/MemberHub.tsx-731-                  </div>
+client/src/pages/MemberHub.tsx-732-                </div>
+client/src/pages/MemberHub.tsx-733-              )}
+client/src/pages/MemberHub.tsx-734-
+client/src/pages/MemberHub.tsx-735-              <Dialog
+client/src/pages/MemberHub.tsx-736-                open={inviteModalOpen}
+client/src/pages/MemberHub.tsx-737-                onOpenChange={setInviteModalOpen}
+client/src/pages/MemberHub.tsx-738-              >
+client/src/pages/MemberHub.tsx-739-                <DialogContent>
+client/src/pages/MemberHub.tsx-740-                  <div className="space-y-4">
+client/src/pages/MemberHub.tsx-741-
+client/src/pages/MemberHub.tsx-742-                    <Input
+client/src/pages/MemberHub.tsx-743-                      type="email"
+client/src/pages/MemberHub.tsx-744-                      value={invitedEmail}
+client/src/pages/MemberHub.tsx-745-                      onChange={(e) => setInvitedEmail(e.target.value)}
+client/src/pages/MemberHub.tsx-746-                      placeholder="Invitee email"
+client/src/pages/MemberHub.tsx-747-                    />
+client/src/pages/MemberHub.tsx-748-
+client/src/pages/MemberHub.tsx-749-                    <Button
+client/src/pages/MemberHub.tsx:750:                      onClick={() => createInvitationMutation.mutate()}
+client/src/pages/MemberHub.tsx:751:                      disabled={createInvitationMutation.isPending}
+client/src/pages/MemberHub.tsx-752-                    >
+client/src/pages/MemberHub.tsx-753-                      Create Invitation
+client/src/pages/MemberHub.tsx-754-                    </Button>
+client/src/pages/MemberHub.tsx-755-
+client/src/pages/MemberHub.tsx-756-                    {inviteLink && (
+client/src/pages/MemberHub.tsx-757-                      <div className="space-y-2">
+client/src/pages/MemberHub.tsx-758-                        <div className="text-xs">
+client/src/pages/MemberHub.tsx-759-                          Invite Link
+client/src/pages/MemberHub.tsx-760-                        </div>
+client/src/pages/MemberHub.tsx-761-
+client/src/pages/MemberHub.tsx-762-                        <div className="text-xs break-all">
+client/src/pages/MemberHub.tsx-763-                          {inviteLink}
+client/src/pages/MemberHub.tsx-764-                        </div>
+client/src/pages/MemberHub.tsx-765-
+client/src/pages/MemberHub.tsx-766-                        <Button
+client/src/pages/MemberHub.tsx-767-                          variant="outline"
+client/src/pages/MemberHub.tsx-768-                          onClick={() =>
+client/src/pages/MemberHub.tsx-769-                            navigator.clipboard.writeText(inviteLink)
+client/src/pages/MemberHub.tsx-770-                          }
+client/src/pages/MemberHub.tsx-771-                        >
+client/src/pages/MemberHub.tsx-772-                          Copy Link
+client/src/pages/MemberHub.tsx-773-                        </Button>
+client/src/pages/MemberHub.tsx-774-                      </div>
+client/src/pages/MemberHub.tsx-775-                    )}
+client/src/pages/MemberHub.tsx-776-
+client/src/pages/MemberHub.tsx-777-                  </div>
+client/src/pages/MemberHub.tsx-778-                </DialogContent>
+client/src/pages/MemberHub.tsx-779-              </Dialog>
+client/src/pages/MemberHub.tsx-780-
+client/src/pages/MemberHub.tsx-781-            
+client/src/pages/MemberHub.tsx-782-
+client/src/pages/MemberHub.tsx-783-            </CardContent>
+client/src/pages/MemberHub.tsx-784-          </Card>
+client/src/pages/MemberHub.tsx-785-        </TabsContent>
+client/src/pages/MemberHub.tsx-786-
+client/src/pages/MemberHub.tsx-787-        <TabsContent value="relationships" className="space-y-4">
+client/src/pages/MemberHub.tsx-788-          <Card>
+client/src/pages/MemberHub.tsx-789-            <CardHeader>
+client/src/pages/MemberHub.tsx-790-              <CardTitle>Trusted Relationships</CardTitle>
+client/src/pages/MemberHub.tsx-791-              <CardDescription>
+--
+server/routes/member.ts-114-
+server/routes/member.ts-115-      return res.status(500).json({
+server/routes/member.ts-116-        error: "Failed to fetch invitation"
+server/routes/member.ts-117-      });
+server/routes/member.ts-118-    }
+server/routes/member.ts-119-
+server/routes/member.ts-120-    return res.json({
+server/routes/member.ts-121-      has_pending_invitation: !!data,
+server/routes/member.ts-122-      invitation: data || null
+server/routes/member.ts-123-    });
+server/routes/member.ts-124-  } catch (err) {
+server/routes/member.ts-125-    console.error(err);
+server/routes/member.ts-126-
+server/routes/member.ts-127-    return res.status(500).json({
+server/routes/member.ts-128-      error: "Server error"
+server/routes/member.ts-129-    });
+server/routes/member.ts-130-  }
+server/routes/member.ts-131-});
+server/routes/member.ts-132-
+server/routes/member.ts-133-/**
+server/routes/member.ts:134: * POST /api/member/invitations
+server/routes/member.ts-135- */
+server/routes/member.ts-136-router.post("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {
+server/routes/member.ts-137-  try {
+server/routes/member.ts-138-    const authReq = req as AuthenticatedRequest;
+server/routes/member.ts-139-const user = authReq.user;
+server/routes/member.ts-140-
+server/routes/member.ts-141-    if (!user?.token || !user?.id) {
+server/routes/member.ts-142-      return res.status(401).json({
+server/routes/member.ts-143-        error: {
+server/routes/member.ts-144-          code: "UNAUTHENTICATED",
+server/routes/member.ts-145-          message: "Authentication required"
+server/routes/member.ts-146-        }
+server/routes/member.ts-147-      });
+server/routes/member.ts-148-    }
+server/routes/member.ts-149-
+server/routes/member.ts-150-    const invitedEmail =
+server/routes/member.ts-151-      req.body?.invitedEmail;
+server/routes/member.ts-152-
+server/routes/member.ts-153-    if (
+server/routes/member.ts-154-      !invitedEmail ||
+server/routes/member.ts-155-      typeof invitedEmail !== "string"
+server/routes/member.ts-156-    ) {
+server/routes/member.ts-157-      return res.status(400).json({
+server/routes/member.ts-158-        error: {
+server/routes/member.ts-159-          code: "INVALID_EMAIL",
+server/routes/member.ts-160-          message: "Valid invitedEmail is required",
+server/routes/member.ts-161-          field: "invitedEmail"
+server/routes/member.ts-162-        }
+server/routes/member.ts-163-      });
+server/routes/member.ts-164-    }
+server/routes/member.ts-165-
+server/routes/member.ts-166-    const token = randomUUID();
+server/routes/member.ts-167-
+server/routes/member.ts-168-    const supabase =
+server/routes/member.ts-169-      getUserClient(user.token);
+server/routes/member.ts-170-
+server/routes/member.ts-171-    const { data: userEmail, error: userEmailError } =
+server/routes/member.ts-172-      await supabase.rpc("get_my_auth_email");
+server/routes/member.ts-173-
+server/routes/member.ts-174-    if (userEmailError || !userEmail) {
+server/routes/member.ts-175-      return res.status(401).json({
+server/routes/member.ts-176-        error: {
+server/routes/member.ts-177-          code: "EMAIL_NOT_FOUND",
+server/routes/member.ts-178-          message: "User email not found"
+server/routes/member.ts-179-        }
+server/routes/member.ts-180-      });
+server/routes/member.ts-181-    }
+server/routes/member.ts-182-
+server/routes/member.ts-183-    const data =
+server/routes/member.ts-184-      await supabaseDAL.createGatewayInvitation({
+server/routes/member.ts-185-        token,
+server/routes/member.ts-186-        inviter_user_id: user.id,
+server/routes/member.ts-187-        inviter_email: userEmail
+server/routes/member.ts-188-      });
+server/routes/member.ts-189-
+server/routes/member.ts:190:    const inviteUrl =
+server/routes/member.ts-191-      `https://onboarding-gateway.replit.app/auth/sign-up?invite=${token}`;
+server/routes/member.ts-192-
+server/routes/member.ts-193-    return res.status(201).json({
+server/routes/member.ts:194:      inviteUrl
+server/routes/member.ts-195-    });
+server/routes/member.ts-196-
+server/routes/member.ts-197-  } catch (err) {
+server/routes/member.ts-198-    console.error(
+server/routes/member.ts-199-      "POST_INVITATIONS_RUNTIME",
+server/routes/member.ts-200-      err
+server/routes/member.ts-201-    );
+server/routes/member.ts-202-
+server/routes/member.ts-203-    return res.status(500).json({
+server/routes/member.ts-204-      error: {
+server/routes/member.ts-205-        code: "SERVER_ERROR",
+server/routes/member.ts-206-        message: "Server error"
+server/routes/member.ts-207-      }
+server/routes/member.ts-208-    });
+server/routes/member.ts-209-  }
+server/routes/member.ts-210-});
+server/routes/member.ts-211-
+server/routes/member.ts-212-/**
+server/routes/member.ts-213- * POST /api/member/accept-invitation
+server/routes/member.ts-214- */
+server/routes/member.ts-215-router.post("/accept-invitation", attachUserContextSafe, async (req: Request, res: Response) => {
+server/routes/member.ts-216-  try {
+server/routes/member.ts-217-    const authReq = req as AuthenticatedRequest;
+server/routes/member.ts-218-const user = authReq.user;
+server/routes/member.ts-219-
+server/routes/member.ts-220-    if (!user?.token || !user?.id) {
+server/routes/member.ts-221-      return res.status(401).json({
+server/routes/member.ts-222-        error: "Unauthorized"
+server/routes/member.ts-223-      });
+server/routes/member.ts-224-    }
+server/routes/member.ts-225-
+server/routes/member.ts-226-    const invitationId =
+server/routes/member.ts-227-      req.body?.invitationId;
+server/routes/member.ts-228-
+server/routes/member.ts-229-    if (!invitationId) {
+server/routes/member.ts-230-      return res.status(400).json({
+server/routes/member.ts-231-        error: "Missing invitationId"
+server/routes/member.ts-232-      });
+server/routes/member.ts-233-    }
+server/routes/member.ts-234-

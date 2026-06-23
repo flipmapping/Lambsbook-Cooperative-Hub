@@ -1,0 +1,11 @@
+ARCHIVE_SHA256
+935724c2f41ff85c2d9efcab09b0bb7359b9e6a9dad5bcb08be4297da1c4b0f4  docs/implementation-evidence/PHASE-1-BASELINE.tar.gz
+
+ARCHIVE_CONTENTS
+docs/implementation-evidence/PHASE-1-BASELINE/
+docs/implementation-evidence/PHASE-1-BASELINE/hubauth-surface-discovery.txt
+docs/implementation-evidence/PHASE-1-BASELINE/invitation-creation-authority-certification.txt
+docs/implementation-evidence/PHASE-1-BASELINE/memberhub-mutation-targets.txt
+docs/implementation-evidence/PHASE-1-BASELINE/memberhub-pending-diff.patch
+docs/implementation-evidence/PHASE-1-BASELINE/MemberHub.pre-mutation.tsx
+docs/implementation-evidence/PHASE-1-BASELINE/mutation-surface-evidence.txt

@@ -1,0 +1,33 @@
+STATE TARGETS
+-------------
+const [inviteModalOpen, setInviteModalOpen] = useState(false);
+const [invitedEmail, setInvitedEmail] = useState("");
+const [inviteLink, setInviteLink] = useState("");
+
+MUTATION TARGET
+---------------
+postWithAuth("/api/member/invitations", {
+  invitedEmail
+})
+
+UI TARGET
+---------
+<Input
+  type="email"
+  value={invitedEmail}
+  onChange={(e) => setInvitedEmail(e.target.value)}
+  placeholder="Invitee email"
+/>
+
+<Button
+  onClick={() => createInvitationMutation.mutate()}
+  disabled={createInvitationMutation.isPending}
+>
+  Create Invitation
+</Button>
+
+OUTPUT TARGET
+-------------
+Invite Link
+{inviteLink}
+Copy Link

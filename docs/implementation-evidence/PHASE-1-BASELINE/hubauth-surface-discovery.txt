@@ -1,0 +1,56 @@
+client/src/components/ui/sidebar.tsx:285:  // Note: Tailwind v3.4 doesn't support "in-" selectors. So the rail won't work perfectly.
+client/src/components/admin/SBUManagement.tsx:37:  notes: string | null;
+client/src/components/dashboard/mockData.ts:8:  relationshipContext: {},
+client/src/components/dashboard/stubs.tsx:7:export function RelationshipTrustSection(_: any) { return null; }
+client/src/components/ui/sidebar.tsx:285:  // Note: Tailwind v3.4 doesn't support "in-" selectors. So the rail won't work perfectly.
+client/src/components/admin/SBUManagement.tsx:37:  notes: string | null;
+client/src/components/dashboard/mockData.ts:8:  relationshipContext: {},
+client/src/components/dashboard/stubs.tsx:7:export function RelationshipTrustSection(_: any) { return null; }
+client/src/lib/hubTranslations.ts:33:    hub_hero_description: 'Lambsbook Collaborative Hub is a cooperative platform where individuals and organizations form long-term collaboration relationships — and share the value created across education, migration, commerce, and more.',
+client/src/lib/hubTranslations.ts:79:    hub_collab_principle1_title: 'Long-term Relationships',
+client/src/lib/hubTranslations.ts:80:    hub_collab_principle1_desc: 'Collaboration relationships are established once and cannot be bypassed or replaced. This creates lasting bonds of trust and mutual support.',
+client/src/lib/hubTranslations.ts:82:    hub_collab_principle2_desc: 'Every relationship and contribution is recorded and respected. There are no hidden structures or unexpected changes.',
+client/src/lib/hubTranslations.ts:88:    hub_trust_desc1: 'When you invite someone to collaborate on Lambsbook, you\'re not just sharing a link — you\'re forming a lasting partnership. This relationship remains throughout your journey on the platform, creating a network of mutual support and shared success.',
+client/src/lib/hubTranslations.ts:93:    hub_faq1_q: 'What is a collaboration relationship?',
+client/src/lib/hubTranslations.ts:94:    hub_faq1_a: 'A collaboration relationship is a permanent connection between two members. When you invite someone to join Lambsbook, that relationship is established for life. Both parties benefit when either contributes to or participates in platform activities.',
+client/src/lib/hubTranslations.ts:97:    hub_faq3_q: 'Can collaboration relationships be changed or bypassed?',
+client/src/lib/hubTranslations.ts:98:    hub_faq3_a: 'No. Once established, collaboration relationships are permanent and cannot be altered. This ensures trust and fairness — your collaborators will always remain connected to you.',
+client/src/lib/hubTranslations.ts:102:    hub_faq5_a: 'Joining Lambsbook as a member is free. You can explore programs, build relationships, and participate in the community at no cost. Paid subscriptions unlock additional benefits and services.',
+client/src/lib/hubTranslations.ts:118:    hub_commitment2: 'Long-term Relationships',
+client/src/pages/PartnerOnboarding.tsx:39:  notes: z.string().optional(),
+client/src/pages/PartnerOnboarding.tsx:59:      notes: "",
+client/src/pages/PartnerOnboarding.tsx:321:                      name="notes"
+client/src/pages/PartnerOnboarding.tsx:324:                          <FormLabel>Additional Notes (optional)</FormLabel>
+client/src/pages/PartnerOnboarding.tsx:330:                              data-testid="input-notes"
+client/src/pages/Dashboard.tsx:546:                          <Label>Internal Notes</Label>
+client/src/pages/Dashboard.tsx:548:                            placeholder="Add notes about this enquiry..."
+client/src/pages/Dashboard.tsx:549:                            defaultValue={selectedEnquiry.notes || ''}
+client/src/pages/Dashboard.tsx:551:                              if (e.target.value !== selectedEnquiry.notes) {
+client/src/pages/Dashboard.tsx:552:                                updateEnquiryMutation.mutate({ id: selectedEnquiry.id, data: { notes: e.target.value } });
+client/src/pages/Dashboard.tsx:555:                            data-testid="textarea-enquiry-notes"
+client/src/pages/HubDashboard.tsx:10:  RelationshipTrustSection,
+client/src/pages/HubDashboard.tsx:526:      <RelationshipTrustSection relationshipContext={dashboardMockData.relationshipContext} />
+client/src/pages/MemberHub.tsx:186:  const [invitedEmail, setInvitedEmail] = useState("");
+client/src/pages/MemberHub.tsx:218:  const { data: relationshipsData, isLoading: relationshipsLoading } = useQuery<any>({
+client/src/pages/MemberHub.tsx:219:    queryKey: ["/api/member/trusted-relationships"],
+client/src/pages/MemberHub.tsx:220:    queryFn: () => fetchWithAuth("/api/member/trusted-relationships"),
+client/src/pages/MemberHub.tsx:229:    relationshipsLoading ||
+client/src/pages/MemberHub.tsx:277:        invitedEmail
+client/src/pages/MemberHub.tsx:441:          <TabsTrigger value="relationships" data-testid="tab-relationships">Relationships</TabsTrigger>
+client/src/pages/MemberHub.tsx:744:                      value={invitedEmail}
+client/src/pages/MemberHub.tsx:745:                      onChange={(e) => setInvitedEmail(e.target.value)}
+client/src/pages/MemberHub.tsx:787:        <TabsContent value="relationships" className="space-y-4">
+client/src/pages/MemberHub.tsx:790:              <CardTitle>Trusted Relationships</CardTitle>
+client/src/pages/MemberHub.tsx:792:                Invitor and direct invitee relationships
+client/src/pages/MemberHub.tsx:804:                  {relationshipsData?.invitor?.id || "No invitor recorded"}
+client/src/pages/MemberHub.tsx:808:                  Direct relationship source
+client/src/pages/MemberHub.tsx:818:                  Count: {relationshipsData?.invitees?.length || 0}
+client/src/pages/MemberHub.tsx:821:                {!relationshipsData?.invitees?.length ? (
+client/src/pages/MemberHub.tsx:827:                    {relationshipsData.invitees.map((invitee:any) => (
+client/src/pages/HubAdminDashboard.tsx:275:                    <CardDescription className="text-xs">Invitor–Invitee relationships</CardDescription>
+client/src/pages/HubAdminDashboard.tsx:385:                  View permanent cooperative relationship lineage. Each member has one originating cooperative relationship, 
+client/src/pages/HubAdminDashboard.tsx:409:                      No collaboration relationships found
+client/src/pages/HubAdminDashboard.tsx:424:                    <li><strong>Collaboration</strong> = Invitor–Invitee relationship (permanent)</li>
+client/src/pages/HubAdminDashboard.tsx:427:                    <li>Creates long-term passive earning relationships</li>
+client/src/pages/HubAdminDashboard.tsx:434:                    <li>Does NOT change collaboration relationships</li>
+client/src/pages/HubAdminDashboard.tsx:448:                <span className="block text-xs mt-1">Note: Referrals do not create collaboration relationships.</span>

@@ -150,47 +150,15 @@ const user = authReq.user;
     const invitedEmail =
       req.body?.invitedEmail;
 
-    const phoneNumber =
-      req.body?.phoneNumber;
-
-    const note =
-      req.body?.note;
-
     if (
-      invitedEmail !== undefined &&
+      !invitedEmail ||
       typeof invitedEmail !== "string"
     ) {
       return res.status(400).json({
         error: {
           code: "INVALID_EMAIL",
-          message: "invitedEmail must be a string",
+          message: "Valid invitedEmail is required",
           field: "invitedEmail"
-        }
-      });
-    }
-
-    if (
-      phoneNumber !== undefined &&
-      typeof phoneNumber !== "string"
-    ) {
-      return res.status(400).json({
-        error: {
-          code: "INVALID_PHONE_NUMBER",
-          message: "phoneNumber must be a string",
-          field: "phoneNumber"
-        }
-      });
-    }
-
-    if (
-      note !== undefined &&
-      typeof note !== "string"
-    ) {
-      return res.status(400).json({
-        error: {
-          code: "INVALID_NOTE",
-          message: "note must be a string",
-          field: "note"
         }
       });
     }
@@ -216,10 +184,7 @@ const user = authReq.user;
       await supabaseDAL.createGatewayInvitation({
         token,
         inviter_user_id: user.id,
-        inviter_email: userEmail,
-        invited_email: invitedEmail ?? null,
-        phone_number: phoneNumber ?? null,
-        note: note ?? null
+        inviter_email: userEmail
       });
 
     const inviteUrl =

@@ -1,0 +1,234 @@
+===== member.ts : invitations route =====
+96-      .from("member_invitations")
+97-      .update({ invited_user_id: user.id })
+98-      .eq("status", "pending")
+99-      .is("invited_user_id", null)
+100-      .eq("invited_email", userEmail);
+101-
+102-    const { data, error } = await supabaseAdmin
+103-      .from("member_invitations")
+104-      .select("id, inviter_member_id, status, created_at")
+105-      .eq("invited_user_id", user.id)
+106-      .eq("status", "pending")
+107-      .order("created_at", { ascending: false })
+108-      .limit(1)
+109-      .maybeSingle();
+110-
+111-
+112-    if (error) {
+113-      console.error(error);
+114-
+115-      return res.status(500).json({
+116-        error: "Failed to fetch invitation"
+117-      });
+118-    }
+119-
+120-    return res.json({
+121-      has_pending_invitation: !!data,
+122-      invitation: data || null
+123-    });
+124-  } catch (err) {
+125-    console.error(err);
+126-
+127-    return res.status(500).json({
+128-      error: "Server error"
+129-    });
+130-  }
+131-});
+132-
+133-/**
+134- * POST /api/member/invitations
+135- */
+136:router.post("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {
+137-  try {
+138-    const authReq = req as AuthenticatedRequest;
+139-const user = authReq.user;
+140-
+141-    if (!user?.token || !user?.id) {
+142-      return res.status(401).json({
+143-        error: {
+144-          code: "UNAUTHENTICATED",
+145-          message: "Authentication required"
+146-        }
+147-      });
+148-    }
+149-
+150-    const invitedEmail =
+151-      req.body?.invitedEmail;
+152-
+153-    if (
+154-      !invitedEmail ||
+155-      typeof invitedEmail !== "string"
+156-    ) {
+157-      return res.status(400).json({
+158-        error: {
+159-          code: "INVALID_EMAIL",
+160-          message: "Valid invitedEmail is required",
+161-          field: "invitedEmail"
+162-        }
+163-      });
+164-    }
+165-
+166-    const token = randomUUID();
+167-
+168-    const supabase =
+169-      getUserClient(user.token);
+170-
+171-    const { data: userEmail, error: userEmailError } =
+172-      await supabase.rpc("get_my_auth_email");
+173-
+174-    if (userEmailError || !userEmail) {
+175-      return res.status(401).json({
+176-        error: {
+177-          code: "EMAIL_NOT_FOUND",
+178-          message: "User email not found"
+179-        }
+180-      });
+181-    }
+182-
+183-    const data =
+184-      await supabaseDAL.createGatewayInvitation({
+185-        token,
+186-        inviter_user_id: user.id,
+187-        inviter_email: userEmail
+188-      });
+189-
+190-    const inviteUrl =
+191-      `https://onboarding-gateway.replit.app/auth/sign-up?invite=${token}`;
+192-
+193-    return res.status(201).json({
+194-      inviteUrl
+195-    });
+196-
+197-  } catch (err) {
+198-    console.error(
+199-      "POST_INVITATIONS_RUNTIME",
+200-      err
+201-    );
+202-
+203-    return res.status(500).json({
+204-      error: {
+205-        code: "SERVER_ERROR",
+206-        message: "Server error"
+207-      }
+208-    });
+209-  }
+210-});
+211-
+212-/**
+213- * POST /api/member/accept-invitation
+214- */
+215-router.post("/accept-invitation", attachUserContextSafe, async (req: Request, res: Response) => {
+216-  try {
+217-    const authReq = req as AuthenticatedRequest;
+218-const user = authReq.user;
+219-
+220-    if (!user?.token || !user?.id) {
+221-      return res.status(401).json({
+222-        error: "Unauthorized"
+223-      });
+224-    }
+225-
+226-    const invitationId =
+227-      req.body?.invitationId;
+228-
+229-    if (!invitationId) {
+230-      return res.status(400).json({
+231-        error: "Missing invitationId"
+232-      });
+233-    }
+234-
+235-    const supabase =
+236-      getUserClient(user.token);
+237-
+238-    const { error } =
+239-      await supabase.rpc(
+240-        "accept_member_invitation",
+241-        {
+242-          p_invitation_id: invitationId
+243-        }
+244-      );
+245-
+246-    if (error) {
+247-      console.error(
+248-        "ACCEPT_INVITATION_RPC_ERROR",
+249-        error.code,
+250-        error.message
+251-      );
+252-
+253-      const msg =
+254-        (error.message || "").toLowerCase();
+255-
+256-      if (
+
+===== supabase-dal.ts : createGatewayInvitation =====
+758-      .eq('member_id', memberId)
+759-      .order('created_at', { ascending: false })
+760-      .limit(limit);
+761-
+762-    if (error) throw new Error(`Failed to get activity logs: ${error.message}`);
+763-    return data || [];
+764-  }
+765-
+766-  async getAllActivityLogs(limit = 500): Promise<ActivityLog[]> {
+767-    this.ensureConfigured();
+768-    const supabase = getSupabaseAdmin();
+769-
+770-    const { data, error } = await supabase
+771-      .from('activity_logs')
+772-      .select('*')
+773-      .order('created_at', { ascending: false })
+774-      .limit(limit);
+775-
+776-    if (error) throw new Error(`Failed to get activity logs: ${error.message}`);
+777-    return data || [];
+778-  }
+779-
+780-  async getDirectInvitees(invitorId: string): Promise<Member[]> {
+781-    this.ensureConfigured();
+782-    const supabase = getSupabaseAdmin();
+783-
+784-    const collaborations = await this.getCollaborationsByInvitor(invitorId);
+785-    const inviteeIds = collaborations.map(c => c.invitee_id);
+786-
+787-    if (inviteeIds.length === 0) return [];
+788-
+789-    const { data, error } = await supabase
+790-      .schema('meh').from('members')
+791-      .select('*')
+792-      .in('id', inviteeIds);
+793-
+794-    if (error) throw new Error(`Failed to get invitees: ${error.message}`);
+795-    return data || [];
+796-  }
+797-
+798:  async createGatewayInvitation(
+799-    data: GatewayInvitationInsert
+800-  ): Promise<GatewayInvitation> {
+801-    this.ensureConfigured();
+802-
+803-    const supabase = getSupabaseAdmin();
+804-
+805-    const { data: invitation, error } = await supabase
+806-      .from('gateway_invitations')
+807-      .insert({
+808-        token: data.token,
+809-        inviter_user_id: data.inviter_user_id,
+810-        inviter_email: data.inviter_email,
+811-      })
+812-      .select()
+813-      .single();
+814-
+815-    if (error) {
+816-      throw new Error(
+817-        `Failed to create gateway invitation: ${error.message}`
+818-      );
+819-    }
+820-
+821-    return invitation;
+822-  }
+823-}
+824-
+825-export const supabaseDAL = new SupabaseDAL();
+
+===== HubAuth.tsx : relationship surface =====
