@@ -73,6 +73,22 @@ export default function HubAuthCallback() {
           }
         }
 
+
+        if (inviteToken) {
+          try {
+            await fetch("/api/member/onboarding/materialize-invitation", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${accessToken}`,
+              },
+              body: JSON.stringify({ inviteToken }),
+            });
+          } catch (e) {
+            console.warn("Failed to materialize invitation:", e);
+          }
+        }
+
         setStatus("success");
 
         setTimeout(() => {

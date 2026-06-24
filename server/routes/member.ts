@@ -244,6 +244,115 @@ const user = authReq.user;
   }
 });
 
+
+/**
+ * POST /api/member/onboarding/materialize-invitation
+ */
+router.post(
+  "/onboarding/materialize-invitation",
+  attachUserContext,
+  async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+      const user = authReq.user;
+
+      if (!user?.token || !user?.id) {
+        return res.status(401).json({
+          error: "Unauthorized",
+        });
+      }
+
+      const { inviteToken } = req.body;
+
+      if (
+        typeof inviteToken !== "string" ||
+        inviteToken.trim().length === 0
+      ) {
+        return res.status(400).json({
+          error: {
+            code: "INVALID_TOKEN",
+            message: "inviteToken is required",
+          },
+        });
+      }
+
+      const supabase = getUserClient(user.token);
+
+      const { data: invitationId, error } =
+        await supabase.rpc(
+          "materialize_member_invitation_from_link",
+          {
+            p_token: inviteToken,
+          }
+        );
+
+      if (error) {
+        const msg =
+          (error.message || "").toLowerCase();
+
+        if (
+          msg.includes("not pending") ||
+          msg.includes("not found") ||
+          msg.includes("expired") ||
+          msg.includes("self-invitation") ||
+          msg.includes("not a canonical member")
+        ) {
+          console.error(
+            "MATERIALIZE_INVITATION_STATE_CONFLICT",
+            error.code,
+            error.message
+          );
+
+          return res.status(422).json({
+            error: {
+              code: "TOKEN_UNAVAILABLE",
+              message:
+                "This invitation token is unavailable.",
+            },
+          });
+        }
+
+        if (
+          msg.includes("already a canonical member")
+        ) {
+          return res.status(200).json({
+            status: "already_member",
+          });
+        }
+
+        console.error(
+          "MATERIALIZE_INVITATION_RPC_ERROR",
+          error.code,
+          error.message
+        );
+
+        return res.status(500).json({
+          error: {
+            code: "INTERNAL_ERROR",
+            message:
+              "Failed to materialize invitation.",
+          },
+        });
+      }
+
+      return res.status(200).json({
+        status: "materialized",
+        invitationId,
+      });
+
+    } catch (err) {
+      console.error(
+        "MATERIALIZE_INVITATION_RUNTIME",
+        err
+      );
+
+      return res.status(500).json({
+        error: "Server error",
+      });
+    }
+  }
+);
+
 /**
  * POST /api/member/accept-invitation
  */

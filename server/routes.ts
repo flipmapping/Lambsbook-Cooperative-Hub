@@ -892,6 +892,7 @@ export async function registerRoutes(
       )
       .optional(),
     referrerEmail: z.string().email().optional().or(z.literal("")),
+    inviteToken: z.string().optional(),
   });
 
   app.post("/api/hub/auth/signup", async (req: Request, res: Response) => {

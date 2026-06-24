@@ -301,6 +301,7 @@ interface SignUpData {
   username?: string;
   phone?: string;
   referrerEmail?: string;
+  inviteToken?: string;
 }
 
 const USERNAME_REGEX = /^[a-zA-Z0-9_-]{3,50}$/;
@@ -322,6 +323,7 @@ export const signUpValidationSchema = z.object({
     .regex(PHONE_REGEX, "Phone must be 7-15 digits with optional + prefix")
     .optional(),
   referrerEmail: z.string().email().optional(),
+  inviteToken: z.string().optional(),
 });
 
 export class HubAuthError extends Error {
@@ -340,10 +342,10 @@ export class HubAuthError extends Error {
   }
 }
 
-function hubRedirectUrl(referrerEmail?: string) {
+function hubRedirectUrl(referrerEmail?: string, inviteToken?: string) {
   const base =
     process.env.SITE_URL || process.env.APP_URL || "http://localhost:5000";
-  return `${base}/hub/auth/callback?referrer=${encodeURIComponent(referrerEmail || "")}`;
+  return `${base}/hub/auth/callback?referrer=${encodeURIComponent(referrerEmail || "")}&invite=${encodeURIComponent(inviteToken || "")}`;
 }
 
 /**
@@ -416,12 +418,16 @@ export async function signUpMember(data: SignUpData) {
       email: data.email,
       password: data.password,
       options: {
-        emailRedirectTo: hubRedirectUrl(data.referrerEmail),
+        emailRedirectTo: hubRedirectUrl(
+          data.referrerEmail,
+          data.inviteToken,
+        ),
         data: {
           full_name: data.fullName,
           username: data.username,
           phone: data.phone,
           referrer_id: referrerId,
+          invite_token: data.inviteToken,
         },
       },
     });

@@ -106,8 +106,14 @@ export default function HubAuth({ mode }: HubAuthProps) {
   useEffect(() => {
     const params = new URLSearchParams(search);
     const ref = params.get("ref");
+    const inviteToken = params.get("invite");
+
     if (ref && mode === "signup") {
       setReferrerEmail(ref);
+    }
+
+    if (inviteToken && mode === "signup") {
+      localStorage.setItem("gateway.invite.token", inviteToken);
     }
   }, [search, mode]);
 
@@ -184,6 +190,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
       username?: string;
       phone?: string;
       referrerEmail?: string;
+      inviteToken?: string;
     }) => {
       const res = await apiRequest("POST", `/api/hub/auth/${mode}`, data);
       return res.json();
@@ -305,6 +312,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
         username,
         phone: normalizePhone(phone),
         referrerEmail: referrerEmail || undefined,
+        inviteToken: localStorage.getItem("gateway.invite.token") || undefined,
       });
     } else {
       const emailError = validateEmail(email);
