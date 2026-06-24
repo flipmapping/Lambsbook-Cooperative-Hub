@@ -33,6 +33,7 @@ export default function HubAuthCallback() {
         const urlError = urlParams.get("error");
         const urlErrorDescription = urlParams.get("error_description");
         const referrer = urlParams.get("referrer");
+        const inviteToken = urlParams.get("invite");
 
         if (error || urlError) {
           setStatus("error");
