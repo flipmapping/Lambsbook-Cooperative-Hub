@@ -168,10 +168,19 @@ function _validateContinuationContext(
 function _resolveInvitationContinuation(
   _validated: _ValidatedContinuationContext,
 ): _InvitationContinuationStage {
-  throw new Error(
-    "Not implemented: Stage 3 — Invitation Continuation. " +
-      "Activation deferred to a subsequent work package.",
-  );
+  const inviteToken =
+    (_validated.normalized.inviteToken ?? "").trim();
+
+  if (inviteToken.length > 0) {
+    return {
+      kind: "invitation",
+      inviteToken,
+    };
+  }
+
+  return {
+    kind: "non_invitation",
+  };
 }
 
 function _determineRuntimeState(
