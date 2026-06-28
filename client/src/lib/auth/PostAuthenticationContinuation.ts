@@ -187,10 +187,15 @@ function _determineRuntimeState(
   _validated: _ValidatedContinuationContext,
   _invitationStage: _InvitationContinuationStage,
 ): _DeterminedRuntimeState {
-  throw new Error(
-    "Not implemented: Stage 4 — Runtime State Determination. " +
-      "Activation deferred to a subsequent work package.",
-  );
+  return {
+    authenticationMode: _validated.normalized.authenticationMode,
+    outcome:
+      _invitationStage.kind === "invitation"
+        ? "pending_invitation"
+        : "non_member",
+    memberId: undefined,
+    pendingInvitationId: undefined,
+  };
 }
 
 function _prepareRuntimePublication(
