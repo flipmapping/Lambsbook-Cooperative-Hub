@@ -201,10 +201,14 @@ function _determineRuntimeState(
 function _prepareRuntimePublication(
   _determined: _DeterminedRuntimeState,
 ): _PreparedRuntimePublication {
-  throw new Error(
-    "Not implemented: Stage 5 — Runtime Publication Preparation. " +
-      "Activation deferred to a subsequent work package.",
-  );
+  return {
+    publication: {
+      authenticationMode: _determined.authenticationMode,
+      outcome: _determined.outcome,
+      memberId: _determined.memberId,
+      pendingInvitationId: _determined.pendingInvitationId,
+    },
+  };
 }
 
 // ============================================================================
