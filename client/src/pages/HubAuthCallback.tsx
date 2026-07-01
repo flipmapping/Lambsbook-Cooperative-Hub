@@ -9,6 +9,53 @@ import {
 } from "@/components/ui/card";
 import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  postAuthenticationContinuation,
+  type ContinuationContext,
+} from "@/lib/auth/PostAuthenticationContinuation";
+import { resolvePostAuthenticationDestination } from "@/lib/auth/NavigationConsumptionAuthority";
+
+
+/**
+ * Phase 5 Work Package 2B
+ *
+ * Dormant preparation boundary for future continuation delegation.
+ *
+ * Architectural invariant:
+ *
+ * This helper prepares only HubAuthCallback-local authentication values.
+ * It SHALL NOT construct or infer the canonical ContinuationContext.
+ * Mapping into the canonical ContinuationContext remains exclusively
+ * owned by the Canonical Authentication Continuation Authority.
+ *
+ * This preparation boundary intentionally mirrors the structure,
+ * documentation style, and dormant behaviour established in
+ * HubAuth.tsx during Work Package 2A.
+ */
+
+interface _PreparedAuthenticationValues {
+  readonly accessToken: string;
+  readonly refreshToken?: string;
+  readonly inviteToken?: string;
+}
+
+function _prepareContinuationValues(
+  values: _PreparedAuthenticationValues,
+): _PreparedAuthenticationValues {
+  return values;
+}
+
+function _buildContinuationContext(
+  prepared: _PreparedAuthenticationValues,
+): ContinuationContext {
+  return {
+    accessToken: prepared.accessToken,
+    refreshToken: prepared.refreshToken,
+    inviteToken: prepared.inviteToken,
+    authenticationMode: "callback",
+  };
+}
+
 
 export default function HubAuthCallback() {
   const [, setLocation] = useLocation();
@@ -59,6 +106,31 @@ export default function HubAuthCallback() {
 
         localStorage.setItem("supabase.auth.token", JSON.stringify(tokenData));
 
+        const prepared =
+          _prepareContinuationValues({
+            accessToken,
+            refreshToken:
+              refreshToken ?? undefined,
+            inviteToken:
+              inviteToken ?? undefined,
+          });
+
+        const continuationContext =
+          _buildContinuationContext(
+            prepared,
+          );
+
+        const runtimeState =
+          await postAuthenticationContinuation(
+            continuationContext,
+          );
+
+        const destination =
+          resolvePostAuthenticationDestination(
+            runtimeState,
+          );
+
+
         if (referrer) {
           try {
             await fetch("/api/hub/auth/link-referrer", {
@@ -93,7 +165,7 @@ export default function HubAuthCallback() {
         setStatus("success");
 
         setTimeout(() => {
-          setLocation("/hub/dashboard");
+          setLocation(destination);
         }, 1500);
       } catch (e) {
         console.error("Auth callback error:", e);

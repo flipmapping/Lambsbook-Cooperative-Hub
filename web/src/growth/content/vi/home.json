@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "locale": "vi",
+  "sections": {
+    "hero": {
+      "title": "Chào mừng đến với Nền tảng Phát triển",
+      "subtitle": "Đồng hành cùng Hợp tác xã",
+      "description": "Khám phá chương trình, học bổng, tuyển sinh và các cơ hội cộng đồng.",
+      "primaryAction": "Bắt đầu",
+      "secondaryAction": "Tìm hiểu thêm"
+    }
+  }
+}

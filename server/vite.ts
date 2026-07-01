@@ -34,8 +34,15 @@ export async function setupVite(server: Server, app: Express) {
   app.use(vite.middlewares);
 
   app.use("*", async (req, res, next) => {
-    // CRITICAL: do not let SPA fallback handle API routes
-    if (req.path.startsWith("/api")) {
+    // CRITICAL: do not let SPA fallback handle
+    // API or Vite development routes.
+    if (
+      req.path.startsWith("/api") ||
+      req.path.startsWith("/@vite") ||
+      req.path.startsWith("/@fs/") ||
+      req.path.startsWith("/vite-hmr") ||
+      req.path.startsWith("/@react-refresh")
+    ) {
       return next();
     }
 

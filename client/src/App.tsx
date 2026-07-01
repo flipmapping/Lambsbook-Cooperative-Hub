@@ -24,6 +24,11 @@ import { AIChatWidget } from '@/components/AIChatWidget';
 import AuthCallback from '@/pages/AuthCallback';
 import Login from '@/pages/Login';
 import HubLanding from '@/pages/HubLanding';
+import { LandingPage as GrowthLandingPage } from "../../web/src/growth";
+import {
+  initializeGrowthRuntime,
+  defaultGrowthRuntimeProvider,
+} from "../../web/src/growth";
 import HubAuth from '@/pages/HubAuth';
 import HubAuthCallback from '@/pages/HubAuthCallback';
 import MemberDashboard from '@/pages/MemberDashboard';
@@ -46,7 +51,8 @@ const HubAdminDashboard = lazy(() => import('@/pages/HubAdminDashboard'));
 const MemberHub = lazy(() => import('@/pages/MemberHub'));
 const PartnerOnboarding = lazy(() => import('@/pages/PartnerOnboarding'));
 const TranscriptSubmission = lazy(() => import('@/pages/TranscriptSubmission'));
-
+const ProspectRegistration = lazy(() => import('@/pages/ProspectRegistration'));
+console.log("[TRACE-P1] App.tsx: module evaluated");
 
 function ImmigrationWebsite() {
   const sectionRefs = {
@@ -150,6 +156,7 @@ function Router() {
       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+      <Route path="/hub/prospect-registration" component={ProspectRegistration} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
       <Route path="/hub/admin" component={HubAdminDashboard} />
       <Route path="/hub/admin/governance" component={AdminGovernance} />
@@ -157,6 +164,7 @@ function Router() {
       <Route path="/hub/education/submit" component={TranscriptSubmission} />
       
       {/* Legacy immigration page (accessible but not primary) */}
+      <Route path="/growth" component={GrowthLandingPage} />
       <Route path="/immigration" component={ImmigrationWebsite} />
     </Switch>
   );
@@ -164,6 +172,10 @@ function Router() {
 
 
 function App() {
+console.log("[TRACE-P1] App.tsx: component rendered");
+  initializeGrowthRuntime(
+    defaultGrowthRuntimeProvider
+  );
 
   useRef(null);
 

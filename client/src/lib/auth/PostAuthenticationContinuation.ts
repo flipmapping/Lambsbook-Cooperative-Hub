@@ -218,7 +218,18 @@ function _prepareRuntimePublication(
 export async function postAuthenticationContinuation(
   _context: ContinuationContext,
 ): Promise<RuntimeState> {
-  throw new Error(
-    "Not implemented: Canonical Authentication Continuation Authority.",
-  );
+  const normalized = _normalizeAuthentication(_context);
+
+  const validated = _validateContinuationContext(normalized);
+
+  const invitationStage =
+    _resolveInvitationContinuation(validated);
+
+  const runtimeState =
+    _determineRuntimeState(validated, invitationStage);
+
+  const prepared =
+    _prepareRuntimePublication(runtimeState);
+
+  return prepared.publication;
 }

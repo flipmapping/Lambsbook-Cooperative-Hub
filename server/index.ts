@@ -11,6 +11,18 @@ app.use((req, res, next) => {
   const url = decodeURIComponent(req.url.toLowerCase());
 
   if (
+    process.env.NODE_ENV === "development" &&
+    (
+      url.startsWith("/@vite") ||
+      url.startsWith("/@fs/") ||
+      url.startsWith("/vite-hmr") ||
+      url.startsWith("/@react-refresh")
+    )
+  ) {
+    return next();
+  }
+
+  if (
     url.includes(".env") ||
     url.startsWith("/.") ||
     url.includes("..") ||
