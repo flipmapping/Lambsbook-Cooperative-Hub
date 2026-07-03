@@ -9,6 +9,8 @@ import type {
   Earning, EarningInsert, EarningUpdate,
   ActivityLog, ActivityLogInsert,
   GatewayInvitation, GatewayInvitationInsert,
+  Prospect, ProspectInsert,
+  Funnel, FunnelInsert, ProspectJourney, ProspectJourneyInsert,
   TutorStatus
 } from './supabase-types';
 
@@ -37,6 +39,165 @@ export class SupabaseDAL {
 
     if (error) throw new Error(`Failed to create member: ${error.message}`);
     return member;
+  }
+
+  async createProspect(data: ProspectInsert): Promise<Prospect> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: prospect, error } = await supabase
+      .schema('growth').from('prospects')
+      .insert({
+        full_name: data.full_name,
+        email: data.email,
+        country: data.country,
+        program_of_interest: data.program_of_interest,
+        phone: data.phone ?? null,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to create prospect: ${error.message}`);
+    return prospect;
+  }
+
+  async getFunnelByCode(code: string): Promise<Funnel | null> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('funnels')
+      .select('*')
+      .eq('code', code)
+      .eq('active', true)
+      .maybeSingle();
+
+    if (error) throw new Error(`Failed to get funnel: ${error.message}`);
+    return data;
+  }
+
+  async createProspectJourney(data: ProspectJourneyInsert): Promise<ProspectJourney> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: journey, error } = await supabase
+      .schema('growth').from('prospect_journeys')
+      .insert({
+        prospect_id: data.prospect_id,
+        funnel_id:   data.funnel_id,
+        current_stage: data.current_stage ?? 'registered',
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to create prospect journey: ${error.message}`);
+    return journey;
+  }
+
+  async listProspects(): Promise<Array<{
+    id: string;
+    full_name: string;
+    email: string;
+    country: string;
+    program_of_interest: string;
+    phone: string | null;
+    created_at: string;
+    funnel_code: string | null;
+    current_stage: string | null;
+  }>> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospects')
+      .select(`
+        id,
+        full_name,
+        email,
+        country,
+        program_of_interest,
+        phone,
+        created_at,
+        prospect_journeys ( current_stage, funnels ( code ) )
+      `)
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(`Failed to list prospects: ${error.message}`);
+
+    return (data ?? []).map((row: any) => ({
+      id:                  row.id,
+      full_name:           row.full_name,
+      email:               row.email,
+      country:             row.country,
+      program_of_interest: row.program_of_interest,
+      phone:               row.phone ?? null,
+      created_at:          row.created_at,
+      funnel_code:         row.prospect_journeys?.[0]?.funnels?.code ?? null,
+      current_stage:       row.prospect_journeys?.[0]?.current_stage ?? null,
+    }));
+  }
+
+  async getProspect(id: string): Promise<{
+    id: string;
+    full_name: string;
+    email: string;
+    country: string;
+    program_of_interest: string;
+    phone: string | null;
+    created_at: string;
+    funnel_code: string | null;
+    current_stage: string | null;
+  } | null> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospects')
+      .select(`
+        id,
+        full_name,
+        email,
+        country,
+        program_of_interest,
+        phone,
+        created_at,
+        prospect_journeys ( current_stage, funnels ( code ) )
+      `)
+      .eq('id', id)
+      .maybeSingle();
+
+    if (error) throw new Error(`Failed to get prospect: ${error.message}`);
+    if (!data) return null;
+
+    return {
+      id:                  data.id,
+      full_name:           data.full_name,
+      email:               data.email,
+      country:             data.country,
+      program_of_interest: data.program_of_interest,
+      phone:               data.phone ?? null,
+      created_at:          data.created_at,
+      funnel_code:         data.prospect_journeys?.[0]?.funnels?.code ?? null,
+      current_stage:       data.prospect_journeys?.[0]?.current_stage ?? null,
+    };
+  }
+
+  async updateProspectJourneyStage(
+    prospectId: string,
+    stage: string,
+  ): Promise<ProspectJourney | null> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_journeys')
+      .update({ current_stage: stage })
+      .eq('prospect_id', prospectId)
+      .select()
+      .maybeSingle();
+
+    if (error) throw new Error(`Failed to update prospect journey stage: ${error.message}`);
+    return data;
   }
 
   async getMemberByUserId(userId: string): Promise<Member | null> {

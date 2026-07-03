@@ -238,3 +238,48 @@ export interface GatewayInvitationInsert {
   phone_number?: string | null;
   note?: string | null;
 }
+
+export interface Prospect {
+  id: string;
+  full_name: string;
+  email: string;
+  country: string;
+  program_of_interest: string;
+  phone: string | null;
+  created_at: string;
+}
+
+export interface ProspectInsert {
+  full_name: string;
+  email: string;
+  country: string;
+  program_of_interest: string;
+  phone?: string | null;
+}
+export interface Funnel {
+  id: string;
+  code: string;
+  name: string;
+  active: boolean;
+  created_at: string;
+}
+
+export interface FunnelInsert {
+  code: string;
+  name: string;
+  active?: boolean;
+}
+
+export interface ProspectJourney {
+  id: string;
+  prospect_id: string;
+  funnel_id: string;
+  current_stage: string;
+  created_at: string;
+}
+
+export interface ProspectJourneyInsert {
+  prospect_id: string;
+  funnel_id: string;
+  current_stage?: string;
+}

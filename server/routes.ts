@@ -14,6 +14,7 @@ import {
 import { z } from "zod";
 import { generateAIResponse, generateLeadScore } from "./services/ai";
 import { notifyNewEnquiry } from "./services/notifications";
+import { submitProspectRegistration, listProspects, getProspect, updateProspectStage } from "./services/admissions";
 import {
   createClickUpTask,
   createApolloContact,
@@ -255,6 +256,72 @@ export async function registerRoutes(
       res.json(partner);
     } catch (error) {
       res.status(500).json({ error: "Failed to update partner" });
+    }
+  });
+
+  // ============================================================
+  // ADMISSIONS ROUTES
+  // ============================================================
+
+  app.post("/api/admissions/prospects", async (req: Request, res: Response) => {
+    try {
+      const prospectSchema = z.object({
+        fullName:          z.string().min(1, "Full name is required"),
+        email:             z.string().email("Valid email is required"),
+        country:           z.string().min(1, "Country is required"),
+        programOfInterest: z.string().min(1, "Program of interest is required"),
+        phone:             z.string().optional(),
+      });
+
+      const data = prospectSchema.parse(req.body);
+      const result = await submitProspectRegistration(data);
+      res.json(result);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error("Admissions prospect error:", error);
+      res.status(500).json({ error: "Failed to process prospect registration" });
+    }
+  });
+
+  app.get("/api/admissions/prospects", async (req: Request, res: Response) => {
+    try {
+      const prospects = await listProspects();
+      res.json(prospects);
+    } catch (error) {
+      console.error("List prospects error:", error);
+      res.status(500).json({ error: "Failed to list prospects" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id", async (req: Request, res: Response) => {
+    try {
+      const prospect = await getProspect(req.params.id);
+      if (!prospect) {
+        return res.status(404).json({ error: "Prospect not found" });
+      }
+      res.json(prospect);
+    } catch (error) {
+      console.error("Get prospect error:", error);
+      res.status(500).json({ error: "Failed to get prospect" });
+    }
+  });
+
+  app.patch("/api/admissions/prospects/:id/stage", async (req: Request, res: Response) => {
+    try {
+      const { current_stage } = req.body;
+      if (!current_stage || typeof current_stage !== "string") {
+        return res.status(400).json({ error: "current_stage is required" });
+      }
+      const journey = await updateProspectStage(req.params.id, current_stage);
+      if (!journey) {
+        return res.status(404).json({ error: "No journey found for this prospect" });
+      }
+      res.json(journey);
+    } catch (error) {
+      console.error("Update prospect stage error:", error);
+      res.status(500).json({ error: "Failed to update prospect stage" });
     }
   });
 

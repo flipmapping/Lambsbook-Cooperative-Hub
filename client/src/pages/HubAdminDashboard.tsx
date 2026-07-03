@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { EnrollmentWorkflow } from "@/components/admin/EnrollmentWorkflow";
 import { ProgramsManagement } from "@/components/admin/ProgramsManagement";
+import { AdmissionsWorkspace } from "@/pages/AdmissionsWorkspace";
 
 type MembershipStatus = "free" | "paid";
 type ActivityStatus = "active" | "inactive";
@@ -233,6 +234,7 @@ export default function HubAdminDashboard() {
           <TabsTrigger value="tutors" data-testid="tab-tutors">Tutors</TabsTrigger>
           <TabsTrigger value="settings" data-testid="tab-settings">Settings</TabsTrigger>
           <TabsTrigger value="enrollment" data-testid="tab-enrollment">Enrollment</TabsTrigger>
+          <TabsTrigger value="admissions" data-testid="tab-admissions">Admissions</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -644,6 +646,10 @@ export default function HubAdminDashboard() {
 
         <TabsContent value="enrollment" className="space-y-4">
           <EnrollmentWorkflow members={members} programs={programs} />
+        </TabsContent>
+
+        <TabsContent value="admissions" className="space-y-4">
+          <AdmissionsWorkspace />
         </TabsContent>
       </Tabs>
     </div>

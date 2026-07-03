@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "wouter";
 
 interface FormState {
   fullName: string;
@@ -16,8 +17,15 @@ const INITIAL_STATE: FormState = {
   programOfInterest: '',
 };
 
+function isValidEmail(value: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+}
+
 export default function ProspectRegistration() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -26,9 +34,80 @@ export default function ProspectRegistration() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const isValid =
+    form.fullName.trim() !== "" &&
+    isValidEmail(form.email) &&
+    form.country.trim() !== "" &&
+    form.programOfInterest !== "";
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!isValid) {
+      return;
+    }
+
+    setLoading(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/admissions/prospects", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName:          form.fullName,
+          email:             form.email,
+          phone:             form.phone,
+          country:           form.country,
+          programOfInterest: form.programOfInterest,
+        }),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        setSubmitError(
+          (body as { error?: string }).error ??
+            "Submission failed. Please try again."
+        );
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-lg">
+          <div className="rounded-lg border border-border bg-card p-8 text-center shadow-sm">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground">
+              Prospect Registration Received
+            </h1>
+            <p className="mt-4 text-muted-foreground">
+              Thank you for your interest.
+            </p>
+            <p className="mt-2 text-muted-foreground">
+              Your information has been validated in this session.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Online submission will be available in a future release.
+            </p>
+            <Link
+              href="/growth"
+              className="mt-8 inline-block rounded-md border border-input bg-background px-6 py-2.5 text-sm font-semibold text-foreground shadow-sm hover:bg-accent transition-colors"
+            >
+              Back to Growth
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
@@ -129,11 +208,18 @@ export default function ProspectRegistration() {
             </select>
           </div>
 
+          {submitError && (
+            <p role="alert" className="text-sm text-destructive">
+              {submitError}
+            </p>
+          )}
+
           <button
             type="submit"
-            className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
+            disabled={loading || !isValid}
+            className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Continue
+            {loading ? "Submitting..." : "Continue"}
           </button>
         </form>
       </div>
