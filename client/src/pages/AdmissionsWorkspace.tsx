@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from 'wouter';
 
 interface Prospect {
   id: string;
@@ -151,9 +152,21 @@ export function AdmissionsWorkspace() {
                       {p.email}
                     </p>
                   </div>
-                  <Badge variant={stageBadgeVariant(p.current_stage)} className="shrink-0 text-xs">
-                    {p.current_stage ?? "untracked"}
-                  </Badge>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <Badge variant={stageBadgeVariant(p.current_stage)} className="text-xs">
+                      {p.current_stage ?? "untracked"}
+                    </Badge>
+                    <Link href={`/hub/admin/prospects/${p.id}`}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-6 text-xs px-2"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent className="pb-4 px-4">

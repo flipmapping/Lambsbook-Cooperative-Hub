@@ -1,0 +1,26 @@
+{
+  "runtime_id": "BLD-RUN-001",
+  "authority": "BLD-ARCH-002",
+  "repository": "APP-001",
+  "generated": "2026-07-09T15:52:32.858741Z",
+  "composition_loaded": true,
+  "service_count": 3,
+  "services": [
+    {
+      "service": "BLD-RRS-001",
+      "role": "Repository Resolution",
+      "registered": true
+    },
+    {
+      "service": "BLD-AMS-001",
+      "role": "Artifact Materialization",
+      "registered": true
+    },
+    {
+      "service": "BLD-RPS-001",
+      "role": "Repository Publication",
+      "registered": true
+    }
+  ],
+  "status": "READY"
+}

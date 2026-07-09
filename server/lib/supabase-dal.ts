@@ -11,6 +11,12 @@ import type {
   GatewayInvitation, GatewayInvitationInsert,
   Prospect, ProspectInsert,
   Funnel, FunnelInsert, ProspectJourney, ProspectJourneyInsert,
+  ProspectLifecycleEvent, ProspectLifecycleEventInsert,
+  ProspectActivity, ProspectActivityInsert,
+  FollowupTask, FollowupTaskInsert, FollowupTaskUpdate,
+  ProspectAppointment, ProspectAppointmentInsert, ProspectAppointmentUpdate,
+  ProspectDocument, ProspectDocumentInsert, ProspectDocumentUpdate,
+  AdmissionDecision, AdmissionDecisionInsert,
   TutorStatus
 } from './supabase-types';
 
@@ -198,6 +204,345 @@ export class SupabaseDAL {
 
     if (error) throw new Error(`Failed to update prospect journey stage: ${error.message}`);
     return data;
+  }
+
+  async recordLifecycleEvent(
+    data: ProspectLifecycleEventInsert,
+  ): Promise<ProspectLifecycleEvent> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: event, error } = await supabase
+      .schema('growth').from('prospect_lifecycle_events')
+      .insert({
+        prospect_id: data.prospect_id,
+        from_stage:  data.from_stage ?? null,
+        to_stage:    data.to_stage,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to record lifecycle event: ${error.message}`);
+    return event;
+  }
+
+  async listLifecycleEvents(
+    prospectId: string,
+  ): Promise<ProspectLifecycleEvent[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_lifecycle_events')
+      .select('*')
+      .eq('prospect_id', prospectId)
+      .order('recorded_at', { ascending: true });
+
+    if (error) throw new Error(`Failed to list lifecycle events: ${error.message}`);
+    return data ?? [];
+  }
+
+  async recordActivity(
+    data: ProspectActivityInsert,
+  ): Promise<ProspectActivity> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: activity, error } = await supabase
+      .schema('growth').from('prospect_activities')
+      .insert({
+        prospect_id:   data.prospect_id,
+        activity_type: data.activity_type,
+        metadata:      data.metadata ?? null,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to record prospect activity: ${error.message}`);
+    return activity;
+  }
+
+  async listActivities(
+    prospectId: string,
+  ): Promise<ProspectActivity[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_activities')
+      .select('*')
+      .eq('prospect_id', prospectId)
+      .order('recorded_at', { ascending: true });
+
+    if (error) throw new Error(`Failed to list prospect activities: ${error.message}`);
+    return data ?? [];
+  }
+
+  async createFollowupTask(
+    data: FollowupTaskInsert,
+  ): Promise<FollowupTask> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: task, error } = await supabase
+      .schema('growth').from('prospect_followup_tasks')
+      .insert({
+        prospect_id:  data.prospect_id,
+        title:        data.title,
+        description:  data.description ?? null,
+        due_date:     data.due_date ?? null,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to create follow-up task: ${error.message}`);
+    return task;
+  }
+
+  async listFollowupTasks(
+    prospectId: string,
+  ): Promise<FollowupTask[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_followup_tasks')
+      .select('*')
+      .eq('prospect_id', prospectId)
+      .order('created_at', { ascending: true });
+
+    if (error) throw new Error(`Failed to list follow-up tasks: ${error.message}`);
+    return data ?? [];
+  }
+
+  async updateFollowupTask(
+    taskId: string,
+    data: FollowupTaskUpdate,
+  ): Promise<FollowupTask> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: task, error } = await supabase
+      .schema('growth').from('prospect_followup_tasks')
+      .update({
+        ...(data.title        !== undefined && { title: data.title }),
+        ...(data.description  !== undefined && { description: data.description }),
+        ...(data.due_date     !== undefined && { due_date: data.due_date }),
+      })
+      .eq('id', taskId)
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to update follow-up task: ${error.message}`);
+    return task;
+  }
+
+  async completeFollowupTask(taskId: string): Promise<FollowupTask> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data: task, error } = await supabase
+      .schema('growth').from('prospect_followup_tasks')
+      .update({ completed: true, completed_at: new Date().toISOString() })
+      .eq('id', taskId)
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to complete follow-up task: ${error.message}`);
+    return task;
+  }
+
+  async createAppointment(
+    data: ProspectAppointmentInsert,
+  ): Promise<ProspectAppointment> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: appt, error } = await supabase
+      .schema('growth').from('prospect_appointments')
+      .insert({
+        prospect_id:       data.prospect_id,
+        title:             data.title,
+        scheduled_at:      data.scheduled_at,
+        duration_minutes:  data.duration_minutes ?? null,
+        location:          data.location ?? null,
+        notes:             data.notes ?? null,
+      })
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to create appointment: ${error.message}`);
+    return appt;
+  }
+
+  async listAppointments(
+    prospectId: string,
+  ): Promise<ProspectAppointment[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_appointments')
+      .select('*')
+      .eq('prospect_id', prospectId)
+      .order('scheduled_at', { ascending: true });
+    if (error) throw new Error(`Failed to list appointments: ${error.message}`);
+    return data ?? [];
+  }
+
+  async updateAppointment(
+    appointmentId: string,
+    data: ProspectAppointmentUpdate,
+  ): Promise<ProspectAppointment> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: appt, error } = await supabase
+      .schema('growth').from('prospect_appointments')
+      .update({
+        ...(data.title            !== undefined && { title: data.title }),
+        ...(data.scheduled_at     !== undefined && { scheduled_at: data.scheduled_at }),
+        ...(data.duration_minutes !== undefined && { duration_minutes: data.duration_minutes }),
+        ...(data.location         !== undefined && { location: data.location }),
+        ...(data.notes            !== undefined && { notes: data.notes }),
+      })
+      .eq('id', appointmentId)
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to update appointment: ${error.message}`);
+    return appt;
+  }
+
+  async cancelAppointment(appointmentId: string): Promise<ProspectAppointment> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: appt, error } = await supabase
+      .schema('growth').from('prospect_appointments')
+      .update({ status: 'cancelled' })
+      .eq('id', appointmentId)
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to cancel appointment: ${error.message}`);
+    return appt;
+  }
+
+  async completeAppointment(
+    appointmentId: string,
+    outcome: string,
+    outcomeNotes?: string | null,
+  ): Promise<ProspectAppointment> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: appt, error } = await supabase
+      .schema('growth').from('prospect_appointments')
+      .update({
+        status:        'completed',
+        outcome:       outcome,
+        outcome_notes: outcomeNotes ?? null,
+      })
+      .eq('id', appointmentId)
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to complete appointment: ${error.message}`);
+    return appt;
+  }
+
+  async createDocument(
+    data: ProspectDocumentInsert,
+  ): Promise<ProspectDocument> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: doc, error } = await supabase
+      .schema('growth').from('prospect_documents')
+      .insert({
+        prospect_id:   data.prospect_id,
+        document_type: data.document_type,
+        file_name:     data.file_name,
+        storage_url:   data.storage_url ?? null,
+        notes:         data.notes ?? null,
+      })
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to create document: ${error.message}`);
+    return doc;
+  }
+
+  async listDocuments(
+    prospectId: string,
+  ): Promise<ProspectDocument[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_documents')
+      .select('*')
+      .eq('prospect_id', prospectId)
+      .order('created_at', { ascending: true });
+    if (error) throw new Error(`Failed to list documents: ${error.message}`);
+    return data ?? [];
+  }
+
+  async updateDocument(
+    documentId: string,
+    data: ProspectDocumentUpdate,
+  ): Promise<ProspectDocument> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: doc, error } = await supabase
+      .schema('growth').from('prospect_documents')
+      .update({
+        ...(data.document_type !== undefined && { document_type: data.document_type }),
+        ...(data.file_name     !== undefined && { file_name: data.file_name }),
+        ...(data.storage_url   !== undefined && { storage_url: data.storage_url }),
+        ...(data.notes         !== undefined && { notes: data.notes }),
+      })
+      .eq('id', documentId)
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to update document: ${error.message}`);
+    return doc;
+  }
+
+  async archiveDocument(documentId: string): Promise<ProspectDocument> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: doc, error } = await supabase
+      .schema('growth').from('prospect_documents')
+      .update({ archived: true })
+      .eq('id', documentId)
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to archive document: ${error.message}`);
+    return doc;
+  }
+
+  async recordAdmissionDecision(
+    data: AdmissionDecisionInsert,
+  ): Promise<AdmissionDecision> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data: decision, error } = await supabase
+      .schema('growth').from('prospect_admission_decisions')
+      .insert({
+        prospect_id:  data.prospect_id,
+        decision:     data.decision,
+        rationale:    data.rationale ?? null,
+        decided_by:   data.decided_by ?? null,
+        offer_ready:  data.offer_ready ?? false,
+      })
+      .select()
+      .single();
+    if (error) throw new Error(`Failed to record admission decision: ${error.message}`);
+    return decision;
+  }
+
+  async listAdmissionDecisions(
+    prospectId: string,
+  ): Promise<AdmissionDecision[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .schema('growth').from('prospect_admission_decisions')
+      .select('*')
+      .eq('prospect_id', prospectId)
+      .order('decided_at', { ascending: true });
+    if (error) throw new Error(`Failed to list admission decisions: ${error.message}`);
+    return data ?? [];
   }
 
   async getMemberByUserId(userId: string): Promise<Member | null> {

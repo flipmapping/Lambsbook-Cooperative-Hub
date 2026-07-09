@@ -1,0 +1,24 @@
+diff --git a/execution/builders/build_claude_package.py b/execution/builders/build_claude_package.py
+index <CURRENT>..<UPDATED> 100644
+--- a/execution/builders/build_claude_package.py
++++ b/execution/builders/build_claude_package.py
+@@
++from execution.builders.services.artifact_materialization.implementation.artifact_materialization_service import (
++    ArtifactMaterializationService,
++)
+
+@@
+     assembled = _assemble_artifacts(
+         package_root, repo_root, cib_path, mandatory, located
+     )
+     print(f"  Artifacts assembled: {len(assembled)}")
++
++    artifact_materialization_service = ArtifactMaterializationService()
++
++    if not artifact_materialization_service.initialize_workspace(package_root):
++        fail(
++            "Artifact Materialization Service failed to initialize workspace.",
++            EXIT_PACKAGE_VERIFICATION,
++        )
+
+     # Generate START-HERE.md

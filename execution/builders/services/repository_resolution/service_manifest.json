@@ -1,0 +1,12 @@
+{
+  "service_id": "BLD-RRS-001",
+  "service_name": "Repository Resolution Service",
+  "status": "bootstrap",
+  "authority": "EOS-ARCH-001",
+  "repository_registry": {
+    "OB-001": null,
+    "APP-001": null,
+    "GE-001": null
+  },
+  "created": "2026-07-09T13:15:38.009157Z"
+}

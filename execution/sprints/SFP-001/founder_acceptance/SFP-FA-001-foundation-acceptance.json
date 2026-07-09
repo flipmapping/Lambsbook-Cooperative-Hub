@@ -1,0 +1,18 @@
+{
+  "acceptance_id": "SFP-FA-001",
+  "sprint": "SFP Sprint 1 - Foundation",
+  "status": "pending_founder_acceptance",
+  "generated": "2026-07-09T16:45:39.529235Z",
+  "authority": "EOS-EXEC-001",
+  "validated_foundation": [
+    "BLD-ARR-001",
+    "BLD-RRS-001",
+    "BLD-RRS-002",
+    "BLD-AMS-001",
+    "BLD-EWL-001",
+    "BLD-RPS-001",
+    "BLD-COMP-001",
+    "BLD-RUN-001"
+  ],
+  "next_sprint": "Landing Experience Sprint 1"
+}

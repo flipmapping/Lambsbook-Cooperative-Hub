@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useRegistry } from "../../hooks/useRegistry";
 
 export function ScholarshipsSection() {
@@ -24,21 +25,45 @@ export function ScholarshipsSection() {
 
         <ul>
 
-          {items.map((item, index) => (
+          {items.map((item, index) => {
 
-            <li key={index}>
+            const isObject =
+              typeof item === "object" &&
+              item !== null;
 
-              {typeof item === "object" &&
-               item !== null &&
-               "title" in item
+            const title =
+              isObject && "title" in item
                 ? String(
                     (item as Record<string, unknown>).title
                   )
-                : `Scholarship ${index + 1}`}
+                : `Scholarship ${index + 1}`;
 
-            </li>
+            const path =
+              isObject && "path" in item
+                ? String(
+                    (item as Record<string, unknown>).path
+                  )
+                : null;
 
-          ))}
+            return (
+
+              <li key={index}>
+
+                {path !== null ? (
+
+                  <Link href={path}>{title}</Link>
+
+                ) : (
+
+                  title
+
+                )}
+
+              </li>
+
+            );
+
+          })}
 
         </ul>
 

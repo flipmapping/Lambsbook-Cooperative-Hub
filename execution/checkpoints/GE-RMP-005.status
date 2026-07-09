@@ -1,0 +1,6 @@
+STATUS=BLOCKED
+AUTHORITY=GE-RMP-005
+BLOCKER=Awaiting regenerated Repository Mutation Package from Claude
+EXPECTED_ARTIFACT=execution/scripts/GE-RMP-005_applicant_journey_status.py
+CLAUDE_PACKAGE_SHA256=da5e2a8f063c26c16544d6c0e3ef49673f8bbf635e56c93f5f3c22045a5f0800
+REGEN_BRIEF_SHA256=4d7f4a25aac05823a1c15c7d7e9bbcf4db69a33eccca48e9189e7b1d027628bf

@@ -1,0 +1,13 @@
+{
+  "service": "Artifact Materialization Service",
+  "id": "BLD-AMS-001",
+  "status": "initialized",
+  "builder": "execution/builders",
+  "created": "2026-07-09T11:33:53.039252",
+  "implementation": {
+    "materializer": false,
+    "assembler": false,
+    "validator": false,
+    "certifier": false
+  }
+}

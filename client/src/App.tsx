@@ -52,6 +52,14 @@ const MemberHub = lazy(() => import('@/pages/MemberHub'));
 const PartnerOnboarding = lazy(() => import('@/pages/PartnerOnboarding'));
 const TranscriptSubmission = lazy(() => import('@/pages/TranscriptSubmission'));
 const ProspectRegistration = lazy(() => import('@/pages/ProspectRegistration'));
+const ScholarshipsPage = lazy(() => import('@/pages/ScholarshipsPage'));
+const ProspectDetailWorkspace = lazy(() => import('@/pages/ProspectDetailWorkspace'));
+const ApplicantJourneyStatus = lazy(() => import('@/pages/ApplicantJourneyStatus'));
+const ApplicantStatusLookup = lazy(() => import('@/pages/ApplicantStatusLookup'));
+const ApplicantDocumentCenter = lazy(() => import('@/pages/ApplicantDocumentCenter'));
+const ApplicantAppointmentCenter = lazy(() => import('@/pages/ApplicantAppointmentCenter'));
+const ApplicantAdmissionDecisionCenter = lazy(() => import('@/pages/ApplicantAdmissionDecisionCenter'));
+const ApplicantLifecycleTimeline = lazy(() => import('@/pages/ApplicantLifecycleTimeline'));
 console.log("[TRACE-P1] App.tsx: module evaluated");
 
 function ImmigrationWebsite() {
@@ -157,6 +165,14 @@ function Router() {
       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/hub/prospect-registration" component={ProspectRegistration} />
+      <Route path="/hub/scholarships" component={ScholarshipsPage} />
+      <Route path="/hub/admin/prospects/:id" component={ProspectDetailWorkspace} />
+      <Route path="/hub/applicant/status/:id" component={ApplicantJourneyStatus} />
+      <Route path="/hub/applicant/status" component={ApplicantStatusLookup} />
+      <Route path="/hub/applicant/documents/:id" component={ApplicantDocumentCenter} />
+      <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
+      <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
+      <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
       <Route path="/hub/admin" component={HubAdminDashboard} />
       <Route path="/hub/admin/governance" component={AdminGovernance} />

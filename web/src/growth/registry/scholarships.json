@@ -4,6 +4,16 @@
     {
       "id": "future",
       "title": "Scholarship Programs"
+    },
+    {
+      "id": "scholarships",
+      "title": "Scholarships",
+      "path": "/hub/scholarships"
+    },
+    {
+      "id": "registration",
+      "title": "Prospect Registration",
+      "path": "/hub/prospect-registration"
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "composition_id": "BLD-COMP-001",
+  "status": "bootstrap",
+  "created": "2026-07-09T15:47:25.063107Z",
+  "authority": "BLD-ARCH-002",
+  "repository": "APP-001",
+  "services": [
+    {
+      "id": "BLD-RRS-001",
+      "role": "Repository Resolution"
+    },
+    {
+      "id": "BLD-AMS-001",
+      "role": "Artifact Materialization"
+    },
+    {
+      "id": "BLD-RPS-001",
+      "role": "Repository Publication"
+    }
+  ],
+  "workspace_lifecycle": "BLD-EWL-001",
+  "authority_registry": "BLD-ARR-001",
+  "integration": "BLD-RRS-002"
+}

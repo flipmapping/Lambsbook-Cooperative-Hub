@@ -1,0 +1,34 @@
+{
+  "registry_id": "BLD-EWL-001",
+  "status": "bootstrap",
+  "created": "2026-07-09T13:24:56.912115Z",
+  "authority": "EOS-GOV-002",
+  "workspace_lifecycle": [
+    {
+      "state": "materialized",
+      "owner": "Artifact Materialization Service"
+    },
+    {
+      "state": "validated",
+      "owner": "Runtime Validation Service"
+    },
+    {
+      "state": "certified",
+      "owner": "Certification Service"
+    },
+    {
+      "state": "published",
+      "owner": "Repository Publication Service"
+    },
+    {
+      "state": "synchronized",
+      "owner": "Open Brain Synchronization Service"
+    }
+  ],
+  "publication_policy": {
+    "publish_from": "execution workspace",
+    "publish_to": "canonical repository",
+    "publish_only_certified": true,
+    "retain_workspace_history": true
+  }
+}

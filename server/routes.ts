@@ -14,7 +14,7 @@ import {
 import { z } from "zod";
 import { generateAIResponse, generateLeadScore } from "./services/ai";
 import { notifyNewEnquiry } from "./services/notifications";
-import { submitProspectRegistration, listProspects, getProspect, updateProspectStage } from "./services/admissions";
+import { submitProspectRegistration, listProspects, getProspect, updateProspectStage, recordProspectLifecycleEvent, getProspectLifecycleEvents, recordProspectActivity, getProspectActivities, createProspectFollowupTask, getProspectFollowupTasks, updateProspectFollowupTask, completeProspectFollowupTask, createProspectAppointment, getProspectAppointments, updateProspectAppointment, cancelProspectAppointment, completeProspectAppointment, createProspectDocument, getProspectDocuments, updateProspectDocument, archiveProspectDocument, recordProspectAdmissionDecision, getProspectAdmissionDecisions } from "./services/admissions";
 import {
   createClickUpTask,
   createApolloContact,
@@ -314,14 +314,251 @@ export async function registerRoutes(
       if (!current_stage || typeof current_stage !== "string") {
         return res.status(400).json({ error: "current_stage is required" });
       }
+      const existingProspect = await getProspect(req.params.id);
+      const fromStage = existingProspect?.current_stage ?? null;
       const journey = await updateProspectStage(req.params.id, current_stage);
       if (!journey) {
         return res.status(404).json({ error: "No journey found for this prospect" });
       }
+      await recordProspectLifecycleEvent(
+        req.params.id,
+        fromStage,
+        current_stage,
+      ).catch((err) => {
+        console.error("Lifecycle event record error (non-blocking):", err);
+      });
       res.json(journey);
     } catch (error) {
       console.error("Update prospect stage error:", error);
       res.status(500).json({ error: "Failed to update prospect stage" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id/events", async (req: Request, res: Response) => {
+    try {
+      const events = await getProspectLifecycleEvents(req.params.id);
+      res.json(events);
+    } catch (error) {
+      console.error("List lifecycle events error:", error);
+      res.status(500).json({ error: "Failed to list lifecycle events" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id/activities", async (req: Request, res: Response) => {
+    try {
+      const activities = await getProspectActivities(req.params.id);
+      res.json(activities);
+    } catch (error) {
+      console.error("List prospect activities error:", error);
+      res.status(500).json({ error: "Failed to list prospect activities" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id/followup-tasks", async (req: Request, res: Response) => {
+    try {
+      const tasks = await getProspectFollowupTasks(req.params.id);
+      res.json(tasks);
+    } catch (error) {
+      console.error("List follow-up tasks error:", error);
+      res.status(500).json({ error: "Failed to list follow-up tasks" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/followup-tasks", async (req: Request, res: Response) => {
+    try {
+      const { title, description, due_date } = req.body;
+      if (!title || typeof title !== "string") {
+        return res.status(400).json({ error: "title is required" });
+      }
+      const task = await createProspectFollowupTask(
+        req.params.id,
+        title,
+        description ?? null,
+        due_date ?? null,
+      );
+      res.status(201).json(task);
+    } catch (error) {
+      console.error("Create follow-up task error:", error);
+      res.status(500).json({ error: "Failed to create follow-up task" });
+    }
+  });
+
+  app.patch("/api/admissions/prospects/:id/followup-tasks/:taskId", async (req: Request, res: Response) => {
+    try {
+      const { title, description, due_date } = req.body;
+      const task = await updateProspectFollowupTask(
+        req.params.taskId,
+        title,
+        description,
+        due_date,
+      );
+      res.json(task);
+    } catch (error) {
+      console.error("Update follow-up task error:", error);
+      res.status(500).json({ error: "Failed to update follow-up task" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/followup-tasks/:taskId/complete", async (req: Request, res: Response) => {
+    try {
+      const task = await completeProspectFollowupTask(req.params.taskId);
+      res.json(task);
+    } catch (error) {
+      console.error("Complete follow-up task error:", error);
+      res.status(500).json({ error: "Failed to complete follow-up task" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id/appointments", async (req: Request, res: Response) => {
+    try {
+      const appts = await getProspectAppointments(req.params.id);
+      res.json(appts);
+    } catch (error) {
+      console.error("List appointments error:", error);
+      res.status(500).json({ error: "Failed to list appointments" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/appointments", async (req: Request, res: Response) => {
+    try {
+      const { title, scheduled_at, duration_minutes, location, notes } = req.body;
+      if (!title || typeof title !== "string") {
+        return res.status(400).json({ error: "title is required" });
+      }
+      if (!scheduled_at || typeof scheduled_at !== "string") {
+        return res.status(400).json({ error: "scheduled_at is required" });
+      }
+      const appt = await createProspectAppointment(
+        req.params.id, title, scheduled_at,
+        duration_minutes ?? null, location ?? null, notes ?? null,
+      );
+      res.status(201).json(appt);
+    } catch (error) {
+      console.error("Create appointment error:", error);
+      res.status(500).json({ error: "Failed to create appointment" });
+    }
+  });
+
+  app.patch("/api/admissions/prospects/:id/appointments/:appointmentId", async (req: Request, res: Response) => {
+    try {
+      const { title, scheduled_at, duration_minutes, location, notes } = req.body;
+      const appt = await updateProspectAppointment(
+        req.params.appointmentId, title, scheduled_at,
+        duration_minutes, location, notes,
+      );
+      res.json(appt);
+    } catch (error) {
+      console.error("Update appointment error:", error);
+      res.status(500).json({ error: "Failed to update appointment" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/appointments/:appointmentId/cancel", async (req: Request, res: Response) => {
+    try {
+      const appt = await cancelProspectAppointment(req.params.appointmentId);
+      res.json(appt);
+    } catch (error) {
+      console.error("Cancel appointment error:", error);
+      res.status(500).json({ error: "Failed to cancel appointment" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/appointments/:appointmentId/complete", async (req: Request, res: Response) => {
+    try {
+      const { outcome, outcome_notes } = req.body;
+      if (!outcome || typeof outcome !== "string") {
+        return res.status(400).json({ error: "outcome is required" });
+      }
+      const appt = await completeProspectAppointment(
+        req.params.appointmentId, outcome, outcome_notes ?? null,
+      );
+      res.json(appt);
+    } catch (error) {
+      console.error("Complete appointment error:", error);
+      res.status(500).json({ error: "Failed to complete appointment" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id/documents", async (req: Request, res: Response) => {
+    try {
+      const docs = await getProspectDocuments(req.params.id);
+      res.json(docs);
+    } catch (error) {
+      console.error("List documents error:", error);
+      res.status(500).json({ error: "Failed to list documents" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/documents", async (req: Request, res: Response) => {
+    try {
+      const { document_type, file_name, storage_url, notes } = req.body;
+      if (!document_type || typeof document_type !== "string") {
+        return res.status(400).json({ error: "document_type is required" });
+      }
+      if (!file_name || typeof file_name !== "string") {
+        return res.status(400).json({ error: "file_name is required" });
+      }
+      const doc = await createProspectDocument(
+        req.params.id, document_type, file_name,
+        storage_url ?? null, notes ?? null,
+      );
+      res.status(201).json(doc);
+    } catch (error) {
+      console.error("Create document error:", error);
+      res.status(500).json({ error: "Failed to create document" });
+    }
+  });
+
+  app.patch("/api/admissions/prospects/:id/documents/:documentId", async (req: Request, res: Response) => {
+    try {
+      const { document_type, file_name, storage_url, notes } = req.body;
+      const doc = await updateProspectDocument(
+        req.params.documentId, document_type, file_name, storage_url, notes,
+      );
+      res.json(doc);
+    } catch (error) {
+      console.error("Update document error:", error);
+      res.status(500).json({ error: "Failed to update document" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/documents/:documentId/archive", async (req: Request, res: Response) => {
+    try {
+      const doc = await archiveProspectDocument(req.params.documentId);
+      res.json(doc);
+    } catch (error) {
+      console.error("Archive document error:", error);
+      res.status(500).json({ error: "Failed to archive document" });
+    }
+  });
+
+  app.get("/api/admissions/prospects/:id/decisions", async (req: Request, res: Response) => {
+    try {
+      const decisions = await getProspectAdmissionDecisions(req.params.id);
+      res.json(decisions);
+    } catch (error) {
+      console.error("List admission decisions error:", error);
+      res.status(500).json({ error: "Failed to list admission decisions" });
+    }
+  });
+
+  app.post("/api/admissions/prospects/:id/decisions", async (req: Request, res: Response) => {
+    try {
+      const { decision, rationale, decided_by, offer_ready } = req.body;
+      if (!decision || typeof decision !== "string") {
+        return res.status(400).json({ error: "decision is required" });
+      }
+      const dec = await recordProspectAdmissionDecision(
+        req.params.id,
+        decision,
+        rationale ?? null,
+        decided_by ?? null,
+        offer_ready === true,
+      );
+      res.status(201).json(dec);
+    } catch (error) {
+      console.error("Record admission decision error:", error);
+      res.status(500).json({ error: "Failed to record admission decision" });
     }
   });
 

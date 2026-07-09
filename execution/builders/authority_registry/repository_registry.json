@@ -1,0 +1,22 @@
+{
+  "registry_id": "BLD-ARR-001",
+  "status": "bootstrap",
+  "created": "2026-07-09T13:18:48.392645Z",
+  "repositories": {
+    "OB-001": {
+      "name": "Open Brain",
+      "root": null,
+      "publication_service": "RPS"
+    },
+    "APP-001": {
+      "name": "Main Application",
+      "root": null,
+      "publication_service": "RPS"
+    },
+    "GE-001": {
+      "name": "Growth Engine",
+      "root": null,
+      "publication_service": "RPS"
+    }
+  }
+}

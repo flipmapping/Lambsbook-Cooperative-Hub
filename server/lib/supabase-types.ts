@@ -283,3 +283,130 @@ export interface ProspectJourneyInsert {
   funnel_id: string;
   current_stage?: string;
 }
+
+export interface ProspectLifecycleEvent {
+  id: string;
+  prospect_id: string;
+  from_stage: string | null;
+  to_stage: string;
+  recorded_at: string;
+}
+
+export interface ProspectLifecycleEventInsert {
+  prospect_id: string;
+  from_stage?: string | null;
+  to_stage: string;
+}
+
+export interface ProspectActivity {
+  id: string;
+  prospect_id: string;
+  activity_type: string;
+  metadata: Record<string, unknown> | null;
+  recorded_at: string;
+}
+
+export interface ProspectActivityInsert {
+  prospect_id: string;
+  activity_type: string;
+  metadata?: Record<string, unknown> | null;
+}
+
+export interface FollowupTask {
+  id: string;
+  prospect_id: string;
+  title: string;
+  description: string | null;
+  due_date: string | null;
+  completed: boolean;
+  completed_at: string | null;
+  created_at: string;
+}
+
+export interface FollowupTaskInsert {
+  prospect_id: string;
+  title: string;
+  description?: string | null;
+  due_date?: string | null;
+}
+
+export interface FollowupTaskUpdate {
+  title?: string;
+  description?: string | null;
+  due_date?: string | null;
+}
+
+export interface ProspectAppointment {
+  id: string;
+  prospect_id: string;
+  title: string;
+  scheduled_at: string;
+  duration_minutes: number | null;
+  location: string | null;
+  notes: string | null;
+  status: string;
+  outcome: string | null;
+  outcome_notes: string | null;
+  created_at: string;
+}
+
+export interface ProspectAppointmentInsert {
+  prospect_id: string;
+  title: string;
+  scheduled_at: string;
+  duration_minutes?: number | null;
+  location?: string | null;
+  notes?: string | null;
+}
+
+export interface ProspectAppointmentUpdate {
+  title?: string;
+  scheduled_at?: string;
+  duration_minutes?: number | null;
+  location?: string | null;
+  notes?: string | null;
+}
+
+export interface ProspectDocument {
+  id: string;
+  prospect_id: string;
+  document_type: string;
+  file_name: string;
+  storage_url: string | null;
+  notes: string | null;
+  archived: boolean;
+  created_at: string;
+}
+
+export interface ProspectDocumentInsert {
+  prospect_id: string;
+  document_type: string;
+  file_name: string;
+  storage_url?: string | null;
+  notes?: string | null;
+}
+
+export interface ProspectDocumentUpdate {
+  document_type?: string;
+  file_name?: string;
+  storage_url?: string | null;
+  notes?: string | null;
+}
+
+export interface AdmissionDecision {
+  id: string;
+  prospect_id: string;
+  decision: string;
+  rationale: string | null;
+  decided_by: string | null;
+  offer_ready: boolean;
+  decided_at: string;
+}
+
+export interface AdmissionDecisionInsert {
+  prospect_id: string;
+  decision: string;
+  rationale?: string | null;
+  decided_by?: string | null;
+  offer_ready?: boolean;
+}

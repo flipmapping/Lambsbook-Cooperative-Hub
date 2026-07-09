@@ -1,0 +1,12 @@
+{
+  "pipeline_id": "BLD-RPS-001",
+  "status": "bootstrap",
+  "created": "2026-07-09T15:08:23.333421Z",
+  "authority": "BLD-ARCH-002",
+  "input": "Execution Workspace",
+  "resolver": "BLD-RRS-001",
+  "publisher": "Repository Publication Pipeline",
+  "validation_required": true,
+  "publication_required": true,
+  "synchronization_required": true
+}

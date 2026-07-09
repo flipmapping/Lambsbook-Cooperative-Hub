@@ -1,0 +1,16 @@
+{
+  "integration_id": "BLD-RRS-002",
+  "status": "bootstrap",
+  "created": "2026-07-09T13:23:31.253226Z",
+  "authority_registry": "execution/builders/authority_registry/repository_registry.json",
+  "resolution_policy": {
+    "repository_source": "Authority Registry",
+    "routing_mode": "authority-driven",
+    "allow_local_override": false,
+    "publish_only_verified": true
+  },
+  "dependencies": [
+    "BLD-ARR-001",
+    "BLD-RRS-001"
+  ]
+}
