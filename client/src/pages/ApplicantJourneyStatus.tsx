@@ -187,6 +187,13 @@ export default function ApplicantJourneyStatus() {
                 </button>
               </Link>
             </div>
+            <div className="text-center">
+              <Link href={`/hub/applicant/activity/${id}`}>
+                <button className="text-xs text-primary underline hover:text-primary/80">
+                  View My Activity
+                </button>
+              </Link>
+            </div>
             <p className="text-xs text-center text-muted-foreground">
               Questions about your application? Contact us at{" "}
               <a href="mailto:admissions@lambsbook.net" className="underline hover:text-foreground">

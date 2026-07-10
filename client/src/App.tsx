@@ -60,6 +60,7 @@ const ApplicantDocumentCenter = lazy(() => import('@/pages/ApplicantDocumentCent
 const ApplicantAppointmentCenter = lazy(() => import('@/pages/ApplicantAppointmentCenter'));
 const ApplicantAdmissionDecisionCenter = lazy(() => import('@/pages/ApplicantAdmissionDecisionCenter'));
 const ApplicantLifecycleTimeline = lazy(() => import('@/pages/ApplicantLifecycleTimeline'));
+const ApplicantActivityCenter = lazy(() => import('@/pages/ApplicantActivityCenter'));
 console.log("[TRACE-P1] App.tsx: module evaluated");
 
 function ImmigrationWebsite() {
@@ -173,6 +174,7 @@ function Router() {
       <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
       <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
       <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
+      <Route path="/hub/applicant/activity/:id" component={ApplicantActivityCenter} />
       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
       <Route path="/hub/admin" component={HubAdminDashboard} />
       <Route path="/hub/admin/governance" component={AdminGovernance} />
