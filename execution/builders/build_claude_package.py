@@ -63,6 +63,7 @@ import sys
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
+from execution.builders.services.artifact_materialization.implementation.artifact_materialization_service import ArtifactMaterializationService
 
 
 # ── Exit codes ────────────────────────────────────────────────
@@ -778,6 +779,14 @@ def main() -> None:
         package_root, repo_root, cib_path, mandatory, located
     )
     print(f"  Artifacts assembled: {len(assembled)}")
+
+    artifact_materialization_service = ArtifactMaterializationService()
+
+    if not artifact_materialization_service.initialize_workspace(package_root):
+        fail(
+            "Artifact Materialization Service failed to initialize workspace.",
+            EXIT_PACKAGE_VERIFICATION,
+        )
 
     # Generate START-HERE.md
     _generate_start_here(package_root, mandatory, optional, generated_at)
