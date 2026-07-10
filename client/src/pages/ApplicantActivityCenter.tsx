@@ -149,6 +149,13 @@ export default function ApplicantActivityCenter() {
           </Card>
         )}
 
+        <div className="text-center mb-2">
+          <Link href={`/hub/applicant/tasks/${id}`}>
+            <button className="text-xs text-primary underline hover:text-primary/80">
+              View My Tasks
+            </button>
+          </Link>
+        </div>
         <p className="text-xs text-center text-muted-foreground pt-2">
           Questions? Contact{" "}
           <a href="mailto:admissions@lambsbook.net" className="underline hover:text-foreground">
