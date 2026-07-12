@@ -1,0 +1,20 @@
+{
+  "package_id": "LES-IMP-003",
+  "generated": "2026-07-10T05:35:05.212858Z",
+  "repository_id": "APP-001",
+  "sprint": "LES-001",
+  "authority": "EXEC-DIR-BLD-006",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "execution_package": "CLAUDE-EXECUTION-PACKAGE.json",
+  "implementation_prompt": "CLAUDE-IMPLEMENTATION-PROMPT.md",
+  "mutation_scope": {
+    "allow_modify": [
+      "web/src/growth/pages/Landing/LandingPage.tsx"
+    ],
+    "deny_modify": [
+      "*"
+    ]
+  },
+  "status": "ready_for_repository_mutation",
+  "builder_generated": true
+}

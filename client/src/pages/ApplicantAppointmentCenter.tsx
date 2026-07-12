@@ -13,7 +13,7 @@ interface ApplicantAppointment {
   scheduled_at: string;
   duration_minutes: number | null;
   location: string | null;
-  notes: string | null;
+  description: string | null;
   status: string;
   outcome: string | null;
   outcome_notes: string | null;
@@ -139,8 +139,8 @@ export default function ApplicantAppointmentCenter() {
                             <span>{appt.location}</span>
                           </div>
                         )}
-                        {appt.notes && (
-                          <p className="text-xs text-muted-foreground mt-0.5">{appt.notes}</p>
+                        {appt.description && (
+                          <p className="text-xs text-muted-foreground mt-0.5">{appt.description}</p>
                         )}
                       </div>
                     </div>

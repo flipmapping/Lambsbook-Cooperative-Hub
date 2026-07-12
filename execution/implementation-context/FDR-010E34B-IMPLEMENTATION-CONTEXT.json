@@ -1,0 +1,28 @@
+{
+  "implementation_authority": "FDR-010E34B",
+  "surface_id": "SURF-ADM-001",
+  "surface_name": "Admissions Workspace",
+  "builder_contract": "Builder v1.2",
+  "implementation_context": [
+    "server/routes.ts",
+    "server/services/admissions.ts",
+    "server/lib/supabase-dal.ts",
+    "client/src/pages/AdmissionsWorkspace.tsx",
+    "client/src/pages/ProspectDetailWorkspace.tsx",
+    "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+    "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+    "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+    "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+    "client/src/pages/ApplicantFollowupTaskCenter.tsx",
+    "client/src/pages/ApplicantAppointmentCenter.tsx",
+    "client/src/pages/ApplicantDocumentCenter.tsx",
+    "client/src/pages/ApplicantAdmissionDecisionCenter.tsx"
+  ],
+  "repository_truth": [
+    "RTB-ADM-001",
+    "APP-RMP-010E34B-021"
+  ],
+  "surface_status": "BLOCKED",
+  "builder_readiness": "PASS",
+  "created_at": "2026-07-11T13:41:00Z"
+}

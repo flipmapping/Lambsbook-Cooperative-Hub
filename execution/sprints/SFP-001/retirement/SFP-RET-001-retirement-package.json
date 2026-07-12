@@ -1,0 +1,15 @@
+{
+  "package_id": "SFP-RET-001",
+  "status": "retired",
+  "created": "2026-07-09T17:32:19.695346Z",
+  "authority": "EOS-EXEC-001",
+  "repository": "APP-001",
+  "completed_sprint": "SFP Sprint 1 - Foundation",
+  "founder_acceptance": "SFP-FA-001",
+  "open_brain_sync": "SFP-OBS-001",
+  "next_sprint": "Landing Experience Sprint 1",
+  "handoff_manager": {
+    "status": "ready",
+    "target": "Landing Experience Sprint 1"
+  }
+}

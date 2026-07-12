@@ -14,7 +14,7 @@ interface FollowupTask {
   prospect_id: string;
   title: string;
   description: string | null;
-  due_date: string | null;
+  due_at: string | null;
   completed: boolean;
   completed_at: string | null;
   created_at: string;
@@ -74,7 +74,7 @@ export function ProspectFollowupTaskWorkspace({
         {
           title:       createTitle.trim(),
           description: createDesc.trim() || null,
-          due_date:    createDue || null,
+          due_at:    createDue || null,
         },
       );
       if (!res.ok) {
@@ -104,7 +104,7 @@ export function ProspectFollowupTaskWorkspace({
         {
           title:       editTitle.trim() || undefined,
           description: editDesc.trim() || null,
-          due_date:    editDue || null,
+          due_at:    editDue || null,
         },
       );
       if (!res.ok) {
@@ -148,7 +148,7 @@ export function ProspectFollowupTaskWorkspace({
     setEditingId(task.id);
     setEditTitle(task.title);
     setEditDesc(task.description ?? "");
-    setEditDue(task.due_date ?? "");
+    setEditDue(task.due_at ?? "");
   }
 
   const pending  = tasks.filter((t) => !t.completed);
@@ -292,9 +292,9 @@ export function ProspectFollowupTaskWorkspace({
                         </p>
                       )}
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
-                        {task.due_date && (
+                        {task.due_at && (
                           <Badge variant="outline" className="text-xs h-5">
-                            Due {formatDate(task.due_date)}
+                            Due {formatDate(task.due_at)}
                           </Badge>
                         )}
                         <span className="text-xs text-muted-foreground">

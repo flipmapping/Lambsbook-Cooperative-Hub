@@ -1,0 +1,29 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "package": "FDR-010E35A-016",
+  "surface": "SURF-AUTH-001",
+  "title": "Authentication Surface Canonicalization",
+  "generated_at": "2026-07-12T06:31:32Z",
+  "files": [
+    {
+      "file": "client/src/App.tsx",
+      "sha256": "a6b9fffb6a6b8afdde6e5173e6bc96846e038eb830b50cbf52f8d02e0424393e",
+      "size": 9442
+    },
+    {
+      "file": "client/src/pages/Login.tsx",
+      "sha256": "aef3b5f4b0b57115e1c4daaa6051f3bf009f39afacc6179f6acbee270108e989",
+      "size": 4531
+    },
+    {
+      "file": "client/src/pages/HubAuth.tsx",
+      "sha256": "3175443aeaa7b24dfac28a38ce1668389b9a97d9278ee7aefe3d58df52860563",
+      "size": 21839
+    },
+    {
+      "file": "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "sha256": "7fb342f6b0293aef5964df12ff401a9f143b702b9e6484ed167b9be473f5183e",
+      "size": 6650
+    }
+  ]
+}

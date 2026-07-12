@@ -1,0 +1,21 @@
+{
+  "authority_id": "LES-IMP-014",
+  "generated": "2026-07-10T07:04:57.326307Z",
+  "repository_id": "APP-001",
+  "sprint": "LES-001",
+  "status": "authorized_for_source_mutation",
+  "target_module": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "mutation_scope": {
+    "hero_section": true,
+    "navigation": true,
+    "value_proposition": true,
+    "program_sections": true,
+    "call_to_action": true,
+    "footer": true
+  },
+  "publication": {
+    "enabled": false,
+    "production_repository_mutable": false
+  },
+  "source_sha256": "e2282ecf002862f685d4cb765e9d13e72ff2b83358fc3a32569f2514a6f58ff2"
+}

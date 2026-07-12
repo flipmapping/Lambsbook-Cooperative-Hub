@@ -1,0 +1,11 @@
+{
+  "Follow-up Task create": "PASS",
+  "Follow-up Task update": "PASS",
+  "Appointment create": "PASS",
+  "Appointment update": "PASS",
+  "Document create": "PASS",
+  "Document update": "PASS",
+  "Admission Decision create": "PASS",
+  "Applicant Decision page": "PASS",
+  "Applicant Timeline navigation": "PASS"
+}

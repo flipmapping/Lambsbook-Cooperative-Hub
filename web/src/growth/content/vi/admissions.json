@@ -1,5 +1,132 @@
 {
   "version": "1.0",
   "locale": "vi",
-  "sections": {}
+  "sections": {
+    "eligibility": {
+      "heading": "Điều kiện dự tuyển",
+      "items": [
+        "Học sinh tốt nghiệp THPT (lớp 12), hoặc có bằng trung cấp nghề được Bộ Giáo dục Đài Loan công nhận.",
+        "Học sinh gốc Hoa, hoặc học sinh Hồng Kông / Ma Cao đáp ứng điều kiện cư trú theo quy định.",
+        "Ưu tiên tuyển sinh ứng viên dưới 22 tuổi và chưa từng làm việc tại Đài Loan."
+      ]
+    },
+    "language": {
+      "heading": "Yêu cầu ngôn ngữ",
+      "items": [
+        "Ưu tiên có chứng chỉ tiếng Trung TOCFL cấp A1 khi nộp hồ sơ.",
+        "Ứng viên dưới trình độ A1 có thể tham gia chương trình dự bị tiếng Trung (tối đa 3 tháng) tại Việt Nam trước khi lên đường.",
+        "Sinh viên phải đạt TOCFL cấp A2 trước khi kết thúc học kỳ hai của năm thứ nhất, nếu không sẽ bị thôi học.",
+        "Sinh viên phải đạt TOCFL cấp B1 trước khi lên năm thứ hai."
+      ]
+    },
+    "process": {
+      "heading": "Quy trình tuyển sinh",
+      "steps": [
+        {
+          "title": "Nâng cao nhận thức & Cung cấp thông tin",
+          "description": "Hội chợ giáo dục, buổi thông tin, hợp tác với các trường tại Việt Nam và quảng bá trực tuyến, mạng xã hội giúp học sinh tìm hiểu về việc học tập và phát triển sự nghiệp tại Đài Loan."
+        },
+        {
+          "title": "Điều kiện & Trình độ tiếng Trung",
+          "description": "Ứng viên cần tối thiểu trình độ A1 tiếng Trung; những em dưới A1 có thể được nhận có điều kiện, với điều kiện hoàn thành chương trình tiếng Trung."
+        },
+        {
+          "title": "Chương trình tiếng Trung tại Việt Nam trước khi lên đường",
+          "description": "Học sinh được nhận có điều kiện hoàn thành khóa tiếng Trung tăng cường khoảng 3 tháng tại Việt Nam để đạt trình độ A1, kèm chứng nhận như TOCFL hoặc tương đương."
+        },
+        {
+          "title": "Nộp hồ sơ",
+          "description": "Học sinh nộp đơn cùng các giấy tờ yêu cầu; có thể nhận thư mời nhập học có điều kiện trong khi chờ hoàn thành khóa tiếng và xác minh học lực."
+        },
+        {
+          "title": "Xin thị thực",
+          "description": "Sau khi được nhận, học sinh xin thị thực du học kèm thư nhập học, chứng nhận ngôn ngữ và chứng minh tài chính, và có thể cần khám sức khỏe cùng bảo hiểm y tế."
+        },
+        {
+          "title": "Chương trình đảm bảo thực tập & việc làm",
+          "description": "Hợp tác với các doanh nghiệp Đài Loan mang lại cơ hội thực tập được đảm bảo, thường từ năm thứ hai hoặc thứ ba, cùng hỗ trợ việc làm sau tốt nghiệp."
+        },
+        {
+          "title": "Đến Đài Loan",
+          "description": "Học sinh tham gia buổi định hướng về học tập, cuộc sống hằng ngày và thích nghi văn hóa, cùng với hỗ trợ tiếng Trung bổ sung."
+        },
+        {
+          "title": "Học tập tại Đài Loan",
+          "description": "Học sinh cân bằng việc học với phát triển ngôn ngữ liên tục và tích lũy kinh nghiệm thực tế qua thực tập tại các doanh nghiệp Đài Loan."
+        },
+        {
+          "title": "Việc làm sau tốt nghiệp",
+          "description": "Sinh viên tốt nghiệp chuyển từ thực tập sang làm việc toàn thời gian và có thể xin thị thực lao động để làm việc lâu dài tại Đài Loan."
+        },
+        {
+          "title": "Hỗ trợ từ các đơn vị tư vấn giáo dục",
+          "description": "Các đơn vị tư vấn về trường và ngành học, hỗ trợ hồ sơ, thị thực và chuẩn bị trước khi lên đường, đồng thời hợp tác với các trường Đài Loan."
+        }
+      ]
+    },
+    "requiredDocuments": {
+      "heading": "Giấy tờ cần thiết",
+      "items": [
+        "Đơn đăng ký nhập học đã hoàn thành",
+        "Chứng nhận trình độ tiếng Trung (A1 trở lên)",
+        "Bảng điểm học tập (THPT hoặc bậc học trước đó)",
+        "Thư giới thiệu",
+        "Bài luận trình bày mục đích học tập",
+        "Bản sao hộ chiếu và các giấy tờ hồ sơ tiêu chuẩn khác"
+      ]
+    },
+    "visa": {
+      "heading": "Thị thực du học",
+      "items": [
+        "Xin sau khi được trường chấp nhận",
+        "Thư nhập học chính thức",
+        "Chứng nhận trình độ tiếng Trung",
+        "Chứng minh khả năng tài chính",
+        "Khám sức khỏe (theo yêu cầu của cơ quan xuất nhập cảnh)",
+        "Chứng nhận bảo hiểm y tế trong suốt thời gian học"
+      ]
+    },
+    "estimatedCosts": {
+      "heading": "Chi phí ước tính mỗi học kỳ",
+      "note": "Học kỳ 1 hoàn toàn miễn học phí và phí ký túc xá. Tỷ giá tham khảo: 1 USD \u2248 32,5 TWD; 1 TWD \u2248 770 VND.",
+      "items": [
+        {
+          "item": "Học viện Kỹ thuật Bán dẫn (mỗi học kỳ)",
+          "twd": "53.200",
+          "usd": "\u2248 1.638",
+          "vnd": "\u2248 40.000.000"
+        },
+        {
+          "item": "Học viện Quản lý Sức khỏe và Giải trí (mỗi học kỳ)",
+          "twd": "46.570",
+          "usd": "\u2248 1.433",
+          "vnd": "\u2248 35.800.000"
+        },
+        {
+          "item": "Ký túc xá (từ học kỳ 3)",
+          "twd": "13.500",
+          "usd": "\u2248 415",
+          "vnd": "\u2248 10.400.000"
+        },
+        {
+          "item": "Bảo hiểm y tế (6 tháng đầu)",
+          "twd": "500 / tháng",
+          "usd": "\u2248 15",
+          "vnd": "\u2248 385.000"
+        },
+        {
+          "item": "Bảo hiểm y tế (từ tháng thứ 7)",
+          "twd": "826 / tháng",
+          "usd": "\u2248 25",
+          "vnd": "\u2248 636.000"
+        },
+        {
+          "item": "Thẻ cư trú (ARC)",
+          "twd": "1.000 / năm",
+          "usd": "\u2248 31",
+          "vnd": "\u2248 770.000"
+        }
+      ]
+    }
+  }
 }

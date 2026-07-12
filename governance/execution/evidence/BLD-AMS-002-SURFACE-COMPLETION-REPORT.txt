@@ -1,0 +1,2 @@
+Surface Completion Report: PASS
+{'surface_id': 'TEST', 'execution_stream': 'TEST', 'planning': {'authorized': False, 'reason': 'Surface lease not found.', 'surface_id': 'TEST'}, 'lease_verification': {'surface_id': 'TEST', 'execution_stream': 'TEST', 'release_ready': True, 'verification_status': 'VERIFIED'}, 'builder_version': 'v1.2', 'status': 'COMPLETED'}

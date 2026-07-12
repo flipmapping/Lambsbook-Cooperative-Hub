@@ -1,0 +1,16 @@
+{
+  "task_id": "LES-IMP-021",
+  "generated": "2026-07-10T10:48:40.731422Z",
+  "repository_id": "APP-001",
+  "target_file": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "section": "navigation",
+  "objective": "Implement the production navigation for the Landing Page.",
+  "constraints": [
+    "Modify only the working implementation.",
+    "Preserve routing.",
+    "Preserve exports.",
+    "No production publication.",
+    "No unrelated refactoring."
+  ],
+  "status": "ready_for_implementation"
+}

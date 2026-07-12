@@ -1,0 +1,15 @@
+{
+  "discovery_id": "SDR-ADM-001",
+  "title": "Admissions Workspace depends on constitutional Surface Registry",
+  "reported_by": "Main Application Execution",
+  "affected_surface": "Execution Surface Registry",
+  "implementation_authority": "FDR-010E34B",
+  "related_directives": [
+    "EOS-EXEC-011",
+    "EXEC-DIR-EOS-012",
+    "EXEC-DIR-EOS-013"
+  ],
+  "status": "OPEN",
+  "recommendation": "Execution Surface Registry should be implemented by the Execution Infrastructure / OB-001 execution stream and consumed by Admissions Workspace after certification.",
+  "created_at": "2026-07-11T02:50:15Z"
+}

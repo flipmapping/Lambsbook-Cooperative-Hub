@@ -1,0 +1,21 @@
+{
+  "artifact_id": "LES-IMP-008",
+  "generated": "2026-07-10T05:45:02.236241Z",
+  "repository_id": "APP-001",
+  "working_source": "execution/workspace/LES-001/LandingPage.working.tsx",
+  "sha256": "53f2e240c45f3a6f84c16efa646ee8f87c1db8e4a2ca8493c73259fc132f6ae4",
+  "line_count": 19,
+  "imports": [
+    "import { GrowthLayout } from \"../../components/Layout\";",
+    "import { Hero } from \"../../components/Hero\";",
+    "import { LandingSections } from \"./LandingSections\";"
+  ],
+  "exports": [
+    "export function LandingPage() {"
+  ],
+  "components": [
+    "LandingPage"
+  ],
+  "status": "semantic_baseline_complete",
+  "next_phase": "implementation_mutation"
+}

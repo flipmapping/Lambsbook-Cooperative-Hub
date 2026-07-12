@@ -1,0 +1,19 @@
+{
+  "selection_id": "LES-SMP-002",
+  "authority": "EOS-EXEC-001",
+  "generated": "2026-07-10T01:05:39.825971Z",
+  "selection_method": "highest_ranked_candidate",
+  "candidate_count": 74,
+  "selected_target": {
+    "path": "web/src/growth/pages/Landing/index.ts",
+    "score": 3,
+    "matched_keywords": [
+      "index",
+      "landing",
+      "page"
+    ],
+    "size": 31
+  },
+  "selection_status": "builder_ready",
+  "production_repository_modified": false
+}

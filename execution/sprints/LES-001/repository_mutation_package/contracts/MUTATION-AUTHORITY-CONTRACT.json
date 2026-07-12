@@ -1,0 +1,18 @@
+{
+  "contract_id": "LES-RMP-004",
+  "authority": "EOS-EXEC-001",
+  "authority_specification": "LES-PLAN-001",
+  "repository": "APP-001",
+  "generated": "2026-07-10T00:38:37.997785Z",
+  "mutation_status": "awaiting_founder_approval",
+  "authorized_scope": {
+    "production_file_count": 308,
+    "source_discovery": "execution/sprints/LES-001/repository_mutation_package/inspection/PRODUCTION-SURFACE-DISCOVERY.json"
+  },
+  "execution_constraints": {
+    "semantic_mutation_only": true,
+    "runtime_validation_required": true,
+    "open_brain_sync_required": true,
+    "production_mutation_started": false
+  }
+}

@@ -130,10 +130,12 @@ interface _PreparedRuntimePublication {
 function _normalizeAuthentication(
   _context: ContinuationContext,
 ): _NormalizedAuthentication {
-  throw new Error(
-    "Not implemented: Stage 1 — Authentication Normalization. " +
-      "Activation deferred to a subsequent work package.",
-  );
+  return {
+    accessToken: _context.accessToken.trim(),
+    refreshToken: _context.refreshToken?.trim(),
+    inviteToken: _context.inviteToken?.trim(),
+    authenticationMode: _context.authenticationMode,
+  };
 }
 
 function _validateContinuationContext(

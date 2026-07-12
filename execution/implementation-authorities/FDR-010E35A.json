@@ -1,0 +1,14 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "surface_id": "SURF-AUTH-001",
+  "title": "Canonical Authentication and Admin Access",
+  "origin": "RTB-ADM-001",
+  "status": "ACTIVE",
+  "purpose": [
+    "Provision canonical Admissions/Admin authentication.",
+    "Provide Founder runtime login path.",
+    "Remove RTB-ADM-001.",
+    "Unblock SURF-ADM-001 runtime certification."
+  ],
+  "created_at": "2026-07-11T15:14:32Z"
+}

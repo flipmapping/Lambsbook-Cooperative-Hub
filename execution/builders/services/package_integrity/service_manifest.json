@@ -1,0 +1,6 @@
+{
+  "service": "Package Integrity Service",
+  "implementation_authority": "BLD-PIS-001",
+  "builder_version": "v1.2",
+  "publication_gate": true
+}

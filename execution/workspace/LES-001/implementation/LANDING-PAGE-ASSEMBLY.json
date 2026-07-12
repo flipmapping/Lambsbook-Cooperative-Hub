@@ -1,0 +1,17 @@
+{
+  "assembly_id": "LES-IMP-023",
+  "generated": "2026-07-10T13:45:26.772133Z",
+  "repository_id": "APP-001",
+  "target": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "assembly_mode": "replace_entire_component",
+  "sections": [
+    "navigation",
+    "hero",
+    "value_proposition",
+    "programs",
+    "call_to_action",
+    "footer"
+  ],
+  "publication": "after_validation",
+  "status": "ready_for_integrated_source_generation"
+}

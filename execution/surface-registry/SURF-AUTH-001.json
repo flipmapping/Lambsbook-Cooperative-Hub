@@ -1,0 +1,28 @@
+{
+  "surface_id": "SURF-AUTH-001",
+  "surface_name": "Authentication / Admin Access",
+  "repository": "APP-001",
+  "lease_type": "Exclusive",
+  "governance_owner": "Main Application Execution",
+  "logical_owner": "Founder",
+  "implementation_authority": "FDR-010E35A",
+  "execution_stream": "Main Application",
+  "status": "ACTIVE",
+  "repository_truth_version": "Founder Runtime Blocker RTB-ADM-001",
+  "leased_at": "2026-07-11T15:14:32Z",
+  "released_at": null,
+  "mutation_corridor": [
+    "server/routes.ts",
+    "server/lib/auth*",
+    "server/middleware/*",
+    "server/lib/supabase*",
+    "client/src/pages/Login.tsx",
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/pages/Admin*.tsx",
+    "client/src/lib/auth*"
+  ],
+  "runtime_dependency_for": [
+    "SURF-ADM-001"
+  ]
+}

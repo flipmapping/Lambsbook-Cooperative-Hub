@@ -1,0 +1,18 @@
+{
+  "implementation_authority": "GE-RMP-002C",
+  "surface": "Growth Engine Content Surface",
+  "mutation": "Canonical Registry Structure Creation",
+  "content_authority": "GE-RMP-002A",
+  "created": [
+    "content/ctbc/en/programs.json",
+    "content/ctbc/en/scholarships.json",
+    "content/ctbc/en/admissions.json",
+    "content/ctbc/vi/programs.json",
+    "content/ctbc/vi/scholarships.json",
+    "content/ctbc/vi/admissions.json",
+    "content/ctbc/zh/programs.json",
+    "content/ctbc/zh/scholarships.json",
+    "content/ctbc/zh/admissions.json"
+  ],
+  "generated_at": "2026-07-12T03:13:15Z"
+}

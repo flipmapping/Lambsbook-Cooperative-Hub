@@ -1,0 +1,22 @@
+[
+  {
+    "id": "SURFACE-REGISTRY",
+    "file": "SURFACE-REGISTRY.json",
+    "purpose": "Canonical registry of repository surfaces"
+  },
+  {
+    "id": "LEASE-REGISTRY",
+    "file": "LEASE-REGISTRY.json",
+    "purpose": "Active surface lease authority"
+  },
+  {
+    "id": "SURFACE-CATALOG",
+    "file": "SURFACE-CATALOG.json",
+    "purpose": "Surface metadata catalog"
+  },
+  {
+    "id": "SURFACE-DEPENDENCIES",
+    "file": "SURFACE-DEPENDENCIES.json",
+    "purpose": "Surface dependency graph"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "implementation_authority": "EOS-CON-002",
+  "repository_surface": "execution/registry/surfaces/",
+  "mutation_type": "Complete Surface Mutation",
+  "bounded_mutation": true,
+  "artifacts": [
+    {
+      "file": "SURFACE-REGISTRY.json",
+      "purpose": "Canonical registry of repository surfaces"
+    },
+    {
+      "file": "LEASE-REGISTRY.json",
+      "purpose": "Registry of active surface leases"
+    },
+    {
+      "file": "SURFACE-CATALOG.json",
+      "purpose": "Catalog describing registered execution surfaces"
+    },
+    {
+      "file": "SURFACE-DEPENDENCIES.json",
+      "purpose": "Dependency graph between execution surfaces"
+    }
+  ],
+  "validation": {
+    "build": true,
+    "runtime": true,
+    "founder_surface_acceptance": true
+  }
+}

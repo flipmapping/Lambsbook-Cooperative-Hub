@@ -1,0 +1,37 @@
+{
+  "implementation_authority": "BLD-PIS-001",
+  "surface": "execution/builders/services/package_integrity",
+  "results": [
+    {
+      "artifact": "contracts",
+      "description": "Constitutional validator contracts",
+      "status": "GAP"
+    },
+    {
+      "artifact": "validators",
+      "description": "Integrity validator implementations",
+      "status": "GAP"
+    },
+    {
+      "artifact": "reports",
+      "description": "Package Integrity Report generation",
+      "status": "GAP"
+    },
+    {
+      "artifact": "implementation",
+      "description": "Package Integrity Service orchestration",
+      "status": "GAP"
+    },
+    {
+      "artifact": "tests",
+      "description": "BAT-PIS constitutional validation tests",
+      "status": "GAP"
+    },
+    {
+      "artifact": "service_manifest.json",
+      "description": "Service metadata and version contract",
+      "status": "GAP"
+    }
+  ],
+  "gap_count": 6
+}

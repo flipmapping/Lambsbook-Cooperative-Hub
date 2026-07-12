@@ -14,8 +14,8 @@ interface ProspectDocument {
   prospect_id: string;
   document_type: string;
   file_name: string;
-  storage_url: string | null;
-  notes: string | null;
+  storage_path: string | null;
+  description: string | null;
   archived: boolean;
   created_at: string;
 }
@@ -92,8 +92,8 @@ export function ProspectDocumentWorkspace({
         {
           document_type: cType,
           file_name:     cName.trim(),
-          storage_url:   cUrl.trim() || null,
-          notes:         cNotes.trim() || null,
+          storage_path:   cUrl.trim() || null,
+          description:         cNotes.trim() || null,
         },
       );
       if (!res.ok) {
@@ -120,8 +120,8 @@ export function ProspectDocumentWorkspace({
         {
           ...(eType               && { document_type: eType }),
           ...(eName.trim()        && { file_name: eName.trim() }),
-          ...(eUrl !== undefined  && { storage_url: eUrl.trim() || null }),
-          ...(eNotes !== undefined && { notes: eNotes.trim() || null }),
+          ...(eUrl !== undefined  && { storage_path: eUrl.trim() || null }),
+          ...(eNotes !== undefined && { description: eNotes.trim() || null }),
         },
       );
       if (!res.ok) {
@@ -163,8 +163,8 @@ export function ProspectDocumentWorkspace({
     setEditingId(doc.id);
     setEType(doc.document_type);
     setEName(doc.file_name);
-    setEUrl(doc.storage_url ?? "");
-    setENotes(doc.notes ?? "");
+    setEUrl(doc.storage_path ?? "");
+    setENotes(doc.description ?? "");
   }
 
   const active   = documents.filter((d) => !d.archived);
@@ -295,18 +295,18 @@ export function ProspectDocumentWorkspace({
                     <p className="text-sm font-medium mt-1 leading-tight truncate">
                       {doc.file_name}
                     </p>
-                    {doc.storage_url && (
+                    {doc.storage_path && (
                       <a
-                        href={doc.storage_url}
+                        href={doc.storage_path}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs text-primary hover:underline mt-0.5 block truncate"
                       >
-                        {doc.storage_url}
+                        {doc.storage_path}
                       </a>
                     )}
-                    {doc.notes && (
-                      <p className="text-xs text-muted-foreground mt-1">{doc.notes}</p>
+                    {doc.description && (
+                      <p className="text-xs text-muted-foreground mt-1">{doc.description}</p>
                     )}
                     <p className="text-xs text-muted-foreground mt-1">
                       Registered {formatDate(doc.created_at)}

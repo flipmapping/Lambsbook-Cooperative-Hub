@@ -1,0 +1,52 @@
+{
+  "web/src/growth/pages/Landing/LandingPage.tsx": {
+    "exists": true,
+    "line_count": 19,
+    "source": "import { GrowthLayout } from \"../../components/Layout\";\nimport { Hero } from \"../../components/Hero\";\nimport { LandingSections } from \"./LandingSections\";\n\nexport function LandingPage() {\n\n  return (\n\n    <GrowthLayout>\n\n      <Hero />\n\n      <LandingSections />\n\n    </GrowthLayout>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/pages/Landing/LandingSections.tsx": {
+    "exists": true,
+    "line_count": 26,
+    "source": "import {\n  ProgramsSection,\n  ScholarshipsSection,\n  AdmissionsSection,\n  FAQSection,\n} from \"../../components/Sections\";\n\nexport function LandingSections() {\n\n  return (\n\n    <>\n\n      <ProgramsSection />\n\n      <ScholarshipsSection />\n\n      <AdmissionsSection />\n\n      <FAQSection />\n\n    </>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Layout/GrowthLayout.tsx": {
+    "exists": true,
+    "line_count": 41,
+    "source": "import type { PropsWithChildren } from \"react\";\n\nimport { GrowthProvider } from \"../GrowthProvider\";\nimport { Navigation } from \"../Navigation\";\n\nexport interface GrowthLayoutProps\n  extends PropsWithChildren {\n\n  onNavigate?(id: string): void;\n\n}\n\nexport function GrowthLayout(\n  props: GrowthLayoutProps\n) {\n\n  return (\n\n    <GrowthProvider>\n\n      <Navigation\n        onSelect={props.onNavigate}\n      />\n\n      <main>\n\n        {props.children}\n\n      </main>\n\n      <footer>\n\n        Growth Platform\n\n      </footer>\n\n    </GrowthProvider>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Hero/Hero.tsx": {
+    "exists": true,
+    "line_count": 26,
+    "source": "import { useContent } from \"../../hooks/useContent\";\nimport type { HomeContentDocument } from \"../../types/content\";\nimport { HeroContent } from \"./HeroContent\";\n\nexport function Hero() {\n\n  const document =\n    useContent(\"home\") as HomeContentDocument;\n\n  const hero = document.sections.hero;\n\n  if (!hero) {\n    return null;\n  }\n\n  return (\n    <HeroContent\n      title={hero.title}\n      subtitle={hero.subtitle}\n      description={hero.description}\n      primaryAction={hero.primaryAction}\n      secondaryAction={hero.secondaryAction}\n    />\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Hero/HeroContent.tsx": {
+    "exists": true,
+    "line_count": 51,
+    "source": "export interface HeroContentProps {\n\n  title: string;\n\n  subtitle?: string;\n\n  description?: string;\n\n  primaryAction?: string;\n\n  secondaryAction?: string;\n\n}\n\nexport function HeroContent(\n  props: HeroContentProps\n) {\n\n  return (\n    <section>\n\n      <h1>{props.title}</h1>\n\n      {props.subtitle && (\n        <h2>{props.subtitle}</h2>\n      )}\n\n      {props.description && (\n        <p>{props.description}</p>\n      )}\n\n      <div>\n\n        {props.primaryAction && (\n          <button type=\"button\">\n            {props.primaryAction}\n          </button>\n        )}\n\n        {props.secondaryAction && (\n          <button type=\"button\">\n            {props.secondaryAction}\n          </button>\n        )}\n\n      </div>\n\n    </section>\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Navigation/Navigation.tsx": {
+    "exists": true,
+    "line_count": 47,
+    "source": "import { useRegistry } from \"../../hooks/useRegistry\";\nimport { NavigationItem } from \"./NavigationItem\";\n\nexport interface NavigationProps {\n\n  onSelect?(id: string): void;\n\n}\n\ninterface NavigationEntry {\n\n  id: string;\n\n  label: string;\n\n}\n\nexport function Navigation(\n  props: NavigationProps\n) {\n\n  const registry =\n    useRegistry(\"navigation\");\n\n  const items =\n    registry.items as NavigationEntry[];\n\n  return (\n\n    <nav>\n\n      {items.map((item) => (\n\n        <NavigationItem\n          key={item.id}\n          id={item.id}\n          label={item.label}\n          onClick={() => props.onSelect?.(item.id)}\n        />\n\n      ))}\n\n    </nav>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Sections/ProgramsSection.tsx": {
+    "exists": true,
+    "line_count": 51,
+    "source": "import { useRegistry } from \"../../hooks/useRegistry\";\n\nexport function ProgramsSection() {\n\n  const registry =\n    useRegistry(\"programs\");\n\n  const items =\n    Array.isArray(registry.items)\n      ? registry.items\n      : [];\n\n  return (\n\n    <section>\n\n      <h2>Programs</h2>\n\n      {items.length === 0 ? (\n\n        <p>No programs available.</p>\n\n      ) : (\n\n        <ul>\n\n          {items.map((item, index) => (\n\n            <li key={index}>\n\n              {typeof item === \"object\" &&\n               item !== null &&\n               \"title\" in item\n                ? String(\n                    (item as Record<string, unknown>).title\n                  )\n                : `Program ${index + 1}`}\n\n            </li>\n\n          ))}\n\n        </ul>\n\n      )}\n\n    </section>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Sections/ScholarshipsSection.tsx": {
+    "exists": true,
+    "line_count": 76,
+    "source": "import { Link } from \"wouter\";\nimport { useRegistry } from \"../../hooks/useRegistry\";\n\nexport function ScholarshipsSection() {\n\n  const registry =\n    useRegistry(\"scholarships\");\n\n  const items =\n    Array.isArray(registry.items)\n      ? registry.items\n      : [];\n\n  return (\n\n    <section>\n\n      <h2>Scholarships</h2>\n\n      {items.length === 0 ? (\n\n        <p>No scholarships available.</p>\n\n      ) : (\n\n        <ul>\n\n          {items.map((item, index) => {\n\n            const isObject =\n              typeof item === \"object\" &&\n              item !== null;\n\n            const title =\n              isObject && \"title\" in item\n                ? String(\n                    (item as Record<string, unknown>).title\n                  )\n                : `Scholarship ${index + 1}`;\n\n            const path =\n              isObject && \"path\" in item\n                ? String(\n                    (item as Record<string, unknown>).path\n                  )\n                : null;\n\n            return (\n\n              <li key={index}>\n\n                {path !== null ? (\n\n                  <Link href={path}>{title}</Link>\n\n                ) : (\n\n                  title\n\n                )}\n\n              </li>\n\n            );\n\n          })}\n\n        </ul>\n\n      )}\n\n    </section>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Sections/AdmissionsSection.tsx": {
+    "exists": true,
+    "line_count": 76,
+    "source": "import { Link } from \"wouter\";\nimport { useRegistry } from \"../../hooks/useRegistry\";\n\nexport function AdmissionsSection() {\n\n  const registry =\n    useRegistry(\"admissions\");\n\n  const items =\n    Array.isArray(registry.items)\n      ? registry.items\n      : [];\n\n  return (\n\n    <section>\n\n      <h2>Admissions</h2>\n\n      {items.length === 0 ? (\n\n        <p>No admissions available.</p>\n\n      ) : (\n\n        <ul>\n\n          {items.map((item, index) => {\n\n            const isObject =\n              typeof item === \"object\" &&\n              item !== null;\n\n            const title =\n              isObject && \"title\" in item\n                ? String(\n                    (item as Record<string, unknown>).title\n                  )\n                : `Admission ${index + 1}`;\n\n            const path =\n              isObject && \"path\" in item\n                ? String(\n                    (item as Record<string, unknown>).path\n                  )\n                : null;\n\n            return (\n\n              <li key={index}>\n\n                {path !== null ? (\n\n                  <Link href={path}>{title}</Link>\n\n                ) : (\n\n                  title\n\n                )}\n\n              </li>\n\n            );\n\n          })}\n\n        </ul>\n\n      )}\n\n    </section>\n\n  );\n\n}\n"
+  },
+  "web/src/growth/components/Sections/FAQSection.tsx": {
+    "exists": true,
+    "line_count": 51,
+    "source": "import { useRegistry } from \"../../hooks/useRegistry\";\n\nexport function FAQSection() {\n\n  const registry =\n    useRegistry(\"faq\");\n\n  const items =\n    Array.isArray(registry.items)\n      ? registry.items\n      : [];\n\n  return (\n\n    <section>\n\n      <h2>Frequently Asked Questions</h2>\n\n      {items.length === 0 ? (\n\n        <p>No FAQs available.</p>\n\n      ) : (\n\n        <ul>\n\n          {items.map((item, index) => (\n\n            <li key={index}>\n\n              {typeof item === \"object\" &&\n               item !== null &&\n               \"title\" in item\n                ? String(\n                    (item as Record<string, unknown>).title\n                  )\n                : `FAQ ${index + 1}`}\n\n            </li>\n\n          ))}\n\n        </ul>\n\n      )}\n\n    </section>\n\n  );\n\n}\n"
+  }
+}

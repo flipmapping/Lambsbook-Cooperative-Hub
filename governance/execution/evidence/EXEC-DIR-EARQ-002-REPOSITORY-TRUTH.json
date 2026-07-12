@@ -1,0 +1,22 @@
+[
+  {
+    "path": "execution/platform",
+    "status": "NEW",
+    "detail": "not yet materialized"
+  },
+  {
+    "path": "execution/builders",
+    "status": "PASS",
+    "detail": "directory (42 entries)"
+  },
+  {
+    "path": "execution/assurance",
+    "status": "PASS",
+    "detail": "directory (29 entries)"
+  },
+  {
+    "path": "governance",
+    "status": "PASS",
+    "detail": "directory (279 entries)"
+  }
+]

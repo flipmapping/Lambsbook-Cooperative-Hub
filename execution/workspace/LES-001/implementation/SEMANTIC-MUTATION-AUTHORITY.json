@@ -1,0 +1,18 @@
+{
+  "authority_id": "LES-EXEC-004",
+  "generated": "2026-07-10T15:24:00.623576Z",
+  "repository_id": "APP-001",
+  "target": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+  "mutation_type": "replace_entire_component",
+  "authorized_sections": [
+    "navigation",
+    "hero",
+    "value_proposition",
+    "programs",
+    "call_to_action",
+    "footer"
+  ],
+  "builder_phase": "semantic_source_generation",
+  "publication": "after_validation",
+  "status": "authorized"
+}

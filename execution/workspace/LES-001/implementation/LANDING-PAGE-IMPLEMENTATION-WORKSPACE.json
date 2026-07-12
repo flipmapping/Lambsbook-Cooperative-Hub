@@ -1,0 +1,24 @@
+{
+  "workspace_id": "LES-IMP-020",
+  "generated": "2026-07-10T10:44:21.580916Z",
+  "repository_id": "APP-001",
+  "target_module": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "status": "ready_for_section_implementation",
+  "implementation_order": [
+    "navigation",
+    "hero",
+    "value_proposition",
+    "programs",
+    "call_to_action",
+    "footer"
+  ],
+  "content_authority": "execution/workspace/LES-001/content_authority/LANDING-PAGE-CONTENT-AUTHORITY.json",
+  "section_status": {
+    "navigation": "pending",
+    "hero": "pending",
+    "value_proposition": "pending",
+    "programs": "pending",
+    "call_to_action": "pending",
+    "footer": "pending"
+  }
+}

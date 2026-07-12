@@ -1,0 +1,23 @@
+{
+  "smp_id": "LES-SMP-001",
+  "authority": "EOS-EXEC-001",
+  "semantic_mutation_standard": "EOS-EXEC-005",
+  "repository": "APP-001",
+  "status": "initialized",
+  "generated": "2026-07-10T00:59:52.096045Z",
+  "builder_service": "BLD-AMS-001",
+  "builder_runtime": "BLD-ARCH-002",
+  "inputs": {
+    "mutation_authority_contract": "execution/sprints/LES-001/repository_mutation_package/contracts/MUTATION-AUTHORITY-CONTRACT.json",
+    "target_discovery": "execution/sprints/LES-001/repository_mutation_package/inspection/LANDING-EXPERIENCE-TARGETS.json",
+    "target_certification": "execution/sprints/LES-001/repository_mutation_package/certification/TARGET-DISCOVERY-CERTIFICATION.json"
+  },
+  "deliverables": {
+    "selected_target": false,
+    "semantic_analysis": false,
+    "mutation_fragment": false,
+    "builder_materialization": false,
+    "runtime_validation": false
+  },
+  "production_repository_modified": false
+}

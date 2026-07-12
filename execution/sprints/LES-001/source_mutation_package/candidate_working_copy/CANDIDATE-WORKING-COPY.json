@@ -1,0 +1,69 @@
+{
+  "candidate_id": "LES-SMP-013",
+  "authority": "EOS-BLD-003",
+  "generated": "2026-07-10T02:08:26.219501Z",
+  "repository": "APP-001",
+  "builder_input": "immutable_working_copy",
+  "source_certification": "LES-SMP-012",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "working_copy_sha256": "53f2e240c45f3a6f84c16efa646ee8f87c1db8e4a2ca8493c73259fc132f6ae4",
+  "semantic_transformations": [
+    {
+      "id": "LES-SMP-014-T001",
+      "generated": "2026-07-10T03:10:34.837226Z",
+      "type": "landing_experience_analysis",
+      "target_component": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "status": "planned",
+      "description": "Establish semantic mutation plan for the LandingPage implementation without modifying production source."
+    }
+  ],
+  "validation_status": "not_validated",
+  "publication_state": "not_published",
+  "candidate_state": "materialization_in_progress",
+  "production_repository_modified": false,
+  "last_updated": "2026-07-10T04:09:21.344476Z",
+  "mutation_operations": [
+    {
+      "id": "LES-SMP-015-M001",
+      "generated": "2026-07-10T03:15:25.817818Z",
+      "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "target_component": "LandingPage",
+      "operation": "analyze_and_prepare_component_mutation",
+      "execution_state": "ready_for_materialization",
+      "implementation_fragment": null
+    }
+  ],
+  "materialization_increments": [
+    {
+      "id": "LES-SMP-016-I001",
+      "generated": "2026-07-10T04:09:21.344467Z",
+      "authority": "BLD-AMS-001",
+      "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "source_line_count": 19,
+      "materialized_source": [
+        "import { GrowthLayout } from \"../../components/Layout\";",
+        "import { Hero } from \"../../components/Hero\";",
+        "import { LandingSections } from \"./LandingSections\";",
+        "",
+        "export function LandingPage() {",
+        "",
+        "  return (",
+        "",
+        "    <GrowthLayout>",
+        "",
+        "      <Hero />",
+        "",
+        "      <LandingSections />",
+        "",
+        "    </GrowthLayout>",
+        "",
+        "  );",
+        "",
+        "}"
+      ],
+      "status": "materialized",
+      "validated": false,
+      "published": false
+    }
+  ]
+}

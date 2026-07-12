@@ -1,0 +1,9 @@
+{
+  "implementation_authority": "BLD-PIS-001",
+  "surface": "execution/builders/services/package_integrity",
+  "exists": false,
+  "files_discovered": 0,
+  "files": [],
+  "constitutional_gate": "Claude Package Publication",
+  "repository_truth_version": 1
+}

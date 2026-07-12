@@ -1,0 +1,38 @@
+{
+  "implementation_authority": "BLD-PIS-001",
+  "mutation_type": "Complete Surface Mutation",
+  "bounded_surface": "execution/builders/services/package_integrity",
+  "constitutional_gate": "Claude Package Publication",
+  "publication_rule": "EOS-BLD-007",
+  "artifacts": {
+    "contracts": [
+      "validator_contract.py",
+      "validation_result.py"
+    ],
+    "validators": [
+      "governance_validator.py",
+      "repository_validator.py",
+      "implementation_validator.py",
+      "surface_validator.py",
+      "manifest_validator.py",
+      "claude_readiness_validator.py"
+    ],
+    "reports": [
+      "package_integrity_report.py"
+    ],
+    "implementation": [
+      "package_integrity_service.py"
+    ],
+    "tests": [
+      "bat_pis_001.py",
+      "bat_pis_002.py",
+      "bat_pis_003.py",
+      "bat_pis_004.py",
+      "bat_pis_005.py"
+    ],
+    "root": [
+      "__init__.py",
+      "service_manifest.json"
+    ]
+  }
+}

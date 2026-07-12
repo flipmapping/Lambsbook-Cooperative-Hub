@@ -1,0 +1,15 @@
+{
+  "sprint_id": "LES-001",
+  "title": "Landing Experience Sprint 1",
+  "status": "initialized",
+  "initialized": "2026-07-09T17:34:48.611077Z",
+  "initialized_by": "Sprint Factory",
+  "previous_sprint": "SFP-001",
+  "handoff_package": "SFP-RET-001",
+  "authority": "EOS-EXEC-001",
+  "repository": "APP-001",
+  "bootstrap_required": true,
+  "repository_truth_required": true,
+  "implementation_started": false,
+  "validation_completed": false
+}

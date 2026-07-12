@@ -1,0 +1,12 @@
+{
+  "fragment_id": "LES-SMP-007-F001",
+  "authority": "BLD-AMS-001",
+  "generated": "2026-07-10T01:48:10.792445Z",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "target_component": "LandingPage",
+  "fragment_status": "materialized",
+  "mutation_type": "semantic",
+  "implementation_generated": false,
+  "runtime_validated": false,
+  "repository_modified": false
+}

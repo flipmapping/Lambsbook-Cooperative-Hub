@@ -1,0 +1,16 @@
+{
+  "increment_id": "LES-SMP-009-I001",
+  "authority": "BLD-AMS-001",
+  "generated": "2026-07-10T01:59:18.856724Z",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "target_component": "LandingPage",
+  "increment_number": 1,
+  "purpose": "Capture initial implementation increment for Artifact Materialization Service.",
+  "implementation": {
+    "status": "pending_materialization",
+    "content": []
+  },
+  "assembly_status": "pending",
+  "runtime_validation": "pending",
+  "repository_modified": false
+}

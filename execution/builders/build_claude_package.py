@@ -414,13 +414,33 @@ def _assemble_artifacts(
         in_section = False
         for line in icm_text.splitlines():
             stripped = line.strip()
-            if stripped == "Implementation Context":
+            heading = stripped.lstrip("#").strip()
+
+            if heading == "Implementation Context":
                 in_section = True
                 continue
             if in_section:
-                if stripped.startswith("---") or stripped.startswith("Builder Rule"):
+                # End of Implementation Context:
+                # - horizontal rule
+                # - Builder Rule section
+                # - any subsequent section heading (non-file line followed by blank line)
+                if (
+                    stripped.startswith("---")
+                    or stripped.startswith("Builder Rule")
+                    or (
+                        stripped
+                        and "/" not in stripped
+                        and not stripped.startswith("#")
+                        and not stripped.startswith("-")
+                    )
+                ):
                     break
-                if stripped and not stripped.startswith("#"):
+
+                if (
+                    stripped
+                    and "/" in stripped
+                    and not stripped.startswith("#")
+                ):
                     context_files.append(stripped)
 
         # Verify, copy, and record each listed file

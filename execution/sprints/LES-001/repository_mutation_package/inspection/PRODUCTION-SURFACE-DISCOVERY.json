@@ -1,0 +1,1551 @@
+{
+  "inspection_id": "LES-RMP-003",
+  "authority": "EOS-EXEC-001",
+  "repository": "APP-001",
+  "status": "production_surfaces_discovered",
+  "generated": "2026-07-10T00:31:19.816979Z",
+  "production_files": [
+    {
+      "path": "client/src/App.tsx",
+      "extension": ".tsx",
+      "size": 9085
+    },
+    {
+      "path": "client/src/components/AIChatWidget.tsx",
+      "extension": ".tsx",
+      "size": 6304
+    },
+    {
+      "path": "client/src/components/AdvantagesSection.tsx",
+      "extension": ".tsx",
+      "size": 1869
+    },
+    {
+      "path": "client/src/components/ContactSection.tsx",
+      "extension": ".tsx",
+      "size": 8656
+    },
+    {
+      "path": "client/src/components/CountriesSection.tsx",
+      "extension": ".tsx",
+      "size": 3947
+    },
+    {
+      "path": "client/src/components/EB3Categories.tsx",
+      "extension": ".tsx",
+      "size": 2466
+    },
+    {
+      "path": "client/src/components/FAQSection.tsx",
+      "extension": ".tsx",
+      "size": 7903
+    },
+    {
+      "path": "client/src/components/Footer.tsx",
+      "extension": ".tsx",
+      "size": 2641
+    },
+    {
+      "path": "client/src/components/Header.tsx",
+      "extension": ".tsx",
+      "size": 3729
+    },
+    {
+      "path": "client/src/components/HeroSection.tsx",
+      "extension": ".tsx",
+      "size": 2104
+    },
+    {
+      "path": "client/src/components/HubConsultationForm.tsx",
+      "extension": ".tsx",
+      "size": 8123
+    },
+    {
+      "path": "client/src/components/HubHeader.tsx",
+      "extension": ".tsx",
+      "size": 6283
+    },
+    {
+      "path": "client/src/components/JobCategoriesSection.tsx",
+      "extension": ".tsx",
+      "size": 3526
+    },
+    {
+      "path": "client/src/components/LanguageSwitcher.tsx",
+      "extension": ".tsx",
+      "size": 1391
+    },
+    {
+      "path": "client/src/components/ProcessSection.tsx",
+      "extension": ".tsx",
+      "size": 2487
+    },
+    {
+      "path": "client/src/components/ServicesSection.tsx",
+      "extension": ".tsx",
+      "size": 2259
+    },
+    {
+      "path": "client/src/components/StudyAbroadSection.tsx",
+      "extension": ".tsx",
+      "size": 5569
+    },
+    {
+      "path": "client/src/components/SuccessStories.tsx",
+      "extension": ".tsx",
+      "size": 5483
+    },
+    {
+      "path": "client/src/components/ThemeToggle.tsx",
+      "extension": ".tsx",
+      "size": 1021
+    },
+    {
+      "path": "client/src/components/admin/CommissionRulesManagement.tsx",
+      "extension": ".tsx",
+      "size": 17169
+    },
+    {
+      "path": "client/src/components/admin/EnrollmentWorkflow.tsx",
+      "extension": ".tsx",
+      "size": 11163
+    },
+    {
+      "path": "client/src/components/admin/LandingPagesManagement.tsx",
+      "extension": ".tsx",
+      "size": 7029
+    },
+    {
+      "path": "client/src/components/admin/ProgramsManagement.tsx",
+      "extension": ".tsx",
+      "size": 18077
+    },
+    {
+      "path": "client/src/components/admin/SBUManagement.tsx",
+      "extension": ".tsx",
+      "size": 8667
+    },
+    {
+      "path": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 4334
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 11113
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 18153
+    },
+    {
+      "path": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 13560
+    },
+    {
+      "path": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 12247
+    },
+    {
+      "path": "client/src/components/admissions/ProspectTimeline.tsx",
+      "extension": ".tsx",
+      "size": 4188
+    },
+    {
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "extension": ".tsx",
+      "size": 4986
+    },
+    {
+      "path": "client/src/components/dashboard/mockData.ts",
+      "extension": ".ts",
+      "size": 283
+    },
+    {
+      "path": "client/src/components/dashboard/stubs.tsx",
+      "extension": ".tsx",
+      "size": 984
+    },
+    {
+      "path": "client/src/components/dashboard/types.ts",
+      "extension": ".ts",
+      "size": 628
+    },
+    {
+      "path": "client/src/components/examples/AdvantagesSection.tsx",
+      "extension": ".tsx",
+      "size": 263
+    },
+    {
+      "path": "client/src/components/examples/ContactSection.tsx",
+      "extension": ".tsx",
+      "size": 251
+    },
+    {
+      "path": "client/src/components/examples/CountriesSection.tsx",
+      "extension": ".tsx",
+      "size": 308
+    },
+    {
+      "path": "client/src/components/examples/EB3Categories.tsx",
+      "extension": ".tsx",
+      "size": 301
+    },
+    {
+      "path": "client/src/components/examples/FAQSection.tsx",
+      "extension": ".tsx",
+      "size": 235
+    },
+    {
+      "path": "client/src/components/examples/Footer.tsx",
+      "extension": ".tsx",
+      "size": 219
+    },
+    {
+      "path": "client/src/components/examples/Header.tsx",
+      "extension": ".tsx",
+      "size": 282
+    },
+    {
+      "path": "client/src/components/examples/HeroSection.tsx",
+      "extension": ".tsx",
+      "size": 302
+    },
+    {
+      "path": "client/src/components/examples/JobCategoriesSection.tsx",
+      "extension": ".tsx",
+      "size": 275
+    },
+    {
+      "path": "client/src/components/examples/ProcessSection.tsx",
+      "extension": ".tsx",
+      "size": 251
+    },
+    {
+      "path": "client/src/components/examples/ServicesSection.tsx",
+      "extension": ".tsx",
+      "size": 255
+    },
+    {
+      "path": "client/src/components/examples/StudyAbroadSection.tsx",
+      "extension": ".tsx",
+      "size": 316
+    },
+    {
+      "path": "client/src/components/examples/SuccessStories.tsx",
+      "extension": ".tsx",
+      "size": 251
+    },
+    {
+      "path": "client/src/components/notifications/ChannelSelector.tsx",
+      "extension": ".tsx",
+      "size": 1314
+    },
+    {
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "extension": ".tsx",
+      "size": 2266
+    },
+    {
+      "path": "client/src/components/notifications/ToggleControl.tsx",
+      "extension": ".tsx",
+      "size": 1291
+    },
+    {
+      "path": "client/src/components/ui/accordion.tsx",
+      "extension": ".tsx",
+      "size": 1977
+    },
+    {
+      "path": "client/src/components/ui/alert-dialog.tsx",
+      "extension": ".tsx",
+      "size": 4420
+    },
+    {
+      "path": "client/src/components/ui/alert.tsx",
+      "extension": ".tsx",
+      "size": 1584
+    },
+    {
+      "path": "client/src/components/ui/aspect-ratio.tsx",
+      "extension": ".tsx",
+      "size": 140
+    },
+    {
+      "path": "client/src/components/ui/avatar.tsx",
+      "extension": ".tsx",
+      "size": 1592
+    },
+    {
+      "path": "client/src/components/ui/badge.tsx",
+      "extension": ".tsx",
+      "size": 1202
+    },
+    {
+      "path": "client/src/components/ui/breadcrumb.tsx",
+      "extension": ".tsx",
+      "size": 2712
+    },
+    {
+      "path": "client/src/components/ui/button.tsx",
+      "extension": ".tsx",
+      "size": 2359
+    },
+    {
+      "path": "client/src/components/ui/calendar.tsx",
+      "extension": ".tsx",
+      "size": 2695
+    },
+    {
+      "path": "client/src/components/ui/card.tsx",
+      "extension": ".tsx",
+      "size": 1904
+    },
+    {
+      "path": "client/src/components/ui/carousel.tsx",
+      "extension": ".tsx",
+      "size": 6210
+    },
+    {
+      "path": "client/src/components/ui/chart.tsx",
+      "extension": ".tsx",
+      "size": 10481
+    },
+    {
+      "path": "client/src/components/ui/checkbox.tsx",
+      "extension": ".tsx",
+      "size": 1056
+    },
+    {
+      "path": "client/src/components/ui/collapsible.tsx",
+      "extension": ".tsx",
+      "size": 329
+    },
+    {
+      "path": "client/src/components/ui/command.tsx",
+      "extension": ".tsx",
+      "size": 4885
+    },
+    {
+      "path": "client/src/components/ui/context-menu.tsx",
+      "extension": ".tsx",
+      "size": 7428
+    },
+    {
+      "path": "client/src/components/ui/dialog.tsx",
+      "extension": ".tsx",
+      "size": 3848
+    },
+    {
+      "path": "client/src/components/ui/drawer.tsx",
+      "extension": ".tsx",
+      "size": 3021
+    },
+    {
+      "path": "client/src/components/ui/dropdown-menu.tsx",
+      "extension": ".tsx",
+      "size": 7609
+    },
+    {
+      "path": "client/src/components/ui/form.tsx",
+      "extension": ".tsx",
+      "size": 4120
+    },
+    {
+      "path": "client/src/components/ui/hover-card.tsx",
+      "extension": ".tsx",
+      "size": 1251
+    },
+    {
+      "path": "client/src/components/ui/input-otp.tsx",
+      "extension": ".tsx",
+      "size": 2154
+    },
+    {
+      "path": "client/src/components/ui/input.tsx",
+      "extension": ".tsx",
+      "size": 844
+    },
+    {
+      "path": "client/src/components/ui/label.tsx",
+      "extension": ".tsx",
+      "size": 710
+    },
+    {
+      "path": "client/src/components/ui/menubar.tsx",
+      "extension": ".tsx",
+      "size": 8605
+    },
+    {
+      "path": "client/src/components/ui/navigation-menu.tsx",
+      "extension": ".tsx",
+      "size": 5128
+    },
+    {
+      "path": "client/src/components/ui/pagination.tsx",
+      "extension": ".tsx",
+      "size": 2751
+    },
+    {
+      "path": "client/src/components/ui/popover.tsx",
+      "extension": ".tsx",
+      "size": 1280
+    },
+    {
+      "path": "client/src/components/ui/progress.tsx",
+      "extension": ".tsx",
+      "size": 791
+    },
+    {
+      "path": "client/src/components/ui/radio-group.tsx",
+      "extension": ".tsx",
+      "size": 1467
+    },
+    {
+      "path": "client/src/components/ui/resizable.tsx",
+      "extension": ".tsx",
+      "size": 1723
+    },
+    {
+      "path": "client/src/components/ui/scroll-area.tsx",
+      "extension": ".tsx",
+      "size": 1642
+    },
+    {
+      "path": "client/src/components/ui/select.tsx",
+      "extension": ".tsx",
+      "size": 5741
+    },
+    {
+      "path": "client/src/components/ui/separator.tsx",
+      "extension": ".tsx",
+      "size": 756
+    },
+    {
+      "path": "client/src/components/ui/sheet.tsx",
+      "extension": ".tsx",
+      "size": 4281
+    },
+    {
+      "path": "client/src/components/ui/sidebar.tsx",
+      "extension": ".tsx",
+      "size": 21846
+    },
+    {
+      "path": "client/src/components/ui/skeleton.tsx",
+      "extension": ".tsx",
+      "size": 261
+    },
+    {
+      "path": "client/src/components/ui/slider.tsx",
+      "extension": ".tsx",
+      "size": 1077
+    },
+    {
+      "path": "client/src/components/ui/switch.tsx",
+      "extension": ".tsx",
+      "size": 1139
+    },
+    {
+      "path": "client/src/components/ui/table.tsx",
+      "extension": ".tsx",
+      "size": 2765
+    },
+    {
+      "path": "client/src/components/ui/tabs.tsx",
+      "extension": ".tsx",
+      "size": 1883
+    },
+    {
+      "path": "client/src/components/ui/textarea.tsx",
+      "extension": ".tsx",
+      "size": 689
+    },
+    {
+      "path": "client/src/components/ui/toast.tsx",
+      "extension": ".tsx",
+      "size": 4845
+    },
+    {
+      "path": "client/src/components/ui/toaster.tsx",
+      "extension": ".tsx",
+      "size": 772
+    },
+    {
+      "path": "client/src/components/ui/toggle-group.tsx",
+      "extension": ".tsx",
+      "size": 1753
+    },
+    {
+      "path": "client/src/components/ui/toggle.tsx",
+      "extension": ".tsx",
+      "size": 1527
+    },
+    {
+      "path": "client/src/components/ui/tooltip.tsx",
+      "extension": ".tsx",
+      "size": 1209
+    },
+    {
+      "path": "client/src/hooks/use-mobile.tsx",
+      "extension": ".tsx",
+      "size": 565
+    },
+    {
+      "path": "client/src/hooks/use-toast.ts",
+      "extension": ".ts",
+      "size": 3895
+    },
+    {
+      "path": "client/src/hooks/useFeedbackUsage.ts",
+      "extension": ".ts",
+      "size": 2543
+    },
+    {
+      "path": "client/src/index.css",
+      "extension": ".css",
+      "size": 10742
+    },
+    {
+      "path": "client/src/lib/LanguageContext.tsx",
+      "extension": ".tsx",
+      "size": 1482
+    },
+    {
+      "path": "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "extension": ".ts",
+      "size": 822
+    },
+    {
+      "path": "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "extension": ".ts",
+      "size": 6650
+    },
+    {
+      "path": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "extension": ".ts",
+      "size": 891
+    },
+    {
+      "path": "client/src/lib/hubTranslations.ts",
+      "extension": ".ts",
+      "size": 113319
+    },
+    {
+      "path": "client/src/lib/i18n.ts",
+      "extension": ".ts",
+      "size": 34512
+    },
+    {
+      "path": "client/src/lib/imageConstants.ts",
+      "extension": ".ts",
+      "size": 508
+    },
+    {
+      "path": "client/src/lib/lambsbookTutoringContent.ts",
+      "extension": ".ts",
+      "size": 1894
+    },
+    {
+      "path": "client/src/lib/learning/types.ts",
+      "extension": ".ts",
+      "size": 219
+    },
+    {
+      "path": "client/src/lib/queryClient.ts",
+      "extension": ".ts",
+      "size": 2058
+    },
+    {
+      "path": "client/src/lib/supabase/client.ts",
+      "extension": ".ts",
+      "size": 206
+    },
+    {
+      "path": "client/src/lib/utils.ts",
+      "extension": ".ts",
+      "size": 166
+    },
+    {
+      "path": "client/src/main.tsx",
+      "extension": ".tsx",
+      "size": 389
+    },
+    {
+      "path": "client/src/pages/AdminGovernance.tsx",
+      "extension": ".tsx",
+      "size": 11355
+    },
+    {
+      "path": "client/src/pages/AdminRevenueConsole.tsx",
+      "extension": ".tsx",
+      "size": 18826
+    },
+    {
+      "path": "client/src/pages/AdmissionsWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 8449
+    },
+    {
+      "path": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "extension": ".tsx",
+      "size": 8657
+    },
+    {
+      "path": "client/src/pages/ApplicantAppointmentCenter.tsx",
+      "extension": ".tsx",
+      "size": 8088
+    },
+    {
+      "path": "client/src/pages/ApplicantDocumentCenter.tsx",
+      "extension": ".tsx",
+      "size": 7301
+    },
+    {
+      "path": "client/src/pages/ApplicantJourneyStatus.tsx",
+      "extension": ".tsx",
+      "size": 8214
+    },
+    {
+      "path": "client/src/pages/ApplicantLifecycleTimeline.tsx",
+      "extension": ".tsx",
+      "size": 6112
+    },
+    {
+      "path": "client/src/pages/ApplicantStatusLookup.tsx",
+      "extension": ".tsx",
+      "size": 4234
+    },
+    {
+      "path": "client/src/pages/AuthCallback.tsx",
+      "extension": ".tsx",
+      "size": 3635
+    },
+    {
+      "path": "client/src/pages/Dashboard.tsx",
+      "extension": ".tsx",
+      "size": 55151
+    },
+    {
+      "path": "client/src/pages/EducationFeedback.tsx",
+      "extension": ".tsx",
+      "size": 16204
+    },
+    {
+      "path": "client/src/pages/FarmstayVision.tsx",
+      "extension": ".tsx",
+      "size": 13121
+    },
+    {
+      "path": "client/src/pages/HubAdminDashboard.tsx",
+      "extension": ".tsx",
+      "size": 31546
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "extension": ".tsx",
+      "size": 21839
+    },
+    {
+      "path": "client/src/pages/HubAuthCallback.tsx",
+      "extension": ".tsx",
+      "size": 7274
+    },
+    {
+      "path": "client/src/pages/HubDashboard.tsx",
+      "extension": ".tsx",
+      "size": 17664
+    },
+    {
+      "path": "client/src/pages/HubLanding.tsx",
+      "extension": ".tsx",
+      "size": 13953
+    },
+    {
+      "path": "client/src/pages/LambsbookTutoring.tsx",
+      "extension": ".tsx",
+      "size": 11927
+    },
+    {
+      "path": "client/src/pages/Login.tsx",
+      "extension": ".tsx",
+      "size": 4531
+    },
+    {
+      "path": "client/src/pages/MemberDashboard.tsx",
+      "extension": ".tsx",
+      "size": 5909
+    },
+    {
+      "path": "client/src/pages/MemberHub.tsx",
+      "extension": ".tsx",
+      "size": 32224
+    },
+    {
+      "path": "client/src/pages/PartnerOnboarding.tsx",
+      "extension": ".tsx",
+      "size": 14690
+    },
+    {
+      "path": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "extension": ".tsx",
+      "size": 9245
+    },
+    {
+      "path": "client/src/pages/ProspectRegistration.tsx",
+      "extension": ".tsx",
+      "size": 8028
+    },
+    {
+      "path": "client/src/pages/ResetPassword.tsx",
+      "extension": ".tsx",
+      "size": 10079
+    },
+    {
+      "path": "client/src/pages/SBUEducation.tsx",
+      "extension": ".tsx",
+      "size": 14465
+    },
+    {
+      "path": "client/src/pages/ScholarshipsPage.tsx",
+      "extension": ".tsx",
+      "size": 8268
+    },
+    {
+      "path": "client/src/pages/TranscriptSubmission.tsx",
+      "extension": ".tsx",
+      "size": 23315
+    },
+    {
+      "path": "client/src/pages/TropicanaProgram.tsx",
+      "extension": ".tsx",
+      "size": 13480
+    },
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "extension": ".tsx",
+      "size": 1389
+    },
+    {
+      "path": "client/src/pages/member/MemberDashboard.tsx",
+      "extension": ".tsx",
+      "size": 0
+    },
+    {
+      "path": "client/src/pages/not-found.tsx",
+      "extension": ".tsx",
+      "size": 711
+    },
+    {
+      "path": "server/dal/financial.ts",
+      "extension": ".ts",
+      "size": 856
+    },
+    {
+      "path": "server/dal/governance.ts",
+      "extension": ".ts",
+      "size": 1455
+    },
+    {
+      "path": "server/db.ts",
+      "extension": ".ts",
+      "size": 459
+    },
+    {
+      "path": "server/index.ts",
+      "extension": ".ts",
+      "size": 3329
+    },
+    {
+      "path": "server/lib/getUserEmailFromToken.ts",
+      "extension": ".ts",
+      "size": 554
+    },
+    {
+      "path": "server/lib/index.ts",
+      "extension": ".ts",
+      "size": 170
+    },
+    {
+      "path": "server/lib/openai.ts",
+      "extension": ".ts",
+      "size": 346
+    },
+    {
+      "path": "server/lib/supabase-client.ts",
+      "extension": ".ts",
+      "size": 1154
+    },
+    {
+      "path": "server/lib/supabase-dal.ts",
+      "extension": ".ts",
+      "size": 39668
+    },
+    {
+      "path": "server/lib/supabase-member-client.ts",
+      "extension": ".ts",
+      "size": 1540
+    },
+    {
+      "path": "server/lib/supabase-types.ts",
+      "extension": ".ts",
+      "size": 8588
+    },
+    {
+      "path": "server/lib/supabaseClients.ts",
+      "extension": ".ts",
+      "size": 2230
+    },
+    {
+      "path": "server/middleware/attachUserContext.ts",
+      "extension": ".ts",
+      "size": 1766
+    },
+    {
+      "path": "server/middleware/blockSbuInjection.ts",
+      "extension": ".ts",
+      "size": 303
+    },
+    {
+      "path": "server/middleware/governanceRateLimit.ts",
+      "extension": ".ts",
+      "size": 341
+    },
+    {
+      "path": "server/middleware/requirePlatformAdmin.ts",
+      "extension": ".ts",
+      "size": 942
+    },
+    {
+      "path": "server/middleware/requireSBUAccess.ts",
+      "extension": ".ts",
+      "size": 1405
+    },
+    {
+      "path": "server/middleware/requireSBURole.ts",
+      "extension": ".ts",
+      "size": 2160
+    },
+    {
+      "path": "server/middleware/requireSuperAdmin.ts",
+      "extension": ".ts",
+      "size": 444
+    },
+    {
+      "path": "server/routes/admin.ts",
+      "extension": ".ts",
+      "size": 18273
+    },
+    {
+      "path": "server/routes/devTestAuth.ts",
+      "extension": ".ts",
+      "size": 1200
+    },
+    {
+      "path": "server/routes/financialRoutes.ts",
+      "extension": ".ts",
+      "size": 1990
+    },
+    {
+      "path": "server/routes/governanceRoute.ts",
+      "extension": ".ts",
+      "size": 3461
+    },
+    {
+      "path": "server/routes/member.ts",
+      "extension": ".ts",
+      "size": 13286
+    },
+    {
+      "path": "server/routes/notification-preferences.route.ts",
+      "extension": ".ts",
+      "size": 209
+    },
+    {
+      "path": "server/routes.ts",
+      "extension": ".ts",
+      "size": 65244
+    },
+    {
+      "path": "server/services/admissions.ts",
+      "extension": ".ts",
+      "size": 6643
+    },
+    {
+      "path": "server/services/ai.ts",
+      "extension": ".ts",
+      "size": 5518
+    },
+    {
+      "path": "server/services/education-feedback.ts",
+      "extension": ".ts",
+      "size": 21184
+    },
+    {
+      "path": "server/services/financial-executor.ts",
+      "extension": ".ts",
+      "size": 706
+    },
+    {
+      "path": "server/services/google-drive.ts",
+      "extension": ".ts",
+      "size": 9254
+    },
+    {
+      "path": "server/services/governance-executor.ts",
+      "extension": ".ts",
+      "size": 829
+    },
+    {
+      "path": "server/services/hub-partners.ts",
+      "extension": ".ts",
+      "size": 11121
+    },
+    {
+      "path": "server/services/integrations.ts",
+      "extension": ".ts",
+      "size": 6502
+    },
+    {
+      "path": "server/services/notifications.ts",
+      "extension": ".ts",
+      "size": 5631
+    },
+    {
+      "path": "server/services/supabase-auth.ts",
+      "extension": ".ts",
+      "size": 7616
+    },
+    {
+      "path": "server/services/supabase-hub.ts",
+      "extension": ".ts",
+      "size": 21303
+    },
+    {
+      "path": "server/services/youtube-transcript.ts",
+      "extension": ".ts",
+      "size": 1486
+    },
+    {
+      "path": "server/static.ts",
+      "extension": ".ts",
+      "size": 365
+    },
+    {
+      "path": "server/storage.ts",
+      "extension": ".ts",
+      "size": 15081
+    },
+    {
+      "path": "server/types/requestContext.ts",
+      "extension": ".ts",
+      "size": 303
+    },
+    {
+      "path": "server/vite.ts",
+      "extension": ".ts",
+      "size": 1854
+    },
+    {
+      "path": "src/App.tsx",
+      "extension": ".tsx",
+      "size": 810
+    },
+    {
+      "path": "src/components/KpiCard.tsx",
+      "extension": ".tsx",
+      "size": 695
+    },
+    {
+      "path": "src/components/Layout.tsx",
+      "extension": ".tsx",
+      "size": 736
+    },
+    {
+      "path": "src/components/RequireAuth.tsx",
+      "extension": ".tsx",
+      "size": 619
+    },
+    {
+      "path": "src/components/Sidebar.tsx",
+      "extension": ".tsx",
+      "size": 425
+    },
+    {
+      "path": "src/components/TopBar.tsx",
+      "extension": ".tsx",
+      "size": 1306
+    },
+    {
+      "path": "src/design/tokens.ts",
+      "extension": ".ts",
+      "size": 877
+    },
+    {
+      "path": "src/hooks/useMemberContext.ts",
+      "extension": ".ts",
+      "size": 1164
+    },
+    {
+      "path": "src/lib/memberClient.ts",
+      "extension": ".ts",
+      "size": 2790
+    },
+    {
+      "path": "src/lib/openBrain.ts",
+      "extension": ".ts",
+      "size": 958
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "extension": ".ts",
+      "size": 352
+    },
+    {
+      "path": "src/pages/ActivityLogs.tsx",
+      "extension": ".tsx",
+      "size": 0
+    },
+    {
+      "path": "src/pages/Dashboard.tsx",
+      "extension": ".tsx",
+      "size": 1481
+    },
+    {
+      "path": "src/pages/EarningsSummary.tsx",
+      "extension": ".tsx",
+      "size": 0
+    },
+    {
+      "path": "src/pages/SettlementOverview.tsx",
+      "extension": ".tsx",
+      "size": 0
+    },
+    {
+      "path": "src/services/earningsService.ts",
+      "extension": ".ts",
+      "size": 385
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "extension": ".ts",
+      "size": 37
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+      "extension": ".tsx",
+      "size": 2234
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/page.tsx",
+      "extension": ".tsx",
+      "size": 18546
+    },
+    {
+      "path": "web/src/app/(public)/auth/sign-in/page.tsx",
+      "extension": ".tsx",
+      "size": 1382
+    },
+    {
+      "path": "web/src/components/activity/ActivityFeed.tsx",
+      "extension": ".tsx",
+      "size": 1922
+    },
+    {
+      "path": "web/src/components/activity/ActivityItem.tsx",
+      "extension": ".tsx",
+      "size": 950
+    },
+    {
+      "path": "web/src/components/contributions/ContributionActivity.tsx",
+      "extension": ".tsx",
+      "size": 486
+    },
+    {
+      "path": "web/src/components/contributions/ContributionCard.tsx",
+      "extension": ".tsx",
+      "size": 3474
+    },
+    {
+      "path": "web/src/components/contributions/PipelineStageBadge.tsx",
+      "extension": ".tsx",
+      "size": 903
+    },
+    {
+      "path": "web/src/components/dashboard/CooperativeActivitySection.tsx",
+      "extension": ".tsx",
+      "size": 1646
+    },
+    {
+      "path": "web/src/components/dashboard/DashboardHeroCurrentPosition.tsx",
+      "extension": ".tsx",
+      "size": 1844
+    },
+    {
+      "path": "web/src/components/dashboard/DashboardTopBar.tsx",
+      "extension": ".tsx",
+      "size": 1224
+    },
+    {
+      "path": "web/src/components/dashboard/IELTSSection.tsx",
+      "extension": ".tsx",
+      "size": 4435
+    },
+    {
+      "path": "web/src/components/dashboard/IdeaPipelineSection.tsx",
+      "extension": ".tsx",
+      "size": 3877
+    },
+    {
+      "path": "web/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "extension": ".tsx",
+      "size": 4985
+    },
+    {
+      "path": "web/src/components/dashboard/LearningHistorySection.tsx",
+      "extension": ".tsx",
+      "size": 3195
+    },
+    {
+      "path": "web/src/components/dashboard/MultilingualSection.tsx",
+      "extension": ".tsx",
+      "size": 6058
+    },
+    {
+      "path": "web/src/components/dashboard/MyContributionsSection.tsx",
+      "extension": ".tsx",
+      "size": 1490
+    },
+    {
+      "path": "web/src/components/dashboard/PipelineDetailPanel.tsx",
+      "extension": ".tsx",
+      "size": 4708
+    },
+    {
+      "path": "web/src/components/dashboard/ProgramsSection.tsx",
+      "extension": ".tsx",
+      "size": 1706
+    },
+    {
+      "path": "web/src/components/dashboard/RelationshipTrustSection.tsx",
+      "extension": ".tsx",
+      "size": 1702
+    },
+    {
+      "path": "web/src/components/dashboard/SubmitIdeaModal.tsx",
+      "extension": ".tsx",
+      "size": 4076
+    },
+    {
+      "path": "web/src/components/dashboard/mockData.ts",
+      "extension": ".ts",
+      "size": 4700
+    },
+    {
+      "path": "web/src/components/dashboard/types.ts",
+      "extension": ".ts",
+      "size": 2845
+    },
+    {
+      "path": "web/src/components/notifications/ChannelSelector.tsx",
+      "extension": ".tsx",
+      "size": 1314
+    },
+    {
+      "path": "web/src/components/notifications/NotificationBell.tsx",
+      "extension": ".tsx",
+      "size": 1475
+    },
+    {
+      "path": "web/src/components/notifications/NotificationItem.tsx",
+      "extension": ".tsx",
+      "size": 724
+    },
+    {
+      "path": "web/src/components/notifications/NotificationPanel.tsx",
+      "extension": ".tsx",
+      "size": 939
+    },
+    {
+      "path": "web/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "extension": ".tsx",
+      "size": 747
+    },
+    {
+      "path": "web/src/components/notifications/ToggleControl.tsx",
+      "extension": ".tsx",
+      "size": 1291
+    },
+    {
+      "path": "web/src/growth/components/GrowthProvider.tsx",
+      "extension": ".tsx",
+      "size": 960
+    },
+    {
+      "path": "web/src/growth/components/Hero/Hero.tsx",
+      "extension": ".tsx",
+      "size": 555
+    },
+    {
+      "path": "web/src/growth/components/Hero/HeroContent.tsx",
+      "extension": ".tsx",
+      "size": 743
+    },
+    {
+      "path": "web/src/growth/components/Hero/index.ts",
+      "extension": ".ts",
+      "size": 55
+    },
+    {
+      "path": "web/src/growth/components/Layout/GrowthLayout.tsx",
+      "extension": ".tsx",
+      "size": 553
+    },
+    {
+      "path": "web/src/growth/components/Layout/index.ts",
+      "extension": ".ts",
+      "size": 32
+    },
+    {
+      "path": "web/src/growth/components/Navigation/Navigation.tsx",
+      "extension": ".tsx",
+      "size": 658
+    },
+    {
+      "path": "web/src/growth/components/Navigation/NavigationItem.tsx",
+      "extension": ".tsx",
+      "size": 284
+    },
+    {
+      "path": "web/src/growth/components/Navigation/index.ts",
+      "extension": ".ts",
+      "size": 64
+    },
+    {
+      "path": "web/src/growth/components/Sections/AdmissionsSection.tsx",
+      "extension": ".tsx",
+      "size": 1284
+    },
+    {
+      "path": "web/src/growth/components/Sections/FAQSection.tsx",
+      "extension": ".tsx",
+      "size": 786
+    },
+    {
+      "path": "web/src/growth/components/Sections/ProgramsSection.tsx",
+      "extension": ".tsx",
+      "size": 786
+    },
+    {
+      "path": "web/src/growth/components/Sections/ScholarshipsSection.tsx",
+      "extension": ".tsx",
+      "size": 1294
+    },
+    {
+      "path": "web/src/growth/components/Sections/index.ts",
+      "extension": ".ts",
+      "size": 141
+    },
+    {
+      "path": "web/src/growth/content/en/admissions.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/en/faq.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/en/footer.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/en/home.json",
+      "extension": ".json",
+      "size": 351
+    },
+    {
+      "path": "web/src/growth/content/en/navigation.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/en/programs.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/en/scholarships.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/vi/admissions.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/vi/faq.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/vi/footer.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/vi/home.json",
+      "extension": ".json",
+      "size": 407
+    },
+    {
+      "path": "web/src/growth/content/vi/navigation.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/vi/programs.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/vi/scholarships.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/zh/admissions.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/zh/faq.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/zh/footer.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/zh/home.json",
+      "extension": ".json",
+      "size": 323
+    },
+    {
+      "path": "web/src/growth/content/zh/navigation.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/zh/programs.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/content/zh/scholarships.json",
+      "extension": ".json",
+      "size": 59
+    },
+    {
+      "path": "web/src/growth/hooks/useContent.ts",
+      "extension": ".ts",
+      "size": 475
+    },
+    {
+      "path": "web/src/growth/hooks/useLocale.ts",
+      "extension": ".ts",
+      "size": 129
+    },
+    {
+      "path": "web/src/growth/hooks/useRegistry.ts",
+      "extension": ".ts",
+      "size": 350
+    },
+    {
+      "path": "web/src/growth/index.ts",
+      "extension": ".ts",
+      "size": 763
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "extension": ".tsx",
+      "size": 293
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingSections.tsx",
+      "extension": ".tsx",
+      "size": 306
+    },
+    {
+      "path": "web/src/growth/pages/Landing/index.ts",
+      "extension": ".ts",
+      "size": 31
+    },
+    {
+      "path": "web/src/growth/registry/admissions.json",
+      "extension": ".json",
+      "size": 434
+    },
+    {
+      "path": "web/src/growth/registry/assets.json",
+      "extension": ".json",
+      "size": 38
+    },
+    {
+      "path": "web/src/growth/registry/faq.json",
+      "extension": ".json",
+      "size": 38
+    },
+    {
+      "path": "web/src/growth/registry/journey.json",
+      "extension": ".json",
+      "size": 615
+    },
+    {
+      "path": "web/src/growth/registry/navigation.json",
+      "extension": ".json",
+      "size": 38
+    },
+    {
+      "path": "web/src/growth/registry/programs.json",
+      "extension": ".json",
+      "size": 496
+    },
+    {
+      "path": "web/src/growth/registry/scholarships.json",
+      "extension": ".json",
+      "size": 343
+    },
+    {
+      "path": "web/src/growth/runtime/bootstrap.ts",
+      "extension": ".ts",
+      "size": 385
+    },
+    {
+      "path": "web/src/growth/runtime/cache.ts",
+      "extension": ".ts",
+      "size": 326
+    },
+    {
+      "path": "web/src/growth/runtime/defaultProvider.ts",
+      "extension": ".ts",
+      "size": 1322
+    },
+    {
+      "path": "web/src/growth/runtime/loader.ts",
+      "extension": ".ts",
+      "size": 2190
+    },
+    {
+      "path": "web/src/growth/runtime/locales.ts",
+      "extension": ".ts",
+      "size": 92
+    },
+    {
+      "path": "web/src/growth/runtime/providers.ts",
+      "extension": ".ts",
+      "size": 953
+    },
+    {
+      "path": "web/src/growth/runtime/registry.ts",
+      "extension": ".ts",
+      "size": 511
+    },
+    {
+      "path": "web/src/growth/runtime/resolver.ts",
+      "extension": ".ts",
+      "size": 261
+    },
+    {
+      "path": "web/src/growth/types/content.ts",
+      "extension": ".ts",
+      "size": 524
+    },
+    {
+      "path": "web/src/growth/types/locale.ts",
+      "extension": ".ts",
+      "size": 314
+    },
+    {
+      "path": "web/src/growth/types/registry.ts",
+      "extension": ".ts",
+      "size": 84
+    },
+    {
+      "path": "web/src/lib/contributions/mock-contract.ts",
+      "extension": ".ts",
+      "size": 1908
+    },
+    {
+      "path": "web/src/lib/contributions/mock-data.ts",
+      "extension": ".ts",
+      "size": 2996
+    },
+    {
+      "path": "web/src/lib/growth/index.ts",
+      "extension": ".ts",
+      "size": 61
+    },
+    {
+      "path": "web/src/lib/learning/mock-history.ts",
+      "extension": ".ts",
+      "size": 1609
+    },
+    {
+      "path": "web/src/lib/learning/mock-ielts.ts",
+      "extension": ".ts",
+      "size": 676
+    },
+    {
+      "path": "web/src/lib/learning/mock-multilingual.ts",
+      "extension": ".ts",
+      "size": 1124
+    },
+    {
+      "path": "web/src/lib/learning/types.ts",
+      "extension": ".ts",
+      "size": 913
+    },
+    {
+      "path": "web/src/lib/supabase/client.ts",
+      "extension": ".ts",
+      "size": 214
+    },
+    {
+      "path": "web/src/types/contribution-state.ts",
+      "extension": ".ts",
+      "size": 3154
+    },
+    {
+      "path": "web/src/types/contribution.ts",
+      "extension": ".ts",
+      "size": 2508
+    },
+    {
+      "path": "supabase/migrations/20260220234447_remote_schema.sql",
+      "extension": ".sql",
+      "size": 0
+    },
+    {
+      "path": "supabase/migrations/20260221_000000_baseline.sql",
+      "extension": ".sql",
+      "size": 221
+    },
+    {
+      "path": "supabase/migrations/20260623022737_gateway_invitation_memorandum_metadata.sql",
+      "extension": ".sql",
+      "size": 164
+    }
+  ],
+  "production_file_count": 308,
+  "repository_modified": false
+}

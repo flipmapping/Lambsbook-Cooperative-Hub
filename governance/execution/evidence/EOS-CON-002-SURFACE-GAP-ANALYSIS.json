@@ -1,0 +1,22 @@
+[
+  {
+    "artifact": "SURFACE-REGISTRY.json",
+    "description": "Surface registry",
+    "status": "GAP"
+  },
+  {
+    "artifact": "LEASE-REGISTRY.json",
+    "description": "Lease registry",
+    "status": "GAP"
+  },
+  {
+    "artifact": "SURFACE-CATALOG.json",
+    "description": "Surface catalog",
+    "status": "GAP"
+  },
+  {
+    "artifact": "SURFACE-DEPENDENCIES.json",
+    "description": "Surface dependency graph",
+    "status": "GAP"
+  }
+]

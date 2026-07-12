@@ -1,0 +1,12 @@
+{
+  "certification_id": "LES-RMP-006",
+  "authority": "EOS-EXEC-001",
+  "repository": "APP-001",
+  "generated": "2026-07-10T00:54:37.271224Z",
+  "input_artifact": "execution/sprints/LES-001/repository_mutation_package/inspection/LANDING-EXPERIENCE-TARGETS.json",
+  "candidate_count": 74,
+  "sha256": "328e4d8df6707eab2960500898737f3ebd67d4e0df281d5f6bc625e1bd4d8e65",
+  "status": "certified",
+  "approved_for_builder_consumption": true,
+  "repository_modified": false
+}

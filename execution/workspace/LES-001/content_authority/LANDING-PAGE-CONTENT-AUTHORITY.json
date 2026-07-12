@@ -1,0 +1,22 @@
+{
+  "authority_id": "LES-IMP-018",
+  "generated": "2026-07-10T10:33:19.099501Z",
+  "repository_id": "APP-001",
+  "status": "awaiting_founder_content",
+  "implementation_target": "LandingPage.v1.tsx",
+  "content_sources": [
+    "CTBC Presentation",
+    "Growth Platform MVP Authority",
+    "Founder Decisions",
+    "Open Brain Governance"
+  ],
+  "sections": {
+    "hero": null,
+    "navigation": null,
+    "value_proposition": null,
+    "programs": null,
+    "call_to_action": null,
+    "footer": null
+  },
+  "next_step": "Populate approved content before source implementation."
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Surface Registry Services",
+    "path": "services/surface_registry",
+    "status": "PASS",
+    "files": 4
+  },
+  {
+    "capability": "Surface Package Planner",
+    "path": "services/surface_package",
+    "status": "PASS",
+    "files": 4
+  },
+  {
+    "capability": "Package Integrity Service",
+    "path": "services/package_integrity",
+    "status": "PASS",
+    "files": 43
+  },
+  {
+    "capability": "Repository Resolution",
+    "path": "services/repository_resolution",
+    "status": "PASS",
+    "files": 3
+  },
+  {
+    "capability": "Artifact Materialization",
+    "path": "services/artifact_materialization",
+    "status": "PASS",
+    "files": 7
+  },
+  {
+    "capability": "Authority Registry",
+    "path": "authority_registry",
+    "status": "PASS",
+    "files": 1
+  },
+  {
+    "capability": "Contracts",
+    "path": "contracts",
+    "status": "MISSING",
+    "files": 0
+  }
+]

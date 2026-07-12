@@ -1,0 +1,216 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "generated_at": "2026-07-11T15:20:33Z",
+  "files": [
+    {
+      "file": "server/routes.ts",
+      "evidence": {
+        "Supabase Client": [
+          "getSupabase",
+          "getSupabaseAdmin"
+        ],
+        "Authentication": [
+          "signIn",
+          "signOut"
+        ],
+        "Authorization": [
+          "requireSBURole",
+          "attachUserContext"
+        ],
+        "Admin": [
+          "admin",
+          "Admissions"
+        ]
+      }
+    },
+    {
+      "file": "server/lib/getUserEmailFromToken.ts",
+      "evidence": {
+        "Authentication": [
+          "auth\\.getUser"
+        ]
+      }
+    },
+    {
+      "file": "server/lib/supabase-client.ts",
+      "evidence": {
+        "Supabase Client": [
+          "createClient",
+          "getSupabase",
+          "getSupabaseAdmin"
+        ],
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "server/lib/supabase-dal.ts",
+      "evidence": {
+        "Supabase Client": [
+          "getSupabase",
+          "getSupabaseAdmin"
+        ]
+      }
+    },
+    {
+      "file": "server/lib/supabase-member-client.ts",
+      "evidence": {
+        "Supabase Client": [
+          "createClient",
+          "getSupabase"
+        ]
+      }
+    },
+    {
+      "file": "server/lib/supabase-types.ts",
+      "evidence": {
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "server/lib/supabaseClients.ts",
+      "evidence": {
+        "Supabase Client": [
+          "createClient"
+        ]
+      }
+    },
+    {
+      "file": "server/middleware/attachUserContext.ts",
+      "evidence": {
+        "Authentication": [
+          "auth\\.getUser"
+        ],
+        "Authorization": [
+          "attachUserContext"
+        ],
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "server/middleware/requirePlatformAdmin.ts",
+      "evidence": {
+        "Admin": [
+          "admin",
+          "platform_admin"
+        ]
+      }
+    },
+    {
+      "file": "server/middleware/requireSBUAccess.ts",
+      "evidence": {
+        "Authorization": [
+          "requireSBUAccess"
+        ]
+      }
+    },
+    {
+      "file": "server/middleware/requireSBURole.ts",
+      "evidence": {
+        "Supabase Client": [
+          "createClient"
+        ],
+        "Authorization": [
+          "requireSBURole",
+          "requireSBUAccess"
+        ],
+        "Admin": [
+          "admin",
+          "platform_admin"
+        ]
+      }
+    },
+    {
+      "file": "server/middleware/requireSuperAdmin.ts",
+      "evidence": {
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/AdminGovernance.tsx",
+      "evidence": {
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/AdmissionsWorkspace.tsx",
+      "evidence": {
+        "Admin": [
+          "admin",
+          "Admissions"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/AuthCallback.tsx",
+      "evidence": {
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/Dashboard.tsx",
+      "evidence": {
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/HubAdminDashboard.tsx",
+      "evidence": {
+        "Admin": [
+          "admin",
+          "Admissions"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/HubDashboard.tsx",
+      "evidence": {
+        "Supabase Client": [
+          "createClient"
+        ],
+        "Authentication": [
+          "getSession"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "evidence": {
+        "Admin": [
+          "admin",
+          "Admissions"
+        ]
+      }
+    },
+    {
+      "file": "client/src/pages/ProspectRegistration.tsx",
+      "evidence": {
+        "Admin": [
+          "admin"
+        ]
+      }
+    },
+    {
+      "file": "client/src/lib/supabase/client.ts",
+      "evidence": {
+        "Supabase Client": [
+          "createClient"
+        ]
+      }
+    }
+  ]
+}

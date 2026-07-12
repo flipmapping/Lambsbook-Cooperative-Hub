@@ -1,0 +1,18 @@
+{
+  "implementation_authority": "GE-RMP-002B",
+  "surface": "Growth Engine Content Surface",
+  "repository_truth": "Content Registry Inventory",
+  "generated_at": "2026-07-12T03:07:02Z",
+  "existing": [],
+  "missing": [
+    "content/ctbc/en/programs.json",
+    "content/ctbc/en/scholarships.json",
+    "content/ctbc/en/admissions.json",
+    "content/ctbc/vi/programs.json",
+    "content/ctbc/vi/scholarships.json",
+    "content/ctbc/vi/admissions.json",
+    "content/ctbc/zh/programs.json",
+    "content/ctbc/zh/scholarships.json",
+    "content/ctbc/zh/admissions.json"
+  ]
+}

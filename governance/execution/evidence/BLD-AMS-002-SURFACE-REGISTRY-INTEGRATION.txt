@@ -1,0 +1,3 @@
+Surface Registry Integration: PASS
+Validated using canonical package import.
+Registry artifacts loaded: 4

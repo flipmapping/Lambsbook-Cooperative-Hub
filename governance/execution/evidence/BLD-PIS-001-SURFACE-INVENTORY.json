@@ -1,0 +1,38 @@
+{
+  "implementation_authority": "BLD-PIS-001",
+  "surface": "execution/builders/services/package_integrity",
+  "inventory": [
+    {
+      "path": "contracts",
+      "purpose": "Constitutional validator contracts"
+    },
+    {
+      "path": "validators",
+      "purpose": "Integrity validator implementations"
+    },
+    {
+      "path": "reports",
+      "purpose": "Package Integrity Report generation"
+    },
+    {
+      "path": "implementation",
+      "purpose": "Package Integrity Service orchestration"
+    },
+    {
+      "path": "tests",
+      "purpose": "BAT-PIS constitutional validation tests"
+    },
+    {
+      "path": "service_manifest.json",
+      "purpose": "Service metadata and version contract"
+    }
+  ],
+  "validators": [
+    "GovernanceValidator",
+    "RepositoryValidator",
+    "ImplementationValidator",
+    "SurfaceValidator",
+    "ManifestValidator",
+    "ClaudeReadinessValidator"
+  ]
+}

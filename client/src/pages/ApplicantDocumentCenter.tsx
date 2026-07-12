@@ -11,8 +11,8 @@ interface ApplicantDocument {
   prospect_id: string;
   document_type: string;
   file_name: string;
-  storage_url: string | null;
-  notes: string | null;
+  storage_path: string | null;
+  description: string | null;
   archived: boolean;
   created_at: string;
 }
@@ -112,18 +112,18 @@ export default function ApplicantDocumentCenter() {
                           <p className="text-sm font-medium leading-tight truncate">
                             {doc.file_name}
                           </p>
-                          {doc.notes && (
+                          {doc.description && (
                             <p className="text-xs text-muted-foreground mt-0.5">
-                              {doc.notes}
+                              {doc.description}
                             </p>
                           )}
                           <p className="text-xs text-muted-foreground mt-1">
                             Registered {formatDate(doc.created_at)}
                           </p>
                         </div>
-                        {doc.storage_url && (
+                        {doc.storage_path && (
                           <a
-                            href={doc.storage_url}
+                            href={doc.storage_path}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="shrink-0"

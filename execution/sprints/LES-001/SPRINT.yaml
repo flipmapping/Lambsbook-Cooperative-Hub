@@ -1,0 +1,40 @@
+# ==================================================
+# LES-001
+# Canonical Sprint Manifest
+# ==================================================
+
+sprint_id: LES-001
+title: Landing Experience Sprint 1
+
+status: Initialized
+
+repository_id: APP-001
+
+authority: EOS-EXEC-001
+
+previous_sprint: SFP-001
+
+handoff_package: SFP-RET-001
+
+bootstrap:
+  completed: false
+
+repository_truth:
+  completed: false
+
+implementation:
+  completed: false
+
+validation:
+  completed: false
+
+founder_acceptance:
+  completed: false
+
+open_brain_sync:
+  completed: false
+
+retirement:
+  completed: false
+
+created: 2026-07-09T17:36:29.946165Z

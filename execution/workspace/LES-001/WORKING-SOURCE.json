@@ -1,0 +1,10 @@
+{
+  "artifact": "LES-IMP-007",
+  "generated": "2026-07-10T05:43:51.470222Z",
+  "repository_id": "APP-001",
+  "source_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "working_copy": "execution/workspace/LES-001/LandingPage.working.tsx",
+  "line_count": 19,
+  "sha256": "53f2e240c45f3a6f84c16efa646ee8f87c1db8e4a2ca8493c73259fc132f6ae4",
+  "status": "ready_for_product_implementation"
+}

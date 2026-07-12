@@ -1,0 +1,23 @@
+{
+  "surface_id": "SURF-ADM-001",
+  "surface_name": "Admissions Workspace",
+  "repository": "APP-001",
+  "lease_type": "Exclusive",
+  "governance_owner": "Main Application Execution",
+  "logical_owner": "Founder",
+  "implementation_authority": "FDR-010E34B",
+  "execution_stream": "Main Application",
+  "status": "ACTIVE",
+  "repository_truth_version": "Founder Runtime Validation",
+  "mutation_corridor": [
+    "server/routes.ts",
+    "server/services/admissions.ts",
+    "server/lib/supabase-dal.ts",
+    "client/src/pages/AdmissionsWorkspace.tsx",
+    "client/src/pages/ProspectDetailWorkspace.tsx",
+    "client/src/components/admissions/",
+    "client/src/pages/Applicant*.tsx"
+  ],
+  "leased_at": "2026-07-11T02:25:42Z",
+  "released_at": null
+}

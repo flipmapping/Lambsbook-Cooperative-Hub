@@ -1,0 +1,23 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "classification": "B. Missing runtime provisioning/configuration",
+  "results": {
+    "environment": {
+      "SUPABASE_URL": false,
+      "SUPABASE_ANON_KEY": false,
+      "SUPABASE_SERVICE_ROLE_KEY": false
+    },
+    "repository_assets": {
+      "server/middleware/attachUserContext.ts": true,
+      "server/middleware/requirePlatformAdmin.ts": true,
+      "server/middleware/requireSBURole.ts": true,
+      "server/lib/supabase-client.ts": true,
+      "client/src/pages/Login.tsx": true,
+      "client/src/pages/HubAuth.tsx": true,
+      "client/src/pages/HubAuthCallback.tsx": true
+    },
+    "classification": "B. Missing runtime provisioning/configuration"
+  },
+  "generated_at": "2026-07-11T15:29:03Z"
+}

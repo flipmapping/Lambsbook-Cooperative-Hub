@@ -1,0 +1,13 @@
+{
+  "inspection_id": "LES-SMP-003",
+  "authority": "EOS-EXEC-005",
+  "generated": "2026-07-10T01:06:33.942504Z",
+  "target": "web/src/growth/pages/Landing/index.ts",
+  "size_bytes": 31,
+  "line_count": 1,
+  "imports": 0,
+  "exports": 1,
+  "functions": 0,
+  "jsx_lines": 0,
+  "production_repository_modified": false
+}

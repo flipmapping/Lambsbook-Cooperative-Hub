@@ -1,0 +1,17 @@
+{
+  "mutation_id": "LES-IMP-005",
+  "generated": "2026-07-10T05:39:05.498355Z",
+  "repository_id": "APP-001",
+  "authority": "EXEC-DIR-BLD-006",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "objective": "Implement Founder-approved Landing Page.",
+  "source_mutation": {
+    "create_new_file": false,
+    "modify_existing_file": true,
+    "allowed_target": "web/src/growth/pages/Landing/LandingPage.tsx",
+    "preserve_exports": true,
+    "preserve_routing": true,
+    "preserve_build": true
+  },
+  "implementation_status": "ready_for_source_generation"
+}

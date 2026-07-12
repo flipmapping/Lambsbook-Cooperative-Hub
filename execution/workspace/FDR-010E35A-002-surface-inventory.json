@@ -1,0 +1,47 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "generated_at": "2026-07-11T15:24:53Z",
+  "capabilities": {
+    "Login Route": {
+      "file": "server/routes.ts",
+      "exists": true,
+      "implemented": true
+    },
+    "Auth Callback": {
+      "file": "client/src/pages/HubAuthCallback.tsx",
+      "exists": true,
+      "implemented": true
+    },
+    "User Context Middleware": {
+      "file": "server/middleware/attachUserContext.ts",
+      "exists": true,
+      "implemented": true
+    },
+    "Platform Admin Guard": {
+      "file": "server/middleware/requirePlatformAdmin.ts",
+      "exists": true,
+      "implemented": false
+    },
+    "SBU Role Guard": {
+      "file": "server/middleware/requireSBURole.ts",
+      "exists": true,
+      "implemented": true
+    },
+    "Admin Dashboard": {
+      "file": "client/src/pages/HubAdminDashboard.tsx",
+      "exists": true,
+      "implemented": true
+    },
+    "Login Page": {
+      "file": "client/src/pages/Login.tsx",
+      "exists": true,
+      "implemented": true
+    },
+    "Hub Auth Page": {
+      "file": "client/src/pages/HubAuth.tsx",
+      "exists": true,
+      "implemented": true
+    }
+  }
+}

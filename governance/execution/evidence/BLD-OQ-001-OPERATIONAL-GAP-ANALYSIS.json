@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Surface Registry Services",
+    "path": "services/surface_registry",
+    "status": "IMPLEMENTED",
+    "recommendation": "Qualify during operational validation."
+  },
+  {
+    "capability": "Surface Package Planner",
+    "path": "services/surface_package",
+    "status": "IMPLEMENTED",
+    "recommendation": "Qualify during operational validation."
+  },
+  {
+    "capability": "Package Integrity Service",
+    "path": "services/package_integrity",
+    "status": "IMPLEMENTED",
+    "recommendation": "Qualify during operational validation."
+  },
+  {
+    "capability": "Repository Resolution",
+    "path": "services/repository_resolution",
+    "status": "IMPLEMENTED",
+    "recommendation": "Qualify during operational validation."
+  },
+  {
+    "capability": "Artifact Materialization",
+    "path": "services/artifact_materialization",
+    "status": "IMPLEMENTED",
+    "recommendation": "Qualify during operational validation."
+  },
+  {
+    "capability": "Authority Registry",
+    "path": "authority_registry",
+    "status": "IMPLEMENTED",
+    "recommendation": "Qualify during operational validation."
+  },
+  {
+    "capability": "Contracts",
+    "path": "contracts",
+    "status": "GAP",
+    "recommendation": "Determine whether this is an architectural gap, an intentional relocation, or deferred scope."
+  }
+]

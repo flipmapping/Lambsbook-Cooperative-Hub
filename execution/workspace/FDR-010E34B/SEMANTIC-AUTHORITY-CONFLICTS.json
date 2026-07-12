@@ -1,0 +1,1248 @@
+{
+  "summary": {
+    "authority_families": 398,
+    "candidate_conflicts": 60
+  },
+  "conflicts": {
+    "init": [
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/__init__.py"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/compliance/__init__.py"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/metrics/__init__.py"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/monitoring/__init__.py"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/runtime/__init__.py"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/framework/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/contracts/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/implementation/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/reports/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/tests/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/validators/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/surface_package/__init__.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/surface_registry/__init__.py"
+      }
+    ],
+    "init.cpython311": [
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/compliance/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/metrics/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/monitoring/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/runtime/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/framework/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/contracts/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/implementation/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/reports/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/tests/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/validators/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/surface_package/__pycache__/__init__.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/surface_registry/__pycache__/__init__.cpython-311.pyc"
+      }
+    ],
+    "integration": [
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/integration.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/repository_resolution/integration/authority_registry_integration.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/sprints/sfp-001/bld-ams-001/integration/builder-integration.md"
+      }
+    ],
+    ".cpython311": [
+      {
+        "category": "Canonical",
+        "path": "execution/assurance/runtime/__pycache__/runtime.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/framework/__pycache__/package.cpython-311.pyc"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/framework/__pycache__/repository.cpython-311.pyc"
+      }
+    ],
+    "context": [
+      {
+        "category": "Canonical",
+        "path": "execution/framework/context.py"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/les-001/authority_retrieval/implementation-authority-context.md"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/les-001/implementation/implementation-context.json"
+      }
+    ],
+    "baseline": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/baseline.md"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/les-001/implementation/baselines/baseline.json"
+      }
+    ],
+    "cibeosrmp001cmaterialization": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/cib/generated/cib-eos-rmp-001c-package-materialization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/cib/generated/cib-eos-rmp-001c-package-materialization.md"
+      }
+    ],
+    "pipeline": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/execution/execution-pipeline.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/execution/execution-pipeline.md"
+      }
+    ],
+    "eosrmp001c": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/rmp/eos-rmp-001c-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/eos-rmp-001c-implementation-authority.md"
+      }
+    ],
+    "namespacerulev1.0": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/startup/authority-namespace-rule-v1.0.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/startup/authority-namespace-rule-v1.0.md"
+      }
+    ],
+    "claudenamespacesynchronization": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/startup/claude-namespace-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/startup/claude-namespace-synchronization.md"
+      }
+    ],
+    "startupsynchronization": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/startup/execution-startup-synchronization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/startup/execution-startup-synchronization.md"
+      }
+    ],
+    "governancesynchronizationindex": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001c-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/startup/governance-synchronization-index.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/startup/governance-synchronization-index.md"
+      }
+    ],
+    "cibeosrmp001dfinalization": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/cib/generated/cib-eos-rmp-001d-package-finalization.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/cib/generated/cib-eos-rmp-001d-package-finalization.md"
+      }
+    ],
+    "eosrmp001d": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001d-claude-package/governance/rmp/eos-rmp-001d-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/eos-rmp-001d-implementation-authority.md"
+      }
+    ],
+    "eosrmp001e": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/eos-rmp-001e-claude-package/governance/rmp/eos-rmp-001e-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/eos-rmp-001e-implementation-authority.md"
+      }
+    ],
+    "germp002": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-002-claude-package/governance/rmp/ge-rmp-002-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-002-implementation-authority.md"
+      }
+    ],
+    "germp003": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-003-claude-package/governance/rmp/ge-rmp-003-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-003-implementation-authority.md"
+      }
+    ],
+    "germp004derivation": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/execution-derivation/ge-rmp-004-execution-derivation.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/registry/generated/ge-rmp-004-derivation.md"
+      }
+    ],
+    "germp004": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-004-claude-package/governance/rmp/ge-rmp-004-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-004-implementation-authority.md"
+      }
+    ],
+    "germp005": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-005-claude-package/governance/rmp/ge-rmp-005-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-005-implementation-authority.md"
+      }
+    ],
+    "germp006": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-006-claude-package/governance/rmp/ge-rmp-006-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-006-implementation-authority.md"
+      }
+    ],
+    "germp007": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-007-claude-package/governance/rmp/ge-rmp-007-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-007-implementation-authority.md"
+      }
+    ],
+    "germp008": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-008-claude-package/governance/rmp/ge-rmp-008-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-008-implementation-authority.md"
+      }
+    ],
+    "germp009": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-009-claude-package/governance/rmp/ge-rmp-009-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-009-implementation-authority.md"
+      }
+    ],
+    "germp010": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-010-claude-package/governance/rmp/ge-rmp-010-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-010-implementation-authority.md"
+      }
+    ],
+    "germp011": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-011-claude-package/governance/rmp/ge-rmp-011-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-011-implementation-authority.md"
+      }
+    ],
+    "germp012": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/ge-rmp-012-claude-package/governance/rmp/ge-rmp-012-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/ge-rmp-012-implementation-authority.md"
+      }
+    ],
+    "inf010e35a": [
+      {
+        "category": "Canonical",
+        "path": "execution/packages/inf-010e35a-claude-package/governance/rmp/inf-010e35a-implementation-authority.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/rmp/inf-010e35a-implementation-authority.md"
+      }
+    ],
+    "surfacecatalog": [
+      {
+        "category": "Canonical",
+        "path": "execution/registry/surfaces/surface-catalog.json"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/les-001/implementation/surface-catalog.json"
+      }
+    ],
+    "bldpis001completesurfacemutation": [
+      {
+        "category": "Canonical",
+        "path": "governance/execution/bld-pis-001-complete-surface-mutation-package.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/execution/evidence/bld-pis-001-complete-surface-mutation-package.json"
+      }
+    ],
+    "eoscon002completesurfacemutation": [
+      {
+        "category": "Canonical",
+        "path": "governance/execution/eos-con-002-complete-surface-mutation-package.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/execution/evidence/eos-con-002-complete-surface-mutation-package.json"
+      }
+    ],
+    "inf010e29ainfrastructure": [
+      {
+        "category": "Canonical",
+        "path": "governance/infrastructure/generated/inf-010e29a-infrastructure-execution-package.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/infrastructure/inf-010e29a-infrastructure-authority.md"
+      }
+    ],
+    "cers": [
+      {
+        "category": "Canonical",
+        "path": "governance/registry/cers/cers-registry.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/contracts/cers-implementation-contract.md"
+      }
+    ],
+    "claude": [
+      {
+        "category": "Canonical",
+        "path": "governance/registry/generated/claude-package-registry.md"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/packages/generated/les-001/claude-execution-package.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/claude-package-builder-contract.md"
+      }
+    ],
+    "gerelease1journeycertification": [
+      {
+        "category": "Canonical",
+        "path": "governance/registry/generated/ge-release1-journey-certification.md"
+      },
+      {
+        "category": "Canonical",
+        "path": "governance/registry/generated/ge-release1-journey-registry-certification.md"
+      }
+    ],
+    "landingpage": [
+      {
+        "category": "Generated",
+        "path": "execution/packages/generated/les-001/landing-page-implementation-package.json"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/les-001/implementation/landing-page-implementation-workspace.json"
+      }
+    ],
+    "mutation": [
+      {
+        "category": "Generated",
+        "path": "execution/packages/generated/les-001/repository-mutation-package.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-cers-002/repository-mutation-package.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-004/repository-mutation-package.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/sprints/les-001/repository_mutation_package/contracts/mutation-authority-contract.json"
+      }
+    ],
+    "prospectappointment": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-003-backup/client/src/components/admissions/prospectappointmentworkspace.tsx"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-013-backup/client/src/components/admissions/prospectappointmentworkspace.tsx"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-016-backup/client/src/components/admissions/prospectappointmentworkspace.tsx"
+      }
+    ],
+    "applicantadmissiondecisioncenter": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-003-backup/client/src/pages/applicantadmissiondecisioncenter.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-010-claude-package/implementation-context/client/src/pages/applicantadmissiondecisioncenter.tsx"
+      }
+    ],
+    "applicantappointmentcenter": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-003-backup/client/src/pages/applicantappointmentcenter.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-009-claude-package/implementation-context/client/src/pages/applicantappointmentcenter.tsx"
+      }
+    ],
+    "applicantdocumentcenter": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-003-backup/client/src/pages/applicantdocumentcenter.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-008-claude-package/implementation-context/client/src/pages/applicantdocumentcenter.tsx"
+      }
+    ],
+    "supabasedal": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-003-backup/server/lib/supabase-dal.ts"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-013-backup/server/lib/supabase-dal.ts"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-016-backup/server/lib/supabase-dal.ts"
+      }
+    ],
+    "routes": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-013-backup/server/routes.ts"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-016-backup/server/routes.ts"
+      }
+    ],
+    "admissions": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-013-backup/server/services/admissions.ts"
+      },
+      {
+        "category": "Generated",
+        "path": "execution/workspace/app-rmp-010e34b-016-backup/server/services/admissions.ts"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-003-claude-package/implementation-context/server/services/admissions.ts"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-004-claude-package/implementation-context/server/services/admissions.ts"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-005-claude-package/implementation-context/server/services/admissions.ts"
+      }
+    ],
+    "readiness": [
+      {
+        "category": "Generated",
+        "path": "execution/workspace/les-001/implementation-readiness.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/runtime/builder_runtime_readiness.json"
+      }
+    ],
+    "buildclaude": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/build-claude-package-roadmap.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/build_claude_package.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001e-claude-package/implementation-context/execution/builders/build_claude_package.py"
+      }
+    ],
+    "sprint001": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/builder-sprint-001-implementation.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/builder-sprint-001.md"
+      }
+    ],
+    "contextmanifestspec": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/implementation-context-manifest-spec.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001e-claude-package/implementation-context/execution/builders/implementation-context-manifest-spec.md"
+      }
+    ],
+    "artifactmaterializationservice": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/artifact_materialization/contracts/artifact_materialization_service_contract.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/artifact_materialization/implementation/artifact_materialization_service.py"
+      }
+    ],
+    "servicemanifest": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/artifact_materialization/service_manifest.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/service_manifest.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/repository_resolution/service_manifest.json"
+      }
+    ],
+    "validator.cpython311": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/contracts/__pycache__/validator_contract.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/validators/__pycache__/implementation_validator.cpython-311.pyc"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/validators/__pycache__/repository_validator.cpython-311.pyc"
+      }
+    ],
+    "validator": [
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/contracts/validator_contract.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/validators/implementation_validator.py"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/builders/services/package_integrity/validators/repository_validator.py"
+      }
+    ],
+    "manifest": [
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001c-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001d-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001e-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-002-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-003-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-004-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-005-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-006-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-007-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-008-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-009-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-010-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-011-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-012-claude-package/package-manifest.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/inf-010e35a-claude-package/package-manifest.md"
+      }
+    ],
+    "starthere": [
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001c-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001d-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/eos-rmp-001e-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-002-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-003-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-004-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-005-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-006-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-007-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-008-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-009-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-010-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-011-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-012-claude-package/start-here.md"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/inf-010e35a-claude-package/start-here.md"
+      }
+    ],
+    "prospectregistration": [
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-003-claude-package/implementation-context/client/src/pages/prospectregistration.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-004-claude-package/implementation-context/client/src/pages/prospectregistration.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-005-claude-package/implementation-context/client/src/pages/prospectregistration.tsx"
+      }
+    ],
+    "app": [
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-005-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-006-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-007-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-008-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-009-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-010-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-011-claude-package/implementation-context/client/src/app.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-012-claude-package/implementation-context/client/src/app.tsx"
+      }
+    ],
+    "journey": [
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-005-claude-package/implementation-context/web/src/growth/registry/journey.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-006-claude-package/implementation-context/web/src/growth/registry/journey.json"
+      }
+    ],
+    "applicantjourneystatus": [
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-006-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-007-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-008-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-009-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-010-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-011-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/packages/ge-rmp-012-claude-package/implementation-context/client/src/pages/applicantjourneystatus.tsx"
+      }
+    ],
+    "fragment001": [
+      {
+        "category": "Unknown",
+        "path": "execution/sprints/les-001/source_mutation_package/fragments/fragment-001.json"
+      },
+      {
+        "category": "Unknown",
+        "path": "execution/sprints/les-001/source_mutation_package/implementation/fragment-001-implementation.json"
+      }
+    ]
+  }
+}

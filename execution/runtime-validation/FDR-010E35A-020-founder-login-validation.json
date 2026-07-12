@@ -1,0 +1,37 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "package": "FDR-010E35A-020",
+  "surface": "SURF-AUTH-001",
+  "status": "PENDING",
+  "steps": [
+    {
+      "id": "AUTH-001",
+      "step": "Open Login page",
+      "status": "PENDING"
+    },
+    {
+      "id": "AUTH-002",
+      "step": "Login using canonical Founder Admin account (flipmapping@gmail.com)",
+      "status": "PENDING"
+    },
+    {
+      "id": "AUTH-003",
+      "step": "Observe browser result",
+      "status": "PENDING"
+    },
+    {
+      "id": "AUTH-004",
+      "step": "Capture first runtime failure only",
+      "status": "PENDING"
+    }
+  ],
+  "execution_rule": [
+    "Stop immediately at the first runtime failure.",
+    "Do not investigate unrelated surfaces.",
+    "Capture browser error.",
+    "Capture browser console.",
+    "Capture network response.",
+    "Capture server log."
+  ],
+  "generated_at": "2026-07-12T06:48:41Z"
+}

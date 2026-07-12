@@ -1,0 +1,2 @@
+Lease Release Verification: PASS
+{'surface_id': 'TEST', 'execution_stream': 'TEST', 'release_ready': True, 'verification_status': 'VERIFIED'}

@@ -421,7 +421,7 @@ export async function registerRoutes(
 
   app.post("/api/admissions/prospects/:id/appointments", async (req: Request, res: Response) => {
     try {
-      const { title, scheduled_at, duration_minutes, location, notes } = req.body;
+      const { title, scheduled_at, duration_minutes, location, description } = req.body;
       if (!title || typeof title !== "string") {
         return res.status(400).json({ error: "title is required" });
       }
@@ -430,7 +430,7 @@ export async function registerRoutes(
       }
       const appt = await createProspectAppointment(
         req.params.id, title, scheduled_at,
-        duration_minutes ?? null, location ?? null, notes ?? null,
+        duration_minutes ?? null, location ?? null, description ?? null,
       );
       res.status(201).json(appt);
     } catch (error) {
@@ -441,10 +441,10 @@ export async function registerRoutes(
 
   app.patch("/api/admissions/prospects/:id/appointments/:appointmentId", async (req: Request, res: Response) => {
     try {
-      const { title, scheduled_at, duration_minutes, location, notes } = req.body;
+      const { title, scheduled_at, duration_minutes, location, description } = req.body;
       const appt = await updateProspectAppointment(
         req.params.appointmentId, title, scheduled_at,
-        duration_minutes, location, notes,
+        duration_minutes, location, description,
       );
       res.json(appt);
     } catch (error) {

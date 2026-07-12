@@ -1,0 +1,41 @@
+{
+  "package_id": "APP-RMP-010E34B-011",
+  "surface": "Admissions Workspace / Appointment Surface",
+  "implementation_authority": "FDR-010E34B",
+  "lease": "SURF-ADM-001",
+  "status": "AUTHORIZED",
+  "repository_truth": "APP-RMP-010E34B-010",
+  "mutation_type": "Surface Synchronization",
+  "bounded_corridor": [
+    "server/routes.ts",
+    "server/services/admissions.ts",
+    "server/lib/supabase-dal.ts",
+    "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+    "infrastructure/sql/INF-010E32A-prospect-appointment-interview-schema.sql"
+  ],
+  "canonical_contract": {
+    "required": [
+      "title",
+      "scheduled_at",
+      "appointment_type"
+    ],
+    "optional": [
+      "description",
+      "duration_minutes",
+      "location",
+      "meeting_url",
+      "assigned_to",
+      "status",
+      "outcome",
+      "outcome_notes",
+      "completed_at"
+    ]
+  },
+  "runtime_goal": [
+    "Appointment create",
+    "Appointment update",
+    "Appointment completion",
+    "Founder runtime validation"
+  ],
+  "generated_at": "2026-07-11T03:40:00Z"
+}

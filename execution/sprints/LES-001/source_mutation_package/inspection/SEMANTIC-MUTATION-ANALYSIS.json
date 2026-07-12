@@ -1,0 +1,36 @@
+{
+  "analysis_id": "LES-SMP-006",
+  "authority": "EOS-EXEC-005",
+  "generated": "2026-07-10T01:40:31.987037Z",
+  "implementation_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "line_count": 19,
+  "imports": [
+    {
+      "line": 1,
+      "text": "import { GrowthLayout } from \"../../components/Layout\";"
+    },
+    {
+      "line": 2,
+      "text": "import { Hero } from \"../../components/Hero\";"
+    },
+    {
+      "line": 3,
+      "text": "import { LandingSections } from \"./LandingSections\";"
+    }
+  ],
+  "exports": [
+    {
+      "line": 5,
+      "text": "export function LandingPage() {"
+    }
+  ],
+  "components": [
+    {
+      "type": "function",
+      "name": "LandingPage",
+      "line": 5
+    }
+  ],
+  "semantic_mutation_ready": true,
+  "repository_modified": false
+}

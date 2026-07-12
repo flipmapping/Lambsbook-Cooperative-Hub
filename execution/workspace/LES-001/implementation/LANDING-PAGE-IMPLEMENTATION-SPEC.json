@@ -1,0 +1,34 @@
+{
+  "spec_id": "LES-IMP-017",
+  "generated": "2026-07-10T07:21:21.238889Z",
+  "repository_id": "APP-001",
+  "status": "founder_review_required",
+  "target_module": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "sections": [
+    {
+      "id": "hero",
+      "status": "pending"
+    },
+    {
+      "id": "navigation",
+      "status": "pending"
+    },
+    {
+      "id": "value_proposition",
+      "status": "pending"
+    },
+    {
+      "id": "programs",
+      "status": "pending"
+    },
+    {
+      "id": "call_to_action",
+      "status": "pending"
+    },
+    {
+      "id": "footer",
+      "status": "pending"
+    }
+  ],
+  "next_step": "Founder approves section content before source mutation."
+}

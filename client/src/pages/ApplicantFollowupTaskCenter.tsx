@@ -11,7 +11,7 @@ interface FollowupTask {
   prospect_id: string;
   title: string;
   description: string | null;
-  due_date: string | null;
+  due_at: string | null;
   completed: boolean;
   completed_at: string | null;
   created_at: string;
@@ -110,9 +110,9 @@ export default function ApplicantFollowupTaskCenter() {
                         </p>
                       )}
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
-                        {task.due_date && (
+                        {task.due_at && (
                           <Badge variant="outline" className="text-xs h-5">
-                            Due {formatDate(task.due_date)}
+                            Due {formatDate(task.due_at)}
                           </Badge>
                         )}
                         <span className="text-xs text-muted-foreground">

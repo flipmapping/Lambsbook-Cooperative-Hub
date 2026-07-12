@@ -1,0 +1,8 @@
+{
+  "artifact_id": "LES-IMP-012",
+  "generated": "2026-07-10T06:53:43.221637Z",
+  "repository_id": "APP-001",
+  "baseline_file": "execution/workspace/LES-001/implementation/baselines/LandingPage.original.tsx",
+  "sha256": "e2282ecf002862f685d4cb765e9d13e72ff2b83358fc3a32569f2514a6f58ff2",
+  "status": "baseline_preserved"
+}

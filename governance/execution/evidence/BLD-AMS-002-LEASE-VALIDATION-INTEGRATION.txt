@@ -1,0 +1,2 @@
+Lease Validation Integration: PASS
+validate_surface_lease() implemented.

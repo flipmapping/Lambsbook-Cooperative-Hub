@@ -1,0 +1,61 @@
+{
+  "package_id": "APP-RMP-010E34B-015",
+  "surface": "Admissions Workspace / Appointment Surface",
+  "implementation_authority": "FDR-010E34B",
+  "surface_lease": "SURF-ADM-001",
+  "mutation_type": "Bounded Surface Synchronization",
+  "repository_truth": [
+    "APP-RMP-010E34B-010",
+    "APP-RMP-010E34B-014B"
+  ],
+  "canonical_authority": {
+    "source": "growth.prospect_appointments",
+    "decision": "SQL schema is canonical"
+  },
+  "mutation_corridor": [
+    "server/routes.ts",
+    "server/services/admissions.ts",
+    "server/lib/supabase-dal.ts",
+    "client/src/components/admissions/ProspectAppointmentWorkspace.tsx"
+  ],
+  "excluded_files": [
+    "infrastructure/sql/INF-010E32A-prospect-appointment-interview-schema.sql"
+  ],
+  "bounded_mutations": [
+    {
+      "id": "MUT-001",
+      "layer": "Route",
+      "action": "replace request field 'notes' with 'description'"
+    },
+    {
+      "id": "MUT-002",
+      "layer": "Service",
+      "action": "replace parameter 'notes' with 'description'"
+    },
+    {
+      "id": "MUT-003",
+      "layer": "DAL",
+      "action": "verify create/update map uses description consistently"
+    },
+    {
+      "id": "MUT-004",
+      "layer": "UI",
+      "action": "verify payload emits description only"
+    }
+  ],
+  "explicitly_not_in_scope": [
+    "appointment_type",
+    "meeting_url",
+    "assigned_to",
+    "status redesign",
+    "completed_at redesign",
+    "schema changes"
+  ],
+  "success_criteria": [
+    "No remaining appointment payload uses 'notes'.",
+    "Route, Service, DAL and UI expose one identical request contract.",
+    "SQL remains unchanged.",
+    "Entire mutation remains inside SURF-ADM-001."
+  ],
+  "created_at": "2026-07-11T07:45:32Z"
+}

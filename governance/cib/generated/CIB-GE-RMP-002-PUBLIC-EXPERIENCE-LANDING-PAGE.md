@@ -20,6 +20,10 @@ Execution Derivation
 
 governance/execution-derivation/FDR-GE-002-EXECUTION-DERIVATION.md
 
+Implementation Context Manifest
+
+governance/icm/generated/ICM-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md
+
 Production Surface
 
 Public Experience Landing Page

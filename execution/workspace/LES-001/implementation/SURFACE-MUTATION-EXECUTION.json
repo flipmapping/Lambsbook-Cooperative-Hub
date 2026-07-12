@@ -1,0 +1,53 @@
+{
+  "authority": "FDR-010E34B",
+  "status": "approved_for_surface_mutation",
+  "generated": "2026-07-11T13:02:30.636318Z",
+  "repository": "APP-001",
+  "surface": {
+    "id": "LANDING-EXPERIENCE",
+    "lease": "exclusive",
+    "mutation_mode": "complete_surface",
+    "builder_role": "operational_dependency_only"
+  },
+  "mutation_corridor": [
+    "web/src/growth/pages/Landing",
+    "web/src/growth/components",
+    "web/src/growth/content",
+    "web/src/growth/registry"
+  ],
+  "deliverables": [
+    "Shared Layout",
+    "Shared Navigation",
+    "Variant A",
+    "Variant B",
+    "Shared Hero Architecture",
+    "Cooperative Principles",
+    "Journey Discovery",
+    "Programs",
+    "Scholarships",
+    "Admissions",
+    "Membership",
+    "FAQ",
+    "Unified CTA",
+    "Existing Registration Integration",
+    "Existing Growth Integration"
+  ],
+  "prohibited": [
+    "new LES-AUTH artifacts",
+    "new Builder orchestration artifacts",
+    "repository rediscovery",
+    "surface replanning",
+    "feature-level implementation splitting"
+  ],
+  "exit_criteria": [
+    "Landing Experience visibly replaced",
+    "Variant A operational",
+    "Variant B operational",
+    "routing preserved",
+    "registration preserved",
+    "build passes",
+    "runtime passes",
+    "founder runtime validation passes"
+  ],
+  "next_phase": "complete_repository_surface_mutation"
+}

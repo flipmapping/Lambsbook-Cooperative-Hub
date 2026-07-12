@@ -1,0 +1,105 @@
+{
+  "artifact_id": "LES-AUTH-004",
+  "generated": "2026-07-10T16:43:36.776246Z",
+  "repository_id": "APP-001",
+  "status": "resolved",
+  "authorities": {
+    "GP-EXEC-008": {
+      "path": "governance/execution/GP-EXEC-008-IMPLEMENTATION-PLAN.md",
+      "score": 200,
+      "exists": true,
+      "preview": "# GP-EXEC-008 Implementation Plan\n\nStatus\n\nDRAFT\n\nImplementation Authority\n\nGP-EXEC-008\n\nExecution Phase\n\nImplementation Planning\n\nRepository Truth\n\nCERTIFIED\n\nSprint\n\nGrowth Engine Release 1 \u2014 Public Experience Sprint 1\n\nImplementation Sequence\n\n1. Repository Mutation Package 001\n   Objective:\n   Implement the Universal Cooperative Identity foundation.\n\n2. Repository Mutation Package 002\n   Objective:\n   Implement the Journey Selection layer.\n\n3. Repository Mutation Package 003\n   Objective:\n   Implement Narrative Variant Framework (A/B).\n\n4. Repository Mutation Package 004\n   Objective:\n   Integrate the canonical Register Interest transition.\n\n5. Repository Mutation Package 005\n   Objective:\n   Establish the Progressive Discovery architectural foundation.\n\nPlanning Status\n\nAwaiting Founder approval before the first Repository Mutation Package.\n"
+    },
+    "Landing Page": {
+      "path": "governance/founder-decisions/FDR-GE-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+      "score": 150,
+      "exists": true,
+      "preview": "# Founder Decision Record\n\nAuthority Identifier\n\nFDR-GE-002\n\nStatus\n\nFOUNDER APPROVED\n\nRepository\n\nGrowth Engine\n\nAuthority Stream\n\nGE\n\nImplementation Authority\n\nGE-RMP-002\n\nDerived From\n\nGE-RMP-001\n\nRelease\n\nGrowth Engine MVP\n\nBusiness Authority\n\nNEW\n\nExecution Authority\n\nPENDING EOS DERIVATION\n\n--------------------------------------------------\n\nProduction Surface\n\nPublic Experience Landing Page\n\n--------------------------------------------------\n\nBusiness Purpose\n\nEstablish the first production work package under the GE authority namespace.\n\nThis Founder Decision authorizes implementation of the Growth Engine Public Experience Landing Page while preserving all existing certified runtime contracts.\n\nImplementation Status\n\nNOT YET GRANTED\n"
+    },
+    "Assembly": {
+      "path": "execution/builders/BUILDER-v1.0-CERTIFICATION.md",
+      "score": 100,
+      "exists": true,
+      "preview": "# Builder v1.0 Certification\n\nStatus\n\nGENERAL AVAILABILITY (GA)\n\nBuilder\n\nbuild_claude_package.py\n\nVersion\n\n1.0\n\nCertification Summary\n\n- EOS-RMP-001A \u2014 CERTIFIED\n- EOS-RMP-001B \u2014 CERTIFIED\n- EOS-RMP-001B-HF1 \u2014 CERTIFIED\n- EOS-RMP-001C \u2014 CERTIFIED\n- EOS-RMP-001D \u2014 CERTIFIED\n\nOperational Validation\n\nPASS\n\nA complete production validation was successfully executed using\nGE-RMP-002, demonstrating:\n\n- deterministic CIB parsing\n- Repository Truth consumption\n- package materialization\n- ZIP archive generation\n- SHA256 digest generation\n- archive integrity verification\n- namespace independence\n\nSupported Authority Streams\n\n- GE-RMP\n- HUB-RMP\n- EOS-RMP\n- INF\n\nCanonical Invocation\n\npython3 execution/builders/build_claude_package.py <path-to-cib>\n\nRelease Status\n\nBuilder v1.0 is the canonical Claude Package Builder.\n\nManual Claude Package assembly is deprecated.\n"
+    },
+    "Repository Mutation": {
+      "path": "governance/execution/GP-EXEC-008-IMPLEMENTATION-PLAN.md",
+      "score": 200,
+      "exists": true,
+      "preview": "# GP-EXEC-008 Implementation Plan\n\nStatus\n\nDRAFT\n\nImplementation Authority\n\nGP-EXEC-008\n\nExecution Phase\n\nImplementation Planning\n\nRepository Truth\n\nCERTIFIED\n\nSprint\n\nGrowth Engine Release 1 \u2014 Public Experience Sprint 1\n\nImplementation Sequence\n\n1. Repository Mutation Package 001\n   Objective:\n   Implement the Universal Cooperative Identity foundation.\n\n2. Repository Mutation Package 002\n   Objective:\n   Implement the Journey Selection layer.\n\n3. Repository Mutation Package 003\n   Objective:\n   Implement Narrative Variant Framework (A/B).\n\n4. Repository Mutation Package 004\n   Objective:\n   Integrate the canonical Register Interest transition.\n\n5. Repository Mutation Package 005\n   Objective:\n   Establish the Progressive Discovery architectural foundation.\n\nPlanning Status\n\nAwaiting Founder approval before the first Repository Mutation Package.\n"
+    },
+    "Source Mutation": {
+      "path": "governance/execution/BLD-AMS-001-EXEC-001-RMP-001-SMP-001-APPROVAL.md",
+      "score": 100,
+      "exists": true,
+      "preview": "# SMP-001 Founder Approval\n\nStatus\n\nAPPROVED\n\nImplementation Authority\n\nBLD-AMS-001-EXEC-001-RMP-001\n\nArtifact\n\nexecution/packages/BLD-AMS-001-EXEC-001-RMP-001-SMP-001.patch\n\nDecision\n\nThe Source Mutation Package has completed Founder review.\n\nThe bounded repository mutation is authorized.\n\nNext Phase\n\nApply SMP-001 as the first bounded implementation mutation.\n\n"
+    },
+    "Semantic Mutation": {
+      "path": "execution/packages/generated/LES-001/CLAUDE-EXECUTION-PACKAGE.json",
+      "score": 10,
+      "exists": true,
+      "preview": "{\n  \"package_id\": \"LES-SMP-017\",\n  \"package_type\": \"claude_execution_package\",\n  \"generated\": \"2026-07-10T05:32:17.705091Z\",\n  \"repository_id\": \"APP-001\",\n  \"sprint\": \"LES-001\",\n  \"authority\": \"EXEC-DIR-BLD-006\",\n  \"target_module\": \"web/src/growth/pages/Landing/LandingPage.tsx\",\n  \"candidate_state\": \"materialization_in_progress\",\n  \"semantic_transformations\": [\n    {\n      \"id\": \"LES-SMP-014-T001\",\n      \"generated\": \"2026-07-10T03:10:34.837226Z\",\n      \"type\": \"landing_experience_analysis\",\n      \"target_component\": \"web/src/growth/pages/Landing/LandingPage.tsx\",\n      \"status\": \"planned\",\n      \"description\": \"Establish semantic mutation plan for the LandingPage implementation without modifying production source.\"\n    }\n  ],\n  \"mutation_operations\": [\n    {\n      \"id\": \"LES-SMP-015-M001\",\n      \"generated\": \"2026-07-10T03:15:25.817818Z\",\n      \"target_module\": \"web/src/growth/pages/Landing/LandingPage.tsx\",\n      \"target_component\": \"LandingPage\",\n      \"operation\": \"analyze_and_prepare_component_mutation\",\n      \"execution_state\": \"ready_for_materialization\",\n      \"implementation_fragment\": null\n    }\n  ],\n  \"materialization_increments\": [\n    {\n      \"id\": \"LES-SMP-016-I001\",\n      \"generated\": \"2026-07-10T04:09:21.344467Z\",\n      \"authority\": \"BLD-AMS-001\",\n      \"target_module\": \"web/src/growth/pages/Landing/LandingPage.tsx\",\n      \"source_line_count\": 19,\n      \"materialized_source\": [\n        \"import { GrowthLayout } from \\\"../../components/Layout\\\";\",\n        \"import { Hero } from \\\"../../components/Hero\\\";\",\n        \"import { LandingSections } from \\\"./LandingSections\\\";\",\n        \"\",\n        \"export function LandingPage() {\",\n        \"\",\n        \"  return (\",\n        \"\",\n        \"    <GrowthLayout>\",\n        \"\",\n        \"      <Hero />\",\n        \"\",\n        \"      <LandingSections />\",\n        \"\",\n        \"    </GrowthLayout>\",\n        \"\",\n        \"  );\",\n        \"\",\n        \"}\"\n      ],\n      \"status\": \"materialized\",\n      \"validated\": false,\n      \"pu"
+    },
+    "CTBC": {
+      "path": "execution/workspace/LES-001/content_authority/LANDING-PAGE-CONTENT-AUTHORITY.json",
+      "score": 140,
+      "exists": true,
+      "preview": "{\n  \"authority_id\": \"LES-IMP-018\",\n  \"generated\": \"2026-07-10T10:33:19.099501Z\",\n  \"repository_id\": \"APP-001\",\n  \"status\": \"awaiting_founder_content\",\n  \"implementation_target\": \"LandingPage.v1.tsx\",\n  \"content_sources\": [\n    \"CTBC Presentation\",\n    \"Growth Platform MVP Authority\",\n    \"Founder Decisions\",\n    \"Open Brain Governance\"\n  ],\n  \"sections\": {\n    \"hero\": null,\n    \"navigation\": null,\n    \"value_proposition\": null,\n    \"programs\": null,\n    \"call_to_action\": null,\n    \"footer\": null\n  },\n  \"next_step\": \"Populate approved content before source implementation.\"\n}"
+    },
+    "Programme": {
+      "path": "execution/workspace/LES-001/content_authority/LANDING-PAGE-CONTENT-AUTHORITY.json",
+      "score": 140,
+      "exists": true,
+      "preview": "{\n  \"authority_id\": \"LES-IMP-018\",\n  \"generated\": \"2026-07-10T10:33:19.099501Z\",\n  \"repository_id\": \"APP-001\",\n  \"status\": \"awaiting_founder_content\",\n  \"implementation_target\": \"LandingPage.v1.tsx\",\n  \"content_sources\": [\n    \"CTBC Presentation\",\n    \"Growth Platform MVP Authority\",\n    \"Founder Decisions\",\n    \"Open Brain Governance\"\n  ],\n  \"sections\": {\n    \"hero\": null,\n    \"navigation\": null,\n    \"value_proposition\": null,\n    \"programs\": null,\n    \"call_to_action\": null,\n    \"footer\": null\n  },\n  \"next_step\": \"Populate approved content before source implementation.\"\n}"
+    },
+    "Scholarship": {
+      "path": "governance/registry/generated/GE-RELEASE1-JOURNEY-REGISTRY-CERTIFICATION.md",
+      "score": 120,
+      "exists": true,
+      "preview": "# GE Release-1 Journey Registry Certification\n\nStatus\n\nCERTIFIED\n\nRepository Truth\n\nThe Growth runtime contains multiple domain registries.\n\nVerified\n\nprograms.json\nscholarships.json\nadmissions.json\n\nJourney Registry\n\njourney.json exists.\n\nCurrent status:\n\nEMPTY\n\nCertification\n\nThe Journey Registry is the canonical integration registry joining\nmultiple Growth production surfaces into a single applicant journey.\n\nGE-RMP-004 SHALL materialize this registry before extending\napplication UI.\n\nClassification\n\nRuntime Integration Registry\n\n"
+    },
+    "FAQ": {
+      "path": "web/src/growth/registry/faq.json",
+      "score": 20,
+      "exists": true,
+      "preview": "{\n  \"version\": \"1.0\",\n  \"items\": []\n}\n"
+    },
+    "Three Click": null,
+    "Hero": {
+      "path": "execution/workspace/LES-001/content_authority/LANDING-PAGE-CONTENT-AUTHORITY.json",
+      "score": 140,
+      "exists": true,
+      "preview": "{\n  \"authority_id\": \"LES-IMP-018\",\n  \"generated\": \"2026-07-10T10:33:19.099501Z\",\n  \"repository_id\": \"APP-001\",\n  \"status\": \"awaiting_founder_content\",\n  \"implementation_target\": \"LandingPage.v1.tsx\",\n  \"content_sources\": [\n    \"CTBC Presentation\",\n    \"Growth Platform MVP Authority\",\n    \"Founder Decisions\",\n    \"Open Brain Governance\"\n  ],\n  \"sections\": {\n    \"hero\": null,\n    \"navigation\": null,\n    \"value_proposition\": null,\n    \"programs\": null,\n    \"call_to_action\": null,\n    \"footer\": null\n  },\n  \"next_step\": \"Populate approved content before source implementation.\"\n}"
+    },
+    "Registration": {
+      "path": "governance/founder-decisions/FDR-010E31-PROSPECT-FOLLOW-UP-TASK-MANAGEMENT.md",
+      "score": 150,
+      "exists": true,
+      "preview": "# Founder Decision Record\n\nImplementation Authority\n\nAuthority Identifier\n\nFDR-010E31\n\nStatus\n\nFOUNDER APPROVED\n\nRelease\n\nGrowth Engine Release 1 MVP\n\nBusiness Authority\n\nNEW\n\nImplementation Authority\n\nNOT YET GRANTED\n\nExecution Authority\n\nPENDING EOS DERIVATION\n\n--------------------------------------------------\n\nProduction Surface\n\nProspect Follow-up & Task Management\n\n--------------------------------------------------\n\nBusiness Purpose\n\nEstablish the cooperative's canonical capability for planning, assigning, tracking, and completing follow-up work throughout the prospect journey.\n\nThis capability SHALL transform admissions operations from historical visibility into active work management.\n\n--------------------------------------------------\n\nBusiness Outcomes\n\nThe platform SHALL support:\n\n- Follow-up tasks\n- Task ownership\n- Due dates\n- Completion status\n- Task notes\n- Task visibility from the Prospect Detail Workspace\n\n--------------------------------------------------\n\nBusiness Rules\n\nTasks SHALL belong to exactly one prospect.\n\nTasks SHALL remain visible after completion.\n\nTask completion SHALL preserve historical accountability.\n\nThe capability SHALL complement, not replace:\n\n- Prospect Timeline\n- Prospect Activity Workspace\n\n--------------------------------------------------\n\nExecution Boundary\n\nExecution SHALL determine the minimum repository and infrastructure required to realize this Founder Decision.\n\nExecution SHALL:\n\n- establish Repository Truth;\n- derive Infrastructure Authorities if required;\n- derive Repository Mutation Packages;\n- preserve all certified Release 1 runtime contracts.\n\nExecution SHALL NOT redefine Founder business intent.\n\n"
+    },
+    "Admissions": {
+      "path": "governance/founder-decisions/FDR-010E31-PROSPECT-FOLLOW-UP-TASK-MANAGEMENT.md",
+      "score": 150,
+      "exists": true,
+      "preview": "# Founder Decision Record\n\nImplementation Authority\n\nAuthority Identifier\n\nFDR-010E31\n\nStatus\n\nFOUNDER APPROVED\n\nRelease\n\nGrowth Engine Release 1 MVP\n\nBusiness Authority\n\nNEW\n\nImplementation Authority\n\nNOT YET GRANTED\n\nExecution Authority\n\nPENDING EOS DERIVATION\n\n--------------------------------------------------\n\nProduction Surface\n\nProspect Follow-up & Task Management\n\n--------------------------------------------------\n\nBusiness Purpose\n\nEstablish the cooperative's canonical capability for planning, assigning, tracking, and completing follow-up work throughout the prospect journey.\n\nThis capability SHALL transform admissions operations from historical visibility into active work management.\n\n--------------------------------------------------\n\nBusiness Outcomes\n\nThe platform SHALL support:\n\n- Follow-up tasks\n- Task ownership\n- Due dates\n- Completion status\n- Task notes\n- Task visibility from the Prospect Detail Workspace\n\n--------------------------------------------------\n\nBusiness Rules\n\nTasks SHALL belong to exactly one prospect.\n\nTasks SHALL remain visible after completion.\n\nTask completion SHALL preserve historical accountability.\n\nThe capability SHALL complement, not replace:\n\n- Prospect Timeline\n- Prospect Activity Workspace\n\n--------------------------------------------------\n\nExecution Boundary\n\nExecution SHALL determine the minimum repository and infrastructure required to realize this Founder Decision.\n\nExecution SHALL:\n\n- establish Repository Truth;\n- derive Infrastructure Authorities if required;\n- derive Repository Mutation Packages;\n- preserve all certified Release 1 runtime contracts.\n\nExecution SHALL NOT redefine Founder business intent.\n\n"
+    },
+    "Builder": {
+      "path": "governance/founder-decisions/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 150,
+      "exists": true,
+      "preview": "# Founder Decision Record\n\nAuthority Identifier\n\nFDR-EOS-001\n\nStatus\n\nFOUNDER APPROVED\n\nRepository\n\nLambsbook-Open-Brain (Development in ~/workspace)\n\nAuthority Stream\n\nEOS\n\nImplementation Authority\n\nEOS-RMP-001A\n\nRelease\n\nExecution Operating System\n\nBusiness Authority\n\nNEW\n\nExecution Authority\n\nPENDING EOS DERIVATION\n\n--------------------------------------------------\n\nProduction Surface\n\nClaude Package Builder Kernel\n\n--------------------------------------------------\n\nBusiness Purpose\n\nEstablish the canonical namespace-independent Claude Package Builder as\nexecution infrastructure.\n\nThe Builder SHALL deterministically materialize Claude Packages from:\n\n- certified Claude Instruction Brief; and\n- certified Repository Truth.\n\nRepository Bootstrap remains outside the Builder.\n\n--------------------------------------------------\n\nImplementation Status\n\nNOT YET GRANTED\n"
+    },
+    "EOS": {
+      "path": "governance/founder-decisions/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 150,
+      "exists": true,
+      "preview": "# Founder Decision Record\n\nAuthority Identifier\n\nFDR-EOS-001\n\nStatus\n\nFOUNDER APPROVED\n\nRepository\n\nLambsbook-Open-Brain (Development in ~/workspace)\n\nAuthority Stream\n\nEOS\n\nImplementation Authority\n\nEOS-RMP-001A\n\nRelease\n\nExecution Operating System\n\nBusiness Authority\n\nNEW\n\nExecution Authority\n\nPENDING EOS DERIVATION\n\n--------------------------------------------------\n\nProduction Surface\n\nClaude Package Builder Kernel\n\n--------------------------------------------------\n\nBusiness Purpose\n\nEstablish the canonical namespace-independent Claude Package Builder as\nexecution infrastructure.\n\nThe Builder SHALL deterministically materialize Claude Packages from:\n\n- certified Claude Instruction Brief; and\n- certified Repository Truth.\n\nRepository Bootstrap remains outside the Builder.\n\n--------------------------------------------------\n\nImplementation Status\n\nNOT YET GRANTED\n"
+    },
+    "Founder Decision": {
+      "path": "governance/rmp/RMP-010E28-FOUNDER-DECISION.md",
+      "score": 150,
+      "exists": true,
+      "preview": "# RMP-010E28 Founder Decision\n\nStatus:\nPENDING\n\nRelease:\nRelease 1\n\nImplementation Authority:\nRMP-010E28\n\n## Production Surface\n\n(TBD)\n\n## Business Objective\n\n(TBD)\n\n## Functional Contract\n\n(TBD)\n\n## Authorized Repository Scope\n\n(TBD)\n\n## Founder Decision\n\nThis document becomes the authoritative source for generating:\n\n- CIB-RMP-010E28\n- Repository Mutation Package (RMP)\n- Founder Execution Package (FEP)\n\nNo implementation SHALL begin until this document is approved.\n\n"
+    }
+  }
+}

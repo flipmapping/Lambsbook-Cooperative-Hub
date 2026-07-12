@@ -1,0 +1,2 @@
+Discovery Record Generation: PASS
+{'record_type': 'Surface Discovery Record', 'surface_id': 'TEST', 'execution_stream': 'TEST', 'reason': 'Surface lease not found.', 'status': 'RECORDED'}

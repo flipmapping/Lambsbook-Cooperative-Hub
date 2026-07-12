@@ -1,0 +1,220 @@
+{
+  "pages": [
+    {
+      "path": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "exports": [
+        "LandingPage"
+      ]
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingSections.tsx",
+      "exports": [
+        "LandingSections"
+      ]
+    },
+    {
+      "path": "web/src/growth/pages/Landing/index.ts",
+      "exports": []
+    }
+  ],
+  "components": [
+    {
+      "path": "web/src/growth/components/GrowthProvider.tsx",
+      "exports": [
+        "GrowthContextValue",
+        "GrowthProvider",
+        "useGrowthContext"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Hero/Hero.tsx",
+      "exports": [
+        "Hero"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Hero/HeroContent.tsx",
+      "exports": [
+        "HeroContentProps",
+        "HeroContent"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Hero/index.ts",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/components/Layout/GrowthLayout.tsx",
+      "exports": [
+        "GrowthLayoutProps",
+        "GrowthLayout"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Layout/index.ts",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/components/Navigation/Navigation.tsx",
+      "exports": [
+        "NavigationProps",
+        "Navigation"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Navigation/NavigationItem.tsx",
+      "exports": [
+        "NavigationItemProps",
+        "NavigationItem"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Navigation/index.ts",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/components/Sections/AdmissionsSection.tsx",
+      "exports": [
+        "AdmissionsSection"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Sections/FAQSection.tsx",
+      "exports": [
+        "FAQSection"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Sections/ProgramsSection.tsx",
+      "exports": [
+        "ProgramsSection"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Sections/ScholarshipsSection.tsx",
+      "exports": [
+        "ScholarshipsSection"
+      ]
+    },
+    {
+      "path": "web/src/growth/components/Sections/index.ts",
+      "exports": []
+    }
+  ],
+  "registry": [
+    {
+      "path": "web/src/growth/registry/admissions.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/registry/assets.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/registry/faq.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/registry/journey.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/registry/navigation.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/registry/programs.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/registry/scholarships.json",
+      "exports": []
+    }
+  ],
+  "content": [
+    {
+      "path": "web/src/growth/content/en/admissions.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/en/faq.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/en/footer.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/en/home.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/en/navigation.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/en/programs.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/en/scholarships.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/admissions.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/faq.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/footer.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/home.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/navigation.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/programs.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/vi/scholarships.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/admissions.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/faq.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/footer.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/home.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/navigation.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/programs.json",
+      "exports": []
+    },
+    {
+      "path": "web/src/growth/content/zh/scholarships.json",
+      "exports": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "baseline_id": "LES-EXEC-003",
+  "generated": "2026-07-10T15:11:00.386553Z",
+  "repository_id": "APP-001",
+  "source": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+  "baseline": "execution/workspace/LES-001/implementation/generated_baselines/LandingPage.generated.baseline.tsx",
+  "sha256": "e2282ecf002862f685d4cb765e9d13e72ff2b83358fc3a32569f2514a6f58ff2",
+  "next_operation": "Replace LandingPage.generated.tsx with the approved implementation."
+}

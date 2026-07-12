@@ -1,0 +1,11 @@
+{
+  "certification_id": "LES-SMP-011",
+  "authority": "BLD-AMS-001",
+  "generated": "2026-07-10T02:02:33.181389Z",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "snapshot_sha256": "53f2e240c45f3a6f84c16efa646ee8f87c1db8e4a2ca8493c73259fc132f6ae4",
+  "snapshot_line_count": 19,
+  "builder_input": "immutable_snapshot",
+  "status": "certified",
+  "production_repository_modified": false
+}

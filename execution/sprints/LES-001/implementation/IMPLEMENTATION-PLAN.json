@@ -1,0 +1,31 @@
+{
+  "plan_id": "LES-PLAN-001",
+  "authority": "EOS-EXEC-001",
+  "status": "ready_for_founder_review",
+  "generated": "2026-07-10T00:20:51.441339Z",
+  "repository": "APP-001",
+  "inputs": {
+    "open_brain_bootstrap": "bootstrap/OPEN-BRAIN-SUMMARY.md",
+    "repository_bootstrap": "bootstrap/REPOSITORY-BOOTSTRAP.md",
+    "repository_truth": "repository_truth/REPOSITORY-TRUTH.md",
+    "semantic_gap_analysis": "gap_analysis/SEMANTIC-GAP-ANALYSIS.md"
+  },
+  "implementation_sequence": [
+    {
+      "step": 1,
+      "name": "Landing Experience Repository Inspection",
+      "status": "pending"
+    },
+    {
+      "step": 2,
+      "name": "Landing Experience Repository Mutation Package",
+      "status": "pending"
+    },
+    {
+      "step": 3,
+      "name": "Landing Experience Runtime Validation",
+      "status": "pending"
+    }
+  ],
+  "mutation_authorized": false
+}

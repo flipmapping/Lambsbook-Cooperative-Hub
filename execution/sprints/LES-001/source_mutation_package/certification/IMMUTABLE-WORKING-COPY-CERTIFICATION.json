@@ -1,0 +1,14 @@
+{
+  "certification_id": "LES-SMP-012",
+  "authority": "EOS-BLD-003",
+  "generated": "2026-07-10T02:05:47.134558Z",
+  "supersedes": "LES-SMP-011",
+  "builder_input": "immutable_working_copy",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "working_copy_sha256": "53f2e240c45f3a6f84c16efa646ee8f87c1db8e4a2ca8493c73259fc132f6ae4",
+  "publication_state": "not_published",
+  "working_copy_mutable": false,
+  "production_repository_mutable": false,
+  "semantic_transformations": [],
+  "status": "certified"
+}

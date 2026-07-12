@@ -1,0 +1,8 @@
+Execution Assurance Directory Listing
+=====================================
+
+execution/assurance : EXISTS
+execution/assurance/runtime : EXISTS
+execution/assurance/metrics : EXISTS
+execution/assurance/compliance : EXISTS
+execution/assurance/monitoring : EXISTS

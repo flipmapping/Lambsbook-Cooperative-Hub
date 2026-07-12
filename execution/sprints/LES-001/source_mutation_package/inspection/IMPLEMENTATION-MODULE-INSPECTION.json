@@ -1,0 +1,11 @@
+{
+  "inspection_id": "LES-SMP-005",
+  "authority": "EOS-EXEC-005",
+  "generated": "2026-07-10T01:19:54.244594Z",
+  "implementation_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "line_count": 19,
+  "imports": 3,
+  "exports": 1,
+  "functions": 1,
+  "production_repository_modified": false
+}

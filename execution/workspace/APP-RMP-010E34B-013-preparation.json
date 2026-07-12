@@ -1,0 +1,68 @@
+{
+  "authority": "FDR-010E34B",
+  "surface": "SURF-ADM-001",
+  "phase": "Repository Mutation",
+  "prepared_at": "2026-07-11T07:04:52Z",
+  "files": [
+    {
+      "file": "server/routes.ts",
+      "evidence": {
+        "createAppointment": false,
+        "updateAppointment": false,
+        "appointment_type": false,
+        "description": true,
+        "notes": true,
+        "outcome": true,
+        "outcome_notes": true
+      }
+    },
+    {
+      "file": "server/services/admissions.ts",
+      "evidence": {
+        "createAppointment": true,
+        "updateAppointment": true,
+        "appointment_type": false,
+        "description": true,
+        "notes": true,
+        "outcome": true,
+        "outcome_notes": false
+      }
+    },
+    {
+      "file": "server/lib/supabase-dal.ts",
+      "evidence": {
+        "createAppointment": true,
+        "updateAppointment": true,
+        "appointment_type": false,
+        "description": true,
+        "notes": false,
+        "outcome": true,
+        "outcome_notes": true
+      }
+    },
+    {
+      "file": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "evidence": {
+        "createAppointment": false,
+        "updateAppointment": false,
+        "appointment_type": false,
+        "description": true,
+        "notes": false,
+        "outcome": true,
+        "outcome_notes": true
+      }
+    },
+    {
+      "file": "infrastructure/sql/INF-010E32A-prospect-appointment-interview-schema.sql",
+      "evidence": {
+        "createAppointment": false,
+        "updateAppointment": false,
+        "appointment_type": true,
+        "description": true,
+        "notes": false,
+        "outcome": true,
+        "outcome_notes": false
+      }
+    }
+  ]
+}

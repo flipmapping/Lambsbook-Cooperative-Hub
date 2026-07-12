@@ -1,0 +1,7 @@
+{
+  "implementation_authority": "BLD-AMS-002",
+  "status": "REFRESHED",
+  "dependency_status": "SATISFIED",
+  "dependency_pause_record_present": true,
+  "surface_registry_consumable": true
+}

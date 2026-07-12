@@ -1,0 +1,620 @@
+{
+  "inspection_id": "LES-RMP-005",
+  "authority": "EOS-EXEC-001",
+  "repository": "APP-001",
+  "generated": "2026-07-10T00:51:01.731392Z",
+  "candidate_count": 74,
+  "candidates": [
+    {
+      "path": "web/src/growth/pages/Landing/index.ts",
+      "score": 3,
+      "matched_keywords": [
+        "index",
+        "landing",
+        "page"
+      ],
+      "size": 31
+    },
+    {
+      "path": "client/src/components/admin/LandingPagesManagement.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "landing",
+        "page"
+      ],
+      "size": 7029
+    },
+    {
+      "path": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 8657
+    },
+    {
+      "path": "client/src/pages/ApplicantAppointmentCenter.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 8088
+    },
+    {
+      "path": "client/src/pages/ApplicantDocumentCenter.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 7301
+    },
+    {
+      "path": "client/src/pages/ApplicantJourneyStatus.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 8214
+    },
+    {
+      "path": "client/src/pages/ApplicantLifecycleTimeline.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 6112
+    },
+    {
+      "path": "client/src/pages/ApplicantStatusLookup.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 4234
+    },
+    {
+      "path": "client/src/pages/HubLanding.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "landing",
+        "page"
+      ],
+      "size": 13953
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 2234
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/page.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 18546
+    },
+    {
+      "path": "web/src/app/(public)/auth/sign-in/page.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "app",
+        "page"
+      ],
+      "size": 1382
+    },
+    {
+      "path": "web/src/growth/components/Hero/index.ts",
+      "score": 2,
+      "matched_keywords": [
+        "hero",
+        "index"
+      ],
+      "size": 55
+    },
+    {
+      "path": "web/src/growth/components/Layout/index.ts",
+      "score": 2,
+      "matched_keywords": [
+        "index",
+        "layout"
+      ],
+      "size": 32
+    },
+    {
+      "path": "web/src/growth/components/Navigation/index.ts",
+      "score": 2,
+      "matched_keywords": [
+        "index",
+        "navigation"
+      ],
+      "size": 64
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "landing",
+        "page"
+      ],
+      "size": 293
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingSections.tsx",
+      "score": 2,
+      "matched_keywords": [
+        "landing",
+        "page"
+      ],
+      "size": 306
+    },
+    {
+      "path": "client/src/App.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "app"
+      ],
+      "size": 9085
+    },
+    {
+      "path": "client/src/components/HeroSection.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "hero"
+      ],
+      "size": 2104
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "app"
+      ],
+      "size": 18153
+    },
+    {
+      "path": "client/src/components/examples/HeroSection.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "hero"
+      ],
+      "size": 302
+    },
+    {
+      "path": "client/src/components/ui/navigation-menu.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "navigation"
+      ],
+      "size": 5128
+    },
+    {
+      "path": "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "score": 1,
+      "matched_keywords": [
+        "navigation"
+      ],
+      "size": 822
+    },
+    {
+      "path": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "score": 1,
+      "matched_keywords": [
+        "navigation"
+      ],
+      "size": 891
+    },
+    {
+      "path": "client/src/pages/AdminGovernance.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 11355
+    },
+    {
+      "path": "client/src/pages/AdminRevenueConsole.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 18826
+    },
+    {
+      "path": "client/src/pages/AdmissionsWorkspace.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 8449
+    },
+    {
+      "path": "client/src/pages/AuthCallback.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 3635
+    },
+    {
+      "path": "client/src/pages/Dashboard.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 55151
+    },
+    {
+      "path": "client/src/pages/EducationFeedback.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 16204
+    },
+    {
+      "path": "client/src/pages/FarmstayVision.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 13121
+    },
+    {
+      "path": "client/src/pages/HubAdminDashboard.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 31546
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 21839
+    },
+    {
+      "path": "client/src/pages/HubAuthCallback.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 7274
+    },
+    {
+      "path": "client/src/pages/HubDashboard.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 17664
+    },
+    {
+      "path": "client/src/pages/LambsbookTutoring.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 11927
+    },
+    {
+      "path": "client/src/pages/Login.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 4531
+    },
+    {
+      "path": "client/src/pages/MemberDashboard.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 5909
+    },
+    {
+      "path": "client/src/pages/MemberHub.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 32224
+    },
+    {
+      "path": "client/src/pages/PartnerOnboarding.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 14690
+    },
+    {
+      "path": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 9245
+    },
+    {
+      "path": "client/src/pages/ProspectRegistration.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 8028
+    },
+    {
+      "path": "client/src/pages/ResetPassword.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 10079
+    },
+    {
+      "path": "client/src/pages/SBUEducation.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 14465
+    },
+    {
+      "path": "client/src/pages/ScholarshipsPage.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 8268
+    },
+    {
+      "path": "client/src/pages/TranscriptSubmission.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 23315
+    },
+    {
+      "path": "client/src/pages/TropicanaProgram.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 13480
+    },
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 1389
+    },
+    {
+      "path": "client/src/pages/member/MemberDashboard.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 0
+    },
+    {
+      "path": "client/src/pages/not-found.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 711
+    },
+    {
+      "path": "server/index.ts",
+      "score": 1,
+      "matched_keywords": [
+        "index"
+      ],
+      "size": 3329
+    },
+    {
+      "path": "server/lib/index.ts",
+      "score": 1,
+      "matched_keywords": [
+        "index"
+      ],
+      "size": 170
+    },
+    {
+      "path": "server/routes.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 65244
+    },
+    {
+      "path": "server/routes/admin.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 18273
+    },
+    {
+      "path": "server/routes/devTestAuth.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 1200
+    },
+    {
+      "path": "server/routes/financialRoutes.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 1990
+    },
+    {
+      "path": "server/routes/governanceRoute.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 3461
+    },
+    {
+      "path": "server/routes/member.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 13286
+    },
+    {
+      "path": "server/routes/notification-preferences.route.ts",
+      "score": 1,
+      "matched_keywords": [
+        "route"
+      ],
+      "size": 209
+    },
+    {
+      "path": "src/App.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "app"
+      ],
+      "size": 810
+    },
+    {
+      "path": "src/components/Layout.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "layout"
+      ],
+      "size": 736
+    },
+    {
+      "path": "src/pages/ActivityLogs.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 0
+    },
+    {
+      "path": "src/pages/Dashboard.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 1481
+    },
+    {
+      "path": "src/pages/EarningsSummary.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 0
+    },
+    {
+      "path": "src/pages/SettlementOverview.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "page"
+      ],
+      "size": 0
+    },
+    {
+      "path": "web/src/components/dashboard/DashboardHeroCurrentPosition.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "hero"
+      ],
+      "size": 1844
+    },
+    {
+      "path": "web/src/growth/components/Hero/Hero.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "hero"
+      ],
+      "size": 555
+    },
+    {
+      "path": "web/src/growth/components/Hero/HeroContent.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "hero"
+      ],
+      "size": 743
+    },
+    {
+      "path": "web/src/growth/components/Layout/GrowthLayout.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "layout"
+      ],
+      "size": 553
+    },
+    {
+      "path": "web/src/growth/components/Navigation/Navigation.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "navigation"
+      ],
+      "size": 658
+    },
+    {
+      "path": "web/src/growth/components/Navigation/NavigationItem.tsx",
+      "score": 1,
+      "matched_keywords": [
+        "navigation"
+      ],
+      "size": 284
+    },
+    {
+      "path": "web/src/growth/components/Sections/index.ts",
+      "score": 1,
+      "matched_keywords": [
+        "index"
+      ],
+      "size": 141
+    },
+    {
+      "path": "web/src/growth/index.ts",
+      "score": 1,
+      "matched_keywords": [
+        "index"
+      ],
+      "size": 763
+    },
+    {
+      "path": "web/src/lib/growth/index.ts",
+      "score": 1,
+      "matched_keywords": [
+        "index"
+      ],
+      "size": 61
+    }
+  ],
+  "production_modified": false
+}

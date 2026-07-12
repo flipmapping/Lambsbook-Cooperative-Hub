@@ -1,0 +1,36 @@
+{
+  "authority": "FDR-010E34B",
+  "generated": "2026-07-11T13:06:45.898444Z",
+  "repository": "APP-001",
+  "surface": "LANDING-EXPERIENCE",
+  "builder_version": "v1.2",
+  "execution_mode": "complete_surface_mutation",
+  "target": "web/src/growth",
+  "deliverable": {
+    "type": "complete_repository_mutation",
+    "output": [
+      "Modified source files",
+      "New shared components (only where reuse is impossible)",
+      "Variant A",
+      "Variant B",
+      "Route integration",
+      "Build validation",
+      "Runtime validation"
+    ]
+  },
+  "constraints": {
+    "reuse_existing_components": true,
+    "preserve_existing_routes": true,
+    "preserve_registration_flow": true,
+    "preserve_growth_engine": true,
+    "no_additional_governance": true,
+    "no_additional_builder_evolution": true
+  },
+  "expected_return": [
+    "Unified source diff",
+    "Repository mutation evidence",
+    "Build output",
+    "Runtime output",
+    "Founder-visible Landing Experience"
+  ]
+}

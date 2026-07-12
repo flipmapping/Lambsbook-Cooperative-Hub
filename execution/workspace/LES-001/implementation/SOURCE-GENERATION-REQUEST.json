@@ -1,0 +1,18 @@
+{
+  "request_id": "LES-EXEC-002",
+  "generated": "2026-07-10T15:03:10.891366Z",
+  "repository_id": "APP-001",
+  "target": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+  "operation": "replace_entire_component",
+  "implementation": {
+    "navigation": true,
+    "hero": true,
+    "value_proposition": true,
+    "programs": true,
+    "call_to_action": true,
+    "footer": true
+  },
+  "validation_required": true,
+  "publication_required": true,
+  "status": "ready_for_source_generation"
+}

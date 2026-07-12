@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "web/src/growth/pages/Landing/index.ts",
+    "web/src/growth/pages/Landing/LandingPage.tsx",
+    "web/src/growth/pages/Landing/LandingSections.tsx"
+  ],
+  "components": [
+    "web/src/growth/components/GrowthProvider.tsx",
+    "web/src/growth/components/Hero/HeroContent.tsx",
+    "web/src/growth/components/Hero/index.ts",
+    "web/src/growth/components/Hero/Hero.tsx",
+    "web/src/growth/components/Navigation/NavigationItem.tsx",
+    "web/src/growth/components/Navigation/Navigation.tsx",
+    "web/src/growth/components/Navigation/index.ts",
+    "web/src/growth/components/Layout/GrowthLayout.tsx",
+    "web/src/growth/components/Layout/index.ts",
+    "web/src/growth/components/Sections/ProgramsSection.tsx",
+    "web/src/growth/components/Sections/ScholarshipsSection.tsx",
+    "web/src/growth/components/Sections/AdmissionsSection.tsx",
+    "web/src/growth/components/Sections/FAQSection.tsx",
+    "web/src/growth/components/Sections/index.ts"
+  ],
+  "layouts": [],
+  "registry": [
+    "web/src/growth/registry/assets.json",
+    "web/src/growth/registry/faq.json",
+    "web/src/growth/registry/journey.json",
+    "web/src/growth/registry/navigation.json",
+    "web/src/growth/registry/programs.json",
+    "web/src/growth/registry/scholarships.json",
+    "web/src/growth/registry/admissions.json"
+  ],
+  "content": [
+    "web/src/growth/content/vi/programs.json",
+    "web/src/growth/content/vi/scholarships.json",
+    "web/src/growth/content/vi/admissions.json",
+    "web/src/growth/content/vi/faq.json",
+    "web/src/growth/content/vi/navigation.json",
+    "web/src/growth/content/vi/footer.json",
+    "web/src/growth/content/vi/home.json",
+    "web/src/growth/content/en/programs.json",
+    "web/src/growth/content/en/scholarships.json",
+    "web/src/growth/content/en/admissions.json",
+    "web/src/growth/content/en/faq.json",
+    "web/src/growth/content/en/navigation.json",
+    "web/src/growth/content/en/footer.json",
+    "web/src/growth/content/en/home.json",
+    "web/src/growth/content/zh/programs.json",
+    "web/src/growth/content/zh/scholarships.json",
+    "web/src/growth/content/zh/admissions.json",
+    "web/src/growth/content/zh/faq.json",
+    "web/src/growth/content/zh/navigation.json",
+    "web/src/growth/content/zh/footer.json",
+    "web/src/growth/content/zh/home.json"
+  ]
+}

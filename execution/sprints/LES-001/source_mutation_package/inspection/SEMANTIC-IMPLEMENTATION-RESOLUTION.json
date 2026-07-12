@@ -1,0 +1,11 @@
+{
+  "resolution_id": "LES-SMP-004",
+  "authority": "EOS-EXEC-005",
+  "generated": "2026-07-10T01:07:29.203972Z",
+  "selected_target": "web/src/growth/pages/Landing/index.ts",
+  "resolved_imports": [
+    "./LandingPage"
+  ],
+  "implementation_resolved": true,
+  "production_repository_modified": false
+}

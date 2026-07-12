@@ -1,0 +1,25 @@
+{
+  "authority": "FDR-010E34B",
+  "surface": "SURF-ADM-001",
+  "mutation": "APP-RMP-010E34B-016",
+  "type": "Bounded Surface Synchronization",
+  "performed_at": "2026-07-11T07:51:11Z",
+  "files": [
+    {
+      "file": "server/routes.ts",
+      "status": "UPDATED"
+    },
+    {
+      "file": "server/services/admissions.ts",
+      "status": "UPDATED"
+    },
+    {
+      "file": "server/lib/supabase-dal.ts",
+      "status": "UNCHANGED"
+    },
+    {
+      "file": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "status": "UNCHANGED"
+    }
+  ]
+}

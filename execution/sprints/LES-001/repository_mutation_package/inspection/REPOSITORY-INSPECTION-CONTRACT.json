@@ -1,0 +1,38 @@
+{
+  "contract_id": "LES-RMP-002",
+  "authority": "EOS-EXEC-001",
+  "status": "inspection_complete",
+  "repository": "APP-001",
+  "generated": "2026-07-10T00:30:27.318426Z",
+  "mutation_scope": {
+    "approved": false,
+    "production_modified": false
+  },
+  "repository_surfaces": [
+    {
+      "surface": "client",
+      "exists": true,
+      "type": "directory"
+    },
+    {
+      "surface": "server",
+      "exists": true,
+      "type": "directory"
+    },
+    {
+      "surface": "src",
+      "exists": true,
+      "type": "directory"
+    },
+    {
+      "surface": "web",
+      "exists": true,
+      "type": "directory"
+    },
+    {
+      "surface": "supabase",
+      "exists": true,
+      "type": "directory"
+    }
+  ]
+}

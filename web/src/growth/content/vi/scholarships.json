@@ -1,5 +1,32 @@
 {
   "version": "1.0",
   "locale": "vi",
-  "sections": {}
+  "sections": {
+    "overview": {
+      "heading": "Học bổng và Miễn giảm học phí",
+      "description": "Học bổng lên đến 20.000 TWD mỗi học kỳ (khoảng 615 USD / 15.400.000 VND)."
+    },
+    "items": [
+      {
+        "id": "first-semester",
+        "title": "Học kỳ 1",
+        "description": "Miễn toàn bộ học phí và phí ký túc xá."
+      },
+      {
+        "id": "second-semester",
+        "title": "Học kỳ 2",
+        "description": "Học phí bằng với các trường công lập của Đài Loan, miễn 100% phí ký túc xá."
+      },
+      {
+        "id": "chinese-language",
+        "title": "Học bổng tiếng Hoa",
+        "description": "30.000 TWD dành cho sinh viên hoàn thành lớp dự bị tiếng Hoa một năm, đạt chứng chỉ TOCFL cấp A2 và tiếp tục theo học hệ cử nhân chính quy ban ngày."
+      },
+      {
+        "id": "remaining-semesters",
+        "title": "Học kỳ 3\u20138",
+        "description": "Thu học phí theo mức bình thường."
+      }
+    ]
+  }
 }

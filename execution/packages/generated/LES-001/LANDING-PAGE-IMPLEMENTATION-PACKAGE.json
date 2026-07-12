@@ -1,0 +1,22 @@
+{
+  "package_id": "LES-IMP-004",
+  "generated": "2026-07-10T05:37:45.379923Z",
+  "repository_id": "APP-001",
+  "authority": "EXEC-DIR-BLD-006",
+  "sprint": "LES-001",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "implementation_type": "landing_page",
+  "builder_transport": {
+    "execution_package": "CLAUDE-EXECUTION-PACKAGE.json",
+    "implementation_prompt": "CLAUDE-IMPLEMENTATION-PROMPT.md",
+    "repository_mutation_package": "REPOSITORY-MUTATION-PACKAGE.json"
+  },
+  "deliverables": [
+    "LandingPage implementation",
+    "Repository mutation summary",
+    "Build validation",
+    "Runtime validation"
+  ],
+  "status": "ready_for_source_generation",
+  "sha256": "e7b24053d76f3decc77358aadcaa7600eedc60e517e0327532c4ea9892825d7e"
+}

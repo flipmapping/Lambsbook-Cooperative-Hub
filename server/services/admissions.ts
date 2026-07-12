@@ -137,7 +137,7 @@ export async function createProspectAppointment(
   scheduledAt: string,
   durationMinutes?: number | null,
   location?: string | null,
-  notes?: string | null,
+  description?: string | null,
 ) {
   return supabaseDAL.createAppointment({
     prospect_id:      prospectId,
@@ -145,7 +145,7 @@ export async function createProspectAppointment(
     scheduled_at:     scheduledAt,
     duration_minutes: durationMinutes ?? null,
     location:         location ?? null,
-    notes:            notes ?? null,
+    description:            description ?? null,
   });
 }
 
@@ -159,14 +159,14 @@ export async function updateProspectAppointment(
   scheduledAt?: string,
   durationMinutes?: number | null,
   location?: string | null,
-  notes?: string | null,
+  description?: string | null,
 ) {
   return supabaseDAL.updateAppointment(appointmentId, {
     ...(title            !== undefined && { title }),
     ...(scheduledAt      !== undefined && { scheduled_at: scheduledAt }),
     ...(durationMinutes  !== undefined && { duration_minutes: durationMinutes }),
     ...(location         !== undefined && { location }),
-    ...(notes            !== undefined && { notes }),
+    ...(description            !== undefined && { description }),
   });
 }
 
@@ -187,14 +187,14 @@ export async function createProspectDocument(
   documentType: string,
   fileName: string,
   storageUrl?: string | null,
-  notes?: string | null,
+  description?: string | null,
 ) {
   return supabaseDAL.createDocument({
     prospect_id:   prospectId,
     document_type: documentType,
     file_name:     fileName,
     storage_url:   storageUrl ?? null,
-    notes:         notes ?? null,
+    description:         description ?? null,
   });
 }
 
@@ -207,13 +207,13 @@ export async function updateProspectDocument(
   documentType?: string,
   fileName?: string,
   storageUrl?: string | null,
-  notes?: string | null,
+  description?: string | null,
 ) {
   return supabaseDAL.updateDocument(documentId, {
     ...(documentType !== undefined && { document_type: documentType }),
     ...(fileName     !== undefined && { file_name: fileName }),
     ...(storageUrl   !== undefined && { storage_url: storageUrl }),
-    ...(notes        !== undefined && { notes }),
+    ...(description        !== undefined && { description }),
   });
 }
 

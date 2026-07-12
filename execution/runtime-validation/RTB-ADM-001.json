@@ -1,0 +1,40 @@
+{
+  "record_id": "RTB-ADM-001",
+  "implementation_authority": "FDR-010E34B",
+  "surface_id": "SURF-ADM-001",
+  "surface": "Admissions Workspace",
+  "status": "BLOCKED",
+  "blocker_type": "Cross-Surface Runtime Dependency",
+  "first_runtime_failure": {
+    "id": "ADM-001",
+    "step": "Login as canonical Admissions/Admin user",
+    "status": "FAIL",
+    "founder_attested": true,
+    "evidence": [
+      "No canonical Admin login mechanism available.",
+      "Canonical Admissions/Admin user has not been provisioned in Supabase.",
+      "Founder cannot authenticate as Admissions/Admin.",
+      "Remaining Admissions runtime validation cannot proceed."
+    ]
+  },
+  "validated_capabilities": [
+    "Follow-up Task Create",
+    "Follow-up Task Update",
+    "Repository Build"
+  ],
+  "deferred_capabilities": [
+    "Appointment Create",
+    "Appointment Update",
+    "Document Create",
+    "Document Update",
+    "Admission Decision Create",
+    "Applicant Decision Page",
+    "Applicant Timeline Navigation"
+  ],
+  "next_required_surface": {
+    "surface": "Authentication / Admin Access",
+    "reason": "Admissions Workspace runtime is blocked before surface entry."
+  },
+  "execution_decision": "SURF-ADM-001 remains leased but is constitutionally blocked. No further Admissions mutations are authorized until the Authentication/Admin Access surface removes the runtime blocker.",
+  "recorded_at": "2026-07-11T13:34:07Z"
+}

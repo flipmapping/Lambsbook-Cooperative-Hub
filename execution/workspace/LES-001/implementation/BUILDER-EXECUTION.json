@@ -1,0 +1,11 @@
+{
+  "execution_id": "LES-EXEC-001",
+  "generated": "2026-07-10T13:54:01.431578Z",
+  "repository_id": "APP-001",
+  "builder_version": "v1.1",
+  "input": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "output": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+  "status": "ready_for_founder_source_implementation",
+  "next_operation": "Implement the Founder-approved Landing Page inside LandingPage.generated.tsx",
+  "sha256": "e2282ecf002862f685d4cb765e9d13e72ff2b83358fc3a32569f2514a6f58ff2"
+}

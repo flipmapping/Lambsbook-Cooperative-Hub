@@ -1,0 +1,10 @@
+{
+  "extract_id": "LES-SMP-010",
+  "authority": "BLD-AMS-001",
+  "generated": "2026-07-10T02:00:10.083353Z",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "line_count": 19,
+  "source_snapshot": "import { GrowthLayout } from \"../../components/Layout\";\nimport { Hero } from \"../../components/Hero\";\nimport { LandingSections } from \"./LandingSections\";\n\nexport function LandingPage() {\n\n  return (\n\n    <GrowthLayout>\n\n      <Hero />\n\n      <LandingSections />\n\n    </GrowthLayout>\n\n  );\n\n}\n",
+  "snapshot_complete": true,
+  "repository_modified": false
+}

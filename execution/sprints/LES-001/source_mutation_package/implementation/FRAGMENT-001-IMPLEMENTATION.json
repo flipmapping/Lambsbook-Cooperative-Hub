@@ -1,0 +1,16 @@
+{
+  "implementation_id": "LES-SMP-008-F001",
+  "authority": "BLD-AMS-001",
+  "generated": "2026-07-10T01:48:52.483755Z",
+  "target_module": "web/src/growth/pages/Landing/LandingPage.tsx",
+  "target_component": "LandingPage",
+  "implementation_strategy": "incremental_materialization",
+  "fragment_sequence": 1,
+  "materialization_state": {
+    "structure_generated": false,
+    "logic_generated": false,
+    "validation_generated": false,
+    "assembly_complete": false
+  },
+  "production_repository_modified": false
+}

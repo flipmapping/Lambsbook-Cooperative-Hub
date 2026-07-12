@@ -1,0 +1,71 @@
+{
+  "authority": "APP-RUNTIME-022",
+  "implementation_authority": "FDR-010E34B",
+  "surface": "Admissions Workspace",
+  "build_validation": "PASS",
+  "runtime_validation": "IN_PROGRESS",
+  "timestamp": "2026-07-11T08:31:21Z",
+  "matrix": [
+    {
+      "id": "ADM-001",
+      "surface": "Admissions Workspace",
+      "step": "Login as canonical Admissions/Admin user",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-002",
+      "surface": "Admissions Workspace",
+      "step": "Open Admissions Workspace",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-003",
+      "surface": "Admissions Workspace",
+      "step": "Select Prospect",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-004",
+      "surface": "Appointment Surface",
+      "step": "Create Appointment",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-005",
+      "surface": "Appointment Surface",
+      "step": "Update Appointment",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-006",
+      "surface": "Document Surface",
+      "step": "Create Document",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-007",
+      "surface": "Document Surface",
+      "step": "Update Document",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-008",
+      "surface": "Admission Decision Surface",
+      "step": "Create Admission Decision",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-009",
+      "surface": "Applicant Journey",
+      "step": "Open Applicant Decision Page",
+      "status": "PENDING"
+    },
+    {
+      "id": "ADM-010",
+      "surface": "Applicant Journey",
+      "step": "Navigate View My Timeline",
+      "status": "PENDING"
+    }
+  ],
+  "execution_rule": "Stop immediately at the first runtime failure. Capture browser error, network response, console error and server log. Only that failure becomes the next bounded repository mutation."
+}

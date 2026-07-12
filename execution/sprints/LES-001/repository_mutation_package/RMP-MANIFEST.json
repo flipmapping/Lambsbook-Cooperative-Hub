@@ -1,0 +1,21 @@
+{
+  "rmp_id": "LES-RMP-001",
+  "status": "initialized",
+  "authority": "EOS-EXEC-001",
+  "repository": "APP-001",
+  "created": "2026-07-10T00:23:32.065253Z",
+  "inputs": {
+    "implementation_plan": "execution/sprints/LES-001/implementation/IMPLEMENTATION-PLAN.json",
+    "repository_truth": "execution/sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md",
+    "semantic_gap_analysis": "execution/sprints/LES-001/gap_analysis/SEMANTIC-GAP-ANALYSIS.md"
+  },
+  "deliverables": {
+    "repository_inspection": false,
+    "mutation_contract": false,
+    "implementation": false,
+    "runtime_validation": false,
+    "certification": false,
+    "open_brain_sync": false
+  },
+  "production_repository_modified": false
+}
