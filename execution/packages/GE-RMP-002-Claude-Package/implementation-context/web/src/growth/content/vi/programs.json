@@ -1,5 +1,50 @@
 {
   "version": "1.0",
   "locale": "vi",
-  "sections": {}
+  "sections": {
+    "overview": {
+      "heading": "Chương trình Chuyên tu Quốc tế",
+      "description": "Lộ trình dành cho sinh viên quốc tế: một năm học tiếng Trung, tiếp theo là chương trình cử nhân bốn năm (hệ bốn năm kỹ thuật), học chung với sinh viên Đài Loan. Sinh viên được học tiếp lên bậc cử nhân mà không cần nộp đơn lại.",
+      "university": "Đại học Khoa học Kỹ thuật CTBC",
+      "location": "Số 49, đường Zhonghua, quận Xinshi, thành phố Đài Nam 744, Đài Loan",
+      "website": "https://www.ctbctech.edu.tw/",
+      "totalQuota": "102 chỉ tiêu"
+    },
+    "academies": {
+      "heading": "Học viện và Ngành học",
+      "items": [
+        {
+          "id": "semiconductor",
+          "title": "Học viện Kỹ thuật Bán dẫn",
+          "majors": [
+            "Kỹ thuật Bán dẫn",
+            "Kỹ thuật Cơ khí",
+            "Kỹ thuật Lạnh, Điều hòa không khí và Năng lượng"
+          ]
+        },
+        {
+          "id": "health-recreation",
+          "title": "Học viện Quản lý Sức khỏe và Giải trí",
+          "majors": [
+            "Quản lý nhà hàng",
+            "Nấu ăn",
+            "Chăm sóc sức khỏe"
+          ]
+        }
+      ]
+    },
+    "workAndInternship": {
+      "heading": "Làm việc và Thực tập",
+      "items": [
+        {
+          "title": "Năm 1",
+          "description": "Làm thêm bán thời gian, 20 giờ mỗi tuần."
+        },
+        {
+          "title": "Năm 2\u20134",
+          "description": "Làm thêm bán thời gian kết hợp thực tập, 40 giờ mỗi tuần."
+        }
+      ]
+    }
+  }
 }

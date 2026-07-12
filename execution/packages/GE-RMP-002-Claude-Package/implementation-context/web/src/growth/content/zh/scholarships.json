@@ -1,5 +1,32 @@
 {
   "version": "1.0",
   "locale": "zh",
-  "sections": {}
+  "sections": {
+    "overview": {
+      "heading": "奖助学金与费用减免",
+      "description": "每学期最高可获20,000 TWD奖助学金（约合615 USD / 15,400,000 VND）。"
+    },
+    "items": [
+      {
+        "id": "first-semester",
+        "title": "第一学期",
+        "description": "全额减免学杂费与住宿费。"
+      },
+      {
+        "id": "second-semester",
+        "title": "第二学期",
+        "description": "学费与台湾公立大学相同，住宿费全额减免100%。"
+      },
+      {
+        "id": "chinese-language",
+        "title": "华语奖助学金",
+        "description": "完成一年华语先修班、通过TOCFL A2级并继续就读日间学制学士课程的学生，可获新台币30,000元。"
+      },
+      {
+        "id": "remaining-semesters",
+        "title": "第三至第八学期",
+        "description": "按正常标准收费。"
+      }
+    ]
+  }
 }
