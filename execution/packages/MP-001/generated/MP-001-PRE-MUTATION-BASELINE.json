@@ -1,0 +1,14 @@
+{
+  "authority": "MP-001",
+  "status": "PRE_MUTATION_BASELINE_CAPTURED",
+  "generated_at": "2026-07-14T00:42:02.927286Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "surface": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+  "surface_lease": "ACTIVE",
+  "sha256_before": "8f98ff15c50004679ad9e6fb8ec5d39ac484d45c58094cdfc576722dad677732",
+  "line_count": 37,
+  "mutation_scope": [
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  ],
+  "next_gate": "Execute bounded repository mutation."
+}

@@ -1,0 +1,16 @@
+{
+  "authority": "EXEC-DIR-OPS-004",
+  "title": "Surface Exit Certification",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T15:26:34Z",
+  "repository": "APP-001",
+  "principle": "A leased surface shall not be released until its runtime acceptance criteria are satisfied.",
+  "required_exit_artifacts": [
+    "Build Validation PASS",
+    "Operations Validation PASS",
+    "Runtime Validation PASS",
+    "Surface Acceptance Criteria PASS",
+    "Next Surface Handoff"
+  ],
+  "execution_rule": "Surface completion is determined by certified runtime acceptance, not by successful compilation alone."
+}

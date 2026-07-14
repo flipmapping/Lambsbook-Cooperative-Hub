@@ -1,0 +1,45 @@
+{
+  "authority": "IAS-001",
+  "contract": "BUILDER_INPUT_CERTIFICATION",
+  "status": "ACTIVE",
+  "generated_at": "2026-07-13T16:10:02.718657Z",
+  "gate": {
+    "name": "Builder Input Certification Gate",
+    "rule": "No Builder invocation SHALL occur until Builder Input Set status is CERTIFIED."
+  },
+  "required_checks": [
+    {
+      "id": "IAS-001-01",
+      "name": "Originated Artifacts Resolved",
+      "status": "PENDING"
+    },
+    {
+      "id": "IAS-001-02",
+      "name": "Inherited Authorities Resolved",
+      "status": "PENDING"
+    },
+    {
+      "id": "IAS-001-03",
+      "name": "Referenced Repository Artifacts Exist",
+      "status": "PENDING"
+    },
+    {
+      "id": "IAS-001-04",
+      "name": "Derived Artifact Lifecycle Resolved",
+      "status": "PENDING"
+    },
+    {
+      "id": "IAS-001-05",
+      "name": "Claude Instruction Brief Certified",
+      "status": "PENDING"
+    }
+  ],
+  "success_condition": {
+    "builder_input_set": "CERTIFIED",
+    "builder_invocation": "AUTHORIZED"
+  },
+  "failure_condition": {
+    "builder_input_set": "NOT_CERTIFIED",
+    "builder_invocation": "PROHIBITED"
+  }
+}

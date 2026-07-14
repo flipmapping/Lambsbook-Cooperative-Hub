@@ -6,15 +6,15 @@ GE-RMP-004
 
 Repository
 
-Growth Engine
+APP-001
 
 Authority Stream
 
-GE
+—
 
 Production Surface
 
-Prospect Registration & Conversion Workflow
+CTBC Recruitment Experience Enhancement
 
 --------------------------------------------------
 
@@ -30,7 +30,7 @@ Execution SHALL synchronize using the governance artifacts contained within this
 
 Package Generated
 
-2026-07-08 14:33 UTC
+2026-07-14 03:35 UTC
 
 --------------------------------------------------
 

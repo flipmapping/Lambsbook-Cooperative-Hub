@@ -1,0 +1,17 @@
+{
+  "implementation_authority": "LES-001",
+  "builder_version": "1.2",
+  "qualification_role": "Designated Production Consumer",
+  "production_qualification": "BLD-OQ-001",
+  "execution_workflow": [
+    "Repository Truth",
+    "Implementation Authority",
+    "Surface Lease",
+    "Repository Mutation Package",
+    "Generated Workspace",
+    "Verification",
+    "Founder Approval",
+    "Repository Publication"
+  ],
+  "status": "ACTIVE"
+}

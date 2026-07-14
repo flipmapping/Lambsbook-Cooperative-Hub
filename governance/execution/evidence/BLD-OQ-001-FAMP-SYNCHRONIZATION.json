@@ -1,0 +1,11 @@
+{
+  "authority": "EXEC-SYNC-FAMP-001",
+  "implementation_authority": "BLD-OQ-001",
+  "status": "SYNCHRONIZED",
+  "repository_truth_reacquired": false,
+  "mutation_corridor_changed": false,
+  "generated_workspace_required": true,
+  "verification_before_publication": true,
+  "founder_approval_required": true,
+  "production_qualification": "ACTIVE"
+}

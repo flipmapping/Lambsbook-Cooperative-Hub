@@ -1,0 +1,15 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "package": "FDR-010E35A-028",
+  "surface": "SURF-DASH-001",
+  "status": "PENDING",
+  "capture": [
+    "GET /api/member/me response body",
+    "GET /api/member/me response headers",
+    "Dashboard route after login",
+    "Browser console",
+    "Server runtime log"
+  ],
+  "purpose": "Verify whether authenticated identity is published correctly before dashboard routing.",
+  "generated_at": "2026-07-12T08:12:15Z"
+}

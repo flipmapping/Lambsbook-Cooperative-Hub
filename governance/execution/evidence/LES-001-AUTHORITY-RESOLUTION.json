@@ -1,0 +1,19 @@
+{
+  "implementation_authority": "LES-001",
+  "canonical_exists": false,
+  "candidate_artifacts": [
+    "governance/execution/EXEC-DIR-EARQ-002-REPOSITORY-INSPECTION.md",
+    "governance/execution/LES-001-REPOSITORY-TRUTH.md",
+    "governance/execution/LES-001-COMPLETE-SURFACE-MUTATION-PACKAGE.md",
+    "governance/execution/LES-001-FOUNDER-APPROVAL-PACKAGE.md",
+    "governance/execution/LES-001-FOUNDER-DECISION.md",
+    "governance/execution/LES-001-REPOSITORY-PUBLICATION.md",
+    "governance/execution/LES-001-GOVERNANCE-PHASE-CLOSEOUT.md",
+    "execution/packages/LEAP-002/generated/CIB-LEAP-002-JOURNEY-ORIENTED-LANDING-EXPERIENCE.md",
+    "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-CONTEXT.md",
+    "governance/execution/evidence/LES-001-PRODUCTION-QUALIFICATION-ACTIVATION.json",
+    "governance/execution/evidence/LES-001-CIB-MATERIALIZATION-READINESS.json",
+    "governance/execution/evidence/LES-001-UPSTREAM-AUTHORITY-CHAIN.json",
+    "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-BUNDLE.json"
+  ]
+}

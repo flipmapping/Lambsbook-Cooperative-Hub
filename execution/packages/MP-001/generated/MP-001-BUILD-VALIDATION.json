@@ -1,0 +1,52 @@
+{
+  "authority": "MP-001",
+  "status": "BUILD_PASS",
+  "generated_at": "2026-07-14T01:13:57.768367Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "mutation_complete": true,
+  "build_authorized": true,
+  "runtime_validation_authorized": true,
+  "experience_acceptance_authorized": false,
+  "results": [
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "success": true,
+      "stdout_tail": [
+        "../dist/public/assets/ApplicantStatusLookup-D5Ly98Sf.js               2.69 kB \u2502 gzip:   1.17 kB",
+        "../dist/public/assets/ApplicantActivityCenter-DHVpDD3S.js             3.91 kB \u2502 gzip:   1.50 kB",
+        "../dist/public/assets/ApplicantLifecycleTimeline-Bk5JnFsP.js          3.95 kB \u2502 gzip:   1.53 kB",
+        "../dist/public/assets/ApplicantFollowupTaskCenter-BcSy81vH.js         4.45 kB \u2502 gzip:   1.63 kB",
+        "../dist/public/assets/ApplicantDocumentCenter-bPARwp9g.js             4.59 kB \u2502 gzip:   1.57 kB",
+        "../dist/public/assets/ApplicantAppointmentCenter-C8Z-qMQZ.js          5.07 kB \u2502 gzip:   1.60 kB",
+        "../dist/public/assets/ApplicantAdmissionDecisionCenter-C8dfKr8O.js    5.10 kB \u2502 gzip:   1.76 kB",
+        "../dist/public/assets/ProspectRegistration-BtjUfcHY.js                5.52 kB \u2502 gzip:   1.64 kB",
+        "../dist/public/assets/ApplicantJourneyStatus-C0so4dNU.js              5.60 kB \u2502 gzip:   1.72 kB",
+        "../dist/public/assets/ScholarshipsPage-7cVk9t1H.js                    5.86 kB \u2502 gzip:   1.72 kB",
+        "../dist/public/assets/ProgramsManagement-DE6dBRU9.js                 11.01 kB \u2502 gzip:   3.07 kB",
+        "../dist/public/assets/MemberHub-DWwu_5yT.js                          18.95 kB \u2502 gzip:   4.56 kB",
+        "../dist/public/assets/HubAdminDashboard-YhlGfoMm.js                  30.04 kB \u2502 gzip:   6.85 kB",
+        "../dist/public/assets/ProspectDetailWorkspace-CeHwt559.js            41.46 kB \u2502 gzip:   8.53 kB",
+        "../dist/public/assets/Dashboard-CT9upXrw.js                          59.30 kB \u2502 gzip:  12.16 kB",
+        "../dist/public/assets/PartnerOnboarding-BjtodFnZ.js                  89.30 kB \u2502 gzip:  24.97 kB",
+        "../dist/public/assets/TranscriptSubmission-BrqIpY_T.js              170.68 kB \u2502 gzip:  51.34 kB",
+        "../dist/public/assets/index-DHUKkAAn.js                             915.30 kB \u2502 gzip: 269.21 kB",
+        "\u2713 built in 7.75s",
+        "BUILDING BACKEND..."
+      ],
+      "stderr_tail": [
+        "",
+        "A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.",
+        "",
+        "(!) Some chunks are larger than 500 kB after minification. Consider:",
+        "- Using dynamic import() to code-split the application",
+        "- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks",
+        "- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.",
+        "",
+        "  dist/index.js  230.3kb",
+        "",
+        "\u26a1 Done in 32ms"
+      ]
+    }
+  ]
+}

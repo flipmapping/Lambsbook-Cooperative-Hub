@@ -1,0 +1,159 @@
+{
+  "authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "generated_at": "2026-07-14T00:43:43Z",
+  "matches": [
+    {
+      "pattern": "member",
+      "line": 74
+    },
+    {
+      "pattern": "member",
+      "line": 81
+    },
+    {
+      "pattern": "member",
+      "line": 95
+    },
+    {
+      "pattern": "member",
+      "line": 123
+    },
+    {
+      "pattern": "member",
+      "line": 159
+    },
+    {
+      "pattern": "member",
+      "line": 168
+    },
+    {
+      "pattern": "member",
+      "line": 176
+    },
+    {
+      "pattern": "member",
+      "line": 362
+    },
+    {
+      "pattern": "member",
+      "line": 387
+    },
+    {
+      "pattern": "member",
+      "line": 404
+    },
+    {
+      "pattern": "member",
+      "line": 452
+    },
+    {
+      "pattern": "member",
+      "line": 491
+    },
+    {
+      "pattern": "member",
+      "line": 513
+    },
+    {
+      "pattern": "if (",
+      "line": 65
+    },
+    {
+      "pattern": "if (",
+      "line": 69
+    },
+    {
+      "pattern": "if (",
+      "line": 78
+    },
+    {
+      "pattern": "if (",
+      "line": 79
+    },
+    {
+      "pattern": "if (",
+      "line": 86
+    },
+    {
+      "pattern": "if (",
+      "line": 87
+    },
+    {
+      "pattern": "if (",
+      "line": 94
+    },
+    {
+      "pattern": "if (",
+      "line": 103
+    },
+    {
+      "pattern": "if (",
+      "line": 110
+    },
+    {
+      "pattern": "if (",
+      "line": 112
+    },
+    {
+      "pattern": "if (",
+      "line": 118
+    },
+    {
+      "pattern": "if (",
+      "line": 127
+    },
+    {
+      "pattern": "if (",
+      "line": 140
+    },
+    {
+      "pattern": "if (",
+      "line": 253
+    },
+    {
+      "pattern": "if (",
+      "line": 295
+    },
+    {
+      "pattern": "if (",
+      "line": 334
+    },
+    {
+      "pattern": "if (",
+      "line": 365
+    },
+    {
+      "pattern": "if (",
+      "line": 369
+    },
+    {
+      "pattern": "if (",
+      "line": 373
+    },
+    {
+      "pattern": "if (",
+      "line": 400
+    },
+    {
+      "pattern": "if (",
+      "line": 404
+    },
+    {
+      "pattern": "return <",
+      "line": 366
+    },
+    {
+      "pattern": "return <",
+      "line": 370
+    },
+    {
+      "pattern": "return <",
+      "line": 401
+    },
+    {
+      "pattern": "return <",
+      "line": 405
+    }
+  ]
+}

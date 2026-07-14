@@ -1,0 +1,37 @@
+{
+  "implementation_authority": "FDR-010E35B-WP001A",
+  "parent_authority": "FDR-010E35B-WP001",
+  "title": "Runtime Identity Type Contract",
+  "status": "AUTHORIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "execution_protocol": "EOS-EXEC-016",
+  "bounded_scope": {
+    "surface": [
+      "client/src/lib/auth/PostAuthenticationContinuation.ts"
+    ],
+    "objective": "Introduce the canonical AuthenticatedIdentity type and extend RuntimeState with an optional identity field. Preserve all existing runtime behaviour."
+  },
+  "canonical_identity_examples": [
+    "founder",
+    "platform_admin",
+    "sbu_admin",
+    "member",
+    "anonymous"
+  ],
+  "explicit_non_goals": [
+    "No identity resolution.",
+    "No routing changes.",
+    "No navigation changes.",
+    "No authentication changes.",
+    "No authorization changes.",
+    "No API additions.",
+    "No database changes.",
+    "No RLS changes."
+  ],
+  "success_criteria": [
+    "RuntimeState compiles with the new optional identity field.",
+    "ContinuationOutcome remains unchanged.",
+    "No observable runtime behaviour changes."
+  ],
+  "generated_at": "2026-07-14T04:10:56Z"
+}

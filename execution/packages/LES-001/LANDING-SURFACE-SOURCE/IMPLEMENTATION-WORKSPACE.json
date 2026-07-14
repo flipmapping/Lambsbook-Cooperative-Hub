@@ -1,0 +1,24 @@
+{
+  "authority": "FDR-010E34B",
+  "implementation_authority": "LES-001",
+  "surface": "LANDING-EXPERIENCE",
+  "workspace_state": "ACTIVE_IMPLEMENTATION",
+  "publication_state": "UNPUBLISHED",
+  "materialization_complete": true,
+  "verification_complete": false,
+  "founder_approval": false,
+  "publication_complete": false,
+  "generated": "2026-07-12T08:41:08.576926Z",
+  "implementation_root": "execution/packages/LES-001/generated",
+  "publication_target": "web/src/growth",
+  "next_product_deliverables": [
+    "LandingVariantA.tsx",
+    "LandingVariantB.tsx",
+    "LandingExperience.tsx",
+    "SharedSections",
+    "ABVariantSelection",
+    "Updated LandingPage.tsx",
+    "Build Validation",
+    "Runtime Validation"
+  ]
+}

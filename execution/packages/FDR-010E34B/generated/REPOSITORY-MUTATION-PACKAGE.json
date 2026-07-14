@@ -1,0 +1,53 @@
+{
+  "implementation_authority": "FDR-010E34B",
+  "implementation": "FAMP-001",
+  "surface": "Execution Surface Registry",
+  "status": "GENERATED",
+  "repository_mutation_authorized": false,
+  "publication_authorized": false,
+  "generated_at": "2026-07-12T15:25:51.633375Z",
+  "mutation_corridor": [
+    "execution/registry/surfaces/"
+  ],
+  "planned_artifacts": [
+    "SURFACE-REGISTRY.json",
+    "LEASE-REGISTRY.json",
+    "SURFACE-CATALOG.json",
+    "SURFACE-DEPENDENCIES.json"
+  ],
+  "builder_dependency": {
+    "runtime": "Builder v1.2 (consume only)",
+    "mutation_required": false
+  },
+  "next_phase": "Verification",
+  "repository": "APP-001",
+  "artifact_manifest": [
+    {
+      "generated_name": "SURFACE-REGISTRY.json",
+      "target": "execution/registry/surfaces/SURFACE-REGISTRY.json"
+    },
+    {
+      "generated_name": "LEASE-REGISTRY.json",
+      "target": "execution/registry/surfaces/LEASE-REGISTRY.json"
+    },
+    {
+      "generated_name": "SURFACE-CATALOG.json",
+      "target": "execution/registry/surfaces/SURFACE-CATALOG.json"
+    },
+    {
+      "generated_name": "SURFACE-DEPENDENCIES.json",
+      "target": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json"
+    }
+  ],
+  "verification": {
+    "semantic_verification": false,
+    "structural_verification": false,
+    "founder_validation": false,
+    "publication_authorized": false
+  },
+  "publication_gate": {
+    "status": "BLOCKED",
+    "reason": "Verification incomplete"
+  },
+  "updated_at": "2026-07-12T15:30:39.824091Z"
+}

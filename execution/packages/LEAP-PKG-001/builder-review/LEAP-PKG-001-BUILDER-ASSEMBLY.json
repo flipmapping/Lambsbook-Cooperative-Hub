@@ -1,0 +1,49 @@
+{
+  "package_id": "LEAP-PKG-001",
+  "status": "READY_FOR_BUILDER_PACKAGE_ASSEMBLY",
+  "assembled_at": "2026-07-13T14:10:19.983879Z",
+  "inputs": {
+    "repository_truth": [
+      {
+        "path": "sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md",
+        "exists": true
+      }
+    ],
+    "builder_contract": [
+      {
+        "path": "builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+        "exists": true
+      },
+      {
+        "path": "builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+        "exists": true
+      }
+    ],
+    "builder_entrypoint": [
+      {
+        "path": "builders/build_claude_package.py",
+        "exists": true
+      }
+    ],
+    "les001_package_contract": [
+      {
+        "path": "packages/generated/LES-001/CLAUDE-IMPLEMENTATION-PROMPT.md",
+        "exists": true
+      },
+      {
+        "path": "packages/generated/LES-001/REPOSITORY-MUTATION-PACKAGE.json",
+        "exists": true
+      },
+      {
+        "path": "packages/generated/LES-001/LANDING-PAGE-IMPLEMENTATION-PACKAGE.json",
+        "exists": true
+      }
+    ],
+    "leap002_cib": [
+      {
+        "path": "packages/LEAP-002/generated/CIB-LEAP-002-JOURNEY-ORIENTED-LANDING-EXPERIENCE.md",
+        "exists": true
+      }
+    ]
+  }
+}

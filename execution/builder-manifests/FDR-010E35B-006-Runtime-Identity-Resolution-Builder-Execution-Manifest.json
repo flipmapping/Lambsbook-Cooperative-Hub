@@ -1,0 +1,40 @@
+{
+  "implementation_authority": "FDR-010E35B-006",
+  "title": "Runtime Identity Resolution Builder Execution Manifest",
+  "status": "READY_FOR_IMPLEMENTATION_ENGINE",
+  "entry_points": [
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx"
+  ],
+  "execution_pipeline": [
+    "HubAuth / HubAuthCallback",
+    "PostAuthenticationContinuation",
+    "Runtime Identity Resolution (new capability)",
+    "RuntimeState publication",
+    "NavigationConsumptionAuthority",
+    "RuntimeNavigationPolicy"
+  ],
+  "mutation_surfaces": [
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts"
+  ],
+  "read_only_surfaces": [
+    "Authentication implementation",
+    "Authorization middleware",
+    "JWT/session handling",
+    "Database schema",
+    "RLS policies",
+    "Application routing topology"
+  ],
+  "acceptance_gate": [
+    "Runtime identity resolved before RuntimeState publication.",
+    "Identity independent from ContinuationOutcome.",
+    "Navigation remains a RuntimeState consumer.",
+    "Founder, Platform Admin, SBU Admin, Member and existing journeys validate.",
+    "Repository truth preserved.",
+    "Build passes.",
+    "Runtime validation passes."
+  ],
+  "generated_at": "2026-07-14T03:17:38Z"
+}

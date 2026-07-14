@@ -1,0 +1,23 @@
+{
+  "directive": "EXEC-SYNC-001",
+  "version": "EOS Constitutional Baseline v2.0",
+  "status": "SYNCHRONIZED",
+  "implementation_authority": "FDR-010E35A",
+  "active_surface": "SURF-AUTH-001",
+  "repository_truth": "PRESERVED",
+  "builder_readiness": "PRESERVED",
+  "repository_bootstrap": "NOT REPEATED",
+  "runtime_blocker": "RTB-ADM-001",
+  "next_phase": "Founder Runtime Request Inspection",
+  "delta_adopted": [
+    "Constitutional Baseline Versioning",
+    "Baseline Synchronization Protocol",
+    "Execution Continuation Rule",
+    "Preservation Rule",
+    "Authority Specification Layer",
+    "Execution Input Authority Service (IAS)",
+    "Experience Acceptance Authority (EAA)",
+    "Content Materialization Authority (CMA)"
+  ],
+  "synchronized_at": "2026-07-13T23:22:15Z"
+}

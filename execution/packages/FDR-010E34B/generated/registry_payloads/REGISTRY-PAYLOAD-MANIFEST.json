@@ -1,0 +1,23 @@
+{
+  "authority": "FDR-010E34B",
+  "implementation": "FAMP-001",
+  "generated_at": "2026-07-13T14:40:57.951122Z",
+  "payloads": [
+    {
+      "file": "SURFACE-REGISTRY.json",
+      "generated": "execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-REGISTRY.json"
+    },
+    {
+      "file": "LEASE-REGISTRY.json",
+      "generated": "execution/packages/FDR-010E34B/generated/registry_payloads/LEASE-REGISTRY.json"
+    },
+    {
+      "file": "SURFACE-CATALOG.json",
+      "generated": "execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-CATALOG.json"
+    },
+    {
+      "file": "SURFACE-DEPENDENCIES.json",
+      "generated": "execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-DEPENDENCIES.json"
+    }
+  ]
+}

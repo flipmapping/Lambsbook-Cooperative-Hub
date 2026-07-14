@@ -1,0 +1,34 @@
+{
+  "implementation_authority": "FDR-010E35B-004",
+  "title": "Runtime Identity Resolution Execution Contract",
+  "status": "READY_FOR_EXECUTION_ENGINE",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "input_artifacts": [
+    "FDR-010E35B-002-Runtime-Identity-Resolution-Implementation-Package.json",
+    "FDR-010E35B-003-Runtime-Identity-Resolution-Builder-Package.json"
+  ],
+  "execution_objective": "Implement Runtime Identity Resolution between authentication continuation and navigation without altering authentication, authorization, invitation semantics, routing topology, or database schema.",
+  "required_deliverables": [
+    "Updated RuntimeState model",
+    "Runtime Identity Resolution capability",
+    "Updated continuation pipeline",
+    "Updated navigation consumption",
+    "Repository evidence",
+    "Build validation",
+    "Runtime validation"
+  ],
+  "implementation_constraints": [
+    "Implementation mechanism is repository-driven.",
+    "Do not assume any specific transport or endpoint.",
+    "Navigation must remain a consumer of RuntimeState.",
+    "Authentication remains unchanged.",
+    "Authorization remains unchanged."
+  ],
+  "acceptance_gate": {
+    "build": "Pass",
+    "runtime": "Pass",
+    "repository_truth": "Preserved",
+    "mutation_boundary": "Respected"
+  },
+  "generated_at": "2026-07-14T03:12:17Z"
+}

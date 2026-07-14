@@ -1,0 +1,9 @@
+{
+  "authority": "BOQ-001",
+  "builder_version": "1.2",
+  "status": "CERTIFIED",
+  "repository_truth_reacquired": false,
+  "maintenance_baseline": true,
+  "builder_v13_required_for_new_capabilities": true,
+  "canonical_package_generator": true
+}

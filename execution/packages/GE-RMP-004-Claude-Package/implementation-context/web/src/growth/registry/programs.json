@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "items": [
+    {
+      "id": "education",
+      "title": "SBU Education",
+      "path": "/hub/sbu/education"
+    },
+    {
+      "id": "lambsbook",
+      "title": "Lambsbook Tutoring",
+      "path": "/hub/sbu/education/lambsbook-tutoring"
+    },
+    {
+      "id": "tropicana",
+      "title": "Tropicana Program",
+      "path": "/hub/programs/tropicana"
+    },
+    {
+      "id": "farmstay",
+      "title": "Farmstay Vision",
+      "path": "/hub/vision/farmstay"
+    }
+  ]
+}

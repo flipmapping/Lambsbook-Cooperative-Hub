@@ -1,0 +1,9 @@
+{
+  "builder_surface": "execution/builders",
+  "candidates": [
+    {
+      "path": "execution/builders/build_claude_package.py",
+      "score": 8
+    }
+  ]
+}

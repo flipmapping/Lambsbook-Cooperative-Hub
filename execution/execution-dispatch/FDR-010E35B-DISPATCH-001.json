@@ -1,0 +1,32 @@
+{
+  "implementation_authority": "FDR-010E35B-DISPATCH-001",
+  "status": "IMPLEMENTATION_AUTHORIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "execution_protocol": "EOS-EXEC-016",
+  "planning_status": "FROZEN",
+  "planning_reference": "FDR-010E35B Canonical Implementation Index",
+  "implementation_engine": [
+    "Claude",
+    "Replit AI"
+  ],
+  "authorized_work_package": "FDR-010E35B-WP001A",
+  "implementation_scope": {
+    "mutate_only": [
+      "client/src/lib/auth/PostAuthenticationContinuation.ts"
+    ],
+    "read_only": [
+      "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "client/src/lib/auth/NavigationConsumptionAuthority.ts"
+    ]
+  },
+  "required_outputs": [
+    "Repository mutation summary",
+    "Changed file list",
+    "Unified diff",
+    "Build validation",
+    "Repository evidence",
+    "Runtime evidence"
+  ],
+  "stop_condition": "Stop immediately after WP001A completes successfully. Do not begin WP002 without a new execution authorization.",
+  "generated_at": "2026-07-14T05:02:43Z"
+}

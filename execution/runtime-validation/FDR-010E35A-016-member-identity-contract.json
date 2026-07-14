@@ -1,0 +1,632 @@
+{
+  "authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "generated_at": "2026-07-14T01:08:44Z",
+  "matches": [
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 922
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 930
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1587
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1600
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1698
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1708
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1709
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1714
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1814
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1815
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1817
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1818
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1820
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "role",
+      "line": 1821
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "return res.json",
+      "line": 1516
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "return res.json",
+      "line": 1553
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "return res.json",
+      "line": 1625
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "return res.json",
+      "line": 1631
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 63
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 79
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 92
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 164
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 173
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 185
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 210
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 219
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 231
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 256
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 278
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 291
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 304
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 330
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 340
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 350
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 360
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 395
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 405
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 415
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 449
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 459
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 475
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 485
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 518
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 528
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 538
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 568
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 590
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 615
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 640
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 652
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 664
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 676
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 686
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 698
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 710
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 720
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 736
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 820
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 849
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 860
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 867
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 882
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 897
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 912
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 932
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 949
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 960
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 975
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 993
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1012
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1023
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1037
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1065
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1081
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1132
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1147
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1158
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1169
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1260
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1279
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1297
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1329
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1360
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1383
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1516
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1553
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1582
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1595
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1625
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1631
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1643
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1655
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1667
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1688
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1740
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1752
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1770
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1790
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1806
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1818
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1837
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1855
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1877
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1897
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1920
+    },
+    {
+      "file": "server/routes.ts",
+      "pattern": "res.json",
+      "line": 1961
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "/api/member/me",
+      "line": 27
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "router.get(\"/me\"",
+      "line": 29
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "role",
+      "line": 59
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "is_super_admin",
+      "line": 61
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "sbu_id",
+      "line": 60
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 51
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 126
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 460
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 504
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 552
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 589
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "return res.json",
+      "line": 595
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 51
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 126
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 460
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 504
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 552
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 589
+    },
+    {
+      "file": "server/routes/member.ts",
+      "pattern": "res.json",
+      "line": 595
+    }
+  ]
+}

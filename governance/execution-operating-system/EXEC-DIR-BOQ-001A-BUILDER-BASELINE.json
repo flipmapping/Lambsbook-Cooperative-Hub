@@ -1,0 +1,17 @@
+{
+  "authority": "EXEC-DIR-BOQ-001A",
+  "title": "Builder v1.2 Certified Execution Baseline",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T11:33:18Z",
+  "repository": "APP-001",
+  "principles": [
+    "Builder v1.2 is certified execution infrastructure.",
+    "Builder investigations are prohibited unless package integrity, compatibility, correctness, or security is the proven blocker.",
+    "Implementation authorities shall begin execution from Repository Truth, not Builder qualification.",
+    "New Builder capabilities require Builder v1.3 authorities."
+  ],
+  "current_product_priority": [
+    "SURF-AUTH-001",
+    "SURF-DASH-001"
+  ]
+}

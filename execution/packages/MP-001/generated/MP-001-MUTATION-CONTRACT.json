@@ -1,0 +1,35 @@
+{
+  "authority": "MP-001",
+  "status": "RECOVERED_FROM_UPSTREAM_AUTHORITY",
+  "generated_at": "2026-07-14T00:35:42.319608Z",
+  "source_authority": "IC-002B",
+  "source_artifact": "IC-002B-FOUNDER-APPROVAL-PACKAGE.json",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "mutation_scope": [
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  ],
+  "approved_routing_table": {
+    "member": {
+      "proposed_route": "/hub/dashboard",
+      "reason": "Canonical authenticated cooperative dashboard."
+    },
+    "pending_invitation": {
+      "proposed_route": "/hub/accept-invitation",
+      "reason": "Dedicated invitation acceptance flow exists."
+    },
+    "non_member": {
+      "proposed_route": "/hub/signup",
+      "reason": "Canonical membership registration entry."
+    },
+    "anonymous": {
+      "proposed_route": "/",
+      "reason": "Public landing experience."
+    }
+  },
+  "preconditions": [
+    "Founder Approval recorded",
+    "Surface Lease ACTIVE",
+    "Single-file mutation only",
+    "Build/Runtime/EAA remain closed until mutation evidence exists"
+  ]
+}

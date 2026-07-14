@@ -1,0 +1,61 @@
+{
+  "implementation_authority": "LES-001",
+  "builder_version": "1.2",
+  "execution_model": "FAMP",
+  "repository": "APP-001",
+  "surface": "Landing Experience A/B",
+  "mutation_type": "Complete Surface Mutation",
+  "generated_workspace": "execution/packages/LES-001/generated/",
+  "publication": "Deferred until Founder Approval",
+  "capabilities": [
+    {
+      "capability": "Landing Pages",
+      "category": "Pages",
+      "count": 3,
+      "status": "IMPLEMENTED",
+      "recommendation": "Validate during Builder production qualification."
+    },
+    {
+      "capability": "Landing Components",
+      "category": "Components",
+      "count": 43,
+      "status": "IMPLEMENTED",
+      "recommendation": "Validate during Builder production qualification."
+    },
+    {
+      "capability": "Landing Content",
+      "category": "Content",
+      "count": 28,
+      "status": "IMPLEMENTED",
+      "recommendation": "Validate during Builder production qualification."
+    },
+    {
+      "capability": "Landing Assets",
+      "category": "Assets",
+      "count": 0,
+      "status": "GAP",
+      "recommendation": "Complete before Founder Surface Acceptance."
+    },
+    {
+      "capability": "Landing Styling",
+      "category": "Styles",
+      "count": 0,
+      "status": "GAP",
+      "recommendation": "Complete before Founder Surface Acceptance."
+    }
+  ],
+  "remaining_repository_gaps": [
+    "Landing Assets",
+    "Landing Styling"
+  ],
+  "famp_pipeline": [
+    "Repository Truth",
+    "Surface Inventory",
+    "Surface Gap Analysis",
+    "Complete Surface Mutation Package",
+    "Generated Workspace",
+    "Verification",
+    "Founder Approval",
+    "Repository Publication"
+  ]
+}

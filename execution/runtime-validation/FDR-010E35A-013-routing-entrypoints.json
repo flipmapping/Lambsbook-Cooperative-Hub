@@ -1,0 +1,50 @@
+{
+  "authority": "FDR-010E35A",
+  "generated_at": "2026-07-14T00:36:29Z",
+  "results": [
+    {
+      "file": "client/src/App.tsx",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "term": "HubDashboard"
+    },
+    {
+      "file": "client/src/lib/lambsbookTutoringContent.ts",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "client/src/pages/AdminGovernance.tsx",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "client/src/pages/HubDashboard.tsx",
+      "term": "HubDashboard"
+    },
+    {
+      "file": "client/src/pages/LambsbookTutoring.tsx",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "client/src/pages/MemberHub.tsx",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "client/src/pages/HubAdminDashboard.tsx",
+      "term": "HubAdminDashboard"
+    },
+    {
+      "file": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "term": "/hub/dashboard"
+    },
+    {
+      "file": "src/App.tsx",
+      "term": "<Route"
+    }
+  ]
+}

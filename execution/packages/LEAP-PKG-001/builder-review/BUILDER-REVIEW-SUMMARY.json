@@ -1,0 +1,12 @@
+{
+  "status": "READY_FOR_BUILDER_REVIEW",
+  "artifact_count": 6,
+  "artifacts": [
+    "LEAP-PKG-001-ASSEMBLY-MANIFEST.json",
+    "LEAP-PKG-001-BUILDER-ASSEMBLY.json",
+    "LEAP-PKG-001-BUILDER-EXECUTION.log",
+    "LEAP-PKG-001-REPOSITORY-BLOCKER.json",
+    "LEAP-PKG-001-CONTRACT-EVIDENCE.md",
+    "LEAP-PKG-001-CONTRACT-DIVERGENCE.json"
+  ]
+}

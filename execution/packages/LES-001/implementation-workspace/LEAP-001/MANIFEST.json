@@ -1,0 +1,358 @@
+{
+  "authority": "FDR-010E34B",
+  "implementation_authority": "LEAP-001",
+  "generated": "2026-07-12T15:22:41.230433Z",
+  "root": "execution/packages/LES-001/implementation-workspace",
+  "files": [
+    {
+      "path": "IMPLEMENTATION-WORKSPACE.json",
+      "sha256": "61433b2753d74f78de737ffdf5b6f68f6f6290df3d5b865ca838fe513e4abe35",
+      "size": 726
+    },
+    {
+      "path": "PUBLICATION-CANDIDATE.json",
+      "sha256": "23e4872375cb74795cdd7108f0d8da5a7bb06f4ec01f64d455b9cca2611aa545",
+      "size": 2542
+    },
+    {
+      "path": "components/ABVariantSelector.tsx",
+      "sha256": "1d16a6f35ef5d228f525e0927fc4a84f1cf70c10250a5a4a368260fd20733339",
+      "size": 155
+    },
+    {
+      "path": "components/GrowthProvider.tsx",
+      "sha256": "bfcad3f18db0aabd5048ea0c962e22b0251729ac563bdabee3cc5e476cea97d4",
+      "size": 960
+    },
+    {
+      "path": "components/Hero/Hero.tsx",
+      "sha256": "d26d7e964f7487f755048476126ff99951e1aa07e7f1da5f751d1724c1441e8b",
+      "size": 555
+    },
+    {
+      "path": "components/Hero/HeroContent.tsx",
+      "sha256": "05479d00150e79d461a4d659a51b285ad801ed3ec41b4daaeae69a11cc44040d",
+      "size": 743
+    },
+    {
+      "path": "components/Hero/index.ts",
+      "sha256": "896863a2c830ae6f6fee9862802ec6ec51a949ad15fc5063c8e4d5ef9a89a8db",
+      "size": 55
+    },
+    {
+      "path": "components/Layout/GrowthLayout.tsx",
+      "sha256": "63693f39124bccf5ab080d80044bfaf9ce51c27f5babbab50645549f57c08966",
+      "size": 553
+    },
+    {
+      "path": "components/Layout/index.ts",
+      "sha256": "c5e959abaee62341af763a55c68309614326d7304f2c5ee4ad29050d0cd32701",
+      "size": 32
+    },
+    {
+      "path": "components/Navigation/Navigation.tsx",
+      "sha256": "c91d6b3e8e6c32aefc859aa3b3607448330ad0a6690fe714942221c074ad7965",
+      "size": 658
+    },
+    {
+      "path": "components/Navigation/NavigationItem.tsx",
+      "sha256": "396366babbb82a4ed4bf9473141350425bb68e430dc9be1119b3849fa47aa888",
+      "size": 284
+    },
+    {
+      "path": "components/Navigation/index.ts",
+      "sha256": "d927a2695d627de3534f6417c439e27dafe0aff4ff0fb7bed9cd6e2faeb6d356",
+      "size": 64
+    },
+    {
+      "path": "components/Sections/AdmissionsSection.tsx",
+      "sha256": "e827adeb314664aa986517d46c12bc008d93db1a8c370cdd45797ccaade0ff1e",
+      "size": 1284
+    },
+    {
+      "path": "components/Sections/CallToActionSection.tsx",
+      "sha256": "7c841fdd643ac8749f796c70f3f8c156634a800dd015f7d2cc05134ce3fa1d72",
+      "size": 117
+    },
+    {
+      "path": "components/Sections/CooperativePrinciplesSection.tsx",
+      "sha256": "b39a758602b09778d19f7b495cb3f0f21c734212f637810e0daa36fd5a5bcde2",
+      "size": 134
+    },
+    {
+      "path": "components/Sections/FAQSection.tsx",
+      "sha256": "477d9123cc8e58abaa8d24d3e9f86d74400eeb828929c23652ed1e05f80075cc",
+      "size": 786
+    },
+    {
+      "path": "components/Sections/JourneyDiscoverySection.tsx",
+      "sha256": "d65ffd0f613eba9f9b1353cf8f4e1de795aabf4f633113c6dd02300570b33c81",
+      "size": 124
+    },
+    {
+      "path": "components/Sections/MembershipSection.tsx",
+      "sha256": "78598fd9455e0e961c313612f5cb476862bd47283c5534bc7962266c901a059f",
+      "size": 111
+    },
+    {
+      "path": "components/Sections/ProgramsSection.tsx",
+      "sha256": "c4e73da764dcf43201f0335fe23ddc333bcac02bae5dee55d987e759e42962a7",
+      "size": 786
+    },
+    {
+      "path": "components/Sections/ScholarshipsSection.tsx",
+      "sha256": "6864e0b2de4aebd6d3ed3b9a2a73c1432a1a4114e125ac61d1f7c519eb39bab3",
+      "size": 1294
+    },
+    {
+      "path": "components/Sections/index.ts",
+      "sha256": "7181630a389d6207398ad66a2effb50c24ce38a4b4608da12c4ee80f821608f2",
+      "size": 141
+    },
+    {
+      "path": "content/en/admissions.json",
+      "sha256": "9cb603634598afee06a48338b697606a11c194a28294112315d1ae93661b9f28",
+      "size": 5712
+    },
+    {
+      "path": "content/en/faq.json",
+      "sha256": "fcc1a3f07ec81b2425f4fdcf1b3785e782a747a410599d374a86d860b7aa5a62",
+      "size": 59
+    },
+    {
+      "path": "content/en/footer.json",
+      "sha256": "fcc1a3f07ec81b2425f4fdcf1b3785e782a747a410599d374a86d860b7aa5a62",
+      "size": 59
+    },
+    {
+      "path": "content/en/home.json",
+      "sha256": "d7f852be565f6bdfbca931e3a5b7e66e34a88627b4e734830d15f3e969881b1f",
+      "size": 351
+    },
+    {
+      "path": "content/en/navigation.json",
+      "sha256": "fcc1a3f07ec81b2425f4fdcf1b3785e782a747a410599d374a86d860b7aa5a62",
+      "size": 59
+    },
+    {
+      "path": "content/en/programs.json",
+      "sha256": "ef12ff9e3df15502793e90ab5d11581eb32e3fb9df5c1bcb64a6d04be2b049aa",
+      "size": 1606
+    },
+    {
+      "path": "content/en/scholarships.json",
+      "sha256": "9cd75cfe0a38f98f96f06b42476fe6a85d7ee4f834fd8fd353c8aec40fd83d6b",
+      "size": 1033
+    },
+    {
+      "path": "content/vi/admissions.json",
+      "sha256": "8d710476002c73c006cd5bd5d36775196def7a5782de03bc8ccc3cfe6539b478",
+      "size": 6571
+    },
+    {
+      "path": "content/vi/faq.json",
+      "sha256": "a654281023b1ce8b4bab397f9f2e9198b5a2760ddbf953b215e122a3f747d56c",
+      "size": 59
+    },
+    {
+      "path": "content/vi/footer.json",
+      "sha256": "a654281023b1ce8b4bab397f9f2e9198b5a2760ddbf953b215e122a3f747d56c",
+      "size": 59
+    },
+    {
+      "path": "content/vi/home.json",
+      "sha256": "36dc644ae26a7b4a0dcebf1a3913d486628db53698402309b3902a3aa9d3ab7f",
+      "size": 407
+    },
+    {
+      "path": "content/vi/navigation.json",
+      "sha256": "a654281023b1ce8b4bab397f9f2e9198b5a2760ddbf953b215e122a3f747d56c",
+      "size": 59
+    },
+    {
+      "path": "content/vi/programs.json",
+      "sha256": "47e611e76872907288e07d47383650b6601475cc169f44e717ed0c6b7dbd784c",
+      "size": 1787
+    },
+    {
+      "path": "content/vi/scholarships.json",
+      "sha256": "97847db6c8e78453bde68def43137700804152d81013cbabdcee8f93e9da91ba",
+      "size": 1119
+    },
+    {
+      "path": "content/zh/admissions.json",
+      "sha256": "5acd8209c10cf4e3137421f5dd1cc1388e476da4ab7f5190bb36a77a5bc7164a",
+      "size": 4891
+    },
+    {
+      "path": "content/zh/faq.json",
+      "sha256": "fd34c89cd9c28f7c6abf35e6d858a226bd8ae69a283402bab231f746eed2bbb5",
+      "size": 59
+    },
+    {
+      "path": "content/zh/footer.json",
+      "sha256": "fd34c89cd9c28f7c6abf35e6d858a226bd8ae69a283402bab231f746eed2bbb5",
+      "size": 59
+    },
+    {
+      "path": "content/zh/home.json",
+      "sha256": "521a31b1922de0dd0ff49b38ec52f83edb446aaeaa699d56b9f00a8d4491c86a",
+      "size": 323
+    },
+    {
+      "path": "content/zh/navigation.json",
+      "sha256": "fd34c89cd9c28f7c6abf35e6d858a226bd8ae69a283402bab231f746eed2bbb5",
+      "size": 59
+    },
+    {
+      "path": "content/zh/programs.json",
+      "sha256": "19983ca72e523ae6c29bcd59dd0cb8a3f580502b28ed335d0a7eb2c5f3fb40b3",
+      "size": 1404
+    },
+    {
+      "path": "content/zh/scholarships.json",
+      "sha256": "964ec8d6c70ef0fdb109ee905bcfe750f9a62281d35bdd7d327d295c22897e53",
+      "size": 959
+    },
+    {
+      "path": "hooks/useContent.ts",
+      "sha256": "b1aaf1eedf7bc2220c957497fa5095b0bbc41d824a2eeced876f87430f01faac",
+      "size": 475
+    },
+    {
+      "path": "hooks/useLocale.ts",
+      "sha256": "dbb305d7084bf08c387a94d4bdd7cd895daa33a563b7e1b6a0b1dd9b49e6e572",
+      "size": 129
+    },
+    {
+      "path": "hooks/useRegistry.ts",
+      "sha256": "ed3590c1ff53ad969113363fe68d25cba7905d0b2feff48c3ba86cd381c13517",
+      "size": 350
+    },
+    {
+      "path": "index.ts",
+      "sha256": "636bde770173cd2e1ad94705927b413b40d4bd77d0994dcef369105d8b4f8d29",
+      "size": 763
+    },
+    {
+      "path": "pages/Landing/LandingExperience.tsx",
+      "sha256": "aa6b8f937a6a4d97d541f997df071d6dc5d3a0bae519e19ee4d00b4b92582bd3",
+      "size": 56
+    },
+    {
+      "path": "pages/Landing/LandingPage.tsx",
+      "sha256": "53f2e240c45f3a6f84c16efa646ee8f87c1db8e4a2ca8493c73259fc132f6ae4",
+      "size": 293
+    },
+    {
+      "path": "pages/Landing/LandingSections.tsx",
+      "sha256": "b5fa098b9ae11ff7ed3c28761a59d572dbc6bc0ccc9f8ba364f4644efd10b1d0",
+      "size": 798
+    },
+    {
+      "path": "pages/Landing/LandingVariantA.tsx",
+      "sha256": "4ace140080bb85a9eeb23b5202b03ab44969be8b60b4a16848f58c2f7687d089",
+      "size": 92
+    },
+    {
+      "path": "pages/Landing/LandingVariantB.tsx",
+      "sha256": "4fc171f387efa27d42e2486df9acb5e8c3471669fda59835937750ccb94ec604",
+      "size": 92
+    },
+    {
+      "path": "pages/Landing/index.ts",
+      "sha256": "471411a910ef8787ed91fe7f78c6a4fd66ebec460b7dcb8c12fbaf63aa4ef851",
+      "size": 31
+    },
+    {
+      "path": "registry/admissions.json",
+      "sha256": "f50e42452709a5b3339586d4a75c697cc98347c4f6105571b9c5f93fa3f352f4",
+      "size": 434
+    },
+    {
+      "path": "registry/assets.json",
+      "sha256": "caeb63a3c2d5dac4c4e0bd86b91b63fee2f41714befe5550b278dfe642c05ae9",
+      "size": 38
+    },
+    {
+      "path": "registry/faq.json",
+      "sha256": "caeb63a3c2d5dac4c4e0bd86b91b63fee2f41714befe5550b278dfe642c05ae9",
+      "size": 38
+    },
+    {
+      "path": "registry/journey.json",
+      "sha256": "bd54ec1aa9c3a08952e13e302a9648983c696fb8835fc25e1bceeeecea04029b",
+      "size": 615
+    },
+    {
+      "path": "registry/navigation.json",
+      "sha256": "caeb63a3c2d5dac4c4e0bd86b91b63fee2f41714befe5550b278dfe642c05ae9",
+      "size": 38
+    },
+    {
+      "path": "registry/programs.json",
+      "sha256": "d084f01f3a07e1609cac9d50af850c5b784b67f2334b77b437635fb058c7ecc2",
+      "size": 496
+    },
+    {
+      "path": "registry/scholarships.json",
+      "sha256": "c3b942d7f73175452b33b357c4b44d3adfb3c2cf480d3f88f3d45c5af3c97d45",
+      "size": 343
+    },
+    {
+      "path": "runtime/bootstrap.ts",
+      "sha256": "7a93e0ad36401944d8f318f14df5d90bd5989e912025d142a2f1c72da90237a7",
+      "size": 385
+    },
+    {
+      "path": "runtime/cache.ts",
+      "sha256": "0bf67e33100e98a0fcad8fd2290c705c7f70224bf895afba201d0cb1541fbd4a",
+      "size": 326
+    },
+    {
+      "path": "runtime/defaultProvider.ts",
+      "sha256": "7fb9ab1a8eafba5cdfe9146e79d7a73061090f153d25f2a2675564d4e0344bd1",
+      "size": 1322
+    },
+    {
+      "path": "runtime/loader.ts",
+      "sha256": "ee09c9796ee531adee950dd94d0c3259af1cd15e4d6774121274fef9a1c786e8",
+      "size": 2190
+    },
+    {
+      "path": "runtime/locales.ts",
+      "sha256": "c06a67387a53f3d165c5b80b56dd3b67824365f3a700a591576331a5b23362b0",
+      "size": 92
+    },
+    {
+      "path": "runtime/providers.ts",
+      "sha256": "85860da57757202204b15f292c2175c79b0943a51f86627a5d910b1cb46acd39",
+      "size": 953
+    },
+    {
+      "path": "runtime/registry.ts",
+      "sha256": "d7a254364b55679a9003b334c76026a0e384703f3468e39af288501fe85c4055",
+      "size": 511
+    },
+    {
+      "path": "runtime/resolver.ts",
+      "sha256": "ba7f98462094efae9a38312455eee40da637578c03078bb57e91711c98e67edf",
+      "size": 261
+    },
+    {
+      "path": "types/content.ts",
+      "sha256": "324943e05dcb5bc41ed81d37fbefd663d548f6df8f794c1fdc46a376db4f3e13",
+      "size": 524
+    },
+    {
+      "path": "types/locale.ts",
+      "sha256": "19fb368dc04af795f3ba6134fca498986181537ba26e1d3968a19a8b4b2481ae",
+      "size": 314
+    },
+    {
+      "path": "types/registry.ts",
+      "sha256": "6920151049e10ef105596d1ad7bb4ef5706da0492635033dd345ad1023c1e25f",
+      "size": 84
+    }
+  ]
+}

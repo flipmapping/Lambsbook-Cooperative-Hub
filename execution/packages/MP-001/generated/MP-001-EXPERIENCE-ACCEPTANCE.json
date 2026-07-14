@@ -1,0 +1,15 @@
+{
+  "authority": "EAA-MP-001",
+  "implementation_authority": "MP-001",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "generated_at": "2026-07-14T01:45:35.352265Z",
+  "status": "EXPERIENCE_ACCEPTANCE_PASS",
+  "surface": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+  "experience_checks": {
+    "member": true,
+    "pending_invitation": true,
+    "non_member": true,
+    "anonymous": true
+  },
+  "founder_acceptance_authorized": true
+}

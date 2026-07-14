@@ -1,0 +1,21 @@
+{
+  "authority": "EXEC-MODE-001A",
+  "title": "Runtime Truth First",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T15:47:03Z",
+  "repository": "APP-001",
+  "execution_order": [
+    "Repository Truth",
+    "Runtime Truth",
+    "Gap Analysis",
+    "Operations Recovery",
+    "Implementation Context",
+    "Builder v1.2",
+    "Claude Repository Mutation",
+    "Build Validation",
+    "Operations Validation",
+    "Founder Runtime Validation",
+    "Surface Exit Certification"
+  ],
+  "principle": "Runtime evidence shall be captured before repository mutation whenever the runtime is available."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "locale": "zh",
+  "sections": {
+    "hero": {
+      "title": "欢迎来到成长平台",
+      "subtitle": "与合作社共同成长",
+      "description": "探索课程、奖学金、招生以及社区机会。",
+      "primaryAction": "开始",
+      "secondaryAction": "了解更多"
+    }
+  }
+}

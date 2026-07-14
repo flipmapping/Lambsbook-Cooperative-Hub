@@ -1,0 +1,35 @@
+{
+  "implementation_authority": "FDR-010E35B-WP001",
+  "parent_authority": "FDR-010E35B",
+  "title": "Runtime Identity Model Introduction",
+  "status": "AUTHORIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "execution_protocol": "EOS-EXEC-016",
+  "bounded_mutation": {
+    "surface": [
+      "client/src/lib/auth/PostAuthenticationContinuation.ts"
+    ],
+    "objective": "Extend the RuntimeState model to support an independent AuthenticatedIdentity field while preserving all existing ContinuationOutcome semantics."
+  },
+  "repository_truth": [
+    "RuntimeState currently contains outcome only.",
+    "Navigation consumes RuntimeState.",
+    "No runtime identity is currently published."
+  ],
+  "explicit_non_goals": [
+    "No runtime identity resolution.",
+    "No routing changes.",
+    "No authentication changes.",
+    "No authorization changes.",
+    "No database changes.",
+    "No RLS changes.",
+    "No API endpoint additions."
+  ],
+  "required_validation": [
+    "TypeScript compiles.",
+    "Existing member journey unchanged.",
+    "Existing invitation journey unchanged.",
+    "Existing anonymous journey unchanged."
+  ],
+  "generated_at": "2026-07-14T03:55:24Z"
+}

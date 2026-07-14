@@ -1,0 +1,20 @@
+{
+  "authority": "MP-001",
+  "generated_at": "2026-07-13T23:32:58.833807Z",
+  "status": "FOUNDER_APPROVAL_REQUIRED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "mutation_scope": [
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  ],
+  "approval": {
+    "founder_approved": false,
+    "approved_at": null,
+    "approved_by": null
+  },
+  "execution": {
+    "mutation_authorized": false,
+    "build_authorized": false,
+    "runtime_validation_authorized": false
+  },
+  "next_gate": "When Founder sets founder_approved=true, MP-001 may mutate RuntimeNavigationPolicy.ts and proceed to build validation."
+}

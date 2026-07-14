@@ -1,0 +1,39 @@
+[
+  {
+    "path": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+    "exists": true,
+    "valid_json": true,
+    "top_level_keys": [
+      "constitutional_authority",
+      "registered_surfaces",
+      "schema_version"
+    ]
+  },
+  {
+    "path": "execution/registry/surfaces/LEASE-REGISTRY.json",
+    "exists": true,
+    "valid_json": true,
+    "top_level_keys": [
+      "active_leases",
+      "schema_version"
+    ]
+  },
+  {
+    "path": "execution/registry/surfaces/SURFACE-CATALOG.json",
+    "exists": true,
+    "valid_json": true,
+    "top_level_keys": [
+      "schema_version",
+      "surfaces"
+    ]
+  },
+  {
+    "path": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json",
+    "exists": true,
+    "valid_json": true,
+    "top_level_keys": [
+      "dependencies",
+      "schema_version"
+    ]
+  }
+]

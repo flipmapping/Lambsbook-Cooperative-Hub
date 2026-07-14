@@ -1,0 +1,48 @@
+{
+  "authority": "FDR-010E34B",
+  "surface": "Execution Surface Registry",
+  "status": "CERTIFIED",
+  "basis": "Repository Truth",
+  "repository_mutation_required": false,
+  "publication_required": false,
+  "certified_at": "2026-07-13T14:30:27.078076Z",
+  "evidence": [
+    {
+      "path": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+      "exists": true,
+      "valid_json": true,
+      "top_level_keys": [
+        "constitutional_authority",
+        "registered_surfaces",
+        "schema_version"
+      ]
+    },
+    {
+      "path": "execution/registry/surfaces/LEASE-REGISTRY.json",
+      "exists": true,
+      "valid_json": true,
+      "top_level_keys": [
+        "active_leases",
+        "schema_version"
+      ]
+    },
+    {
+      "path": "execution/registry/surfaces/SURFACE-CATALOG.json",
+      "exists": true,
+      "valid_json": true,
+      "top_level_keys": [
+        "schema_version",
+        "surfaces"
+      ]
+    },
+    {
+      "path": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json",
+      "exists": true,
+      "valid_json": true,
+      "top_level_keys": [
+        "dependencies",
+        "schema_version"
+      ]
+    }
+  ]
+}

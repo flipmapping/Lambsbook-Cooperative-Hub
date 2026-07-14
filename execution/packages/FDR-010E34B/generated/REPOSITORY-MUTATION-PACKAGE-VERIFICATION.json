@@ -1,0 +1,31 @@
+{
+  "artifact_count": 4,
+  "corridor_violations": 0,
+  "existing_targets": 4,
+  "results": [
+    {
+      "generated_name": "SURFACE-REGISTRY.json",
+      "target": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+      "within_mutation_corridor": true,
+      "target_exists": true
+    },
+    {
+      "generated_name": "LEASE-REGISTRY.json",
+      "target": "execution/registry/surfaces/LEASE-REGISTRY.json",
+      "within_mutation_corridor": true,
+      "target_exists": true
+    },
+    {
+      "generated_name": "SURFACE-CATALOG.json",
+      "target": "execution/registry/surfaces/SURFACE-CATALOG.json",
+      "within_mutation_corridor": true,
+      "target_exists": true
+    },
+    {
+      "generated_name": "SURFACE-DEPENDENCIES.json",
+      "target": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json",
+      "within_mutation_corridor": true,
+      "target_exists": true
+    }
+  ]
+}

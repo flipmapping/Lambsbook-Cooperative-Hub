@@ -1,0 +1,35 @@
+{
+  "authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "generated_at": "2026-07-14T00:41:01Z",
+  "matches": [
+    {
+      "pattern": "hub/dashboard",
+      "line": 23
+    },
+    {
+      "pattern": "hub/dashboard",
+      "line": 26
+    },
+    {
+      "pattern": "hub/dashboard",
+      "line": 29
+    },
+    {
+      "pattern": "hub/dashboard",
+      "line": 32
+    },
+    {
+      "pattern": "hub/dashboard",
+      "line": 35
+    },
+    {
+      "pattern": "member",
+      "line": 22
+    },
+    {
+      "pattern": "member",
+      "line": 28
+    }
+  ]
+}

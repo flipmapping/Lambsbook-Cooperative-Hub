@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "locale": "en",
+  "sections": {
+    "overview": {
+      "heading": "Scholarships and Fee Waivers",
+      "description": "Scholarships of up to 20,000 TWD per semester (approximately 615 USD / 15,400,000 VND)."
+    },
+    "items": [
+      {
+        "id": "first-semester",
+        "title": "First Semester",
+        "description": "Full waiver of tuition and dormitory fees."
+      },
+      {
+        "id": "second-semester",
+        "title": "Second Semester",
+        "description": "Tuition equal to that of Taiwan's public universities, with a 100% dormitory fee waiver."
+      },
+      {
+        "id": "chinese-language",
+        "title": "Chinese Language Scholarship",
+        "description": "NT$30,000 for students who complete the one-year Chinese preparatory class, pass TOCFL Level A2, and continue in the day-division bachelor's program."
+      },
+      {
+        "id": "remaining-semesters",
+        "title": "Semesters 3\u20138",
+        "description": "Standard fees apply."
+      }
+    ]
+  }
+}

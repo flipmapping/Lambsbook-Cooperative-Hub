@@ -1,0 +1,38 @@
+{
+  "standard": "EOS-EXEC-016",
+  "title": "Implementation Execution Protocol",
+  "status": "ADOPTED",
+  "purpose": "Define the canonical execution protocol inherited by all implementation authorities.",
+  "execution_cycle": [
+    "Repository Truth Gate",
+    "Repository Inspection",
+    "Mutation Planning",
+    "Single Bounded Mutation",
+    "Build Validation",
+    "Runtime Validation",
+    "Evidence Capture",
+    "Proceed to Next Mutation"
+  ],
+  "mandatory_rules": [
+    "Inspect repository before mutation.",
+    "Mutate one bounded surface at a time.",
+    "Validate after every mutation.",
+    "Stop immediately on regression.",
+    "Capture repository evidence after each mutation.",
+    "Do not expand mutation scope without a new implementation authority."
+  ],
+  "inheritance": {
+    "applies_to": "All future implementation authorities",
+    "override_allowed": false
+  },
+  "generated_at": "2026-07-14T03:38:03Z",
+  "truth_gate": {
+    "required_evidence": [
+      "Repository Truth",
+      "Runtime Evidence",
+      "Founder-approved Implementation Authority"
+    ],
+    "rule": "No repository mutation may begin until at least one approved truth source authorizes the mutation."
+  },
+  "adopted_at": "2026-07-14T03:42:14Z"
+}

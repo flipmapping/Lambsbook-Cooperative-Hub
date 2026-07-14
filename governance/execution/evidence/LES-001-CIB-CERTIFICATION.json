@@ -1,0 +1,6 @@
+{
+  "implementation_authority": "LES-001",
+  "builder_contract": "Requires certified CIB",
+  "certified_cib_found": false,
+  "next_phase": "Materialize LES-001 Claude Instruction Brief"
+}

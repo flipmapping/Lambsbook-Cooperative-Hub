@@ -1,0 +1,26 @@
+{
+  "authority": "IC-002B",
+  "status": "PROPOSED_CANONICAL_ROUTING",
+  "generated_at": "2026-07-13T23:30:17.610332Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "routing_table": {
+    "member": {
+      "proposed_route": "/hub/dashboard",
+      "reason": "Canonical authenticated cooperative dashboard."
+    },
+    "pending_invitation": {
+      "proposed_route": "/hub/accept-invitation",
+      "reason": "Dedicated invitation acceptance flow exists."
+    },
+    "non_member": {
+      "proposed_route": "/hub/signup",
+      "reason": "Canonical membership registration entry."
+    },
+    "anonymous": {
+      "proposed_route": "/",
+      "reason": "Public landing experience."
+    }
+  },
+  "mutation_authorized": false,
+  "next_gate": "Founder approves or revises routing table before MP-001."
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "path": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+    "exists": true,
+    "top_level_keys": [
+      "constitutional_authority",
+      "registered_surfaces",
+      "schema_version"
+    ],
+    "content_summary": {
+      "schema_version": {
+        "type": "str",
+        "value": "1.0"
+      },
+      "constitutional_authority": {
+        "type": "str",
+        "value": "EOS-CON-002"
+      },
+      "registered_surfaces": {
+        "type": "list",
+        "count": 0
+      }
+    }
+  },
+  {
+    "path": "execution/registry/surfaces/LEASE-REGISTRY.json",
+    "exists": true,
+    "top_level_keys": [
+      "active_leases",
+      "schema_version"
+    ],
+    "content_summary": {
+      "schema_version": {
+        "type": "str",
+        "value": "1.0"
+      },
+      "active_leases": {
+        "type": "list",
+        "count": 0
+      }
+    }
+  },
+  {
+    "path": "execution/registry/surfaces/SURFACE-CATALOG.json",
+    "exists": true,
+    "top_level_keys": [
+      "schema_version",
+      "surfaces"
+    ],
+    "content_summary": {
+      "schema_version": {
+        "type": "str",
+        "value": "1.0"
+      },
+      "surfaces": {
+        "type": "list",
+        "count": 0
+      }
+    }
+  },
+  {
+    "path": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json",
+    "exists": true,
+    "top_level_keys": [
+      "dependencies",
+      "schema_version"
+    ],
+    "content_summary": {
+      "schema_version": {
+        "type": "str",
+        "value": "1.0"
+      },
+      "dependencies": {
+        "type": "list",
+        "count": 0
+      }
+    }
+  }
+]

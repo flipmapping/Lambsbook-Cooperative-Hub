@@ -2,64 +2,37 @@
 
 Status
 
-FOUNDER AUTHORIZED
+ACTIVE
+
+Implementation Authority
+
+GE-RMP-004
 
 Repository
 
-Growth Engine
+APP-001
 
-Development Repository
+Execution Standard
 
-~/workspace
+BIS-001
 
-Authority Stream
+Implementation Standard
 
-GE
-
-Derived From
-
-FDR-GE-002
-
-Release
-
-Growth Engine MVP
-
-Prerequisite
-
-GE-RMP-002
-
-Production Surface
-
-Prospect Registration & Conversion Workflow
-
---------------------------------------------------
-
-Repository Mutation Authority
-
-GRANTED
-
---------------------------------------------------
-
-Repository Mutation Corridor
-
-Repository files required to implement the Prospect Registration &
-Conversion Workflow.
-
---------------------------------------------------
+IAS-001
 
 Purpose
 
-Implement the production Prospect Registration workflow for the
-Growth Engine MVP.
+Enhance the Founder-facing CTBC recruitment experience while preserving
+the certified Growth Engine, Builder v1.2, CMA, runtime contracts and APIs.
 
-Deliverables SHALL include:
+Objectives
 
-- Prospect Registration Form
-- Prospect persistence
-- Registration confirmation workflow
-- Admissions handoff
-- Runtime verification
-
-Current Status
-
-READY FOR EXECUTION DERIVATION
+- Replace text-only Growth landing experience with a visual experience.
+- Add official CTBC logo and approved campus imagery.
+- Embed official CTBC promotional video if officially available.
+- Add Official CTBC University external reference (Learn More).
+- Present Founder-approved scholarship summary.
+- Present Founder-approved tuition summary.
+- Improve admissions overview.
+- Improve FAQ.
+- Preserve Hub → Scholarships → Prospect Registration journey.

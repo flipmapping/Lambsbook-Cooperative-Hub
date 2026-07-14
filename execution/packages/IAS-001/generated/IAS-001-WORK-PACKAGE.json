@@ -1,0 +1,43 @@
+{
+  "authority_id": "IAS-001",
+  "title": "Implementation Authority Authoring Standard",
+  "status": "FOUNDER_APPROVED_FOR_AUTHORING",
+  "generated_at": "2026-07-13T16:02:47.201217Z",
+  "mission": "Certify the Builder Input Set before every Builder invocation.",
+  "scope": {
+    "originated": [
+      "Classify originated implementation artifacts"
+    ],
+    "inherited": [
+      "Resolve inherited certified authorities"
+    ],
+    "referenced": [
+      "Verify every repository-backed reference"
+    ],
+    "derived": [
+      "Resolve lifecycle of derived artifacts when applicable"
+    ],
+    "certification": [
+      "Produce a Certified Builder Input Set"
+    ]
+  },
+  "input_contract": {
+    "builder_receives": [
+      "Exactly one Claude Instruction Brief"
+    ],
+    "ias_certifies": [
+      "Repository readiness",
+      "Authority provenance",
+      "Artifact resolution",
+      "Reference integrity"
+    ]
+  },
+  "deliverable": "Certified Builder Input Set",
+  "handoff": "Builder v1.2",
+  "derived_from": [
+    "EOS-CON-003",
+    "EOS-CON-004",
+    "LEAP-PKG-001 Repository Truth",
+    "Founder Decision"
+  ]
+}

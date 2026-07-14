@@ -1,0 +1,21 @@
+{
+  "schema": "implementation-authority-registry-v1",
+  "generated_at": "2026-07-14T05:11:36.031529Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "authorities": [
+    {
+      "authority": "FDR-010E34B",
+      "status": "COMPLETED",
+      "constitutional_baseline": null,
+      "closure_artifact": "packages/FDR-010E34B/generated/AUTHORITY-CLOSURE.json",
+      "generated_at": null
+    },
+    {
+      "authority": "MP-001",
+      "status": "IMPLEMENTATION_AUTHORITY_CLOSED",
+      "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+      "closure_artifact": "packages/MP-001/generated/MP-001-CLOSURE.json",
+      "generated_at": "2026-07-14T02:30:16.355984Z"
+    }
+  ]
+}

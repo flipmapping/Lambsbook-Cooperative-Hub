@@ -1,0 +1,18 @@
+{
+  "MP-001-PRE-MUTATION-BASELINE.json": [
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-PRE-MUTATION-BASELINE.json",
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-PRE-MUTATION-BASELINE.json"
+  ],
+  "MP-001-BUILD-VALIDATION.json": [
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-BUILD-VALIDATION.json",
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-BUILD-VALIDATION.json"
+  ],
+  "MP-001-RUNTIME-VALIDATION.json": [
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-RUNTIME-VALIDATION.json",
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-RUNTIME-VALIDATION.json"
+  ],
+  "MP-001-EXPERIENCE-ACCEPTANCE.json": [
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-EXPERIENCE-ACCEPTANCE.json",
+    "/home/runner/workspace/execution/packages/MP-001/generated/MP-001-EXPERIENCE-ACCEPTANCE.json"
+  ]
+}

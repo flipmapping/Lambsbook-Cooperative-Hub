@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "locale": "en",
+  "sections": {
+    "overview": {
+      "heading": "International Preparatory Program",
+      "description": "A pathway for international students: one year of Chinese language study followed by a four-year (four-technical) bachelor's degree, studying alongside Taiwanese students. Students continue into the degree program without a separate re-application.",
+      "university": "CTBC University of Technology",
+      "location": "No. 49, Zhonghua Road, Xinshi District, Tainan City 744, Taiwan",
+      "website": "https://www.ctbctech.edu.tw/",
+      "totalQuota": "102 students"
+    },
+    "academies": {
+      "heading": "Academies and Majors",
+      "items": [
+        {
+          "id": "semiconductor",
+          "title": "Semiconductor Technical Academy",
+          "majors": [
+            "Semiconductor Engineering",
+            "Mechanical Engineering",
+            "Refrigeration, Air Conditioning & Energy Technology"
+          ]
+        },
+        {
+          "id": "health-recreation",
+          "title": "Health and Recreation Management Academy",
+          "majors": [
+            "Restaurant Management",
+            "Culinary Arts",
+            "Health Care"
+          ]
+        }
+      ]
+    },
+    "workAndInternship": {
+      "heading": "Work and Internship",
+      "items": [
+        {
+          "title": "Year 1",
+          "description": "Part-time work, 20 hours per week."
+        },
+        {
+          "title": "Years 2\u20134",
+          "description": "Part-time work plus internship, 40 hours per week."
+        }
+      ]
+    }
+  }
+}

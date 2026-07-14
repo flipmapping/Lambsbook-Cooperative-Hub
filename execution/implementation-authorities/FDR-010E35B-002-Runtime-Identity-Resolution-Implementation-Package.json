@@ -1,0 +1,43 @@
+{
+  "implementation_authority": "FDR-010E35B-002",
+  "title": "Runtime Identity Resolution Implementation Package",
+  "status": "APPROVED_FOR_GENERATION",
+  "repository_truth": [
+    "Authentication completes successfully.",
+    "Continuation executes successfully.",
+    "RuntimeState is produced.",
+    "Navigation consumes RuntimeState.",
+    "The inspected continuation pipeline does not currently perform runtime identity resolution before determining RuntimeState."
+  ],
+  "execution_assessment": {
+    "gap": "Runtime identity is not resolved prior to RuntimeState publication.",
+    "verified_by_repository": true
+  },
+  "recommended_evolution": {
+    "capability": "Runtime Identity Resolution",
+    "purpose": "Resolve authenticated identity before RuntimeState publication while preserving existing continuation and navigation responsibilities.",
+    "implementation_independent": true
+  },
+  "mutation_boundary": {
+    "modify": [
+      "PostAuthenticationContinuation runtime-state determination",
+      "RuntimeState model",
+      "Runtime navigation consumption"
+    ],
+    "preserve": [
+      "Authentication mechanisms",
+      "Authorization policies",
+      "Invitation semantics",
+      "Cooperative progression semantics",
+      "Navigation policy responsibility",
+      "Database schema",
+      "JWT handling",
+      "Supabase authentication"
+    ]
+  },
+  "founder_decision": {
+    "decision": "Authorize bounded implementation of Runtime Identity Resolution.",
+    "objective": "Introduce runtime identity resolution between continuation and navigation while preserving existing architectural responsibilities."
+  },
+  "generated_at": "2026-07-14T02:54:10Z"
+}

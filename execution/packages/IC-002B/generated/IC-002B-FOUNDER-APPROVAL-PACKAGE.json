@@ -1,0 +1,37 @@
+{
+  "authority": "IC-002B",
+  "status": "AWAITING_FOUNDER_APPROVAL",
+  "generated_at": "2026-07-13T23:31:33.669288Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "implementation_authority": "MP-001",
+  "routing_table_for_approval": {
+    "member": {
+      "proposed_route": "/hub/dashboard",
+      "reason": "Canonical authenticated cooperative dashboard."
+    },
+    "pending_invitation": {
+      "proposed_route": "/hub/accept-invitation",
+      "reason": "Dedicated invitation acceptance flow exists."
+    },
+    "non_member": {
+      "proposed_route": "/hub/signup",
+      "reason": "Canonical membership registration entry."
+    },
+    "anonymous": {
+      "proposed_route": "/",
+      "reason": "Public landing experience."
+    }
+  },
+  "approval_contract": {
+    "founder_may_modify_routes": true,
+    "founder_may_accept_as_is": true,
+    "partial_approval": false
+  },
+  "upon_approval": {
+    "runtime_navigation_policy": "AUTHORIZED_TO_MUTATE",
+    "mutation_scope": [
+      "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+    ],
+    "other_files": "PROHIBITED"
+  }
+}

@@ -1,0 +1,96 @@
+# LES-001 Surface Inventory
+
+Status
+
+COMPLETE
+
+## Pages
+
+- web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx
+- web/src/app/(protected)/dashboard/page.tsx
+- web/src/app/(public)/auth/sign-in/page.tsx
+
+## Components
+
+- web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx
+- web/src/app/(protected)/dashboard/page.tsx
+- web/src/app/(public)/auth/sign-in/page.tsx
+- web/src/components/activity/ActivityFeed.tsx
+- web/src/components/activity/ActivityItem.tsx
+- web/src/components/contributions/ContributionActivity.tsx
+- web/src/components/contributions/ContributionCard.tsx
+- web/src/components/contributions/PipelineStageBadge.tsx
+- web/src/components/dashboard/CooperativeActivitySection.tsx
+- web/src/components/dashboard/DashboardHeroCurrentPosition.tsx
+- web/src/components/dashboard/DashboardTopBar.tsx
+- web/src/components/dashboard/IELTSSection.tsx
+- web/src/components/dashboard/IdeaPipelineSection.tsx
+- web/src/components/dashboard/InvitationAcceptanceSection.tsx
+- web/src/components/dashboard/LearningHistorySection.tsx
+- web/src/components/dashboard/MultilingualSection.tsx
+- web/src/components/dashboard/MyContributionsSection.tsx
+- web/src/components/dashboard/PipelineDetailPanel.tsx
+- web/src/components/dashboard/ProgramsSection.tsx
+- web/src/components/dashboard/RelationshipTrustSection.tsx
+- web/src/components/dashboard/SubmitIdeaModal.tsx
+- web/src/components/notifications/ChannelSelector.tsx
+- web/src/components/notifications/NotificationBell.tsx
+- web/src/components/notifications/NotificationItem.tsx
+- web/src/components/notifications/NotificationPanel.tsx
+- web/src/components/notifications/NotificationPreferencesPanel.tsx
+- web/src/components/notifications/ToggleControl.tsx
+- web/src/growth/components/GrowthProvider.tsx
+- web/src/growth/components/Hero/Hero.tsx
+- web/src/growth/components/Hero/HeroContent.tsx
+- web/src/growth/components/Layout/GrowthLayout.tsx
+- web/src/growth/components/Navigation/Navigation.tsx
+- web/src/growth/components/Navigation/NavigationItem.tsx
+- web/src/growth/components/Sections/AdmissionsSection.tsx
+- web/src/growth/components/Sections/CallToActionSection.tsx
+- web/src/growth/components/Sections/CooperativePrinciplesSection.tsx
+- web/src/growth/components/Sections/FAQSection.tsx
+- web/src/growth/components/Sections/JourneyDiscoverySection.tsx
+- web/src/growth/components/Sections/MembershipSection.tsx
+- web/src/growth/components/Sections/ProgramsSection.tsx
+- web/src/growth/components/Sections/ScholarshipsSection.tsx
+- web/src/growth/pages/Landing/LandingPage.tsx
+- web/src/growth/pages/Landing/LandingSections.tsx
+
+## Styles
+
+- None discovered
+
+## Content
+
+- web/src/growth/content/en/admissions.json
+- web/src/growth/content/en/faq.json
+- web/src/growth/content/en/footer.json
+- web/src/growth/content/en/home.json
+- web/src/growth/content/en/navigation.json
+- web/src/growth/content/en/programs.json
+- web/src/growth/content/en/scholarships.json
+- web/src/growth/content/vi/admissions.json
+- web/src/growth/content/vi/faq.json
+- web/src/growth/content/vi/footer.json
+- web/src/growth/content/vi/home.json
+- web/src/growth/content/vi/navigation.json
+- web/src/growth/content/vi/programs.json
+- web/src/growth/content/vi/scholarships.json
+- web/src/growth/content/zh/admissions.json
+- web/src/growth/content/zh/faq.json
+- web/src/growth/content/zh/footer.json
+- web/src/growth/content/zh/home.json
+- web/src/growth/content/zh/navigation.json
+- web/src/growth/content/zh/programs.json
+- web/src/growth/content/zh/scholarships.json
+- web/src/growth/registry/admissions.json
+- web/src/growth/registry/assets.json
+- web/src/growth/registry/faq.json
+- web/src/growth/registry/journey.json
+- web/src/growth/registry/navigation.json
+- web/src/growth/registry/programs.json
+- web/src/growth/registry/scholarships.json
+
+## Assets
+
+- None discovered

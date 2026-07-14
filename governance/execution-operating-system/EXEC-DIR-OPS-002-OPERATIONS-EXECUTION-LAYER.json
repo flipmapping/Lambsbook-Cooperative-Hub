@@ -1,0 +1,33 @@
+{
+  "authority": "EXEC-DIR-OPS-002",
+  "title": "Operations Execution Layer",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T14:01:23Z",
+  "repository": "APP-001",
+  "purpose": "Separate operational enablement from implementation to minimize unnecessary repository mutations.",
+  "operations_scope": [
+    "Founder administration enablement",
+    "User provisioning",
+    "Platform administrator provisioning",
+    "Seed data",
+    "Environment verification",
+    "Runtime diagnostics",
+    "Password recovery",
+    "Operational health verification"
+  ],
+  "execution_order": [
+    "Repository Truth",
+    "Surface Registry",
+    "Implementation Context",
+    "Builder v1.2",
+    "Claude",
+    "Repository Mutation",
+    "Build Validation",
+    "Operations Validation",
+    "Founder Runtime Validation"
+  ],
+  "current_priority_surfaces": [
+    "SURF-AUTH-001",
+    "SURF-DASH-001"
+  ]
+}

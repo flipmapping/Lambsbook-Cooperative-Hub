@@ -1,0 +1,29 @@
+{
+  "builder_contract": {
+    "required_argument": "cib"
+  },
+  "candidates": [
+    "governance/execution/evidence/LES-001-PRODUCTION-QUALIFICATION-ACTIVATION.json",
+    "governance/execution/evidence/LES-001-REPOSITORY-TRUTH.json",
+    "governance/execution/evidence/LES-001-SURFACE-INVENTORY.json",
+    "governance/execution/evidence/LES-001-SURFACE-GAP-ANALYSIS.json",
+    "governance/execution/evidence/LES-001-COMPLETE-SURFACE-MUTATION-PACKAGE.json",
+    "governance/execution/evidence/LES-001-GENERATED-WORKSPACE-MATERIALIZATION.json",
+    "governance/execution/evidence/LES-001-GENERATED-WORKSPACE-VERIFICATION.json",
+    "governance/execution/evidence/LES-001-FOUNDER-APPROVAL-PACKAGE.json",
+    "governance/execution/evidence/LES-001-FOUNDER-DECISION.json",
+    "governance/execution/evidence/LES-001-REPOSITORY-PUBLICATION.json",
+    "governance/execution/evidence/LES-001-GOVERNANCE-PHASE-CLOSEOUT.json",
+    "governance/execution/evidence/LES-001-BUILDER-INVOCATION.json",
+    "governance/execution/evidence/LES-001-BUILDER-ENTRYPOINT-DISCOVERY.json",
+    "governance/execution/LES-001-REPOSITORY-TRUTH.md",
+    "governance/execution/LES-001-SURFACE-INVENTORY.md",
+    "governance/execution/LES-001-SURFACE-GAP-ANALYSIS.md",
+    "governance/execution/LES-001-COMPLETE-SURFACE-MUTATION-PACKAGE.md",
+    "governance/execution/LES-001-FOUNDER-APPROVAL-PACKAGE.md",
+    "governance/execution/LES-001-FOUNDER-DECISION.md",
+    "governance/execution/LES-001-REPOSITORY-PUBLICATION.md",
+    "governance/execution/LES-001-GOVERNANCE-PHASE-CLOSEOUT.md",
+    "execution/workspace/LES-001/authority_retrieval/LES-001-AUTHORITY-INVENTORY.json"
+  ]
+}

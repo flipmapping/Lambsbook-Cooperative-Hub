@@ -52,7 +52,13 @@ const user = authReq.user;
       id: member.id,
       membership_status: member.membership_status,
       member_type: member.member_type,
-      activity_status: member.activity_status
+      activity_status: member.activity_status,
+
+      // Canonical authenticated identity
+      user_id: user.id,
+      role: user.role ?? null,
+      sbu_id: user.sbu_id ?? null,
+      is_super_admin: user.is_super_admin ?? false,
     });
   } catch (err) {
     console.error("MEMBER_ME_ERROR", err);

@@ -1,0 +1,35 @@
+{
+  "authority": "EXEC-MODE-001",
+  "title": "Product Surface Execution Mode",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T15:43:28Z",
+  "repository": "APP-001",
+  "surface_lifecycle": [
+    "Repository Truth",
+    "Surface Lease",
+    "Operations Recovery",
+    "Implementation Context",
+    "Builder v1.2 Package",
+    "Claude Repository Mutation",
+    "Build Validation",
+    "Operations Validation",
+    "Founder Runtime Validation",
+    "Surface Exit Certification",
+    "Surface Released"
+  ],
+  "bounded_recovery_rule": "On failure, return only to the immediately preceding execution stage rather than restarting the investigation.",
+  "active_surface_queue": [
+    {
+      "surface": "SURF-AUTH-001",
+      "objective": "Founder reaches Admin Dashboard with canonical identity."
+    },
+    {
+      "surface": "SURF-DASH-001",
+      "objective": "Dashboard consumes and renders canonical identity."
+    },
+    {
+      "surface": "SURF-ADM-001",
+      "objective": "Admissions runtime validation completes after authentication dependency is removed."
+    }
+  ]
+}

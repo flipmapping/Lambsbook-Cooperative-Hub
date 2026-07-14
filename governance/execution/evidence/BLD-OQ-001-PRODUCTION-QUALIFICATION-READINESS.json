@@ -1,0 +1,10 @@
+{
+  "implementation_authority": "BLD-OQ-001",
+  "status": "READY",
+  "production_consumer": "Landing Experience A/B",
+  "qualification_phase": "Production Operational Qualification",
+  "builder_version": "1.2",
+  "famp_synchronized": true,
+  "generated_workspace_required": true,
+  "publication_separated": true
+}

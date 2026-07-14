@@ -6,35 +6,39 @@ GE-RMP-004
 
 Repository
 
-Growth Engine
+APP-001
 
 Production Surface
 
-Prospect Registration & Conversion Workflow
+CTBC Recruitment Experience Enhancement
 
 --------------------------------------------------
 
 Generated
 
-2026-07-08 14:33 UTC
+2026-07-14 03:35 UTC
 
 --------------------------------------------------
 
 Artifacts
 
 - governance/BASELINE.md
-- governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md
-- governance/execution-derivation/GE-RMP-004-EXECUTION-DERIVATION.md
+- governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md
+- governance/execution-derivation/FDR-GE-004-EXECUTION-DERIVATION.md
 - governance/execution/EXECUTION-PIPELINE.md
-- governance/icm/generated/ICM-GE-RMP-004.md
+- governance/icm/generated/ICM-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md
 - governance/rmp/GE-RMP-004-IMPLEMENTATION-AUTHORITY.md
 - governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
 - governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
 - governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
 - governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+- implementation-context/client/src/components/HeroSection.tsx
+- implementation-context/client/src/pages/HubLanding.tsx
 - implementation-context/client/src/pages/ProspectRegistration.tsx
-- implementation-context/server/services/admissions.ts
+- implementation-context/client/src/pages/ScholarshipsPage.tsx
+- implementation-context/web/src/growth/registry/programs.json
+- implementation-context/web/src/growth/registry/scholarships.json
 
 --------------------------------------------------
 
-Total Artifacts: 12
+Total Artifacts: 16

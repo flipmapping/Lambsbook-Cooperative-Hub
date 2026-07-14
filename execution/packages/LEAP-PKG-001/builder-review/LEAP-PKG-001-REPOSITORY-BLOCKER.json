@@ -1,0 +1,26 @@
+{
+  "package_id": "LEAP-PKG-001",
+  "status": "BLOCKED_REPOSITORY_PREREQUISITE",
+  "generated_at": "2026-07-13T15:02:03.091849Z",
+  "blocking_stage": "Builder Repository Truth Consumption",
+  "validated_by": "build_claude_package.py",
+  "missing_artifacts": [
+    {
+      "type": "Execution Derivation",
+      "path": "governance/execution-derivation/LEAP-002-EXECUTION-DERIVATION.md"
+    },
+    {
+      "type": "Implementation Authority",
+      "path": "governance/rmp/LEAP-002-IMPLEMENTATION-AUTHORITY.md"
+    },
+    {
+      "type": "Implementation Context Manifest",
+      "path": "governance/icm/generated/ICM-LEAP-002-JOURNEY-ORIENTED-LANDING-EXPERIENCE.md"
+    }
+  ],
+  "decision": {
+    "repair_cib_to_existing_authority": false,
+    "reason": "No repository-backed canonical LEAP-002 authority or ICM exists. Existing GE-RMP authorities are unrelated implementation authorities.",
+    "next_gate": "Founder authority decision"
+  }
+}

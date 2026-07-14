@@ -1,0 +1,10 @@
+{
+  "implementation_authority": "FDR-010E35A",
+  "package": "FDR-010E35A-025",
+  "surface": "SURF-DASH-001",
+  "title": "Identity Publication Contract",
+  "generated_at": "2026-07-12T07:56:04Z",
+  "target": "server/routes/member.ts",
+  "sha256": "4fa4303242a827d634b5f577344214c7db7947924068fcde3d2e10012b7733db",
+  "status": "READY_FOR_SINGLE_BOUNDED_MUTATION"
+}

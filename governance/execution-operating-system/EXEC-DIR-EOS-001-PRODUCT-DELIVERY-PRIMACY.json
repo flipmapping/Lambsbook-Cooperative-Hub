@@ -1,0 +1,18 @@
+{
+  "authority": "EXEC-DIR-EOS-001",
+  "title": "Product Delivery Primacy",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T15:31:59Z",
+  "repository": "APP-001",
+  "principle": "The Execution Operating System exists to accelerate Founder-visible product delivery.",
+  "governance_rule": "New execution directives require repository-backed evidence of an execution failure and must improve future implementation.",
+  "surface_completion_rule": [
+    "Surface Complete",
+    "Surface Blocked"
+  ],
+  "current_priority": [
+    "SURF-AUTH-001",
+    "SURF-DASH-001",
+    "SURF-ADM-001"
+  ]
+}

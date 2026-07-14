@@ -1,0 +1,21 @@
+{
+  "directive": "EXEC-SYNC-002",
+  "status": "SYNCHRONIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "baseline_delta": [
+    "BLD-CAR-001 Constitutional Authority Resolver"
+  ],
+  "builder_adoption": {
+    "resolver_model": "Declared Constitutional Authorities",
+    "input": "Certified Builder Input Set (CBIS)",
+    "behaviour": [
+      "Validate declarations",
+      "Resolve declared authorities",
+      "Validate resolved authorities",
+      "Package unchanged",
+      "Record in PACKAGE-MANIFEST.md"
+    ]
+  },
+  "execution_effect": "Applies to future Builder executions only. Does not alter the currently authorized implementation authority FDR-010E35B.",
+  "generated_at": "2026-07-14T05:27:32Z"
+}

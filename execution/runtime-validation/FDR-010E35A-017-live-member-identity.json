@@ -1,0 +1,24 @@
+{
+  "authority": "FDR-010E35A",
+  "surface": "SURF-AUTH-001",
+  "phase": "Live Member Identity Verification",
+  "status": "READY",
+  "objective": "Capture the actual JSON returned by GET /api/member/me for the authenticated Founder before authorizing any repository mutation.",
+  "founder_actions": [
+    "Login as flipmapping@gmail.com",
+    "Open Browser Developer Tools",
+    "Network tab",
+    "Reload /hub/dashboard",
+    "Open the GET /api/member/me request",
+    "Copy the complete JSON response",
+    "Copy the HTTP status code",
+    "Stop after this request"
+  ],
+  "expected_repository_truth": [
+    "role",
+    "sbu_id",
+    "is_super_admin"
+  ],
+  "execution_rule": "Do not modify the repository. Runtime evidence becomes constitutional Repository Truth.",
+  "generated_at": "2026-07-14T01:12:49Z"
+}

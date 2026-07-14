@@ -1,0 +1,8 @@
+{
+  "implementation_authority": "LES-001",
+  "status": "ESTABLISHED",
+  "builder_runtime": "v1.2",
+  "boq": "BOQ-001",
+  "repository_surface": "web/",
+  "repository_files": 105
+}

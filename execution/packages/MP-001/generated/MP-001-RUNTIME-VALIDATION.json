@@ -1,0 +1,11 @@
+{
+  "authority": "MP-001",
+  "generated_at": "2026-07-14T01:39:38.769188Z",
+  "status": "RUNTIME_PASS",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.0",
+  "runtime_validation": {
+    "process_started": true,
+    "exit_code": -15
+  },
+  "experience_acceptance_authorized": true
+}

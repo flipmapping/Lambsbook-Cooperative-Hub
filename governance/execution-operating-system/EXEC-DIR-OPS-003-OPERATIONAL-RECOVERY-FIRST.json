@@ -1,0 +1,21 @@
+{
+  "authority": "EXEC-DIR-OPS-003",
+  "title": "Operational Recovery Before Repository Mutation",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T15:07:58Z",
+  "repository": "APP-001",
+  "principle": "All operational recovery paths shall be exhausted before authorizing any bounded repository mutation.",
+  "operational_recovery": [
+    "Founder account verification",
+    "Administrator provisioning verification",
+    "Environment verification",
+    "Runtime configuration verification",
+    "Seed data verification",
+    "Existing provisioning mechanism execution",
+    "Existing operational tooling execution"
+  ],
+  "decision_gate": {
+    "recovered": "Proceed directly to Founder Runtime Validation",
+    "not_recovered": "Authorize one bounded repository mutation"
+  }
+}

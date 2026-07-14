@@ -1,0 +1,35 @@
+{
+  "implementation_authority": "LEAP-002",
+  "status": "AWAITING_DERIVED_ARTIFACT_CLASSIFICATION",
+  "originated": [
+    "LEAP-002 Sprint Authority",
+    "Surface Lease",
+    "Repository Truth",
+    "Surface Inventory",
+    "Gap Analysis"
+  ],
+  "inherited": [
+    "Journey-Oriented Growth Architecture",
+    "Strategic Canon",
+    "BOQ-001",
+    "BIS-001",
+    "EOS-EXEC-011",
+    "EXEC-DIR-EOS-012",
+    "EXEC-DIR-EOS-013"
+  ],
+  "derived": [
+    {
+      "artifact": "Execution Derivation",
+      "lifecycle": "UNRESOLVED"
+    },
+    {
+      "artifact": "Implementation Authority",
+      "lifecycle": "UNRESOLVED"
+    },
+    {
+      "artifact": "Implementation Context Manifest",
+      "lifecycle": "UNRESOLVED"
+    }
+  ],
+  "decision_required": "Determine, from the certified Builder contract and execution doctrine, whether each derived artifact is expected to exist before Builder invocation or is materialized as part of the Builder pipeline."
+}

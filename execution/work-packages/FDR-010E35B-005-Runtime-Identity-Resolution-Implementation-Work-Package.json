@@ -1,0 +1,57 @@
+{
+  "implementation_authority": "FDR-010E35B-005",
+  "title": "Runtime Identity Resolution Implementation Work Package",
+  "status": "READY_FOR_IMPLEMENTATION",
+  "execution_contract": "FDR-010E35B-004",
+  "implementation_surfaces": [
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts"
+  ],
+  "implementation_tasks": [
+    {
+      "id": "WP-001",
+      "title": "Introduce Runtime Identity Resolution capability"
+    },
+    {
+      "id": "WP-002",
+      "title": "Evolve RuntimeState to separate identity from outcome"
+    },
+    {
+      "id": "WP-003",
+      "title": "Update continuation pipeline to publish resolved identity"
+    },
+    {
+      "id": "WP-004",
+      "title": "Update navigation policy to consume evolved RuntimeState"
+    },
+    {
+      "id": "WP-005",
+      "title": "Preserve existing member, invitation and anonymous journeys"
+    },
+    {
+      "id": "WP-006",
+      "title": "Produce repository, build and runtime validation evidence"
+    }
+  ],
+  "must_not_change": [
+    "Authentication",
+    "Authorization",
+    "JWT",
+    "Database schema",
+    "RLS",
+    "Invitation semantics",
+    "Application routing topology"
+  ],
+  "definition_of_done": [
+    "Runtime identity is resolved before RuntimeState publication.",
+    "Identity and outcome are independent runtime concepts.",
+    "Navigation consumes RuntimeState only.",
+    "Existing member journey preserved.",
+    "Existing invitation journey preserved.",
+    "Existing anonymous journey preserved.",
+    "Build passes.",
+    "Runtime validation passes."
+  ],
+  "generated_at": "2026-07-14T03:15:09Z"
+}

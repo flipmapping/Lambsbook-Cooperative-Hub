@@ -1,0 +1,21 @@
+{
+  "builder_v12_artifacts": 75,
+  "potential_builder_v13_candidates": 14,
+  "requires_builder_v12_mutation": false,
+  "candidate_builder_v13_extensions": [
+    "execution/builders/authority_registry/repository_registry.json",
+    "execution/builders/services/artifact_materialization/certification/artifact_materialization_certifier.py",
+    "execution/builders/services/artifact_materialization/contracts/artifact_materialization_service_contract.py",
+    "execution/builders/services/artifact_materialization/implementation/__pycache__/artifact_materialization_service.cpython-311.pyc",
+    "execution/builders/services/artifact_materialization/implementation/artifact_materialization_service.py",
+    "execution/builders/services/artifact_materialization/implementation/fragment_registry.py",
+    "execution/builders/services/artifact_materialization/service_manifest.json",
+    "execution/builders/services/artifact_materialization/validation/artifact_materialization_runtime_validator.py",
+    "execution/builders/services/repository_resolution/integration/authority_registry_integration.json",
+    "execution/builders/services/surface_registry/__init__.py",
+    "execution/builders/services/surface_registry/__pycache__/__init__.cpython-311.pyc",
+    "execution/builders/services/surface_registry/__pycache__/surface_registry_service.cpython-311.pyc",
+    "execution/builders/services/surface_registry/surface_registry_service.py",
+    "execution/builders/workspace_registry/execution_workspace_lifecycle.json"
+  ]
+}

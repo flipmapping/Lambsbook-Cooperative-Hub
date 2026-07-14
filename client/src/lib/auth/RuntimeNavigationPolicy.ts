@@ -23,13 +23,13 @@ export function resolveRuntimeDestination(
       return "/hub/dashboard";
 
     case "pending_invitation":
-      return "/hub/dashboard";
+      return "/hub/accept-invitation";
 
     case "non_member":
-      return "/hub/dashboard";
+      return "/hub/signup";
 
     case "anonymous":
-      return "/hub/dashboard";
+      return "/";
 
     default:
       return "/hub/dashboard";

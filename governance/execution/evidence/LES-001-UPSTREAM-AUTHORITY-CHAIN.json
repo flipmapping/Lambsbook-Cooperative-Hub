@@ -1,0 +1,9 @@
+{
+  "implementation_authority": "LES-001",
+  "dependency_chain_verified": true,
+  "first_missing_artifact": {
+    "artifact": "Implementation Authority",
+    "expected_path": "governance/rmp/LES-001-IMPLEMENTATION-AUTHORITY.md"
+  },
+  "next_implementation_authority": "Implementation Authority"
+}

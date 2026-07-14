@@ -1,0 +1,26 @@
+{
+  "implemented": [
+    "Execution Runtime",
+    "Open Brain Governance",
+    "Published Contract Consumption",
+    "FAMP Materialization Infrastructure"
+  ],
+  "partial": [
+    "Builder v1.2 is certified and frozen; future Builder capability must target Builder v1.3 authorities."
+  ],
+  "missing": [
+    "Certified Surface Registry implementation",
+    "Certified Lease Registry",
+    "Certified Surface Dependency Registry",
+    "Surface Lifecycle Registry"
+  ],
+  "requirements": {
+    "Surface Registry": true,
+    "Surface Lease": true,
+    "Repository Truth": true,
+    "FAMP Materialization": true,
+    "Publication Separation": true,
+    "Builder v1.2 Consumption": true,
+    "Builder v1.3 Extension Required": true
+  }
+}

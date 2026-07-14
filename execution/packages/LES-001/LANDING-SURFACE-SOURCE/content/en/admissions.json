@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "locale": "en",
+  "sections": {
+    "eligibility": {
+      "heading": "Eligibility",
+      "items": [
+        "High school (Grade 12) graduates, or holders of a vocational school diploma recognized by Taiwan's Ministry of Education.",
+        "Overseas Chinese students, or Hong Kong / Macau students who meet the required residency status.",
+        "Priority admission for applicants under 22 years old with no prior work experience in Taiwan."
+      ]
+    },
+    "language": {
+      "heading": "Language Requirements",
+      "items": [
+        "TOCFL Level A1 Chinese certificate is preferred at the time of application.",
+        "Applicants below A1 may join a preparatory Chinese language program (up to 3 months) in Vietnam before departure.",
+        "Students must pass TOCFL Level A2 by the end of the second semester of Year 1, or they will be dismissed.",
+        "Students must reach TOCFL Level B1 before advancing to Year 2."
+      ]
+    },
+    "process": {
+      "heading": "Recruitment Process",
+      "steps": [
+        {
+          "title": "Initial Awareness & Information",
+          "description": "Education fairs, information sessions, partnerships with Vietnamese schools, and online and social media promotion inform prospective students about studying and building a career in Taiwan."
+        },
+        {
+          "title": "Eligibility & Language Proficiency",
+          "description": "Applicants need at least A1 Chinese proficiency; those below A1 may receive conditional admission contingent on completing a language program."
+        },
+        {
+          "title": "Pre-Departure Chinese Language Program in Vietnam",
+          "description": "Conditionally admitted students complete an intensive Chinese program of about 3 months in Vietnam to reach A1, with certification such as TOCFL or an equivalent."
+        },
+        {
+          "title": "Application",
+          "description": "Students submit the university application with the required documents; conditional offers may be issued pending language completion and academic verification."
+        },
+        {
+          "title": "Visa Application",
+          "description": "After acceptance, students apply for a student visa with the admission letter, language proof, and evidence of financial means, and may need a medical examination and health insurance."
+        },
+        {
+          "title": "Internship & Job Guarantee Program",
+          "description": "Partnerships with Taiwanese companies provide guaranteed internships, often from the second or third year, along with post-graduation job placement support."
+        },
+        {
+          "title": "Arrival in Taiwan",
+          "description": "Students attend an orientation covering academics, daily life, and cultural adjustment, with further Chinese language support available."
+        },
+        {
+          "title": "Studying in Taiwan",
+          "description": "Students balance coursework with continuous language development and gain practical experience through internships with Taiwanese companies."
+        },
+        {
+          "title": "Post-Graduation Job Placement",
+          "description": "Graduates transition from internships to full-time roles and can apply for a work visa for long-term employment in Taiwan."
+        },
+        {
+          "title": "Educational Agency Support",
+          "description": "Agencies advise on universities and programs, assist with applications, visas, and pre-departure logistics, and collaborate with Taiwanese universities."
+        }
+      ]
+    },
+    "requiredDocuments": {
+      "heading": "Required Documents",
+      "items": [
+        "Completed university application form",
+        "Proof of Chinese language proficiency (A1 or higher)",
+        "Academic transcripts (high school or previous university)",
+        "Letters of recommendation",
+        "Statement of purpose",
+        "Passport copy and other standard application materials"
+      ]
+    },
+    "visa": {
+      "heading": "Student Visa",
+      "items": [
+        "Applied for after acceptance by the university",
+        "Official admission letter",
+        "Proof of Chinese language proficiency",
+        "Evidence of financial means",
+        "Medical examination (as required by immigration authorities)",
+        "Proof of health insurance for the duration of study"
+      ]
+    },
+    "estimatedCosts": {
+      "heading": "Estimated Costs per Semester",
+      "note": "The first semester is completely free of tuition and dormitory fees. Exchange reference: 1 USD \u2248 32.5 TWD; 1 TWD \u2248 770 VND.",
+      "items": [
+        {
+          "item": "Semiconductor Technical Academy (per semester)",
+          "twd": "53,200",
+          "usd": "\u2248 1,638",
+          "vnd": "\u2248 40,000,000"
+        },
+        {
+          "item": "Health & Recreation Management Academy (per semester)",
+          "twd": "46,570",
+          "usd": "\u2248 1,433",
+          "vnd": "\u2248 35,800,000"
+        },
+        {
+          "item": "Dormitory (from semester 3)",
+          "twd": "13,500",
+          "usd": "\u2248 415",
+          "vnd": "\u2248 10,400,000"
+        },
+        {
+          "item": "Health insurance (first 6 months)",
+          "twd": "500 / month",
+          "usd": "\u2248 15",
+          "vnd": "\u2248 385,000"
+        },
+        {
+          "item": "Health insurance (from month 7)",
+          "twd": "826 / month",
+          "usd": "\u2248 25",
+          "vnd": "\u2248 636,000"
+        },
+        {
+          "item": "ARC (residence card)",
+          "twd": "1,000 / year",
+          "usd": "\u2248 31",
+          "vnd": "\u2248 770,000"
+        }
+      ]
+    }
+  }
+}

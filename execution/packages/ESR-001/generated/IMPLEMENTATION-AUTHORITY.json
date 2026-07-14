@@ -1,0 +1,17 @@
+{
+  "authority": "ESR-001",
+  "title": "Execution Surface Registry Population",
+  "status": "PROPOSED",
+  "derived_from": "FDR-010E34B",
+  "logical_owner": "Execution Infrastructure",
+  "governance_owner": "Open Brain",
+  "runtime_repository": "APP-001",
+  "mutation_corridor": [
+    "execution/registry/surfaces/"
+  ],
+  "mission": "Populate the certified constitutional registry schema using Founder-approved constitutional assets materialized through the FAMP workflow.",
+  "repository_truth_dependency": "FDR-010E34B",
+  "builder_dependency": "Builder v1.2 (consume only)",
+  "publication_required": true,
+  "created_at": "2026-07-13T15:18:29.468590Z"
+}

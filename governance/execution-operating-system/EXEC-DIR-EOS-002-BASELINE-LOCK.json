@@ -1,0 +1,22 @@
+{
+  "authority": "EXEC-DIR-EOS-002",
+  "title": "Execution Operating System Baseline Lock",
+  "status": "ACTIVE",
+  "effective": "2026-07-12T15:35:56Z",
+  "repository": "APP-001",
+  "baseline": [
+    "EXEC-DIR-BOQ-001",
+    "EXEC-DIR-BOQ-001A",
+    "EXEC-DIR-OPS-002",
+    "EXEC-DIR-OPS-003",
+    "EXEC-DIR-OPS-004",
+    "EXEC-DIR-EOS-001"
+  ],
+  "rule": "The Execution Operating System baseline is frozen. New directives require repository-backed execution evidence that cannot be addressed by the existing baseline.",
+  "product_first": true,
+  "current_execution_focus": [
+    "SURF-AUTH-001",
+    "SURF-DASH-001",
+    "SURF-ADM-001"
+  ]
+}

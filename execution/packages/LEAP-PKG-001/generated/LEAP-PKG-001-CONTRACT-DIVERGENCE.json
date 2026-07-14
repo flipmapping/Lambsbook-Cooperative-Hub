@@ -1,0 +1,12 @@
+{
+  "package_id": "LEAP-PKG-001",
+  "generated_at": "2026-07-13T15:13:56.679062Z",
+  "status": "CONTRACT_IMPLEMENTATION_DIVERGENCE",
+  "finding": {
+    "published_contract_requires_execution_derivation": true,
+    "published_contract_requires_implementation_authority": true,
+    "published_contract_requires_implementation_context_manifest": false,
+    "builder_implementation_requires_implementation_context_manifest": true
+  },
+  "recommended_resolution": "Resolve the Builder contract/implementation divergence before creating LEAP-002 prerequisite governance artifacts."
+}

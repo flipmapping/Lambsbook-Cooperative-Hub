@@ -1,0 +1,75 @@
+{
+  "authority": "IAS-001",
+  "validated_at": "2026-07-13T16:18:27.917836Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "top_level:schema",
+      "pass": true
+    },
+    {
+      "check": "top_level:status",
+      "pass": true
+    },
+    {
+      "check": "top_level:implementation_authority",
+      "pass": true
+    },
+    {
+      "check": "top_level:builder_authorized",
+      "pass": true
+    },
+    {
+      "check": "top_level:builder_input_set",
+      "pass": true
+    },
+    {
+      "check": "top_level:certification",
+      "pass": true
+    },
+    {
+      "check": "top_level:result",
+      "pass": true
+    },
+    {
+      "check": "builder_input_set:claude_instruction_brief",
+      "pass": true
+    },
+    {
+      "check": "builder_input_set:originated",
+      "pass": true
+    },
+    {
+      "check": "builder_input_set:inherited",
+      "pass": true
+    },
+    {
+      "check": "builder_input_set:referenced",
+      "pass": true
+    },
+    {
+      "check": "builder_input_set:derived",
+      "pass": true
+    },
+    {
+      "check": "certification:originated_complete",
+      "pass": true
+    },
+    {
+      "check": "certification:inherited_complete",
+      "pass": true
+    },
+    {
+      "check": "certification:references_verified",
+      "pass": true
+    },
+    {
+      "check": "certification:derived_lifecycle_resolved",
+      "pass": true
+    },
+    {
+      "check": "certification:cib_certified",
+      "pass": true
+    }
+  ]
+}

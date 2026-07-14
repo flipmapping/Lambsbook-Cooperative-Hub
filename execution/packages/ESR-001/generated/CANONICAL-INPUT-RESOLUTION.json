@@ -1,0 +1,33 @@
+{
+  "authority": "ESR-001",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "execution_phase": "CANONICAL_INPUT_RESOLUTION",
+  "generated_at": "2026-07-14T04:18:35.282250Z",
+  "inputs": {
+    "surface_registry": {
+      "path": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+      "exists": true,
+      "resolved": true
+    },
+    "lease_registry": {
+      "path": "execution/registry/surfaces/LEASE-REGISTRY.json",
+      "exists": true,
+      "resolved": true
+    },
+    "surface_catalog": {
+      "path": "execution/registry/surfaces/SURFACE-CATALOG.json",
+      "exists": true,
+      "resolved": true
+    },
+    "surface_dependencies": {
+      "path": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json",
+      "exists": true,
+      "resolved": true
+    },
+    "design_authority": {
+      "required": false,
+      "resolved": false,
+      "reason": "No Design Authority package is currently assigned to ESR-001."
+    }
+  }
+}

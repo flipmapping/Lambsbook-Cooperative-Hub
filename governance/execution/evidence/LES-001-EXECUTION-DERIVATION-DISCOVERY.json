@@ -1,0 +1,1746 @@
+{
+  "implementation_authority": "LES-001",
+  "matches": [
+    {
+      "path": "execution/packages/LEAP-002/generated/CIB-LEAP-002-JOURNEY-ORIENTED-LANDING-EXPERIENCE.md",
+      "score": 6
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-CIB-MATERIALIZATION-READINESS.json",
+      "score": 5
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/governance/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/governance/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/EOS-RMP-001A-IMPLEMENTATION-AUTHORITY.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001A-CLAUDE-PACKAGE-BUILDER-KERNEL.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-REPOSITORY-TRUTH-CONSUMPTION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/EOS-RMP-001C-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/EOS-RMP-001D-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "score": 4
+    },
+    {
+      "path": "EOS-RMP-001E-Claude-Package/governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "score": 4
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "score": 4
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/execution-derivation/EOS-RMP-001C-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/execution-derivation/EOS-RMP-001D-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/governance/execution-derivation/FDR-GE-002-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/governance/cib/generated/CIB-GE-RMP-003-PROSPECT-REGISTRATION-CONVERSION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/governance/execution-derivation/GE-RMP-003-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/governance/execution-derivation/GE-RMP-004-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-APPLICANT-JOURNEY-STATUS.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/governance/cib/generated/CIB-GE-RMP-006-APPLICANT-STATUS-LOOKUP.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/governance/cib/generated/CIB-GE-RMP-007-APPLICANT-DOCUMENT-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/governance/cib/generated/CIB-GE-RMP-008-APPLICANT-APPOINTMENT-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/governance/cib/generated/CIB-GE-RMP-009-APPLICANT-ADMISSION-DECISION-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/governance/cib/generated/CIB-GE-RMP-010-APPLICANT-LIFECYCLE-TIMELINE.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/governance/cib/generated/CIB-GE-RMP-011-APPLICANT-ACTIVITY-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/governance/cib/generated/CIB-GE-RMP-012-APPLICANT-FOLLOWUP-TASK-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package/governance/cib/generated/CIB-INF-010E35A-INFRASTRUCTURE-MATERIALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-CONTRACT-EVIDENCE.md",
+      "score": 4
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-CONTRACT-EVIDENCE.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-EOS-RMP-001A-CLAUDE-PACKAGE-BUILDER-KERNEL.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-EOS-RMP-001B-REPOSITORY-TRUTH-CONSUMPTION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-003-PROSPECT-REGISTRATION-CONVERSION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-005-APPLICANT-JOURNEY-STATUS.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-006-APPLICANT-STATUS-LOOKUP.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-007-APPLICANT-DOCUMENT-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-008-APPLICANT-APPOINTMENT-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-009-APPLICANT-ADMISSION-DECISION-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-010-APPLICANT-LIFECYCLE-TIMELINE.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-011-APPLICANT-ACTIVITY-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-012-APPLICANT-FOLLOWUP-TASK-CENTER.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-HUB-RMP-002-AUTHENTICATION-NORMALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/cib/generated/CIB-INF-010E35A-INFRASTRUCTURE-MATERIALIZATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/EOS-RMP-001C-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/EOS-RMP-001D-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/EOS-RTB-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/FDR-GE-002-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-003-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-004-EXECUTION-DERIVATION.md",
+      "score": 4
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001A-IMPLEMENTATION-AUTHORITY.md",
+      "score": 4
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/BUILDER-SPRINT-001-IMPLEMENTATION.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/BUILDER-SPRINT-001.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/governance/BUILDER-SPRINT-001-IMPLEMENTATION.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/governance/BUILDER-SPRINT-001.md",
+      "score": 3
+    },
+    {
+      "path": "BUILDER-SPRINT-001-Claude-Package/governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/BUILDER-SPRINT-001-IMPLEMENTATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/BUILDER-SPRINT-001.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "GE-WEB-RMP-010E33A-Claude-Package/governance/CIB-GE-WEB-RMP-010E33A-PUBLIC-EXPERIENCE-INTEGRATION.md",
+      "score": 3
+    },
+    {
+      "path": "GE-WEB-RMP-010E33A-Claude-Package/governance/GE-WEB-RMP-010E33A-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "GE-WEB-RMP-010E33A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "HUB-RMP-001-Claude-Package/governance/CIB-HUB-RMP-001-PUBLIC-EXPERIENCE-INTEGRATION.md",
+      "score": 3
+    },
+    {
+      "path": "HUB-RMP-001-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "HUB-RMP-001-Claude-Package/governance/HUB-RMP-001-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "HUB-RMP-001-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E29A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E29A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E29B-Execution-Authority-Package/governance/CIB-RMP-010E29B-PROSPECT-TIMELINE-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E29B-Execution-Authority-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E29B-Execution-Authority-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30A-Claude-Package/governance/CIB-RMP-010E30A-PROSPECT-ACTIVITY-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30A-Claude-Package/governance/FDR-010E30-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30B-Claude-Package/governance/CIB-RMP-010E30B-PROSPECT-ACTIVITY-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30B-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30B-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E30B-Claude-Package/governance/RMP-010E30B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31A-Claude-Package/governance/CIB-RMP-010E31A-PROSPECT-FOLLOWUP-TASK-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31A-Claude-Package/governance/FDR-010E31-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31B-Claude-Package/governance/CIB-RMP-010E31B-PROSPECT-FOLLOWUP-TASK-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31B-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31B-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E31B-Claude-Package/governance/RMP-010E31B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32A-Claude-Package/governance/CIB-RMP-010E32A-PROSPECT-APPOINTMENT-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32A-Claude-Package/governance/FDR-010E32-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32B-Claude-Package/governance/CIB-RMP-010E32B-PROSPECT-APPOINTMENT-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32B-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32B-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E32B-Claude-Package/governance/RMP-010E32B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33A-Claude-Package/governance/CIB-RMP-010E33A-PROSPECT-DOCUMENT-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33A-Claude-Package/governance/FDR-010E33-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33B-Claude-Package/governance/CIB-RMP-010E33B-PROSPECT-DOCUMENT-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33B-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33B-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E33B-Claude-Package/governance/RMP-010E33B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34A-Claude-Package/governance/CIB-RMP-010E34A-PROSPECT-ADMISSION-DECISION-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34A-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34A-Claude-Package/governance/FDR-010E34-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34A-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34B-Claude-Package/governance/CIB-RMP-010E34B-PROSPECT-ADMISSION-DECISION-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34B-Claude-Package/governance/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34B-Claude-Package/governance/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "RMP-010E34B-Claude-Package/governance/RMP-010E34B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "docs/implementation-evidence/GE-RMP-003-CERTIFICATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "score": 3
+    },
+    {
+      "path": "execution/builders/BUILDER-SPRINT-001-IMPLEMENTATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/builders/BUILDER-SPRINT-001.md",
+      "score": 3
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "score": 3
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/governance/cib/generated/CIB-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/governance/execution-derivation/FDR-GE-003A-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/governance/cib/generated/CIB-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/governance/execution-derivation/FDR-GE-003B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/governance/execution-derivation/GE-RMP-005-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/governance/execution-derivation/GE-RMP-006-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/governance/execution-derivation/GE-RMP-007-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/governance/execution-derivation/GE-RMP-008-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/governance/execution-derivation/GE-RMP-009-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/governance/execution-derivation/GE-RMP-010-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/governance/execution-derivation/GE-RMP-011-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/governance/execution-derivation/GE-RMP-012-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package/governance/execution-derivation/INF-010E35A-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-002-ARTIFACT-CLASSIFICATION.json",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-REPOSITORY-BLOCKER.json",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-REPOSITORY-BLOCKER.json",
+      "score": 3
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-BUNDLE.json",
+      "score": 3
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-CONTEXT.md",
+      "score": 3
+    },
+    {
+      "path": "governance/GOVERNANCE-MANIFEST.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E29B-PROSPECT-TIMELINE-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E30A-PROSPECT-ACTIVITY-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E30B-PROSPECT-ACTIVITY-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E31A-PROSPECT-FOLLOWUP-TASK-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E31B-PROSPECT-FOLLOWUP-TASK-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E32A-PROSPECT-APPOINTMENT-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E32B-PROSPECT-APPOINTMENT-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E33A-PROSPECT-DOCUMENT-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E33A-PUBLIC-EXPERIENCE-INTEGRATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E33B-PROSPECT-DOCUMENT-WORKSPACE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/cib/generated/CIB-RMP-010E34A-PROSPECT-ADMISSION-DECISION-KERNEL.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/EOS-RMP-CERS-002-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E29-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E30-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E31-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E32-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E33-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E34-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-010E34B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-GE-001-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-GE-003A-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/FDR-GE-003B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-005-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-006-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-007-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-008-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-009-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-010-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-011-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/GE-RMP-012-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/INF-010E35A-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-010E29B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-010E30B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-010E31B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-010E32B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-010E33B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-010E34B-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution-derivation/RMP-CONTRACT-SEMANTIC-RECONCILIATION-EXECUTION-DERIVATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution/EXECUTION-PIPELINE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution/FDR-010E34B-BUILDER-PHASE-AUTHORIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution/FDR-010E34B-PHASE-GATE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/execution/RMP-010E34B-CERTIFIED-LINEAGE.md",
+      "score": 3
+    },
+    {
+      "path": "governance/infrastructure/INF-010E29A-INFRASTRUCTURE-AUTHORITY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/infrastructure/INF-010E31A-INFRASTRUCTURE-AUTHORITY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/infrastructure/INF-010E32A-INFRASTRUCTURE-AUTHORITY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/infrastructure/INF-010E33A-INFRASTRUCTURE-AUTHORITY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/infrastructure/INF-010E34A-INFRASTRUCTURE-AUTHORITY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/registry/authority/GE-AUTHORITY-REGISTRY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/registry/generated/GE-RELEASE1-PRODUCTION-SURFACE-INVENTORY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/releases/RELEASE-1-STATUS.md",
+      "score": 3
+    },
+    {
+      "path": "governance/rmp/LES-001-IMPLEMENTATION-AUTHORITY.md",
+      "score": 3
+    },
+    {
+      "path": "governance/rmp/certified/RMP-010E28-CERTIFICATION.md",
+      "score": 3
+    },
+    {
+      "path": "governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "score": 3
+    },
+    {
+      "path": "governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "score": 3
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-ASSEMBLY-MANIFEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-BUILDER-ASSEMBLY.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-ASSEMBLY-MANIFEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER-ASSEMBLY.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/IMPLEMENTATION-WORKSPACE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/PUBLICATION-CANDIDATE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/generated/PACKAGE-MANIFEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/generated/README.md",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/IMPLEMENTATION-WORKSPACE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/LEAP-001/MANIFEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/PUBLICATION-CANDIDATE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/generated/LES-001/CLAUDE-EXECUTION-PACKAGE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/generated/LES-001/CLAUDE-IMPLEMENTATION-PROMPT.md",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/generated/LES-001/CLAUDE-MUTATION-PACKAGE.md",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/generated/LES-001/LANDING-PAGE-IMPLEMENTATION-PACKAGE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/packages/generated/LES-001/REPOSITORY-MUTATION-PACKAGE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/SPRINT.json",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/bootstrap/OPEN-BRAIN-SUMMARY.md",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/bootstrap/REPOSITORY-BOOTSTRAP.md",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/gap_analysis/OPEN-BRAIN-REPOSITORY-GAP-ANALYSIS.md",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/RMP-MANIFEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/certification/TARGET-DISCOVERY-CERTIFICATION.json",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/contracts/MUTATION-AUTHORITY-CONTRACT.json",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md",
+      "score": 2
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/SMP-MANIFEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/IMPLEMENTATION-READINESS.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/WORKING-SOURCE-SEMANTIC.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/WORKING-SOURCE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RANKING.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RESOLUTION.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/LES-001-AUTHORITY-INVENTORY.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/BUILDER-EXECUTION.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION-AUTHORITY.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION-TASK-001.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LANDING-PAGE-ASSEMBLY.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LANDING-PAGE-IMPLEMENTATION-SPEC.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LANDING-PAGE-IMPLEMENTATION-WORKSPACE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SEMANTIC-MUTATION-AUTHORITY.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SOURCE-GENERATION-REQUEST.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/baselines/BASELINE.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/generated_baselines/BASELINE-CERTIFICATION.json",
+      "score": 2
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/mutation_history/MUTATION-001.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/EXEC-DIR-EARQ-002-REPOSITORY-INSPECTION.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-COMPLETE-SURFACE-MUTATION-PACKAGE.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-FOUNDER-APPROVAL-PACKAGE.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-FOUNDER-DECISION.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-GOVERNANCE-PHASE-CLOSEOUT.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-REPOSITORY-PUBLICATION.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-REPOSITORY-TRUTH.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-SURFACE-GAP-ANALYSIS.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/LES-001-SURFACE-INVENTORY.md",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-AUTHORITY-RESOLUTION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-BUILDER-INVOCATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-CIB-CERTIFICATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-CIB-DISCOVERY.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-COMPLETE-SURFACE-MUTATION-PACKAGE.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-FOUNDER-APPROVAL-PACKAGE.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-FOUNDER-DECISION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-GENERATED-WORKSPACE-MATERIALIZATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-GENERATED-WORKSPACE-VERIFICATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-GOVERNANCE-PHASE-CLOSEOUT.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-IMPLEMENTATION-AUTHORITY-MATERIALIZATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-PRODUCTION-QUALIFICATION-ACTIVATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-REPOSITORY-PUBLICATION.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-REPOSITORY-TRUTH.json",
+      "score": 2
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-UPSTREAM-AUTHORITY-CHAIN.json",
+      "score": 2
+    },
+    {
+      "path": "EOS-RMP-001A-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/EOS-RMP-001B-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001B-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001B-HF1-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001C-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001D-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001E-Claude-Package/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "score": 1
+    },
+    {
+      "path": "EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "execution/builders/BUILDER-v1.0-CERTIFICATION.md",
+      "score": 1
+    },
+    {
+      "path": "execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/rmp/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package/governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package/START-HERE.md",
+      "score": 1
+    },
+    {
+      "path": "execution/repository-truth/GE-RMP-003-BUILDER-GAP-ANALYSIS.md",
+      "score": 1
+    },
+    {
+      "path": "execution/repository-truth/REPOSITORY-TRUTH-BUNDLE-ARCHITECTURE-VALIDATION.md",
+      "score": 1
+    },
+    {
+      "path": "execution/repository-truth/REPOSITORY-TRUTH-BUNDLE-DEFINITION.md",
+      "score": 1
+    },
+    {
+      "path": "execution/repository-truth/REPOSITORY-TRUTH-BUNDLE-SPECIFICATION.md",
+      "score": 1
+    },
+    {
+      "path": "execution/repository-truth/REPOSITORY-TRUTH-BUNDLE-WORKFLOW.md",
+      "score": 1
+    },
+    {
+      "path": "governance/founder-decisions/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "score": 1
+    },
+    {
+      "path": "governance/founder-decisions/FDR-GE-001.md",
+      "score": 1
+    },
+    {
+      "path": "governance/founder-decisions/FDR-GE-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+      "score": 1
+    },
+    {
+      "path": "governance/founder-decisions/FDR-GE-003.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001B-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/EOS-RTB-001-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/GE-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md",
+      "score": 1
+    },
+    {
+      "path": "governance/rmp/certified/EOS-RMP-001A-CERTIFICATION.md",
+      "score": 1
+    }
+  ],
+  "status": "DISCOVERY_COMPLETE"
+}

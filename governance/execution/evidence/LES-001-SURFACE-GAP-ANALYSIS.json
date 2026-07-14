@@ -1,0 +1,37 @@
+[
+  {
+    "capability": "Landing Pages",
+    "category": "Pages",
+    "count": 3,
+    "status": "IMPLEMENTED",
+    "recommendation": "Validate during Builder production qualification."
+  },
+  {
+    "capability": "Landing Components",
+    "category": "Components",
+    "count": 43,
+    "status": "IMPLEMENTED",
+    "recommendation": "Validate during Builder production qualification."
+  },
+  {
+    "capability": "Landing Content",
+    "category": "Content",
+    "count": 28,
+    "status": "IMPLEMENTED",
+    "recommendation": "Validate during Builder production qualification."
+  },
+  {
+    "capability": "Landing Assets",
+    "category": "Assets",
+    "count": 0,
+    "status": "GAP",
+    "recommendation": "Complete before Founder Surface Acceptance."
+  },
+  {
+    "capability": "Landing Styling",
+    "category": "Styles",
+    "count": 0,
+    "status": "GAP",
+    "recommendation": "Complete before Founder Surface Acceptance."
+  }
+]

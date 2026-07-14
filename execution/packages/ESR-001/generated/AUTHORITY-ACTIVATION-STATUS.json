@@ -1,0 +1,51 @@
+{
+  "authority": "ESR-001",
+  "activation_status": "ACTIVE",
+  "verification": "PASSED",
+  "repository_mutation_authorized": true,
+  "publication_authorized": false,
+  "next_execution_state": "Upon Founder approval, ESR-001 becomes the active bounded surface responsible for constitutional registry population within execution/registry/surfaces/.",
+  "recorded_at": "2026-07-13T16:00:15.471210Z",
+  "activated_at": "2026-07-13T23:20:18.034831Z",
+  "constitutional_baseline": {
+    "version": "EOS Constitutional Baseline v2.3",
+    "synchronization_status": "CURRENT",
+    "adopted_at": "2026-07-14T01:15:01.113947Z",
+    "includes": [
+      "Repository Reality Principle (RRP)",
+      "Execution Primitive Rule (EPR)",
+      "Surface Mutation Rule",
+      "Surface Registry",
+      "Authority Registry",
+      "Authority Specification Layer",
+      "Execution Input Authority Service (IAS)",
+      "Experience Acceptance Authority (EAA)",
+      "Content Materialization Authority (CMA)",
+      "Design Authority (DA-001)",
+      "Authority Preservation Principle (EOS-EXEC-015)",
+      "Experience Acceptance Authority Decomposition (EOS-EXEC-014A)",
+      "Design Exploration Layer (DEL-001)",
+      "Founder Outcome Principle (FOP)",
+      "Proposal Completeness Principle (PCP)",
+      "Progress Continuity Principle (EOS-EXEC-016)",
+      "Runtime Identity Resolution Discovery",
+      "Builder Evolution (BLD-RMP-002)",
+      "Certified Authority Resolution Model"
+    ],
+    "delta_adopted_at": "2026-07-14T05:13:12.342415Z"
+  },
+  "execution_phase": "REGISTRY_POPULATION_PLANNING",
+  "execution_input": {
+    "status": "PENDING_RESOLUTION",
+    "authority": "Execution Input Authority Service (IAS)",
+    "required_asset_sets": [
+      "Surface Registry",
+      "Surface Lease Registry",
+      "Surface Catalog",
+      "Surface Dependencies",
+      "Design Authority"
+    ],
+    "resolution_required_before_mutation": true,
+    "recorded_at": "2026-07-14T01:46:42.885983Z"
+  }
+}

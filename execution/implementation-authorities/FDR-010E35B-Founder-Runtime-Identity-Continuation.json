@@ -1,0 +1,27 @@
+{
+  "implementation_authority": "FDR-010E35B",
+  "title": "Founder Runtime Identity Continuation",
+  "status": "APPROVED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "repository_truth_preserved": true,
+  "bounded_scope": [
+    "Introduce Runtime Identity Authority",
+    "Extend RuntimeState to support administrative identities",
+    "Resolve authenticated identity after successful authentication",
+    "Route Founder to Founder Administration surface",
+    "Route Platform Admin to Platform Administration surface",
+    "Route SBU Admin to SBU Administration surface",
+    "Preserve existing Member, Invitation and Anonymous journeys"
+  ],
+  "explicitly_out_of_scope": [
+    "Supabase Auth",
+    "JWT",
+    "RLS",
+    "Authentication providers",
+    "Middleware authorization",
+    "Database schema",
+    "Build topology"
+  ],
+  "implementation_goal": "Integrate canonical Founder, Platform Admin, SBU Admin and Member runtime identity resolution into the existing sign-in and sign-up continuation pipeline.",
+  "generated_at": "2026-07-14T02:26:53Z"
+}
