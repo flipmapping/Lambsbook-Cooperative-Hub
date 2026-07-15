@@ -15,7 +15,9 @@ import {
   Globe,
   Shield,
   Clock
-} from "lucide-react";
+} from "lucide-react",
+  ExternalLink,
+};
 import { HubHeader } from "@/components/HubHeader";
 import { HubConsultationForm } from "@/components/HubConsultationForm";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -122,7 +124,7 @@ const inquiryOptions = [
 export default function HubLanding() {
   const { language } = useLanguage();
   const { t } = useHubTranslation(language);
-  
+
   const sbus = getSbus(t);
   const collaborationPrinciples = getCollaborationPrinciples(t);
   const faqItems = getFaqItems(t);
@@ -339,9 +341,12 @@ export default function HubLanding() {
                       </CardHeader>
                       <CardContent>
                         <div className="text-xs text-muted-foreground mb-3">Tainan, Taiwan · ctbctech.edu.tw</div>
-                        <div className="flex items-center gap-1 text-sm text-primary font-medium">
+                        <div className="flex items-center gap-1 text-sm text-primary font-medium mb-3">
                           View Scholarships <ArrowRight className="h-3 w-3" />
                         </div>
+                        <a href="https://www.ctbctech.edu.tw/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline hover:text-foreground" onClick={(e) => e.stopPropagation()}>
+                          Learn More <ExternalLink className="h-3 w-3" />
+                        </a>
                       </CardContent>
                     </Card>
                   </Link>

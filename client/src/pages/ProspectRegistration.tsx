@@ -95,12 +95,23 @@ export default function ProspectRegistration() {
               Your registration has been submitted and our admissions
               team will be in touch within 5–7 business days.
             </p>
-            <Link
-              href="/growth"
-              className="mt-8 inline-block rounded-md border border-input bg-background px-6 py-2.5 text-sm font-semibold text-foreground shadow-sm hover:bg-accent transition-colors"
-            >
-              Back to Growth
-            </Link>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/growth"
+                className="inline-block rounded-md border border-input bg-background px-6 py-2.5 text-sm font-semibold text-foreground shadow-sm hover:bg-accent transition-colors"
+              >
+                Back to Growth
+              </Link>
+              <a
+                href="https://www.ctbctech.edu.tw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 rounded-md border border-primary bg-primary/5 px-6 py-2.5 text-sm font-semibold text-primary shadow-sm hover:bg-primary/10 transition-colors"
+              >
+                Explore CTBC University
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>

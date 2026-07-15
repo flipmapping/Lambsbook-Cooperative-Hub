@@ -71,7 +71,7 @@ export default function ApplicantJourneyStatus() {
       <div className="container mx-auto px-4 py-10 max-w-2xl space-y-6">
         {isLoading && (
           <p className="text-sm text-muted-foreground text-center py-10">
-            Loading your application…
+            Loading your application\u2026
           </p>
         )}
 
@@ -148,7 +148,7 @@ export default function ApplicantJourneyStatus() {
                           {stage.label}
                           {current && (
                             <span className="ml-2 text-xs text-primary font-normal">
-                              ← current
+                              \u2190 current
                             </span>
                           )}
                         </p>
@@ -159,48 +159,6 @@ export default function ApplicantJourneyStatus() {
               </CardContent>
             </Card>
 
-            <div className="text-center">
-              <Link href={`/hub/applicant/documents/${id}`}>
-                <button className="text-xs text-primary underline hover:text-primary/80">
-                  View My Documents
-                </button>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link href={`/hub/applicant/appointments/${id}`}>
-                <button className="text-xs text-primary underline hover:text-primary/80">
-                  View My Appointments
-                </button>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link href={`/hub/applicant/decisions/${id}`}>
-                <button className="text-xs text-primary underline hover:text-primary/80">
-                  View My Decision
-                </button>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link href={`/hub/applicant/timeline/${id}`}>
-                <button className="text-xs text-primary underline hover:text-primary/80">
-                  View My Timeline
-                </button>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link href={`/hub/applicant/activity/${id}`}>
-                <button className="text-xs text-primary underline hover:text-primary/80">
-                  View My Activity
-                </button>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link href={`/hub/applicant/tasks/${id}`}>
-                <button className="text-xs text-primary underline hover:text-primary/80">
-                  View My Tasks
-                </button>
-              </Link>
-            </div>
             <p className="text-xs text-center text-muted-foreground">
               Questions about your application? Contact us at{" "}
               <a href="mailto:admissions@lambsbook.net" className="underline hover:text-foreground">
