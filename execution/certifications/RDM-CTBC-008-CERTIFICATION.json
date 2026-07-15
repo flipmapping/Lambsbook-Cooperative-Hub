@@ -1,0 +1,20 @@
+{
+  "implementation_authority": "RDM-CTBC-008",
+  "implementation_name": "Finalize CTBC Scholarship Experience",
+  "status": "FOUNDER_ACCEPTED",
+  "qualified": true,
+  "completed_utc": "2026-07-15T14:27:18.667843Z",
+  "git": {
+    "branch": "main",
+    "commit": "4fa46d2"
+  },
+  "qualification": {
+    "repository_mutation": true,
+    "build": true,
+    "runtime": true,
+    "founder_acceptance": true,
+    "media_materialization": true,
+    "regression": true
+  },
+  "next_authority": "GE-RMP-014"
+}
