@@ -1,0 +1,23 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "C1",
+  "created_utc": "2026-07-15T16:20:32.181724Z",
+  "mutation_scope": {
+    "authorized_files": [
+      "server/services/notifications.ts"
+    ],
+    "preserve_contracts": [
+      "sendNotification()",
+      "sendEmail()",
+      "NotificationPayload"
+    ],
+    "replace_only": [
+      "Nodemailer transport implementation"
+    ]
+  },
+  "follow_on_phase": {
+    "phase": "C2",
+    "authorized_file": "server/services/admissions.ts",
+    "purpose": "Send CTBC registration confirmation after successful prospect registration."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "mutation_slice": "002",
+  "status": "READY_FOR_SOURCE_IMPLEMENTATION",
+  "mutation_target": "_assemble_artifacts",
+  "line_start": 345,
+  "line_end": 462,
+  "baseline_sha256": "a9a78b5a76decd0393a73376fcb28ccec10a13ea9b18527b078592bc72b78435",
+  "allowed_changes": [
+    "append Standard CLAUDE.md",
+    "append IMPLEMENT.md",
+    "append declared constitutional authorities",
+    "preserve existing artifact assembly"
+  ],
+  "prohibited_changes": [
+    "modify CLI",
+    "modify Builder contract",
+    "modify authority resolution",
+    "mutate outside certified function"
+  ],
+  "next_phase": "Repository Source Implementation"
+}

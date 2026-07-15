@@ -1,0 +1,112 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "FUNCTION_DISCOVERY_COMPLETE",
+  "builder": "execution/builders/build_claude_package.py",
+  "functions": [
+    {
+      "name": "_banner",
+      "line": 123
+    },
+    {
+      "name": "fail",
+      "line": 129
+    },
+    {
+      "name": "_extract_field",
+      "line": 137
+    },
+    {
+      "name": "extract_cib_fields",
+      "line": 149
+    },
+    {
+      "name": "validate_mandatory_fields",
+      "line": 157
+    },
+    {
+      "name": "get_optional",
+      "line": 183
+    },
+    {
+      "name": "locate_artifacts",
+      "line": 191
+    },
+    {
+      "name": "verify_artifact_existence",
+      "line": 227
+    },
+    {
+      "name": "verify_authority_consistency",
+      "line": 241
+    },
+    {
+      "name": "emit_cib_metadata",
+      "line": 284
+    },
+    {
+      "name": "emit_repository_truth",
+      "line": 293
+    },
+    {
+      "name": "_package_name",
+      "line": 311
+    },
+    {
+      "name": "_resolve_package_root",
+      "line": 316
+    },
+    {
+      "name": "_create_package_structure",
+      "line": 326
+    },
+    {
+      "name": "_copy_artifact",
+      "line": 333
+    },
+    {
+      "name": "_assemble_artifacts",
+      "line": 345
+    },
+    {
+      "name": "_generate_start_here",
+      "line": 465
+    },
+    {
+      "name": "_generate_manifest",
+      "line": 524
+    },
+    {
+      "name": "_verify_package",
+      "line": 577
+    },
+    {
+      "name": "emit_package_summary",
+      "line": 600
+    },
+    {
+      "name": "_archive_package",
+      "line": 619
+    },
+    {
+      "name": "_sha256_file",
+      "line": 637
+    },
+    {
+      "name": "_write_sha256",
+      "line": 646
+    },
+    {
+      "name": "_verify_archive",
+      "line": 657
+    },
+    {
+      "name": "emit_finalization_summary",
+      "line": 666
+    },
+    {
+      "name": "main",
+      "line": 683
+    }
+  ],
+  "next_phase": "Precise Runtime Mutation Target Selection"
+}

@@ -1,0 +1,54 @@
+{
+  "package_id": "RDM-AUTH-001-PACKAGE",
+  "status": "READY_FOR_IMPLEMENTATION",
+  "execution_mode": "Rapid Delivery Mode",
+  "classification": "L1 Product Feature",
+  "repository_baseline": {
+    "head_commit": "ace49313375ab1b136e5b704be83c05c5f52d02a",
+    "branch": "main"
+  },
+  "repository_truth": [
+    "Authentication succeeds.",
+    "Continuation succeeds.",
+    "RuntimeState is published.",
+    "Runtime identity is not resolved before RuntimeState publication.",
+    "Authenticated members are classified as non_member.",
+    "Founder/Admin/Member journeys are affected."
+  ],
+  "authorized_mutation_surfaces": [
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx"
+  ],
+  "objective": "Implement runtime identity resolution before RuntimeState publication so authenticated Founder, Platform Admin, SBU Admin and Member users are routed correctly.",
+  "acceptance": [
+    "Founder -> Founder Administration",
+    "Platform Admin -> Platform Administration",
+    "SBU Admin -> SBU Administration",
+    "Member -> Member Dashboard",
+    "Invitation flow unchanged",
+    "Anonymous flow unchanged"
+  ],
+  "validation": [
+    "npm run build",
+    "TypeScript compilation",
+    "Runtime startup",
+    "Founder login",
+    "Admin login",
+    "Member login",
+    "Invitation login",
+    "Regression verification"
+  ],
+  "required_evidence": [
+    "Unified diff",
+    "Files changed",
+    "Build log",
+    "Runtime log",
+    "Authentication evidence",
+    "Regression evidence"
+  ],
+  "stop_condition": "Stop after implementation, validation, and evidence capture.",
+  "generated_at": "2026-07-15T00:08:55Z"
+}

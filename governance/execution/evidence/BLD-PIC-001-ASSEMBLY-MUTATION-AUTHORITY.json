@@ -1,0 +1,38 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "mutation_slice": "002",
+  "status": "AUTHORIZED",
+  "boq_001": "PRESERVED",
+  "mutation_target": "execution/builders/build_claude_package.py",
+  "baseline_sha256": "a9a78b5a76decd0393a73376fcb28ccec10a13ea9b18527b078592bc72b78435",
+  "bounded_function": "_assemble_artifacts",
+  "bounded_lines": {
+    "start": 345,
+    "end": 462
+  },
+  "repository_truth": {
+    "existing_capabilities": [
+      "CIB packaging",
+      "Execution Derivation packaging",
+      "Implementation Authority packaging",
+      "Synchronization artifact packaging",
+      "Implementation Context Manifest packaging",
+      "Implementation Context file packaging"
+    ],
+    "pic_001_gap": [
+      "Standard CLAUDE.md",
+      "IMPLEMENT.md",
+      "Declared constitutional authorities",
+      "PIC sovereign package completion"
+    ]
+  },
+  "mutation_constraints": [
+    "Append-only evolution",
+    "Preserve existing artifact assembly",
+    "No Builder contract redesign",
+    "No authority inference",
+    "No CLI changes",
+    "No mutation outside _assemble_artifacts()"
+  ],
+  "next_phase": "Repository Source Mutation Slice 002"
+}

@@ -1,0 +1,9 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "TEXT_EXTRACTED",
+  "function": "_archive_package",
+  "line_start": 619,
+  "line_end": 634,
+  "repository_file": "execution/builders/build_claude_package.py",
+  "next_phase": "Runtime Source Mutation"
+}

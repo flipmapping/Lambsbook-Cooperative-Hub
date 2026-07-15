@@ -1,0 +1,6 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "C2",
+  "working_copy": "server/services/notifications.ts",
+  "sha256": "4029cddbd11ea7692f9bad85010adf0660c3e57aa8fd477e96f85f10b8bb2e30"
+}

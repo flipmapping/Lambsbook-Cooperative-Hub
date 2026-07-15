@@ -1,0 +1,26 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "A3",
+  "files": [
+    {
+      "path": "server/services/notifications.ts",
+      "bytes": 5631,
+      "sha256": "4029cddbd11ea7692f9bad85010adf0660c3e57aa8fd477e96f85f10b8bb2e30"
+    },
+    {
+      "path": "server/services/admissions.ts",
+      "bytes": 6715,
+      "sha256": "54dbb9872dcd5d5aef0fba969586d3fae86f5e6dda1266bea70d37c4f6f46e4b"
+    },
+    {
+      "path": "client/src/pages/ProspectRegistration.tsx",
+      "bytes": 8851,
+      "sha256": "7921d1f2de2eb82d28fbbdb6299f6d2a01838198b77cd6fb303bb41b1738a094"
+    },
+    {
+      "path": "package.json",
+      "bytes": 4494,
+      "sha256": "9dd5a1f681787e87e00228d129a7c153f116dd5d538d3f7a05379550083cff12"
+    }
+  ]
+}

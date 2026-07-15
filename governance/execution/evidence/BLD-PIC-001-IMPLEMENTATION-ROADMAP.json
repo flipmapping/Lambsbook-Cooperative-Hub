@@ -1,0 +1,16 @@
+{
+  "authority": "BLD-PIC-001",
+  "status": "ACTIVE",
+  "builder_baseline": "BOQ-001 preserved",
+  "roadmap": [
+    "BLD-PIC-001",
+    "PIC-001 Standard",
+    "CLAUDE.md Template",
+    "PIC Schema",
+    "Builder Runtime Mutation",
+    "Builder Qualification",
+    "Generate First Certified PIC",
+    "Re-run LEAP-PREP",
+    "Resume LEAP Implementation"
+  ]
+}

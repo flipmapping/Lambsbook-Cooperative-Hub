@@ -1,0 +1,30 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "D1",
+  "created_utc": "2026-07-15T16:25:11.752843Z",
+  "objective": "Replace Nodemailer transport with Resend transport.",
+  "authorized_repository_surface": [
+    "server/services/notifications.ts"
+  ],
+  "preserve": [
+    "sendNotification()",
+    "sendEmail()",
+    "NotificationPayload",
+    "notification persistence",
+    "existing callers"
+  ],
+  "prohibited": [
+    "Modify admissions workflow",
+    "Modify ProspectRegistration.tsx",
+    "Modify Builder",
+    "Modify Open Brain",
+    "Introduce parallel email service",
+    "Change public runtime contracts"
+  ],
+  "qualification_required": [
+    "npm run build",
+    "npm run dev",
+    "transport initialization",
+    "no TypeScript errors"
+  ]
+}

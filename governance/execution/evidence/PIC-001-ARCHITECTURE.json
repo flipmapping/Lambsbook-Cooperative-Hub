@@ -1,0 +1,13 @@
+{
+  "authority": "PIC-001",
+  "status": "ARCHITECTURE_COMPLETE",
+  "deliverables": [
+    "execution/standards/PIC-001-PACKAGE-IS-THE-CONTRACT.md",
+    "execution/templates/CLAUDE.md",
+    "execution/schemas/PIC.schema.yaml",
+    "execution/plans/PIC-001-BUILDER-RUNTIME-MUTATION-PLAN.md",
+    "execution/plans/PIC-001-BUILDER-RUNTIME-IMPLEMENTATION-PLAN.md"
+  ],
+  "builder_status": "v1.2 unchanged",
+  "next_builder_line": "Builder Evolution"
+}

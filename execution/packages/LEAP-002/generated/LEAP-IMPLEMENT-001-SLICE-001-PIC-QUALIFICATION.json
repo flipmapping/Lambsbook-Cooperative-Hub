@@ -1,0 +1,18 @@
+{
+  "package": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+  "size_bytes": 628,
+  "sha256": "1c2e619e8ce40dd23ca2ea30253e58358b29cdfce184d267f38f3c2c322ce057",
+  "entries": [
+    "LEAP-IMPLEMENT-001-SLICE-001-PIC.md"
+  ],
+  "required": {
+    "CLAUDE.md": false,
+    "IMPLEMENT.md": false,
+    "PACKAGE-MANIFEST.md": false,
+    "PACKAGE.json": false
+  },
+  "status": "NOT_QUALIFIED",
+  "has_authorities": false,
+  "has_evidence": false,
+  "brace_artifacts": []
+}

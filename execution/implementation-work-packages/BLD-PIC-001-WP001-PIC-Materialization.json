@@ -1,0 +1,29 @@
+{
+  "implementation_authority": "BLD-PIC-001-WP001",
+  "parent_authority": "BLD-PIC-001",
+  "status": "AUTHORIZED",
+  "execution_mode": "Strategic Execution Mode",
+  "objective": "Implement the Builder PIC Materialization Service that generates a certified Package Is the Contract (PIC) conforming to BUILDER-CONSTITUTIONAL-BASELINE-v1.2.1.",
+  "bounded_mutation": {
+    "phase": "PIC Materialization",
+    "deliverables": [
+      "PACKAGE-MANIFEST.md",
+      "IMPLEMENT.md",
+      "CLAUDE.md",
+      "package.json",
+      "authorities/",
+      "repository/",
+      "evidence/",
+      "PIC ZIP"
+    ]
+  },
+  "success_criteria": [
+    "Builder resolves CBIS.",
+    "Builder resolves declared constitutional authorities.",
+    "Builder copies authorized repository surfaces.",
+    "Builder generates mandatory PIC documents.",
+    "Builder validates PIC completeness.",
+    "Builder publishes exactly one ZIP."
+  ],
+  "generated_at": "2026-07-15T14:03:43Z"
+}

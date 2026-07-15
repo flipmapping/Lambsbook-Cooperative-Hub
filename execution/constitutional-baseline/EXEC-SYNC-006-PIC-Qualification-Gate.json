@@ -1,0 +1,25 @@
+{
+  "directive": "EXEC-SYNC-006",
+  "status": "SYNCHRONIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "extends": [
+    "EOS-EXEC-017 Package Sovereignty Principle",
+    "EXEC-SYNC-005"
+  ],
+  "pic_qualification_gate": {
+    "publication_rule": "A Builder-generated PIC SHALL NOT be published unless all required package components are present.",
+    "required_components": [
+      "CLAUDE.md",
+      "IMPLEMENT.md",
+      "PACKAGE-MANIFEST.md",
+      "authorities/",
+      "repository/",
+      "evidence/"
+    ],
+    "publication_result": {
+      "PASS": "PIC may be published.",
+      "FAIL": "PIC publication blocked until missing components are materialized."
+    }
+  },
+  "generated_at": "2026-07-15T11:01:39Z"
+}

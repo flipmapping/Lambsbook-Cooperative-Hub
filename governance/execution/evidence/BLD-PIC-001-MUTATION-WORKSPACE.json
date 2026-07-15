@@ -1,0 +1,10 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "MUTATION_WORKSPACE_READY",
+  "repository_file": "execution/builders/build_claude_package.py",
+  "function": "_assemble_artifacts",
+  "line_start": 345,
+  "line_end": 462,
+  "workspace_file": "execution/builders/.mutation_workspace/BLD-PIC-001-SLICE-002-_assemble_artifacts.py",
+  "next_phase": "Implement Slice 002 Source Mutation"
+}

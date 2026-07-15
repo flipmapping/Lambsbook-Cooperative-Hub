@@ -1,0 +1,10 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "ASSEMBLY_SURFACE_CERTIFIED",
+  "repository_file": "execution/builders/build_claude_package.py",
+  "function": "_assemble_artifacts",
+  "line_start": 345,
+  "line_end": 462,
+  "repository_truth": "_archive_package already archives the complete package. PIC-001 evolution must therefore extend package assembly rather than archive generation.",
+  "next_phase": "Repository Mutation Slice 002"
+}

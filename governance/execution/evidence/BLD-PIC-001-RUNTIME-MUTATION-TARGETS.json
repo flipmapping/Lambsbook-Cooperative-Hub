@@ -1,0 +1,35 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "TARGETS_CERTIFIED",
+  "builder": "execution/builders/build_claude_package.py",
+  "targets": [
+    {
+      "function": "_assemble_artifacts",
+      "start_line": 345,
+      "end_line": 462
+    },
+    {
+      "function": "_generate_start_here",
+      "start_line": 465,
+      "end_line": 521
+    },
+    {
+      "function": "_generate_manifest",
+      "start_line": 524,
+      "end_line": 574
+    },
+    {
+      "function": "_verify_package",
+      "start_line": 577,
+      "end_line": 597
+    },
+    {
+      "function": "_archive_package",
+      "start_line": 619,
+      "end_line": 634
+    }
+  ],
+  "mutation_scope": "PIC ZIP emission only",
+  "boq_001": "PRESERVED",
+  "next_phase": "Repository Mutation Slice 001"
+}

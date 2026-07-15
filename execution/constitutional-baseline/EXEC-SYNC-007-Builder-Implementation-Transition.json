@@ -1,0 +1,20 @@
+{
+  "directive": "EXEC-SYNC-007",
+  "status": "ACTIVE",
+  "execution_mode": "Strategic Execution Mode",
+  "objective": "Implement Builder v1.2 changes required to produce PICs that conform to BUILDER-CONSTITUTIONAL-BASELINE-v1.2.1.",
+  "repository_truth": {
+    "builder_baseline": "BUILDER-CONSTITUTIONAL-BASELINE-v1.2.1",
+    "governance_status": "FROZEN",
+    "next_phase": "IMPLEMENTATION"
+  },
+  "implementation_scope": [
+    "Builder PIC materialization",
+    "PACKAGE-MANIFEST generation",
+    "IMPLEMENT.md generation",
+    "CLAUDE.md injection",
+    "Repository corridor packaging",
+    "PIC qualification gate enforcement"
+  ],
+  "generated_at": "2026-07-15T12:29:29Z"
+}

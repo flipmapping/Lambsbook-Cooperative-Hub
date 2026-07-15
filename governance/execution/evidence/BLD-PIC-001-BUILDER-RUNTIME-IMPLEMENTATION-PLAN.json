@@ -1,0 +1,7 @@
+{
+  "authority": "BLD-PIC-001",
+  "status": "IMPLEMENTATION_PLANNED",
+  "mutation_target": "execution/builders/build_claude_package.py",
+  "builder_baseline": "BOQ-001 preserved",
+  "next_phase": "Repository Mutation"
+}

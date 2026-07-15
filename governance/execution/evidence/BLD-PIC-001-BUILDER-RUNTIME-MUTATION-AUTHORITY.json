@@ -1,0 +1,7 @@
+{
+  "authority": "BLD-PIC-001",
+  "status": "AUTHORIZED",
+  "boq_001": "PRESERVED",
+  "mutation_scope": "execution/builders/",
+  "next_phase": "Builder Runtime Implementation"
+}

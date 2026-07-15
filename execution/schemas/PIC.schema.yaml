@@ -1,0 +1,25 @@
+type: object
+
+required:
+  - package_manifest
+  - implement
+  - claude
+  - authorities
+  - mutation_corridor
+
+properties:
+
+  package_manifest:
+    type: string
+
+  implement:
+    type: string
+
+  claude:
+    type: string
+
+  authorities:
+    type: array
+
+  mutation_corridor:
+    type: array

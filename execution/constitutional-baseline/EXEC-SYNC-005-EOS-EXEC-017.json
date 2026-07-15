@@ -1,0 +1,28 @@
+{
+  "directive": "EXEC-SYNC-005",
+  "status": "SYNCHRONIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "synchronizes": [
+    "EOS-EXEC-017 Package Sovereignty Principle"
+  ],
+  "builder_effect": {
+    "builder": "Builder v1.2",
+    "required_pic_outputs": [
+      "CLAUDE.md",
+      "IMPLEMENT.md",
+      "PACKAGE-MANIFEST.md",
+      "package.json",
+      "authorities/",
+      "repository/",
+      "evidence/"
+    ],
+    "verification": [
+      "Repository baseline captured",
+      "Declared authorities resolved",
+      "Authorized mutation corridor packaged",
+      "PIC completeness verified"
+    ]
+  },
+  "execution_effect": "All future Builder-generated PICs SHALL conform to EOS-EXEC-017.",
+  "generated_at": "2026-07-15T10:44:18Z"
+}

@@ -1,0 +1,18 @@
+{
+  "authority": "BLD-PIC-001",
+  "status": "ACTIVE",
+  "runtime_corridor": "execution/builders/",
+  "steps": [
+    "Resolve CBIS",
+    "Resolve declared authorities",
+    "Assemble package",
+    "Inject CLAUDE.md",
+    "Generate IMPLEMENT.md",
+    "Generate PACKAGE-MANIFEST.md",
+    "Validate PIC schema",
+    "Package Integrity",
+    "Emit PIC ZIP",
+    "Publication Gate"
+  ],
+  "builder_v1_2": "Preserved"
+}

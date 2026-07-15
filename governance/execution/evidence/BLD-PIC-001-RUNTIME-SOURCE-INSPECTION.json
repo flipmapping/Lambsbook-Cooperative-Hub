@@ -1,0 +1,12 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "SOURCE_INSPECTED",
+  "builder": "execution/builders/build_claude_package.py",
+  "inspection": {
+    "generate_package_manifest": null,
+    "generate_start_here": null,
+    "package_assembly": null,
+    "main": 683
+  },
+  "next_phase": "Textual Certainty Gate"
+}

@@ -1,0 +1,21 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "mutation_slice": "001",
+  "status": "AUTHORIZED",
+  "boq_001": "PRESERVED",
+  "mutation_target": "execution/builders/build_claude_package.py",
+  "baseline_sha256": "a9a78b5a76decd0393a73376fcb28ccec10a13ea9b18527b078592bc72b78435",
+  "bounded_function": "_archive_package",
+  "bounded_lines": {
+    "start": 619,
+    "end": 634
+  },
+  "objective": "Extend _archive_package() to emit the canonical PIC ZIP containing the complete certified Package Is the Contract without changing Builder semantics.",
+  "prohibited_changes": [
+    "No authority inference",
+    "No Builder contract redesign",
+    "No CLI contract changes",
+    "No modification outside _archive_package()"
+  ],
+  "next_phase": "Repository Source Mutation"
+}

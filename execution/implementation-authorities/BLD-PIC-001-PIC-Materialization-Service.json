@@ -1,0 +1,23 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "AUTHORIZED",
+  "execution_mode": "Strategic Execution Mode",
+  "inherits": [
+    "BUILDER-CONSTITUTIONAL-BASELINE-v1.2.1",
+    "EXEC-SYNC-007"
+  ],
+  "objective": "Implement the Builder PIC Materialization Service as the first bounded Builder mutation.",
+  "bounded_mutation": {
+    "capability": "PIC Materialization",
+    "deliverables": [
+      "PACKAGE-MANIFEST.md",
+      "IMPLEMENT.md",
+      "CLAUDE.md",
+      "package.json",
+      "authorities/",
+      "repository/",
+      "evidence/"
+    ]
+  },
+  "generated_at": "2026-07-15T13:14:42Z"
+}

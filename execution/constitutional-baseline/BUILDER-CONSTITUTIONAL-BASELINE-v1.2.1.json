@@ -1,0 +1,26 @@
+{
+  "baseline_id": "BUILDER-CONSTITUTIONAL-BASELINE-v1.2.1",
+  "status": "FROZEN",
+  "effective": "IMMEDIATELY",
+  "inherits": [
+    "BLD-CAR-001 Constitutional Authority Resolver",
+    "EOS-EXEC-017 Package Sovereignty Principle",
+    "EXEC-SYNC-005",
+    "EXEC-SYNC-006"
+  ],
+  "builder_contract": {
+    "input": "Certified Builder Input Set (CBIS)",
+    "output": "Certified Package Is the Contract (PIC)",
+    "publication_gate": "PIC Qualification Gate"
+  },
+  "pic_required_components": [
+    "CLAUDE.md",
+    "IMPLEMENT.md",
+    "PACKAGE-MANIFEST.md",
+    "package.json",
+    "authorities/",
+    "repository/",
+    "evidence/"
+  ],
+  "generated_at": "2026-07-15T12:15:36Z"
+}

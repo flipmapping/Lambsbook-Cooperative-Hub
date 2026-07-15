@@ -1,0 +1,16 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "implementation_slice": "002",
+  "status": "ACTIVE",
+  "implementation_target": "execution/builders/build_claude_package.py",
+  "bounded_function": "_assemble_artifacts",
+  "bounded_line_range": {
+    "start": 345,
+    "end": 462
+  },
+  "mutation_strategy": "Append-only",
+  "governance_state": "FROZEN",
+  "boq_001": "PRESERVED",
+  "authority_preservation": "PRESERVED",
+  "next_phase": "Repository Source Mutation"
+}

@@ -1,0 +1,23 @@
+{
+  "implementation_task": "BLD-PIC-001-IMPL-001",
+  "parent_authority": "BLD-PIC-001-WP001",
+  "status": "READY_FOR_SOURCE_IMPLEMENTATION",
+  "execution_mode": "Strategic Execution Mode",
+  "objective": "Implement Builder source code that materializes a complete Package Is the Contract (PIC) from a Certified Builder Input Set.",
+  "implementation_scope": {
+    "builder_capabilities": [
+      "CBIS resolution",
+      "Constitutional Authority Resolution",
+      "Repository collection",
+      "PACKAGE-MANIFEST generation",
+      "IMPLEMENT generation",
+      "Standard CLAUDE template injection",
+      "package.json generation",
+      "Evidence directory materialization",
+      "PIC Qualification Gate",
+      "ZIP publication"
+    ]
+  },
+  "success_definition": "Builder generates a self-contained PIC ZIP that can be executed by Claude without any conversational context.",
+  "generated_at": "2026-07-15T16:12:39Z"
+}

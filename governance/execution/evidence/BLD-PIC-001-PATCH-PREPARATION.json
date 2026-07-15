@@ -1,0 +1,9 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "READY_FOR_PATCH_REVIEW",
+  "baseline_sha256": "a9a78b5a76decd0393a73376fcb28ccec10a13ea9b18527b078592bc72b78435",
+  "working_sha256": "a9a78b5a76decd0393a73376fcb28ccec10a13ea9b18527b078592bc72b78435",
+  "repository_file": "execution/builders/build_claude_package.py",
+  "patch_exists": false,
+  "next_phase": "Implement Slice 002 Source Mutation"
+}
