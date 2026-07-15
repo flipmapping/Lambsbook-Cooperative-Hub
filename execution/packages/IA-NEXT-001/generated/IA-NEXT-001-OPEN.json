@@ -1,0 +1,19 @@
+{
+  "authority": "IA-NEXT-001",
+  "status": "OPEN",
+  "generated_at": "2026-07-14T07:05:55.961417Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "execution_mode": "IMPLEMENTATION",
+  "consumes": {
+    "implementation_authority_registry": "packages/generated/IMPLEMENTATION-AUTHORITY-REGISTRY.json",
+    "builder_adoption": "packages/EXEC-SYNC-001/generated/EXEC-SYNC-001-BUILDER-CAR-ADOPTION.json"
+  },
+  "constraints": {
+    "repository_truth": "IMMUTABLE_INPUT",
+    "builder_runtime": "v1.2",
+    "governance_rediscovery": false,
+    "repository_bootstrap": false,
+    "builder_requalification": false
+  },
+  "next_gate": "SURFACE_LEASE_CONFIRMATION"
+}

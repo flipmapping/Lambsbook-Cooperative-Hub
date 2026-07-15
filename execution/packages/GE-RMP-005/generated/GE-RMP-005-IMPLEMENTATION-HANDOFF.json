@@ -1,0 +1,27 @@
+{
+  "authority": "GE-RMP-005",
+  "generated_at": "2026-07-14T08:33:13.922104Z",
+  "status": "IMPLEMENTATION_READY",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "repository_truth": "PRESERVED",
+  "surface_lease": "ACTIVE",
+  "implementation_engine": "AUTHORIZED",
+  "leased_surfaces": [
+    "client/src/components/HeroSection.tsx",
+    "client/src/pages/HubLanding.tsx",
+    "client/src/pages/ScholarshipsPage.tsx",
+    "client/src/pages/ProspectRegistration.tsx"
+  ],
+  "mutation_order": [
+    "client/src/components/HeroSection.tsx",
+    "client/src/pages/HubLanding.tsx",
+    "client/src/pages/ScholarshipsPage.tsx",
+    "client/src/pages/ProspectRegistration.tsx"
+  ],
+  "post_mutation_pipeline": [
+    "Build Validation",
+    "Runtime Validation",
+    "Experience Acceptance",
+    "Founder Acceptance"
+  ]
+}

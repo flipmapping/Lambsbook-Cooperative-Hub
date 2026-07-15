@@ -1,0 +1,34 @@
+{
+  "implementation_authority": "FDR-010E35C-MUT-001-EXEC-001",
+  "parent_authority": "FDR-010E35C-MUT-001",
+  "status": "READY_FOR_IMPLEMENTATION_ENGINE",
+  "execution_protocol": "EOS-EXEC-016",
+  "execution_stage": "PRE_MUTATION_EXECUTION_PLAN",
+  "objective": "Inspect every authorized mutation surface and produce a repository-backed implementation plan before the first code change.",
+  "authorized_surfaces": [
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  ],
+  "required_outputs": [
+    "Execution order",
+    "Repository evidence for every mutation",
+    "Justification for every modified file",
+    "Expected RuntimeState evolution",
+    "Expected identity resolution flow",
+    "Expected navigation behaviour",
+    "Estimated build impact",
+    "Mutation sequence"
+  ],
+  "prohibited": [
+    "Repository mutation",
+    "Repository formatting",
+    "Repository cleanup",
+    "Architecture expansion",
+    "Additional planning artifacts"
+  ],
+  "completion_rule": "Stop after producing the certified pre-mutation execution plan. No repository mutation is permitted during this stage.",
+  "generated_at": "2026-07-14T07:59:20Z"
+}

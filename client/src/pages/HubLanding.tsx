@@ -14,10 +14,9 @@ import {
   HelpCircle,
   Globe,
   Shield,
-  Clock
-} from "lucide-react",
+  Clock,
   ExternalLink,
-};
+} from "lucide-react";
 import { HubHeader } from "@/components/HubHeader";
 import { HubConsultationForm } from "@/components/HubConsultationForm";
 import { useLanguage } from "@/lib/LanguageContext";

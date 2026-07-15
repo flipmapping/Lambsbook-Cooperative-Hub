@@ -1,0 +1,25 @@
+{
+  "dispatch_id": "FDR-010E35C-MUT-001-VAL-003",
+  "parent_dispatch": "FDR-010E35C-MUT-001-VAL-002",
+  "status": "EXECUTION_REQUEST_DISPATCHED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "execution_directive": "EXEC-DIR-EOS-015",
+  "consume_request": "docs/implementation-evidence/FDR-010E35C/MUT-001/VALIDATION-EXECUTION-REQUEST.md",
+  "implementation_engine": [
+    "Claude",
+    "Replit AI"
+  ],
+  "required_response": [
+    "Repository mutation summary",
+    "Commands executed",
+    "Build evidence",
+    "TypeScript evidence",
+    "Runtime startup evidence",
+    "Authentication continuation evidence",
+    "RuntimeState evidence",
+    "Regression assessment"
+  ],
+  "rule": "Return repository-backed validation evidence only. Do not generate additional governance artifacts.",
+  "generated_at": "2026-07-14T12:55:26Z"
+}

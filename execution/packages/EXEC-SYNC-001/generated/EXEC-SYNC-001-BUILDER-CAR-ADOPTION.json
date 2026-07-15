@@ -1,0 +1,22 @@
+{
+  "authority": "EXEC-SYNC-001",
+  "generated_at": "2026-07-14T06:51:36.120721Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "status": "CURRENT",
+  "repository_truth": {
+    "preserved": true,
+    "implementation_authority_registry": "packages/generated/IMPLEMENTATION-AUTHORITY-REGISTRY.json"
+  },
+  "builder_governance": {
+    "current_runtime": "Builder v1.2",
+    "next_planned_evolution": "BLD-CAR-001",
+    "supersedes": "BLD-RMP-002",
+    "execution_action": "ADOPT_REPOSITORY_TRUTH_ONLY"
+  },
+  "continuation": {
+    "restart_active_authorities": false,
+    "reopen_completed_governance": false,
+    "implementation_of_builder_evolution": false,
+    "next_step": "OPEN_NEXT_IMPLEMENTATION_AUTHORITY"
+  }
+}

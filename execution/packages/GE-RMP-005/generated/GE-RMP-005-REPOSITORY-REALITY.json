@@ -1,0 +1,46 @@
+{
+  "authority": "GE-RMP-005",
+  "generated_at": "2026-07-14T08:26:40.921263Z",
+  "status": "REPOSITORY_REALITY_INSPECTED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "repository_truth": "PRESERVED",
+  "inspection": [
+    {
+      "surface": "client/src/components/HeroSection.tsx",
+      "exists": true,
+      "line_count": 66,
+      "contains_todo": false,
+      "contains_fixme": false,
+      "contains_hero": true,
+      "contains_growth": false
+    },
+    {
+      "surface": "client/src/pages/HubLanding.tsx",
+      "exists": true,
+      "line_count": 467,
+      "contains_todo": false,
+      "contains_fixme": false,
+      "contains_hero": true,
+      "contains_growth": false
+    },
+    {
+      "surface": "client/src/pages/ScholarshipsPage.tsx",
+      "exists": true,
+      "line_count": 212,
+      "contains_todo": false,
+      "contains_fixme": false,
+      "contains_hero": true,
+      "contains_growth": false
+    },
+    {
+      "surface": "client/src/pages/ProspectRegistration.tsx",
+      "exists": true,
+      "line_count": 226,
+      "contains_todo": false,
+      "contains_fixme": false,
+      "contains_hero": false,
+      "contains_growth": true
+    }
+  ],
+  "next_gate": "IMPLEMENTATION_MUTATION_PLAN"
+}

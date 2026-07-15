@@ -1,4 +1,10 @@
 {
   "schema_version": "1.0",
-  "active_leases": []
+  "active_leases": [],
+  "implementation_metadata": {
+    "implementation_authority": "ESR-001",
+    "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+    "implementation_status": "READY_FOR_POPULATION",
+    "updated_at": "2026-07-14T08:17:32.908998Z"
+  }
 }

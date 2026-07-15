@@ -37,7 +37,7 @@ const CTBC_LOGO        = '/assets/ctbc/ctbc-logo.png';
 const CTBC_CAMPUS_1    = '/assets/ctbc/campus-1.jpg';
 const CTBC_CAMPUS_2    = '/assets/ctbc/campus-2.jpg';
 const CTBC_CAMPUS_3    = '/assets/ctbc/campus-3.jpg';
-const CTBC_VIDEO_ID    = ''; // Set to Founder-approved YouTube video ID
+const CTBC_VIDEO_ID    = 'kvZF1CVyFFs'; // Set to Founder-approved YouTube video ID
 const CTBC_WEBSITE_URL = 'https://www.ctbctech.edu.tw/';
 
 // Supported Growth Experience locales (RDM-CTBC-001: vi, en, zh only)

@@ -1,0 +1,24 @@
+{
+  "implementation_authority": "FDR-010E35C-001",
+  "parent_authority": "FDR-010E35C",
+  "status": "READY_FOR_REPOSITORY_INSPECTION",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "inspection_objective": "Inspect the complete post-authentication continuation corridor before authorizing the first repository mutation.",
+  "inspection_surfaces": [
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  ],
+  "required_repository_truth": [
+    "Where RuntimeState is constructed.",
+    "Where identity can first be resolved.",
+    "Where journey/outcome is determined.",
+    "Where RuntimeState is published.",
+    "Where RuntimeState is consumed."
+  ],
+  "mutation_rule": "No repository mutation is authorized until the complete continuation corridor has been certified.",
+  "generated_at": "2026-07-14T07:01:32Z"
+}

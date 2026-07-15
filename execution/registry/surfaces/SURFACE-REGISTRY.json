@@ -1,5 +1,11 @@
 {
   "schema_version": "1.0",
   "constitutional_authority": "EOS-CON-002",
-  "registered_surfaces": []
+  "registered_surfaces": [],
+  "implementation_metadata": {
+    "implementation_authority": "ESR-001",
+    "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+    "implementation_status": "READY_FOR_POPULATION",
+    "updated_at": "2026-07-14T08:17:32.907631Z"
+  }
 }

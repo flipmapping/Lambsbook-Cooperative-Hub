@@ -1,0 +1,21 @@
+{
+  "implementation_authority": "FDR-010E35C-MUT-001-EXEC-003",
+  "parent_authority": "FDR-010E35C-MUT-001-EXEC-002",
+  "status": "AUTHORIZE_REPOSITORY_MUTATION",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "mutation_number": 1,
+  "mutation_surface": [
+    "client/src/lib/auth/PostAuthenticationContinuation.ts"
+  ],
+  "mutation_objective": "Introduce the canonical AuthenticatedIdentity model and repository-backed Runtime Identity Resolution extension point. Preserve existing runtime behaviour. Do not modify navigation.",
+  "required_repository_evidence": [
+    "Unified diff",
+    "Changed symbols",
+    "RuntimeState before/after comparison",
+    "Build result",
+    "TypeScript validation result"
+  ],
+  "validation_gate": "Mutation 2 shall not begin until Mutation 1 builds successfully and repository evidence has been captured.",
+  "generated_at": "2026-07-14T08:14:31Z"
+}

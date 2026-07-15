@@ -1,0 +1,24 @@
+{
+  "validation_session": "FDR-010E35C-MUT-001-VAL-004",
+  "status": "ACTIVE",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "execution_directive": "EXEC-DIR-EOS-015",
+  "repository_baseline": {
+    "head_commit": "ace49313375ab1b136e5b704be83c05c5f52d02a",
+    "branch": "main"
+  },
+  "consumes": [
+    "execution/execution-dispatch/FDR-010E35C-MUT-001-VAL-003-Execution-Request-Dispatch.json"
+  ],
+  "expected_evidence": [
+    "Repository build log",
+    "TypeScript compilation log",
+    "Runtime startup log",
+    "Authentication continuation verification",
+    "RuntimeState publication verification",
+    "Regression verification"
+  ],
+  "completion_rule": "Session completes only after repository-backed validation evidence has been captured. No additional governance artifacts are permitted.",
+  "generated_at": "2026-07-14T12:59:24Z"
+}

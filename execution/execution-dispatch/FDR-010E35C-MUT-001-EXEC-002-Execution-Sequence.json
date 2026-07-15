@@ -1,0 +1,51 @@
+{
+  "implementation_authority": "FDR-010E35C-MUT-001-EXEC-002",
+  "parent_authority": "FDR-010E35C-MUT-001-EXEC-001",
+  "status": "READY_FOR_IMPLEMENTATION_ENGINE",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "execution_stage": "EXECUTION_PLAN_APPROVED",
+  "objective": "Produce the final repository-backed mutation sequence and immediately begin the first bounded implementation mutation.",
+  "mutation_sequence": [
+    {
+      "order": 1,
+      "surface": "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "purpose": "Introduce Runtime Identity Resolution and evolve RuntimeState."
+    },
+    {
+      "order": 2,
+      "surface": "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "purpose": "Consume the evolved RuntimeState without introducing business logic."
+    },
+    {
+      "order": 3,
+      "surface": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "purpose": "Route using identity and progression outcome while preserving existing journeys."
+    },
+    {
+      "order": 4,
+      "surface": "client/src/pages/HubAuth.tsx",
+      "purpose": "Publish the evolved continuation output."
+    },
+    {
+      "order": 5,
+      "surface": "client/src/pages/HubAuthCallback.tsx",
+      "purpose": "Publish the evolved continuation output for callback authentication."
+    }
+  ],
+  "required_validation_after_each_mutation": [
+    "Repository build",
+    "TypeScript validation",
+    "Runtime validation",
+    "Evidence capture",
+    "Regression check"
+  ],
+  "stop_conditions": [
+    "Build failure",
+    "Runtime regression",
+    "Acceptance criteria regression",
+    "Unexpected repository truth"
+  ],
+  "completion_rule": "Mutate one surface at a time. Validate after every mutation. Do not continue to the next surface until validation succeeds.",
+  "generated_at": "2026-07-14T08:03:56Z"
+}

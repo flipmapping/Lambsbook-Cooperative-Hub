@@ -1,0 +1,55 @@
+{
+  "implementation_authority": "FDR-010E35C-002",
+  "parent_authority": "FDR-010E35C",
+  "status": "READY_FOR_EXECUTION_ENGINE",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "inspection_completion_requirements": [
+    {
+      "surface": "client/src/pages/HubAuth.tsx",
+      "capture": [
+        "RuntimeState creation call",
+        "Continuation invocation",
+        "Navigation invocation"
+      ]
+    },
+    {
+      "surface": "client/src/pages/HubAuthCallback.tsx",
+      "capture": [
+        "RuntimeState creation call",
+        "Continuation invocation",
+        "Navigation invocation"
+      ]
+    },
+    {
+      "surface": "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "capture": [
+        "RuntimeState construction",
+        "Identity determination",
+        "Outcome determination",
+        "Publication point"
+      ]
+    },
+    {
+      "surface": "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "capture": [
+        "RuntimeState consumption",
+        "Navigation entry point"
+      ]
+    },
+    {
+      "surface": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "capture": [
+        "Destination mapping",
+        "Outcome routing table"
+      ]
+    }
+  ],
+  "required_output": [
+    "Exact repository locations",
+    "Execution sequence",
+    "Mutation insertion point"
+  ],
+  "completion_rule": "Immediately after this checklist is completed, authorize the first bounded repository mutation. No additional planning artifacts are permitted.",
+  "generated_at": "2026-07-14T07:09:00Z"
+}

@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "V_jWY0fqBvxhvj217zzg3"
+uri = "file://docs/HOW-TO-UPLOAD-MEDIA-FILES.md"
+type = "text"
+title = "How to Upload Media Files — Step-by-Step Guide"

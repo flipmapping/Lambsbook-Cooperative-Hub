@@ -1,0 +1,37 @@
+{
+  "implementation_authority": "FDR-010E35C-MUT-001-VAL-001",
+  "parent_authority": "FDR-010E35C-MUT-001",
+  "status": "AUTHORIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "execution_stage": "VALIDATION",
+  "repository_truth_baseline": {
+    "authority": "FDR-010E35C-MUT-001",
+    "evidence_directory": "docs/implementation-evidence/FDR-010E35C/MUT-001"
+  },
+  "validation_scope": [
+    "Repository build",
+    "TypeScript compilation",
+    "Runtime startup",
+    "Authentication continuation",
+    "RuntimeState publication",
+    "Regression verification"
+  ],
+  "evidence_classification": [
+    "VERIFIED",
+    "NOT VERIFIED",
+    "BLOCKED"
+  ],
+  "required_outputs": [
+    "Repository build evidence",
+    "TypeScript validation evidence",
+    "Runtime startup evidence",
+    "Authentication continuation evidence",
+    "RuntimeState evidence",
+    "Regression evidence",
+    "Repository-backed blocker (if any)"
+  ],
+  "fail_fast_rule": "If build fails, runtime fails, repository truth diverges, or validation cannot be completed, STOP immediately and report the single repository-backed blocker.",
+  "completion_rule": "If all required evidence is VERIFIED, Mutation 1 becomes CERTIFIED and Founder may authorize FDR-010E35C-MUT-002.",
+  "generated_at": "2026-07-14T09:49:23Z"
+}

@@ -1,0 +1,45 @@
+{
+  "implementation_authority": "FDR-010E35C",
+  "execution_stage": "SINGLE_BOUNDED_MUTATION",
+  "status": "READY_FOR_IMPLEMENTATION_ENGINE",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "mutation_id": "MUT-001",
+  "objective": "Implement the first bounded repository mutation for the post-authentication continuation corridor.",
+  "inspection_references": [
+    "FDR-010E35C-001",
+    "FDR-010E35C-002"
+  ],
+  "implementation_constraints": [
+    "Modify one repository surface only.",
+    "Do not modify navigation policy.",
+    "Do not modify HubAuth.tsx.",
+    "Do not modify HubAuthCallback.tsx.",
+    "Do not modify authentication.",
+    "Do not modify authorization.",
+    "Do not modify database schema.",
+    "Do not modify RLS."
+  ],
+  "required_outputs": [
+    "Unified diff",
+    "Changed lines",
+    "Repository mutation summary",
+    "TypeScript build result",
+    "Runtime validation result"
+  ],
+  "stop_condition": "Stop immediately after MUT-001 validation. Do not begin a second mutation.",
+  "generated_at": "2026-07-14T07:14:02Z",
+  "authorized_surface": {
+    "name": "Post-Authentication Continuation Corridor",
+    "objective": "Implement Runtime Identity Resolution across the certified continuation corridor while modifying only the minimum repository surfaces required to satisfy the acceptance criteria.",
+    "eligible_surfaces": [
+      "client/src/pages/HubAuth.tsx",
+      "client/src/pages/HubAuthCallback.tsx",
+      "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+    ]
+  },
+  "implementation_rule": "Mutate the minimum number of eligible surfaces necessary. Each modified surface must be justified in the mutation evidence.",
+  "updated_at": "2026-07-14T07:21:38Z"
+}

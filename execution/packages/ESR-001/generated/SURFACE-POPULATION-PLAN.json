@@ -1,0 +1,31 @@
+{
+  "authority": "ESR-001",
+  "surface": "Execution Surface Registry",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "generated_at": "2026-07-14T07:18:15.442835Z",
+  "population_plan": [
+    {
+      "registry": "SURFACE-REGISTRY.json",
+      "purpose": "Register bounded execution surfaces."
+    },
+    {
+      "registry": "LEASE-REGISTRY.json",
+      "purpose": "Record active surface leases."
+    },
+    {
+      "registry": "SURFACE-CATALOG.json",
+      "purpose": "Describe certified execution surfaces."
+    },
+    {
+      "registry": "SURFACE-DEPENDENCIES.json",
+      "purpose": "Record constitutional surface dependencies."
+    }
+  ],
+  "input_policy": {
+    "source": "Founder-approved constitutional assets",
+    "materialization": "FAMP",
+    "builder": "Builder v1.2 (consume only)",
+    "builder_future": "BLD-CAR-001"
+  },
+  "next_phase": "Repository Mutation"
+}

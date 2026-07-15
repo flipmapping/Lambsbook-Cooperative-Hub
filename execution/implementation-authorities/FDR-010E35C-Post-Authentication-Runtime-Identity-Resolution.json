@@ -1,0 +1,45 @@
+{
+  "implementation_authority": "FDR-010E35C",
+  "supersedes": [
+    "FDR-010E35B-WP001",
+    "FDR-010E35B-WP001A"
+  ],
+  "status": "AUTHORIZED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.3",
+  "execution_protocol": "EOS-EXEC-016",
+  "title": "Post-Authentication Runtime Identity Resolution",
+  "repository_truth": [
+    "Authentication succeeds.",
+    "Continuation succeeds.",
+    "RuntimeState is published before runtime identity is resolved.",
+    "Authenticated members are classified as non_member.",
+    "RuntimeNavigationPolicy correctly routes non_member to /hub/signup.",
+    "The defect affects Founder, Platform Admin, SBU Admin and Member journeys."
+  ],
+  "bounded_mutation": {
+    "objective": "Introduce runtime identity resolution before RuntimeState publication so every authenticated user is correctly classified prior to navigation.",
+    "mutation_surfaces": [
+      "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+    ]
+  },
+  "preserve": [
+    "Authentication",
+    "Authorization",
+    "JWT/session handling",
+    "Invitation semantics",
+    "Database schema",
+    "RLS",
+    "Routing topology"
+  ],
+  "acceptance": [
+    "Founder -> Founder Administration surface",
+    "Platform Admin -> Platform Administration surface",
+    "SBU Admin -> SBU Administration surface",
+    "Member -> Member dashboard",
+    "Pending Invitation -> Invitation flow",
+    "Anonymous -> Anonymous flow"
+  ],
+  "generated_at": "2026-07-14T06:54:19Z"
+}

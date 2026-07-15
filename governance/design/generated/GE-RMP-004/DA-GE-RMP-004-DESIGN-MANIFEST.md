@@ -22,53 +22,56 @@ DA-001
 
 Purpose
 
-Capture the Founder-approved visual and interaction intent for the
-CTBC Recruitment Experience Enhancement.
+Define the Founder-approved visual and interaction intent for the CTBC
+Recruitment Experience. This authority defines presentation only and
+shall not redefine content or implementation.
 
-Design Objectives
+Visual Intent
 
-• Modern university recruitment experience
-• Professional admissions presentation
-• Mobile-first responsive design
-• High visual trust
-• Founder-approved CTBC branding
+• Professional university recruitment presentation.
+• Modern, mobile-first responsive layout.
+• Clean academic visual identity.
+• Consistent CTBC branding.
+• No placeholder or "Coming Soon" content.
 
-Mandatory Experience
+Hero Experience
 
-• Official CTBC logo
-• Official CTBC website (external reference)
-• Official campus photographs
-• Official promotional video (when officially published)
-• Scholarship summary cards
-• Tuition summary
-• FAQ
-• Consultation section
-• Primary Apply CTA
+• Full-width hero section.
+• Official CTBC imagery only.
+• Clear recruitment message.
+• Primary CTA: Explore Scholarships.
+• Secondary CTA: Learn More (opens official CTBC website in a new tab).
 
-Language Policy
+Content Presentation
 
-Only:
+• Scholarship summary cards.
+• Tuition summary cards.
+• Admissions overview section.
+• FAQ section.
+• Official CTBC reference section.
+
+Media Intent
+
+• Official CTBC logo.
+• Official campus photographs.
+• Official promotional video only if officially published.
+
+Language Experience
 
 ✓ Vietnamese
-
 ✓ English
-
 ✓ Simplified Chinese
 
-No additional language selectors shall appear within the
-Growth recruitment experience.
+No additional languages shall be presented.
 
-Navigation
+Journey
 
-Home
+Hub
 → Scholarships
 → Prospect Registration
+→ Return to Hub after successful registration.
 
-Implementation Constraint
+Acceptance Alignment
 
-This Design Authority defines Founder-approved design intent only.
-
-Builder SHALL package this authority.
-
-Implementation agents SHALL consume this authority without
-redefining Founder intent.
+This Design Authority is derived from the Founder Experience Package and
+shall remain consistent with the Experience Acceptance Authority.

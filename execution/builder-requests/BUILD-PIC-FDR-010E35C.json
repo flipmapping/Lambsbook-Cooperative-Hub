@@ -1,0 +1,28 @@
+{
+  "request_id": "BUILD-PIC-FDR-010E35C",
+  "status": "READY",
+  "builder": "Builder v1.2",
+  "operation": "GENERATE_PIC",
+  "root_authority": "execution/implementation-authorities/FDR-010E35C-Post-Authentication-Runtime-Identity-Resolution.json",
+  "builder_contract": {
+    "resolve_cbis": true,
+    "resolve_declared_authorities": true,
+    "resolve_repository_baseline": true,
+    "generate_package_manifest": true,
+    "generate_implement_md": true,
+    "generate_pic_zip": true
+  },
+  "expected_output": {
+    "type": "CLAUDE_PACKAGE",
+    "location": "execution/packages/",
+    "contents": [
+      "PACKAGE-MANIFEST.md",
+      "IMPLEMENT.md",
+      "Resolved Constitutional Authorities",
+      "Repository Baseline",
+      "Certified Builder Input Set",
+      "Implementation Instructions"
+    ]
+  },
+  "generated_at": "2026-07-14T15:30:37Z"
+}

@@ -1,0 +1,33 @@
+{
+  "authority": "GE-RMP-005",
+  "status": "PRE_MUTATION_BASELINE_CAPTURED",
+  "generated_at": "2026-07-14T08:15:55.403133Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "surface_lease": "ACTIVE",
+  "repository_truth": "PRESERVED",
+  "builder_readiness": "PRESERVED",
+  "execution_lineage": "PRESERVED",
+  "leased_surfaces": [
+    {
+      "surface": "client/src/components/HeroSection.tsx",
+      "sha256_before": "56f6845b0503ebc708f2a210aafd0628615a5ca04ace15f8c04fb5a096a7da35",
+      "line_count": 66
+    },
+    {
+      "surface": "client/src/pages/HubLanding.tsx",
+      "sha256_before": "e18d6de211751e740bcd366b1dc4688dda6d4659fc57a46ec7a8609bfdbf01a6",
+      "line_count": 467
+    },
+    {
+      "surface": "client/src/pages/ScholarshipsPage.tsx",
+      "sha256_before": "c80272efc97dea5e76a973ebe7c3986552c7c261f4fba8013f71f805fdb32f6d",
+      "line_count": 212
+    },
+    {
+      "surface": "client/src/pages/ProspectRegistration.tsx",
+      "sha256_before": "02efcc218e4b071477e48325fe09668dad4d3dec92e248deb33e1388b6554acf",
+      "line_count": 226
+    }
+  ],
+  "next_gate": "REPOSITORY_MUTATION"
+}

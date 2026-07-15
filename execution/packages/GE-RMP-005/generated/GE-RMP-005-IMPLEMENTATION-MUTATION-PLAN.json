@@ -1,0 +1,37 @@
+{
+  "authority": "GE-RMP-005",
+  "generated_at": "2026-07-14T08:28:15.659772Z",
+  "status": "READY_FOR_IMPLEMENTATION_MUTATION",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "repository_truth": "PRESERVED",
+  "builder_readiness": "PRESERVED",
+  "execution_lineage": "PRESERVED",
+  "implementation_scope": {
+    "leased_surfaces": [
+      "client/src/components/HeroSection.tsx",
+      "client/src/pages/HubLanding.tsx",
+      "client/src/pages/ScholarshipsPage.tsx",
+      "client/src/pages/ProspectRegistration.tsx"
+    ],
+    "mission": "Replace the landing experience with the Founder-approved Journey-Oriented Growth experience while preserving existing Growth Engine contracts, runtime contracts, and member journey."
+  },
+  "planned_mutations": [
+    {
+      "surface": "client/src/components/HeroSection.tsx",
+      "objective": "Replace hero with canonical Journey-Oriented Hero implementation."
+    },
+    {
+      "surface": "client/src/pages/HubLanding.tsx",
+      "objective": "Implement canonical journey-oriented landing flow."
+    },
+    {
+      "surface": "client/src/pages/ScholarshipsPage.tsx",
+      "objective": "Integrate journey messaging and CTA progression."
+    },
+    {
+      "surface": "client/src/pages/ProspectRegistration.tsx",
+      "objective": "Align registration journey with canonical experience."
+    }
+  ],
+  "next_gate": "EXECUTE_REPOSITORY_MUTATION"
+}

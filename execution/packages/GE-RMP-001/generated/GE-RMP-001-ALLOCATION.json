@@ -1,0 +1,10 @@
+{
+  "authority": "GE-RMP-001",
+  "status": "ALLOCATED_FROM_REGISTRY",
+  "generated_at": "2026-07-14T09:10:01.483694Z",
+  "allocation_method": "NEXT_AVAILABLE_AUTHORITY_ID",
+  "supersedes_placeholder": "GE-RMP-005 (Journey-Oriented Landing Experience assignment only)",
+  "implementation_name": "Journey-Oriented Landing Experience Implementation",
+  "implementation_mission": "Implement the Founder-approved Journey-Oriented Growth landing experience while preserving Growth Engine, runtime contracts, and member journey.",
+  "next_gate": "UPDATE_IMPLEMENTATION_ARTIFACTS_AND_BUILD_PACKAGE"
+}

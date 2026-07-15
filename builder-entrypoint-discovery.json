@@ -1,0 +1,417 @@
+[
+  {
+    "file": "BUILDER-SPRINT-001-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "EOS-RMP-001A-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "EOS-RMP-001B-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "EOS-RMP-001C-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "EOS-RMP-001D-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "EOS-RMP-001E-Claude-Package/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/build_claude_package.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "argparse",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-002_public_experience_landing_page.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-003A_growth_runtime_repair.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-003_prospect_registration_conversion.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-004_release1_journey_integration.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-005_applicant_journey_status.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-006_applicant_status_lookup.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-007_applicant_document_center.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-008_applicant_appointment_center.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-009_applicant_admission_decision_center.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-010_applicant_lifecycle_timeline.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-011_applicant_activity_center.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/GE-RMP-012_applicant_followup_task_center.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-005_growth_scaffold.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-006A_growth_content_registry.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-006B_growth_content_schema.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E10_client_registration_workflow.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E11_create_admissions_api.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E12_client_api_contract_convergence.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E13_admissions_persistence_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E16_growth_persistence_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E18_prospect_read_model.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E20_prospect_lifecycle_progression.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E22B_admissions_workspace_refinement.py",
+    "evidence": [
+      "__main__",
+      "main_guard"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E22C_admissions_workspace_completion.py",
+    "evidence": [
+      "__main__",
+      "main_guard"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E23A_scholarships_surface_refinement.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E24_prospect_detail_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E29A_prospect_lifecycle_event_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E29B_prospect_timeline_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E30A_prospect_activity_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E30B_prospect_activity_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E31A_prospect_followup_task_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E31B_prospect_followup_task_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E32A_prospect_appointment_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E32B_prospect_appointment_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E33A_prospect_document_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E33B_prospect_document_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E34A_prospect_admission_decision_kernel.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E34B_prospect_admission_decision_workspace.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/scripts/apply_WP6C_NavigationAuthority.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/sprints/SFP-001/sfp001_initialize_iag.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  },
+  {
+    "file": "execution/sprints/SFP-001/sfp001_phase3_repository_bootstrap.py",
+    "evidence": [
+      "__main__",
+      "main_guard",
+      "main_function"
+    ]
+  }
+]

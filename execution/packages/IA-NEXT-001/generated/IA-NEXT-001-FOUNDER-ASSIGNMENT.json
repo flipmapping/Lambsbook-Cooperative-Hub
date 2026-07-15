@@ -1,0 +1,25 @@
+{
+  "authority": "IA-NEXT-001",
+  "status": "FOUNDER_ASSIGNED",
+  "generated_at": "2026-07-14T07:19:58.047939Z",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "founder_assignment": {
+    "implementation_authority_id": "GE-RMP-005",
+    "implementation_name": "Journey-Oriented Landing Experience Implementation",
+    "implementation_mission": "Implement the Founder-approved Journey-Oriented Growth landing experience by replacing the current landing experience with the canonical journey architecture, A/B messaging, Experience Acceptance Authority, and Design Authority while preserving the existing Growth Engine, runtime contracts, and member journey.",
+    "leased_surface": [
+      "client/src/components/HeroSection.tsx",
+      "client/src/pages/HubLanding.tsx",
+      "client/src/pages/ScholarshipsPage.tsx",
+      "client/src/pages/ProspectRegistration.tsx"
+    ]
+  },
+  "execution_after_assignment": [
+    "Surface Lease Confirmation",
+    "Repository Mutation",
+    "Build Validation",
+    "Runtime Validation",
+    "Experience Acceptance",
+    "Founder Acceptance"
+  ]
+}

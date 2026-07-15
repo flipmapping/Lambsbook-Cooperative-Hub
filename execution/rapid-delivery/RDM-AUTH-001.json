@@ -1,0 +1,45 @@
+{
+  "directive": "EXEC-SYNC-004-MAINAPP",
+  "status": "ACTIVE",
+  "execution_mode": "Rapid Delivery Mode (RDM)",
+  "classification": "L1 Product Feature",
+  "stream": "Main Application Authentication",
+  "repository_truth": [
+    "Authentication succeeds.",
+    "Continuation succeeds.",
+    "RuntimeState is published.",
+    "Identity resolution is missing before RuntimeState publication.",
+    "Authenticated users may be classified as non_member.",
+    "Navigation correctly routes non_member to /hub/signup."
+  ],
+  "implementation_scope": [
+    "Admin account",
+    "Founder account",
+    "Platform Admin",
+    "SBU Admin",
+    "Member authentication",
+    "Post-authentication routing"
+  ],
+  "workflow": [
+    "Repository Inspection",
+    "Mutation Plan",
+    "Repository Mutation",
+    "Build Validation",
+    "Runtime Validation",
+    "Commit",
+    "Deployment"
+  ],
+  "immediate_next_mutation": {
+    "id": "RDM-AUTH-001",
+    "objective": "Implement runtime identity resolution before RuntimeState publication so authenticated Founder, Platform Admin, SBU Admin, and Member users are correctly classified prior to navigation.",
+    "authorized_surfaces": [
+      "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "client/src/pages/HubAuth.tsx",
+      "client/src/pages/HubAuthCallback.tsx"
+    ]
+  },
+  "stop_condition": "Stop after implementation evidence, build validation, runtime validation, and regression assessment.",
+  "generated_at": "2026-07-14T23:34:11Z"
+}

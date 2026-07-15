@@ -1,0 +1,16 @@
+{
+  "authority": "GE-RMP-005",
+  "generated_at": "2026-07-14T08:10:16.990906Z",
+  "status": "SURFACE_LEASE_CONFIRMED",
+  "constitutional_baseline": "EOS Constitutional Baseline v2.2",
+  "exclusive_owner": "GE-RMP-005",
+  "mutation_window": "OPEN",
+  "leased_surface": [
+    "client/src/components/HeroSection.tsx",
+    "client/src/pages/HubLanding.tsx",
+    "client/src/pages/ScholarshipsPage.tsx",
+    "client/src/pages/ProspectRegistration.tsx"
+  ],
+  "repository_truth": "PRESERVED",
+  "next_gate": "REPOSITORY_MUTATION"
+}
