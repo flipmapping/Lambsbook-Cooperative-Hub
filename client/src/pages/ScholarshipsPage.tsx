@@ -35,7 +35,7 @@ import { useHubTranslation } from '@/lib/hubTranslations';
 
 const CTBC_LOGO        = '/assets/ctbc/ctbc-logo.png';
 const CTBC_CAMPUS_1    = '/assets/ctbc/campus-1.jpg';
-const CTBC_CAMPUS_2    = '/assets/ctbc/campus-2.jpg';
+const CTBC_CAMPUS_2    = '/assets/ctbc/campus-2.png';
 const CTBC_CAMPUS_3    = '/assets/ctbc/campus-3.jpg';
 const CTBC_VIDEO_ID    = 'kvZF1CVyFFs'; // Set to Founder-approved YouTube video ID
 const CTBC_WEBSITE_URL = 'https://www.ctbctech.edu.tw/';
@@ -94,16 +94,6 @@ const inquiryOptions = [
   { value: 'scholarship_eligibility', labelKey: 'schol_inquiry_eligibility' },
 ];
 
-function CTBCLogo() {
-  return (
-    <img
-      src={CTBC_LOGO}
-      alt="CTBC University of Technology"
-      className="h-10 object-contain"
-      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-    />
-  );
-}
 
 function CampusPhoto({ src, alt }: { src: string; alt: string }) {
   return (
@@ -175,8 +165,7 @@ export default function ScholarshipsPage() {
         <div className="relative container mx-auto px-4 text-center max-w-4xl">
           {/* CTBC logo in hero */}
           <div className="flex justify-center mb-6">
-            <CTBCLogo />
-          </div>
+</div>
           <Badge variant="secondary" className="mb-4 text-xs px-3 py-1">
             {t('schol_badge_surface')}
           </Badge>
@@ -228,16 +217,6 @@ export default function ScholarshipsPage() {
             <CampusPhoto src={CTBC_CAMPUS_1} alt="CTBC Campus — Main Building" />
             <CampusPhoto src={CTBC_CAMPUS_2} alt="CTBC Campus — Student Life" />
             <CampusPhoto src={CTBC_CAMPUS_3} alt="CTBC Campus — Facilities" />
-          </div>
-          <div className="text-center mt-4">
-            <a
-              href={CTBC_WEBSITE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-primary underline hover:text-primary/80"
-            >
-              Visit ctbctech.edu.tw <ExternalLink className="h-3 w-3" />
-            </a>
           </div>
         </div>
       </section>
@@ -335,8 +314,7 @@ export default function ScholarshipsPage() {
                 {/* CTBC card header with logo */}
                 {s.isCTBC && (
                   <div className="px-6 pt-4 pb-0 flex items-center justify-between">
-                    <CTBCLogo />
-                    <a
+<a
                       href={CTBC_WEBSITE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
