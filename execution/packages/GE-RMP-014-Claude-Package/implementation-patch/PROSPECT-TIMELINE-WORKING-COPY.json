@@ -1,0 +1,22 @@
+{
+  "implementation": "GE-COMM-001",
+  "phase": "G16",
+  "created_utc": "2026-07-16T09:02:59.856157Z",
+  "working_copy": "execution/packages/GE-RMP-014-Claude-Package/implementation-patch/admissions.ts",
+  "sha256": "9c8c88393b0eb199477efa96a0b260e3f8ffd452db1bf73c2334dd1d569da480",
+  "repository_surface": "server/services/admissions.ts",
+  "authorized_mutation": [
+    "Insert recordProspectActivity() immediately after successful sendNotification().",
+    "Activity type = registration_confirmation_email_sent",
+    "Metadata includes recipient email",
+    "Metadata includes email subject",
+    "Metadata includes provider=resend",
+    "Metadata includes channel=email",
+    "Catch logging failures so registration never fails",
+    "Preserve sendNotification()",
+    "Preserve submitProspectRegistration()",
+    "Preserve API response",
+    "Preserve prospect persistence",
+    "Preserve journey creation"
+  ]
+}

@@ -295,7 +295,7 @@ export default function FarmstayVision() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-muted-foreground">
-              © 2025 Lambsbook Collaborative Hub. {t('hub_footer_rights')}
+              © 2025 Lambsbook Cooperative Hub. {t('hub_footer_rights')}
             </div>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/hub" className="text-muted-foreground hover-elevate px-2 py-1 rounded" data-testid="link-footer-hub">

@@ -1,0 +1,36 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "E7",
+  "status": "READY_FOR_CODE_MUTATION",
+  "created_utc": "2026-07-16T00:33:24.140140Z",
+  "target": "server/services/notifications.ts",
+  "replace": {
+    "remove": [
+      "import nodemailer",
+      "getTransporter()",
+      "nodemailer.createTransport(...)",
+      "transporter.sendMail(...)"
+    ],
+    "add": [
+      "import { Resend } from 'resend'",
+      "singleton Resend client",
+      "RESEND_API_KEY validation",
+      "resend.emails.send(...)"
+    ]
+  },
+  "preserve": [
+    "sendNotification()",
+    "sendEmail() function signature",
+    "NotificationPayload",
+    "notification persistence",
+    "existing callers",
+    "success/error return object",
+    "logging behaviour"
+  ],
+  "qualification": [
+    "npm run build",
+    "npm run dev",
+    "Live Resend delivery test",
+    "Git commit"
+  ]
+}

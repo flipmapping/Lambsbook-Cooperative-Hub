@@ -1,0 +1,18 @@
+{
+  "implementation_authority": "LEAP-IMPLEMENT-RDM-001",
+  "slice": "SLICE-001",
+  "qualified_at": "2026-07-16T05:10:58.398468+00:00",
+  "package": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE.zip",
+  "sha256": "c23d09faf044797c9d70c87ad1164701d271d88ccedb894e0b0fcac445428571",
+  "entries": [
+    "LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/IMPLEMENT.md",
+    "LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-001-IMPLEMENTATION-MANIFEST.json",
+    "LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/mutation-corridor/CooperativePrinciplesSection.tsx"
+  ],
+  "required": {
+    "IMPLEMENT.md": true,
+    "IMPLEMENTATION-MANIFEST.json": true,
+    "mutation-corridor/CooperativePrinciplesSection.tsx": true
+  },
+  "status": "QUALIFIED"
+}

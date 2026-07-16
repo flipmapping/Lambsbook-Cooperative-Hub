@@ -1,0 +1,52 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "E2",
+  "repository_truth": "EOS-RMP-001E",
+  "execution_mode": "Package Is The Contract",
+  "authorized_repository_surface": [
+    "server/services/notifications.ts"
+  ],
+  "transport_before": {
+    "library": "nodemailer",
+    "entrypoint": "async function sendEmail",
+    "configuration": [
+      "SMTP_HOST",
+      "SMTP_PORT",
+      "SMTP_USER",
+      "SMTP_PASSWORD",
+      "SMTP_FROM_EMAIL",
+      "SMTP_FROM_NAME"
+    ]
+  },
+  "transport_after": {
+    "library": "resend",
+    "environment": [
+      "RESEND_API_KEY"
+    ]
+  },
+  "preserve_runtime_contracts": [
+    "sendNotification()",
+    "sendEmail()",
+    "NotificationPayload"
+  ],
+  "preserve_runtime_behaviour": [
+    "notification persistence",
+    "existing callers",
+    "success/failure return contract",
+    "logging"
+  ],
+  "explicitly_prohibited": [
+    "Modify server/services/admissions.ts",
+    "Modify client/src/pages/ProspectRegistration.tsx",
+    "Modify Builder",
+    "Modify Open Brain",
+    "Modify constitutional authorities",
+    "Introduce parallel email transport"
+  ],
+  "qualification_required": [
+    "npm run build",
+    "npm run dev",
+    "Registration email validation"
+  ],
+  "created_utc": "2026-07-16T00:12:49.558126Z"
+}

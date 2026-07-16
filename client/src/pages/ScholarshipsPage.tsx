@@ -387,7 +387,7 @@ export default function ScholarshipsPage() {
       {/* Footer */}
       <footer className="border-t py-8 bg-muted/20">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Lambsbook Collaborative Hub. {t('hub_footer_rights')}</p>
+          <p>© 2025 Lambsbook Cooperative Hub. {t('hub_footer_rights')}</p>
           <p className="mt-1">{t('hub_footer_contact')}: support@lambsbook.net</p>
           <p className="mt-1">
             <a

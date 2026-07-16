@@ -1,0 +1,21 @@
+{
+  "implementation_authority": "RTP-010",
+  "title": "Repository Truth Producer Gap Certification",
+  "generated_at": "2026-07-16T04:48:50.490532+00:00",
+  "repository_truth": {
+    "builder_materializes_repository_truth": false,
+    "artifact_materialization_service_materializes_repository_truth": false,
+    "repository_truth_producer_exists": false,
+    "git_lineage_contains_producer": false
+  },
+  "bounded_defect": {
+    "status": "CERTIFIED",
+    "description": "No authoritative runtime exists that materializes Execution Derivation, Implementation Authority, and Implementation Context Manifest artifacts into the canonical governance paths."
+  },
+  "required_outputs": [
+    "governance/execution-derivation/*.md",
+    "governance/rmp/*.md",
+    "governance/icm/generated/*.md"
+  ],
+  "next_authority": "RTP-010-Repository-Truth-Producer"
+}

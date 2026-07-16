@@ -1,0 +1,27 @@
+{
+  "implementation_authority": "LEAP-IMPLEMENT-RDM-001",
+  "execution_mode": "Rapid Delivery Mode",
+  "slice": "SLICE-002",
+  "generated_at": "2026-07-16T06:54:27.378076+00:00",
+  "repository_truth": {
+    "mutation_corridor": "web/src/growth/",
+    "builder_scope": "EXTERNAL_DEPENDENCY",
+    "runtime_verified": true,
+    "routing_verified": true
+  },
+  "authorized_mutation": [
+    "web/src/growth/components/Sections/JourneyDiscoverySection.tsx"
+  ],
+  "reference_sections": [
+    "AdmissionsSection",
+    "ScholarshipsSection",
+    "CooperativePrinciplesSection"
+  ],
+  "validation_required": [
+    "npm run build",
+    "Founder-visible rendering",
+    "Responsive layout preserved",
+    "No mutation outside corridor"
+  ],
+  "status": "READY_FOR_IMPLEMENTATION"
+}

@@ -1,0 +1,13 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "D2",
+  "authority": "Execute bounded Resend transport mutation",
+  "execution_input": "Certified PIC",
+  "package": "execution/packages/GE-RMP-014-Claude-Package",
+  "authorized_surface": [
+    "server/services/notifications.ts"
+  ],
+  "repository_truth": "EOS-RMP-001E",
+  "status": "READY_FOR_IMPLEMENTATION",
+  "created_utc": "2026-07-15T17:25:53.043638Z"
+}

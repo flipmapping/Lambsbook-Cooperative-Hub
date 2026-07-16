@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -134,6 +134,25 @@ export default function HubLanding() {
     programs: useRef<HTMLDivElement>(null),
     contact: useRef<HTMLDivElement>(null),
     collaboration: useRef<HTMLDivElement>(null),
+    journey: useRef<HTMLDivElement>(null),
+  };
+
+  const [selectedJourney, setSelectedJourney] = useState<string | null>(() => {
+    try {
+      return localStorage.getItem("lambsbook_journey_preference");
+    } catch {
+      return null;
+    }
+  });
+
+  const chooseJourney = (journey: string) => {
+    setSelectedJourney(journey);
+    try {
+      localStorage.setItem("lambsbook_journey_preference", journey);
+      sessionStorage.setItem("lambsbook_journey_preference", journey);
+    } catch {
+      // storage unavailable — preference kept in memory for this visit
+    }
   };
 
   const handleNavigate = (section: string) => {
@@ -155,36 +174,132 @@ export default function HubLanding() {
     <div className="min-h-screen bg-background">
       <HubHeader 
         onNavigate={handleNavigate}
-        brandName="Lambsbook Collaborative Hub"
+        brandName="Lambsbook Cooperative Hub"
         brandSubtitle="Open Collaboration Economy"
         homeLink="/hub"
       />
 
-      {/* Hero Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" data-testid="text-hero-title">
-            {t('hub_hero_main_title')}
-            <span className="block text-primary mt-2">{t('hub_hero_main_subtitle')}</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-subtitle">
-            {t('hub_hero_description')}
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/hub/signup">
-              <Button size="lg" data-testid="button-hero-signup">
-                {t('hub_join_free')}
+      {/* Universal Hero */}
+      <section className="relative overflow-hidden bg-[#0b1533]">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/hero-cooperative.jpg')" }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1533] via-[#0b1533]/90 to-[#0b1533]/40" aria-hidden="true" />
+        <div className="relative container mx-auto px-4 py-24 md:py-32 max-w-6xl">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white mb-6" data-testid="text-hero-title">
+              Grow Further{" "}
+              <span className="text-sky-400">Together</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed font-medium" data-testid="text-hero-subtitle">
+              Join a cooperative relationship network where trusted relationships create lifelong opportunities through learning, collaboration, contribution, and shared prosperity.
+            </p>
+            <p className="text-base text-slate-300/90 mb-4 leading-relaxed" data-testid="text-hero-narrative-1">
+              At Lambsbook, relationships are more than connections—they are cooperative partnerships built on trust, contribution, and shared prosperity.
+            </p>
+            <p className="text-base text-slate-300/90 mb-10 leading-relaxed" data-testid="text-hero-narrative-2">
+              Whether your journey begins with education, entrepreneurship, healthy living, travel, or community contribution, you become part of one member-owned cooperative where opportunities grow through collaboration.
+            </p>
+            <div className="flex gap-4 flex-wrap">
+              <Button
+                size="lg"
+                onClick={() => sectionRefs.journey.current?.scrollIntoView({ behavior: "smooth" })}
+                data-testid="button-hero-begin-journey"
+              >
+                Begin Your Journey
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
-            </Link>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={scrollToCollaboration}
-              data-testid="button-learn-collaboration"
+              <Button
+                size="lg"
+                variant="outline"
+                className="backdrop-blur-sm bg-white/5 border-white/25 text-white"
+                onClick={scrollToCollaboration}
+                data-testid="button-learn-collaboration"
+              >
+                Learn How Collaboration Works
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Journey Preference Experience */}
+      <section ref={sectionRefs.journey} className="py-20 px-4" id="journey-preference">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="text-journey-title">
+              Choose the Journey That Inspires You
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg" data-testid="text-journey-subtitle">
+              Every member joins the same cooperative. Every member begins with a different aspiration. Choose the journey that best reflects what brought you here today.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card
+              className={`h-full ${selectedJourney === "grow-together" ? "border-primary ring-1 ring-primary" : ""}`}
+              data-testid="card-journey-a"
             >
-              {t('hub_learn_collaboration')}
-            </Button>
+              <CardHeader>
+                <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                  <Sprout className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Grow Further Together</CardTitle>
+                <CardDescription className="text-base leading-relaxed mt-2">
+                  Join a member-owned cooperative where trusted relationships create opportunities through collaboration, shared contribution, and lifelong growth.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Button
+                    onClick={() => chooseJourney("grow-together")}
+                    data-testid="button-journey-a"
+                  >
+                    Explore This Journey
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                  {selectedJourney === "grow-together" && (
+                    <span className="inline-flex items-center gap-1 text-sm text-primary font-medium" data-testid="status-journey-a-selected">
+                      <CheckCircle2 className="h-4 w-4" /> Your selected journey
+                    </span>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className={`h-full ${selectedJourney === "build-future" ? "border-primary ring-1 ring-primary" : ""}`}
+              data-testid="card-journey-b"
+            >
+              <CardHeader>
+                <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                  <GraduationCap className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">
+                  Build Your Future. Strengthen Everyone's.
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed mt-2">
+                  Discover scholarships, education, entrepreneurship, healthy living, cultural exchange, and meaningful opportunities through one cooperative journey.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Button
+                    onClick={() => chooseJourney("build-future")}
+                    data-testid="button-journey-b"
+                  >
+                    Explore This Journey
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                  {selectedJourney === "build-future" && (
+                    <span className="inline-flex items-center gap-1 text-sm text-primary font-medium" data-testid="status-journey-b-selected">
+                      <CheckCircle2 className="h-4 w-4" /> Your selected journey
+                    </span>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -450,7 +565,7 @@ export default function HubLanding() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-muted-foreground" data-testid="text-footer-copyright">
-              © 2025 Lambsbook Collaborative Hub. {t('hub_footer_rights')}
+              © 2025 Lambsbook Cooperative Hub. {t('hub_footer_rights')}
             </div>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/hub/sbu/education" className="text-muted-foreground hover-elevate px-2 py-1 rounded" data-testid="link-footer-education">

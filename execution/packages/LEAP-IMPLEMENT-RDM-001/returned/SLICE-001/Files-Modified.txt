@@ -1,0 +1,1 @@
+web/src/growth/components/Sections/CooperativePrinciplesSection.tsx

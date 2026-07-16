@@ -1,0 +1,20 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "E3",
+  "created_utc": "2026-07-16T00:15:25.474773Z",
+  "repository_surface": "server/services/notifications.ts",
+  "pre_mutation_sha256": "4029cddbd11ea7692f9bad85010adf0660c3e57aa8fd477e96f85f10b8bb2e30",
+  "authorized_mutation": [
+    "Replace Nodemailer transport with Resend SDK transport",
+    "Keep sendNotification() unchanged",
+    "Keep sendEmail() signature unchanged",
+    "Keep NotificationPayload unchanged",
+    "Keep notification persistence unchanged",
+    "Keep all callers unchanged"
+  ],
+  "next_validation": [
+    "npm run build",
+    "npm run dev",
+    "Resend delivery test"
+  ]
+}

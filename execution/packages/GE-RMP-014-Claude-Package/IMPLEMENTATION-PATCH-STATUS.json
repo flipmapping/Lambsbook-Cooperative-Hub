@@ -1,0 +1,14 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "F3",
+  "created_utc": "2026-07-16T04:18:19.262190Z",
+  "status": "PATCH_NOT_YET_MATERIALIZED",
+  "repository_surface": "server/services/notifications.ts",
+  "implementation_patch": "execution/packages/GE-RMP-014-Claude-Package/implementation-patch/notifications.ts",
+  "verification": {
+    "repository_transport": "Nodemailer",
+    "patch_transport": "Nodemailer",
+    "mutation_present": false
+  },
+  "next_authority": "Materialize approved Resend implementation into implementation patch before repository merge."
+}

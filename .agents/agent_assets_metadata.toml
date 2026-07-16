@@ -6,3 +6,21 @@ id = "V_jWY0fqBvxhvj217zzg3"
 uri = "file://docs/HOW-TO-UPLOAD-MEDIA-FILES.md"
 type = "text"
 title = "How to Upload Media Files — Step-by-Step Guide"
+
+[[outputs]]
+id = "vWKnmHu64fc6SXLetStYB"
+uri = "file://attached_assets/stock_images/hero_cooperative_community_1.jpg"
+type = "image"
+title = "diverse group of people standing together at sunrise, warm authentic community, hopeful, cinematic"
+
+[[outputs]]
+id = "b2Vslv-UzNvgb3hBBFA6k"
+uri = "file://attached_assets/stock_images/hero_cooperative_community_2.jpg"
+type = "image"
+title = "diverse group of people standing together at sunrise, warm authentic community, hopeful, cinematic"
+
+[[outputs]]
+id = "TStWXOd9vpRs4laEt6mlE"
+uri = "file://attached_assets/stock_images/hero_cooperative_community_3.jpg"
+type = "image"
+title = "diverse group of people standing together at sunrise, warm authentic community, hopeful, cinematic"

@@ -1,0 +1,538 @@
+MISSION
+
+GEX-001 Sprint 001
+
+Journey Preference Experience (JPE-001)
+
+Hero Realization Sprint
+
+====================================================================
+
+MISSION OBJECTIVE
+
+Realize the Founder-approved Journey-Oriented Growth Experience by replacing the current Hero section of the existing production homepage.
+
+This is an Experience Realization Sprint.
+
+It is NOT:
+
+• a homepage redesign
+• a new microsite
+• a routing redesign
+• an architectural redesign
+• a Growth Engine redesign
+
+The existing homepage SHALL remain the canonical production homepage.
+
+Only the Hero experience and immediate Journey Preference experience are replaced.
+
+Everything beneath them remains the existing production experience.
+
+====================================================================
+
+FOUNDER IMPLEMENTATION PRINCIPLE
+
+This sprint realizes the Founder-approved strategic vision.
+
+It does NOT reinterpret it.
+
+When uncertainty exists, always prefer:
+
+Reuse over replacement.
+
+Refinement over redesign.
+
+Integration over duplication.
+
+Repository Reality takes precedence over implementation convenience.
+
+====================================================================
+
+AUTHORITATIVE DESIGN REFERENCES
+
+Implementation SHALL satisfy ALL four Founder-approved references simultaneously.
+
+------------------------------------------------------------
+
+Reference 1
+
+Strategic Authority
+
+Journey-Oriented Growth Architecture
+
+Purpose
+
+Defines the enduring strategic vision.
+
+Specifies:
+
+• One Cooperative Identity
+
+• Many Entry Aspirations
+
+• One Canonical Registration
+
+• One Growth Engine
+
+• One Lifelong Member Journey
+
+This governs strategic intent.
+
+------------------------------------------------------------
+
+Reference 2
+
+Design Authority
+
+Founder-approved Version A / Version B Hero Design
+
+(image supplied separately)
+
+Purpose
+
+Defines:
+
+• Hero composition
+
+• Typography
+
+• Photography
+
+• Visual hierarchy
+
+• CTA composition
+
+• Editorial quality
+
+• Emotional tone
+
+Use this as the PRIMARY visual design reference.
+
+Do NOT reproduce it pixel-for-pixel.
+
+Faithfully realize its visual language using the existing production design system.
+
+------------------------------------------------------------
+
+Reference 3
+
+Repository Reality
+
+Current Production Homepage
+
+Purpose
+
+Defines the production application.
+
+The Hero SHALL integrate naturally into the existing homepage.
+
+Everything below the Journey Preference section remains the current production experience.
+
+Do NOT redesign the homepage.
+
+Do NOT duplicate sections.
+
+------------------------------------------------------------
+
+Reference 4
+
+Implementation Authority
+
+Founder-approved Journey Preference Experience (JPE-001)
+
+Execution Specification
+
+Purpose
+
+Defines:
+
+• realization boundary
+
+• repository preservation
+
+• CTA behaviour
+
+• Journey Preference behaviour
+
+• branding updates
+
+• success criteria
+
+Priority order
+
+Reference 1
+
+↓
+
+Reference 2
+
+↓
+
+Reference 3
+
+↓
+
+Reference 4
+
+All four SHALL be satisfied.
+
+====================================================================
+
+GLOBAL BRANDING
+
+Across the entire website:
+
+Embed the official Lambsbook logo within the existing shared navigation/header.
+
+Immediately to the right display:
+
+Lambsbook Cooperative Hub
+
+Replace every occurrence of:
+
+Lambsbook Collaboration Hub
+
+with:
+
+Lambsbook Cooperative Hub
+
+Reuse the existing navigation component.
+
+Preserve all navigation behaviour.
+
+Preserve responsiveness.
+
+====================================================================
+
+REALIZATION BOUNDARY
+
+Realize ONLY:
+
+✓ Global branding
+
+✓ Hero
+
+✓ Hero typography
+
+✓ Hero imagery
+
+✓ Hero spacing
+
+✓ Hero CTA hierarchy
+
+✓ Hero responsive behaviour
+
+✓ Journey Preference section
+
+✓ Presentation styling required for the above
+
+Everything else SHALL remain unchanged.
+
+====================================================================
+
+PRESERVE
+
+Do NOT modify:
+
+✗ Routing
+
+✗ Growth Engine
+
+✗ Admissions
+
+✗ Scholarships
+
+✗ Registry System
+
+✗ FAQ
+
+✗ Contact
+
+✗ Strategic Business Units
+
+✗ Authentication
+
+✗ APIs
+
+✗ Business logic
+
+✗ Database
+
+✗ Existing application architecture
+
+====================================================================
+
+UNIVERSAL HERO
+
+Purpose
+
+Introduce the cooperative before presenting journey choices.
+
+The Hero shall communicate:
+
+• One Cooperative
+
+• Trusted Relationships
+
+• Shared Prosperity
+
+• Lifelong Opportunity
+
+• Collaboration over Competition
+
+Maintain the existing dark visual language.
+
+Maintain the blue accent palette.
+
+Maintain premium editorial quality.
+
+Integrate seamlessly with the current homepage.
+
+====================================================================
+
+HERO COPY
+
+Headline
+
+Grow Further Together
+
+Sub-headline
+
+Join a cooperative relationship network where trusted relationships create lifelong opportunities through learning, collaboration, contribution, and shared prosperity.
+
+Supporting Narrative
+
+At Lambsbook, relationships are more than connections—they are cooperative partnerships built on trust, contribution, and shared prosperity.
+
+Whether your journey begins with education, entrepreneurship, healthy living, travel, or community contribution, you become part of one member-owned cooperative where opportunities grow through collaboration.
+
+====================================================================
+
+PRIMARY CTA
+
+Begin Your Journey
+
+Behaviour
+
+Smooth-scroll to the Journey Preference section.
+
+Do not navigate.
+
+====================================================================
+
+SECONDARY CTA
+
+Learn How Collaboration Works
+
+Behaviour
+
+Smooth-scroll to the existing
+
+How Collaboration Works
+
+section.
+
+Reuse existing page behaviour.
+
+====================================================================
+
+JOURNEY PREFERENCE EXPERIENCE
+
+Immediately beneath the Hero.
+
+Section Title
+
+Choose the Journey That Inspires You
+
+Supporting Text
+
+Every member joins the same cooperative.
+
+Every member begins with a different aspiration.
+
+Choose the journey that best reflects what brought you here today.
+
+------------------------------------------------------------
+
+Journey A
+
+Grow Further Together
+
+Narrative
+
+Join a member-owned cooperative where trusted relationships create opportunities through collaboration, shared contribution, and lifelong growth.
+
+Button
+
+Explore This Journey
+
+------------------------------------------------------------
+
+Journey B
+
+Build Your Future.
+Strengthen Everyone's.
+
+Narrative
+
+Discover scholarships, education, entrepreneurship, healthy living, cultural exchange, and meaningful opportunities through one cooperative journey.
+
+Button
+
+Explore This Journey
+
+====================================================================
+
+JOURNEY BEHAVIOUR
+
+When either journey is selected:
+
+• remember the preference using localStorage
+
+• remember the preference during the current session
+
+• visually acknowledge the selected journey
+
+• continue naturally into the existing homepage
+
+Do NOT change routing.
+
+Do NOT create another homepage.
+
+Do NOT duplicate content.
+
+====================================================================
+
+PAGE CONTINUITY
+
+Continue directly into the existing homepage.
+
+Preserve:
+
+How Collaboration Works
+
+↓
+
+FAQ
+
+↓
+
+Scholarships
+
+↓
+
+Recruitment Journey
+
+↓
+
+Strategic Business Units
+
+↓
+
+Commitment
+
+↓
+
+Final CTA
+
+↓
+
+Contact
+
+These sections SHALL remain the production experience.
+
+====================================================================
+
+VISUAL STYLE
+
+Target experience
+
+• Premium
+
+• Editorial
+
+• Calm
+
+• Human-centred
+
+• Trustworthy
+
+• Warm
+
+• Modern
+
+• Authentic photography
+
+• Generous whitespace
+
+Avoid
+
+• Generic SaaS landing pages
+
+• Feature grids
+
+• Card-heavy layouts
+
+• Startup templates
+
+• Busy interfaces
+
+====================================================================
+
+REALIZATION STRATEGY
+
+Follow this order:
+
+1. Preserve Repository Reality.
+
+2. Reuse existing presentation components wherever practical.
+
+3. Refine existing components to realize the Founder-approved experience.
+
+4. Introduce new presentation components only if existing components cannot faithfully realize the approved design.
+
+5. Preserve architecture at all times.
+
+====================================================================
+
+SUCCESS CRITERIA
+
+A visitor immediately understands:
+
+✓ This is one cooperative.
+
+✓ There are many possible life journeys.
+
+✓ They choose the aspiration that resonates with them.
+
+✓ Every journey leads into the same Growth Engine.
+
+✓ The remainder of the homepage continues naturally.
+
+====================================================================
+
+RETURN ONLY
+
+1. Repository mutation summary.
+
+2. Files modified.
+
+3. Build validation.
+
+4. Local preview URL.
+
+5. Desktop screenshots.
+
+6. Mobile screenshots.
+
+7. Remaining bounded implementation gap.
+
+8. Founder Action Block.
+
+The Founder Action Block SHALL be the final section.
+
+It MUST contain executable copy-paste instructions that allow the Founder to inspect, validate, approve, or reject the realization.
+
+Narrative-only endings are prohibited.
+
+STOP.

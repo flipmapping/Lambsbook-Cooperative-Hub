@@ -1,0 +1,35 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "D3",
+  "mutation_name": "Resend Transport Replacement",
+  "created_utc": "2026-07-16T00:09:23.977953Z",
+  "execution_mode": "Package Is The Contract",
+  "input_package": "GE-RMP-014-Claude-Package",
+  "authorized_repository_surface": [
+    "server/services/notifications.ts"
+  ],
+  "repository_truth": {
+    "transport_before": "Nodemailer",
+    "transport_after": "Resend SDK",
+    "public_contracts_preserved": [
+      "sendNotification()",
+      "sendEmail()",
+      "NotificationPayload"
+    ]
+  },
+  "mutation_rules": [
+    "Replace only the transport implementation.",
+    "Do not modify notification persistence.",
+    "Do not modify callers.",
+    "Do not modify admissions workflow.",
+    "Do not modify ProspectRegistration.",
+    "Do not introduce parallel email services."
+  ],
+  "qualification": [
+    "npm run build",
+    "npm run dev",
+    "TypeScript compilation passes",
+    "Transport initializes with RESEND_API_KEY"
+  ],
+  "next_authority": "GE-RMP-014E"
+}

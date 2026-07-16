@@ -1,0 +1,31 @@
+{
+  "implementation_authority": "LEAP-IMPLEMENT-RDM-001",
+  "execution_mode": "Rapid Delivery Mode",
+  "slice": "SLICE-001",
+  "generated_at": "2026-07-16T05:05:01.388848+00:00",
+  "repository_truth": {
+    "mutation_corridor": "web/src/growth/",
+    "runtime_verified": true,
+    "routing_verified": true,
+    "builder_scope": "EXTERNAL_DEPENDENCY"
+  },
+  "authorized_mutation": [
+    "web/src/growth/components/Sections/CooperativePrinciplesSection.tsx"
+  ],
+  "prohibited": [
+    "execution/builders/",
+    "governance/",
+    "execution/framework/",
+    "client/src/App.tsx",
+    "routing redesign",
+    "Repository Truth rediscovery",
+    "Builder evolution"
+  ],
+  "validation_required": [
+    "npm run build",
+    "Landing page renders",
+    "Responsive layout preserved",
+    "No files outside mutation corridor modified"
+  ],
+  "status": "READY_FOR_IMPLEMENTATION"
+}

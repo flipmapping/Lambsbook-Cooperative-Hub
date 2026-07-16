@@ -189,12 +189,18 @@ function _determineRuntimeState(
   _validated: _ValidatedContinuationContext,
   _invitationStage: _InvitationContinuationStage,
 ): _DeterminedRuntimeState {
+  if (_invitationStage.kind === "invitation") {
+    return {
+      authenticationMode: _validated.normalized.authenticationMode,
+      outcome: "pending_invitation",
+      memberId: undefined,
+      pendingInvitationId: _invitationStage.inviteToken,
+    };
+  }
+
   return {
     authenticationMode: _validated.normalized.authenticationMode,
-    outcome:
-      _invitationStage.kind === "invitation"
-        ? "pending_invitation"
-        : "non_member",
+    outcome: "member",
     memberId: undefined,
     pendingInvitationId: undefined,
   };

@@ -1,0 +1,56 @@
+Timestamp (UTC): 20260716T092239Z
+Repository: workspace
+Target: web/src/growth/components/Hero/HeroContent.tsx
+Commit: a49d213ccd5b969a6ad385a1ff32b6d17ed3046a
+------------------------------------------------------------------
+export interface HeroContentProps {
+
+  title: string;
+
+  subtitle?: string;
+
+  description?: string;
+
+  primaryAction?: string;
+
+  secondaryAction?: string;
+
+}
+
+export function HeroContent(
+  props: HeroContentProps
+) {
+
+  return (
+    <section>
+
+      <h1>{props.title}</h1>
+
+      {props.subtitle && (
+        <h2>{props.subtitle}</h2>
+      )}
+
+      {props.description && (
+        <p>{props.description}</p>
+      )}
+
+      <div>
+
+        {props.primaryAction && (
+          <button type="button">
+            {props.primaryAction}
+          </button>
+        )}
+
+        {props.secondaryAction && (
+          <button type="button">
+            {props.secondaryAction}
+          </button>
+        )}
+
+      </div>
+
+    </section>
+  );
+
+}

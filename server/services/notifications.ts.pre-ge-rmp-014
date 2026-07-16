@@ -1,34 +1,42 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { storage } from "../storage";
 
-// GE-RMP-014 — Resend transport (replaces Nodemailer)
-// Authorized surface: server/services/notifications.ts
-// Public contracts preserved: sendNotification(), sendEmail(), NotificationPayload
-// Callers unchanged: admissions.ts, all existing callers
+let transporter: nodemailer.Transporter | null = null;
 
-let resendClient: Resend | null = null;
+function getTransporter() {
+  if (!transporter) {
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = parseInt(process.env.SMTP_PORT || "587");
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASSWORD;
+    const smtpFromEmail = process.env.SMTP_FROM_EMAIL;
 
-function getResendClient(): Resend | null {
-  if (!resendClient) {
-    const apiKey = process.env.RESEND_API_KEY;
-
-    if (!apiKey) {
+    if (!smtpHost || !smtpUser || !smtpPass || !smtpFromEmail) {
       console.warn(
-        "[Email] RESEND_API_KEY not configured. Email notifications will not be sent."
+        "SMTP configuration incomplete. Email notifications will not be sent.",
+        { host: !!smtpHost, user: !!smtpUser, pass: !!smtpPass, from: !!smtpFromEmail }
       );
       return null;
     }
 
-    resendClient = new Resend(apiKey);
+    transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
   }
-  return resendClient;
+  return transporter;
 }
 
 export interface NotificationPayload {
   recipientEmail: string;
   recipientId: string;
-  recipientType: "member" | "partner" | "admin" | "prospect";
-  type: "new_enquiry" | "enquiry_assigned" | "follow_up_reminder" | "status_change" | "registration_confirmation" | "campaign_email";
+  recipientType: "member" | "partner" | "admin";
+  type: "new_enquiry" | "enquiry_assigned" | "follow_up_reminder" | "status_change";
   subject: string;
   message: string;
   enquiryId?: string;
@@ -69,39 +77,23 @@ export async function sendNotification(payload: NotificationPayload): Promise<{ 
 
 async function sendEmail(payload: NotificationPayload): Promise<{ success: boolean; error?: string }> {
   try {
-    const client = getResendClient();
-    if (!client) {
-      return { success: false, error: "Resend not configured" };
+    const transporter = getTransporter();
+    if (!transporter) {
+      return { success: false, error: "SMTP not configured" };
     }
 
-    const fromName = process.env.RESEND_FROM_NAME || "Other Path Travel";
-    const fromEmail =
-    process.env.RESEND_FROM_EMAIL ??
-    process.env.SMTP_FROM_EMAIL;
+    const fromEmail = process.env.SMTP_FROM_EMAIL!;
+    const fromName = process.env.SMTP_FROM_NAME || "Other Path Travel";
 
-    if (!fromEmail) {
-      return {
-        success: false,
-        error: "No sender email configured",
-      };
-    }
-
-    const { data, error } = await client.emails.send({
-      from: `${fromName} <${fromEmail}>`,
-      to: [payload.recipientEmail],
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: payload.recipientEmail,
       subject: payload.subject,
       text: payload.message,
       html: `<p>${payload.message.replace(/\n/g, "<br>")}</p>`,
     });
 
-    if (error) {
-      console.error(`[Email] Failed to send to ${payload.recipientEmail}:`, error.message);
-      return { success: false, error: error.message };
-    }
-
-    console.log(
-      `[Email] Sent ${data?.id ?? "(no id)"} -> ${payload.recipientEmail}: ${payload.subject}`
-    );
+    console.log(`[Email] Sent to ${payload.recipientEmail}: ${payload.subject}`);
     return { success: true };
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : String(error);

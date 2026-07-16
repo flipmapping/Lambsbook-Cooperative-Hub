@@ -1,0 +1,36 @@
+{
+  "implementation_authority": "BLD-PIC-001-IMPL-002",
+  "parent_authority": "BLD-PIC-001",
+  "status": "READY_FOR_BUILDER_MUTATION",
+  "execution_mode": "Strategic Execution Mode",
+  "repository_truth": {
+    "source": "EOS-RMP-001E",
+    "status": "IMMUTABLE",
+    "rediscovery": false
+  },
+  "objective": "Materialize Builder source code that generates the first certified Package Is the Contract (PIC) from certified Repository Truth.",
+  "implementation_scope": {
+    "consume": [
+      "Certified Builder Input Set (CBIS)",
+      "EOS-RMP-001E outputs",
+      "Declared Constitutional Authorities"
+    ],
+    "implement": [
+      "PIC materialization",
+      "PACKAGE-MANIFEST generation",
+      "IMPLEMENT generation",
+      "Standard CLAUDE.md injection",
+      "Repository collector",
+      "Authority collector",
+      "Evidence collector",
+      "PIC Qualification Gate",
+      "ZIP publication"
+    ]
+  },
+  "expected_result": {
+    "output": "First certified PIC ZIP",
+    "execution_contract": "PIC only",
+    "post_condition": "LEAP-PREP consumes the generated PIC without additional governance."
+  },
+  "generated_at": "2026-07-16T00:06:00Z"
+}

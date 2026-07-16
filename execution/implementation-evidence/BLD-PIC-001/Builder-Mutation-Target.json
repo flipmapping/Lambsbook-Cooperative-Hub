@@ -1,0 +1,19 @@
+{
+  "implementation_authority": "BLD-PIC-001",
+  "status": "READY_FOR_SOURCE_MUTATION",
+  "repository_truth": {
+    "canonical_builder_entrypoint": "execution/builders/build_claude_package.py",
+    "synchronization_status": "VERIFIED"
+  },
+  "authorized_mutation_surface": {
+    "primary": "execution/builders/build_claude_package.py",
+    "purpose": "Implement Builder PIC Materialization Service and publish the first certified Package Is the Contract (PIC)."
+  },
+  "expected_outputs": [
+    "Builder source mutation",
+    "Builder build evidence",
+    "PIC Qualification Gate evidence",
+    "Certified PIC ZIP"
+  ],
+  "generated_at": "2026-07-16T00:34:10Z"
+}

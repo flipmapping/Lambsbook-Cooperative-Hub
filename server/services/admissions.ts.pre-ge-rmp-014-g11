@@ -3,8 +3,6 @@
 // Admissions Service — RMP-010E13
 // Persistence via SupabaseDAL. Response contract preserved from RMP-010E11.
 import { supabaseDAL } from '../lib/supabase-dal';
-import { sendNotification } from "./notifications";
-import { registrationConfirmationTemplate } from "./emailTemplates";
 
 export interface ProspectRegistrationPayload {
   fullName: string;
@@ -46,40 +44,6 @@ export async function submitProspectRegistration(
       current_stage: 'registered',
     });
   }
-
-  
-const email = registrationConfirmationTemplate({
-    fullName: payload.fullName,
-    program: payload.programOfInterest,
-  });
-
-  await sendNotification({
-    recipientEmail: payload.email,
-    recipientId: prospect.id,
-    recipientType: "prospect",
-    type: "registration_confirmation",
-    subject: email.subject,
-    message: email.text,
-  });
-
-
-  await recordProspectActivity(
-    prospect.id,
-    "registration_confirmation_email_sent",
-    {
-      recipient: payload.email,
-      subject: "Thank you for registering your interest in CTBC University",
-      provider: "resend",
-      channel: "email",
-    },
-  ).catch((err) =>
-    console.error(
-      "[ProspectActivity] Failed to record email activity:",
-      err,
-    ),
-  );
-
-
 
   return {
     accepted: true,

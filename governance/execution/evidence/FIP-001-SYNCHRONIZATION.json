@@ -1,0 +1,11 @@
+{
+  "execution_standard": "FIP-001",
+  "status": "SYNCHRONIZED",
+  "adopted_at_utc": "2026-07-16T08:25:12.064128+00:00",
+  "response_contract": [
+    "Execution Artifact",
+    "Execution Status",
+    "Next Execution State",
+    "Founder Action"
+  ]
+}

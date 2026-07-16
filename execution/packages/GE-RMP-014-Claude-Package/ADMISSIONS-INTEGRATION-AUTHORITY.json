@@ -1,0 +1,18 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "G7",
+  "created_utc": "2026-07-16T06:49:15.705400Z",
+  "repository_surface": "server/services/admissions.ts",
+  "sha256": "54dbb9872dcd5d5aef0fba969586d3fae86f5e6dda1266bea70d37c4f6f46e4b",
+  "authorized_mutation": [
+    "Import sendNotification",
+    "Invoke sendNotification after createProspectJourney()",
+    "Invoke before existing return statement",
+    "recipientType='prospect'",
+    "type='registration_confirmation'",
+    "Do not modify API response",
+    "Do not modify persistence",
+    "Do not modify journey creation",
+    "Do not modify notifications.ts"
+  ]
+}

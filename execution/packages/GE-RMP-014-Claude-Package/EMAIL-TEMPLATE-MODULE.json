@@ -1,0 +1,12 @@
+{
+  "implementation": "GE-COMM-001",
+  "phase": "G18",
+  "created_utc": "2026-07-16T09:14:28.515671Z",
+  "repository_surface": "server/services/emailTemplates.ts",
+  "status": "TEMPLATE_MODULE_BOOTSTRAPPED",
+  "exports": [
+    "EmailTemplate",
+    "RegistrationConfirmationInput",
+    "registrationConfirmationTemplate"
+  ]
+}

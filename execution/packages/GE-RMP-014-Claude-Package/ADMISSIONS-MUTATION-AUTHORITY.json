@@ -1,0 +1,24 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "G5",
+  "created_utc": "2026-07-16T06:18:36.055584Z",
+  "target": "server/services/admissions.ts",
+  "authorized_mutation": [
+    "Import sendNotification()",
+    "Invoke sendNotification() after successful prospect registration",
+    "Use recipientType='prospect'",
+    "Use type='registration_confirmation'",
+    "Preserve existing API response",
+    "Preserve journey creation",
+    "Preserve persistence",
+    "Do not modify existing runtime contracts"
+  ],
+  "prohibited": [
+    "Modify notifications.ts",
+    "Modify ProspectRegistration.tsx",
+    "Modify Builder",
+    "Modify EOS",
+    "Modify Open Brain",
+    "Change API response"
+  ]
+}

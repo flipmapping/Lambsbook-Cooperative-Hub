@@ -1,0 +1,24 @@
+{
+  "implementation": "GE-RMP-014",
+  "phase": "E4",
+  "created_utc": "2026-07-16T00:28:32.483191Z",
+  "target": "server/services/notifications.ts",
+  "working_copy": "execution/packages/GE-RMP-014-Claude-Package/implementation-patch/notifications.ts",
+  "required_changes": [
+    "Replace import nodemailer with import { Resend } from 'resend'",
+    "Create singleton Resend client using RESEND_API_KEY",
+    "Remove SMTP transport creation",
+    "Replace transporter.sendMail() with resend.emails.send()",
+    "Preserve sendNotification()",
+    "Preserve sendEmail() signature",
+    "Preserve NotificationPayload",
+    "Preserve notification persistence",
+    "Preserve existing callers",
+    "Return identical success/error contract"
+  ],
+  "validation": [
+    "npm run build",
+    "npm run dev",
+    "Verify Resend email delivery"
+  ]
+}
