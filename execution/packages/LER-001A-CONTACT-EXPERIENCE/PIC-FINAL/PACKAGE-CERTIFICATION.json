@@ -1,0 +1,68 @@
+{
+  "package": "LER-001A-PIC-Claude-FINAL",
+  "status": "CERTIFIED_READY_FOR_IMPLEMENTATION",
+  "generated_utc": "2026-07-18T08:29:28.137835+00:00",
+  "file_count": 12,
+  "files": [
+    {
+      "path": "CLAUDE-INSTRUCTION.md",
+      "sha256": "0c38974872a685f223e54c197b9c31ec92e58b211e508978889eabec86ec63b9",
+      "bytes": 1366
+    },
+    {
+      "path": "IMPLEMENTATION-BRIEF.md",
+      "sha256": "bdc931428dfad694336b386630befb2f311174a058431dfad7f503cbc5a000b6",
+      "bytes": 1064
+    },
+    {
+      "path": "PACKAGE-CERTIFICATION.json",
+      "sha256": "d08c006218ce421ab6fad13afecbbf211497c39dad2deea59b340d4429380197",
+      "bytes": 3777
+    },
+    {
+      "path": "assets/Whatsapp.jpg",
+      "sha256": "a80df1753e9127f3cf090835dddc75db77119abb9818d6027d1f2d428773b9e4",
+      "bytes": 27209
+    },
+    {
+      "path": "assets/zalo.jpg",
+      "sha256": "6db14137753f7c3cf9aa6a350c05b0c483372f4a25ed65cd8f8324db5dc25335",
+      "bytes": 89608
+    },
+    {
+      "path": "repository/CallToActionSection.tsx",
+      "sha256": "7c841fdd643ac8749f796c70f3f8c156634a800dd015f7d2cc05134ce3fa1d72",
+      "bytes": 117
+    },
+    {
+      "path": "repository/CooperativePrinciplesSection.tsx",
+      "sha256": "6a0ca98c9ef116e554c2cb339153be88170824a564caecad3deb0dd91352cc47",
+      "bytes": 12066
+    },
+    {
+      "path": "repository/FAQSection.tsx",
+      "sha256": "477d9123cc8e58abaa8d24d3e9f86d74400eeb828929c23652ed1e05f80075cc",
+      "bytes": 786
+    },
+    {
+      "path": "repository/LandingSections.tsx",
+      "sha256": "b5fa098b9ae11ff7ed3c28761a59d572dbc6bc0ccc9f8ba364f4644efd10b1d0",
+      "bytes": 798
+    },
+    {
+      "path": "repository/MembershipSection.tsx",
+      "sha256": "78598fd9455e0e961c313612f5cb476862bd47283c5534bc7962266c901a059f",
+      "bytes": 111
+    },
+    {
+      "path": "repository/SURFACE.json",
+      "sha256": "da939f2bc54b50f86714db09fdb7eec08aa1d6e232bc04c727f6b917eb5ece13",
+      "bytes": 197
+    },
+    {
+      "path": "repository/index.ts",
+      "sha256": "7181630a389d6207398ad66a2effb50c24ce38a4b4608da12c4ee80f821608f2",
+      "bytes": 141
+    }
+  ]
+}

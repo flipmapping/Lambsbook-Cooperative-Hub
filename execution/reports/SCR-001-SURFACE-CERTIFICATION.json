@@ -1,0 +1,21 @@
+{
+  "authority": "SCR-001",
+  "status": "CERTIFIED",
+  "mutation_surface": "web/src/growth/pages/Landing/LandingSections.tsx",
+  "rendered_components": [
+    "AdmissionsSection",
+    "CallToActionSection",
+    "CooperativePrinciplesSection",
+    "FAQSection",
+    "JourneyDiscoverySection",
+    "MembershipSection",
+    "ProgramsSection",
+    "ScholarshipsSection"
+  ],
+  "contact_surface_present": false,
+  "repository_truth": {
+    "contact_section_exists": false,
+    "design_requires_contact": true,
+    "classification": "DESIGN_REPOSITORY_DIVERGENCE"
+  }
+}

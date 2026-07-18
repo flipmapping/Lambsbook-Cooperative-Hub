@@ -1,0 +1,7 @@
+{
+  "authorized_mutations": [
+    "web/src/growth/components/Sections/ContactSection.tsx",
+    "web/src/growth/pages/Landing/LandingSections.tsx"
+  ],
+  "forbidden": "All other repository files"
+}

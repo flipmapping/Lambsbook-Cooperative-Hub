@@ -200,25 +200,25 @@ export default function MemberHub() {
   const { data: activity, isLoading: activityLoading } = useQuery<ActivityData>({
     queryKey: ["/api/member/recent-participation"],
     queryFn: () => fetchWithAuth("/api/member/recent-participation"),
-    enabled: isAuthenticated,
+    enabled: isAuthenticated && !profileLoading && !!profile,
   });
 
   const { data: earnings, isLoading: earningsLoading } = useQuery<any>({
     queryKey: ["/api/member/earnings"],
     queryFn: () => fetchWithAuth("/api/member/earnings"),
-    enabled: isAuthenticated,
+    enabled: isAuthenticated && !profileLoading && !!profile,
   });
 
   const { data: invitationData, isLoading: invitationLoading } = useQuery<any>({
     queryKey: ["/api/member/pending-invitation"],
     queryFn: () => fetchWithAuth("/api/member/pending-invitation"),
-    enabled: isAuthenticated,
+    enabled: isAuthenticated && !profileLoading && !!profile,
   });
 
   const { data: relationshipsData, isLoading: relationshipsLoading } = useQuery<any>({
     queryKey: ["/api/member/trusted-relationships"],
     queryFn: () => fetchWithAuth("/api/member/trusted-relationships"),
-    enabled: isAuthenticated,
+    enabled: isAuthenticated && !profileLoading && !!profile,
   });
 
   const isDashboardLoading =

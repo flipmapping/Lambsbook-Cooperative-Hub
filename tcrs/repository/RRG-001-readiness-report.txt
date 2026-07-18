@@ -1,0 +1,26 @@
+================================================================================
+RRG-001
+REPOSITORY READINESS GATE
+================================================================================
+
+REPOSITORY STATUS
+--------------------------------------------------------------------------------
+M execution/packages/ESR-001/generated/AUTHORITY-ACTIVATION-STATUS.json
+?? founder-review/
+?? tools/rrg_001_repository_readiness.py
+
+CLASSIFICATION GUIDANCE
+--------------------------------------------------------------------------------
+AUTHORIZED-PRODUCTION : client/src, server, migrations, SQL
+AUTHORIZED-EVIDENCE   : tools, tcrs, execution
+OUT-OF-SCOPE          : unrelated production changes
+IGNORE                : build outputs, caches, temp files
+
+NEXT STEP
+--------------------------------------------------------------------------------
+After bounded production mutation:
+  1. Run git diff --stat
+  2. Run production build
+  3. Classify every changed file
+  4. Produce Repository Readiness Report
+  5. Await Founder approval before commit

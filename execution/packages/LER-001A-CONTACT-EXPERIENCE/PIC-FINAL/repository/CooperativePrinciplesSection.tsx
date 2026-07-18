@@ -1,0 +1,320 @@
+// CooperativePrinciplesSection.tsx
+// LEAP-IMPLEMENT-RDM-001 · SLICE-001
+// Authorized mutation: web/src/growth/components/Sections/CooperativePrinciplesSection.tsx
+// Preserves: named export, zero-prop contract, Tailwind styling conventions
+
+import { useEffect, useRef, useState } from "react";
+
+// ─── Data ────────────────────────────────────────────────────────────────────
+
+const PRINCIPLES = [
+  {
+    step: "01",
+    name: "Voluntary & Open Membership",
+    tag: "Open Doors",
+    body:
+      "Cooperatives are voluntary organisations, open to all persons able to use their services and willing to accept the responsibilities of membership, without gender, social, racial, political, or religious discrimination.",
+    accent: "#2563EB",
+    journeyNote: "Where every journey begins — a deliberate choice to join.",
+  },
+  {
+    step: "02",
+    name: "Democratic Member Control",
+    tag: "Equal Voice",
+    body:
+      "Members actively participate in setting policies and making decisions. Elected representatives are accountable to the membership. In primary cooperatives, members have equal voting rights — one member, one vote.",
+    accent: "#7C3AED",
+    journeyNote: "Shared direction, decided together.",
+  },
+  {
+    step: "03",
+    name: "Member Economic Participation",
+    tag: "Shared Stake",
+    body:
+      "Members contribute equitably to, and democratically control, the capital of the cooperative. Surpluses may be allocated to develop the cooperative, benefit members in proportion to their transactions, or support other activities approved by the membership.",
+    accent: "#0891B2",
+    journeyNote: "Ownership that reflects contribution.",
+  },
+  {
+    step: "04",
+    name: "Autonomy & Independence",
+    tag: "Self-Governed",
+    body:
+      "Cooperatives are autonomous, self-help organisations controlled by their members. If they enter into agreements with other organisations, they do so on terms that ensure democratic control by their members and maintain cooperative autonomy.",
+    accent: "#059669",
+    journeyNote: "Independence that protects the mission.",
+  },
+  {
+    step: "05",
+    name: "Education, Training & Information",
+    tag: "Constant Learning",
+    body:
+      "Cooperatives provide education and training for their members, elected representatives, managers, and employees so they can contribute effectively to the development of their cooperative. They inform the general public about the nature and benefits of cooperation.",
+    accent: "#D97706",
+    journeyNote: "Knowledge shared is power multiplied.",
+  },
+  {
+    step: "06",
+    name: "Cooperation Among Cooperatives",
+    tag: "Collective Reach",
+    body:
+      "Cooperatives serve their members most effectively and strengthen the cooperative movement by working together through local, national, regional, and international structures.",
+    accent: "#DC2626",
+    journeyNote: "No cooperative stands alone.",
+  },
+  {
+    step: "07",
+    name: "Concern for Community",
+    tag: "Beyond the Threshold",
+    body:
+      "Cooperatives work for the sustainable development of their communities through policies approved by their members. The cooperative journey does not end at the membership boundary — it extends outward.",
+    accent: "#0F766E",
+    journeyNote: "The final step: turning inward strength outward.",
+  },
+] as const;
+
+// ─── Intersection observer hook ───────────────────────────────────────────────
+
+function useVisible(threshold = 0.15) {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+  return { ref, visible };
+}
+
+// ─── Individual card ──────────────────────────────────────────────────────────
+
+interface CardProps {
+  principle: (typeof PRINCIPLES)[number];
+  index: number;
+  visible: boolean;
+  active: boolean;
+  onActivate: () => void;
+}
+
+function PrincipleCard({ principle, index, visible, active, onActivate }: CardProps) {
+  const delay = `${index * 80}ms`;
+
+  return (
+    <article
+      role="button"
+      tabIndex={0}
+      aria-expanded={active}
+      aria-label={`Principle ${principle.step}: ${principle.name}`}
+      onClick={onActivate}
+      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onActivate()}
+      className={[
+        "group relative flex flex-col rounded-2xl border border-white/10 bg-white/5",
+        "cursor-pointer select-none outline-none",
+        "transition-all duration-500 ease-out",
+        "focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+        "hover:bg-white/10 hover:border-white/20 hover:shadow-xl hover:shadow-black/20",
+        active ? "bg-white/10 border-white/25 shadow-xl shadow-black/20" : "",
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={{ transitionDelay: visible ? delay : "0ms" }}
+    >
+      {/* Step accent bar */}
+      <div
+        className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl transition-opacity duration-300"
+        style={{
+          background: principle.accent,
+          opacity: active ? 1 : 0.4,
+        }}
+      />
+
+      <div className="flex flex-col gap-3 p-6 pt-7 flex-1">
+        {/* Header row */}
+        <div className="flex items-start justify-between gap-3">
+          <span
+            className="font-mono text-xs font-semibold tracking-widest"
+            style={{ color: principle.accent }}
+          >
+            {principle.step}
+          </span>
+          <span
+            className="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full border"
+            style={{
+              color: principle.accent,
+              borderColor: principle.accent + "55",
+              backgroundColor: principle.accent + "18",
+            }}
+          >
+            {principle.tag}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-sm font-semibold leading-snug text-white/90 group-hover:text-white transition-colors">
+          {principle.name}
+        </h3>
+
+        {/* Body — revealed on active */}
+        <div
+          className={[
+            "overflow-hidden transition-all duration-500",
+            active ? "max-h-48 opacity-100" : "max-h-0 opacity-0",
+          ].join(" ")}
+        >
+          <p className="text-xs leading-relaxed text-white/60 pt-1">{principle.body}</p>
+          <p
+            className="mt-3 text-[11px] italic font-medium"
+            style={{ color: principle.accent }}
+          >
+            {principle.journeyNote}
+          </p>
+        </div>
+
+        {/* Collapsed hint */}
+        {!active && (
+          <p className="text-[11px] text-white/35 leading-relaxed line-clamp-2">
+            {principle.body}
+          </p>
+        )}
+      </div>
+
+      {/* Expand chevron */}
+      <div className="px-6 pb-4">
+        <span
+          className={[
+            "inline-block text-white/30 text-xs transition-transform duration-300",
+            active ? "rotate-180 text-white/60" : "",
+          ].join(" ")}
+          aria-hidden="true"
+        >
+          ▾
+        </span>
+      </div>
+    </article>
+  );
+}
+
+// ─── Section header ──────────────────────────────────────────────────────────
+
+function SectionHeader({ visible }: { visible: boolean }) {
+  return (
+    <header className="mx-auto max-w-2xl text-center mb-14">
+      <div
+        className={[
+          "transition-all duration-700",
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+        ].join(" ")}
+      >
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">
+          The Cooperative Journey
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
+          Seven Principles.
+          <br />
+          <span className="text-white/50">One continuous path.</span>
+        </h2>
+        <p className="text-sm leading-relaxed text-white/50 max-w-lg mx-auto">
+          The International Cooperative Alliance's seven principles are not a
+          checklist — they are a journey. Each principle builds on the last,
+          tracing a path from individual membership to collective impact.
+        </p>
+      </div>
+    </header>
+  );
+}
+
+// ─── Journey connector (desktop) ─────────────────────────────────────────────
+
+function JourneySpine({ visible }: { visible: boolean }) {
+  return (
+    <div
+      aria-hidden="true"
+      className={[
+        "hidden lg:block absolute left-1/2 -translate-x-px top-0 bottom-0",
+        "w-px bg-gradient-to-b from-transparent via-white/10 to-transparent",
+        "transition-opacity duration-1000 delay-300",
+        visible ? "opacity-100" : "opacity-0",
+      ].join(" ")}
+    />
+  );
+}
+
+// ─── Main export ─────────────────────────────────────────────────────────────
+
+export function CooperativePrinciplesSection() {
+  const { ref, visible } = useVisible();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggle = (i: number) =>
+    setActiveIndex((prev) => (prev === i ? null : i));
+
+  return (
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      id="cooperative-principles"
+      aria-label="Cooperative Principles"
+      className="relative py-24 sm:py-32 px-4 bg-[#0B0F1A] overflow-hidden"
+    >
+      {/* Ambient background glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-blue-600/5 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-violet-600/5 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl">
+        <SectionHeader visible={visible} />
+
+        {/* Grid + spine */}
+        <div className="relative">
+          <JourneySpine visible={visible} />
+
+          <div
+            className="grid gap-3 sm:gap-4
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-3
+              xl:grid-cols-4"
+            role="list"
+          >
+            {PRINCIPLES.map((p, i) => (
+              <div key={p.step} role="listitem">
+                <PrincipleCard
+                  principle={p}
+                  index={i}
+                  visible={visible}
+                  active={activeIndex === i}
+                  onActivate={() => toggle(i)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer note */}
+        <p
+          className={[
+            "mt-12 text-center text-[11px] text-white/25 transition-all duration-700 delay-700",
+            visible ? "opacity-100" : "opacity-0",
+          ].join(" ")}
+        >
+          Based on the International Cooperative Alliance Statement on the
+          Cooperative Identity (1995). Select any principle to read more.
+        </p>
+      </div>
+    </section>
+  );
+}

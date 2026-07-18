@@ -1,0 +1,19 @@
+--- LandingSections.tsx
+
+1. Add:
+
+import { ContactSection } from "../../components/Sections/ContactSection";
+
+2. Insert immediately before:
+
+<CallToActionSection />
+
+Result:
+
+<FAQSection />
+
+<ContactSection />
+
+<CallToActionSection />
+
+No additional mutations are authorized.

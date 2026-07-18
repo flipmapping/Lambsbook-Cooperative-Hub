@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { MessageCircle, Send, Mail, Phone } from 'lucide-react';
+import { MessageCircle, Send, Mail } from 'lucide-react';
+import whatsappQr from '../../../web/src/assets/qr/Whatsapp.jpg';
+import zaloQr from '../../../web/src/assets/qr/zalo.jpg';
 import { SiWhatsapp, SiFacebook } from 'react-icons/si';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -145,13 +147,33 @@ export function HubConsultationForm({
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-3 text-sm">
-              <Phone className="h-4 w-4 text-muted-foreground" />
-              <div>
-                <span className="font-medium">WhatsApp/Zalo: </span>
-                <a href={`tel:${contactPhone}`} className="text-primary hover:underline">
-                  {contactPhone}
-                </a>
+          </div>
+
+          <div className="pt-6 border-t">
+            <h3 className="font-semibold mb-1" data-testid="text-scan-to-connect">Scan to Connect</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Point your phone camera to connect instantly.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-md border p-4 flex flex-col items-center text-center" data-testid="card-qr-whatsapp">
+                <span className="font-medium text-sm mb-3">WhatsApp</span>
+                <img
+                  src={whatsappQr}
+                  alt="WhatsApp QR code for Lambsbook"
+                  className="h-36 w-36 object-contain rounded-sm"
+                  data-testid="img-qr-whatsapp"
+                />
+                <span className="text-xs text-muted-foreground mt-3">Scan with WhatsApp</span>
+              </div>
+              <div className="rounded-md border p-4 flex flex-col items-center text-center" data-testid="card-qr-zalo">
+                <span className="font-medium text-sm mb-3">Zalo</span>
+                <img
+                  src={zaloQr}
+                  alt="Zalo QR code for Lambsbook"
+                  className="h-36 w-36 object-contain rounded-sm"
+                  data-testid="img-qr-zalo"
+                />
+                <span className="text-xs text-muted-foreground mt-3">Scan with Zalo</span>
               </div>
             </div>
           </div>

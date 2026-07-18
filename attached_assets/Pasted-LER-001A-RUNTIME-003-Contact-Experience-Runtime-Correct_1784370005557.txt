@@ -1,0 +1,205 @@
+LER-001A-RUNTIME-003
+
+Contact Experience Runtime Correction
+
+STATUS
+
+AUTHORIZED
+
+======================================================================
+
+MISSION
+
+Restore the Homepage Contact Experience so that the approved QR-based
+contact section is visible and functional at runtime.
+
+The repository already contains the required implementation and QR
+assets.
+
+Do not perform another architectural investigation.
+
+Instead, make the smallest corrective mutation required to ensure the
+homepage renders the approved Contact Experience.
+
+======================================================================
+
+CERTIFIED CONTEXT
+
+The following has already been verified:
+
+✓ QR assets exist
+
+    web/src/assets/qr/Whatsapp.jpg
+
+    web/src/assets/qr/zalo.jpg
+
+✓ ContactSection.tsx exists
+
+✓ LandingSections.tsx has already been updated
+
+✓ Production build succeeds
+
+✓ Production bundle contains:
+
+    Scan to Connect
+
+    Point your phone camera
+
+    WhatsApp
+
+    Zalo
+
+✓ QR image assets are present in the compiled bundle
+
+Therefore this sprint SHALL assume that the assets and implementation
+already exist.
+
+Do not recreate them.
+
+Do not add duplicate components.
+
+======================================================================
+
+IMPLEMENTATION OBJECTIVE
+
+Modify the Homepage Contact section so that it visibly displays the QR
+experience.
+
+If the current ContactSection implementation is not being rendered,
+replace the Contact portion of the Landing page with a single canonical
+implementation that uses the existing repository assets.
+
+======================================================================
+
+CONTACT EXPERIENCE
+
+Maintain:
+
+• Get In Touch heading
+
+• Contact form
+
+• WhatsApp button
+
+• Zalo button
+
+• Messenger button
+
+Maintain:
+
+Email contact information.
+
+Remove:
+
+The phone number row.
+
+Replace it with:
+
+--------------------------------------------------
+
+Scan to Connect
+
+Point your phone camera to connect instantly.
+
+┌──────────────────────┐   ┌──────────────────────┐
+
+WhatsApp                 Zalo
+
+[ QR ]                   [ QR ]
+
+Scan with WhatsApp       Scan with Zalo
+
+└──────────────────────┘   └──────────────────────┘
+
+--------------------------------------------------
+
+======================================================================
+
+DESIGN SPECIFICATION
+
+The QR cards shall:
+
+• have identical dimensions
+
+• have identical padding
+
+• have identical border radius
+
+• have identical typography
+
+• use the existing Lambsbook design language
+
+• align horizontally on desktop
+
+• stack vertically on mobile
+
+Use only:
+
+web/src/assets/qr/Whatsapp.jpg
+
+web/src/assets/qr/zalo.jpg
+
+Do not regenerate images.
+
+Do not create new assets.
+
+If necessary, slightly reduce the displayed size of the Zalo QR to
+achieve equal visual weight.
+
+======================================================================
+
+EXECUTION AUTHORITY
+
+Replit is authorized to:
+
+• inspect the current Contact rendering
+
+• identify why the QR section is absent
+
+• simplify the rendering if required
+
+• remove obsolete phone-number UI
+
+• reconnect the existing QR assets
+
+• make the smallest mutation necessary to restore the approved Contact
+  Experience
+
+Do not redesign the Landing page.
+
+Do not modify unrelated sections.
+
+Do not introduce new components unless required to replace an
+unreachable Contact implementation.
+
+======================================================================
+
+VALIDATION
+
+Return:
+
+✓ Desktop screenshot
+
+✓ Mobile screenshot
+
+✓ Mutation summary
+
+✓ Files modified
+
+✓ Explanation of the root cause if identified
+
+✓ Confirmation that:
+
+    Scan to Connect
+
+    WhatsApp QR
+
+    Zalo QR
+
+are visible on the Homepage.
+
+After Founder approval, proceed to:
+
+RRG-001
+
+before creating any Git commit.

@@ -1,0 +1,12 @@
+{
+  "package": "LER-001A-CONTACT-EXPERIENCE",
+  "mutation_surface": [
+    "web/src/growth/components/Sections/ContactSection.tsx",
+    "web/src/growth/pages/Landing/LandingSections.tsx"
+  ],
+  "deliverables": [
+    "ContactSection.tsx",
+    "LandingSections.tsx.patch"
+  ],
+  "status": "READY_FOR_CODE_GENERATION"
+}

@@ -34,7 +34,7 @@
     ],
     "delta_adopted_at": "2026-07-14T05:13:12.342415Z"
   },
-  "execution_phase": "REGISTRY_POPULATION_PLANNING",
+  "execution_phase": "READY_FOR_CERTIFIED_PIC",
   "execution_input": {
     "status": "PENDING_RESOLUTION",
     "authority": "Execution Input Authority Service (IAS)",
@@ -47,5 +47,18 @@
     ],
     "resolution_required_before_mutation": true,
     "recorded_at": "2026-07-14T01:46:42.885983Z"
+  },
+  "certified_execution_inputs": {
+    "eos_rmp_001e": {
+      "status": "CONSUMED",
+      "repository_truth": true,
+      "rediscovery_permitted": false
+    },
+    "package_contract": {
+      "model": "Package Is the Contract (PIC)",
+      "builder_authority": "BLD-PIC-001",
+      "status": "AWAITING_CERTIFIED_PIC"
+    },
+    "recorded_at": "2026-07-18T05:36:08.709270Z"
   }
 }

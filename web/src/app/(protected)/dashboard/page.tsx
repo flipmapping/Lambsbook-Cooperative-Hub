@@ -20,7 +20,8 @@ import { LearningHistorySection } from "@/components/dashboard/LearningHistorySe
 import { IELTSSection } from "@/components/dashboard/IELTSSection";
 import { MultilingualSection } from "@/components/dashboard/MultilingualSection";
 import { InvitationAcceptanceSection } from "@/components/dashboard/InvitationAcceptanceSection";
-import { dashboardMockData, groupPipelineByStage } from "@/components/dashboard/mockData";
+import { groupPipelineByStage } from "@/components/dashboard/mockData";
+import { getDashboardData } from "@/lib/dashboard/dashboardAdapter";
 import type {
   CooperativeActivityItem,
   DashboardEntryState,
@@ -42,6 +43,8 @@ function makeFeedback(message: string): LocalFeedback {
 }
 
 export default function DashboardPage() {
+
+  const dashboardData = getDashboardData();
   console.log("CANONICAL_RUNTIME_MARKER");
   const router = useRouter();
   const [entryState, setEntryState] = useState<DashboardEntryState>("loading");
@@ -50,7 +53,7 @@ export default function DashboardPage() {
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const [pipelineItems, setPipelineItems] = useState<PipelineItem[]>(dashboardMockData.pipelineItems);
+  const [pipelineItems, setPipelineItems] = useState<PipelineItem[]>(dashboardData.pipelineItems);
   const [discussionJoinedIds, setDiscussionJoinedIds] = useState<string[]>([]);
   const [supportedIds, setSupportedIds] = useState<string[]>([]);
   const [adoptionConsideredIds, setAdoptionConsideredIds] = useState<string[]>([]);
@@ -193,7 +196,7 @@ export default function DashboardPage() {
     },
     {
       label: "Refinements Made",
-      value: dashboardMockData.contributions.refinementsMade,
+      value: dashboardData.contributions.refinementsMade,
       helper: "Static mock refinement count for this slice.",
     },
     {
@@ -203,7 +206,7 @@ export default function DashboardPage() {
     },
   ];
 
-  const combinedActivity = [...localActivity, ...dashboardMockData.cooperativeActivity];
+  const combinedActivity = [...localActivity, ...dashboardData.cooperativeActivity];
 
   const heroFeedback: HeroFeedback | null = latestFeedback
     ? {
@@ -386,8 +389,8 @@ export default function DashboardPage() {
           </div>
         ) : null}
         <DashboardHeroCurrentPosition
-          title={dashboardMockData.heroTitle}
-          description={dashboardMockData.heroDescription}
+          title={dashboardData.heroTitle}
+          description={dashboardData.heroDescription}
           stateLabel="non_member_no_invitation"
           feedback={null}
         />
@@ -451,8 +454,8 @@ export default function DashboardPage() {
       </div>
 
       <DashboardHeroCurrentPosition
-        title={dashboardMockData.heroTitle}
-        description={dashboardMockData.heroDescription}
+        title={dashboardData.heroTitle}
+        description={dashboardData.heroDescription}
         stateLabel={isMember ? "member" : "non_member_no_invitation"}
         feedback={heroFeedback}
       />
@@ -503,7 +506,7 @@ export default function DashboardPage() {
 
       {isMember ? (
         <div id="programs">
-          <ProgramsSection programs={dashboardMockData.programs} />
+          <ProgramsSection programs={dashboardData.programs} />
         </div>
       ) : (
         <div id="programs" className="rounded-2xl border border-slate-800 bg-slate-900/70 px-5 py-5">
@@ -527,7 +530,7 @@ export default function DashboardPage() {
         <MultilingualSection isMember={isMember} />
       </div>
 
-      <RelationshipTrustSection relationshipContext={dashboardMockData.relationshipContext} />
+      <RelationshipTrustSection relationshipContext={dashboardData.relationshipContext} />
 
       <PipelineDetailPanel
         item={selectedItem}

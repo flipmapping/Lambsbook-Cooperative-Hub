@@ -1,0 +1,118 @@
+{
+  "package": "LER-001A-CONTACT-EXPERIENCE",
+  "status": "CERTIFIED_READY_FOR_IMPLEMENTATION",
+  "generated_utc": "2026-07-18T08:08:58.720707+00:00",
+  "file_count": 22,
+  "files": [
+    {
+      "path": "IMPLEMENTATION-BRIEF.md",
+      "sha256": "bdc931428dfad694336b386630befb2f311174a058431dfad7f503cbc5a000b6",
+      "bytes": 1064
+    },
+    {
+      "path": "IMPLEMENTATION-PROMPT.md",
+      "sha256": "6dcad2edcbf6e9e386c6b926941faf7520a6793646644ed77538ad6c402ccdb9",
+      "bytes": 955
+    },
+    {
+      "path": "PACKAGE-MANIFEST.md",
+      "sha256": "09898e1e90e29b08ea5679fcfbf83cdf05096603200f08329196c946a165a36a",
+      "bytes": 235
+    },
+    {
+      "path": "assets/ASSET-MANIFEST.md",
+      "sha256": "7fc70be310f29fb8bc626693afaa41f7674f3d8e52808078ff6aa33189ef32eb",
+      "bytes": 57
+    },
+    {
+      "path": "generated/ContactSection.tsx",
+      "sha256": "6c3f13113030fbb271a441993561c248f428802b06d9e0625b78446fdb01d132",
+      "bytes": 403
+    },
+    {
+      "path": "generated/GENERATED-FILES.md",
+      "sha256": "396d6e67ddcbfe9cdaaa080375c580eb4d16f6916340e6b4bcf0352112b45f91",
+      "bytes": 328
+    },
+    {
+      "path": "generated/IMPLEMENTATION-CONTEXT.md",
+      "sha256": "14c053d945498f596821f5f3a42be3a3465bc2915838d944cb2065aa6301141d",
+      "bytes": 490
+    },
+    {
+      "path": "generated/IMPLEMENTATION-DELIVERABLES.md",
+      "sha256": "32f769909bf8ab54c35fedd94aa77b455dadab5734b6847fefbfc856cda27e4d",
+      "bytes": 869
+    },
+    {
+      "path": "generated/LandingSections.patch.md",
+      "sha256": "2502e06d83a82013cbe77c749760c86e87b999706ab2be418698ba74b44e85f3",
+      "bytes": 222
+    },
+    {
+      "path": "generated/SPRINT-EXIT.md",
+      "sha256": "58ad9456408e11455e9c80c2e1cbe1b02a2e3220e1ae519477013387e8a6818f",
+      "bytes": 354
+    },
+    {
+      "path": "mutations/CONTACT-COMPONENT-CONTRACT.md",
+      "sha256": "4d3afd0c70433fb9c07de040213e5af34ab68a4b048aa00a5119070792911e99",
+      "bytes": 268
+    },
+    {
+      "path": "mutations/IMPLEMENTATION-ORDER.md",
+      "sha256": "a3888630e84570dce47049c38e022dc16705693af229f6f9623c076f6e13757a",
+      "bytes": 221
+    },
+    {
+      "path": "mutations/REPOSITORY-MUTATION-PLAN.md",
+      "sha256": "c51f03fe264f9cb9c3c5f93f3489930914953aad6eb84426d073759ffa3e98eb",
+      "bytes": 765
+    },
+    {
+      "path": "repository/ContactSection.tsx",
+      "sha256": "a019270b1ef692501cbbb290a017c60481013b4a270280ac67c8913afc6f7948",
+      "bytes": 562
+    },
+    {
+      "path": "repository/HANDOFF.md",
+      "sha256": "991e06e4c16ab8a1b4ac196c367623c8ed7c72622997e5cdb0834ae7c0da27b3",
+      "bytes": 315
+    },
+    {
+      "path": "repository/LandingSections.tsx.patch",
+      "sha256": "8d9f1e715872d751060b15a3494f1044d693ce42f2930d54a3e71d3cb63e32a7",
+      "bytes": 276
+    },
+    {
+      "path": "repository/MANIFEST.json",
+      "sha256": "c0a21d8646acd0e40fbf4baf54abb213a3a668a05d45e9854b716fe0f034c17e",
+      "bytes": 316
+    },
+    {
+      "path": "repository/README.md",
+      "sha256": "2eb25c3e0152ca519c29b9c84be8cba07d81fefb294a27d4e4615f84b8d80572",
+      "bytes": 393
+    },
+    {
+      "path": "spec/CONTACT-SECTION-SPEC.md",
+      "sha256": "1d8a091c6a01cadfa5e92a4945467a6cae0be9c6022a79f17c9851ff6b703b99",
+      "bytes": 169
+    },
+    {
+      "path": "spec/IMPLEMENTATION-AUTHORITY.md",
+      "sha256": "db0574ba407c697e04143026ed8da4a85076e0a11ea33e0589c2905ddcb72448",
+      "bytes": 470
+    },
+    {
+      "path": "spec/MUTATION-MANIFEST.md",
+      "sha256": "40ef5b169fa69231acae2a4565a9b7a0aaf0a0b3a9de345ede78c5ee3c04da2f",
+      "bytes": 136
+    },
+    {
+      "path": "validation/IMPLEMENTATION-CHECKLIST.md",
+      "sha256": "1998b0145d9ee9d6a06b9421216ae64bccc55d83359fc96f86b45ea6ef8571dc",
+      "bytes": 231
+    }
+  ]
+}

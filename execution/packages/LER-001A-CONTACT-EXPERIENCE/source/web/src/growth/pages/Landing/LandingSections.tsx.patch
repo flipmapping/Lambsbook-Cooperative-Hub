@@ -1,0 +1,15 @@
+# LandingSections.tsx
+
+Required mutation only:
+
+1. Import ContactSection.
+
+2. Insert
+
+<ContactSection />
+
+immediately before
+
+<CallToActionSection />
+
+No other edits are authorized.
