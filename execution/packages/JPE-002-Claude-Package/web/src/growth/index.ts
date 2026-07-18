@@ -15,9 +15,6 @@ export * from "./types/registry";
 export * from "./hooks/useContent";
 export * from "./hooks/useRegistry";
 export * from "./hooks/useLocale";
-export * from "./hooks/useJourneyPreference";
-
-export * from "./context/JourneyPreferenceContext";
 
 export * from "./components/GrowthProvider";
 

@@ -45,6 +45,7 @@ import LambsbookTutoring from '@/pages/LambsbookTutoring';
 import FarmstayVision from '@/pages/FarmstayVision';
 import AdminGovernance from '@/pages/AdminGovernance';
 import ResetPassword from '@/pages/ResetPassword';
+import { JourneyContribute, JourneyLearn } from '@/pages/JourneyPages';
 
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const HubAdminDashboard = lazy(() => import('@/pages/HubAdminDashboard'));
@@ -140,6 +141,8 @@ function Router() {
       {/* Main landing - Education Hub (primary) */}
       <Route path="/" component={HubLanding} />
       <Route path="/hub" component={HubLanding} />
+      <Route path="/journeys/contribute" component={JourneyContribute} />
+      <Route path="/journeys/learn" component={JourneyLearn} />
       
       {/* Admin routes */}
       <Route path="/admin" component={Dashboard} />

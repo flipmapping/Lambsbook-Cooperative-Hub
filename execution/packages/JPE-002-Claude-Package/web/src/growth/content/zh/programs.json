@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "locale": "zh",
+  "sections": {
+    "overview": {
+      "heading": "国际专修部",
+      "description": "面向国际学生的升学途径：先学习一年中文，随后就读四年制（四技）学士学位，与台湾学生一同上课。学生无需重新申请即可继续修读学位课程。",
+      "university": "中信科技大学",
+      "location": "台湾台南市新市区中华路49号（744）",
+      "website": "https://www.ctbctech.edu.tw/",
+      "totalQuota": "102名"
+    },
+    "academies": {
+      "heading": "学院与科系",
+      "items": [
+        {
+          "id": "semiconductor",
+          "title": "半导体技术学院",
+          "majors": [
+            "半导体工程系",
+            "机械工程系",
+            "冷冻空调与能源系"
+          ]
+        },
+        {
+          "id": "health-recreation",
+          "title": "健康休闲管理学院",
+          "majors": [
+            "餐饮管理",
+            "烹饪",
+            "健康照护"
+          ]
+        }
+      ]
+    },
+    "workAndInternship": {
+      "heading": "工作与实习",
+      "items": [
+        {
+          "title": "第一年",
+          "description": "兼职打工，每周20小时。"
+        },
+        {
+          "title": "第二至四年",
+          "description": "兼职打工加实习，每周40小时。"
+        }
+      ]
+    }
+  }
+}

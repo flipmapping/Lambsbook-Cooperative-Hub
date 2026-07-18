@@ -1,0 +1,528 @@
+IMPLEMENTATION AUTHORITY
+
+LER-001
+
+Landing Experience Refinement
+
+STATUS
+
+AUTHORIZED
+
+======================================================================
+
+MISSION
+
+Refine the existing Landing Experience to faithfully communicate the approved strategic vision of the Lambsbook Cooperative Network.
+
+This is a UI realization sprint.
+
+Do NOT redesign the application.
+
+Do NOT redesign the information architecture.
+
+Do NOT redesign routing.
+
+Preserve the existing homepage layout wherever practical.
+
+Improve messaging, visitor understanding and navigation.
+
+======================================================================
+
+OBJECTIVES
+
+Implement the following production-ready improvements.
+
+------------------------------------------------------------
+
+1.
+
+Homepage Narrative
+
+Update the homepage using the approved Strategic Vision and Economics Architecture messaging.
+
+The homepage should clearly communicate:
+
+• Why Lambsbook exists.
+
+• Cooperative Relationship Network.
+
+• Cooperative business model.
+
+• Visibility Economy.
+
+• Cooperative Flywheel.
+
+• Cooperative difference.
+
+The homepage should immediately establish trust and purpose.
+
+------------------------------------------------------------
+
+2.
+
+Business Model Section
+
+Create a new homepage section:
+
+"How the Cooperative Works"
+
+Illustrate the Cooperative Flywheel.
+
+Members Join
+
+↓
+
+Members Learn
+
+↓
+
+Members Contribute
+
+↓
+
+Members Collaborate
+
+↓
+
+Programs Grow
+
+↓
+
+Visibility Expands
+
+↓
+
+The Cooperative Reinvests
+
+↓
+
+Members Benefit
+
+↓
+
+More Members Join
+
+This section should explain the business model using clear, human language.
+
+Avoid technical terminology.
+
+------------------------------------------------------------
+
+3.
+
+Journey Gateway
+
+Present two aspiration journeys.
+
+Contribute & Connect
+
+Learn, Grow & Flourish
+
+Each card should contain:
+
+Title
+
+Short description
+
+Illustration or icon
+
+Learn More button
+
+The Learn More button should navigate to a dedicated explanation page.
+
+------------------------------------------------------------
+
+4.
+
+Journey Pages
+
+Create two new pages.
+
+Route:
+
+/journeys/contribute
+
+Route:
+
+/journeys/learn
+
+These pages should use the existing design system.
+
+Maintain responsive layout.
+
+Maintain visual consistency.
+
+======================================================================
+
+PAGE CONTENT
+
+============================================================
+
+PAGE
+
+Contribute & Connect
+
+Hero
+
+Contribute & Connect
+
+Build stronger communities by sharing your knowledge, experience, resources and relationships.
+
+------------------------------------------------------------
+
+Why Contribute?
+
+Every thriving community is built by people who choose to contribute.
+
+The Lambsbook Cooperative helps members transform their ideas, skills and relationships into opportunities that benefit both themselves and the wider community.
+
+Whether you are a mentor, entrepreneur, university, business, farmer, volunteer or investor, your contribution becomes part of a network that creates value together.
+
+------------------------------------------------------------
+
+Ways You Can Contribute
+
+• Mentor students
+
+• Partner with universities
+
+• Support scholarships
+
+• Develop community programs
+
+• Offer internships
+
+• Build strategic business units
+
+• Create products and services
+
+• Invest in cooperative initiatives
+
+• Share expertise
+
+------------------------------------------------------------
+
+Cooperative in Action
+
+Show several existing initiatives as examples.
+
+Examples:
+
+CTBC University
+
+Scholarship Programs
+
+Agricultural Development
+
+Community Partnerships
+
+Education & Training
+
+(Use existing platform content where available.)
+
+------------------------------------------------------------
+
+Call To Action
+
+Together we create opportunities that none of us could create alone.
+
+Explore Programs
+
+Become a Member
+
+============================================================
+
+PAGE
+
+Learn, Grow & Flourish
+
+Hero
+
+Learn, Grow & Flourish
+
+Discover opportunities that help you build knowledge, relationships and a meaningful future.
+
+------------------------------------------------------------
+
+Why Learn?
+
+Learning is more than gaining knowledge.
+
+It is about discovering opportunities, connecting with mentors, serving others and growing into someone who helps others flourish as well.
+
+The Cooperative supports lifelong learning through education, scholarships, mentoring, international opportunities and community.
+
+------------------------------------------------------------
+
+What You Can Explore
+
+• Scholarships
+
+• University pathways
+
+• Mentoring
+
+• Career development
+
+• Language learning
+
+• International education
+
+• Community leadership
+
+• Lifelong learning
+
+------------------------------------------------------------
+
+Learning in Action
+
+Use existing platform initiatives.
+
+Examples:
+
+CTBC University
+
+Scholarships
+
+Student mentoring
+
+Education partnerships
+
+International opportunities
+
+------------------------------------------------------------
+
+Call To Action
+
+Every journey begins with one opportunity.
+
+Explore Programs
+
+Join the Cooperative
+
+======================================================================
+
+NAVIGATION
+
+Homepage
+
+↓
+
+Journey Gateway
+
+↓
+
+Journey Page
+
+↓
+
+Relevant Programs
+
+↓
+
+Membership
+
+Navigation should feel seamless.
+
+======================================================================
+
+TECHNICAL REQUIREMENTS
+
+• Reuse existing components where practical.
+
+• Maintain existing styling.
+
+• Maintain responsive behaviour.
+
+• No visual regressions.
+
+• No routing regressions.
+
+• Production build must pass.
+
+======================================================================
+
+DELIVERABLES
+
+Updated homepage
+
+Business Model section
+
+Journey Gateway
+
+Journey page
+
+Contribute & Connect
+
+Journey page
+
+Learn, Grow & Flourish
+
+Navigation
+
+Responsive implementation
+
+Production build
+
+Screenshots
+
+Repository mutation summary
+
+======================================================================
+
+HERO IMAGE DIRECTION
+
+The hero image for each Journey page is a strategic storytelling element.
+
+Do NOT use generic business stock photos.
+
+Do NOT use corporate handshake imagery.
+
+Do NOT use isolated portraits.
+
+The image should immediately communicate the aspiration of the journey through authentic human interaction, diversity and shared purpose.
+
+The visual style should be:
+
+• Warm
+• Hopeful
+• Authentic
+• Cooperative
+• International
+• Community-oriented
+• Contemporary
+• Natural lighting
+• Real-world documentary style
+
+Images should occupy approximately the upper 40–50% of the hero section and integrate naturally with the page headline.
+
+======================================================================
+
+PAGE
+
+Contribute & Connect
+
+Suggested Hero Image
+
+A diverse group of people actively collaborating around a shared table or community workspace.
+
+Include a mix of:
+
+• University representatives
+• Students
+• Entrepreneurs
+• Farmers
+• Mentors
+• Community leaders
+• Business partners
+
+The scene should communicate:
+
+People building opportunities together.
+
+Ideas being shared.
+
+Partnerships being formed.
+
+Communities becoming stronger.
+
+The image should feel optimistic and energetic without appearing staged.
+
+Optional supporting visual elements:
+
+• notebook sketches
+• laptops
+• agricultural products
+• educational materials
+• maps
+• coffee discussion
+• project planning
+
+Hero Caption
+
+"Great communities are built by people who choose to contribute."
+
+======================================================================
+
+PAGE
+
+Learn, Grow & Flourish
+
+Suggested Hero Image
+
+A diverse group of learners exploring opportunities together.
+
+Include examples such as:
+
+• Vietnamese students
+• International students
+• Mentors
+• University faculty
+• Career advisors
+• Alumni
+
+The scene should communicate:
+
+Learning.
+
+Discovery.
+
+Mentoring.
+
+Friendship.
+
+International opportunity.
+
+Personal growth.
+
+The atmosphere should feel welcoming, aspirational and full of possibility.
+
+Optional supporting visual elements:
+
+• university campus
+• classroom collaboration
+• mentoring conversation
+• scholarship celebration
+• graduation preparation
+• study abroad orientation
+• library or innovation space
+
+Hero Caption
+
+"Every opportunity begins with a willingness to learn."
+
+======================================================================
+
+IMAGE IMPLEMENTATION
+
+Where practical:
+
+• Use existing licensed assets already available within the repository.
+
+• If suitable assets are unavailable, use high-quality royalty-free photography that matches the guidance above.
+
+• Maintain a consistent photographic style across both Journey pages.
+
+• Use a subtle dark gradient overlay behind text to ensure excellent readability.
+
+• Avoid excessive visual effects.
+
+• Preserve accessibility with meaningful image alt text.
+
+Future iterations may replace these with custom Lambsbook photography featuring actual members, partners and programs.
+
+======================================================================
+
+STOP
+
+Return:
+
+• screenshots
+
+• changed files
+
+• production build confirmation
+
+• repository mutation summary
+
+Await Founder review.

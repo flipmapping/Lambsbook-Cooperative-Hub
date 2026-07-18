@@ -1,0 +1,1114 @@
+================================================================================
+APP-RUNTIME-001
+RUNTIME IDENTITY DEPENDENCY REPORT
+================================================================================
+
+design_guidelines.md
+  Categories: SUPABASE_AUTH
+
+replit.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+supabase-collaborator-tables.sql
+  Categories: IDENTITY_RUNTIME
+
+supabase-fix-auth-trigger.sql
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+supabase-master-schema.sql
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+supabase-partner-programs-schema.sql
+  Categories: IDENTITY_RUNTIME
+
+supabase-partner-revenue-sharing.sql
+  Categories: IDENTITY_RUNTIME
+
+supabase-profiles-table.sql
+  Categories: SUPABASE_AUTH
+
+FOUNDER_CONVERGENCE_MUTATION_SURFACE_REPORT_v2.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+FOUNDER_CONVERGENCE_MUTATION_PACKAGE_V1.md
+  Categories: IDENTITY_RUNTIME
+
+CODEX_PACKAGE_STATUS.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+CODEX_HANDOFF_STATUS.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+FOUNDER_DECISION_INVITED_EMAIL.md
+  Categories: IDENTITY_RUNTIME
+
+builder-discovery.json
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+.local/skills/design-exploration/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/design/SKILL.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+.local/skills/canvas/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/database/SKILL.md
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+.local/skills/integrations/SKILL.md
+  Categories: SUPABASE_AUTH
+
+.local/skills/follow-up-tasks/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/mockup-extract/SKILL.md
+  Categories: LEGACY_REFERENCES
+
+.local/skills/mockup-sandbox/SKILL.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+.local/skills/monetization/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/query-integration-data/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/external_apis/references/x.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/revenuecat/references/replit-revenuecat-sdk-docs.md
+  Categories: SUPABASE_AUTH
+
+.local/skills/shopify/SKILL.md
+  Categories: LEGACY_REFERENCES
+
+.local/skills/shopify/references/code-templates.md
+  Categories: LEGACY_REFERENCES
+
+.local/skills/threat_modeling/SKILL.md
+  Categories: SUPABASE_AUTH
+
+.local/skills/stripe/SKILL.md
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+.local/skills/stripe/references/code-templates.md
+  Categories: SUPABASE_AUTH
+
+.local/skills/testing/SKILL.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+.local/skills/whop/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/artifacts/artifacts/automation/files/tests/testCronAutomation.ts
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/artifacts/artifacts/automation/files/tests/testWebhookAutomation.ts
+  Categories: IDENTITY_RUNTIME
+
+.local/skills/artifacts/references/multi-artifact-creation.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/branding-generator/SKILL.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+.local/secondary_skills/design-thinker/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/ad-creative/SKILL.md
+  Categories: SUPABASE_AUTH
+
+.local/secondary_skills/excel-generator/SKILL.md
+  Categories: AUTH_ROUTES
+
+.local/secondary_skills/legal-contract/SKILL.md
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+.local/secondary_skills/meal-planner/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/infographic-builder/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/geo/references/content-patterns.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/recipe-creator/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/stock-analyzer/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/skill-finder/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/replit-migration-guardrails/SKILL.md
+  Categories: SUPABASE_AUTH
+
+.local/secondary_skills/replit-migration-guardrails/references/base44.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/seo-auditor/references/methodology.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/travel-assistant/SKILL.md
+  Categories: SUPABASE_AUTH
+
+.local/secondary_skills/website-cloning/pitfalls.md
+  Categories: SUPABASE_AUTH
+
+.local/secondary_skills/migrate-to-multi-artifact/SKILL.md
+  Categories: IDENTITY_RUNTIME
+
+.local/secondary_skills/migrate-to-multi-artifact/references/tasks/mobile_companion/port-existing.md
+  Categories: SUPABASE_AUTH
+
+server/storage.ts
+  Categories: IDENTITY_RUNTIME
+
+server/routes.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+server/lib/getUserEmailFromToken.ts
+  Categories: SUPABASE_AUTH
+
+server/lib/supabase-client.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+server/lib/supabase-member-client.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+server/lib/supabaseClients.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+server/lib/supabase-dal.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+server/lib/supabase-types.ts
+  Categories: SUPABASE_AUTH
+
+server/middleware/requireSBUAccess.ts
+  Categories: IDENTITY_RUNTIME
+
+server/middleware/requireSBURole.ts
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+server/middleware/attachUserContext.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+server/routes/admin.ts
+  Categories: IDENTITY_RUNTIME
+
+server/routes/financialRoutes.ts
+  Categories: IDENTITY_RUNTIME
+
+server/routes/governanceRoute.ts
+  Categories: IDENTITY_RUNTIME
+
+server/routes/devTestAuth.ts
+  Categories: IDENTITY_RUNTIME
+
+server/routes/member.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+server/services/integrations.ts
+  Categories: IDENTITY_RUNTIME
+
+server/services/notifications.ts
+  Categories: IDENTITY_RUNTIME
+
+server/services/supabase-auth.ts
+  Categories: AUTH_ROUTES, LEGACY_REFERENCES, SUPABASE_AUTH
+
+server/services/supabase-hub.ts
+  Categories: AUTH_ROUTES, LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/components/HubHeader.tsx
+  Categories: SUPABASE_AUTH
+
+client/src/components/admin/LandingPagesManagement.tsx
+  Categories: IDENTITY_RUNTIME
+
+client/src/components/dashboard/types.ts
+  Categories: IDENTITY_RUNTIME
+
+client/src/components/dashboard/mockData.ts
+  Categories: IDENTITY_RUNTIME
+
+client/src/components/dashboard/InvitationAcceptanceSection.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+client/src/components/dashboard/stubs.tsx
+  Categories: IDENTITY_RUNTIME
+
+client/src/lib/lambsbookTutoringContent.ts
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/lib/queryClient.ts
+  Categories: SUPABASE_AUTH
+
+client/src/lib/supabase/client.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/lib/auth/PostAuthenticationContinuation.ts
+  Categories: SUPABASE_AUTH
+
+client/src/lib/auth/RuntimeNavigationPolicy.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+client/src/pages/AdminGovernance.tsx
+  Categories: IDENTITY_RUNTIME
+
+client/src/pages/AdminRevenueConsole.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+client/src/pages/AuthCallback.tsx
+  Categories: AUTH_ROUTES
+
+client/src/pages/Login.tsx
+  Categories: AUTH_ROUTES
+
+client/src/pages/PartnerOnboarding.tsx
+  Categories: LEGACY_REFERENCES
+
+client/src/pages/ResetPassword.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+client/src/pages/SBUEducation.tsx
+  Categories: SUPABASE_AUTH
+
+client/src/pages/TranscriptSubmission.tsx
+  Categories: SUPABASE_AUTH
+
+client/src/pages/TropicanaProgram.tsx
+  Categories: SUPABASE_AUTH
+
+client/src/pages/Dashboard.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+client/src/pages/MemberDashboard.tsx
+  Categories: IDENTITY_RUNTIME
+
+client/src/pages/HubDashboard.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/pages/LambsbookTutoring.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/pages/MemberHub.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+client/src/pages/HubAuth.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+client/src/pages/HubAuthCallback.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/pages/HubAdminDashboard.tsx
+  Categories: IDENTITY_RUNTIME
+
+client/src/pages/FarmstayVision.tsx
+  Categories: SUPABASE_AUTH
+
+client/src/pages/HubLanding.tsx
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+client/src/pages/dashboard/InvitationAcceptancePage.tsx
+  Categories: IDENTITY_RUNTIME
+
+src/App.tsx
+  Categories: IDENTITY_RUNTIME
+
+src/lib/supabase.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+src/lib/memberClient.ts
+  Categories: IDENTITY_RUNTIME
+
+src/pages/Dashboard.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+docs/collaborator-system-design.md
+  Categories: SUPABASE_AUTH
+
+docs/dashboard-sync-contract.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+docs/supabase-auth-setup.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+docs/ai/08-backup-and-recovery-protocol.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/01-canonical-architecture.md
+  Categories: LEGACY_REFERENCES
+
+docs/ai/02-runtime-contract-table.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+docs/ai/03-state-machine-and-flow.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+docs/ai/06-task-packet-template.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/10-mvp-system-specification.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+docs/ai/system-control-plane.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+docs/ai/automation-execution-registry.md
+  Categories: LEGACY_REFERENCES
+
+docs/ai/notification-cross-surface-contract.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/notification-scaffold-completion-record.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/next-frontend-experience-packet.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+docs/ai/dashboard-entry-state-contract.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/dashboard-entry-state-copy-alignment.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+docs/ai/open-cooperative-narrative-governance.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/contribution-visibility-system-doctrine.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/textual-certainty-gate.md
+  Categories: LEGACY_REFERENCES
+
+docs/ai/notification-experience-contract.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/notification-presentation-spec.md
+  Categories: IDENTITY_RUNTIME
+
+docs/ai/pre-mutation-truth-gate.md
+  Categories: SUPABASE_AUTH
+
+docs/architecture/runtime-convergence-lessons-may-2026.md
+  Categories: SUPABASE_AUTH
+
+docs/architecture/CAD-WP2-DELEGATION-CONTRACT.md
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+docs/runtime-recovery/post-recovery-auth-continuity-milestone.md
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+docs/operations/runtime-guard-and-merge-recovery.md
+  Categories: IDENTITY_RUNTIME
+
+docs/implementation-evidence/PHASE-1-BASELINE/MemberHub.pre-mutation.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+docs/implementation-evidence/FDR-010E35C/MUT-001/IMPLEMENTATION-EVIDENCE.md
+  Categories: SUPABASE_AUTH
+
+scripts/create-supabase-tables.ts
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+scripts/read-supabase.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+scripts/verify-supabase-tables.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+scripts/runtime-guards/enforce-canonical-runtime.cjs
+  Categories: IDENTITY_RUNTIME
+
+scripts/runtime-guards/assert-canonical-topology.cjs
+  Categories: IDENTITY_RUNTIME
+
+web/src/app/(protected)/dashboard/page.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+web/src/app/(public)/auth/sign-in/page.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+web/src/components/dashboard/types.ts
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/mockData.ts
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/DashboardTopBar.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/DashboardHeroCurrentPosition.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/IdeaPipelineSection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/MyContributionsSection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/CooperativeActivitySection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/ProgramsSection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/RelationshipTrustSection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/PipelineDetailPanel.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/SubmitIdeaModal.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/LearningHistorySection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/IELTSSection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/MultilingualSection.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/dashboard/InvitationAcceptanceSection.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+web/src/components/activity/ActivityFeed.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/components/notifications/NotificationBell.tsx
+  Categories: IDENTITY_RUNTIME
+
+web/src/lib/supabase/client.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+web/src/lib/learning/types.ts
+  Categories: IDENTITY_RUNTIME
+
+web/src/growth/registry/admissions.json
+  Categories: LEGACY_REFERENCES
+
+.agents/memory/deploy-backup-guard-trap.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/canonical_mvp_outcome_specification_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/mvp_surface_map_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/mvp_execution_priority_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/mvp_bounded_execution_sequence_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/mvp_execution_decomposition_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/corridor1_auth_runtime_inspection_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/corridor1_runtime_verification_checklist_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/corridor1_live_runtime_observation_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/corridor1_live_observation_closure_v1.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/constitutional_reconciliation/materialization_authority_tension_registry.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/constitutional_reconciliation/participation_contract_reconciliation_dossier.md
+  Categories: IDENTITY_RUNTIME
+
+mvp-delivery/constitutional_reconciliation/reconciliation_closure_matrix.md
+  Categories: IDENTITY_RUNTIME
+
+tcrs/03-contracts/DISC-INV-003.md
+  Categories: IDENTITY_RUNTIME
+
+tcrs/06-discoveries/DISC-INV-002-DISC-INV-003.md
+  Categories: IDENTITY_RUNTIME
+
+tcrs/06-discoveries/DISC-AUTH-001.md
+  Categories: IDENTITY_RUNTIME
+
+tcrs/06-discoveries/authority-inspection-corridor-closure.md
+  Categories: IDENTITY_RUNTIME
+
+tcrs/00-obom/bridge-architecture-assessment.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+tcrs/00-obom/truth-application-workflow.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+tcrs/00-obom/mvp-truth-package.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+tcrs/00-obom/mvp-implementation-priorities.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+tcrs/00-obom/mvp-execution-readiness.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+tcrs/00-obom/mvp-surface-authority-map.md
+  Categories: IDENTITY_RUNTIME
+
+recovery/canonical_membership_runtime_table.md
+  Categories: IDENTITY_RUNTIME
+
+recovery/open_brain_membership_runtime_capture.md
+  Categories: IDENTITY_RUNTIME
+
+recovery/memberhub_invitations_realization_v1.md
+  Categories: IDENTITY_RUNTIME
+
+recovery/memberhub_mvp_founder_signoff_package_v1.md
+  Categories: IDENTITY_RUNTIME
+
+recovery/MEMBERHUB_INVITATION_PATCH_V1.md
+  Categories: IDENTITY_RUNTIME
+
+recovery/live_program_data_probe.js
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+recovery/live_program_data_probe.mjs
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+recovery/runtime_supabase_target_certification.ts
+  Categories: LEGACY_REFERENCES
+
+codex-handoff/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+codex-handoff/InvitationAcceptanceSection.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+codex-handoff/InvitationAcceptancePage.tsx
+  Categories: IDENTITY_RUNTIME
+
+codex-handoff/HubDashboard.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+codex-handoff/MemberDashboard.tsx
+  Categories: IDENTITY_RUNTIME
+
+codex-handoff/MemberHub.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+codex-handoff/supabase-dal.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+codex-handoff/supabaseClients.ts
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+codex-handoff/member.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+codex-handoff/routes.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+codex-handoff/CODEX_HANDOFF_STATUS.md
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+codex-gateway-handoff/AuthCallback.tsx
+  Categories: AUTH_ROUTES
+
+codex-gateway-handoff/HubAuthCallback.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+codex-gateway-handoff/HubAuth.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+codex-gateway-handoff/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+codex-gateway-handoff/InvitationAcceptanceSection.tsx
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+codex-gateway-handoff/MemberHub.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+codex-gateway-handoff/routes.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+codex-gateway-handoff/member.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+codex-gateway-handoff/supabase-dal.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+codex-gateway-handoff/FOUNDER_ARCHITECTURE_LOCK.md
+  Categories: LEGACY_REFERENCES
+
+.phase5/workpackages/WP3A/artifacts/PostAuthenticationContinuation.repository.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+.phase5/workpackages/WP3A/repository-source/PostAuthenticationContinuation.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+.phase5/execution/verification/WP3C-REPOSITORY-BASELINE.md
+  Categories: AUTH_ROUTES
+
+.phase5/archive/execution-materialization/artifacts/PostAuthenticationContinuation.candidate.ts
+  Categories: SUPABASE_AUTH
+
+.phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+.phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/lib/auth/PostAuthenticationContinuation.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+.phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+.phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuthCallback.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+.phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+.phase5/archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages/HubAuthCallback.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+governance/repository-hygiene/execution-script-classification.md
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+governance/cib/generated/CIB-HUB-RMP-002-AUTHENTICATION-NORMALIZATION.md
+  Categories: AUTH_ROUTES
+
+governance/rmp/LES-001-IMPLEMENTATION-AUTHORITY.md
+  Categories: SUPABASE_AUTH
+
+governance/execution/EXEC-DIR-EARQ-001-IMPLEMENTATION-PLAN.md
+  Categories: IDENTITY_RUNTIME
+
+governance/execution/EXEC-DIR-EARQ-001-RMP-002.md
+  Categories: IDENTITY_RUNTIME
+
+governance/execution/EXEC-DIR-EARQ-001-RMP-003.md
+  Categories: IDENTITY_RUNTIME
+
+governance/execution/EXEC-DIR-EARQ-001-RMP-004.md
+  Categories: IDENTITY_RUNTIME
+
+governance/execution/EXEC-DIR-EARQ-001-RMP-006.md
+  Categories: IDENTITY_RUNTIME
+
+governance/execution/LES-001-SURFACE-INVENTORY.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+governance/execution/evidence/LES-001-SURFACE-INVENTORY.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+governance/founder-decisions/FDR-010E31-PROSPECT-FOLLOW-UP-TASK-MANAGEMENT.md
+  Categories: SUPABASE_AUTH
+
+governance/execution-operating-system/EXEC-MODE-001-PRODUCT-SURFACE-EXECUTION.json
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/apply_WP5C.py
+  Categories: AUTH_ROUTES
+
+execution/scripts/apply_WP5D_HubAuth.py
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+execution/scripts/apply_WP5D_Callback.py
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+execution/scripts/apply_WP5E_HubAuth_Continuation.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/scripts/apply_WP6C_NavigationAuthority.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/scripts/apply_WP6C_HubAuth.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/scripts/apply_WP6C_HubAuth_Import.py
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+execution/scripts/apply_WP6C_HubAuth_Signup.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/scripts/apply_WP6C_HubAuth_Login.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/scripts/apply_WP6C_Callback_Import.py
+  Categories: AUTH_ROUTES
+
+execution/scripts/apply_WP6C_Callback_RuntimeState.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/scripts/apply_WP7A_RuntimeNavigationPolicy.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/scripts/apply_WP7A_NavigationAuthority.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/scripts/apply_WP7B_RuntimeNavigationPolicy.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E6_seed_growth_business_content.py
+  Categories: LEGACY_REFERENCES
+
+execution/scripts/RMP-010E9_create_prospect_registration.py
+  Categories: LEGACY_REFERENCES
+
+execution/scripts/RMP-010E11_create_admissions_api.py
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/scripts/RMP-010E13_admissions_persistence_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E16_growth_persistence_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E18_prospect_read_model.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E20_prospect_lifecycle_progression.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E22B_admissions_workspace_refinement.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E22C_admissions_workspace_completion.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E22D_admissions_workspace_repository_edit_specification.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E23A_scholarships_surface_refinement.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E24_prospect_detail_workspace.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E29A_prospect_lifecycle_event_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E30A_prospect_activity_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E31A_prospect_followup_task_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E32A_prospect_appointment_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E33A_prospect_document_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/scripts/RMP-010E34A_prospect_admission_decision_kernel.py
+  Categories: IDENTITY_RUNTIME
+
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/admissions.json
+  Categories: LEGACY_REFERENCES
+
+execution/packages/LES-001/implementation-workspace/registry/admissions.json
+  Categories: LEGACY_REFERENCES
+
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx
+  Categories: LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/IC-002B/generated/IC-002B-CANONICAL-ROUTE-INVENTORY.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/IC-002B/generated/IC-002B-PROPOSED-CANONICAL-ROUTING.json
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/packages/IC-002B/generated/IC-002B-FOUNDER-APPROVAL-PACKAGE.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/packages/MP-001/generated/MP-001-MUTATION-CONTRACT.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/packages/MP-001/generated/MP-001-EXECUTION-CHECKPOINT.json
+  Categories: AUTH_ROUTES
+
+execution/packages/MP-001/generated/MP-001-PRE-MUTATION-BASELINE.json
+  Categories: AUTH_ROUTES
+
+execution/packages/MP-001/generated/MP-001-BUILD-VALIDATION.json
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/packages/MP-001/generated/MP-001-EXPERIENCE-ACCEPTANCE.json
+  Categories: AUTH_ROUTES
+
+execution/packages/RDM-AUTH-001-PIC/IMPLEMENT.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/packages/RDM-AUTH-001-PIC/PACKAGE-MANIFEST.md
+  Categories: AUTH_ROUTES
+
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/PostAuthenticationContinuation.ts
+  Categories: SUPABASE_AUTH
+
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/RuntimeNavigationPolicy.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-ENGINE.md
+  Categories: IDENTITY_RUNTIME
+
+execution/packages/GE-RMP-014-Claude-Package/LIVE-VALIDATION-EVIDENCE.json
+  Categories: IDENTITY_RUNTIME
+
+execution/packages/GE-RMP-014-Claude-Package/GE-COMM-001-END-TO-END-VALIDATION.json
+  Categories: LEGACY_REFERENCES
+
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts
+  Categories: IDENTITY_RUNTIME
+
+execution/packages/GE-RMP-014-Claude-Package/working-copy/notifications.ts
+  Categories: IDENTITY_RUNTIME
+
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/notifications.ts
+  Categories: IDENTITY_RUNTIME
+
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/admissions.json
+  Categories: LEGACY_REFERENCES
+
+execution/sprints/SFP-001/REPOSITORY-TRUTH-SUMMARY.md
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+execution/sprints/LES-001/bootstrap/REPOSITORY-BOOTSTRAP.md
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+execution/sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/sprints/LES-001/repository_mutation_package/inspection/PRODUCTION-SURFACE-DISCOVERY.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/sprints/LES-001/repository_mutation_package/inspection/LANDING-EXPERIENCE-TARGETS.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/sprints/APP-REC-003/README.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/sprints/AUTH-MIG-001/README.md
+  Categories: LEGACY_REFERENCES
+
+execution/workspace/FDR-010E35A-001-repository-truth.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-002-surface-inventory.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/workspace/FDR-010E35A-005.js
+  Categories: SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-006.mjs
+  Categories: SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-016-readiness.json
+  Categories: AUTH_ROUTES
+
+execution/workspace/FDR-010E35A-018-backup.ts
+  Categories: SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-026-backup-member.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/workspace/LES-001/authority_retrieval/LES-001-AUTHORITY-INVENTORY.json
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RESOLUTION.json
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RANKING.json
+  Categories: IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-BUNDLE.json
+  Categories: SUPABASE_AUTH
+
+execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-CONTEXT.md
+  Categories: SUPABASE_AUTH
+
+execution/workspace/APP-RMP-010E34B-003-backup/server/lib/supabase-dal.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/workspace/APP-RMP-010E34B-013-backup/server/lib/supabase-dal.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/workspace/APP-RMP-010E34B-016-backup/server/lib/supabase-dal.ts
+  Categories: IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/workspace/FDR-010E34B/CANONICAL-AUTHORITY-INVENTORY.json
+  Categories: IDENTITY_RUNTIME
+
+execution/workspace/FDR-010E34B/CANONICAL-AUTHORITY-CLASSIFICATION.json
+  Categories: IDENTITY_RUNTIME
+
+execution/workspace/FDR-010E34B/ACTIVE-RUNTIME-AUTHORITY-SET.json
+  Categories: IDENTITY_RUNTIME
+
+execution/workspace/FDR-010E34B/AUTHORITY-RESIDENCY.json
+  Categories: IDENTITY_RUNTIME
+
+execution/workspace/FDR-010E35A-016-backup/client/src/App.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-016-backup/client/src/pages/Login.tsx
+  Categories: AUTH_ROUTES
+
+execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-016-backup/client/src/lib/auth/PostAuthenticationContinuation.ts
+  Categories: SUPABASE_AUTH
+
+execution/workspace/FDR-010E35A-025-backup/member.ts
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/runtime-validation/FDR-010E35A-003-runtime-dependency-analysis.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES
+
+execution/runtime-validation/FDR-010E35A-004-runtime-environment.json
+  Categories: LEGACY_REFERENCES
+
+execution/runtime-validation/FDR-010E35A-028-runtime-capture.json
+  Categories: IDENTITY_RUNTIME
+
+execution/runtime-validation/FDR-010E35A-029-runtime-truth-capture.json
+  Categories: IDENTITY_RUNTIME
+
+execution/runtime-validation/FDR-010E35A-013-routing-entrypoints.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/runtime-validation/FDR-010E35A-014-navigation-policy.json
+  Categories: IDENTITY_RUNTIME
+
+execution/runtime-validation/FDR-010E35A-016-member-identity-contract.json
+  Categories: IDENTITY_RUNTIME
+
+execution/runtime-validation/FDR-010E35A-017-live-member-identity.json
+  Categories: IDENTITY_RUNTIME
+
+execution/surface-registry/SURF-AUTH-001.json
+  Categories: AUTH_ROUTES
+
+execution/implementation-authorities/FDR-010E35C-Post-Authentication-Runtime-Identity-Resolution.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, SUPABASE_AUTH
+
+execution/work-packages/FDR-010E35B-005-Runtime-Identity-Resolution-Implementation-Work-Package.json
+  Categories: AUTH_ROUTES
+
+execution/builder-manifests/FDR-010E35B-006-Runtime-Identity-Resolution-Builder-Execution-Manifest.json
+  Categories: AUTH_ROUTES
+
+execution/bounded-mutations/FDR-010E35B-WP001-Runtime-Identity-Model.json
+  Categories: AUTH_ROUTES
+
+execution/bounded-mutations/FDR-010E35B-WP001A-Runtime-Identity-Type-Contract.json
+  Categories: AUTH_ROUTES
+
+execution/execution-dispatch/FDR-010E35B-DISPATCH-001.json
+  Categories: AUTH_ROUTES
+
+execution/execution-dispatch/FDR-010E35C-MUT-001-EXEC-001-Pre-Mutation-Execution-Plan.json
+  Categories: AUTH_ROUTES
+
+execution/execution-dispatch/FDR-010E35C-MUT-001-EXEC-002-Execution-Sequence.json
+  Categories: AUTH_ROUTES
+
+execution/repository-inspections/FDR-010E35C-001-Continuation-Corridor-Inspection.json
+  Categories: AUTH_ROUTES
+
+execution/repository-inspections/FDR-010E35C-002-Inspection-Checklist.json
+  Categories: AUTH_ROUTES
+
+execution/mutation-requests/FDR-010E35C-MUT-001.json
+  Categories: AUTH_ROUTES
+
+execution/mutation-authorizations/FDR-010E35C-MUT-001-EXEC-003.json
+  Categories: AUTH_ROUTES
+
+execution/rapid-delivery/RDM-AUTH-001.json
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+execution/rapid-delivery/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/rapid-delivery/RDM-AUTH-001-IMPLEMENT.md
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+execution/rapid-delivery/RDM-AUTH-001-ENGINE.md
+  Categories: IDENTITY_RUNTIME
+
+tools/app_rec_002_truth_gate.py
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+tools/app_rec_003_surface_inspection.py
+  Categories: AUTH_ROUTES, SUPABASE_AUTH
+
+tools/app_rec_003_extract_corridor.py
+  Categories: AUTH_ROUTES
+
+tools/app_rec_005_runtime_probe.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME
+
+tools/app_runtime_001_identity_inventory.py
+  Categories: AUTH_ROUTES, IDENTITY_RUNTIME, LEGACY_REFERENCES, SUPABASE_AUTH

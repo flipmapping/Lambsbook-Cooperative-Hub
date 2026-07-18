@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "items": [
+    {
+      "id": "growth",
+      "title": "Growth Landing",
+      "path": "/growth"
+    },
+    {
+      "id": "scholarships",
+      "title": "Scholarships",
+      "path": "/hub/scholarships"
+    },
+    {
+      "id": "registration",
+      "title": "Prospect Registration",
+      "path": "/hub/prospect-registration"
+    },
+    {
+      "id": "admissions",
+      "title": "Admissions Review",
+      "path": "/hub/applicant/status"
+    },
+    {
+      "id": "decision",
+      "title": "Admission Decision"
+    },
+    {
+      "id": "enrollment",
+      "title": "Enrollment"
+    }
+  ]
+}

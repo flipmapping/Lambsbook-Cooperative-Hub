@@ -1,0 +1,30 @@
+================================================================================
+APP-REC-005
+PASSWORD RESET RUNTIME TRUTH CAPTURE
+================================================================================
+
+Execute the following runtime sequence:
+
+1. Start the application.
+2. Request a new password reset email.
+3. Click the newest recovery link.
+4. Enter a NEW password.
+5. Submit.
+
+Capture ALL of the following:
+
+A. Browser Console
+B. Network -> POST /api/hub/auth/reset-password
+   - Status Code
+   - Response Body
+
+C. Replit Server Console
+   - Any '[Hub Auth] Reset password error:' output
+   - Complete stack trace if present
+
+DO NOT modify repository files.
+DO NOT restart from assumptions.
+
+Paste the captured evidence into ChatGPT.
+
+================================================================================

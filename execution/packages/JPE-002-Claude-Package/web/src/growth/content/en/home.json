@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "locale": "en",
+  "sections": {
+    "hero": {
+      "title": "Welcome to the Growth Platform",
+      "subtitle": "Grow with the Cooperative",
+      "description": "Discover programs, scholarships, admissions and community opportunities.",
+      "primaryAction": "Get Started",
+      "secondaryAction": "Learn More"
+    }
+  }
+}

@@ -1,0 +1,146 @@
+================================================================================
+server/routes.ts
+================================================================================
+
+LINES 1335-1385
+--------------------------------------------------------------------------------
+1335:         error.name === "HubAuthError"
+1336:       ) {
+1337:         const hubError = error as unknown as {
+1338:           message: string;
+1339:           statusCode: number;
+1340:         };
+1341:         return res
+1342:           .status(hubError.statusCode)
+1343:           .json({ error: hubError.message });
+1344:       }
+1345:       console.error("Forgot password error:", error);
+1346:       res.status(500).json({ error: "Failed to send password reset email" });
+1347:     }
+1348:   });
+1349: 
+1350:   app.post("/api/hub/auth/reset-password", async (req: Request, res: Response) => {
+1351:     try {
+1352:       const { accessToken, newPassword } = req.body;
+1353:       if (!accessToken || !newPassword) {
+1354:         return res.status(400).json({ error: "Access token and new password are required" });
+1355:       }
+1356:       if (newPassword.length < 8) {
+1357:         return res.status(400).json({ error: "Password must be at least 8 characters" });
+1358:       }
+1359:       const result = await hubService.resetPassword(accessToken, newPassword);
+1360:       res.json(result);
+1361:     } catch (error) {
+1362:       if (
+1363:         error &&
+1364:         typeof error === "object" &&
+1365:         "name" in error &&
+1366:         error.name === "HubAuthError"
+1367:       ) {
+1368:         const hubError = error as unknown as {
+1369:           message: string;
+1370:           statusCode: number;
+1371:         };
+1372:         return res
+1373:           .status(hubError.statusCode)
+1374:           .json({ error: hubError.message });
+1375:       }
+1376:       console.error("Reset password error:", error);
+1377:       res.status(500).json({ error: "Failed to reset password" });
+1378:     }
+1379:   });
+1380: 
+1381:   app.post("/api/hub/auth/logout", async (req: Request, res: Response) => {
+1382:     try {
+1383:       res.json({ success: true });
+1384:     } catch (error) {
+1385:       res.status(500).json({ error: "Failed to logout" });
+================================================================================
+server/services/supabase-hub.ts
+================================================================================
+
+LINES 700-790
+--------------------------------------------------------------------------------
+ 700:           "Too many requests. Please wait a few minutes.",
+ 701:           429,
+ 702:           error,
+ 703:         );
+ 704:       }
+ 705: 
+ 706:       throw new HubAuthError(
+ 707:         `Failed to send reset email: ${error.message}`,
+ 708:         500,
+ 709:         error,
+ 710:       );
+ 711:     }
+ 712: 
+ 713:     return {
+ 714:       success: true,
+ 715:       message:
+ 716:         "If an account exists with this email, a reset link has been sent.",
+ 717:     };
+ 718:   } catch (e) {
+ 719:     if (e instanceof HubAuthError) throw e;
+ 720:     console.error("[Hub Auth] Unexpected forgot password error:", e);
+ 721:     throw new HubAuthError("Failed to send reset email.", 503, e);
+ 722:   }
+ 723: }
+ 724: 
+ 725: export async function resetPassword(accessToken: string, newPassword: string) {
+ 726:   if (!supabaseAuth || !supabaseUrl) {
+ 727:     throw new HubAuthError("Supabase auth not configured.", 503);
+ 728:   }
+ 729: 
+ 730:   try {
+ 731:     const supabaseWithToken = createClient(
+ 732:       supabaseUrl,
+ 733:       supabaseAnonKey || supabaseServiceRoleKey!,
+ 734:       {
+ 735:         global: {
+ 736:           headers: {
+ 737:             Authorization: `Bearer ${accessToken}`,
+ 738:           },
+ 739:         },
+ 740:         auth: {
+ 741:           autoRefreshToken: false,
+ 742:           persistSession: false,
+ 743:         },
+ 744:         realtime: {
+ 745:           transport: ws as unknown as WebSocketLikeConstructor,
+ 746:         },
+ 747:       },
+ 748:     );
+ 749: 
+ 750:     const { error } = await supabaseWithToken.auth.updateUser({
+ 751:       password: newPassword,
+ 752:     });
+ 753: 
+ 754:     if (error) {
+ 755:       console.error("[Hub Auth] Reset password error:", error);
+ 756: 
+ 757:       if (error.message.includes("same password")) {
+ 758:         throw new HubAuthError(
+ 759:           "New password must be different from your current password.",
+ 760:           400,
+ 761:           error,
+ 762:         );
+ 763:       }
+ 764: 
+ 765:       throw new HubAuthError(
+ 766:         `Failed to reset password: ${error.message}`,
+ 767:         500,
+ 768:         error,
+ 769:       );
+ 770:     }
+ 771: 
+ 772:     return {
+ 773:       success: true,
+ 774:       message: "Password has been reset successfully.",
+ 775:     };
+ 776:   } catch (e) {
+ 777:     if (e instanceof HubAuthError) throw e;
+ 778:     console.error("[Hub Auth] Unexpected reset password error:", e);
+ 779:     throw new HubAuthError("Failed to reset password.", 503, e);
+ 780:   }
+ 781: }
+ 782: 

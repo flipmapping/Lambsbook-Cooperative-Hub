@@ -1,0 +1,180 @@
+================================================================================
+client/src/App.tsx
+================================================================================
+
+LINES 195-225
+--------------------------------------------------------------------------------
+ 195: console.log("[TRACE-P1] App.tsx: component rendered");
+ 196:   initializeGrowthRuntime(
+ 197:     defaultGrowthRuntimeProvider
+ 198:   );
+ 199: 
+ 200:   useRef(null);
+ 201: 
+ 202:   //
+ 203:   // SUPABASE_SESSION_BRIDGE
+ 204:   //
+ 205:   try {
+ 206:     const raw = localStorage.getItem('supabase.auth.token');
+ 207: 
+ 208:     if (raw) {
+ 209:       const parsed = JSON.parse(raw);
+ 210: 
+ 211:       if (parsed?.access_token && parsed?.refresh_token) {
+ 212:         const supabase = createClient();
+ 213: 
+ 214:         supabase.auth.setSession({
+ 215:           access_token: parsed.access_token,
+ 216:           refresh_token: parsed.refresh_token,
+ 217:         }).catch(() => {});
+ 218:       }
+ 219:     }
+ 220:   } catch {}
+ 221: 
+ 222:   return (
+ 223:     <QueryClientProvider client={queryClient}>
+ 224:       <TooltipProvider>
+ 225:         <LanguageProvider>
+
+================================================================================
+client/src/pages/ResetPassword.tsx
+================================================================================
+
+LINES 20-90
+--------------------------------------------------------------------------------
+  20:   const [accessToken, setAccessToken] = useState<string | null>(null);
+  21:   const [tokenError, setTokenError] = useState(false);
+  22:   const [success, setSuccess] = useState(false);
+  23:   const [errors, setErrors] = useState<{ password?: string | null; confirmPassword?: string | null }>({});
+  24:   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  25: 
+  26:   useEffect(() => {
+  27:     const hashParams = new URLSearchParams(window.location.hash.substring(1));
+  28:     const queryParams = new URLSearchParams(window.location.search);
+  29: 
+  30:     const token = hashParams.get("access_token") || queryParams.get("access_token");
+  31:     const error = hashParams.get("error") || queryParams.get("error");
+  32:     const errorDescription = hashParams.get("error_description") || queryParams.get("error_description");
+  33:     const tokenType = hashParams.get("type") || queryParams.get("type");
+  34: 
+  35:     if (error) {
+  36:       setTokenError(true);
+  37:       toast({
+  38:         title: "Invalid or expired link",
+  39:         description: errorDescription || "Please request a new password reset link.",
+  40:         variant: "destructive",
+  41:       });
+  42:       return;
+  43:     }
+  44: 
+  45:     if (token && (tokenType === "recovery" || !tokenType)) {
+  46:       setAccessToken(token);
+  47:     } else {
+  48:       setTokenError(true);
+  49:     }
+  50:   }, [toast]);
+  51: 
+  52:   const handleBlur = (field: string) => {
+  53:     setTouched(prev => ({ ...prev, [field]: true }));
+  54:     const newErrors = { ...errors };
+  55:     if (field === 'password') {
+  56:       newErrors.password = newPassword.length < 8 ? "Password must be at least 8 characters" : null;
+  57:       if (confirmPassword && touched.confirmPassword) {
+  58:         newErrors.confirmPassword = newPassword !== confirmPassword ? "Passwords do not match" : null;
+  59:       }
+  60:     }
+  61:     if (field === 'confirmPassword') {
+  62:       newErrors.confirmPassword = newPassword !== confirmPassword ? "Passwords do not match" : null;
+  63:     }
+  64:     setErrors(newErrors);
+  65:   };
+  66: 
+  67:   const resetMutation = useMutation({
+  68:     mutationFn: async () => {
+  69:       const res = await apiRequest("POST", "/api/hub/auth/reset-password", {
+  70:         accessToken,
+  71:         newPassword,
+  72:       });
+  73:       return res.json();
+  74:     },
+  75:     onSuccess: () => {
+  76:       setSuccess(true);
+  77:     },
+  78:     onError: (error: Error) => {
+  79:       toast({
+  80:         title: "Error",
+  81:         description: error.message || "Failed to reset password.",
+  82:         variant: "destructive",
+  83:       });
+  84:     },
+  85:   });
+  86: 
+  87:   const handleSubmit = (e: React.FormEvent) => {
+  88:     e.preventDefault();
+  89:     
+  90:     const passwordError = newPassword.length < 8 ? "Password must be at least 8 characters" : null;
+
+
+LINES 60-120
+--------------------------------------------------------------------------------
+  60:     }
+  61:     if (field === 'confirmPassword') {
+  62:       newErrors.confirmPassword = newPassword !== confirmPassword ? "Passwords do not match" : null;
+  63:     }
+  64:     setErrors(newErrors);
+  65:   };
+  66: 
+  67:   const resetMutation = useMutation({
+  68:     mutationFn: async () => {
+  69:       const res = await apiRequest("POST", "/api/hub/auth/reset-password", {
+  70:         accessToken,
+  71:         newPassword,
+  72:       });
+  73:       return res.json();
+  74:     },
+  75:     onSuccess: () => {
+  76:       setSuccess(true);
+  77:     },
+  78:     onError: (error: Error) => {
+  79:       toast({
+  80:         title: "Error",
+  81:         description: error.message || "Failed to reset password.",
+  82:         variant: "destructive",
+  83:       });
+  84:     },
+  85:   });
+  86: 
+  87:   const handleSubmit = (e: React.FormEvent) => {
+  88:     e.preventDefault();
+  89:     
+  90:     const passwordError = newPassword.length < 8 ? "Password must be at least 8 characters" : null;
+  91:     const confirmError = newPassword !== confirmPassword ? "Passwords do not match" : null;
+  92:     
+  93:     setErrors({ password: passwordError, confirmPassword: confirmError });
+  94:     setTouched({ password: true, confirmPassword: true });
+  95:     
+  96:     if (passwordError || confirmError) return;
+  97:     
+  98:     resetMutation.mutate();
+  99:   };
+ 100: 
+ 101:   if (success) {
+ 102:     return (
+ 103:       <div className="min-h-screen bg-background flex items-center justify-center p-4">
+ 104:         <Card className="max-w-md w-full">
+ 105:           <CardHeader className="text-center">
+ 106:             <div className="mx-auto h-16 w-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
+ 107:               <CheckCircle2 className="h-8 w-8 text-green-600" />
+ 108:             </div>
+ 109:             <CardTitle>Password Reset</CardTitle>
+ 110:             <CardDescription>Your password has been updated successfully</CardDescription>
+ 111:           </CardHeader>
+ 112:           <CardContent className="text-center">
+ 113:             <Button onClick={() => setLocation("/hub/login")} data-testid="button-go-to-login">
+ 114:               Go to Login
+ 115:             </Button>
+ 116:           </CardContent>
+ 117:         </Card>
+ 118:       </div>
+ 119:     );
+ 120:   }

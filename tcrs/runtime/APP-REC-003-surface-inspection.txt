@@ -1,0 +1,66 @@
+================================================================================
+APP-REC-003 SURFACE INSPECTION
+================================================================================
+
+FILE: client/src/pages/ResetPassword.tsx
+--------------------------------------------------------------------------------
+Total Lines: 243
+
+  13:   const [, setLocation] = useLocation();
+  30:     const token = hashParams.get("access_token") || queryParams.get("access_token");
+  33:     const tokenType = hashParams.get("type") || queryParams.get("type");
+  45:     if (token && (tokenType === "recovery" || !tokenType)) {
+  69:       const res = await apiRequest("POST", "/api/hub/auth/reset-password", {
+ 113:             <Button onClick={() => setLocation("/hub/login")} data-testid="button-go-to-login">
+ 134:             <Button onClick={() => setLocation("/hub/login")} data-testid="button-back-to-login">
+ 162:                     type={showPassword ? "text" : "password"}
+ 171:                     type="button"
+ 196:                     type={showConfirmPassword ? "text" : "password"}
+ 205:                     type="button"
+ 223:                 type="submit"
+
+FILE: client/src/App.tsx
+--------------------------------------------------------------------------------
+Total Lines: 236
+
+  78:   const handleNavigate = (section: string) => {
+  79:     const ref = sectionRefs[section as keyof typeof sectionRefs];
+  91:       <Header onNavigate={handleNavigate} />
+  95:           <HeroSection onNavigate={handleNavigate} />
+ 154:       <Route path="/auth/reset" component={ResetPassword} />
+ 211:       if (parsed?.access_token && parsed?.refresh_token) {
+ 214:         supabase.auth.setSession({
+ 215:           access_token: parsed.access_token,
+ 216:           refresh_token: parsed.refresh_token,
+
+FILE: client/src/pages/AuthCallback.tsx
+--------------------------------------------------------------------------------
+Total Lines: 106
+
+   8:   const [, setLocation] = useLocation();
+  18:         const accessToken = hashParams.get("access_token") || queryParams.get("access_token");
+  19:         const refreshToken = hashParams.get("refresh_token") || queryParams.get("refresh_token");
+  30:           localStorage.setItem("supabase_access_token", accessToken);
+  32:             localStorage.setItem("supabase_refresh_token", refreshToken);
+  39:             setLocation("/admin");
+  53:   }, [setLocation]);
+  87:                 onClick={() => setLocation("/login")}
+  94:                 onClick={() => setLocation("/")}
+
+FILE: client/src/pages/HubAuthCallback.tsx
+--------------------------------------------------------------------------------
+Total Lines: 239
+
+  14:   type ContinuationContext,
+  61:   const [, setLocation] = useLocation();
+  74:         const accessToken = hashParams.get("access_token");
+  75:         const refreshToken = hashParams.get("refresh_token");
+ 102:           access_token: accessToken,
+ 103:           refresh_token: refreshToken,
+ 104:           token_type: "bearer",
+ 139:                 "Content-Type": "application/json",
+ 155:                 "Content-Type": "application/json",
+ 168:           setLocation(destination);
+ 178:   }, [search, setLocation]);
+ 222:               onClick={() => setLocation("/hub/signup")}
+ 229:               onClick={() => setLocation("/hub")}

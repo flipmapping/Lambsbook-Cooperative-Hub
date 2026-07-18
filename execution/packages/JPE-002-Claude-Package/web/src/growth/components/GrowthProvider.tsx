@@ -11,8 +11,6 @@ import {
   type GrowthLocale,
 } from "../types/locale";
 
-import { JourneyPreferenceProvider } from "../context/JourneyPreferenceContext";
-
 export interface GrowthContextValue {
   locale: GrowthLocale;
   setLocale(locale: GrowthLocale): void;
@@ -36,9 +34,7 @@ export function GrowthProvider(
 
   return (
     <GrowthContext.Provider value={value}>
-      <JourneyPreferenceProvider>
-        {props.children}
-      </JourneyPreferenceProvider>
+      {props.children}
     </GrowthContext.Provider>
   );
 

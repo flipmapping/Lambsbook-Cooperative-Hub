@@ -24,3 +24,39 @@ id = "TStWXOd9vpRs4laEt6mlE"
 uri = "file://attached_assets/stock_images/hero_cooperative_community_3.jpg"
 type = "image"
 title = "diverse group of people standing together at sunrise, warm authentic community, hopeful, cinematic"
+
+[[outputs]]
+id = "kKjtfY3WQ6yMjw-ZCvqgs"
+uri = "file://attached_assets/stock_images/contribute_hero_1.jpg"
+type = "image"
+title = "diverse team collaborating around table community workspace"
+
+[[outputs]]
+id = "bukuphBCPR4rKtxuU7cs9"
+uri = "file://attached_assets/stock_images/contribute_hero_2.jpg"
+type = "image"
+title = "diverse team collaborating around table community workspace"
+
+[[outputs]]
+id = "jF86U4g81r73jSADXAMvl"
+uri = "file://attached_assets/stock_images/contribute_hero_3.jpg"
+type = "image"
+title = "diverse team collaborating around table community workspace"
+
+[[outputs]]
+id = "KLkfdU-xNGNaOwYyu2ZVb"
+uri = "file://attached_assets/stock_images/learn_hero_1.jpg"
+type = "image"
+title = "university students studying together group learning"
+
+[[outputs]]
+id = "QswsCnzwr7mQabHDxDqg3"
+uri = "file://attached_assets/stock_images/learn_hero_2.jpg"
+type = "image"
+title = "university students studying together group learning"
+
+[[outputs]]
+id = "yY94hJhbT6QYTJc5K7eIl"
+uri = "file://attached_assets/stock_images/learn_hero_3.jpg"
+type = "image"
+title = "university students studying together group learning"
