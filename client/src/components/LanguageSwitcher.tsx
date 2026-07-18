@@ -9,10 +9,13 @@ import {
 import { useLanguage } from '@/lib/LanguageContext';
 import { languages, type Language } from '@/lib/i18n';
 
+const SUPPORTED_LANGUAGES = ['en', 'vi', 'zh'];
+
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
-  const currentLang = languages.find(l => l.code === language);
+  const visibleLanguages = languages.filter(l => SUPPORTED_LANGUAGES.includes(l.code));
+  const currentLang = visibleLanguages.find(l => l.code === language) ?? visibleLanguages[0];
 
   return (
     <DropdownMenu>
@@ -23,7 +26,7 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {languages.map((lang) => (
+        {visibleLanguages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code as Language)}

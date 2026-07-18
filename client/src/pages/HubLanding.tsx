@@ -187,17 +187,17 @@ export default function HubLanding() {
         <div className="relative container mx-auto px-4 py-24 md:py-32 max-w-6xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white mb-6" data-testid="text-hero-title">
-              Grow Further{" "}
-              <span className="text-sky-400">Together</span>
+              {t('hub_home_hero_title1')}{" "}
+              <span className="text-sky-400">{t('hub_home_hero_title2')}</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed font-medium" data-testid="text-hero-subtitle">
-              Join a cooperative relationship network where trusted relationships create lifelong opportunities through learning, collaboration, contribution, and shared prosperity.
+              {t('hub_home_hero_subtitle')}
             </p>
             <p className="text-base text-slate-300/90 mb-4 leading-relaxed" data-testid="text-hero-narrative-1">
-              At Lambsbook, relationships are more than connections—they are cooperative partnerships built on trust, contribution, and shared prosperity.
+              {t('hub_home_hero_narrative1')}
             </p>
             <p className="text-base text-slate-300/90 mb-10 leading-relaxed" data-testid="text-hero-narrative-2">
-              Whether your journey begins with education, entrepreneurship, healthy living, travel, or community contribution, you become part of one member-owned cooperative where opportunities grow through collaboration.
+              {t('hub_home_hero_narrative2')}
             </p>
             <div className="flex gap-4 flex-wrap">
               <Button
@@ -205,7 +205,7 @@ export default function HubLanding() {
                 onClick={() => sectionRefs.journey.current?.scrollIntoView({ behavior: "smooth" })}
                 data-testid="button-hero-begin-journey"
               >
-                Begin Your Journey
+                {t('hub_home_begin_journey')}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
               <Button
@@ -215,7 +215,7 @@ export default function HubLanding() {
                 onClick={scrollToCollaboration}
                 data-testid="button-learn-collaboration"
               >
-                Learn How Collaboration Works
+                {t('hub_learn_collaboration')}
               </Button>
             </div>
           </div>
@@ -227,10 +227,10 @@ export default function HubLanding() {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="text-journey-title">
-              Choose the Journey That Inspires You
+              {t('hub_home_journey_title')}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg" data-testid="text-journey-subtitle">
-              Every member joins the same cooperative. Every member begins with a different aspiration. Choose the journey that best reflects what brought you here today.
+              {t('hub_home_journey_subtitle')}
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -242,9 +242,9 @@ export default function HubLanding() {
                 <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center mb-3">
                   <Handshake className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Contribute & Connect</CardTitle>
+                <CardTitle className="text-xl">{t('jc_title')}</CardTitle>
                 <CardDescription className="text-base leading-relaxed mt-2">
-                  Build stronger communities by sharing your knowledge, experience, resources and relationships. Mentors, partners, businesses, farmers and investors all grow the cooperative together.
+                  {t('hub_gw_contribute_desc')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -254,13 +254,13 @@ export default function HubLanding() {
                       onClick={() => chooseJourney("contribute")}
                       data-testid="button-journey-a"
                     >
-                      Learn More
+                      {t('hub_learn_more')}
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
                   </Link>
                   {selectedJourney === "contribute" && (
                     <span className="inline-flex items-center gap-1 text-sm text-primary font-medium" data-testid="status-journey-a-selected">
-                      <CheckCircle2 className="h-4 w-4" /> Your selected journey
+                      <CheckCircle2 className="h-4 w-4" /> {t('hub_home_selected_journey')}
                     </span>
                   )}
                 </div>
@@ -275,9 +275,9 @@ export default function HubLanding() {
                 <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center mb-3">
                   <GraduationCap className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Learn, Grow & Flourish</CardTitle>
+                <CardTitle className="text-xl">{t('jl_title')}</CardTitle>
                 <CardDescription className="text-base leading-relaxed mt-2">
-                  Discover opportunities that help you build knowledge, relationships and a meaningful future — scholarships, university pathways, mentoring and international education.
+                  {t('hub_gw_learn_desc')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -287,13 +287,13 @@ export default function HubLanding() {
                       onClick={() => chooseJourney("learn")}
                       data-testid="button-journey-b"
                     >
-                      Learn More
+                      {t('hub_learn_more')}
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
                   </Link>
                   {selectedJourney === "learn" && (
                     <span className="inline-flex items-center gap-1 text-sm text-primary font-medium" data-testid="status-journey-b-selected">
-                      <CheckCircle2 className="h-4 w-4" /> Your selected journey
+                      <CheckCircle2 className="h-4 w-4" /> {t('hub_home_selected_journey')}
                     </span>
                   )}
                 </div>
@@ -308,40 +308,30 @@ export default function HubLanding() {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="text-flywheel-title">
-              How the Cooperative Works
+              {t('hub_flywheel_title')}
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto text-lg" data-testid="text-flywheel-subtitle">
-              Lambsbook is a member-owned cooperative. Instead of extracting value from members, the cooperative reinvests what it earns back into the community — so every contribution makes the next opportunity possible. We call this the Cooperative Flywheel.
+              {t('hub_flywheel_subtitle')}
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-4 mb-10">
-            {[
-              { step: 1, title: "Members Join", desc: "People join with different dreams — learning, contributing, building." },
-              { step: 2, title: "Members Learn", desc: "Education, mentoring and scholarships help members grow." },
-              { step: 3, title: "Members Contribute", desc: "Skills, resources and relationships are shared with the community." },
-              { step: 4, title: "Members Collaborate", desc: "Trusted relationships turn ideas into real programs and businesses." },
-              { step: 5, title: "Programs Grow", desc: "Education, agriculture and community programs create real value." },
-              { step: 6, title: "Visibility Expands", desc: "Success stories attract new partners, supporters and opportunities." },
-              { step: 7, title: "The Cooperative Reinvests", desc: "Earnings flow back into scholarships, programs and members." },
-              { step: 8, title: "Members Benefit", desc: "Everyone who contributes shares in the prosperity they helped create." },
-              { step: 9, title: "More Members Join", desc: "And the flywheel turns again — stronger with every cycle." },
-            ].map((item) => (
-              <Card key={item.step} data-testid={`card-flywheel-step-${item.step}`}>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((step) => (
+              <Card key={step} data-testid={`card-flywheel-step-${step}`}>
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-3 mb-2 flex-wrap">
                     <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary flex-shrink-0">
-                      {item.step}
+                      {step}
                     </div>
-                    <h3 className="font-semibold">{item.title}</h3>
+                    <h3 className="font-semibold">{t(`hub_flywheel_s${step}_title`)}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`hub_flywheel_s${step}_desc`)}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="text-center max-w-3xl mx-auto">
             <p className="text-muted-foreground text-lg leading-relaxed" data-testid="text-flywheel-difference">
-              The cooperative difference is simple: members are owners, not customers. Trust is the foundation, contribution is the engine, and shared prosperity is the outcome.
+              {t('hub_flywheel_difference')}
             </p>
           </div>
         </div>
@@ -422,23 +412,23 @@ export default function HubLanding() {
         <div className="container mx-auto max-w-4xl text-center">
           <div className="inline-flex items-center gap-2 bg-primary-foreground/20 rounded-full px-4 py-1 mb-4">
             <GraduationCap className="h-4 w-4" />
-            <span className="text-sm font-semibold">Now Open</span>
+            <span className="text-sm font-semibold">{t('hub_schol_banner_badge')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            2026 Scholarships Available
+            {t('hub_schol_banner_title')}
           </h2>
           <p className="text-lg opacity-90 mb-6">
-            Limited to approximately 200 students. Study in Taiwan with full first-semester scholarship.
+            {t('hub_schol_banner_desc')}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/hub/scholarships">
               <Button size="lg" variant="secondary">
-                View Scholarships <ArrowRight className="h-4 w-4 ml-2" />
+                {t('hub_schol_banner_view')} <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
             <Link href="/hub/prospect-registration">
               <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20">
-                Apply Now
+                {t('hub_path_s3_cta')}
               </Button>
             </Link>
           </div>
@@ -448,22 +438,22 @@ export default function HubLanding() {
       {/* Recruitment Journey */}
       <section className="py-16 px-4 bg-muted/20" id="RecruitmentJourney">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-center mb-2">Your Path to Taiwan</h2>
-          <p className="text-center text-muted-foreground mb-12">A straightforward 3-step recruitment journey</p>
+          <h2 className="text-2xl font-bold text-center mb-2">{t('hub_path_title')}</h2>
+          <p className="text-center text-muted-foreground mb-12">{t('hub_path_subtitle')}</p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: "01", title: "Learn About CTBC", desc: "Explore CTBC University of Technology — programmes, campuses, scholarships, and student life in Tainan, Taiwan.", href: "/hub/scholarships", cta: "Explore Scholarships" },
-              { step: "02", title: "Choose Your Programme", desc: "Select your scholarship and academic pathway: Semiconductor Engineering, Mechanical, Health, or Culinary Arts.", href: "/hub/scholarships", cta: "Browse Programmes" },
-              { step: "03", title: "Apply", desc: "Submit your application. Our admissions team responds within 5–7 business days.", href: "/hub/prospect-registration", cta: "Apply Now" },
-            ].map(({ step, title, desc, href, cta }) => (
+              { step: "01", n: 1, href: "/hub/scholarships" },
+              { step: "02", n: 2, href: "/hub/scholarships" },
+              { step: "03", n: 3, href: "/hub/prospect-registration" },
+            ].map(({ step, n, href }) => (
               <div key={step} className="flex flex-col items-center text-center">
                 <div className="h-14 w-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4">
                   {step}
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-1">{desc}</p>
+                <h3 className="text-lg font-semibold mb-2">{t(`hub_path_s${n}_title`)}</h3>
+                <p className="text-muted-foreground text-sm mb-4 flex-1">{t(`hub_path_s${n}_desc`)}</p>
                 <Link href={href}>
-                  <Button size="sm" variant="outline">{cta} <ArrowRight className="h-3 w-3 ml-1" /></Button>
+                  <Button size="sm" variant="outline">{t(`hub_path_s${n}_cta`)} <ArrowRight className="h-3 w-3 ml-1" /></Button>
                 </Link>
               </div>
             ))}
@@ -499,10 +489,10 @@ export default function HubLanding() {
                       <CardContent>
                         <div className="text-xs text-muted-foreground mb-3">Tainan, Taiwan · ctbctech.edu.tw</div>
                         <div className="flex items-center gap-1 text-sm text-primary font-medium mb-3">
-                          View Scholarships <ArrowRight className="h-3 w-3" />
+                          {t('hub_schol_banner_view')} <ArrowRight className="h-3 w-3" />
                         </div>
                         <a href="https://www.ctbctech.edu.tw/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline hover:text-foreground" onClick={(e) => e.stopPropagation()}>
-                          Learn More <ExternalLink className="h-3 w-3" />
+                          {t('hub_learn_more')} <ExternalLink className="h-3 w-3" />
                         </a>
                       </CardContent>
                     </Card>

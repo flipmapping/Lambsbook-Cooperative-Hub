@@ -91,15 +91,15 @@ export function HubConsultationForm({
     },
     onSuccess: () => {
       toast({
-        title: 'Message Sent!',
-        description: 'We will get back to you within 24 hours.',
+        title: t('hub_toast_sent_title'),
+        description: t('hub_toast_sent_desc'),
       });
       setFormData({ name: '', email: '', phone: '', inquiry: '', message: '' });
     },
     onError: () => {
       toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again.',
+        title: t('hub_toast_error_title'),
+        description: t('hub_toast_error_desc'),
         variant: 'destructive',
       });
     },
@@ -141,7 +141,7 @@ export function HubConsultationForm({
             <div className="flex items-center gap-3 text-sm">
               <Mail className="h-4 w-4 text-muted-foreground" />
               <div>
-                <span className="font-medium">Email: </span>
+                <span className="font-medium">{t('hub_email_label')}: </span>
                 <a href={`mailto:${contactEmail}`} className="text-primary hover:underline">
                   {contactEmail}
                 </a>
@@ -150,9 +150,9 @@ export function HubConsultationForm({
           </div>
 
           <div className="pt-6 border-t">
-            <h3 className="font-semibold mb-1" data-testid="text-scan-to-connect">Scan to Connect</h3>
+            <h3 className="font-semibold mb-1" data-testid="text-scan-to-connect">{t('hub_scan_title')}</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Point your phone camera to connect instantly.
+              {t('hub_scan_hint')}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="rounded-md border p-4 flex flex-col items-center text-center" data-testid="card-qr-whatsapp">
@@ -163,7 +163,7 @@ export function HubConsultationForm({
                   className="h-36 w-36 object-contain rounded-sm"
                   data-testid="img-qr-whatsapp"
                 />
-                <span className="text-xs text-muted-foreground mt-3">Scan with WhatsApp</span>
+                <span className="text-xs text-muted-foreground mt-3">{t('hub_scan_whatsapp')}</span>
               </div>
               <div className="rounded-md border p-4 flex flex-col items-center text-center" data-testid="card-qr-zalo">
                 <span className="font-medium text-sm mb-3">Zalo</span>
@@ -173,7 +173,7 @@ export function HubConsultationForm({
                   className="h-36 w-36 object-contain rounded-sm"
                   data-testid="img-qr-zalo"
                 />
-                <span className="text-xs text-muted-foreground mt-3">Scan with Zalo</span>
+                <span className="text-xs text-muted-foreground mt-3">{t('hub_scan_zalo')}</span>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@ export function HubConsultationForm({
 
             <Button type="submit" className="w-full" disabled={submitEnquiryMutation.isPending} data-testid="button-hub-submit">
               {submitEnquiryMutation.isPending ? (
-                'Sending...'
+                t('hub_sending')
               ) : (
                 <>
                   <Send className="h-4 w-4 mr-2" />

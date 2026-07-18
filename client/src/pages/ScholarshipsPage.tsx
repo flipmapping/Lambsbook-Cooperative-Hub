@@ -40,13 +40,6 @@ const CTBC_CAMPUS_3    = '/assets/ctbc/campus-3.jpg';
 const CTBC_VIDEO_ID    = 'kvZF1CVyFFs'; // Set to Founder-approved YouTube video ID
 const CTBC_WEBSITE_URL = 'https://www.ctbctech.edu.tw/';
 
-// Supported Growth Experience locales (RDM-CTBC-001: vi, en, zh only)
-const GROWTH_LOCALES = [
-  { code: 'vi', label: 'Tiếng Việt' },
-  { code: 'en', label: 'English' },
-  { code: 'zh', label: '简体中文' },
-] as const;
-
 const scholarships = [
   {
     id: 'ctbc',
@@ -104,12 +97,7 @@ function CampusPhoto({ src, alt }: { src: string; alt: string }) {
         className="w-full h-full object-cover"
         onError={(e) => {
           const el = e.currentTarget as HTMLImageElement;
-          el.parentElement!.classList.add('flex', 'items-center', 'justify-center');
           el.style.display = 'none';
-          const placeholder = document.createElement('span');
-          placeholder.className = 'text-xs text-muted-foreground';
-          placeholder.textContent = alt;
-          el.parentElement!.appendChild(placeholder);
         }}
       />
     </div>
@@ -123,7 +111,7 @@ export default function ScholarshipsPage() {
     contact:  useRef<HTMLDivElement>(null),
   };
 
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
   const { t } = useHubTranslation(language);
 
   const handleNavigate = (section: string) => {
@@ -138,23 +126,6 @@ export default function ScholarshipsPage() {
       <HubHeader
         onNavigate={handleNavigate}
       />
-
-      {/* Language selector — restricted to vi / en / zh */}
-      <div className="flex justify-end gap-1 px-4 py-2 border-b bg-muted/10">
-        {GROWTH_LOCALES.map(({ code, label }) => (
-          <button
-            key={code}
-            onClick={() => setLanguage(code)}
-            className={`px-3 py-1 rounded text-xs font-medium transition-colors ${
-              language === code
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-muted text-muted-foreground hover:bg-muted/80'
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
 
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
@@ -183,9 +154,9 @@ export default function ScholarshipsPage() {
               rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors"
             >
-              CTBC University of Technology — ctbctech.edu.tw
+              {t('schol_ctbc_name')}
             </a>{' '}
-            · Tainan, Taiwan
+            · {t('schol_ctbc_location')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" onClick={() => handleNavigate('programs')}>
@@ -197,7 +168,7 @@ export default function ScholarshipsPage() {
             {/* Learn More — official CTBC website */}
             <a href={CTBC_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="outline">
-                Learn More <ExternalLink className="ml-2 h-4 w-4" />
+                {t('hub_learn_more')} <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </a>
           </div>
@@ -207,9 +178,6 @@ export default function ScholarshipsPage() {
       {/* CTBC campus photographs */}
       <section className="py-12 bg-muted/10">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-semibold text-center mb-6">
-            CTBC University of Technology — Tainan, Taiwan
-          </h2>
           <div className="grid sm:grid-cols-3 gap-4">
             <CampusPhoto src={CTBC_CAMPUS_1} alt="CTBC Campus — Main Building" />
             <CampusPhoto src={CTBC_CAMPUS_2} alt="CTBC Campus — Student Life" />
@@ -224,12 +192,12 @@ export default function ScholarshipsPage() {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-xl font-semibold text-center mb-6 flex items-center justify-center gap-2">
               <Play className="h-5 w-5 text-primary" />
-              CTBC University — Official Video
+              {t('schol_video_title')}
             </h2>
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
                 src={`https://www.youtube.com/embed/${CTBC_VIDEO_ID}`}
-                title="CTBC University of Technology — Official Promotional Video"
+                title={t('schol_video_iframe_title')}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
@@ -342,7 +310,7 @@ export default function ScholarshipsPage() {
                   {s.isCTBC && (
                     <a href={CTBC_WEBSITE_URL} target="_blank" rel="noopener noreferrer" className="block">
                       <Button size="sm" variant="outline" className="w-full">
-                        Learn More <ExternalLink className="ml-2 h-3 w-3" />
+                        {t('hub_learn_more')} <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
                     </a>
                   )}
@@ -366,7 +334,7 @@ export default function ScholarshipsPage() {
             </Link>
             <a href={CTBC_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="outline">
-                Learn More at CTBC <ExternalLink className="ml-2 h-4 w-4" />
+                {t('schol_learn_more_ctbc')} <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </a>
           </div>
@@ -393,7 +361,7 @@ export default function ScholarshipsPage() {
               rel="noopener noreferrer"
               className="underline hover:text-foreground"
             >
-              CTBC University of Technology — ctbctech.edu.tw
+              {t('schol_ctbc_name')}
             </a>
           </p>
         </div>

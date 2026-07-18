@@ -60,3 +60,99 @@ id = "yY94hJhbT6QYTJc5K7eIl"
 uri = "file://attached_assets/stock_images/learn_hero_3.jpg"
 type = "image"
 title = "university students studying together group learning"
+
+[[outputs]]
+id = "Qu3N7jEgSFE7SO3rW8K3N"
+uri = "file://attached_assets/stock_images/stock_image.jpg"
+type = "image"
+title = "diverse business team meeting office collaboration"
+
+[[outputs]]
+id = "g_jfBu_jyStGIER1Ebeq8"
+uri = "file://screenshots/home-en.jpg"
+type = "image"
+title = "Homepage — English"
+
+[[outputs]]
+id = "g6c2wSp9uyij7R90kI6TV"
+uri = "file://screenshots/home-vi.jpg"
+type = "image"
+title = "Homepage — Tiếng Việt"
+
+[[outputs]]
+id = "pHqLXm8LoiZWR_WzNPAuY"
+uri = "file://screenshots/home-zh.jpg"
+type = "image"
+title = "Homepage — 中文"
+
+[[outputs]]
+id = "ClYs6ZJQTay760Dhg1b8N"
+uri = "file://screenshots/journey1-en.jpg"
+type = "image"
+title = "Journey 1 (Contribute) — English"
+
+[[outputs]]
+id = "lQuhTbdx_cXrzv9rNGbl0"
+uri = "file://screenshots/journey1-vi.jpg"
+type = "image"
+title = "Journey 1 (Contribute) — Tiếng Việt"
+
+[[outputs]]
+id = "tCUTrQTXPs79VGqOvxXp1"
+uri = "file://screenshots/journey1-zh.jpg"
+type = "image"
+title = "Journey 1 (Contribute) — 中文"
+
+[[outputs]]
+id = "tJpxZ8R_uXvcBFtdXsCjk"
+uri = "file://screenshots/journey2-en.jpg"
+type = "image"
+title = "Journey 2 (Learn) — English"
+
+[[outputs]]
+id = "PH8CEdGXqi8ispIaDxHuN"
+uri = "file://screenshots/journey2-vi.jpg"
+type = "image"
+title = "Journey 2 (Learn) — Tiếng Việt"
+
+[[outputs]]
+id = "pj1V9GQMsGLK7GxST9GYB"
+uri = "file://screenshots/journey2-zh.jpg"
+type = "image"
+title = "Journey 2 (Learn) — 中文"
+
+[[outputs]]
+id = "-LgefixLn_0MV0Oowu_uK"
+uri = "file://screenshots/scholarship-en.jpg"
+type = "image"
+title = "Scholarship — English"
+
+[[outputs]]
+id = "993VbNnxWq3MAGRaw5qLT"
+uri = "file://screenshots/scholarship-vi.jpg"
+type = "image"
+title = "Scholarship — Tiếng Việt"
+
+[[outputs]]
+id = "El1JbZqDbMDlUOTe2MGhj"
+uri = "file://screenshots/scholarship-zh.jpg"
+type = "image"
+title = "Scholarship — 中文"
+
+[[outputs]]
+id = "s6PgCdceyPmsUWH1Ybvux"
+uri = "file://screenshots/registration-en.jpg"
+type = "image"
+title = "Prospect Registration — English"
+
+[[outputs]]
+id = "jpZpwFM2wBo-UvAAQAoSV"
+uri = "file://screenshots/registration-vi.jpg"
+type = "image"
+title = "Prospect Registration — Tiếng Việt"
+
+[[outputs]]
+id = "GD80wMOFKC9K2bPliWYAB"
+uri = "file://screenshots/registration-zh.jpg"
+type = "image"
+title = "Prospect Registration — 中文"

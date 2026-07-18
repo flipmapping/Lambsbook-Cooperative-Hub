@@ -1,0 +1,329 @@
+LER-001B
+
+Landing Experience Internationalization, Experience Cleanup &
+Visitor Experience Synchronization
+
+STATUS
+
+AUTHORIZED
+
+======================================================================
+
+MISSION
+
+Complete the Landing Experience by resolving all remaining
+internationalization, localization, visual consistency and visitor
+experience synchronization issues identified during Founder review.
+
+This sprint is a refinement sprint.
+
+Do not redesign the Landing Experience.
+
+Do not modify the approved visitor journey.
+
+Do not change the approved information architecture.
+
+Implement only the corrections authorized below.
+
+======================================================================
+
+FOUNDER VISUAL REVIEW
+
+The Founder has supplied annotated screenshots.
+
+Treat these screenshots as the visual acceptance specification.
+
+The completed implementation shall match the Founder-approved visitor
+experience.
+
+======================================================================
+
+GENERAL REQUIREMENTS
+
+Preserve:
+
+• Homepage
+
+• Journey pages
+
+• Scholarship experience
+
+• Prospect Registration
+
+• Navigation
+
+• Contact Experience
+
+• QR Contact Experience
+
+No architectural changes are authorized.
+
+No duplicate implementations shall be introduced.
+
+All newly introduced Landing Experience content shall participate in the
+existing localization framework.
+
+Do not patch individual strings.
+
+Integrate every visitor-facing string into the shared localization
+system.
+
+======================================================================
+
+TASK 1
+
+Journey Page Internationalization
+
+Translate:
+
+• Contribute & Connect
+
+• Learn, Grow & Flourish
+
+Verify complete localization for:
+
+• English
+
+• Vietnamese
+
+• Simplified Chinese
+
+No untranslated visitor-facing strings shall remain.
+
+======================================================================
+
+TASK 2
+
+Homepage Internationalization
+
+Translate all newly introduced Homepage content including:
+
+• Hero section
+
+• 2026 Scholarships Available
+
+• Scholarship promotional text
+
+• Contact Experience
+
+• Scan to Connect
+
+• QR cards
+
+• Contact helper text
+
+Use the existing localization infrastructure.
+
+======================================================================
+
+TASK 3
+
+Scholarship Page Cleanup
+
+Remove the unintended multilingual line currently rendered together.
+
+======================================================================
+
+TASK 4
+
+Scholarship Gallery Cleanup
+
+Remove the visible captions:
+
+• CTBC University of Technology — Tainan, Taiwan
+
+• CTBC Campus — Main Building
+
+• CTBC Campus — Student Life
+
+• CTBC Campus — Facilities
+
+Retain the photographs.
+
+======================================================================
+
+TASK 5
+
+Official Video Heading
+
+Ensure:
+
+CTBC University — Official Video
+
+participates fully in localization.
+
+======================================================================
+
+TASK 6
+
+Contact Experience Translation
+
+Translate:
+
+• Connect With Us
+
+• Scan to Connect
+
+• Point your phone camera to connect instantly.
+
+• Scan with WhatsApp
+
+• Scan with Zalo
+
+• QR card labels
+
+No hard-coded English strings shall remain.
+
+======================================================================
+
+TASK 7
+
+Language Selector Standardization
+
+Standardize the language selector across every visitor-facing page.
+
+Supported languages only:
+
+• English (default)
+
+• Vietnamese
+
+• Simplified Chinese
+
+Remove all other languages.
+
+Ensure identical:
+
+• appearance
+
+• ordering
+
+• behaviour
+
+across every visitor-facing page.
+
+======================================================================
+
+TASK 8
+
+Journey 1 Hero Experience
+
+Replace the current Journey 1 hero image.
+
+The replacement image shall:
+
+• be commercially usable or otherwise authorized
+
+• communicate multicultural collaboration
+
+• inspire contribution
+
+• reflect education, business and community working together
+
+• reinforce the Cooperative narrative
+
+If a suitable licensed image cannot be confidently sourced,
+recommend alternatives for Founder approval.
+
+======================================================================
+
+TASK 9
+
+Prospect Registration Internationalization
+
+The Prospect Registration page shall become part of the unified visitor
+experience.
+
+Add the standardized language selector.
+
+Translate every visitor-facing string including:
+
+• Page title
+
+• Introductory text
+
+• Labels
+
+• Placeholders
+
+• Validation messages
+
+• Buttons
+
+• Program selector
+
+• Success messages
+
+The page shall respond immediately to language changes.
+
+No hard-coded English strings shall remain.
+
+======================================================================
+
+TASK 10
+
+Visitor Experience Synchronization
+
+Synchronize the following pages:
+
+• Homepage
+
+• Journey 1
+
+• Journey 2
+
+• Scholarship
+
+• Prospect Registration
+
+Visitors shall experience one consistent language throughout the entire
+public website.
+
+Changing language anywhere shall immediately update every participating
+page.
+
+The selected language shall persist while navigating between visitor
+pages.
+
+======================================================================
+
+VALIDATION
+
+Return screenshots for:
+
+English
+
+Vietnamese
+
+Simplified Chinese
+
+including:
+
+• Homepage
+
+• Journey 1
+
+• Journey 2
+
+• Scholarship
+
+• Prospect Registration
+
+Provide:
+
+• Mutation summary
+
+• Files modified
+
+• Localization resources modified
+
+• Build confirmation
+
+• Confirmation that every visitor-facing page participates in the shared
+localization system.
+
+Await Founder approval before executing:
+
+RRG-001
+
+Repository Readiness Gate.

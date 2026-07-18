@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect, type ReactNode } from '
 import { type Language, useTranslation, languages } from './i18n';
 
 const LANGUAGE_STORAGE_KEY = 'lambsbook.language';
+const SUPPORTED_LANGUAGES = ['en', 'vi', 'zh'];
 
 interface LanguageContextType {
   language: Language;
@@ -13,8 +14,13 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 function getStoredLanguage(): Language {
   if (typeof window === 'undefined') return 'en';
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang) && languages.some(l => l.code === urlLang)) {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, urlLang);
+    return urlLang as Language;
+  }
   const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  if (stored && languages.some(l => l.code === stored)) {
+  if (stored && SUPPORTED_LANGUAGES.includes(stored) && languages.some(l => l.code === stored)) {
     return stored as Language;
   }
   return 'en';

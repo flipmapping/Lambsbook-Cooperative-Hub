@@ -13,91 +13,67 @@ import {
   Award,
 } from "lucide-react";
 import { HubHeader } from "@/components/HubHeader";
+import { useLanguage } from "@/lib/LanguageContext";
+import { useHubTranslation } from "@/lib/hubTranslations";
 
 interface InitiativeItem {
   icon: typeof Users;
-  title: string;
-  description: string;
+  titleKey: string;
+  descKey: string;
 }
 
 interface JourneyPageContent {
   id: string;
   heroImage: string;
   heroImageAlt: string;
-  heroCaption: string;
-  title: string;
-  subtitle: string;
-  whyTitle: string;
-  whyParagraphs: string[];
-  listTitle: string;
-  listItems: string[];
-  actionTitle: string;
-  actionSubtitle: string;
+  captionKey: string;
+  titleKey: string;
+  subtitleKey: string;
+  whyTitleKey: string;
+  whyParagraphKeys: string[];
+  listTitleKey: string;
+  listItemKeys: string[];
+  actionTitleKey: string;
+  actionSubtitleKey: string;
   initiatives: InitiativeItem[];
-  ctaLine: string;
-  primaryCta: { label: string; href: string };
-  secondaryCta: { label: string; href: string };
+  ctaLineKey: string;
+  primaryCta: { labelKey: string; href: string };
+  secondaryCta: { labelKey: string; href: string };
 }
 
 const contributeContent: JourneyPageContent = {
   id: "contribute",
   heroImage: "/assets/journey-contribute.jpg",
   heroImageAlt:
-    "A diverse group of people collaborating together around a shared workspace, reviewing plans and ideas",
-  heroCaption: "Great communities are built by people who choose to contribute.",
-  title: "Contribute & Connect",
-  subtitle:
-    "Build stronger communities by sharing your knowledge, experience, resources and relationships.",
-  whyTitle: "Why Contribute?",
-  whyParagraphs: [
-    "Every thriving community is built by people who choose to contribute.",
-    "The Lambsbook Cooperative helps members transform their ideas, skills and relationships into opportunities that benefit both themselves and the wider community.",
-    "Whether you are a mentor, entrepreneur, university, business, farmer, volunteer or investor, your contribution becomes part of a network that creates value together.",
+    "A diverse multicultural group of education, business and community members collaborating together",
+  captionKey: "jc_caption",
+  titleKey: "jc_title",
+  subtitleKey: "jc_subtitle",
+  whyTitleKey: "jc_why_title",
+  whyParagraphKeys: ["jc_why_p1", "jc_why_p2", "jc_why_p3"],
+  listTitleKey: "jc_list_title",
+  listItemKeys: [
+    "jc_item1",
+    "jc_item2",
+    "jc_item3",
+    "jc_item4",
+    "jc_item5",
+    "jc_item6",
+    "jc_item7",
+    "jc_item8",
+    "jc_item9",
   ],
-  listTitle: "Ways You Can Contribute",
-  listItems: [
-    "Mentor students",
-    "Partner with universities",
-    "Support scholarships",
-    "Develop community programs",
-    "Offer internships",
-    "Build strategic business units",
-    "Create products and services",
-    "Invest in cooperative initiatives",
-    "Share expertise",
-  ],
-  actionTitle: "Cooperative in Action",
-  actionSubtitle:
-    "Contribution is already shaping real programs across the cooperative today.",
+  actionTitleKey: "jc_action_title",
+  actionSubtitleKey: "jc_action_subtitle",
   initiatives: [
-    {
-      icon: GraduationCap,
-      title: "CTBC University",
-      description:
-        "A university partnership opening scholarship pathways and international education for members.",
-    },
-    {
-      icon: Award,
-      title: "Scholarship Programs",
-      description:
-        "Member-supported scholarships that help students access life-changing opportunities.",
-    },
-    {
-      icon: Sprout,
-      title: "Agricultural Development",
-      description:
-        "Farmers and producers building healthy food products together, from Gac fruit to community farms.",
-    },
-    {
-      icon: Handshake,
-      title: "Community Partnerships",
-      description:
-        "Businesses, mentors and community leaders forming partnerships that strengthen everyone involved.",
-    },
+    { icon: GraduationCap, titleKey: "jc_init1_title", descKey: "jc_init1_desc" },
+    { icon: Award, titleKey: "jc_init2_title", descKey: "jc_init2_desc" },
+    { icon: Sprout, titleKey: "jc_init3_title", descKey: "jc_init3_desc" },
+    { icon: Handshake, titleKey: "jc_init4_title", descKey: "jc_init4_desc" },
   ],
-  ctaLine: "Together we create opportunities that none of us could create alone.",
-  primaryCta: { label: "Explore Programs", href: "/hub/scholarships" },
-  secondaryCta: { label: "Become a Member", href: "/hub/signup" },
+  ctaLineKey: "jc_cta_line",
+  primaryCta: { labelKey: "jc_cta_primary", href: "/hub/scholarships" },
+  secondaryCta: { labelKey: "jc_cta_secondary", href: "/hub/signup" },
 };
 
 const learnContent: JourneyPageContent = {
@@ -105,66 +81,42 @@ const learnContent: JourneyPageContent = {
   heroImage: "/assets/journey-learn.jpg",
   heroImageAlt:
     "A joyful group of graduating students celebrating together on a sunny university campus",
-  heroCaption: "Every opportunity begins with a willingness to learn.",
-  title: "Learn, Grow & Flourish",
-  subtitle:
-    "Discover opportunities that help you build knowledge, relationships and a meaningful future.",
-  whyTitle: "Why Learn?",
-  whyParagraphs: [
-    "Learning is more than gaining knowledge.",
-    "It is about discovering opportunities, connecting with mentors, serving others and growing into someone who helps others flourish as well.",
-    "The Cooperative supports lifelong learning through education, scholarships, mentoring, international opportunities and community.",
+  captionKey: "jl_caption",
+  titleKey: "jl_title",
+  subtitleKey: "jl_subtitle",
+  whyTitleKey: "jl_why_title",
+  whyParagraphKeys: ["jl_why_p1", "jl_why_p2", "jl_why_p3"],
+  listTitleKey: "jl_list_title",
+  listItemKeys: [
+    "jl_item1",
+    "jl_item2",
+    "jl_item3",
+    "jl_item4",
+    "jl_item5",
+    "jl_item6",
+    "jl_item7",
+    "jl_item8",
   ],
-  listTitle: "What You Can Explore",
-  listItems: [
-    "Scholarships",
-    "University pathways",
-    "Mentoring",
-    "Career development",
-    "Language learning",
-    "International education",
-    "Community leadership",
-    "Lifelong learning",
-  ],
-  actionTitle: "Learning in Action",
-  actionSubtitle:
-    "These are real learning pathways members are exploring right now.",
+  actionTitleKey: "jl_action_title",
+  actionSubtitleKey: "jl_action_subtitle",
   initiatives: [
-    {
-      icon: GraduationCap,
-      title: "CTBC University",
-      description:
-        "University pathways with scholarship support and international study opportunities.",
-    },
-    {
-      icon: Award,
-      title: "Scholarships",
-      description:
-        "Scholarship programs that open doors for students ready to grow.",
-    },
-    {
-      icon: Users,
-      title: "Student Mentoring",
-      description:
-        "Mentors who walk alongside students through study, career and life decisions.",
-    },
-    {
-      icon: Globe,
-      title: "International Opportunities",
-      description:
-        "Education partnerships and study-abroad pathways connecting members across countries.",
-    },
+    { icon: GraduationCap, titleKey: "jl_init1_title", descKey: "jl_init1_desc" },
+    { icon: Award, titleKey: "jl_init2_title", descKey: "jl_init2_desc" },
+    { icon: Users, titleKey: "jl_init3_title", descKey: "jl_init3_desc" },
+    { icon: Globe, titleKey: "jl_init4_title", descKey: "jl_init4_desc" },
   ],
-  ctaLine: "Every journey begins with one opportunity.",
-  primaryCta: { label: "Explore Programs", href: "/hub/scholarships" },
-  secondaryCta: { label: "Join the Cooperative", href: "/hub/signup" },
+  ctaLineKey: "jl_cta_line",
+  primaryCta: { labelKey: "jl_cta_primary", href: "/hub/scholarships" },
+  secondaryCta: { labelKey: "jl_cta_secondary", href: "/hub/signup" },
 };
 
 function JourneyPage({ content }: { content: JourneyPageContent }) {
+  const { language } = useLanguage();
+  const { t } = useHubTranslation(language);
+
   return (
     <div className="min-h-screen bg-background">
-      <HubHeader
-      />
+      <HubHeader />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0b1533]">
@@ -182,16 +134,16 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
             className="text-4xl md:text-5xl font-bold text-white mb-4"
             data-testid={`text-journey-${content.id}-title`}
           >
-            {content.title}
+            {t(content.titleKey)}
           </h1>
           <p
             className="text-lg md:text-xl text-slate-200 max-w-2xl leading-relaxed mb-4"
             data-testid={`text-journey-${content.id}-subtitle`}
           >
-            {content.subtitle}
+            {t(content.subtitleKey)}
           </p>
           <p className="text-sm text-slate-300/90 italic" data-testid={`text-journey-${content.id}-caption`}>
-            "{content.heroCaption}"
+            "{t(content.captionKey)}"
           </p>
         </div>
       </section>
@@ -200,12 +152,12 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold mb-6" data-testid={`text-journey-${content.id}-why-title`}>
-            {content.whyTitle}
+            {t(content.whyTitleKey)}
           </h2>
           <div className="space-y-4">
-            {content.whyParagraphs.map((p, i) => (
-              <p key={i} className="text-lg text-muted-foreground leading-relaxed">
-                {p}
+            {content.whyParagraphKeys.map((key) => (
+              <p key={key} className="text-lg text-muted-foreground leading-relaxed">
+                {t(key)}
               </p>
             ))}
           </div>
@@ -216,13 +168,13 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
       <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold mb-8" data-testid={`text-journey-${content.id}-list-title`}>
-            {content.listTitle}
+            {t(content.listTitleKey)}
           </h2>
           <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
-            {content.listItems.map((item) => (
-              <li key={item} className="flex items-center gap-3">
+            {content.listItemKeys.map((key) => (
+              <li key={key} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-base">{item}</span>
+                <span className="text-base">{t(key)}</span>
               </li>
             ))}
           </ul>
@@ -234,24 +186,24 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-3" data-testid={`text-journey-${content.id}-action-title`}>
-              {content.actionTitle}
+              {t(content.actionTitleKey)}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              {content.actionSubtitle}
+              {t(content.actionSubtitleKey)}
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             {content.initiatives.map((initiative) => (
-              <Card key={initiative.title} data-testid={`card-initiative-${initiative.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+              <Card key={initiative.titleKey} data-testid={`card-initiative-${initiative.titleKey}`}>
                 <CardHeader>
                   <div className="h-11 w-11 rounded-md bg-primary/10 flex items-center justify-center mb-2">
                     <initiative.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">{initiative.title}</CardTitle>
+                  <CardTitle className="text-lg">{t(initiative.titleKey)}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">
-                    {initiative.description}
+                    {t(initiative.descKey)}
                   </p>
                 </CardContent>
               </Card>
@@ -265,18 +217,18 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
         <div className="container mx-auto max-w-3xl text-center">
           <BookOpen className="h-10 w-10 mx-auto mb-5 text-primary" />
           <p className="text-2xl md:text-3xl font-semibold mb-8 leading-snug" data-testid={`text-journey-${content.id}-cta`}>
-            {content.ctaLine}
+            {t(content.ctaLineKey)}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href={content.primaryCta.href}>
               <Button size="lg" data-testid={`button-journey-${content.id}-primary-cta`}>
-                {content.primaryCta.label}
+                {t(content.primaryCta.labelKey)}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
             <Link href={content.secondaryCta.href}>
               <Button size="lg" variant="outline" data-testid={`button-journey-${content.id}-secondary-cta`}>
-                {content.secondaryCta.label}
+                {t(content.secondaryCta.labelKey)}
               </Button>
             </Link>
           </div>
@@ -286,7 +238,7 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
       {/* Footer */}
       <footer className="border-t py-8 px-4">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          © 2025 Lambsbook Cooperative Hub. All rights reserved.
+          © 2025 Lambsbook Cooperative Hub. {t("hub_footer_rights")}
         </div>
       </footer>
     </div>
