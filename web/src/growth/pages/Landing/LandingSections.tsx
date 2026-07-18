@@ -8,6 +8,7 @@ import {
 import { CooperativePrinciplesSection } from "../../components/Sections/CooperativePrinciplesSection";
 import { JourneyDiscoverySection } from "../../components/Sections/JourneyDiscoverySection";
 import { MembershipSection } from "../../components/Sections/MembershipSection";
+import { ContactSection } from "../../components/Sections/ContactSection";
 import { CallToActionSection } from "../../components/Sections/CallToActionSection";
 
 export function LandingSections() {
@@ -26,6 +27,8 @@ export function LandingSections() {
       <MembershipSection />
 
       <FAQSection />
+
+      <ContactSection />
 
       <CallToActionSection />
     </>
