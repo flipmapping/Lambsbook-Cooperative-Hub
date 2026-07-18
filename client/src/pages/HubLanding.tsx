@@ -174,9 +174,6 @@ export default function HubLanding() {
     <div className="min-h-screen bg-background">
       <HubHeader 
         onNavigate={handleNavigate}
-        brandName="Lambsbook Cooperative Hub"
-        brandSubtitle="Open Collaboration Economy"
-        homeLink="/hub"
       />
 
       {/* Universal Hero */}

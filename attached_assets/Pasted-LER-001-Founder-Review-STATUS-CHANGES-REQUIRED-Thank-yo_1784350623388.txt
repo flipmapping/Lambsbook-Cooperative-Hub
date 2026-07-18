@@ -1,0 +1,99 @@
+LER-001
+
+Founder Review
+
+STATUS
+
+CHANGES REQUIRED
+
+Thank you for the implementation.
+
+The overall realization is strong and aligns well with the approved Landing Experience direction.
+
+The new Journey pages are coherent, the content is well organized, the navigation flow is clear, and the production build has passed successfully.
+
+However, before this sprint can be approved, please complete the following refinements.
+
+======================================================================
+
+REQUIRED CHANGE 1
+
+Preserve Platform Identity Across All Pages
+
+The Scholarship page header has been modified in a way that changes the platform identity.
+
+Specifically, the branding beside the logo in the top-left corner has been changed from the Lambsbook Cooperative Hub branding to scholarship-specific branding.
+
+This should not happen.
+
+The platform identity must remain consistent across the entire website.
+
+Programs, scholarships, admissions, products and services are experiences within the Cooperative—not separate brands.
+
+Please restore the original global header branding used by the Homepage.
+
+The logo, platform name and platform identity should remain identical throughout the visitor experience.
+
+Program-specific identity should be communicated within page content, not by replacing the platform identity.
+
+======================================================================
+
+REQUIRED CHANGE 2
+
+Global Navigation Consistency
+
+Every visitor-facing page should provide a clear path back to the Homepage.
+
+Please implement the following behaviour consistently across all public-facing pages.
+
+When the user clicks the Lambsbook logo (top-left),
+
+↓
+
+Navigate to the Homepage.
+
+This should apply to:
+
+• Homepage
+
+• Journey pages
+
+• Scholarship pages
+
+• Future public visitor pages
+
+The logo should function as the primary "Home" navigation throughout the platform.
+
+Please verify this behaviour across all implemented public routes.
+
+======================================================================
+
+VALIDATION
+
+After completing the above changes, please verify:
+
+✓ Homepage branding is unchanged.
+
+✓ Scholarship page uses the same global header as the Homepage.
+
+✓ Clicking the logo from every visitor page returns to the Homepage.
+
+✓ Existing navigation continues to function correctly.
+
+✓ Production build still passes.
+
+======================================================================
+
+DELIVERABLES
+
+Return:
+
+• Updated screenshots
+
+• Repository mutation summary
+
+• Confirmation that global branding has been restored
+
+• Confirmation that logo navigation has been implemented consistently
+
+Await Founder approval.

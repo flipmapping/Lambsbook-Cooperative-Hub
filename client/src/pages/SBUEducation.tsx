@@ -107,9 +107,6 @@ export default function SBUEducation() {
     <div className="min-h-screen bg-background">
       <HubHeader 
         onNavigate={handleNavigate}
-        brandName="Lambsbook Education"
-        brandSubtitle="SBU 2 - Education Programs"
-        homeLink="/hub/sbu/education"
       />
 
       {/* Hero Section */}

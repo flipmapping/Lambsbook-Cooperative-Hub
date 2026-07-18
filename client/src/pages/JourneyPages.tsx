@@ -164,9 +164,6 @@ function JourneyPage({ content }: { content: JourneyPageContent }) {
   return (
     <div className="min-h-screen bg-background">
       <HubHeader
-        brandName="Lambsbook Cooperative Hub"
-        brandSubtitle="Open Collaboration Economy"
-        homeLink="/hub"
       />
 
       {/* Hero */}

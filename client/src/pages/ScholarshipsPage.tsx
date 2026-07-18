@@ -137,9 +137,6 @@ export default function ScholarshipsPage() {
     <div className="min-h-screen bg-background">
       <HubHeader
         onNavigate={handleNavigate}
-        brandName={t('schol_brand')}
-        brandSubtitle={t('schol_brand_subtitle')}
-        homeLink="/hub/scholarships"
       />
 
       {/* Language selector — restricted to vi / en / zh */}

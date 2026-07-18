@@ -54,9 +54,6 @@ export default function LambsbookTutoring() {
     <div className="min-h-screen bg-background">
       <HubHeader 
         onNavigate={handleNavigate}
-        brandName="Lambsbook Tutoring"
-        brandSubtitle="Online Education Platform"
-        homeLink="/hub/sbu/education"
       />
 
       {/* Hero Section */}

@@ -97,9 +97,6 @@ export default function TropicanaProgram() {
     <div className="min-h-screen bg-background">
       <HubHeader 
         onNavigate={handleNavigate}
-        brandName="Tropicana Academy"
-        brandSubtitle="Culinary & Hospitality Excellence"
-        homeLink="/hub/programs/tropicana"
       />
 
       {/* Hero Section */}

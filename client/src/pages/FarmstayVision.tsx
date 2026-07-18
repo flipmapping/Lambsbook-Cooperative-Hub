@@ -72,9 +72,6 @@ export default function FarmstayVision() {
     <div className="min-h-screen bg-background">
       <HubHeader 
         onNavigate={handleNavigate}
-        brandName="Farmstay Communities"
-        brandSubtitle="Vision & Partnership"
-        homeLink="/hub"
       />
 
       {/* Hero Section */}

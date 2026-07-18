@@ -10,17 +10,9 @@ import { useHubTranslation } from '@/lib/hubTranslations';
 
 interface HubHeaderProps {
   onNavigate?: (section: string) => void;
-  brandName?: string;
-  brandSubtitle?: string;
-  homeLink?: string;
 }
 
-export function HubHeader({ 
-  onNavigate, 
-  brandName = 'Lambsbook Hub',
-  brandSubtitle,
-  homeLink = '/hub'
-}: HubHeaderProps) {
+export function HubHeader({ onNavigate }: HubHeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const { t } = useHubTranslation(language);
@@ -35,8 +27,8 @@ export function HubHeader({
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-4">
-        <Link href={homeLink}>
-          <div className="flex items-center gap-2 cursor-pointer">
+        <Link href="/">
+          <div className="flex items-center gap-2 cursor-pointer" data-testid="link-header-home">
             <img
               src="/assets/logo-lambsbook.png"
               alt="Lambsbook logo"
@@ -44,10 +36,8 @@ export function HubHeader({
               data-testid="img-header-logo"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-sm leading-tight">{brandName}</span>
-              {brandSubtitle && (
-                <span className="text-[10px] text-muted-foreground leading-tight">{brandSubtitle}</span>
-              )}
+              <span className="font-bold text-sm leading-tight">Lambsbook Cooperative Hub</span>
+              <span className="text-[10px] text-muted-foreground leading-tight">Open Collaboration Economy</span>
             </div>
           </div>
         </Link>
