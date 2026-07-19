@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-07-19T15:57:39.848243+00:00",
+  "target": "client/src/pages/MemberHub.tsx",
+  "captures": [
+    {
+      "endpoint": "/api/member/me",
+      "status": "FOUND",
+      "start_line": 194,
+      "end_line": 198,
+      "queryKey": "\"/api/member/me\"",
+      "queryFn": "() => fetchWithAuth(\"/api/member/me\")",
+      "enabled": "isAuthenticated",
+      "characteristics": [
+        "arrow function"
+      ],
+      "block": "useQuery({\n    queryKey: [\"/api/member/me\"],\n    queryFn: () => fetchWithAuth(\"/api/member/me\"),\n    enabled: isAuthenticated,\n  }"
+    },
+    {
+      "endpoint": "/api/member/recent-participation",
+      "status": "FOUND",
+      "start_line": 200,
+      "end_line": 204,
+      "queryKey": "\"/api/member/recent-participation\"",
+      "queryFn": "() => fetchWithAuth(\"/api/member/recent-participation\")",
+      "enabled": "isAuthenticated && !profileLoading && !!profile",
+      "characteristics": [
+        "generic typing",
+        "arrow function"
+      ],
+      "block": "useQuery<ActivityData>({\n    queryKey: [\"/api/member/recent-participation\"],\n    queryFn: () => fetchWithAuth(\"/api/member/recent-participation\"),\n    enabled: isAuthenticated && !profileLoading && !!profile,\n  }"
+    },
+    {
+      "endpoint": "/api/member/earnings",
+      "status": "FOUND",
+      "start_line": 206,
+      "end_line": 210,
+      "queryKey": "\"/api/member/earnings\"",
+      "queryFn": "() => fetchWithAuth(\"/api/member/earnings\")",
+      "enabled": "isAuthenticated && !profileLoading && !!profile",
+      "characteristics": [
+        "generic typing",
+        "arrow function"
+      ],
+      "block": "useQuery<any>({\n    queryKey: [\"/api/member/earnings\"],\n    queryFn: () => fetchWithAuth(\"/api/member/earnings\"),\n    enabled: isAuthenticated && !profileLoading && !!profile,\n  }"
+    },
+    {
+      "endpoint": "/api/member/pending-invitation",
+      "status": "FOUND",
+      "start_line": 212,
+      "end_line": 216,
+      "queryKey": "\"/api/member/pending-invitation\"",
+      "queryFn": "() => fetchWithAuth(\"/api/member/pending-invitation\")",
+      "enabled": "isAuthenticated && !profileLoading && !!profile",
+      "characteristics": [
+        "generic typing",
+        "arrow function"
+      ],
+      "block": "useQuery<any>({\n    queryKey: [\"/api/member/pending-invitation\"],\n    queryFn: () => fetchWithAuth(\"/api/member/pending-invitation\"),\n    enabled: isAuthenticated && !profileLoading && !!profile,\n  }"
+    },
+    {
+      "endpoint": "/api/member/trusted-relationships",
+      "status": "FOUND",
+      "start_line": 218,
+      "end_line": 222,
+      "queryKey": "\"/api/member/trusted-relationships\"",
+      "queryFn": "() => fetchWithAuth(\"/api/member/trusted-relationships\")",
+      "enabled": "isAuthenticated && !profileLoading && !!profile",
+      "characteristics": [
+        "generic typing",
+        "arrow function"
+      ],
+      "block": "useQuery<any>({\n    queryKey: [\"/api/member/trusted-relationships\"],\n    queryFn: () => fetchWithAuth(\"/api/member/trusted-relationships\"),\n    enabled: isAuthenticated && !profileLoading && !!profile,\n  }"
+    }
+  ]
+}
