@@ -16,6 +16,7 @@ import {
   GraduationCap, Activity, AlertTriangle, CheckCircle,
   ArrowUpCircle, Clock, Eye, EyeOff, RefreshCw
 } from "lucide-react";
+import HubAdminDashboard from "@/pages/HubAdminDashboard";
 
 type MembershipStatus = "free" | "paid";
 type ActivityStatus = "active" | "inactive";
@@ -353,7 +354,12 @@ export default function MemberHub() {
   }
 
   console.log("MEMBERHUB_READINESS", {
-    profile: !!profile,
+    hasProfile: !!profile,
+    memberId: profile?.id ?? null,
+    userId: profile?.user_id ?? null,
+    role: profile?.role ?? null,
+    isSuperAdmin: profile?.is_super_admin ?? null,
+    profile,
   });
 
   if (
@@ -373,6 +379,10 @@ export default function MemberHub() {
         </Alert>
       </div>
     );
+  }
+
+  if (profile?.is_super_admin || profile?.role === "admin") {
+    return <HubAdminDashboard />;
   }
 
   return (
