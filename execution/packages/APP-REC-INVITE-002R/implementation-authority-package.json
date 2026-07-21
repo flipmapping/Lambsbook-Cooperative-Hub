@@ -1,0 +1,35 @@
+{
+  "implementation_authority": "FAB-APP-REC-INVITE-002Q",
+  "builder_authority": "FAB-APP-REC-INVITE-002R",
+  "execution_operating_system": "EOS v2.2",
+  "repository": "APP-RUNTIME-01",
+  "mutation_class": "Builder-Orchestrated Implementation",
+  "generated_utc": "2026-07-20T08:10:47.033565+00:00",
+  "authorized_surfaces": [
+    "server/services/invitation-delivery.ts",
+    "server/routes/member.ts",
+    "client/src/pages/MemberHub.tsx"
+  ],
+  "protected_surfaces": [
+    "server/lib/supabase-dal.ts",
+    "server/services/notifications.ts",
+    "database schema",
+    "invitation persistence",
+    "invitation acceptance",
+    "RPC surfaces",
+    "RLS policies"
+  ],
+  "canonical_contracts": {
+    "response": {
+      "invitation": "Domain Resource",
+      "invitationShare": "Delivery Representation"
+    },
+    "adapter_purity": true
+  },
+  "acceptance": [
+    "Builder mutation confined to authorized surfaces",
+    "Build verification succeeds",
+    "Runtime verification succeeds",
+    "Implementation certification emitted"
+  ]
+}

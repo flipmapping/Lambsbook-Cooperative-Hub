@@ -200,6 +200,9 @@ def locate_artifacts(
     """
     located: dict[str, Path] = {}
 
+    # Execution Derivation — path is the direct value from the CIB field
+    ed_path = repo_root / mandatory["Execution Derivation"]
+    located["Execution Derivation"] = ed_path
 
     # Implementation Authority artifact
     ia = mandatory["Implementation Authority"]
@@ -273,62 +276,6 @@ def verify_authority_consistency(
             )
 
     return violations
-
-def generate_execution_derivation(
-    repo_root: Path,
-    output_directory: Path,
-    mandatory: dict[str, str],
-    located: dict[str, Path],
-) -> Path:
-    """Generate the canonical Builder-owned Execution Derivation.
-
-    This interface conforms to the Builder runtime model by consuming
-    canonical Builder runtime state rather than decomposed scalar values.
-
-    Runtime integration is performed in the next mutation.
-    """
-
-    output_directory.mkdir(parents=True, exist_ok=True)
-
-    output_path = output_directory / "EXECUTION-DERIVATION.md"
-
-    implementation_authority = mandatory.get(
-        "Implementation Authority", ""
-    )
-
-    change_intent_brief = mandatory.get(
-        "Change Intent Brief", ""
-    )
-
-    implementation_context_manifest = located.get(
-        "Implementation Context Manifest"
-    )
-
-    icm_value = (
-        str(implementation_context_manifest.relative_to(repo_root))
-        if implementation_context_manifest
-        else ""
-    )
-
-    content = f"""# Execution Derivation
-
-Implementation Authority
-------------------------
-{implementation_authority}
-
-Change Intent Brief
--------------------
-{change_intent_brief}
-
-Implementation Context Manifest
--------------------------------
-{icm_value}
-"""
-
-    output_path.write_text(content, encoding="utf-8")
-
-    return output_path
-
 
 
 # ── Metadata emission ─────────────────────────────────────────
@@ -787,20 +734,6 @@ def main() -> None:
 
     located = locate_artifacts(repo_root, mandatory, optional)
     ia_artifact_path = located["Implementation Authority Artifact"]
-
-    generated_ed = generate_execution_derivation(
-        repo_root=repo_root,
-        output_directory=(
-            repo_root
-            / "governance"
-            / "execution-derivation"
-            / "generated"
-        ),
-        mandatory=mandatory,
-        located=located,
-    )
-
-    located["Execution Derivation"] = generated_ed
 
     present, missing = verify_artifact_existence(located)
 

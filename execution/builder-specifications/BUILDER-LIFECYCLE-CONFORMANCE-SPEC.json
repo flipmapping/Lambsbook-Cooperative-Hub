@@ -1,0 +1,57 @@
+{
+  "authority": "FAB-BUILDER-IMPLEMENT-005",
+  "repository": "Open Brain / Builder Repository",
+  "target_file": "execution/builders/build_claude_package.py",
+  "mutation_class": "Single Atomic Builder Lifecycle Conformance",
+  "preconditions": {
+    "baseline_verified": true,
+    "implementation_authority": "FAB-BUILDER-IMPLEMENT-004",
+    "rollback_available": true
+  },
+  "mutations": [
+    {
+      "id": "M001",
+      "surface": "MANDATORY_FIELDS",
+      "action": "Remove 'Execution Derivation' from required Builder input contract."
+    },
+    {
+      "id": "M002",
+      "surface": "locate_artifacts",
+      "action": "Remove repository discovery of Execution Derivation as an external artifact."
+    },
+    {
+      "id": "M003",
+      "surface": "verify_artifact_existence",
+      "action": "Exclude Execution Derivation from required repository-governed artifact validation."
+    },
+    {
+      "id": "M004",
+      "surface": "main",
+      "action": "Insert deterministic Execution Derivation generation immediately after governance validation succeeds."
+    },
+    {
+      "id": "M005",
+      "surface": "generated_execution_derivation",
+      "action": "Validate generated Execution Derivation before packaging."
+    },
+    {
+      "id": "M006",
+      "surface": "_assemble_artifacts",
+      "action": "Package Builder-generated Execution Derivation instead of copying one from the repository."
+    }
+  ],
+  "acceptance_criteria": [
+    "Execution Derivation is no longer a required repository input.",
+    "Builder generates Execution Derivation deterministically from validated governance artifacts.",
+    "Generated Execution Derivation is validated before packaging.",
+    "Generated Execution Derivation is certified as Builder-produced.",
+    "Builder package contains the generated Execution Derivation.",
+    "Builder invocation succeeds without requiring an externally authored Execution Derivation."
+  ],
+  "protected_principles": [
+    "No manual Execution Derivation.",
+    "No additional implementation intent introduced.",
+    "Governance hierarchy preserved (FAB -> IA -> CIB -> ICM).",
+    "Builder validation and certification remain intact."
+  ]
+}

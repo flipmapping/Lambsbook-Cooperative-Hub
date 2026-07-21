@@ -1,0 +1,642 @@
+# Authentication Entry Inspection
+
+## Expected Runtime Stage
+
+Authentication → Callback → Identity Resolution
+
+## Repository Evidence
+
+
+### Authentication Callback
+
+- client/src/App.tsx:24
+  - `import AuthCallback from '@/pages/AuthCallback';`
+- client/src/App.tsx:33
+  - `import HubAuthCallback from '@/pages/HubAuthCallback';`
+- client/src/App.tsx:151
+  - `<Route path="/auth/callback" component={AuthCallback} />`
+- client/src/App.tsx:156
+  - `<Route path="/hub/auth/callback" component={HubAuthCallback} />`
+- client/src/components/dashboard/InvitationAcceptanceSection.tsx:10
+  - `// - No entryState mutation — acceptance triggers onAccepted callback only`
+- client/src/components/ui/carousel.tsx:69
+  - `const onSelect = React.useCallback((api: CarouselApi) => {`
+- client/src/components/ui/carousel.tsx:78
+  - `const scrollPrev = React.useCallback(() => {`
+- client/src/components/ui/carousel.tsx:82
+  - `const scrollNext = React.useCallback(() => {`
+- client/src/components/ui/carousel.tsx:86
+  - `const handleKeyDown = React.useCallback(`
+- client/src/components/ui/sidebar.tsx:76
+  - `const setOpen = React.useCallback(`
+- client/src/components/ui/sidebar.tsx:92
+  - `const toggleSidebar = React.useCallback(() => {`
+- client/src/hooks/useFeedbackUsage.ts:1
+  - `import { useState, useEffect, useCallback } from 'react';`
+- client/src/hooks/useFeedbackUsage.ts:60
+  - `const incrementUsage = useCallback(() => {`
+- client/src/hooks/useFeedbackUsage.ts:77
+  - `const refreshAuth = useCallback(() => {`
+- client/src/lib/auth/PostAuthenticationContinuation.ts:27
+  - `| "callback"`
+- client/src/lib/auth/PostAuthenticationContinuation.ts:147
+  - `"callback",`
+- client/src/pages/AuthCallback.tsx:7
+  - `export default function AuthCallback() {`
+- client/src/pages/AuthCallback.tsx:13
+  - `const handleAuthCallback = async () => {`
+- client/src/pages/AuthCallback.tsx:48
+  - `console.error("Auth callback error:", err);`
+- client/src/pages/AuthCallback.tsx:52
+  - `handleAuthCallback();`
+- client/src/pages/HubAuthCallback.tsx:26
+  - `* This helper prepares only HubAuthCallback-local authentication values.`
+- client/src/pages/HubAuthCallback.tsx:55
+  - `authenticationMode: "callback",`
+- client/src/pages/HubAuthCallback.tsx:60
+  - `export default function HubAuthCallback() {`
+- client/src/pages/HubAuthCallback.tsx:69
+  - `const handleCallback = async () => {`
+- client/src/pages/HubAuthCallback.tsx:171
+  - `console.error("Auth callback error:", e);`
+- client/src/pages/HubAuthCallback.tsx:177
+  - `handleCallback();`
+- server/services/supabase-auth.ts:38
+  - `emailRedirectTo: `${process.env.APP_URL || 'http://localhost:5000'}/auth/callback`,`
+- server/services/supabase-auth.ts:135
+  - `emailRedirectTo: `${process.env.APP_URL || 'http://localhost:5000'}/auth/callback`,`
+- server/services/supabase-hub.ts:348
+  - `return `${base}/hub/auth/callback?referrer=${encodeURIComponent(referrerEmail || "")}&invite=${encodeURIComponent(inviteToken || "")}`;`
+- web/src/components/dashboard/InvitationAcceptanceSection.tsx:12
+  - `// - No entryState mutation — acceptance triggers onAccepted callback only`
+- web/src/growth/context/JourneyPreferenceContext.tsx:3
+  - `useCallback,`
+- web/src/growth/context/JourneyPreferenceContext.tsx:139
+  - `useCallback((journey: JourneyId): void => {`
+- web/src/growth/context/JourneyPreferenceContext.tsx:152
+  - `useCallback((): void => {`
+- web/src/growth/context/JourneyPreferenceContext.tsx:160
+  - `useCallback((): boolean => {`
+
+### Dashboard Routing
+
+- client/src/App.tsx:34
+  - `import MemberDashboard from '@/pages/MemberDashboard';`
+- client/src/App.tsx:35
+  - `import InvitationAcceptancePage from '@/pages/dashboard/InvitationAcceptancePage';`
+- client/src/App.tsx:41
+  - `import HubDashboard from "@/pages/HubDashboard";`
+- client/src/App.tsx:50
+  - `const Dashboard = lazy(() => import('@/pages/Dashboard'));`
+- client/src/App.tsx:51
+  - `const HubAdminDashboard = lazy(() => import('@/pages/HubAdminDashboard'));`
+- client/src/App.tsx:148
+  - `<Route path="/admin" component={Dashboard} />`
+- client/src/App.tsx:149
+  - `<Route path="/dashboard" component={HubDashboard} />`
+- client/src/App.tsx:158
+  - `<Route path="/hub/dashboard" component={MemberHub} />`
+- client/src/App.tsx:160
+  - `path="/dashboard/invitations/:invitationId"`
+- client/src/App.tsx:163
+  - `<Route path="/hub/accept-invitation" component={HubDashboard} />`
+- client/src/App.tsx:164
+  - `<Route path="/hub/member" component={HubDashboard} />`
+- client/src/App.tsx:184
+  - `<Route path="/hub/admin" component={HubAdminDashboard} />`
+- client/src/components/admin/LandingPagesManagement.tsx:177
+  - `Each landing page includes a contact form that creates enquiries in the dashboard`
+- client/src/components/dashboard/InvitationAcceptanceSection.tsx:4
+  - `// Mounts inside HubDashboard for entryState === "invited_pending_acceptance".`
+- client/src/components/dashboard/InvitationAcceptanceSection.tsx:11
+  - `// - No routing — HubDashboard controls state transition after acceptance`
+- client/src/components/dashboard/InvitationAcceptanceSection.tsx:20
+  - `// - pendingInvitationId: string — passed from HubDashboard state`
+- client/src/components/dashboard/InvitationAcceptanceSection.tsx:21
+  - `// - onAccepted: () => void — signals HubDashboard to transition to member state`
+- client/src/components/dashboard/mockData.ts:1
+  - `export const dashboardMockData: any = {`
+- client/src/components/dashboard/stubs.tsx:1
+  - `export function DashboardHeroCurrentPosition(_: any) { return null; }`
+- client/src/components/dashboard/stubs.tsx:2
+  - `export function DashboardTopBar(_: any) { return null; }`
+- client/src/components/dashboard/types.ts:1
+  - `export type DashboardEntryState =`
+- client/src/lib/auth/RuntimeNavigationPolicy.ts:23
+  - `return "/hub/dashboard";`
+- client/src/lib/auth/RuntimeNavigationPolicy.ts:35
+  - `return "/hub/dashboard";`
+- client/src/lib/lambsbookTutoringContent.ts:55
+  - `memberPath: "/hub/dashboard",`
+- client/src/pages/AdminGovernance.tsx:186
+  - `<Link href="/hub/dashboard">`
+- client/src/pages/AdminGovernance.tsx:187
+  - `<Button variant="outline" data-testid="button-back-dashboard">`
+- client/src/pages/AdminGovernance.tsx:189
+  - `Back to Dashboard`
+- client/src/pages/AdminGovernance.tsx:200
+  - `<Link href="/hub/dashboard">`
+- client/src/pages/AdminRevenueConsole.tsx:161
+  - `<Button variant="ghost" size="icon" onClick={() => setLocation("/dashboard")} data-testid="button-back">`
+- client/src/pages/Dashboard.tsx:4
+  - `LayoutDashboard, Users, Briefcase, MessageSquare, Settings,`
+- client/src/pages/Dashboard.tsx:45
+  - `type DashboardStats = {`
+- client/src/pages/Dashboard.tsx:72
+  - `export default function Dashboard() {`
+- client/src/pages/Dashboard.tsx:81
+  - `const { data: stats, isLoading: statsLoading } = useQuery<DashboardStats>({`
+- client/src/pages/Dashboard.tsx:82
+  - `queryKey: ['/api/dashboard/stats'],`
+- client/src/pages/Dashboard.tsx:120
+  - `queryClient.invalidateQueries({ queryKey: ['/api/dashboard/stats'] });`
+- client/src/pages/Dashboard.tsx:153
+  - `{ id: 'overview', label: 'Overview', icon: LayoutDashboard, section: 'main' },`
+- client/src/pages/Dashboard.tsx:172
+  - `<p className="text-xs text-muted-foreground">Admin Dashboard</p>`
+- client/src/pages/Dashboard.tsx:812
+  - `<p className="text-muted-foreground">Connect your dashboard with external services</p>`
+- client/src/pages/Dashboard.tsx:1138
+  - `<p className="text-muted-foreground">Manage your dashboard settings</p>`
+- client/src/pages/HubAdminDashboard.tsx:74
+  - `export default function HubAdminDashboard() {`
+- client/src/pages/HubAdminDashboard.tsx:221
+  - `<h1 className="text-3xl font-bold" data-testid="text-page-title">Hub Admin Dashboard</h1>`
+- client/src/pages/HubAuthCallback.tsx:203
+  - `Redirecting you to your dashboard...`
+- client/src/pages/HubDashboard.tsx:4
+  - `DashboardHeroCurrentPosition,`
+- client/src/pages/HubDashboard.tsx:5
+  - `DashboardTopBar,`
+- client/src/pages/HubDashboard.tsx:20
+  - `} from "@/components/dashboard/stubs";`
+- client/src/pages/HubDashboard.tsx:21
+  - `import { InvitationAcceptanceSection } from "@/components/dashboard/InvitationAcceptanceSection";`
+- client/src/pages/HubDashboard.tsx:22
+  - `import { dashboardMockData, groupPipelineByStage } from "@/components/dashboard/mockData";`
+- client/src/pages/HubDashboard.tsx:25
+  - `DashboardEntryState,`
+- client/src/pages/HubDashboard.tsx:31
+  - `} from "@/components/dashboard/types";`
+- client/src/pages/HubDashboard.tsx:43
+  - `export default function HubDashboard() {`
+- client/src/pages/HubDashboard.tsx:45
+  - `const [entryState, setEntryState] = useState<DashboardEntryState>("loading");`
+- client/src/pages/HubDashboard.tsx:51
+  - `const [pipelineItems, setPipelineItems] = useState<PipelineItem[]>(dashboardMockData.pipelineItems);`
+- client/src/pages/HubDashboard.tsx:104
+  - `setErrorMessage("Unable to load dashboard state.");`
+- client/src/pages/HubDashboard.tsx:128
+  - `setErrorMessage("Unable to load dashboard state.");`
+- client/src/pages/HubDashboard.tsx:168
+  - `"As a cooperative member, you can take part in the available dashboard actions in this view.",`
+- client/src/pages/HubDashboard.tsx:183
+  - `helper: "Local ideas added during this dashboard session.",`
+- client/src/pages/HubDashboard.tsx:192
+  - `value: dashboardMockData.contributions.refinementsMade,`
+- client/src/pages/HubDashboard.tsx:202
+  - `const combinedActivity = [...localActivity, ...dashboardMockData.cooperativeActivity];`
+- client/src/pages/HubDashboard.tsx:366
+  - `return <p className="text-sm text-slate-400">Preparing your dashboard…</p>;`
+- client/src/pages/HubDashboard.tsx:384
+  - `<DashboardHeroCurrentPosition`
+- client/src/pages/HubDashboard.tsx:385
+  - `title={dashboardMockData.heroTitle}`
+- client/src/pages/HubDashboard.tsx:386
+  - `description={dashboardMockData.heroDescription}`
+- client/src/pages/HubDashboard.tsx:401
+  - `return <p className="text-sm text-red-400">{errorMessage ?? "We could not prepare your dashboard right now."}</p>;`
+- client/src/pages/HubDashboard.tsx:405
+  - `return <p className="text-sm text-red-400">Dashboard state is not renderable.</p>;`
+- client/src/pages/HubDashboard.tsx:414
+  - `<DashboardTopBar onOpenSubmitIdea={() => setIsSubmitIdeaOpen(true)} />`
+- client/src/pages/HubDashboard.tsx:449
+  - `<DashboardHeroCurrentPosition`
+- client/src/pages/HubDashboard.tsx:450
+  - `title={dashboardMockData.heroTitle}`
+- client/src/pages/HubDashboard.tsx:451
+  - `description={dashboardMockData.heroDescription}`
+- client/src/pages/HubDashboard.tsx:491
+  - `You can explore the dashboard and share a local idea here. Other cooperative actions will become available once you are a member.`
+- client/src/pages/HubDashboard.tsx:502
+  - `<ProgramsSection programs={dashboardMockData.programs} />`
+- client/src/pages/HubDashboard.tsx:526
+  - `<RelationshipTrustSection relationshipContext={dashboardMockData.relationshipContext} />`
+- client/src/pages/LambsbookTutoring.tsx:47
+  - `navigate('/hub/dashboard');`
+- client/src/pages/MemberDashboard.tsx:14
+  - `export default function MemberDashboard() {`
+- client/src/pages/MemberDashboard.tsx:27
+  - `console.error("[MemberDashboard] member/me request failed:", err);`
+- client/src/pages/MemberDashboard.tsx:33
+  - `console.error("[MemberDashboard] member/me unexpected status:", meRes.status);`
+- client/src/pages/MemberDashboard.tsx:42
+  - `console.error("[MemberDashboard] pending-invitation request failed:", err);`
+- client/src/pages/MemberDashboard.tsx:48
+  - `console.error("[MemberDashboard] pending-invitation unexpected status:", invRes.status);`
+- client/src/pages/MemberHub.tsx:224
+  - `const isDashboardLoading =`
+- client/src/pages/MemberHub.tsx:327
+  - `<p className="text-muted-foreground mb-6">Please sign in to access your member dashboard.</p>`
+- client/src/pages/MemberHub.tsx:342
+  - `if (isDashboardLoading) {`
+- client/src/pages/MemberHub.tsx:348
+  - `Preparing your operational member dashboard...`
+- client/src/pages/MemberHub.tsx:368
+  - `<AlertTitle>Dashboard unavailable</AlertTitle>`
+- client/src/pages/MemberHub.tsx:370
+  - `Some operational dashboard data could not be loaded.`
+- client/src/pages/MemberHub.tsx:382
+  - `<h1 className="text-3xl font-bold" data-testid="text-page-title">Member Dashboard</h1>`
+- client/src/pages/MemberHub.tsx:855
+  - `<a href="/hub/dashboard#pipeline" className="block border rounded-lg p-3">`
+- client/src/pages/dashboard/InvitationAcceptancePage.tsx:23
+  - `window.location.assign("/hub/dashboard");`
+- server/routes.ts:60
+  - `app.get("/api/dashboard/stats", async (req: Request, res: Response) => {`
+- server/routes.ts:62
+  - `const stats = await storage.getDashboardStats();`
+- server/routes.ts:65
+  - `console.error("Dashboard stats error:", error);`
+- server/routes.ts:66
+  - `res.status(500).json({ error: "Failed to fetch dashboard stats" });`
+- server/services/integrations.ts:165
+  - `'Sync status updates back to dashboard',`
+- server/services/notifications.ts:139
+  - `message: `New enquiry received:\n\nName: ${enquiry.name}\nEmail: ${enquiry.email}\nInquiry Type: ${enquiry.inquiryType}\nCountry of Interest: ${enquiry.countryOfInterest || "Not specified"}\n\nPlease log in to the dashboard to view full details and follow up.`,`
+- server/services/notifications.ts:160
+  - `message: `You have been assigned to handle the ${enquiry.inquiryType} enquiry from ${enquiry.name}.\n\nPlease follow up within 24 hours.\n\nLog in to the dashboard to view the full enquiry details and manage your follow-ups.`,`
+- server/services/notifications.ts:180
+  - `message: `This is a reminder to follow up on the ${enquiry.inquiryType} enquiry from ${enquiry.name}.\n\nLog in to the dashboard to view the enquiry and update the status.`,`
+- server/storage.ts:72
+  - `getDashboardStats(): Promise<{`
+- server/storage.ts:355
+  - `async getDashboardStats(): Promise<{`
+- src/App.tsx:5
+  - `import Dashboard from "./pages/Dashboard";`
+- src/App.tsx:16
+  - `<Route path="/" element={<Dashboard />} />`
+- src/pages/Dashboard.tsx:5
+  - `export default function Dashboard() {`
+- web/src/app/(protected)/dashboard/page.tsx:7
+  - `import { DashboardHeroCurrentPosition } from "@/components/dashboard/DashboardHeroCurrentPosition";`
+- web/src/app/(protected)/dashboard/page.tsx:8
+  - `import { DashboardTopBar } from "@/components/dashboard/DashboardTopBar";`
+- web/src/app/(protected)/dashboard/page.tsx:9
+  - `import { IdeaPipelineSection } from "@/components/dashboard/IdeaPipelineSection";`
+- web/src/app/(protected)/dashboard/page.tsx:10
+  - `import { MyContributionsSection } from "@/components/dashboard/MyContributionsSection";`
+- web/src/app/(protected)/dashboard/page.tsx:11
+  - `import { CooperativeActivitySection } from "@/components/dashboard/CooperativeActivitySection";`
+- web/src/app/(protected)/dashboard/page.tsx:12
+  - `import { ProgramsSection } from "@/components/dashboard/ProgramsSection";`
+- web/src/app/(protected)/dashboard/page.tsx:13
+  - `import { RelationshipTrustSection } from "@/components/dashboard/RelationshipTrustSection";`
+- web/src/app/(protected)/dashboard/page.tsx:17
+  - `import { PipelineDetailPanel } from "@/components/dashboard/PipelineDetailPanel";`
+- web/src/app/(protected)/dashboard/page.tsx:18
+  - `import { SubmitIdeaModal } from "@/components/dashboard/SubmitIdeaModal";`
+- web/src/app/(protected)/dashboard/page.tsx:19
+  - `import { LearningHistorySection } from "@/components/dashboard/LearningHistorySection";`
+- web/src/app/(protected)/dashboard/page.tsx:20
+  - `import { IELTSSection } from "@/components/dashboard/IELTSSection";`
+- web/src/app/(protected)/dashboard/page.tsx:21
+  - `import { MultilingualSection } from "@/components/dashboard/MultilingualSection";`
+- web/src/app/(protected)/dashboard/page.tsx:22
+  - `import { InvitationAcceptanceSection } from "@/components/dashboard/InvitationAcceptanceSection";`
+- web/src/app/(protected)/dashboard/page.tsx:23
+  - `import { groupPipelineByStage } from "@/components/dashboard/mockData";`
+- web/src/app/(protected)/dashboard/page.tsx:24
+  - `import { getDashboardData } from "@/lib/dashboard/dashboardAdapter";`
+- web/src/app/(protected)/dashboard/page.tsx:27
+  - `DashboardEntryState,`
+- web/src/app/(protected)/dashboard/page.tsx:33
+  - `} from "@/components/dashboard/types";`
+- web/src/app/(protected)/dashboard/page.tsx:45
+  - `export default function DashboardPage() {`
+- web/src/app/(protected)/dashboard/page.tsx:47
+  - `const dashboardData = getDashboardData();`
+- web/src/app/(protected)/dashboard/page.tsx:50
+  - `const [entryState, setEntryState] = useState<DashboardEntryState>("loading");`
+- web/src/app/(protected)/dashboard/page.tsx:56
+  - `const [pipelineItems, setPipelineItems] = useState<PipelineItem[]>(dashboardData.pipelineItems);`
+- web/src/app/(protected)/dashboard/page.tsx:109
+  - `setErrorMessage("Unable to load dashboard state.");`
+- web/src/app/(protected)/dashboard/page.tsx:133
+  - `setErrorMessage("Unable to load dashboard state.");`
+- web/src/app/(protected)/dashboard/page.tsx:175
+  - `"As a cooperative member, you can take part in the available dashboard actions in this view.",`
+- web/src/app/(protected)/dashboard/page.tsx:190
+  - `helper: "Local ideas added during this dashboard session.",`
+- web/src/app/(protected)/dashboard/page.tsx:199
+  - `value: dashboardData.contributions.refinementsMade,`
+- web/src/app/(protected)/dashboard/page.tsx:209
+  - `const combinedActivity = [...localActivity, ...dashboardData.cooperativeActivity];`
+- web/src/app/(protected)/dashboard/page.tsx:373
+  - `return <p className="text-sm text-slate-400">Preparing your dashboard…</p>;`
+- web/src/app/(protected)/dashboard/page.tsx:391
+  - `<DashboardHeroCurrentPosition`
+- web/src/app/(protected)/dashboard/page.tsx:392
+  - `title={dashboardData.heroTitle}`
+- web/src/app/(protected)/dashboard/page.tsx:393
+  - `description={dashboardData.heroDescription}`
+- web/src/app/(protected)/dashboard/page.tsx:408
+  - `return <p className="text-sm text-red-400">{errorMessage ?? "We could not prepare your dashboard right now."}</p>;`
+- web/src/app/(protected)/dashboard/page.tsx:412
+  - `return <p className="text-sm text-red-400">Dashboard state is not renderable.</p>;`
+- web/src/app/(protected)/dashboard/page.tsx:421
+  - `<DashboardTopBar onOpenSubmitIdea={() => setIsSubmitIdeaOpen(true)} />`
+- web/src/app/(protected)/dashboard/page.tsx:456
+  - `<DashboardHeroCurrentPosition`
+- web/src/app/(protected)/dashboard/page.tsx:457
+  - `title={dashboardData.heroTitle}`
+- web/src/app/(protected)/dashboard/page.tsx:458
+  - `description={dashboardData.heroDescription}`
+- web/src/app/(protected)/dashboard/page.tsx:498
+  - `You can explore the dashboard and share a local idea here. Other cooperative actions will become available once you are a member.`
+- web/src/app/(protected)/dashboard/page.tsx:509
+  - `<ProgramsSection programs={dashboardData.programs} />`
+- web/src/app/(protected)/dashboard/page.tsx:533
+  - `<RelationshipTrustSection relationshipContext={dashboardData.relationshipContext} />`
+- web/src/app/(public)/auth/sign-in/page.tsx:29
+  - `router.push("/dashboard");`
+- web/src/components/activity/ActivityFeed.tsx:16
+  - `summary: "A new idea entered the visible cooperative workflow in this dashboard view.",`
+- web/src/components/activity/ActivityFeed.tsx:30
+  - `summary: "Support-related activity appears here as passive context for the dashboard experience.",`
+- web/src/components/activity/ActivityFeed.tsx:46
+  - `A read-only timeline that provides ongoing context without interrupting the dashboard experience.`
+- web/src/components/dashboard/CooperativeActivitySection.tsx:1
+  - `import type { CooperativeActivityItem } from "@/components/dashboard/types";`
+- web/src/components/dashboard/DashboardHeroCurrentPosition.tsx:1
+  - `import type { HeroFeedback } from "@/components/dashboard/types";`
+- web/src/components/dashboard/DashboardHeroCurrentPosition.tsx:3
+  - `type DashboardHeroCurrentPositionProps = {`
+- web/src/components/dashboard/DashboardHeroCurrentPosition.tsx:10
+  - `export function DashboardHeroCurrentPosition({`
+- web/src/components/dashboard/DashboardHeroCurrentPosition.tsx:15
+  - `}: DashboardHeroCurrentPositionProps) {`
+- web/src/components/dashboard/DashboardTopBar.tsx:1
+  - `type DashboardTopBarProps = {`
+- web/src/components/dashboard/DashboardTopBar.tsx:5
+  - `export function DashboardTopBar({ onOpenSubmitIdea }: DashboardTopBarProps) {`
+- web/src/components/dashboard/DashboardTopBar.tsx:13
+  - `<h1 className="mt-1 text-2xl font-semibold text-white">Dashboard</h1>`
+- web/src/components/dashboard/DashboardTopBar.tsx:18
+  - `The dashboard follows one cooperative workflow: ideas mature through discussion,`
+- web/src/components/dashboard/IELTSSection.tsx:3
+  - `// EDUCATIONAL RUNTIME — dashboard-native, additive-only.`
+- web/src/components/dashboard/IELTSSection.tsx:11
+  - `// - No imports from @/components/dashboard/types`
+- web/src/components/dashboard/IELTSSection.tsx:12
+  - `// - No imports from @/components/dashboard/mockData`
+- web/src/components/dashboard/IELTSSection.tsx:16
+  - `// - isMember boolean is the sole gating prop — already derived in DashboardPage`
+- web/src/components/dashboard/IdeaPipelineSection.tsx:4
+  - `} from "@/components/dashboard/types";`
+- web/src/components/dashboard/IdeaPipelineSection.tsx:9
+  - `} from "@/components/dashboard/types";`
+- web/src/components/dashboard/InvitationAcceptanceSection.tsx:5
+  - `// Renders an actionable invitation acceptance surface inside DashboardPage`
+- web/src/components/dashboard/InvitationAcceptanceSection.tsx:13
+  - `// - No routing — DashboardPage controls navigation after acceptance`
+- web/src/components/dashboard/InvitationAcceptanceSection.tsx:22
+  - `// - pendingInvitationId: string — already held in DashboardPage state; passed directly`
+- web/src/components/dashboard/InvitationAcceptanceSection.tsx:23
+  - `// - onAccepted: () => void — signals DashboardPage to re-resolve entryState`
+- web/src/components/dashboard/LearningHistorySection.tsx:3
+  - `// EDUCATIONAL RUNTIME — dashboard-native, additive-only.`
+- web/src/components/dashboard/LearningHistorySection.tsx:11
+  - `// - No imports from @/components/dashboard/types`
+- web/src/components/dashboard/LearningHistorySection.tsx:12
+  - `// - No imports from @/components/dashboard/mockData`
+- web/src/components/dashboard/MultilingualSection.tsx:3
+  - `// EDUCATIONAL RUNTIME — dashboard-native, additive-only.`
+- web/src/components/dashboard/MultilingualSection.tsx:25
+  - `// - No imports from @/components/dashboard/types`
+- web/src/components/dashboard/MultilingualSection.tsx:26
+  - `// - No imports from @/components/dashboard/mockData`
+- web/src/components/dashboard/MultilingualSection.tsx:30
+  - `// - isMember boolean is the sole gating prop — already derived in DashboardPage`
+- web/src/components/dashboard/MyContributionsSection.tsx:29
+  - `No local contributions yet. Actions taken in this dashboard will appear here immediately.`
+- web/src/components/dashboard/PipelineDetailPanel.tsx:4
+  - `} from "@/components/dashboard/types";`
+- web/src/components/dashboard/PipelineDetailPanel.tsx:5
+  - `import type { InteractionCapability, LocalFeedback, PipelineItem } from "@/components/dashboard/types";`
+- web/src/components/dashboard/ProgramsSection.tsx:1
+  - `import type { FormalizedProgram } from "@/components/dashboard/types";`
+- web/src/components/dashboard/RelationshipTrustSection.tsx:1
+  - `import type { RelationshipContext } from "@/components/dashboard/types";`
+- web/src/components/dashboard/RelationshipTrustSection.tsx:31
+  - `{relationshipContext.invitationContextLabel ?? "Invitation acceptance remains separate from dashboard participation."}`
+- web/src/components/dashboard/SubmitIdeaModal.tsx:24
+  - `const [authorLabel, setAuthorLabel] = useState("Shared locally in dashboard");`
+- web/src/components/dashboard/SubmitIdeaModal.tsx:30
+  - `setAuthorLabel("Shared locally in dashboard");`
+- web/src/components/dashboard/SubmitIdeaModal.tsx:88
+  - `placeholder="Shared locally in dashboard"`
+- web/src/components/dashboard/SubmitIdeaModal.tsx:108
+  - `authorLabel: authorLabel.trim() || "Shared locally in dashboard",`
+- web/src/components/dashboard/mockData.ts:1
+  - `import type { DashboardMockData } from "@/components/dashboard/types";`
+- web/src/components/dashboard/mockData.ts:3
+  - `export const dashboardMockData: DashboardMockData = {`
+- web/src/components/dashboard/mockData.ts:129
+  - `"This dashboard presents the cooperative workflow without referral, reward, or incentive framing.",`
+- web/src/components/dashboard/types.ts:1
+  - `export type DashboardEntryState =`
+- web/src/components/dashboard/types.ts:59
+  - `export type DashboardMockData = {`
+- web/src/components/notifications/NotificationBell.tsx:10
+  - `message: "Your dashboard experience is ready.",`
+- web/src/lib/dashboard/dashboardAdapter.ts:1
+  - `import { dashboardMockData } from "@/components/dashboard/mockData";`
+- web/src/lib/dashboard/dashboardAdapter.ts:3
+  - `export type DashboardData = typeof dashboardMockData;`
+- web/src/lib/dashboard/dashboardAdapter.ts:6
+  - `* Canonical Dashboard Adapter`
+- web/src/lib/dashboard/dashboardAdapter.ts:10
+  - `* This adapter is the single entry point for dashboard data.`
+- web/src/lib/dashboard/dashboardAdapter.ts:13
+  - `*     dashboardMockData`
+- web/src/lib/dashboard/dashboardAdapter.ts:18
+  - `export function getDashboardData(): DashboardData {`
+- web/src/lib/dashboard/dashboardAdapter.ts:19
+  - `return dashboardMockData;`
+- web/src/lib/learning/types.ts:2
+  - `// ISOLATED NAMESPACE — do not import from @/components/dashboard/types.`
+
+### Member Context
+
+- client/src/App.tsx:52
+  - `const MemberHub = lazy(() => import('@/pages/MemberHub'));`
+- client/src/App.tsx:158
+  - `<Route path="/hub/dashboard" component={MemberHub} />`
+- client/src/pages/MemberHub.tsx:181
+  - `export default function MemberHub() {`
+- client/src/pages/MemberHub.tsx:355
+  - `console.log("MEMBERHUB_READINESS", {`
+- src/components/RequireAuth.tsx:2
+  - `import { useMemberContext } from "@/hooks/useMemberContext"`
+- src/components/RequireAuth.tsx:9
+  - `const { loading, data } = useMemberContext()`
+- src/hooks/useMemberContext.ts:2
+  - `import { getMemberContext, type MemberContext } from "@/lib/memberClient"`
+- src/hooks/useMemberContext.ts:4
+  - `interface UseMemberContextState {`
+- src/hooks/useMemberContext.ts:6
+  - `data: MemberContext`
+- src/hooks/useMemberContext.ts:9
+  - `const DEFAULT_STATE: UseMemberContextState = {`
+- src/hooks/useMemberContext.ts:19
+  - `export function useMemberContext(): UseMemberContextState {`
+- src/hooks/useMemberContext.ts:20
+  - `const [state, setState] = useState<UseMemberContextState>(DEFAULT_STATE)`
+- src/hooks/useMemberContext.ts:29
+  - `const result = await getMemberContext()`
+- src/lib/memberClient.ts:5
+  - `export interface MemberContext {`
+- src/lib/memberClient.ts:40
+  - `export async function getMemberContext(): Promise<MemberContext> {`
+
+### attachUserContext
+
+- server/middleware/attachUserContext.ts:5
+  - `export async function attachUserContext(req: Request, res: Response, next: NextFunction) {`
+- server/middleware/attachUserContext.ts:25
+  - `console.error("[attachUserContext] auth.getUser failed", {`
+- server/routes.ts:42
+  - `import { attachUserContext } from "./middleware/attachUserContext";`
+- server/routes.ts:1398
+  - `app.post("/api/hub/member/accept-invitation", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes.ts:1527
+  - `app.post("/api/hub/member/issue-invitation", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes.ts:1562
+  - `app.get("/api/hub/member/me", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes.ts:1613
+  - `app.get("/api/hub/member/earnings", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes.ts:1638
+  - `app.get("/api/hub/member/invitees", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes.ts:1650
+  - `app.get("/api/hub/member/invitor", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes.ts:1662
+  - `app.get("/api/hub/member/referrals", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes/admin.ts:5
+  - `import { attachUserContext } from "../middleware/attachUserContext";`
+- server/routes/admin.ts:472
+  - `router.post('/enrollment-payment', attachUserContext, async (req: Request, res: Response) => {`
+- server/routes/devTestAuth.ts:4
+  - `import { attachUserContext } from '../middleware/attachUserContext';`
+- server/routes/devTestAuth.ts:8
+  - `router.get('/test-auth', attachUserContext, async (req: Request, res: Response) => {`
+- server/routes/member.ts:3
+  - `import { attachUserContext } from "../middleware/attachUserContext";`
+- server/routes/member.ts:16
+  - `const attachUserContextSafe = (req: Request, res: Response, next: NextFunction) => {`
+- server/routes/member.ts:23
+  - `return attachUserContext(req as any, res as any, next);`
+- server/routes/member.ts:29
+  - `router.get("/me", attachUserContextSafe, async (req: Request, res: Response) => {`
+- server/routes/member.ts:76
+  - `router.get("/pending-invitation", attachUserContextSafe, async (req: Request, res: Response) => {`
+- server/routes/member.ts:142
+  - `router.post("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {`
+- server/routes/member.ts:259
+  - `attachUserContext,`
+- server/routes/member.ts:365
+  - `router.post("/accept-invitation", attachUserContextSafe, async (req: Request, res: Response) => {`
+- server/routes/member.ts:475
+  - `attachUserContextSafe,`
+- server/routes/member.ts:528
+  - `attachUserContextSafe,`
+- server/routes/member.ts:573
+  - `attachUserContextSafe,`
+
+### member/me
+
+- client/src/pages/HubDashboard.tsx:74
+  - `fetch(`${HUB_API_BASE}/api/member/me`, {`
+- client/src/pages/MemberDashboard.tsx:25
+  - `meRes = await apiRequest("GET", "/api/member/me");`
+- client/src/pages/MemberDashboard.tsx:27
+  - `console.error("[MemberDashboard] member/me request failed:", err);`
+- client/src/pages/MemberDashboard.tsx:33
+  - `console.error("[MemberDashboard] member/me unexpected status:", meRes.status);`
+- client/src/pages/MemberHub.tsx:195
+  - `queryKey: ["/api/member/me"],`
+- client/src/pages/MemberHub.tsx:196
+  - `queryFn: () => fetchWithAuth("/api/member/me"),`
+- client/src/pages/MemberHub.tsx:308
+  - `queryClient.invalidateQueries({ queryKey: ["/api/member/me"] });`
+- server/routes.ts:1562
+  - `app.get("/api/hub/member/me", attachUserContext, async (req: Request, res: Response) => {`
+- server/routes/member.ts:27
+  - `* GET /api/member/me`
+- web/src/app/(protected)/dashboard/page.tsx:79
+  - `fetch(`${HUB_API_BASE}/api/member/me`, {`
+
+### req.user
+
+- server/lib/getUserEmailFromToken.ts:5
+  - `* Uses JWT from req.user.token.`
+- server/lib/getUserEmailFromToken.ts:6
+  - `* Does NOT mutate req.user.`
+- server/middleware/attachUserContext.ts:45
+  - `authReq.user = {`
+- server/middleware/requirePlatformAdmin.ts:12
+  - `const token = authReq.user?.token?.trim();`
+- server/middleware/requirePlatformAdmin.ts:24
+  - `.eq("user_id", authReq.user?.id)`
+- server/middleware/requireSBUAccess.ts:17
+  - `if (!sbuReq.user?.id || !sbuReq.user?.token) {`
+- server/middleware/requireSBUAccess.ts:27
+  - `const token = sbuReq.user!.token!.trim()`
+- server/middleware/requireSBUAccess.ts:43
+  - `.eq('user_id', sbuReq.user!.id)`
+- server/middleware/requireSBURole.ts:22
+  - `const userId = sbuReq.user?.id;`
+- server/middleware/requireSuperAdmin.ts:6
+  - `const user = authReq.user;`
+- server/routes.ts:1401
+  - `const user = authReq.user;`
+- server/routes.ts:1530
+  - `const user = authReq.user;`
+- server/routes.ts:1565
+  - `const user = authReq.user;`
+- server/routes.ts:1616
+  - `const user = authReq.user;`
+- server/routes/admin.ts:475
+  - `const user = authReq.user;`
+- server/routes/devTestAuth.ts:14
+  - `const user = authReq.user;`
+- server/routes/financialRoutes.ts:15
+  - `const token = sbuReq.user?.token?.trim();`
+- server/routes/financialRoutes.ts:50
+  - `const token = sbuReq.user?.token?.trim();`
+- server/routes/governanceRoute.ts:17
+  - `const token = sbuReq.user?.token?.trim();`
+- server/routes/governanceRoute.ts:63
+  - `const token = sbuReq.user?.token?.trim();`
+- server/routes/governanceRoute.ts:107
+  - `const token = sbuReq.user?.token?.trim();`
+- server/routes/member.ts:32
+  - `const user = authReq.user;`
+- server/routes/member.ts:79
+  - `const user = authReq.user;`
+- server/routes/member.ts:145
+  - `const user = authReq.user;`
+- server/routes/member.ts:263
+  - `const user = authReq.user;`
+- server/routes/member.ts:368
+  - `const user = authReq.user;`
+- server/routes/member.ts:479
+  - `const user = authReq.user;`
+- server/routes/member.ts:532
+  - `const user = authReq.user;`
+- server/routes/member.ts:577
+  - `const user = authReq.user;`
+
+## Verified Divergence
+
+Pending Founder review.

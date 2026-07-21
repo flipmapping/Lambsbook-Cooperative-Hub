@@ -1,0 +1,146 @@
+{
+  "builder": "execution/builders/build_claude_package.py",
+  "sha256": "a9a78b5a76decd0393a73376fcb28ccec10a13ea9b18527b078592bc72b78435",
+  "mandatory_fields": [
+    "Implementation Authority",
+    "Repository",
+    "Execution Derivation",
+    "Production Surface",
+    "Implementation Context Manifest"
+  ],
+  "functions": [
+    {
+      "name": "_banner",
+      "start_line": 123,
+      "end_line": 126
+    },
+    {
+      "name": "fail",
+      "start_line": 129,
+      "end_line": 132
+    },
+    {
+      "name": "_extract_field",
+      "start_line": 137,
+      "end_line": 146
+    },
+    {
+      "name": "extract_cib_fields",
+      "start_line": 149,
+      "end_line": 154
+    },
+    {
+      "name": "validate_mandatory_fields",
+      "start_line": 157,
+      "end_line": 180
+    },
+    {
+      "name": "get_optional",
+      "start_line": 183,
+      "end_line": 186
+    },
+    {
+      "name": "locate_artifacts",
+      "start_line": 191,
+      "end_line": 224
+    },
+    {
+      "name": "verify_artifact_existence",
+      "start_line": 227,
+      "end_line": 238
+    },
+    {
+      "name": "verify_authority_consistency",
+      "start_line": 241,
+      "end_line": 279
+    },
+    {
+      "name": "emit_cib_metadata",
+      "start_line": 284,
+      "end_line": 290
+    },
+    {
+      "name": "emit_repository_truth",
+      "start_line": 293,
+      "end_line": 306
+    },
+    {
+      "name": "_package_name",
+      "start_line": 311,
+      "end_line": 313
+    },
+    {
+      "name": "_resolve_package_root",
+      "start_line": 316,
+      "end_line": 323
+    },
+    {
+      "name": "_create_package_structure",
+      "start_line": 326,
+      "end_line": 330
+    },
+    {
+      "name": "_copy_artifact",
+      "start_line": 333,
+      "end_line": 342
+    },
+    {
+      "name": "_assemble_artifacts",
+      "start_line": 345,
+      "end_line": 462
+    },
+    {
+      "name": "_generate_start_here",
+      "start_line": 465,
+      "end_line": 521
+    },
+    {
+      "name": "_generate_manifest",
+      "start_line": 524,
+      "end_line": 574
+    },
+    {
+      "name": "_verify_package",
+      "start_line": 577,
+      "end_line": 597
+    },
+    {
+      "name": "emit_package_summary",
+      "start_line": 600,
+      "end_line": 613
+    },
+    {
+      "name": "_archive_package",
+      "start_line": 619,
+      "end_line": 634
+    },
+    {
+      "name": "_sha256_file",
+      "start_line": 637,
+      "end_line": 643
+    },
+    {
+      "name": "_write_sha256",
+      "start_line": 646,
+      "end_line": 654
+    },
+    {
+      "name": "_verify_archive",
+      "start_line": 657,
+      "end_line": 663
+    },
+    {
+      "name": "emit_finalization_summary",
+      "start_line": 666,
+      "end_line": 678
+    },
+    {
+      "name": "main",
+      "start_line": 683,
+      "end_line": 867
+    }
+  ],
+  "builder_contract": {
+    "requires_execution_derivation": true
+  }
+}

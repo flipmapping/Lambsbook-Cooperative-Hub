@@ -228,11 +228,11 @@ const user = authReq.user;
         note: note ?? null
       });
 
-    const inviteUrl =
-      `https://onboarding-gateway.replit.app/auth/sign-up?invite=${token}`;
-
     return res.status(201).json({
-      inviteUrl
+      invitation: {
+        id: data.id,
+        status: data.status
+      }
     });
 
   } catch (err) {

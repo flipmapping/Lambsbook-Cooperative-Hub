@@ -1,0 +1,19 @@
+{
+  "authority": "FAB-APP-REC-INVITE-002Q",
+  "execution": "APP-REC-INVITE-002",
+  "status": "READY_FOR_BUILDER",
+  "generated": "2026-07-20T08:45:56.796907Z",
+  "mutation_boundary": [
+    "server/services/invitation-delivery.ts",
+    "server/routes/member.ts",
+    "client/src/pages/MemberHub.tsx"
+  ],
+  "deliverables": [
+    "Invitation Delivery Adapter",
+    "InvitationSharePayload",
+    "Route Integration",
+    "Frontend Migration",
+    "Build Verification",
+    "Runtime Verification"
+  ]
+}

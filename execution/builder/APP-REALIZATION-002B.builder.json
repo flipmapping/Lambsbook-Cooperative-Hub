@@ -1,0 +1,22 @@
+{
+  "builder_version": "v1.2",
+  "execution_operating_system": "EOS v2.2",
+  "generated_utc": "2026-07-20T14:09:36.406901+00:00",
+  "repository": "APP-RUNTIME-01",
+  "execution_stream": "APP-REALIZATION-002B",
+  "phase": "Builder Invocation",
+  "governance": {
+    "implementation_authority": {
+      "path": "governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md",
+      "sha256": "8d46d5cf3ad398f70b96b0cef15e27b576150627974655a50bdaae61de9d5fea"
+    },
+    "claude_instruction_brief": {
+      "path": "governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md",
+      "sha256": "9606f0527f0f45f8a763310a8dd22c587e2e934d6807aae2964d54fddf448cf3"
+    },
+    "implementation_context_manifest": {
+      "path": "governance/icm/generated/ICM-APP-REALIZATION-002B.md",
+      "sha256": "8798e28130fb33a866fdcdc40f589a07a9afd87db718c67c4c6e18fe241a3b8f"
+    }
+  }
+}

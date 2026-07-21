@@ -275,40 +275,16 @@ def verify_authority_consistency(
     return violations
 
 def generate_execution_derivation(
-    repo_root: Path,
     output_directory: Path,
-    mandatory: dict[str, str],
-    located: dict[str, Path],
+    implementation_authority: str,
+    change_intent_brief: str,
+    implementation_context_manifest: str,
 ) -> Path:
-    """Generate the canonical Builder-owned Execution Derivation.
-
-    This interface conforms to the Builder runtime model by consuming
-    canonical Builder runtime state rather than decomposed scalar values.
-
-    Runtime integration is performed in the next mutation.
-    """
+    """Materialize the canonical Builder-generated Execution Derivation."""
 
     output_directory.mkdir(parents=True, exist_ok=True)
 
     output_path = output_directory / "EXECUTION-DERIVATION.md"
-
-    implementation_authority = mandatory.get(
-        "Implementation Authority", ""
-    )
-
-    change_intent_brief = mandatory.get(
-        "Change Intent Brief", ""
-    )
-
-    implementation_context_manifest = located.get(
-        "Implementation Context Manifest"
-    )
-
-    icm_value = (
-        str(implementation_context_manifest.relative_to(repo_root))
-        if implementation_context_manifest
-        else ""
-    )
 
     content = f"""# Execution Derivation
 
@@ -322,7 +298,7 @@ Change Intent Brief
 
 Implementation Context Manifest
 -------------------------------
-{icm_value}
+{implementation_context_manifest}
 """
 
     output_path.write_text(content, encoding="utf-8")
@@ -787,20 +763,6 @@ def main() -> None:
 
     located = locate_artifacts(repo_root, mandatory, optional)
     ia_artifact_path = located["Implementation Authority Artifact"]
-
-    generated_ed = generate_execution_derivation(
-        repo_root=repo_root,
-        output_directory=(
-            repo_root
-            / "governance"
-            / "execution-derivation"
-            / "generated"
-        ),
-        mandatory=mandatory,
-        located=located,
-    )
-
-    located["Execution Derivation"] = generated_ed
 
     present, missing = verify_artifact_existence(located)
 

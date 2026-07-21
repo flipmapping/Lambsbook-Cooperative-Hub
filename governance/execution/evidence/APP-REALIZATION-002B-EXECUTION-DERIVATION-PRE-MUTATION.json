@@ -1,0 +1,21 @@
+{
+  "founder_action_block": "FAB-APP-REALIZATION-002S",
+  "generated_utc": "2026-07-20T13:38:03.909641+00:00",
+  "artifacts": [
+    {
+      "path": "governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md",
+      "size": 380,
+      "sha256": "9606f0527f0f45f8a763310a8dd22c587e2e934d6807aae2964d54fddf448cf3"
+    },
+    {
+      "path": "governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md",
+      "size": 271,
+      "sha256": "8d46d5cf3ad398f70b96b0cef15e27b576150627974655a50bdaae61de9d5fea"
+    },
+    {
+      "path": "governance/icm/generated/ICM-APP-REALIZATION-002B.md",
+      "size": 228,
+      "sha256": "8798e28130fb33a866fdcdc40f589a07a9afd87db718c67c4c6e18fe241a3b8f"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "repository": "APP-RUNTIME-01",
+  "builder_version": "v1.2",
+  "governing_authority": "FAB-APP-REC-INVITE-002Q",
+  "implementation_package": "APP-REC-INVITE-002R",
+  "mutation_boundary_locked": true
+}

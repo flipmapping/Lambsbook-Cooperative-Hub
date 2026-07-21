@@ -788,20 +788,6 @@ def main() -> None:
     located = locate_artifacts(repo_root, mandatory, optional)
     ia_artifact_path = located["Implementation Authority Artifact"]
 
-    generated_ed = generate_execution_derivation(
-        repo_root=repo_root,
-        output_directory=(
-            repo_root
-            / "governance"
-            / "execution-derivation"
-            / "generated"
-        ),
-        mandatory=mandatory,
-        located=located,
-    )
-
-    located["Execution Derivation"] = generated_ed
-
     present, missing = verify_artifact_existence(located)
 
     emit_repository_truth(located, present, missing)
