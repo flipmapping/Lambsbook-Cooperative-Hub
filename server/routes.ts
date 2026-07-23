@@ -45,6 +45,9 @@ import type { AuthenticatedRequest } from "./types/requestContext";
 import { createAuthenticatedClient } from "./lib/supabase-member-client";
 import { getSupabaseAdmin } from "./lib/supabase-client";
 import { supabaseDAL } from "./lib";
+import { zaloWebhookHandler } from "./integrations/zalo/webhook";
+import { zaloOAuthCallbackHandler } from "./integrations/zalo/oauth";
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express,
@@ -725,6 +728,21 @@ export async function registerRoutes(
       res.status(500).json({ error: "Failed to save integration config" });
     }
   });
+
+
+  // ============================================================
+  // ZALO OFFICIAL ACCOUNT
+  // ============================================================
+
+  app.post(
+    "/api/integrations/zalo/webhook",
+    zaloWebhookHandler,
+  );
+
+  app.get(
+    "/api/integrations/zalo/oauth/callback",
+    zaloOAuthCallbackHandler,
+  );
 
   app.get("/api/activity-logs", async (req: Request, res: Response) => {
     try {
