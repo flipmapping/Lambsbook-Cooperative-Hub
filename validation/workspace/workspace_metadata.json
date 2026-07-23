@@ -1,0 +1,8 @@
+{
+  "workspace_version": "1.0",
+  "created": "2026-07-22T08:21:22.266399Z",
+  "status": "READY",
+  "purpose": "Canonical reusable validation infrastructure",
+  "interaction_specific": false,
+  "repository_mutation": false
+}

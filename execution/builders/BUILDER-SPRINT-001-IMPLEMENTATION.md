@@ -93,7 +93,7 @@ Verification
 
 python3 -m py_compile execution/builders/build_claude_package.py
 
-python3 execution/builders/build_claude_package.py \
+python3 -m execution.builders.build_claude_package \
 governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md
 
 Expected

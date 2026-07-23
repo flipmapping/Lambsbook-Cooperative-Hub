@@ -1,0 +1,15 @@
+{
+  "registry_version": "1.0",
+  "status": "initial",
+  "created_at": "2026-07-22T10:06:57+00:00",
+  "projection_capabilities": {
+    "PROJ-CAP-GPT-001": {
+      "target_agent": "gpt",
+      "projection_type": "canonical",
+      "schema_version": "1.0",
+      "renderer": "projection_builder",
+      "status": "active",
+      "registered_at": "2026-07-22T10:57:11+00:00"
+    }
+  }
+}

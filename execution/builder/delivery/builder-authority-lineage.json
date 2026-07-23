@@ -1,0 +1,16 @@
+{
+  "status": "MISMATCH",
+  "spec_authorities": [
+    "FAB-APP-003E",
+    "FAB-GE-003",
+    "FAB-GE-004",
+    "GE-RMP-014"
+  ],
+  "cib_authorities": [
+    "EOS-RMP-001E"
+  ],
+  "baseline_authority": [
+    "GE-RMP-014"
+  ],
+  "common": []
+}

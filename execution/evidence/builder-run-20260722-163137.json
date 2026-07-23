@@ -1,0 +1,13 @@
+{
+  "artifact": "EER-INPUT",
+  "run_id": "20260722-163137",
+  "builder": "execution/builders/build_claude_package.py",
+  "cib": "execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md",
+  "repository": "/home/runner/workspace",
+  "started": "2026-07-22T16:31:37+00:00",
+  "completed": "2026-07-22T16:31:37+00:00",
+  "exit_code": 1,
+  "log_file": "/home/runner/workspace/execution/evidence/builder-run-20260722-163137.log",
+  "log_sha256": "992057924084474ce4ef4cab26800347706ece6ccacd99ab3dd45c2e58755742",
+  "status": "FAILED"
+}

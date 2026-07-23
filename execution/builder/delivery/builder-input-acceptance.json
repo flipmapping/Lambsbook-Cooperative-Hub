@@ -1,0 +1,15 @@
+{
+  "cib": "execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md",
+  "authority_ok": true,
+  "sections": {
+    "Implementation Authority": true,
+    "Execution Mode": true,
+    "Purpose": true,
+    "Source Authority": true,
+    "Repository": true,
+    "Production Surface": true,
+    "Builder Instructions": true,
+    "Expected Output": true
+  },
+  "forbidden": []
+}

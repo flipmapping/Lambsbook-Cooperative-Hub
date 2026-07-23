@@ -1,0 +1,100 @@
+{
+  "builder": "execution/builders/build_claude_package.py",
+  "cib_argument": {
+    "line": 739,
+    "keywords": {
+      "help": "Path to Claude Instruction Brief"
+    }
+  },
+  "validation_calls": [
+    {
+      "method": "exists",
+      "line": 254
+    },
+    {
+      "method": "exists",
+      "line": 419
+    },
+    {
+      "method": "exists",
+      "line": 428
+    },
+    {
+      "method": "resolve",
+      "line": 756
+    },
+    {
+      "method": "exists",
+      "line": 230
+    },
+    {
+      "method": "exists",
+      "line": 446
+    },
+    {
+      "method": "exists",
+      "line": 453
+    },
+    {
+      "method": "read_text",
+      "line": 454
+    },
+    {
+      "method": "open",
+      "line": 692
+    },
+    {
+      "method": "resolve",
+      "line": 757
+    },
+    {
+      "method": "exists",
+      "line": 765
+    },
+    {
+      "method": "read_text",
+      "line": 769
+    },
+    {
+      "method": "read_text",
+      "line": 256
+    },
+    {
+      "method": "exists",
+      "line": 353
+    },
+    {
+      "method": "exists",
+      "line": 641
+    },
+    {
+      "method": "exists",
+      "line": 646
+    },
+    {
+      "method": "exists",
+      "line": 663
+    },
+    {
+      "method": "is_file",
+      "line": 683
+    },
+    {
+      "method": "exists",
+      "line": 502
+    },
+    {
+      "method": "exists",
+      "line": 659
+    },
+    {
+      "method": "exists",
+      "line": 660
+    }
+  ],
+  "file_operations": [
+    755,
+    756,
+    757
+  ]
+}

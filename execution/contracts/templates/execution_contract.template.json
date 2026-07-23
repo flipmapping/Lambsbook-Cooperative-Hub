@@ -1,0 +1,19 @@
+{
+  "contract_provenance": {
+    "execution_contract_id": "",
+    "source_fep": "",
+    "derivation": {
+      "version": "",
+      "timestamp": ""
+    }
+  },
+  "mission": "",
+  "authorized_scope": [],
+  "inputs": [],
+  "execution_objectives": [],
+  "constraints": [],
+  "deliverables": [],
+  "acceptance_criteria": [],
+  "reporting_requirements": [],
+  "completion_conditions": []
+}

@@ -1,0 +1,23 @@
+{
+  "authority": "APP-REC-003C",
+  "status": "WAITING_FOR_BUILDER_PACKAGE",
+  "expected_builder": "Builder v1.2",
+  "expected_artifact": "Claude Package (PIC ZIP)",
+  "prepared_at": "2026-07-22T03:28:46.600412Z",
+  "required_contents": [
+    "Implementation Authority",
+    "Constitutional Implementation Brief",
+    "Implementation Context Manifest",
+    "Execution Derivation",
+    "Repository Mutation Plan",
+    "Verification Plan",
+    "Runtime Validation Plan",
+    "Rollback Strategy",
+    "Mutation Boundaries",
+    "Founder Validation Checklist"
+  ],
+  "rollback_anchor": {
+    "commit": "bdb26fd",
+    "memberhub_sha256": "b66d4dbc4357d297040d91d4e6f04dc23ffcf7a6e9f92a4c6a4809fe143db670"
+  }
+}

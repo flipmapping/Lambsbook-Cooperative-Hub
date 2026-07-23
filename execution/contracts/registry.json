@@ -1,0 +1,20 @@
+{
+  "registry": "Execution Contract Registry",
+  "version": "1.0",
+  "status": "INITIALIZED",
+  "created_utc": "2026-07-22T09:42:52.022152+00:00",
+  "governed_by": [
+    "GFF-001",
+    "EXEC-001",
+    "EC-001"
+  ],
+  "repository_mutation": "NONE",
+  "contracts": {
+    "EC-VAL-001": {
+      "status": "canonical",
+      "registered_at": "2026-07-22T10:03:20+00:00",
+      "source_fep": "FEP-VAL-001",
+      "projection_status": "not_projected"
+    }
+  }
+}

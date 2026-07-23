@@ -1,0 +1,208 @@
+[
+  {
+    "path": "BUILDER-SPRINT-001-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": [],
+    "main_lineno": 28
+  },
+  {
+    "path": "EOS-RMP-001A-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": [],
+    "main_lineno": 28
+  },
+  {
+    "path": "EOS-RMP-001B-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": [],
+    "main_lineno": 137
+  },
+  {
+    "path": "EOS-RMP-001B-HF1-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 303
+  },
+  {
+    "path": "EOS-RMP-001C-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 303
+  },
+  {
+    "path": "EOS-RMP-001D-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "--------------------------------------------------"
+    ],
+    "output_dir_flags": [
+      "--output-dir"
+    ],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 534
+  },
+  {
+    "path": "EOS-RMP-001E-Claude-Package/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "--------------------------------------------------"
+    ],
+    "output_dir_flags": [
+      "--output-dir"
+    ],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 606
+  },
+  {
+    "path": "builder_run.py",
+    "has_main": false,
+    "argparse": false,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "-------------------"
+    ],
+    "output_dir_flags": [],
+    "repo_flags": []
+  },
+  {
+    "path": "builders/projection/certify_builder.py",
+    "has_main": true,
+    "argparse": false,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": []
+  },
+  {
+    "path": "builders/projection/run_builder_certification.py",
+    "has_main": true,
+    "argparse": false,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": [],
+    "main_lineno": 20
+  },
+  {
+    "path": "execution/builders/.mutation_backup/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "---",
+      "--------------------------------------------------"
+    ],
+    "output_dir_flags": [
+      "--output-dir"
+    ],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 683
+  },
+  {
+    "path": "execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "---",
+      "-------------------",
+      "------------------------",
+      "-------------------------------",
+      "--------------------------------------------------"
+    ],
+    "output_dir_flags": [
+      "--output-dir"
+    ],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 735
+  },
+  {
+    "path": "execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/build_claude_package.py",
+    "has_main": true,
+    "argparse": true,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "---",
+      "--------------------------------------------------"
+    ],
+    "output_dir_flags": [
+      "--output-dir"
+    ],
+    "repo_flags": [
+      "--repo-root"
+    ],
+    "main_lineno": 683
+  },
+  {
+    "path": "execution/runtime-certification/tools/build.py",
+    "has_main": false,
+    "argparse": false,
+    "click": false,
+    "typer": false,
+    "inputs": [],
+    "output_dir_flags": [],
+    "repo_flags": []
+  },
+  {
+    "path": "execution/workspace/builder_invoke_runtime_identity.py",
+    "has_main": false,
+    "argparse": false,
+    "click": false,
+    "typer": false,
+    "inputs": [
+      "-------------",
+      "---------------------------"
+    ],
+    "output_dir_flags": [],
+    "repo_flags": []
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "builder": "execution/builders/build_claude_package.py",
+  "positional_arguments": [
+    "cib"
+  ],
+  "optional_arguments": [
+    "--repo-root",
+    "--output-dir"
+  ],
+  "main_line": 735
+}

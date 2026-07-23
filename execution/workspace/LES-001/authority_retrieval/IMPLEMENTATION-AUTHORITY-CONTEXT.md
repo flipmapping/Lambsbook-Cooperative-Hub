@@ -175,7 +175,7 @@ Supported Authority Streams
 
 Canonical Invocation
 
-python3 execution/builders/build_claude_package.py <path-to-cib>
+python3 -m execution.builders.build_claude_package <path-to-cib>
 
 Release Status
 

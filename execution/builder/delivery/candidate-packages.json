@@ -1,0 +1,856 @@
+[
+  {
+    "path": "execution/packages/GE-RMP-002-Claude-Package.zip",
+    "size": 27818,
+    "sha256": "4a6b46a939b3ab5d6b6783dcf0cdf23cdf42848ebecc2b3f59a48162bfdd2b8c",
+    "entries": 26,
+    "builder_evidence": [
+      "GE-RMP-002-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-002-Claude-Package/governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+      "GE-RMP-002-Claude-Package/governance/execution-derivation/FDR-GE-002-EXECUTION-DERIVATION.md",
+      "GE-RMP-002-Claude-Package/governance/icm/generated/ICM-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+      "GE-RMP-002-Claude-Package/governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-002-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+      "GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/admissions.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/programs.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/scholarships.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/admissions.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/programs.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/scholarships.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/admissions.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/programs.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/scholarships.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json"
+    ],
+    "builder_score": 19
+  },
+  {
+    "path": "execution/packages/GE-RMP-004-Claude-Package.zip",
+    "size": 23864,
+    "sha256": "4e14599e6374f94d209a3dd97b626657060d6009e6ec34bfa95cfa4e7c736c18",
+    "entries": 22,
+    "builder_evidence": [
+      "GE-RMP-004-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+      "GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md",
+      "GE-RMP-004-Claude-Package/governance/execution-derivation/FDR-GE-004-EXECUTION-DERIVATION.md",
+      "GE-RMP-004-Claude-Package/governance/execution-derivation/GE-RMP-004-EXECUTION-DERIVATION.md",
+      "GE-RMP-004-Claude-Package/governance/icm/generated/ICM-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+      "GE-RMP-004-Claude-Package/governance/icm/generated/ICM-GE-RMP-004.md",
+      "GE-RMP-004-Claude-Package/governance/rmp/GE-RMP-004-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-004-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+      "GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx",
+      "GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+      "GE-RMP-004-Claude-Package/implementation-context/server/services/admissions.ts",
+      "GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json"
+    ],
+    "builder_score": 15
+  },
+  {
+    "path": "execution/founder-downloads/GE-RMP-014-Claude-Package.zip",
+    "size": 21972,
+    "sha256": "309806c8ed1027ca741e56dde478fa0aea4cd488693e8e611368af9eedb39660",
+    "entries": 24,
+    "builder_evidence": [
+      "execution/packages/GE-RMP-014-Claude-Package/CODE-MUTATION-CHECKLIST.json",
+      "execution/packages/GE-RMP-014-Claude-Package/MUTATION-AUTHORITY-D1.json",
+      "execution/packages/GE-RMP-014-Claude-Package/MUTATION-WORK-ORDER.json",
+      "execution/packages/GE-RMP-014-Claude-Package/PACKAGE-MANIFEST.md",
+      "execution/packages/GE-RMP-014-Claude-Package/PRE-MUTATION-CHECKPOINT.json",
+      "execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-PLAN.json",
+      "execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-SPEC.json",
+      "execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md",
+      "execution/packages/GE-RMP-014-Claude-Package/governance/icm/generated/ICM-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md",
+      "execution/packages/GE-RMP-014-Claude-Package/governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/package.json",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/admissions.ts",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts"
+    ],
+    "builder_score": 14
+  },
+  {
+    "path": "execution/packages/GE-RMP-014-Claude-Package.zip",
+    "size": 21972,
+    "sha256": "309806c8ed1027ca741e56dde478fa0aea4cd488693e8e611368af9eedb39660",
+    "entries": 24,
+    "builder_evidence": [
+      "execution/packages/GE-RMP-014-Claude-Package/CODE-MUTATION-CHECKLIST.json",
+      "execution/packages/GE-RMP-014-Claude-Package/MUTATION-AUTHORITY-D1.json",
+      "execution/packages/GE-RMP-014-Claude-Package/MUTATION-WORK-ORDER.json",
+      "execution/packages/GE-RMP-014-Claude-Package/PACKAGE-MANIFEST.md",
+      "execution/packages/GE-RMP-014-Claude-Package/PRE-MUTATION-CHECKPOINT.json",
+      "execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-PLAN.json",
+      "execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-SPEC.json",
+      "execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md",
+      "execution/packages/GE-RMP-014-Claude-Package/governance/icm/generated/ICM-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md",
+      "execution/packages/GE-RMP-014-Claude-Package/governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/package.json",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/admissions.ts",
+      "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts"
+    ],
+    "builder_score": 14
+  },
+  {
+    "path": "EOS-RMP-001A-Claude-Package.zip",
+    "size": 16536,
+    "sha256": "7664c9cfe844ab71e514d576f88adf3ec45cce81e246755ba97c797bc3df4d97",
+    "entries": 20,
+    "builder_evidence": [
+      "EOS-RMP-001A-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/BUILDER-SPRINT-001-IMPLEMENTATION.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/BUILDER-SPRINT-001.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "EOS-RMP-001A-Claude-Package/execution/builders/build_claude_package.py",
+      "EOS-RMP-001A-Claude-Package/governance/EOS-RMP-001A-IMPLEMENTATION-AUTHORITY.md",
+      "EOS-RMP-001A-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "EOS-RMP-001A-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001A-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001A-CLAUDE-PACKAGE-BUILDER-KERNEL.md"
+    ],
+    "builder_score": 12
+  },
+  {
+    "path": "execution/packages/GE-RMP-005-Claude-Package.zip",
+    "size": 20161,
+    "sha256": "a6a4d7f2a8a8f00d3927a26074cdcea765a6082be2c5592efe44a41cf727b2f0",
+    "entries": 19,
+    "builder_evidence": [
+      "GE-RMP-005-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-APPLICANT-JOURNEY-STATUS.md",
+      "GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+      "GE-RMP-005-Claude-Package/governance/execution-derivation/FDR-GE-005-EXECUTION-DERIVATION.md",
+      "GE-RMP-005-Claude-Package/governance/execution-derivation/GE-RMP-005-EXECUTION-DERIVATION.md",
+      "GE-RMP-005-Claude-Package/governance/icm/generated/ICM-GE-RMP-005-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+      "GE-RMP-005-Claude-Package/governance/icm/generated/ICM-GE-RMP-005.md",
+      "GE-RMP-005-Claude-Package/governance/rmp/GE-RMP-005-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-005-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "GE-RMP-005-Claude-Package/implementation-context/server/services/admissions.ts",
+      "GE-RMP-005-Claude-Package/implementation-context/web/src/growth/registry/journey.json"
+    ],
+    "builder_score": 12
+  },
+  {
+    "path": "execution/packages/JPE-002-Claude-Package.zip",
+    "size": 55376,
+    "sha256": "c25f5b7044a04f946253d1248f99295a4d48201eea175d7462cc63190ea34204",
+    "entries": 107,
+    "builder_evidence": [
+      "JPE-002-Claude-Package/governance/cib/",
+      "JPE-002-Claude-Package/governance/cib/generated/",
+      "JPE-002-Claude-Package/governance/cib/generated/CIB-JPE-002-JOURNEY-PREFERENCE-ACTIVATION.md",
+      "JPE-002-Claude-Package/governance/execution-derivation/",
+      "JPE-002-Claude-Package/governance/execution-derivation/JPE-002-EXECUTION-DERIVATION.md",
+      "JPE-002-Claude-Package/governance/rmp/JPE-002-IMPLEMENTATION-AUTHORITY.md",
+      "JPE-002-Claude-Package/governance/icm/",
+      "JPE-002-Claude-Package/governance/icm/generated/",
+      "JPE-002-Claude-Package/governance/icm/generated/ICM-JPE-002-JOURNEY-PREFERENCE-ACTIVATION.md",
+      "JPE-002-Claude-Package/execution/builders/",
+      "JPE-002-Claude-Package/implementation-context/",
+      "JPE-002-Claude-Package/PACKAGE-MANIFEST.md"
+    ],
+    "builder_score": 12
+  },
+  {
+    "path": "EOS-RMP-001C-Claude-Package.zip",
+    "size": 17345,
+    "sha256": "41b1c08a2be1ca19299ef628b6b9c45f2261da2527dc906b342b119864904a1a",
+    "entries": 17,
+    "builder_evidence": [
+      "EOS-RMP-001C-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "EOS-RMP-001C-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "EOS-RMP-001C-Claude-Package/execution/builders/build_claude_package.py",
+      "EOS-RMP-001C-Claude-Package/governance/EOS-RMP-001C-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001C-Claude-Package/governance/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+      "EOS-RMP-001C-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "EOS-RMP-001C-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001C-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md"
+    ],
+    "builder_score": 11
+  },
+  {
+    "path": "EOS-RMP-001D-Claude-Package.zip",
+    "size": 18899,
+    "sha256": "b4a546adf570cb014b1debe3f4a90933504129609faf2b2915475a9ae7912290",
+    "entries": 17,
+    "builder_evidence": [
+      "EOS-RMP-001D-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "EOS-RMP-001D-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "EOS-RMP-001D-Claude-Package/execution/builders/build_claude_package.py",
+      "EOS-RMP-001D-Claude-Package/governance/EOS-RMP-001D-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001D-Claude-Package/governance/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+      "EOS-RMP-001D-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "EOS-RMP-001D-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md"
+    ],
+    "builder_score": 11
+  },
+  {
+    "path": "execution/packages/GE-RMP-003A-Claude-Package.zip",
+    "size": 18579,
+    "sha256": "2b4b6ea02d62ac998bdc1b48d14e528eda3e45197b43048ae5646bf106fff80d",
+    "entries": 18,
+    "builder_evidence": [
+      "GE-RMP-003A-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-003A-Claude-Package/governance/cib/generated/CIB-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md",
+      "GE-RMP-003A-Claude-Package/governance/execution-derivation/FDR-GE-003A-EXECUTION-DERIVATION.md",
+      "GE-RMP-003A-Claude-Package/governance/icm/generated/ICM-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md",
+      "GE-RMP-003A-Claude-Package/governance/rmp/GE-RMP-003A-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-003A-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+      "GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx",
+      "GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+      "GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json"
+    ],
+    "builder_score": 11
+  },
+  {
+    "path": "execution/packages/GE-RMP-003B-Claude-Package.zip",
+    "size": 19890,
+    "sha256": "9f47bd6d69ec74ce37ba048ee723ba7ee53f8576b8a5ef3a0f134e2fbfb5eeaf",
+    "entries": 18,
+    "builder_evidence": [
+      "GE-RMP-003B-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-003B-Claude-Package/governance/cib/generated/CIB-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md",
+      "GE-RMP-003B-Claude-Package/governance/execution-derivation/FDR-GE-003B-EXECUTION-DERIVATION.md",
+      "GE-RMP-003B-Claude-Package/governance/icm/generated/ICM-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md",
+      "GE-RMP-003B-Claude-Package/governance/rmp/GE-RMP-003B-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-003B-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+      "GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx",
+      "GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+      "GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json"
+    ],
+    "builder_score": 11
+  },
+  {
+    "path": "EOS-RMP-001B-Claude-Package.zip",
+    "size": 14358,
+    "sha256": "a4d68eb1481640c1da55dfc1875eed9239d30dc3c481f84f0577b050c9d2b0da",
+    "entries": 16,
+    "builder_evidence": [
+      "EOS-RMP-001B-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "EOS-RMP-001B-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "EOS-RMP-001B-Claude-Package/execution/builders/build_claude_package.py",
+      "EOS-RMP-001B-Claude-Package/governance/EOS-RMP-001B-IMPLEMENTATION-AUTHORITY.md",
+      "EOS-RMP-001B-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "EOS-RMP-001B-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001B-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-REPOSITORY-TRUTH-CONSUMPTION.md"
+    ],
+    "builder_score": 10
+  },
+  {
+    "path": "EOS-RMP-001B-HF1-Claude-Package.zip",
+    "size": 16820,
+    "sha256": "e3f7320714fdd3abfca8e9fc9eea67df9e2dfa2c1cd23cdaac03d598fe991883",
+    "entries": 16,
+    "builder_evidence": [
+      "EOS-RMP-001B-HF1-Claude-Package/execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "EOS-RMP-001B-HF1-Claude-Package/execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "EOS-RMP-001B-HF1-Claude-Package/execution/builders/build_claude_package.py",
+      "EOS-RMP-001B-HF1-Claude-Package/governance/EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY.md",
+      "EOS-RMP-001B-HF1-Claude-Package/governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "EOS-RMP-001B-HF1-Claude-Package/governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001B-HF1-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md"
+    ],
+    "builder_score": 10
+  },
+  {
+    "path": "GE-WEB-RMP-010E33A-Claude-Package.zip",
+    "size": 37843,
+    "sha256": "4b1031e2f88261c1d887065b49ebb25d43b7d20f14d8a17f50b93535610ed3ac",
+    "entries": 36,
+    "builder_evidence": [
+      "GE-WEB-RMP-010E33A-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "GE-WEB-RMP-010E33A-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "GE-WEB-RMP-010E33A-Claude-Package/execution/framework/mutations.py",
+      "GE-WEB-RMP-010E33A-Claude-Package/execution/framework/verification.py",
+      "GE-WEB-RMP-010E33A-Claude-Package/governance/CIB-GE-WEB-RMP-010E33A-PUBLIC-EXPERIENCE-INTEGRATION.md",
+      "GE-WEB-RMP-010E33A-Claude-Package/governance/GE-WEB-RMP-010E33A-EXECUTION-DERIVATION.md",
+      "GE-WEB-RMP-010E33A-Claude-Package/governance/GE-WEB-RMP-010E33A-IMPLEMENTATION-AUTHORITY.md",
+      "GE-WEB-RMP-010E33A-Claude-Package/governance/RELEASE-1-MANIFEST.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "HUB-RMP-001-Claude-Package.zip",
+    "size": 37750,
+    "sha256": "2bdcb78572fbf7a1aedfc65303a097c4ff549b47e586953b243ffd2bc72aabdd",
+    "entries": 37,
+    "builder_evidence": [
+      "HUB-RMP-001-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "HUB-RMP-001-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "HUB-RMP-001-Claude-Package/execution/framework/mutations.py",
+      "HUB-RMP-001-Claude-Package/execution/framework/verification.py",
+      "HUB-RMP-001-Claude-Package/governance/CIB-HUB-RMP-001-PUBLIC-EXPERIENCE-INTEGRATION.md",
+      "HUB-RMP-001-Claude-Package/governance/HUB-RMP-001-EXECUTION-DERIVATION.md",
+      "HUB-RMP-001-Claude-Package/governance/HUB-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+      "HUB-RMP-001-Claude-Package/governance/RELEASE-1-MANIFEST.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E31A-Claude-Package.zip",
+    "size": 37522,
+    "sha256": "bf1c6796a9da97e2426f344eb87c3b6189973669d25eef2447b0fbbd948b12ad",
+    "entries": 37,
+    "builder_evidence": [
+      "RMP-010E31A-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E31A-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E31A-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E31A-Claude-Package/execution/framework/verification.py",
+      "RMP-010E31A-Claude-Package/governance/CIB-RMP-010E31A-PROSPECT-FOLLOWUP-TASK-KERNEL.md",
+      "RMP-010E31A-Claude-Package/governance/FDR-010E31-EXECUTION-DERIVATION.md",
+      "RMP-010E31A-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E31A-Claude-Package/governance/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E31B-Claude-Package.zip",
+    "size": 38104,
+    "sha256": "3992c33faa4c9f5d2e22418a7cab7ab70ae8b465c6da695d91957e72e73d2ea8",
+    "entries": 38,
+    "builder_evidence": [
+      "RMP-010E31B-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E31B-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E31B-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E31B-Claude-Package/execution/framework/verification.py",
+      "RMP-010E31B-Claude-Package/governance/CIB-RMP-010E31B-PROSPECT-FOLLOWUP-TASK-WORKSPACE.md",
+      "RMP-010E31B-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E31B-Claude-Package/governance/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md",
+      "RMP-010E31B-Claude-Package/governance/RMP-010E31B-EXECUTION-DERIVATION.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E32A-Claude-Package.zip",
+    "size": 37464,
+    "sha256": "0865011f48c4d948bec70641dbd31082236aac9836565700408af977e9e35e05",
+    "entries": 37,
+    "builder_evidence": [
+      "RMP-010E32A-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E32A-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E32A-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E32A-Claude-Package/execution/framework/verification.py",
+      "RMP-010E32A-Claude-Package/governance/CIB-RMP-010E32A-PROSPECT-APPOINTMENT-KERNEL.md",
+      "RMP-010E32A-Claude-Package/governance/FDR-010E32-EXECUTION-DERIVATION.md",
+      "RMP-010E32A-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E32A-Claude-Package/governance/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E32B-Claude-Package.zip",
+    "size": 37518,
+    "sha256": "64962e15a2b58f15bd7b4ba92fe3b446b8ff31d7935421f1b4a28ebb5d035c90",
+    "entries": 37,
+    "builder_evidence": [
+      "RMP-010E32B-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E32B-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E32B-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E32B-Claude-Package/execution/framework/verification.py",
+      "RMP-010E32B-Claude-Package/governance/CIB-RMP-010E32B-PROSPECT-APPOINTMENT-WORKSPACE.md",
+      "RMP-010E32B-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E32B-Claude-Package/governance/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md",
+      "RMP-010E32B-Claude-Package/governance/RMP-010E32B-EXECUTION-DERIVATION.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E33A-Claude-Package.zip",
+    "size": 37521,
+    "sha256": "280de00ed5c0ccf9dd77b53acb29ea200e7a1f09daca22e96b9375f8f9a029dc",
+    "entries": 37,
+    "builder_evidence": [
+      "RMP-010E33A-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E33A-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E33A-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E33A-Claude-Package/execution/framework/verification.py",
+      "RMP-010E33A-Claude-Package/governance/CIB-RMP-010E33A-PROSPECT-DOCUMENT-KERNEL.md",
+      "RMP-010E33A-Claude-Package/governance/FDR-010E33-EXECUTION-DERIVATION.md",
+      "RMP-010E33A-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E33A-Claude-Package/governance/RMP-010E33A-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E33B-Claude-Package.zip",
+    "size": 37281,
+    "sha256": "fdd527e8ec665ec24f6a5a0322b37145379116add6fafc8f0d687b34aede6988",
+    "entries": 37,
+    "builder_evidence": [
+      "RMP-010E33B-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E33B-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E33B-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E33B-Claude-Package/execution/framework/verification.py",
+      "RMP-010E33B-Claude-Package/governance/CIB-RMP-010E33B-PROSPECT-DOCUMENT-WORKSPACE.md",
+      "RMP-010E33B-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E33B-Claude-Package/governance/RMP-010E33B-EXECUTION-DERIVATION.md",
+      "RMP-010E33B-Claude-Package/governance/RMP-010E33B-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-006-Claude-Package.zip",
+    "size": 13685,
+    "sha256": "a01171106f7e875f4e7f76555826404ef9821c19bcfccf982bded7b04f450dfc",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-006-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-006-Claude-Package/governance/cib/generated/CIB-GE-RMP-006-APPLICANT-STATUS-LOOKUP.md",
+      "GE-RMP-006-Claude-Package/governance/execution-derivation/GE-RMP-006-EXECUTION-DERIVATION.md",
+      "GE-RMP-006-Claude-Package/governance/icm/generated/ICM-GE-RMP-006.md",
+      "GE-RMP-006-Claude-Package/governance/rmp/GE-RMP-006-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-006-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+      "GE-RMP-006-Claude-Package/implementation-context/web/src/growth/registry/journey.json"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-007-Claude-Package.zip",
+    "size": 14892,
+    "sha256": "f0a8734990e9fa8ac010ea09048452bda59dbb4f1728520835793531a6a2dab8",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-007-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-007-Claude-Package/governance/cib/generated/CIB-GE-RMP-007-APPLICANT-DOCUMENT-CENTER.md",
+      "GE-RMP-007-Claude-Package/governance/execution-derivation/GE-RMP-007-EXECUTION-DERIVATION.md",
+      "GE-RMP-007-Claude-Package/governance/icm/generated/ICM-GE-RMP-007.md",
+      "GE-RMP-007-Claude-Package/governance/rmp/GE-RMP-007-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+      "GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantStatusLookup.tsx"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-008-Claude-Package.zip",
+    "size": 15502,
+    "sha256": "2b34daac63f922341ccd6d69c99c7a3f61b3b302cca3ffbd875fa8374f802561",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-008-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-008-Claude-Package/governance/cib/generated/CIB-GE-RMP-008-APPLICANT-APPOINTMENT-CENTER.md",
+      "GE-RMP-008-Claude-Package/governance/execution-derivation/GE-RMP-008-EXECUTION-DERIVATION.md",
+      "GE-RMP-008-Claude-Package/governance/icm/generated/ICM-GE-RMP-008.md",
+      "GE-RMP-008-Claude-Package/governance/rmp/GE-RMP-008-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantDocumentCenter.tsx",
+      "GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-009-Claude-Package.zip",
+    "size": 15675,
+    "sha256": "0b1ac2b374ea92ee3ecc41ac7fb121803772bcee3a3da8d3358b91d38271586d",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-009-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-009-Claude-Package/governance/cib/generated/CIB-GE-RMP-009-APPLICANT-ADMISSION-DECISION-CENTER.md",
+      "GE-RMP-009-Claude-Package/governance/execution-derivation/GE-RMP-009-EXECUTION-DERIVATION.md",
+      "GE-RMP-009-Claude-Package/governance/icm/generated/ICM-GE-RMP-009.md",
+      "GE-RMP-009-Claude-Package/governance/rmp/GE-RMP-009-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantAppointmentCenter.tsx",
+      "GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-010-Claude-Package.zip",
+    "size": 16029,
+    "sha256": "42a5415a10d92d9c592a51232b26cf9b0517801f2992c2fc36befe60d3d5ba57",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-010-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-010-Claude-Package/governance/cib/generated/CIB-GE-RMP-010-APPLICANT-LIFECYCLE-TIMELINE.md",
+      "GE-RMP-010-Claude-Package/governance/execution-derivation/GE-RMP-010-EXECUTION-DERIVATION.md",
+      "GE-RMP-010-Claude-Package/governance/icm/generated/ICM-GE-RMP-010.md",
+      "GE-RMP-010-Claude-Package/governance/rmp/GE-RMP-010-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-011-Claude-Package.zip",
+    "size": 15607,
+    "sha256": "ba963671570d8fd31ed90fbb70a18189982c60246af4e05158d3d417e8269a49",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-011-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-011-Claude-Package/governance/cib/generated/CIB-GE-RMP-011-APPLICANT-ACTIVITY-CENTER.md",
+      "GE-RMP-011-Claude-Package/governance/execution-derivation/GE-RMP-011-EXECUTION-DERIVATION.md",
+      "GE-RMP-011-Claude-Package/governance/icm/generated/ICM-GE-RMP-011.md",
+      "GE-RMP-011-Claude-Package/governance/rmp/GE-RMP-011-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+      "GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantLifecycleTimeline.tsx"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "execution/packages/GE-RMP-012-Claude-Package.zip",
+    "size": 15687,
+    "sha256": "20043ca16f74d67b58abb4c12cb76cef115dc7fc73eede5b3a3cae31905a7475",
+    "entries": 15,
+    "builder_evidence": [
+      "GE-RMP-012-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-012-Claude-Package/governance/cib/generated/CIB-GE-RMP-012-APPLICANT-FOLLOWUP-TASK-CENTER.md",
+      "GE-RMP-012-Claude-Package/governance/execution-derivation/GE-RMP-012-EXECUTION-DERIVATION.md",
+      "GE-RMP-012-Claude-Package/governance/icm/generated/ICM-GE-RMP-012.md",
+      "GE-RMP-012-Claude-Package/governance/rmp/GE-RMP-012-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx",
+      "GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantActivityCenter.tsx",
+      "GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+    ],
+    "builder_score": 8
+  },
+  {
+    "path": "RMP-010E30A-Claude-Package.zip",
+    "size": 36981,
+    "sha256": "0a57d0fad25dd29fcec49c8e91f1664c75aae08b1f49f3e78190d670b33832cb",
+    "entries": 36,
+    "builder_evidence": [
+      "RMP-010E30A-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E30A-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E30A-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E30A-Claude-Package/execution/framework/verification.py",
+      "RMP-010E30A-Claude-Package/governance/CIB-RMP-010E30A-PROSPECT-ACTIVITY-KERNEL.md",
+      "RMP-010E30A-Claude-Package/governance/FDR-010E30-EXECUTION-DERIVATION.md",
+      "RMP-010E30A-Claude-Package/governance/RELEASE-1-MANIFEST.md"
+    ],
+    "builder_score": 7
+  },
+  {
+    "path": "RMP-010E30B-Claude-Package.zip",
+    "size": 36752,
+    "sha256": "925c4a5308131674e511e726e6eb8e4746d94bcce7b9ef23adbdb3f51a525bfc",
+    "entries": 36,
+    "builder_evidence": [
+      "RMP-010E30B-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E30B-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E30B-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E30B-Claude-Package/execution/framework/verification.py",
+      "RMP-010E30B-Claude-Package/governance/CIB-RMP-010E30B-PROSPECT-ACTIVITY-WORKSPACE.md",
+      "RMP-010E30B-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E30B-Claude-Package/governance/RMP-010E30B-EXECUTION-DERIVATION.md"
+    ],
+    "builder_score": 7
+  },
+  {
+    "path": "RMP-010E34B-Claude-Package.zip",
+    "size": 32403,
+    "sha256": "326159a1a812212758206a7b4b32dc9269360fa0744470935013403646cf7699",
+    "entries": 40,
+    "builder_evidence": [
+      "RMP-010E34B-Claude-Package/governance/CIB-RMP-010E34B-PROSPECT-ADMISSION-DECISION-WORKSPACE.md",
+      "RMP-010E34B-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E34B-Claude-Package/governance/RMP-010E34B-EXECUTION-DERIVATION.md",
+      "RMP-010E34B-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E34B-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E34B-Claude-Package/execution/framework/verification.py",
+      "RMP-010E34B-Claude-Package/execution/framework/mutations.py"
+    ],
+    "builder_score": 7
+  },
+  {
+    "path": "execution/packages/EOS-RMP-001E-Claude-Package.zip",
+    "size": 17688,
+    "sha256": "f795a6dcc5b9647cb55a9911bdbe14924f2b06b26a9d80d3c4f8d16fcdccb494",
+    "entries": 14,
+    "builder_evidence": [
+      "EOS-RMP-001E-Claude-Package/PACKAGE-MANIFEST.md",
+      "EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "EOS-RMP-001E-Claude-Package/governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001E-Claude-Package/governance/icm/generated/ICM-EOS-RMP-001E.md",
+      "EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+      "EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/build_claude_package.py"
+    ],
+    "builder_score": 7
+  },
+  {
+    "path": "execution/packages/GE-RMP-003-Claude-Package.zip",
+    "size": 12887,
+    "sha256": "07b2bc701842305cdff902a6a11409f08c7665dd8006b7672c1f8417be0c5672",
+    "entries": 14,
+    "builder_evidence": [
+      "GE-RMP-003-Claude-Package/PACKAGE-MANIFEST.md",
+      "GE-RMP-003-Claude-Package/governance/cib/generated/CIB-GE-RMP-003-PROSPECT-REGISTRATION-CONVERSION.md",
+      "GE-RMP-003-Claude-Package/governance/execution-derivation/GE-RMP-003-EXECUTION-DERIVATION.md",
+      "GE-RMP-003-Claude-Package/governance/icm/generated/ICM-GE-RMP-003.md",
+      "GE-RMP-003-Claude-Package/governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md",
+      "GE-RMP-003-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+      "GE-RMP-003-Claude-Package/implementation-context/server/services/admissions.ts"
+    ],
+    "builder_score": 7
+  },
+  {
+    "path": "EOS-RMP-001E-Claude-Package.zip",
+    "size": 12150,
+    "sha256": "43ad157bc4d9fddbf3621454c62aa784c4fed9d36b923923a74b15ca10ff2bf7",
+    "entries": 8,
+    "builder_evidence": [
+      "EOS-RMP-001E-Claude-Package/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "EOS-RMP-001E-Claude-Package/execution/builders/build_claude_package.py",
+      "EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "EOS-RMP-001E-Claude-Package/governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001E-Claude-Package/governance/icm/generated/ICM-EOS-RMP-001E.md",
+      "EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 6
+  },
+  {
+    "path": "RMP-010E27B-Claude-Package.zip",
+    "size": 34577,
+    "sha256": "c8790056d9795b9c6de1c16c87f324ca1d8b5c7613263c54420b97eefbff9cac",
+    "entries": 32,
+    "builder_evidence": [
+      "RMP-010E27B-Claude-Package/governance/CIB-RMP-010E27B-PROSPECT-TIMELINE-WORKSPACE.md",
+      "RMP-010E27B-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E27B-Claude-Package/execution/framework/verification.py",
+      "RMP-010E27B-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E27B-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E27B-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc"
+    ],
+    "builder_score": 6
+  },
+  {
+    "path": "RMP-010E29A-Claude-Package.zip",
+    "size": 35915,
+    "sha256": "6baa37c3b061e24d928ed1c73ee49ce22511040f55d07d40db86211d0149e256",
+    "entries": 35,
+    "builder_evidence": [
+      "RMP-010E29A-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E29A-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E29A-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E29A-Claude-Package/execution/framework/verification.py",
+      "RMP-010E29A-Claude-Package/governance/CIB-RMP-010E29A-PROSPECT-LIFECYCLE-EVENT-KERNEL.md",
+      "RMP-010E29A-Claude-Package/governance/RELEASE-1-MANIFEST.md"
+    ],
+    "builder_score": 6
+  },
+  {
+    "path": "RMP-010E29B-Execution-Authority-Package.zip",
+    "size": 37187,
+    "sha256": "41b974ffda92b46ebb0612e4b05fa099197eb97ddd2c80aa74ff024eedaecb33",
+    "entries": 35,
+    "builder_evidence": [
+      "RMP-010E29B-Execution-Authority-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E29B-Execution-Authority-Package/execution/framework/__pycache__/verification.cpython-311.pyc",
+      "RMP-010E29B-Execution-Authority-Package/execution/framework/mutations.py",
+      "RMP-010E29B-Execution-Authority-Package/execution/framework/verification.py",
+      "RMP-010E29B-Execution-Authority-Package/governance/CIB-RMP-010E29B-PROSPECT-TIMELINE-WORKSPACE.md",
+      "RMP-010E29B-Execution-Authority-Package/governance/RELEASE-1-MANIFEST.md"
+    ],
+    "builder_score": 6
+  },
+  {
+    "path": "execution/packages/FAB-APP-REALIZATION-002B-Claude-Package.zip",
+    "size": 8222,
+    "sha256": "d2af8b38c0aad09cb55dc46be492951b48f1f9eaa19cb275ddcbc07720927b02",
+    "entries": 12,
+    "builder_evidence": [
+      "FAB-APP-REALIZATION-002B-Claude-Package/PACKAGE-MANIFEST.md",
+      "FAB-APP-REALIZATION-002B-Claude-Package/governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md",
+      "FAB-APP-REALIZATION-002B-Claude-Package/governance/execution-derivation/EXECUTION-DERIVATION.md",
+      "FAB-APP-REALIZATION-002B-Claude-Package/governance/icm/generated/ICM-APP-REALIZATION-002B.md",
+      "FAB-APP-REALIZATION-002B-Claude-Package/governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 5
+  },
+  {
+    "path": "execution/packages/INF-010E35A-Claude-Package.zip",
+    "size": 8141,
+    "sha256": "9d88bcc053e09bf3697d83f478ed55a5a0dfffaea320c1a184414589dad8eb1d",
+    "entries": 12,
+    "builder_evidence": [
+      "INF-010E35A-Claude-Package/PACKAGE-MANIFEST.md",
+      "INF-010E35A-Claude-Package/governance/cib/generated/CIB-INF-010E35A-INFRASTRUCTURE-MATERIALIZATION.md",
+      "INF-010E35A-Claude-Package/governance/execution-derivation/INF-010E35A-EXECUTION-DERIVATION.md",
+      "INF-010E35A-Claude-Package/governance/icm/generated/INF-010E35A-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "INF-010E35A-Claude-Package/governance/rmp/INF-010E35A-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 5
+  },
+  {
+    "path": "RMP-010E25-Claude-Package.zip",
+    "size": 291849,
+    "sha256": "7300fff3912d1ede85b24294224e7623029a978716b3f46aeff684479588e76f",
+    "entries": 102,
+    "builder_evidence": [
+      "RMP-010E25-Claude-Package/execution/framework/verification.py",
+      "RMP-010E25-Claude-Package/execution/framework/mutations.py",
+      "RMP-010E25-Claude-Package/execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "RMP-010E25-Claude-Package/execution/framework/__pycache__/verification.cpython-311.pyc"
+    ],
+    "builder_score": 4
+  },
+  {
+    "path": "RMP-010E34A-Claude-Package.zip",
+    "size": 9069,
+    "sha256": "10816e9d2484c5fb39c9bb4a6c80306a852015eb9ce4ff41ea79bc3db34e0035",
+    "entries": 15,
+    "builder_evidence": [
+      "RMP-010E34A-Claude-Package/governance/CIB-RMP-010E34A-PROSPECT-ADMISSION-DECISION-KERNEL.md",
+      "RMP-010E34A-Claude-Package/governance/RELEASE-1-MANIFEST.md",
+      "RMP-010E34A-Claude-Package/governance/FDR-010E34-EXECUTION-DERIVATION.md",
+      "RMP-010E34A-Claude-Package/governance/RMP-010E34A-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 4
+  },
+  {
+    "path": "execution/packages/EOS-RMP-001D-Claude-Package.zip",
+    "size": 8794,
+    "sha256": "723628ddc31aee19eb5e05dcad6256a5ba0d315bfdf86cee16585aaceb63e730",
+    "entries": 11,
+    "builder_evidence": [
+      "EOS-RMP-001D-Claude-Package/PACKAGE-MANIFEST.md",
+      "EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+      "EOS-RMP-001D-Claude-Package/governance/execution-derivation/EOS-RMP-001D-EXECUTION-DERIVATION.md",
+      "EOS-RMP-001D-Claude-Package/governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "builder_score": 4
+  },
+  {
+    "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE.zip",
+    "size": 1593,
+    "sha256": "c23d09faf044797c9d70c87ad1164701d271d88ccedb894e0b0fcac445428571",
+    "entries": 3,
+    "builder_evidence": [
+      "LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-001-IMPLEMENTATION-MANIFEST.json",
+      "LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/mutation-corridor/CooperativePrinciplesSection.tsx"
+    ],
+    "builder_score": 2
+  },
+  {
+    "path": "execution/founder-downloads/LER-001A-PIC-Claude.zip",
+    "size": 68397,
+    "sha256": "a442ec93710d870c30101148f04a0c57de45cd1e60b937e5e2dc2e8a4b9e41bf",
+    "entries": 15,
+    "builder_evidence": [
+      "PIC/context/repository/MANIFEST.json"
+    ],
+    "builder_score": 1
+  },
+  {
+    "path": "execution/packages/APP-REALIZATION-002B-PIC.zip",
+    "size": 1329,
+    "sha256": "5e5a4b84ea70ed6ddf548aa091f14e7da3a536fd6fa618e21537efe99d1dc496",
+    "entries": 3,
+    "builder_evidence": [
+      "execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_CONTEXT_MANIFEST.md"
+    ],
+    "builder_score": 1
+  },
+  {
+    "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE.zip",
+    "size": 1605,
+    "sha256": "74f4a4427862da71694351e2024388a2edeee88dd9393103e6be60748d40dafb",
+    "entries": 3,
+    "builder_evidence": [
+      "LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-002-IMPLEMENTATION-MANIFEST.json"
+    ],
+    "builder_score": 1
+  },
+  {
+    "path": "execution/packages/RDM-AUTH-001-PIC.zip",
+    "size": 15181,
+    "sha256": "7ef118b181cf22f4bddfe1215e6ca3cdaeba01dbb33afbc0cdb08d694c0329bf",
+    "entries": 11,
+    "builder_evidence": [
+      "PACKAGE-MANIFEST.md"
+    ],
+    "builder_score": 1
+  },
+  {
+    "path": "execution/contracts/RDM-CTBC-001-Contract.zip",
+    "size": 734,
+    "sha256": "2c3528cf082ed4a70d69d96111cef7210305dbd7d7f255d0acdabff927941e25",
+    "entries": 1,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "execution/founder-downloads/LER-001A-PIC-Claude-FINAL.zip",
+    "size": 71165,
+    "sha256": "b751e5ba6ff8ef785e4097f9c4d530490ccde3be9ac0171303c0ebe31547add1",
+    "entries": 14,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "execution/mex-inspection.zip",
+    "size": 65661,
+    "sha256": "0bbdca1c5f11db99e21fdd9670968369d4da31ac5fe88a711431e21f393b1280",
+    "entries": 3,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+    "size": 628,
+    "sha256": "1c2e619e8ce40dd23ca2ea30253e58358b29cdfce184d267f38f3c2c322ce057",
+    "entries": 1,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "execution/packages/LEAP-002/materialized/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+    "size": 628,
+    "sha256": "1c2e619e8ce40dd23ca2ea30253e58358b29cdfce184d267f38f3c2c322ce057",
+    "entries": 1,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE.zip",
+    "size": 30931,
+    "sha256": "01e85dea48137d37a210ebd2890545c83a53c9de74ee79cf356d6f61df314dff",
+    "entries": 85,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "files.zip",
+    "size": 6911,
+    "sha256": "3c651519fa4a2170b256b8b5c199a348b5272481a90e647c6289fbbbca7d4a6e",
+    "entries": 7,
+    "builder_evidence": [],
+    "builder_score": 0
+  },
+  {
+    "path": "runner/workspace/claude-phase5-workpackage1.zip",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": "File is not a zip file"
+  }
+]

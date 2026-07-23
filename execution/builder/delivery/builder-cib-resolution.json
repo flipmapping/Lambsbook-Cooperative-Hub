@@ -1,0 +1,1042 @@
+[
+  {
+    "path": "EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-002-Claude-Package/governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-003-Claude-Package/governance/cib/generated/CIB-GE-RMP-003-PROSPECT-REGISTRATION-CONVERSION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-APPLICANT-JOURNEY-STATUS.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-006-Claude-Package/governance/cib/generated/CIB-GE-RMP-006-APPLICANT-STATUS-LOOKUP.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-007-Claude-Package/governance/cib/generated/CIB-GE-RMP-007-APPLICANT-DOCUMENT-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-008-Claude-Package/governance/cib/generated/CIB-GE-RMP-008-APPLICANT-APPOINTMENT-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-009-Claude-Package/governance/cib/generated/CIB-GE-RMP-009-APPLICANT-ADMISSION-DECISION-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-010-Claude-Package/governance/cib/generated/CIB-GE-RMP-010-APPLICANT-LIFECYCLE-TIMELINE.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-011-Claude-Package/governance/cib/generated/CIB-GE-RMP-011-APPLICANT-ACTIVITY-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-012-Claude-Package/governance/cib/generated/CIB-GE-RMP-012-APPLICANT-FOLLOWUP-TASK-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/INF-010E35A-Claude-Package/governance/cib/generated/CIB-INF-010E35A-INFRASTRUCTURE-MATERIALIZATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/JPE-002-Claude-Package/governance/cib/generated/CIB-JPE-002-JOURNEY-PREFERENCE-ACTIVATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-003-PROSPECT-REGISTRATION-CONVERSION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-005-APPLICANT-JOURNEY-STATUS.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-005-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-006-APPLICANT-STATUS-LOOKUP.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-007-APPLICANT-DOCUMENT-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-008-APPLICANT-APPOINTMENT-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-009-APPLICANT-ADMISSION-DECISION-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-010-APPLICANT-LIFECYCLE-TIMELINE.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-011-APPLICANT-ACTIVITY-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-012-APPLICANT-FOLLOWUP-TASK-CENTER.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-HUB-RMP-002-AUTHENTICATION-NORMALIZATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-INF-010E35A-INFRASTRUCTURE-MATERIALIZATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-JPE-002-JOURNEY-PREFERENCE-ACTIVATION.md",
+    "score": 6,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "EOS-RMP-001A-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001A-CLAUDE-PACKAGE-BUILDER-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "EOS-RMP-001B-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-REPOSITORY-TRUTH-CONSUMPTION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "EOS-RMP-001B-HF1-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "EOS-RMP-001C-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "GE-WEB-RMP-010E33A-Claude-Package/governance/CIB-GE-WEB-RMP-010E33A-PUBLIC-EXPERIENCE-INTEGRATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "HUB-RMP-001-Claude-Package/governance/CIB-HUB-RMP-001-PUBLIC-EXPERIENCE-INTEGRATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E29B-Execution-Authority-Package/governance/CIB-RMP-010E29B-PROSPECT-TIMELINE-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E30A-Claude-Package/governance/CIB-RMP-010E30A-PROSPECT-ACTIVITY-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E30B-Claude-Package/governance/CIB-RMP-010E30B-PROSPECT-ACTIVITY-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E31A-Claude-Package/governance/CIB-RMP-010E31A-PROSPECT-FOLLOWUP-TASK-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E31B-Claude-Package/governance/CIB-RMP-010E31B-PROSPECT-FOLLOWUP-TASK-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E32A-Claude-Package/governance/CIB-RMP-010E32A-PROSPECT-APPOINTMENT-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E32B-Claude-Package/governance/CIB-RMP-010E32B-PROSPECT-APPOINTMENT-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E33A-Claude-Package/governance/CIB-RMP-010E33A-PROSPECT-DOCUMENT-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E33B-Claude-Package/governance/CIB-RMP-010E33B-PROSPECT-DOCUMENT-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E34A-Claude-Package/governance/CIB-RMP-010E34A-PROSPECT-ADMISSION-DECISION-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E34B-Claude-Package/governance/CIB-RMP-010E34B-PROSPECT-ADMISSION-DECISION-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/EOS-RMP-001C-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-003A-Claude-Package/governance/cib/generated/CIB-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-003B-Claude-Package/governance/cib/generated/CIB-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "execution/packages/LEAP-002/generated/CIB-LEAP-002-JOURNEY-ORIENTED-LANDING-EXPERIENCE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-APP-REALIZATION-002H-RUNTIME-IDENTITY.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-001A-CLAUDE-PACKAGE-BUILDER-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-001B-REPOSITORY-TRUTH-CONSUMPTION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E29B-PROSPECT-TIMELINE-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E30A-PROSPECT-ACTIVITY-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E30B-PROSPECT-ACTIVITY-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E31A-PROSPECT-FOLLOWUP-TASK-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E31B-PROSPECT-FOLLOWUP-TASK-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E32A-PROSPECT-APPOINTMENT-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E32B-PROSPECT-APPOINTMENT-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E33A-PROSPECT-DOCUMENT-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E33A-PUBLIC-EXPERIENCE-INTEGRATION.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E33B-PROSPECT-DOCUMENT-WORKSPACE.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E34A-PROSPECT-ADMISSION-DECISION-KERNEL.md",
+    "score": 5,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Execution Derivation",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E27B-Claude-Package/governance/CIB-RMP-010E27B-PROSPECT-TIMELINE-WORKSPACE.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "RMP-010E29A-Claude-Package/governance/CIB-RMP-010E29A-PROSPECT-LIFECYCLE-EVENT-KERNEL.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/CIB-PROD-v1.0.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-CERS-001-CERS-KERNEL.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-EOS-RMP-CERS-002-EXECUTION-SYNCHRONIZATION.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E27B-PROSPECT-TIMELINE-WORKSPACE.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E29A-PROSPECT-LIFECYCLE-EVENT-KERNEL.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-010E34B-PROSPECT-ADMISSION-DECISION-WORKSPACE.md",
+    "score": 4,
+    "matched": [
+      "Implementation Authority",
+      "Repository",
+      "Production Surface",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/execution/evidence/LES-001-CIB-MATERIALIZATION-READINESS.json",
+    "score": 3,
+    "matched": [
+      "Implementation Authority",
+      "Implementation Context Manifest",
+      "Execution Derivation"
+    ]
+  },
+  {
+    "path": "governance/cib/CIB-CORR-v1.0.md",
+    "score": 2,
+    "matched": [
+      "Repository",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/discoveries/DISC-GE-RMP-004-MISSING-CIB.md",
+    "score": 2,
+    "matched": [
+      "Implementation Authority",
+      "Repository"
+    ]
+  },
+  {
+    "path": "governance/execution/evidence/LES-001-CIB-DISCOVERY.json",
+    "score": 2,
+    "matched": [
+      "Repository",
+      "Mutation"
+    ]
+  },
+  {
+    "path": "governance/cib/generated/CIB-RMP-CONTRACT-SEMANTIC-RECONCILIATION.md",
+    "score": 1,
+    "matched": [
+      "Implementation Authority"
+    ]
+  },
+  {
+    "path": "builder-compatible-cibs.json",
+    "score": 0,
+    "matched": []
+  },
+  {
+    "path": "builder-required-cib-fields.json",
+    "score": 0,
+    "matched": []
+  },
+  {
+    "path": "execution/builder/delivery/builder-cib-input-contract.json",
+    "score": 0,
+    "matched": []
+  },
+  {
+    "path": "execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md",
+    "score": 0,
+    "matched": []
+  },
+  {
+    "path": "governance/execution/evidence/LES-001-CERTIFIED-CIB-RESOLUTION.json",
+    "score": 0,
+    "matched": []
+  },
+  {
+    "path": "governance/execution/evidence/LES-001-CIB-CERTIFICATION.json",
+    "score": 0,
+    "matched": []
+  }
+]
