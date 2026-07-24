@@ -390,6 +390,13 @@ def _copy_artifact(
     """Copy a single artifact into the package directory."""
     dest_dir.mkdir(parents=True, exist_ok=True)
     dest = dest_dir / (dest_name or src.name)
+
+    try:
+        if src.resolve() == dest.resolve():
+            return dest
+    except FileNotFoundError:
+        pass
+
     shutil.copy2(src, dest)
     return dest
 
