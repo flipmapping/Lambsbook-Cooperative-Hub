@@ -20,15 +20,9 @@ export interface ProspectRegistrationResult {
   message: "Prospect registration accepted for future persistence.";
 }
 
-const DEFAULT_FUNNEL_CODE = "CTBC-2026";
-
-function resolveRegistrationFunnel(): string {
-  return DEFAULT_FUNNEL_CODE;
-}
-
-export async function submitProspectRegistration(
+export async function createProspectCore(
   payload: ProspectRegistrationPayload,
-): Promise<ProspectRegistrationResult> {
+) {
   const prospect = await supabaseDAL.createProspect({
     full_name:            payload.fullName,
     email:                payload.email,
@@ -47,7 +41,22 @@ export async function submitProspectRegistration(
     });
   }
 
-  
+  return prospect;
+}
+
+
+
+const DEFAULT_FUNNEL_CODE = "CTBC-2026";
+
+function resolveRegistrationFunnel(): string {
+  return DEFAULT_FUNNEL_CODE;
+}
+
+export async function submitProspectRegistration(
+  payload: ProspectRegistrationPayload,
+): Promise<ProspectRegistrationResult> {
+  const prospect = await createProspectCore(payload);
+
 const email = registrationConfirmationTemplate({
     fullName: payload.fullName,
     program: payload.programOfInterest,
