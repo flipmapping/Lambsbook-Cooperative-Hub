@@ -1,0 +1,12 @@
+{
+  "authority": "APP-EXEC-002A",
+  "eos_authority": "EOS-CRSG-001",
+  "created": "2026-07-30 04:19 UTC",
+  "execution_phase": "Builder Execution",
+  "status": "READY",
+  "expected_output": "Exactly one Production Implementation Context (PIC) ZIP",
+  "builder_input": {
+    "file": "execution/workspace/BUILDER-HANDOFF-001/BUILDER-HANDOFF-001.zip",
+    "sha256": "ed6b2414cdd210ded5aba1c63c5b7186818e1f5013f81c15fdd2b993f5d8eaec"
+  }
+}

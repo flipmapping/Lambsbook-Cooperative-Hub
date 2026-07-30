@@ -1,0 +1,55 @@
+{
+  "suite": "projection_builder_v1",
+  "version": "1.0",
+  "scenarios": [
+    {
+      "id": "CERT-001",
+      "category": "valid",
+      "description": "Valid canonical execution contract",
+      "fixture": "fixtures/valid_execution_contract.json",
+      "expected": "PASS"
+    },
+    {
+      "id": "CERT-002",
+      "category": "structure",
+      "description": "Missing execution contract identifier",
+      "fixture": "fixtures/missing_execution_contract_id.json",
+      "expected": "Missing execution_contract_id"
+    },
+    {
+      "id": "CERT-003",
+      "category": "structure",
+      "description": "Missing provenance section",
+      "fixture": "fixtures/missing_provenance.json",
+      "expected": "Missing contract_provenance"
+    },
+    {
+      "id": "CERT-004",
+      "category": "structure",
+      "description": "Missing execution section",
+      "fixture": "fixtures/missing_execution.json",
+      "expected": "Missing execution"
+    },
+    {
+      "id": "CERT-005",
+      "category": "resolution",
+      "description": "Unsupported execution target",
+      "fixture": "fixtures/unsupported_target.json",
+      "expected": "Unsupported execution target"
+    },
+    {
+      "id": "CERT-006",
+      "category": "behavior",
+      "description": "Repeatability verification",
+      "fixture": "fixtures/valid_execution_contract.json",
+      "expected": "PASS"
+    },
+    {
+      "id": "CERT-007",
+      "category": "behavior",
+      "description": "Identity preservation verification",
+      "fixture": "fixtures/valid_execution_contract.json",
+      "expected": "PASS"
+    }
+  ]
+}

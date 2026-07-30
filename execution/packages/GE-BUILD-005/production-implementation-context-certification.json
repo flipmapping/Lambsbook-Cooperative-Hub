@@ -1,0 +1,10 @@
+{
+  "authority": "GE-BUILD-004",
+  "generated_utc": "2026-07-30T06:36:41.606994+00:00",
+  "pic_file": "execution/builder/production-implementation-context.json",
+  "certified": true,
+  "errors": [],
+  "builder_resolution": "fallback",
+  "governance_strategy": "fallback",
+  "next_stage": "Claude Implementation"
+}

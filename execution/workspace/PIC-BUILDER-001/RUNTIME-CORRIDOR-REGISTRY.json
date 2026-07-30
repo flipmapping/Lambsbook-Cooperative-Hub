@@ -1,0 +1,294 @@
+{
+  "authority": "APP-BUILD-002",
+  "builder_version": "1.0",
+  "classification_version": "1.0",
+  "inspection_timestamp": "2026-07-30T10:02:52.765309+00:00",
+  "branch": "app-rec-006-runtime-identity",
+  "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "source_registry_checksum": "5ad74e85a968ed15d16e2d336b7baf386eef2acbc7c90048d19abd218d48c0b8",
+  "source_registry": "REPOSITORY-SURFACE-REGISTRY.json",
+  "status": "FROZEN",
+  "corridors": {
+    "Identity Layer": [
+      {
+        "surface_id": "6c1dbbb1cece1d226ad52bc78ac8d425d3ba311900ec89f28e52e7166ec014b7",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "deb73790f6699c985b38ce3a72a389d5784a868074085a3d8bb7c56f90e09a6e",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "e5ad47fdda42f748d59ce8b2ac06eeaf2cf26f9dabab731400cec62c60a2a4f6",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "b19255e3bd22ed4e62531a9b12268c9115f6c307c9116e99a8442b20d1b9f5d5",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "d7567c618effefc87d216c2c897c63238c74f3034273535158bacaeb92ce14c3",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "06c5b9977dc1d14776fba845bdf970bb45bd510478ae8a22883086aa4f0f0155",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "b30af9f18058d0ce53f2adea0c1f2b3adb312aff43bcabd8bf622f18bf37ed43",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "903604ca47667afa615e76643bf0446f7baafecbaf716b3a69875e91076b078c",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "c75736c474b987b378e364e3c1bec2dacb9a86c00e926fb7201e5544b0db1657",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "52ce0204669d841c6999dc06142b589513d242fb46da66543699b51bded8bd35",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      }
+    ],
+    "Member Profile": [],
+    "Member Dashboard": [
+      {
+        "surface_id": "d7ecde987d11231c2be74246f699312bb333cb770e572155ea36776164555b28",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "e7b175a12b75c5d1a142ca685e0fddc09a0a19fc2c4e7e8185e68a01cb6b50af",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "b8c0d9d4506398c5179088e6ca1b4d379eda75654e0eb215bd0e3edfa27f479a",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "2945ef0469c1ac07d3584e4a87977360515c6d560fd18ac49f578638e1ebf0e9",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "5ac42d3684825754e97d01eba06bf54d3b18def8e9e575a0d1c066e0cf03963b",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "f7380c9acff4d0012fe3ed217c9810746ebe020193de786aac50c73630c9b38d",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "571e7092f3020d4815ecc58ccabafa489128d8b5672cb010fc25e6ded0d921e9",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "5ae33e8c1737c3e1f9c86fb03f1f05d03a5728db3002c8ab3196b26d1a285bdb",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "876e77823bc99aade4893c8729905dc2713bba1864bcf5ea96e3ab1331bf5fc9",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      }
+    ],
+    "Admin Dashboard": [
+      {
+        "surface_id": "b343b1e093b57515b0029c14e21af97116f06db1081faf771dc58ccec7347fe1",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains admin dashboard surface"
+        ]
+      }
+    ],
+    "Workspace Routing": [
+      {
+        "surface_id": "d3e74af5cca3daa3c741d695105349fbd1880b4ce3446284cbc8db7ad2896a94",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "c75736c474b987b378e364e3c1bec2dacb9a86c00e926fb7201e5544b0db1657",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "372f26aefa4106a44a8e230aa6f53e19a51641fb102f6f3939b6e363e7fcc2c4",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "2d1837a6720f428f2bfa40ce5b75e38be80f16d5a0c61960b3e0261f7619157a",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "b96ef36f585408c8c54ea033ea2c778684fef6f71db5a72f005b5692457f87d4",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "4b0ee53511538627b92874048b44a8a4e99c57e72371af9e2120d292d4dc3d90",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "a063e361b4700c847d46e6e6384d6b8c8b6f20ea277f3f5c43cbf4d28737de11",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      }
+    ],
+    "Session Restoration": [],
+    "Communication Integration": [
+      {
+        "surface_id": "75d9bc96bfc1140033ef791e378ae7bee7dc41af10bab505cbd4008755402971",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "94a6b54c9e9b8a49371aa59a7792c2a01ea1c60f441b3119897486235562b90d",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "2ae1e9aea7cec60a2699b9124eff1582da9d0becbea565e17a4b65c340323ae7",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "ef77c5e85a8be732adf39be2018e3282c128aa28c7310c001a314eb34d80a6c0",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "4b0ee53511538627b92874048b44a8a4e99c57e72371af9e2120d292d4dc3d90",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "85ecd2276402741500eb7bd06572f11e9f23376567c742be104e2acd419cfcb7",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "f279bbdda8b3fea1f8b34aa76fac1ad5ec80624141b99222df1c072e6959b5bc",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      }
+    ],
+    "Shared Runtime State": [
+      {
+        "surface_id": "183c07f2f5ff22f77d47c417337ab048f2cda1bb81b4a18cb8319df96e0d5f5c",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "ff922e3c0d24f872f3a9349f4b4633908fea8ec464db4c3e6d0b8229ce817a73",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "5a530db5655ec8711ef943c36ca89dbcef50627f3ac12cd114b02ebb2e5d2599",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "baa106be13cef4c6fef803d6dd8ef17b63000d882e34aaea2a024868a7e4304b",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      }
+    ],
+    "API Surfaces": []
+  }
+}

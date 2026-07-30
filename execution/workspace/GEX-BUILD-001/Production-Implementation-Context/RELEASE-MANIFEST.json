@@ -1,0 +1,47 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "release": "1.0",
+  "status": "Frozen",
+  "created_at_utc": "2026-07-29T16:04:59Z",
+  "purpose": "Canonical implementation authority for the Notification Pipeline.",
+  "implementation_phase": "Repository Mutation",
+  "governance": {
+    "inspect_before_mutate": true,
+    "one_mutation_at_a_time": true,
+    "runtime_verification_required": true,
+    "mutation_execution_record_required": true
+  },
+  "artifacts": [
+    "admissions-stage-transition.event.json",
+    "EVENT-FLOW.md",
+    "notification-template-resolver.contract.json",
+    "TEMPLATE-CATALOG.md",
+    "communication-intent.contract.json",
+    "provider-adapter.contract.json",
+    "COMMUNICATION-ARCHITECTURAL-DEBT.json",
+    "TRANSITIONAL-COMMUNICATION-BOUNDARY.md",
+    "notification-intent-store.contract.json",
+    "notification-delivery-projection.contract.json",
+    "NOTIFICATION-RUNTIME.md",
+    "notification-pipeline.contract.json",
+    "NOTIFICATION-PIPELINE-ACCEPTANCE.md",
+    "NOTIFICATION-PIPELINE-PLAN.md",
+    "NOTIFICATION-PIPELINE-MUTATION-MAP.md",
+    "NOTIFICATION-IMPLEMENTATION-BLUEPRINT.md",
+    "NOTIFICATION-MUTATION-BACKLOG.json",
+    "NOTIFICATION-MUTATION-ROADMAP.md",
+    "mutation-execution-record.contract.json",
+    "MUTATION-EXECUTION-RECORD.template.md",
+    "MUTATION-GOVERNANCE.md"
+  ],
+  "next_execution": {
+    "mutation": "NM-001",
+    "objective": "Publish AdmissionsStageTransitionEvent from the certified runtime surface.",
+    "authority_source": "NOTIFICATION-MUTATION-BACKLOG.json"
+  },
+  "change_policy": {
+    "architecture_documents": "Frozen",
+    "new_requirements": "Require new implementation authority or amendment record",
+    "repository_mutations": "Must reference this manifest"
+  }
+}

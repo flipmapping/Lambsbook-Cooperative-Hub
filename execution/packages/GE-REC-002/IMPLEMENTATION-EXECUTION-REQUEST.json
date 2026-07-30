@@ -1,0 +1,27 @@
+{
+  "authority": "GE-EXEC-001",
+  "generated_utc": "2026-07-30T10:03:23.910431+00:00",
+  "execution_mode": "CANONICAL_REGENERATION",
+  "input_package": "execution/packages/GE-REC-002/GE-REC-002-CANONICAL-REGENERATION.zip",
+  "required_sha256": "45dc996f5bdd785bf2dcb5653db69a0a1e2302e0c4981fccb4f5f19fe57998c5",
+  "execution_requirements": {
+    "verify_package_fingerprint": true,
+    "consume_certified_pic_only": true,
+    "bounded_mutation_only": true,
+    "authorized_surfaces": [
+      "server/routes.ts",
+      "server/services/notifications.ts"
+    ],
+    "build_project": true,
+    "produce_unified_diff": true,
+    "produce_verification_report": true,
+    "commit_changes": false,
+    "push_to_remote": false
+  },
+  "expected_deliverables": [
+    "unified_diff",
+    "build_output",
+    "verification_report",
+    "modified_file_list"
+  ]
+}

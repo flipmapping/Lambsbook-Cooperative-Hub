@@ -1,0 +1,19 @@
+{
+  "Reuse": [
+    "Authentication",
+    "Dashboard",
+    "Member Workspace",
+    "Organization Registry",
+    "Notifications"
+  ],
+  "Extend": [
+    "Programs",
+    "Events",
+    "Growth Engine",
+    "Messaging"
+  ],
+  "New": [
+    "Conversation Workspace",
+    "Organization Blueprint"
+  ]
+}

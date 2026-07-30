@@ -1,0 +1,110 @@
+{
+  "authority": "APP-REL-003E",
+  "timestamp": "2026-07-30T14:38:40.591796+00:00",
+  "missing_count": 8,
+  "unexpected_count": 23,
+  "missing": [
+    "client/src/features/",
+    "server/imports/adapters/",
+    "server/imports/domain/",
+    "server/imports/reporting/",
+    "server/imports/staging/",
+    "server/imports/validation/",
+    "server/messaging/",
+    "shared/organization/"
+  ],
+  "unexpected": [
+    {
+      "path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/README.md",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/index.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/adapters/csv/adapter.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/domain/prospectImport.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/reporting/engine.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/staging/engine.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/validation/contracts.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/validation/engine.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/messaging/interface.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-demo-scenarios.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-demo.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-planner.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-validation.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/capability-catalog.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/channel-catalog.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/execution-plan.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/organization-manifest.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/workspace-catalog.ts",
+      "git_status": "A"
+    }
+  ]
+}

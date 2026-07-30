@@ -1,0 +1,1249 @@
+{
+  "authority": "APP-BUILD-002D",
+  "builder_version": "1.0",
+  "classification_version": "2.0",
+  "inspection_timestamp": "2026-07-30T10:02:52.765309+00:00",
+  "branch": "app-rec-006-runtime-identity",
+  "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "source_registry_checksum": "5ad74e85a968ed15d16e2d336b7baf386eef2acbc7c90048d19abd218d48c0b8",
+  "source_registry": "REPOSITORY-SURFACE-REGISTRY.json",
+  "status": "FROZEN",
+  "corridors": {
+    "Identity Layer": [
+      {
+        "surface_id": "6c1dbbb1cece1d226ad52bc78ac8d425d3ba311900ec89f28e52e7166ec014b7",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "deb73790f6699c985b38ce3a72a389d5784a868074085a3d8bb7c56f90e09a6e",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "e5ad47fdda42f748d59ce8b2ac06eeaf2cf26f9dabab731400cec62c60a2a4f6",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "b19255e3bd22ed4e62531a9b12268c9115f6c307c9116e99a8442b20d1b9f5d5",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "d7567c618effefc87d216c2c897c63238c74f3034273535158bacaeb92ce14c3",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "06c5b9977dc1d14776fba845bdf970bb45bd510478ae8a22883086aa4f0f0155",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "b30af9f18058d0ce53f2adea0c1f2b3adb312aff43bcabd8bf622f18bf37ed43",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "903604ca47667afa615e76643bf0446f7baafecbaf716b3a69875e91076b078c",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "c75736c474b987b378e364e3c1bec2dacb9a86c00e926fb7201e5544b0db1657",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "52ce0204669d841c6999dc06142b589513d242fb46da66543699b51bded8bd35",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates identity/authentication"
+        ]
+      },
+      {
+        "surface_id": "ce931a2269184f4b06d6be36ead81f2ca3e95e44a5c8d600f47da1dfa35b9337",
+        "confidence": "medium",
+        "rationale": [
+          "auth",
+          "session"
+        ]
+      },
+      {
+        "surface_id": "0088569b6ee7a7c7b22b20d6bae6339025155ee0e90e9186b1985da0b958c563",
+        "confidence": "medium",
+        "rationale": [
+          "session"
+        ]
+      },
+      {
+        "surface_id": "752a145674d57139f6c8b372357667b10ed275a078de931db81684f0d85229b8",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "f01d021401171f9f7fc4babbdc971876e5db51a1d12aca11739fb1bebca0ce37",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "850d23676d29d6ce6945671c961e3cfaec1c7e37cb8e8649d0ce19a3e50b6c18",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "f51fd28839d23da3bde870adac9c4f49aee6ee0a572214359c5f3df45b0af4b6",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "9d7abda712f5bb64cc4244862f9d576a4278ecf7d48fa0f935cd92719a4814fa",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "8bef4f16df3bdd5eaa0f45fc55621fa80208d7096d93444bfbbb0ce450bde224",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "f0cb4675c938ed9123c0c139e769f9ba745309b77694b709b61c5191627b2a92",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "3b6dd03f79af8ce751d56c44fc7a1be227c239e73c10b4266d25e50fa0088cf9",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "7c1f1579a9a09a554c017478d52fec0475075e2402489716b8edd8db83467749",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "f08055313086f9de46205d263a0dff836905a3fceaee7971d5bbabcc3ee0cd98",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "d74e5567c52ce15591e8fb5372cd4f3270616fa4dadac1603e07db84167074dc",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "c322d956c0b72a3948a0a065234d9d091b9ff05500ccc8af4f6314a38e91c732",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "50310aa8524428f8f5d218dbf7ff0ef63eccab397aff39d5c4e24367d07d225b",
+        "confidence": "medium",
+        "rationale": [
+          "session"
+        ]
+      },
+      {
+        "surface_id": "4174db2b5432c130a919f3e9ce7492edc899f9ec052db153918b90de87ce7e4b",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "4ecffecf1deab58ec5e6cf4e72624ff49b195b7c7817cb261314136c69b7d55b",
+        "confidence": "medium",
+        "rationale": [
+          "session"
+        ]
+      },
+      {
+        "surface_id": "8daf4bdfc379d30179f55ef4e45e19911d16b23d75a7fd3ec41c6eacbacdca48",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "5f4d25b5d708e7cb2db137ae148e57ae11b21bcfc8f50537c04731118af0f1a1",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "91c9583d6e69eb3b9142865373e885309c6075f232b9602d3f1ee3f389e1f666",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "0e020368619491fbe637cd968ef4c098e57f2fe6b457d47c275c1edecfec737d",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "7b044f6ceb88ade38dcd10659ec1de681cc0dcdd04e642f7ce566fa5ae7754dd",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "066a5b92f1fcedae58838a3559e01cdbd3aa0c6fb04528843b5df5d411f142f3",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "3aa562ec9d7d2619f411778d9695a4d36a82ad46039f9a14ccd3114d16fa5c89",
+        "confidence": "medium",
+        "rationale": [
+          "auth",
+          "session"
+        ]
+      },
+      {
+        "surface_id": "0ce56e4348623760f92b50ad75fd53e7e26f0a73d1c018df89937f86fc4467f3",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "7fb0dc63cb5e242bbad2ead629646bf6173f7cdca296e92462fd7ad95587cf7a",
+        "confidence": "medium",
+        "rationale": [
+          "auth",
+          "session"
+        ]
+      },
+      {
+        "surface_id": "b3d57918b477b8f3af88f6b690d157e85c8ea408d014bc53055d4b569a318758",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "bc05737638f818821ad4f439c4541ff66b3f964281175505d2a3b766c7d2f234",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "8edcdf44f49eb41a37837fa85bb33b735cf48ebdb6260696583d01ab15ee5b2b",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "6d2178e147acb84106a116f78cbf755074563cf15f5b623a1ce322d9da78f47d",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "bf59e1674bd08e75ba57c0b07f2d0399e7d8a139b912ae9532e50baf2e09dcea",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "0bb4329f1ad3919c317a69d63961f8802554c3d0b94309cd762e65bb810cef8b",
+        "confidence": "medium",
+        "rationale": [
+          "auth",
+          "identity"
+        ]
+      },
+      {
+        "surface_id": "cf899cd11587645ab5e630761d1c2f9d644e90945beebc048dc1bb3756ad590d",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "572376e8642610bb1e2640bce30475ef93f259a6665853298ce0e4ccd843ff91",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "2ea5accbad208d08c017b3b72c6a8fec08168f757c6a144aefdd3722da6ffd1c",
+        "confidence": "medium",
+        "rationale": [
+          "auth",
+          "session",
+          "identity"
+        ]
+      },
+      {
+        "surface_id": "6af4f8e34285120717169f57249241ec070dfd0f878e186658aaa341e568c84f",
+        "confidence": "medium",
+        "rationale": [
+          "session"
+        ]
+      },
+      {
+        "surface_id": "77c7072b6552def1b58cfe750908fd9ba0018b32b09986150f7480efcb1064a7",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "32168feb0884d977a96bdc9c2314d72b1150e0eb55d6f6226b74fba85558c032",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "cd0ec11fcd3a7f2493414a1e7959d88d4cc6dbb2ec1579b0de48405c72e42dd2",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "3c27167ad832c1682de44ab735f70162233cc938af1c0cf7dfe7a4d61a9c4590",
+        "confidence": "medium",
+        "rationale": [
+          "auth"
+        ]
+      },
+      {
+        "surface_id": "248adfc01eb4816dcacc7b777efec7f15df5a4c21da1eaa3f5214b3eb61e1e9a",
+        "confidence": "medium",
+        "rationale": [
+          "session"
+        ]
+      }
+    ],
+    "Member Profile": [],
+    "Member Dashboard": [
+      {
+        "surface_id": "d7ecde987d11231c2be74246f699312bb333cb770e572155ea36776164555b28",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "e7b175a12b75c5d1a142ca685e0fddc09a0a19fc2c4e7e8185e68a01cb6b50af",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "b8c0d9d4506398c5179088e6ca1b4d379eda75654e0eb215bd0e3edfa27f479a",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "2945ef0469c1ac07d3584e4a87977360515c6d560fd18ac49f578638e1ebf0e9",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "5ac42d3684825754e97d01eba06bf54d3b18def8e9e575a0d1c066e0cf03963b",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "f7380c9acff4d0012fe3ed217c9810746ebe020193de786aac50c73630c9b38d",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "571e7092f3020d4815ecc58ccabafa489128d8b5672cb010fc25e6ded0d921e9",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "5ae33e8c1737c3e1f9c86fb03f1f05d03a5728db3002c8ab3196b26d1a285bdb",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      },
+      {
+        "surface_id": "876e77823bc99aade4893c8729905dc2713bba1864bcf5ea96e3ab1331bf5fc9",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains dashboard surface"
+        ]
+      }
+    ],
+    "Admin Dashboard": [
+      {
+        "surface_id": "b343b1e093b57515b0029c14e21af97116f06db1081faf771dc58ccec7347fe1",
+        "confidence": "low",
+        "rationale": [
+          "Repository path contains admin dashboard surface"
+        ]
+      }
+    ],
+    "Workspace Routing": [
+      {
+        "surface_id": "d3e74af5cca3daa3c741d695105349fbd1880b4ce3446284cbc8db7ad2896a94",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "c75736c474b987b378e364e3c1bec2dacb9a86c00e926fb7201e5544b0db1657",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "372f26aefa4106a44a8e230aa6f53e19a51641fb102f6f3939b6e363e7fcc2c4",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "2d1837a6720f428f2bfa40ce5b75e38be80f16d5a0c61960b3e0261f7619157a",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "b96ef36f585408c8c54ea033ea2c778684fef6f71db5a72f005b5692457f87d4",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "4b0ee53511538627b92874048b44a8a4e99c57e72371af9e2120d292d4dc3d90",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "a063e361b4700c847d46e6e6384d6b8c8b6f20ea277f3f5c43cbf4d28737de11",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates routing responsibility"
+        ]
+      },
+      {
+        "surface_id": "ce931a2269184f4b06d6be36ead81f2ca3e95e44a5c8d600f47da1dfa35b9337",
+        "confidence": "medium",
+        "rationale": [
+          "<Route",
+          "Routes",
+          "Router"
+        ]
+      },
+      {
+        "surface_id": "c322d956c0b72a3948a0a065234d9d091b9ff05500ccc8af4f6314a38e91c732",
+        "confidence": "medium",
+        "rationale": [
+          "Routes"
+        ]
+      },
+      {
+        "surface_id": "fe8fe5d621ec9d163114a5017dadd707081b789f0c6a1f54b976a480f67ed5bc",
+        "confidence": "medium",
+        "rationale": [
+          "Router"
+        ]
+      },
+      {
+        "surface_id": "786114c6ebf98e577ec30dac884800bb7c9ce800b5323710ed03b916e1d33b68",
+        "confidence": "medium",
+        "rationale": [
+          "Routes"
+        ]
+      },
+      {
+        "surface_id": "eeb750dacd7510a22c947342a507b93389bbb4395c5b31fc19669ca6bee5a2ac",
+        "confidence": "medium",
+        "rationale": [
+          "Routes"
+        ]
+      }
+    ],
+    "Session Restoration": [],
+    "Communication Integration": [
+      {
+        "surface_id": "75d9bc96bfc1140033ef791e378ae7bee7dc41af10bab505cbd4008755402971",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "94a6b54c9e9b8a49371aa59a7792c2a01ea1c60f441b3119897486235562b90d",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "2ae1e9aea7cec60a2699b9124eff1582da9d0becbea565e17a4b65c340323ae7",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "ef77c5e85a8be732adf39be2018e3282c128aa28c7310c001a314eb34d80a6c0",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "4b0ee53511538627b92874048b44a8a4e99c57e72371af9e2120d292d4dc3d90",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "85ecd2276402741500eb7bd06572f11e9f23376567c742be104e2acd419cfcb7",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "f279bbdda8b3fea1f8b34aa76fac1ad5ec80624141b99222df1c072e6959b5bc",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates communication surface"
+        ]
+      },
+      {
+        "surface_id": "0088569b6ee7a7c7b22b20d6bae6339025155ee0e90e9186b1985da0b958c563",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "b00a8435ebeca9a6de4e009419acea397a88403ac6c1affb67768aace498792c",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "31d64dc18ad3d5c2e88df09fd5d9d224c7939a38f59d40c1a470d05c4a945d2f",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "5c76d1965d154b1e866196488344ba8b40f5ccbf66905eecec60d56c3289dae4",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "7b9a8e0bf896bc37351f867da11001a0efc9762b54b90594d18e1d5f93494f9a",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "bc1bacf8ca4f2aef5d00d9ebc292ab1517d5d89c399a5331510739bce39c2be9",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "dffa7b9e7d4a94133de4e5f5146edbfde8b679a62230468540e913bd72cf770a",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "f84b0a1ea4475f12cc285661bdadb42e505b9381b6f490ba76029036c8d42a5a",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "bf59e798e80aed06c59216f08223065c6cb9855a90e65816fa6e71930cefdd1f",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "c322d956c0b72a3948a0a065234d9d091b9ff05500ccc8af4f6314a38e91c732",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "734b04f8991c0c5cf3f8e0845cfa745c325d85b81da45e9a330608ed876a59f7",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "a68f6b52c782e79876c59a9df4b2073675a8a56ac3125d2c54e4723bdfd8cf81",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "56cbf0e1ae06d9fb2ca128c8704360c7bd4ec4402d6eec8d02ab44cb6cf0d7e5",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "a3fd7de3c3e955856043174c9bd0ff032dc0cd6b0b9b498134b343364e4f5902",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "d705f3b171a2fa6d9a74e87679dcde4295d1330c3b85ad2855880243031281f0",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "8daf4bdfc379d30179f55ef4e45e19911d16b23d75a7fd3ec41c6eacbacdca48",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "5f4d25b5d708e7cb2db137ae148e57ae11b21bcfc8f50537c04731118af0f1a1",
+        "confidence": "medium",
+        "rationale": [
+          "resend",
+          "message"
+        ]
+      },
+      {
+        "surface_id": "91c9583d6e69eb3b9142865373e885309c6075f232b9602d3f1ee3f389e1f666",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "e54a84423947e064c54855d273b613d776c60f28b1b74fb10dd8305b97dbe763",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "ce013adfe443a70790d45d7a7570384f1871a1c8278f060e9446808c7a52e910",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "0e020368619491fbe637cd968ef4c098e57f2fe6b457d47c275c1edecfec737d",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "7b044f6ceb88ade38dcd10659ec1de681cc0dcdd04e642f7ce566fa5ae7754dd",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "81b99c289498dbfa65e54b63dbc451ecbe9bd27d638e15d1f931187e76708669",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "02265846d7ba06e040bffc22a9feb635d8b47004ea18f498a9994dc47af0a6bb",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "3e74720aadad4e84390cd604e3d1e66c2121ebf9f4d8354a094c9155e6bcd5d4",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "242e1d66b07cfdbfc1bcbbab955ef707126115749f8b54bea935f0b5c38d8be1",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "786114c6ebf98e577ec30dac884800bb7c9ce800b5323710ed03b916e1d33b68",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "507b73e68a749027bad6e6474aa5ac5562d42e42dbecb29eac5e9103897d1537",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "6616235c0aa402d950992391f85e380db148f4ff84664599979dfc31db69bcf7",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "62b9e783ed78284f7f607e21ba8520c1027dda4f71acae2b96c2435e23de9530",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "5d3b88de6c688b1ac5ea7f8480457c0b6fddce1aa577248c45badce01acae412",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "9c8478e2f57475ea6de40c94565c94399a5cc9ad506ef7ac12251378fee5c0c9",
+        "confidence": "medium",
+        "rationale": [
+          "resend",
+          "notification",
+          "message"
+        ]
+      },
+      {
+        "surface_id": "70307c80545173491105d1b60ea00ebfb6687d759d06928fb2f1f49528d7f633",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "d810fea1099ae624f8d40800eeb17418419c1d1c9cfbb3da499e99015a854840",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "bf59e1674bd08e75ba57c0b07f2d0399e7d8a139b912ae9532e50baf2e09dcea",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "0bb4329f1ad3919c317a69d63961f8802554c3d0b94309cd762e65bb810cef8b",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "572376e8642610bb1e2640bce30475ef93f259a6665853298ce0e4ccd843ff91",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "2ea5accbad208d08c017b3b72c6a8fec08168f757c6a144aefdd3722da6ffd1c",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "ec918fc619e26ee133d8983fb89558ad75dedc653c961732e00e8d03037b9957",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "6af4f8e34285120717169f57249241ec070dfd0f878e186658aaa341e568c84f",
+        "confidence": "medium",
+        "rationale": [
+          "notification",
+          "message"
+        ]
+      },
+      {
+        "surface_id": "cd82659a047d33bd041de6d5214ebd3e9fe88ac9123f3a9e411c3942e16c6cbb",
+        "confidence": "medium",
+        "rationale": [
+          "message"
+        ]
+      },
+      {
+        "surface_id": "fd727637bd9ec2313b872851f2109148d3c75569bdd7363e0e6225e66411de81",
+        "confidence": "medium",
+        "rationale": [
+          "notification"
+        ]
+      },
+      {
+        "surface_id": "6360ea563c85d89836844874a08eb5dcee56fd917d2f1ad5b7f1d21e408a7dd1",
+        "confidence": "medium",
+        "rationale": [
+          "notification"
+        ]
+      },
+      {
+        "surface_id": "cd0ec11fcd3a7f2493414a1e7959d88d4cc6dbb2ec1579b0de48405c72e42dd2",
+        "confidence": "medium",
+        "rationale": [
+          "notification",
+          "message"
+        ]
+      },
+      {
+        "surface_id": "5d6fbde57a272c7c2f68f83e6da10491efe05d39aaea86806bc9a449afc55644",
+        "confidence": "medium",
+        "rationale": [
+          "resend"
+        ]
+      },
+      {
+        "surface_id": "248adfc01eb4816dcacc7b777efec7f15df5a4c21da1eaa3f5214b3eb61e1e9a",
+        "confidence": "medium",
+        "rationale": [
+          "notification",
+          "message"
+        ]
+      }
+    ],
+    "Shared Runtime State": [
+      {
+        "surface_id": "183c07f2f5ff22f77d47c417337ab048f2cda1bb81b4a18cb8319df96e0d5f5c",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "ff922e3c0d24f872f3a9349f4b4633908fea8ec464db4c3e6d0b8229ce817a73",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "5a530db5655ec8711ef943c36ca89dbcef50627f3ac12cd114b02ebb2e5d2599",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "baa106be13cef4c6fef803d6dd8ef17b63000d882e34aaea2a024868a7e4304b",
+        "confidence": "low",
+        "rationale": [
+          "Repository path indicates shared runtime state"
+        ]
+      },
+      {
+        "surface_id": "ce931a2269184f4b06d6be36ead81f2ca3e95e44a5c8d600f47da1dfa35b9337",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "4aa4f68878b86c2d55bc987b28124375da6bce40e248b6494abbd4cb846b8508",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "d8efc17988abc2415a73ffc9f9e2cd9b49180500268e4bc33c44181b8ec3de99",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "92c7778893ac13322294cdf202a94d3d4d789aa4bbe8fbc39c93969b6440df09",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "34c601bf67b1939eac4a369537e9c43afb5e71c4355ca2fb3ef2e68879c13ade",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "7018890fba106bfcebe465ac6adc412d13c4e20da822744c13f6296de176065a",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "a3e4b22de23c80752d7d7c3462649cf7b83b1aae48b14a9afe41fff4f9fbb88b",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "7e3bbf0d15d67a66c7373164b2be8fcfedc4710b8b2e38594f75850665fbe8a3",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "0b699800448dbeac6031feb64efc1cb233015cf4c94388a95297c9274e251050",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "e620ede6fffa9c91732465101ef901109ff4a773c03b60530cd344b8f6d92958",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "92d4bed6044d8b0a0c9cd6d9a95cdab6d09bab244eb6d8b4e805b80c7c29f4ca",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "9bfc13ec878065e25871a0c674488dd8821afe050b60dd1fff19c59a4cdacfc8",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "cbdc268f009c19a6b546c2e76e87672d595dd03280c2b0d9cc159c555d8c1be4",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "2f823db5d6444c1c1fedb0739adae11045c3838aea0179e1dc01c58cbc3fce6a",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "07e8857e4d553c80e752f84129989bc2de9ba15d33e41afa132422e12e93720e",
+        "confidence": "medium",
+        "rationale": [
+          "createContext",
+          "useContext",
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "1b766d846c5a7cd20358af2f2a77fab9a280be4cd1c09b324764236a6ded6663",
+        "confidence": "medium",
+        "rationale": [
+          "createContext",
+          "useContext",
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "bf59e798e80aed06c59216f08223065c6cb9855a90e65816fa6e71930cefdd1f",
+        "confidence": "medium",
+        "rationale": [
+          "createContext",
+          "useContext",
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "45c8ae892b21773e80f3cc403a855d8ad31bb1ef69bfe8c7abb34fc3243e00f0",
+        "confidence": "medium",
+        "rationale": [
+          "useContext"
+        ]
+      },
+      {
+        "surface_id": "f0cb4675c938ed9123c0c139e769f9ba745309b77694b709b61c5191627b2a92",
+        "confidence": "medium",
+        "rationale": [
+          "createContext",
+          "useContext",
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "3b6dd03f79af8ce751d56c44fc7a1be227c239e73c10b4266d25e50fa0088cf9",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "dc7094668304c6b3f1e235d4d65db7859caff8267441ff38c3f820510087e565",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "7c1f1579a9a09a554c017478d52fec0475075e2402489716b8edd8db83467749",
+        "confidence": "medium",
+        "rationale": [
+          "createContext",
+          "useContext",
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "bd7818668dfa4b4a770fb78a99620ae518d55768a109d3b055e010b098d94fdd",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "507b73e68a749027bad6e6474aa5ac5562d42e42dbecb29eac5e9103897d1537",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "62b9e783ed78284f7f607e21ba8520c1027dda4f71acae2b96c2435e23de9530",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      },
+      {
+        "surface_id": "9c8478e2f57475ea6de40c94565c94399a5cc9ad506ef7ac12251378fee5c0c9",
+        "confidence": "medium",
+        "rationale": [
+          "Provider"
+        ]
+      }
+    ],
+    "API Surfaces": [
+      {
+        "surface_id": "ce931a2269184f4b06d6be36ead81f2ca3e95e44a5c8d600f47da1dfa35b9337",
+        "confidence": "medium",
+        "rationale": [
+          "router",
+          "Router\\("
+        ]
+      },
+      {
+        "surface_id": "fc1be9129b4096a53fc2befef4805a5c379025ee424dd8a9d9614dc73a21b92b",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "fe8fe5d621ec9d163114a5017dadd707081b789f0c6a1f54b976a480f67ed5bc",
+        "confidence": "medium",
+        "rationale": [
+          "router"
+        ]
+      },
+      {
+        "surface_id": "786114c6ebf98e577ec30dac884800bb7c9ce800b5323710ed03b916e1d33b68",
+        "confidence": "medium",
+        "rationale": [
+          "express",
+          "app\\.get"
+        ]
+      },
+      {
+        "surface_id": "7d818232ed04431d512b1798c3812f509eff5c6802ebb25cf3361e47001e61c2",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "7fb0dc63cb5e242bbad2ead629646bf6173f7cdca296e92462fd7ad95587cf7a",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "78786791a041835c66272a3fd9c09d7314ef3e42ad6a292b99258288118dd47e",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "5d3b88de6c688b1ac5ea7f8480457c0b6fddce1aa577248c45badce01acae412",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "b3d57918b477b8f3af88f6b690d157e85c8ea408d014bc53055d4b569a318758",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "bc05737638f818821ad4f439c4541ff66b3f964281175505d2a3b766c7d2f234",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "8edcdf44f49eb41a37837fa85bb33b735cf48ebdb6260696583d01ab15ee5b2b",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "6d2178e147acb84106a116f78cbf755074563cf15f5b623a1ce322d9da78f47d",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      },
+      {
+        "surface_id": "cb9e99f67748f4645a10ed397d3ecdc0cec657757a7e97cc3fafc68571451d03",
+        "confidence": "medium",
+        "rationale": [
+          "express",
+          "app\\.get"
+        ]
+      },
+      {
+        "surface_id": "eeb750dacd7510a22c947342a507b93389bbb4395c5b31fc19669ca6bee5a2ac",
+        "confidence": "medium",
+        "rationale": [
+          "express"
+        ]
+      }
+    ]
+  },
+  "merge_timestamp": "2026-07-30T11:47:01.480628+00:00",
+  "source_refinement_sha256": "09a4e0f96e85df8bda3d199f92a1733ae35e006c5b54892e2c11f5c9475d69ff",
+  "source_validation_sha256": "e283b0cf585d15abccba4134eb695dac9dfeef2399d0fe2f3d8dd827448f9146"
+}

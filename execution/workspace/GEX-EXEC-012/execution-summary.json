@@ -1,0 +1,9 @@
+{
+  "authority": "GEX-EXEC-012",
+  "authorized_files": [
+    "server/routes.ts",
+    "server/services/notifications.ts"
+  ],
+  "mutation_type": "Certified Replay",
+  "next_phase": "Build -> Push -> Deploy -> Runtime Verification"
+}

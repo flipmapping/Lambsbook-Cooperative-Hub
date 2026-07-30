@@ -1,0 +1,40 @@
+{
+  "checkpoint_id": "CHK-EMP-002-0001",
+  "parent_checkpoint": null,
+  "execution_id": "EMP-002",
+  "pipeline": "Execution Materialization Pipeline",
+  "execution_state": "GOVERNANCE_HOLD",
+  "completed_stages": [
+    "EOS-BLD-001 Builder Certification",
+    "Authority Resolution Investigation",
+    "Governance Boundary",
+    "Founder Governance Decision",
+    "Execution Handoff"
+  ],
+  "pending_stages": [
+    "Governance Resolution",
+    "Builder Input Resolution",
+    "Builder Invocation",
+    "Package Verification",
+    "Founder Approval",
+    "Repository Mutation"
+  ],
+  "resume_from": "Governance Resolution",
+  "authorized_mutations": [],
+  "blocked_mutations": [
+    "Builder Invocation",
+    "Repository Mutation"
+  ],
+  "dependencies": [
+    "Canonical Builder Input",
+    "Canonical Implementation Authority or Successor Authority"
+  ],
+  "evidence_boundary": "Repository investigation complete within authorized scope",
+  "generated_at": "2026-07-24T04:31:49Z",
+  "schema_version": "1.0.0",
+  "integrity": {
+    "algorithm": "SHA-256",
+    "digest": "fa28be739c6a248e12dc7deaa029fbfa4f9d810942d34c88788c13bb0a2c1fa6",
+    "status": "VERIFIED"
+  }
+}

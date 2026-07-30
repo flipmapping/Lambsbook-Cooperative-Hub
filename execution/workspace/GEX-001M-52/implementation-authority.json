@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-07-28T02:58:22.910083Z",
+  "implementation_authority": "GEX-001M-52",
+  "repository_truth": "CERTIFIED",
+  "mutation_scope": [
+    "server/imports/pipeline/persist.ts"
+  ],
+  "resolved_dependencies": {
+    "mapper": "server/imports/mappers/prospectRegistration.ts",
+    "contracts": "server/imports/pipeline/contracts.ts",
+    "createProspectCore": "server/services/admissions.ts"
+  },
+  "implementation_requirements": [
+    "Remove stub implementation",
+    "Import createProspectCore from server/services/admissions.ts",
+    "Import mapImportRecordToRegistrationPayload",
+    "Process ProspectImportRecord sequentially",
+    "Continue after per-record failures",
+    "Populate ImportResult",
+    "Do not modify any other repository file"
+  ],
+  "verification_after_commit": [
+    "npm run build",
+    "Run GEX-001M-48 acceptance gate",
+    "If accepted, begin runImportPipeline() integration"
+  ]
+}

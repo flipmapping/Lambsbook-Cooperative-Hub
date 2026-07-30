@@ -1,0 +1,20 @@
+{
+  "authority": "APP-REC-007",
+  "generated_utc": "2026-07-30T14:32:06.812848+00:00",
+  "mission": "Admissions Runtime Failure Capture",
+  "runtime_results": {
+    "stage_transition": "PASS",
+    "documents_endpoint": "FAIL_500",
+    "decision_endpoint": "FAIL_500",
+    "prospect_detail": "FAIL_502"
+  },
+  "required_runtime_evidence": [
+    "Node server stack trace",
+    "Express error log",
+    "Supabase error (if any)",
+    "Failed SQL/RPC (if any)",
+    "Unhandled exception",
+    "Browser Network response body"
+  ],
+  "next_action": "Capture the first server-side exception produced when invoking the failing endpoints. Do not mutate the repository until the failure has been classified."
+}

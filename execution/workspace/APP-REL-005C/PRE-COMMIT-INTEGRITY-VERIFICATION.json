@@ -1,0 +1,9 @@
+{
+  "authority": "APP-REL-005C",
+  "timestamp": "2026-07-30T14:52:31.463949+00:00",
+  "expected_manifest_sha256": "7ac97ae35c5df6a41ca983e2703fb8c8816c680891a620c0e8b2ba6cd7edefe2",
+  "current_manifest_sha256": "7ac97ae35c5df6a41ca983e2703fb8c8816c680891a620c0e8b2ba6cd7edefe2",
+  "expected_file_count": 46,
+  "current_file_count": 46,
+  "integrity_verified": true
+}

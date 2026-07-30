@@ -1,0 +1,17 @@
+Implementation Transition
+Timestamp: 2026-07-27T16:45:46.521485Z
+
+Certified repository truths:
+- persist.ts is stub
+- createProspectCore() exported
+- canonical mapper available
+- runImportPipeline not integrated
+- baseline build passed
+
+Decision:
+- No additional repository inspection.
+- Implement persist.ts.
+- Build.
+- Integrate persist().
+- Build.
+- Execute smoke test.

@@ -1,0 +1,15 @@
+{
+  "implementation_authority": "GEX-001M-62",
+  "timestamp_utc": "2026-07-28T03:32:59Z",
+  "status": "BLOCKED",
+  "block_type": "Repository Provenance Divergence",
+  "decision": "Suspend implementation until certified repository revision is restored.",
+  "contradictions": [
+    "server/imports/pipeline missing",
+    "server/imports/mappers missing",
+    "shared/imports/types.ts missing",
+    "createProspectCore() absent from server/services/admissions.ts",
+    "Execution repository does not match PIC-certified repository"
+  ],
+  "next_required_action": "Identify the exact commit/branch used to generate the PIC, or regenerate the PIC from the repository snapshot provided to the implementation agent."
+}

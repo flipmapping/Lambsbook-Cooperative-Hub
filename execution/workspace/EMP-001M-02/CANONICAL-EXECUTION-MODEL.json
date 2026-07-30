@@ -1,0 +1,25 @@
+{
+  "authority": "EMP-001M-02",
+  "name": "Canonical Execution Model",
+  "version": "1.0",
+  "description": "The immutable execution model passed through every Execution Compiler stage.",
+  "structure": {
+    "execution_authority": {},
+    "implementation_context": {},
+    "repository": {},
+    "resolved_authorities": [],
+    "resolved_dependencies": [],
+    "validation": {
+      "status": "PENDING",
+      "diagnostics": []
+    },
+    "normalization": {
+      "status": "PENDING"
+    },
+    "builder_input": null,
+    "explainability": {
+      "trace": []
+    }
+  },
+  "compiler_rule": "Compiler stages may enrich the model but must not remove previously established information."
+}

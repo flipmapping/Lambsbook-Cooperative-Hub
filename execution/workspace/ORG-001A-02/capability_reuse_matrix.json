@@ -1,0 +1,56 @@
+[
+  {
+    "capability": "authentication",
+    "classification": "Reuse",
+    "file_count": 2357,
+    "notes": ""
+  },
+  {
+    "capability": "builder",
+    "classification": "Reference Only",
+    "file_count": 970,
+    "notes": ""
+  },
+  {
+    "capability": "dashboard",
+    "classification": "Reuse",
+    "file_count": 264,
+    "notes": ""
+  },
+  {
+    "capability": "events",
+    "classification": "Extend",
+    "file_count": 433,
+    "notes": ""
+  },
+  {
+    "capability": "growth",
+    "classification": "Extend",
+    "file_count": 1033,
+    "notes": ""
+  },
+  {
+    "capability": "messaging",
+    "classification": "Extend",
+    "file_count": 464,
+    "notes": ""
+  },
+  {
+    "capability": "notifications",
+    "classification": "Extend",
+    "file_count": 144,
+    "notes": ""
+  },
+  {
+    "capability": "organization",
+    "classification": "Reuse",
+    "file_count": 168,
+    "notes": ""
+  },
+  {
+    "capability": "programs",
+    "classification": "Extend",
+    "file_count": 438,
+    "notes": ""
+  }
+]

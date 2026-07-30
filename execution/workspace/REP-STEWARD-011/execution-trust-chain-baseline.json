@@ -1,0 +1,37 @@
+{
+  "authority": "REP-STEWARD-011",
+  "generated_at": "2026-07-30T04:10:43.454655Z",
+  "constitutional_reference": "EOS-CRSG-001",
+  "execution_trust_chain": [
+    "Implementation Authority",
+    "Repository Inspection",
+    "Repository Mutation",
+    "Git Commit",
+    "Repository Synchronization",
+    "Artifact Build",
+    "Artifact Provenance Verification",
+    "Deployment Synchronization",
+    "Runtime Verification",
+    "Operational Certification"
+  ],
+  "mandatory_evidence": [
+    "Repository root",
+    "Active branch",
+    "Pre-mutation HEAD SHA",
+    "Post-mutation HEAD SHA",
+    "Certified Commit SHA",
+    "Remote HEAD SHA",
+    "Build artifact identifier",
+    "Build timestamp",
+    "Deployment target",
+    "Runtime build identifier",
+    "Runtime verification timestamp"
+  ],
+  "stewardship_policy": {
+    "execution_evidence": "Retain",
+    "implementation_packages": "Retain until superseded",
+    "synchronization_records": "Retain",
+    "deployment_provenance": "Retain",
+    "runtime_certification": "Retain"
+  }
+}

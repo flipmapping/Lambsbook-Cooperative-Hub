@@ -1,0 +1,1776 @@
+{
+  "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "working_tree_clean": false,
+  "entries": [
+    {
+      "status": "M ",
+      "path": "lient/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "client/src/components/notifications/ChannelSelector.tsx",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "client/src/pages/HubAuth.tsx",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "client/src/pages/HubAuthCallback.tsx",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "docs/implementation-evidence/PHASE-1-BASELINE/MemberHub.pre-mutation.tsx",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": " M",
+      "path": "execution/packages/GE-RMP-014-Claude-Package.zip",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": " M",
+      "path": "execution/packages/GE-RMP-014-Claude-Package.zip.sha256",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": " M",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/PACKAGE-MANIFEST.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": " M",
+      "path": "governance/execution-derivation/generated/EXECUTION-DERIVATION.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "package-lock.json",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "package.json",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/RECOVERY_MANIFEST.txt",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.cjs",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.cjs",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_contract_fix_execution_reconstructed.js",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_contract_fix_execution_v2_reconstructed.js",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.cjs",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.js",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "recovery/websocket_contract_fix/websocket_execution_artifact_upgrade_recovery.cjs",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "runner/workspace/claude-phase5-workpackage1.zip",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "server/imports/pipeline/persist.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "server/lib/supabase-dal.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "server/middleware/attachUserContext.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "server/routes.ts",
+      "category": "authorized_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "server/routes/member.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "server/services/admissions.ts.pre-ge-comm-001-g20",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "server/services/admissions.ts.pre-ge-rmp-014-g11",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "server/services/admissions.ts.pre-ge-rmp-014-g7",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "server/services/notifications.ts",
+      "category": "authorized_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "server/services/notifications.ts.pre-ge-rmp-014",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " D",
+      "path": "server/services/notifications.ts.pre-ge-rmp-014-g4",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "shared/schema.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": " M",
+      "path": "src/lib/memberClient.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": ".app-rec-031-awaiting-runtime",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "APP-REC-020-Claude-Package.zip",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "APP_REC_007_reorder.patch",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "client/src/features/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "client/src/pages/HubAuthCallback.tsx.REORDER_CANDIDATE",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "execution/adapters/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/automation/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder-execution/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder-working-tree/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/README.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/activate.py",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/activation.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/builder-certification.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/builder-spec.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/builder.py",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/context.py",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/delivery/recovery-truth-table.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/derive_pic.py",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/execution-plan.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/pipeline.py",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/register_builder.py",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builder/registration.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/builders/recovery/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/certifications/GP-EXEC-010M-09/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/checkpoints/EXECUTION-CHECKPOINT.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/compiler/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/compliance/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/contracts/checkpoint/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/engines/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/evidence/GP-EXEC-009/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/evidence/GP-EXEC-010/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/git-verification/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/EER-GEX-EXEC-001.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/EOS-LIFECYCLE-001.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/EOS-VAL-001.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/execution-completion-check.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/execution-repository-evidence.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/execution-state-graph.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/execution-state.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/execution-transition-audit.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/governance/execution-transition-check.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/handoffs/APP-REC-003C/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/implementation-planning/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/implementation/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/inspection/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/merge/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/APP-REC-019B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/APP-REC-020/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/APP-REC-029/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/START-HERE.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/governance/BASELINE.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/governance/execution-derivation/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/governance/execution/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GE-RMP-014-Claude-Package/governance/startup/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GP-EXEC-009_IMPLEMENTATION_PACKAGE.zip",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GP-EXEC-009_IMPLEMENTATION_PACKAGE/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/GP-EXEC-010M-06A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/packages/_builder_certification/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/recovery/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/registry/stream-registry.json",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/released-baselines/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/tools/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-003/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-004/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-EXEC-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-EXEC-LOG-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-IMP-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-IMP-001A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-INTEGRATION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-INTEGRATION-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-NEXT-SPRINT/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-RELEASE-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-COM-SPRINT-BOARD-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-EXEC-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-IMP-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-003/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-004/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-005/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-006/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-007/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-008/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-009/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-010/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-011/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-012/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-013/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-014/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-015/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MEMBER-016/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-MUT-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-READY-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-REC-018C-20260726T153726Z-attachUserContext.ts",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-REC-RPC-INSPECTION/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/APP-REC/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ARCH-HANDOFF-002B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/BUILDER-ACTIVATION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/BUILDER-EXECUTION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/BUILDER-HANDOFF-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/BUILDER-INVOCATION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/COM-ARCH-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/COMM-RUNTIME-WORKPACKAGE-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001C/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001D/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001E/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001F/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001M-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001M-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001M-06/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001M-07/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-001M-08/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EMP-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ENGINEERING-ACTIVATION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ENGINEERING-HANDOFF-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/EXECUTION-BASELINE-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-11A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-13B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-15B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-35/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-38/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-41/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-45/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-47/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-48/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-49/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-50/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-51/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-52/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-54/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-55/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-62/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-63/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-78/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-79/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-80/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-81/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-89B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-90/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-91A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-92C/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-92F/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-93/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-001M-93A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-BUILD-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-CLOSE-001G/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-CLOSE-001H/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-CLOSE-001J/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-004/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-005/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-006/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-011/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-012/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-EXEC-013/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-HANDOFF-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-JOURNEY-002A-Release.sha256",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-JOURNEY-002A-Release.zip",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-JOURNEY-002A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GEX-NOTIFY-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-009/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-009B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-009C-08/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-009C/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-014M-14A-backup/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015C/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015D/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015E/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015F-R1/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015F-R2/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015F/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015G/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015H/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015I/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015J/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015K/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-015L/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-016/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-017/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-018/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-019/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-020/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/GP-EXEC-020A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/IMPLEMENTATION-INSPECTION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/IMPLEMENTATION-READINESS-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001A-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001A-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001A-03/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001B-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001B-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001C-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001C-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001D-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001D-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001D-03/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001E-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001E-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001E-03/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-01/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-02/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-03/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-04/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-05/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-06/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-07/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-08/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-001F-09/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-003/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-004/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-005/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-003/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-005/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-006/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-007/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-008/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-009/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-010/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-011/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-COM-EXEC-012/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-003/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-004/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-004A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-005/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-006/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-007/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-008/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-009/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-010/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-011/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-012/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-DEMO-013/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-EXEC-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-EXEC-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-IMP-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-IMP-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-MVP-001D/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/ORG-STUDIO-EXEC-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/PREPARATION-CLOSEOUT-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/RECOVERY-BACKLOG/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-001A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-001B/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-002/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-003/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-004/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-005/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-006/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-007/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-008/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-008A/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-009/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-010/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-011/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-012/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-013/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-014/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-015/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-016/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REP-STEWARD-017/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/REPOSITORY-RECONCILIATION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/RUNTIME-READINESS-REVIEW-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/SPRINT-CONTROL-BOARD-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/SPRINT-EXECUTION-001/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "execution/workspace/truth_registry/",
+      "category": "governance_or_execution_artifact"
+    },
+    {
+      "status": "??",
+      "path": "governance/decisions/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "governance/deferred/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "home/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "repository_cleanup_candidates.txt",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "repository_cleanup_manifest.txt",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "repository_decision_matrix.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "repository_hygiene_stage1_report.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "repository_impact_audit.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/adapters/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/domain/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/mappers/prospectRegistration.ts.pre-GEX001M30",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/duplicates.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/index.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/normalize.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/persist.ts.pre-GEX001M22",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/persist.ts.pre-GEX001M26",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/persist.ts.pre-GEX001M37",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/report.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/runImportPipeline.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/smoke.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/stage.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/validate.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/reporting/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/staging/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/validation/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/integrations/zalo/adapter.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/integrations/zalo/auth.ts",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/messaging/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M10",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M11",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M15D",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M17",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M21",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "shared/organization/",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tcrs/06-discoveries/DISC-ROUTE-001-canonical-member-router.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/capture_invitation_api_contract.md",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/identity_corridor_inventory.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/implementation_readiness_check.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/repository_decision_matrix.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/repository_hygiene_stage1.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/repository_impact_audit.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/runtime_surface_verification.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/stage2_cleanup_candidates.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/stage2_cleanup_execute.py",
+      "category": "unexpected_repository_surface"
+    },
+    {
+      "status": "??",
+      "path": "tools/verify_invitation_journey.py",
+      "category": "unexpected_repository_surface"
+    }
+  ]
+}

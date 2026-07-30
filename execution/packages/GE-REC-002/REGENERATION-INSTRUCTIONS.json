@@ -1,0 +1,23 @@
+{
+  "authority": "GE-REC-002",
+  "generated_utc": "2026-07-30T09:57:31.205367+00:00",
+  "mode": "CANONICAL_REGENERATION",
+  "input_package": "execution/packages/GE-BUILD-006/GE-BUILD-006-CERTIFIED-PIC.zip",
+  "repository": "/home/runner/workspace",
+  "execution_rules": {
+    "consume_pic_only": true,
+    "no_architectural_reinterpretation": true,
+    "bounded_mutation_only": true,
+    "authorized_surfaces": [
+      "server/routes.ts",
+      "server/services/notifications.ts"
+    ],
+    "commit_changes": false,
+    "push_to_remote": false
+  },
+  "expected_output": {
+    "repository_diff": true,
+    "verification_report": true,
+    "ready_for_founder_review": true
+  }
+}

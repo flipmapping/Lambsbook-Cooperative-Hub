@@ -1,0 +1,25 @@
+{
+  "authority": "APP-COM-002",
+  "component": "DispatchDecision",
+  "version": "1.0",
+  "derived_from": "CommunicationRecord",
+  "immutable": true,
+  "purpose": "Authorize runtime execution independently of queue implementation.",
+  "fields": {
+    "dispatch_id": "uuid",
+    "record_id": "uuid",
+    "organization_id": "uuid",
+    "approved_channel": "string",
+    "approved_provider": "string",
+    "dispatch_after": "timestamp",
+    "priority": "normal|high|critical",
+    "decision_reason": "string",
+    "created_at": "timestamp"
+  },
+  "guarantees": [
+    "Immutable",
+    "ProviderIndependent",
+    "QueueIndependent",
+    "Auditable"
+  ]
+}

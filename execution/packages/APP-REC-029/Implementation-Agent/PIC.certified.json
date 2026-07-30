@@ -1,0 +1,12 @@
+{
+  "schema": "PIC-1.0",
+  "status": "DERIVED",
+  "source_fab": "execution/packages/APP-REC-029/FAB.md",
+  "sections": {
+    "Mission": "Capture runtime evidence after authentication corridor execution.",
+    "Required Evidence": "- Application startup log\n- Authentication request\n- GET /api/member/me\n- HTTP status\n- Response body\n- Backend exception (if any)\n- AUTH_CONTEXT output\n- Stack trace (if present)",
+    "Acceptance Criteria": "Evidence is complete enough to determine the next mutation without additional inspection.\n\nGenerated:\n2026-07-27T01:48:45.307859+00:00",
+    "Implementation Authority": "APP-REC-029",
+    "Mutation Surface": "- execution/packages/APP-REC-029/FAB.md"
+  }
+}

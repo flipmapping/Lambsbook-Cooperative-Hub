@@ -1,0 +1,11 @@
+{
+  "builder": {
+    "component": "Builder",
+    "version": "1.0.0",
+    "supported_eos": "2.2"
+  },
+  "timestamp_utc": "2026-07-27T01:24:27.717703Z",
+  "package": "execution/packages/_builder_certification",
+  "status": "VALIDATED",
+  "next_phase": "EOS-065"
+}

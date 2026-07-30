@@ -1,0 +1,15 @@
+{
+  "authority": "GEX-EXEC-001",
+  "artifact": "ImplementationReadinessReport",
+  "required_before": "NM-001 Repository Mutation",
+  "fields": {
+    "pic_consumed": false,
+    "execution_surfaces_verified": [],
+    "runtime_entry_point": "",
+    "planned_repository_files": [],
+    "identified_risks": [],
+    "identified_blockers": [],
+    "implementation_ready": false
+  },
+  "approval_rule": "Repository mutation SHALL NOT begin until implementation_ready is true and the report has been reviewed."
+}

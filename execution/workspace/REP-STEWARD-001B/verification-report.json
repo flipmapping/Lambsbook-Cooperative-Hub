@@ -1,0 +1,21 @@
+{
+  "authority": "REP-STEWARD-001B",
+  "verified": true,
+  "artifacts": [
+    {
+      "file": "repository-summary.json",
+      "exists": true,
+      "valid": true
+    },
+    {
+      "file": "repository-files.json",
+      "exists": true,
+      "valid": true
+    },
+    {
+      "file": "Repository-Stewardship-Report.md",
+      "exists": true,
+      "valid": true
+    }
+  ]
+}

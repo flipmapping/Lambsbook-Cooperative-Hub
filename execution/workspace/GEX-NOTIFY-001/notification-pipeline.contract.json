@@ -1,0 +1,37 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "component": "NotificationPipeline",
+  "version": "1.0",
+  "description": "Canonical runtime orchestration from AdmissionsStageTransitionEvent to persisted NotificationIntent.",
+  "steps": [
+    {
+      "order": 1,
+      "component": "AdmissionsStageTransitionEvent",
+      "action": "Receive immutable business event"
+    },
+    {
+      "order": 2,
+      "component": "NotificationTemplateResolver",
+      "action": "Resolve template_key and template_version"
+    },
+    {
+      "order": 3,
+      "component": "CommunicationIntent",
+      "action": "Create immutable business intent"
+    },
+    {
+      "order": 4,
+      "component": "NotificationIntentStore",
+      "action": "Persist immutable NotificationIntent"
+    }
+  ],
+  "output": {
+    "notification_intent_id": "uuid",
+    "status": "pending"
+  },
+  "deferred_consumers": [
+    "NotificationQueue",
+    "ResendAdapter",
+    "ZaloAdapter"
+  ]
+}

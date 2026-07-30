@@ -1,0 +1,11 @@
+{
+  "builder": {
+    "component": "Builder",
+    "version": "1.0.0",
+    "supported_eos": "2.2"
+  },
+  "timestamp_utc": "2026-07-27T06:06:46.760846Z",
+  "package": "execution/packages/APP-REC-029",
+  "status": "VALIDATED",
+  "next_phase": "EOS-065"
+}

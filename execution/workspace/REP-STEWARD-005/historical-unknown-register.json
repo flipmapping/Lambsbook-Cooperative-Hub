@@ -1,0 +1,222 @@
+{
+  ".agents": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  ".phase5": {
+    "category": "Historical/Unknown",
+    "file_count": 28
+  },
+  "<root>": {
+    "category": "Historical/Unknown",
+    "file_count": 149
+  },
+  "BUILDER-SPRINT-001-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 44
+  },
+  "CTBC document": {
+    "category": "Historical/Unknown",
+    "file_count": 11
+  },
+  "EOS-RMP-001A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 20
+  },
+  "EOS-RMP-001B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 16
+  },
+  "EOS-RMP-001B-HF1-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 16
+  },
+  "EOS-RMP-001C-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 17
+  },
+  "EOS-RMP-001D-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 17
+  },
+  "EOS-RMP-001E-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 8
+  },
+  "GE-WEB-RMP-010E33A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 36
+  },
+  "HUB-RMP-001-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "Lambsbook-Open-Brain": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "QR code": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "RMP-010E27B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 32
+  },
+  "RMP-010E29A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 35
+  },
+  "RMP-010E29B-Execution-Authority-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 35
+  },
+  "RMP-010E30A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 36
+  },
+  "RMP-010E30B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 36
+  },
+  "RMP-010E31A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E31B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 38
+  },
+  "RMP-010E32A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E32B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E33A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E33B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E34A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 10
+  },
+  "RMP-010E34B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 34
+  },
+  "auth-runtime-phase2": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "auth-session-finalization": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "auth-storage-audit": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  "codex-gateway-handoff": {
+    "category": "Historical/Unknown",
+    "file_count": 10
+  },
+  "codex-handoff": {
+    "category": "Historical/Unknown",
+    "file_count": 11
+  },
+  "content-authority": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "dashboard-auth-runtime": {
+    "category": "Historical/Unknown",
+    "file_count": 4
+  },
+  "dashboard-runtime-repair-phase2": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "dashboard-runtime-trace": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "dashboard-stub-audit": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "deploy-asset-sweep": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-asset-trace": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-asset-triage": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-finalization": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-fix-phase1": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-full-asset-audit": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "eos": {
+    "category": "Historical/Unknown",
+    "file_count": 7
+  },
+  "final-workspace-hygiene": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "home": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  "mvp-delivery": {
+    "category": "Historical/Unknown",
+    "file_count": 17
+  },
+  "mvp-phase-transition": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  "navigation-runtime-trace": {
+    "category": "Historical/Unknown",
+    "file_count": 5
+  },
+  "obom-v1": {
+    "category": "Historical/Unknown",
+    "file_count": 5
+  },
+  "phase5-wp3b-materialization-package-v4": {
+    "category": "Historical/Unknown",
+    "file_count": 6
+  },
+  "runtime-stabilization-final": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "testtar": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "~": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  }
+}

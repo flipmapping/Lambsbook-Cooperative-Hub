@@ -1,0 +1,42 @@
+{
+  "pic_version": "1.0",
+  "authority": "GE-BUILD-003",
+  "generated_utc": "2026-07-30T05:08:11.044546+00:00",
+  "builder": {
+    "resolution_strategy": "fallback",
+    "reference_only": true
+  },
+  "implementation_cycle": {
+    "current": "NM-001",
+    "next": "NM-002"
+  },
+  "repository": {
+    "root": "/home/runner/workspace",
+    "branch": "app-rec-006-runtime-identity",
+    "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+    "working_tree_entries": 363
+  },
+  "governance": {
+    "strategy": "fallback",
+    "references": {
+      "traceability_baseline": "execution/repository-stewardship/traceability-baseline.json",
+      "relationship_registry": "execution/repository-stewardship/relationship-registry.json",
+      "authority_registry": "execution/repository-stewardship/authority-registry.json",
+      "compliance_matrix": "execution/repository-stewardship/compliance-matrix.json",
+      "execution_trust_chain": "execution/repository-stewardship/execution-trust-chain.json"
+    }
+  },
+  "implementation_scope": {
+    "objective": "Complete the NM-001 notification implementation and prepare the bounded transition toward NM-002.",
+    "authorized_surfaces": [
+      "server/routes.ts",
+      "server/services/notifications.ts"
+    ]
+  },
+  "execution_chain": [
+    "Builder",
+    "Production Implementation Context",
+    "Claude",
+    "Growth Engine Certification"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "contract": "notification-payload",
+  "version": "1.0",
+  "supported_languages": [
+    "en",
+    "vi",
+    "zh-TW"
+  ],
+  "supported_channels": [
+    "resend",
+    "zalo"
+  ],
+  "required_fields": {
+    "prospect_id": "string",
+    "student_name": "string",
+    "student_id": "string",
+    "email": "string",
+    "phone_number": "string",
+    "preferred_language": "en | vi | zh-TW",
+    "journey_state": "string",
+    "registration_link": "string"
+  },
+  "delivery_rules": {
+    "language_source": "preferred_language",
+    "email_channel": "resend",
+    "messaging_channel": "zalo"
+  },
+  "zalo_parameters": [
+    "student_name",
+    "phone_number",
+    "student_id"
+  ]
+}

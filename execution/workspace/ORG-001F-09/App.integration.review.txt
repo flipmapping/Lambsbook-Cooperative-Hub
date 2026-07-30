@@ -1,0 +1,398 @@
+================================================================================
+ORG-001F-09 APP INTEGRATION REVIEW PACKAGE
+================================================================================
+
+## App.tsx Preview (first 120 lines)
+
+   1: import { useRef, lazy, Suspense } from 'react';
+   2: import { Switch, Route } from 'wouter';
+   3: import { queryClient } from './lib/queryClient';
+   4: import { QueryClientProvider } from '@tanstack/react-query';
+   5: import { Toaster } from '@/components/ui/toaster';
+   6: import { TooltipProvider } from '@/components/ui/tooltip';
+   7: import { LanguageProvider } from '@/lib/LanguageContext';
+   8: import { createClient } from '@/lib/supabase/client';
+   9: import { Header } from '@/components/Header';
+  10: import { HeroSection } from '@/components/HeroSection';
+  11: import { EB3Categories } from '@/components/EB3Categories';
+  12: import { ServicesSection } from '@/components/ServicesSection';
+  13: import { ProcessSection } from '@/components/ProcessSection';
+  14: import { JobCategoriesSection } from '@/components/JobCategoriesSection';
+  15: import { CountriesSection } from '@/components/CountriesSection';
+  16: import { StudyAbroadSection } from '@/components/StudyAbroadSection';
+  17: import { AdvantagesSection } from '@/components/AdvantagesSection';
+  18: import { SuccessStories } from '@/components/SuccessStories';
+  19: import { FAQSection } from '@/components/FAQSection';
+  20: import { ContactSection } from '@/components/ContactSection';
+  21: import { Footer } from '@/components/Footer';
+  22: import { AIChatWidget } from '@/components/AIChatWidget';
+  23: 
+  24: import AuthCallback from '@/pages/AuthCallback';
+  25: import Login from '@/pages/Login';
+  26: import HubLanding from '@/pages/HubLanding';
+  27: import { LandingPage as GrowthLandingPage } from "../../web/src/growth";
+  28: import {
+  29:   initializeGrowthRuntime,
+  30:   defaultGrowthRuntimeProvider,
+  31: } from "../../web/src/growth";
+  32: import HubAuth from '@/pages/HubAuth';
+  33: import HubAuthCallback from '@/pages/HubAuthCallback';
+  34: import MemberDashboard from '@/pages/MemberDashboard';
+  35: import InvitationAcceptancePage from '@/pages/dashboard/InvitationAcceptancePage';
+  36: import SBUEducation from '@/pages/SBUEducation';
+  37: import TropicanaProgram from '@/pages/TropicanaProgram';
+  38: 
+  39: import AdminRevenueConsole from '@/pages/AdminRevenueConsole';
+  40: import EducationFeedback from '@/pages/EducationFeedback';
+  41: import HubDashboard from "@/pages/HubDashboard";
+  42: 
+  43: 
+  44: import LambsbookTutoring from '@/pages/LambsbookTutoring';
+  45: import FarmstayVision from '@/pages/FarmstayVision';
+  46: import AdminGovernance from '@/pages/AdminGovernance';
+  47: import ResetPassword from '@/pages/ResetPassword';
+  48: import { JourneyContribute, JourneyLearn } from '@/pages/JourneyPages';
+  49: 
+  50: const Dashboard = lazy(() => import('@/pages/Dashboard'));
+  51: const HubAdminDashboard = lazy(() => import('@/pages/HubAdminDashboard'));
+  52: const MemberHub = lazy(() => import('@/pages/MemberHub'));
+  53: const PartnerOnboarding = lazy(() => import('@/pages/PartnerOnboarding'));
+  54: const TranscriptSubmission = lazy(() => import('@/pages/TranscriptSubmission'));
+  55: const ProspectRegistration = lazy(() => import('@/pages/ProspectRegistration'));
+  56: const ScholarshipsPage = lazy(() => import('@/pages/ScholarshipsPage'));
+  57: const ProspectDetailWorkspace = lazy(() => import('@/pages/ProspectDetailWorkspace'));
+  58: const ApplicantJourneyStatus = lazy(() => import('@/pages/ApplicantJourneyStatus'));
+  59: const ApplicantStatusLookup = lazy(() => import('@/pages/ApplicantStatusLookup'));
+  60: const ApplicantDocumentCenter = lazy(() => import('@/pages/ApplicantDocumentCenter'));
+  61: const ApplicantAppointmentCenter = lazy(() => import('@/pages/ApplicantAppointmentCenter'));
+  62: const ApplicantAdmissionDecisionCenter = lazy(() => import('@/pages/ApplicantAdmissionDecisionCenter'));
+  63: const ApplicantLifecycleTimeline = lazy(() => import('@/pages/ApplicantLifecycleTimeline'));
+  64: const ApplicantActivityCenter = lazy(() => import('@/pages/ApplicantActivityCenter'));
+  65: const ApplicantFollowupTaskCenter = lazy(() => import('@/pages/ApplicantFollowupTaskCenter'));
+  66: console.log("[TRACE-P1] App.tsx: module evaluated");
+  67: 
+  68: function ImmigrationWebsite() {
+  69:   const sectionRefs = {
+  70:     home: useRef<HTMLDivElement>(null),
+  71:     eb3: useRef<HTMLDivElement>(null),
+  72:     services: useRef<HTMLDivElement>(null),
+  73:     countries: useRef<HTMLDivElement>(null),
+  74:     success: useRef<HTMLDivElement>(null),
+  75:     faq: useRef<HTMLDivElement>(null),
+  76:     contact: useRef<HTMLDivElement>(null),
+  77:   };
+  78: 
+  79:   const handleNavigate = (section: string) => {
+  80:     const ref = sectionRefs[section as keyof typeof sectionRefs];
+  81:     if (ref?.current) {
+  82:       ref.current.scrollIntoView({ behavior: 'smooth' });
+  83:     }
+  84:   };
+  85: 
+  86:   const scrollToContact = () => {
+  87:     sectionRefs.contact.current?.scrollIntoView({ behavior: 'smooth' });
+  88:   };
+  89: 
+  90:   return (
+  91:     <div className="min-h-screen bg-background">
+  92:       <Header onNavigate={handleNavigate} />
+  93:       
+  94:       <main>
+  95:         <div ref={sectionRefs.home}>
+  96:           <HeroSection onNavigate={handleNavigate} />
+  97:         </div>
+  98:         
+  99:         <div ref={sectionRefs.eb3}>
+ 100:           <EB3Categories onLearnMore={scrollToContact} />
+ 101:         </div>
+ 102:         
+ 103:         <ProcessSection />
+ 104:         
+ 105:         <div ref={sectionRefs.services}>
+ 106:           <ServicesSection />
+ 107:         </div>
+ 108:         
+ 109:         <JobCategoriesSection />
+ 110:         
+ 111:         <StudyAbroadSection onContact={scrollToContact} />
+ 112:         
+ 113:         <div ref={sectionRefs.countries}>
+ 114:           <CountriesSection onContact={scrollToContact} />
+ 115:         </div>
+ 116:         
+ 117:         <AdvantagesSection />
+ 118:         
+ 119:         <div ref={sectionRefs.success}>
+ 120:           <SuccessStories />
+
+## Routing Extract
+
+--- Lines 1-4 ---
+   1: import { useRef, lazy, Suspense } from 'react';
+   2: import { Switch, Route } from 'wouter';
+   3: import { queryClient } from './lib/queryClient';
+   4: import { QueryClientProvider } from '@tanstack/react-query';
+--- Lines 136-140 ---
+ 136: }
+ 137: 
+ 138: function Router() {
+ 139:   return (
+ 140:     <Switch>
+--- Lines 138-142 ---
+ 138: function Router() {
+ 139:   return (
+ 140:     <Switch>
+ 141:       {/* Main landing - Education Hub (primary) */}
+ 142:       <Route path="/" component={HubLanding} />
+--- Lines 140-144 ---
+ 140:     <Switch>
+ 141:       {/* Main landing - Education Hub (primary) */}
+ 142:       <Route path="/" component={HubLanding} />
+ 143:       <Route path="/hub" component={HubLanding} />
+ 144:       <Route path="/journeys/contribute" component={JourneyContribute} />
+--- Lines 141-145 ---
+ 141:       {/* Main landing - Education Hub (primary) */}
+ 142:       <Route path="/" component={HubLanding} />
+ 143:       <Route path="/hub" component={HubLanding} />
+ 144:       <Route path="/journeys/contribute" component={JourneyContribute} />
+ 145:       <Route path="/journeys/learn" component={JourneyLearn} />
+--- Lines 142-146 ---
+ 142:       <Route path="/" component={HubLanding} />
+ 143:       <Route path="/hub" component={HubLanding} />
+ 144:       <Route path="/journeys/contribute" component={JourneyContribute} />
+ 145:       <Route path="/journeys/learn" component={JourneyLearn} />
+ 146:       
+--- Lines 143-147 ---
+ 143:       <Route path="/hub" component={HubLanding} />
+ 144:       <Route path="/journeys/contribute" component={JourneyContribute} />
+ 145:       <Route path="/journeys/learn" component={JourneyLearn} />
+ 146:       
+ 147:       {/* Admin routes */}
+--- Lines 146-150 ---
+ 146:       
+ 147:       {/* Admin routes */}
+ 148:       <Route path="/admin" component={Dashboard} />
+ 149:       <Route path="/dashboard" component={HubDashboard} />
+ 150:       <Route path="/login" component={Login} />
+--- Lines 147-151 ---
+ 147:       {/* Admin routes */}
+ 148:       <Route path="/admin" component={Dashboard} />
+ 149:       <Route path="/dashboard" component={HubDashboard} />
+ 150:       <Route path="/login" component={Login} />
+ 151:       <Route path="/auth/callback" component={AuthCallback} />
+--- Lines 148-152 ---
+ 148:       <Route path="/admin" component={Dashboard} />
+ 149:       <Route path="/dashboard" component={HubDashboard} />
+ 150:       <Route path="/login" component={Login} />
+ 151:       <Route path="/auth/callback" component={AuthCallback} />
+ 152:       
+--- Lines 149-153 ---
+ 149:       <Route path="/dashboard" component={HubDashboard} />
+ 150:       <Route path="/login" component={Login} />
+ 151:       <Route path="/auth/callback" component={AuthCallback} />
+ 152:       
+ 153:       {/* Hub authentication */}
+--- Lines 152-156 ---
+ 152:       
+ 153:       {/* Hub authentication */}
+ 154:       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
+ 155:       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
+ 156:       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+--- Lines 153-157 ---
+ 153:       {/* Hub authentication */}
+ 154:       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
+ 155:       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
+ 156:       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+ 157:       <Route path="/auth/reset" component={ResetPassword} />
+--- Lines 154-158 ---
+ 154:       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
+ 155:       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
+ 156:       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+ 157:       <Route path="/auth/reset" component={ResetPassword} />
+ 158:       <Route path="/hub/dashboard" component={MemberHub} />
+--- Lines 155-159 ---
+ 155:       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
+ 156:       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+ 157:       <Route path="/auth/reset" component={ResetPassword} />
+ 158:       <Route path="/hub/dashboard" component={MemberHub} />
+ 159:       <Route
+--- Lines 156-160 ---
+ 156:       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+ 157:       <Route path="/auth/reset" component={ResetPassword} />
+ 158:       <Route path="/hub/dashboard" component={MemberHub} />
+ 159:       <Route
+ 160:         path="/dashboard/invitations/:invitationId"
+--- Lines 157-161 ---
+ 157:       <Route path="/auth/reset" component={ResetPassword} />
+ 158:       <Route path="/hub/dashboard" component={MemberHub} />
+ 159:       <Route
+ 160:         path="/dashboard/invitations/:invitationId"
+ 161:         component={InvitationAcceptancePage}
+--- Lines 158-162 ---
+ 158:       <Route path="/hub/dashboard" component={MemberHub} />
+ 159:       <Route
+ 160:         path="/dashboard/invitations/:invitationId"
+ 161:         component={InvitationAcceptancePage}
+ 162:       />
+--- Lines 161-165 ---
+ 161:         component={InvitationAcceptancePage}
+ 162:       />
+ 163:       <Route path="/hub/accept-invitation" component={HubDashboard} />
+ 164:       <Route path="/hub/member" component={HubDashboard} />
+ 165:       
+--- Lines 162-166 ---
+ 162:       />
+ 163:       <Route path="/hub/accept-invitation" component={HubDashboard} />
+ 164:       <Route path="/hub/member" component={HubDashboard} />
+ 165:       
+ 166:       {/* Education programs */}
+--- Lines 165-169 ---
+ 165:       
+ 166:       {/* Education programs */}
+ 167:       <Route path="/hub/sbu/education" component={SBUEducation} />
+ 168:       <Route path="/hub/sbu/education/lambsbook-tutoring" component={LambsbookTutoring} />
+ 169:       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
+--- Lines 166-170 ---
+ 166:       {/* Education programs */}
+ 167:       <Route path="/hub/sbu/education" component={SBUEducation} />
+ 168:       <Route path="/hub/sbu/education/lambsbook-tutoring" component={LambsbookTutoring} />
+ 169:       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
+ 170:       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
+--- Lines 167-171 ---
+ 167:       <Route path="/hub/sbu/education" component={SBUEducation} />
+ 168:       <Route path="/hub/sbu/education/lambsbook-tutoring" component={LambsbookTutoring} />
+ 169:       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
+ 170:       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
+ 171:       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+--- Lines 168-172 ---
+ 168:       <Route path="/hub/sbu/education/lambsbook-tutoring" component={LambsbookTutoring} />
+ 169:       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
+ 170:       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
+ 171:       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+ 172:       <Route path="/hub/prospect-registration" component={ProspectRegistration} />
+--- Lines 169-173 ---
+ 169:       <Route path="/hub/programs/tropicana" component={TropicanaProgram} />
+ 170:       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
+ 171:       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+ 172:       <Route path="/hub/prospect-registration" component={ProspectRegistration} />
+ 173:       <Route path="/hub/scholarships" component={ScholarshipsPage} />
+--- Lines 170-174 ---
+ 170:       <Route path="/hub/vision/farmstay" component={FarmstayVision} />
+ 171:       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+ 172:       <Route path="/hub/prospect-registration" component={ProspectRegistration} />
+ 173:       <Route path="/hub/scholarships" component={ScholarshipsPage} />
+ 174:       <Route path="/hub/admin/prospects/:id" component={ProspectDetailWorkspace} />
+--- Lines 171-175 ---
+ 171:       <Route path="/hub/partner-onboarding" component={PartnerOnboarding} />
+ 172:       <Route path="/hub/prospect-registration" component={ProspectRegistration} />
+ 173:       <Route path="/hub/scholarships" component={ScholarshipsPage} />
+ 174:       <Route path="/hub/admin/prospects/:id" component={ProspectDetailWorkspace} />
+ 175:       <Route path="/hub/applicant/status/:id" component={ApplicantJourneyStatus} />
+--- Lines 172-176 ---
+ 172:       <Route path="/hub/prospect-registration" component={ProspectRegistration} />
+ 173:       <Route path="/hub/scholarships" component={ScholarshipsPage} />
+ 174:       <Route path="/hub/admin/prospects/:id" component={ProspectDetailWorkspace} />
+ 175:       <Route path="/hub/applicant/status/:id" component={ApplicantJourneyStatus} />
+ 176:       <Route path="/hub/applicant/status" component={ApplicantStatusLookup} />
+--- Lines 173-177 ---
+ 173:       <Route path="/hub/scholarships" component={ScholarshipsPage} />
+ 174:       <Route path="/hub/admin/prospects/:id" component={ProspectDetailWorkspace} />
+ 175:       <Route path="/hub/applicant/status/:id" component={ApplicantJourneyStatus} />
+ 176:       <Route path="/hub/applicant/status" component={ApplicantStatusLookup} />
+ 177:       <Route path="/hub/applicant/documents/:id" component={ApplicantDocumentCenter} />
+--- Lines 174-178 ---
+ 174:       <Route path="/hub/admin/prospects/:id" component={ProspectDetailWorkspace} />
+ 175:       <Route path="/hub/applicant/status/:id" component={ApplicantJourneyStatus} />
+ 176:       <Route path="/hub/applicant/status" component={ApplicantStatusLookup} />
+ 177:       <Route path="/hub/applicant/documents/:id" component={ApplicantDocumentCenter} />
+ 178:       <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
+--- Lines 175-179 ---
+ 175:       <Route path="/hub/applicant/status/:id" component={ApplicantJourneyStatus} />
+ 176:       <Route path="/hub/applicant/status" component={ApplicantStatusLookup} />
+ 177:       <Route path="/hub/applicant/documents/:id" component={ApplicantDocumentCenter} />
+ 178:       <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
+ 179:       <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
+--- Lines 176-180 ---
+ 176:       <Route path="/hub/applicant/status" component={ApplicantStatusLookup} />
+ 177:       <Route path="/hub/applicant/documents/:id" component={ApplicantDocumentCenter} />
+ 178:       <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
+ 179:       <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
+ 180:       <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
+--- Lines 177-181 ---
+ 177:       <Route path="/hub/applicant/documents/:id" component={ApplicantDocumentCenter} />
+ 178:       <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
+ 179:       <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
+ 180:       <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
+ 181:       <Route path="/hub/applicant/activity/:id" component={ApplicantActivityCenter} />
+--- Lines 178-182 ---
+ 178:       <Route path="/hub/applicant/appointments/:id" component={ApplicantAppointmentCenter} />
+ 179:       <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
+ 180:       <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
+ 181:       <Route path="/hub/applicant/activity/:id" component={ApplicantActivityCenter} />
+ 182:       <Route path="/hub/applicant/tasks/:id" component={ApplicantFollowupTaskCenter} />
+--- Lines 179-183 ---
+ 179:       <Route path="/hub/applicant/decisions/:id" component={ApplicantAdmissionDecisionCenter} />
+ 180:       <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
+ 181:       <Route path="/hub/applicant/activity/:id" component={ApplicantActivityCenter} />
+ 182:       <Route path="/hub/applicant/tasks/:id" component={ApplicantFollowupTaskCenter} />
+ 183:       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
+--- Lines 180-184 ---
+ 180:       <Route path="/hub/applicant/timeline/:id" component={ApplicantLifecycleTimeline} />
+ 181:       <Route path="/hub/applicant/activity/:id" component={ApplicantActivityCenter} />
+ 182:       <Route path="/hub/applicant/tasks/:id" component={ApplicantFollowupTaskCenter} />
+ 183:       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
+ 184:       <Route path="/hub/admin" component={HubAdminDashboard} />
+--- Lines 181-185 ---
+ 181:       <Route path="/hub/applicant/activity/:id" component={ApplicantActivityCenter} />
+ 182:       <Route path="/hub/applicant/tasks/:id" component={ApplicantFollowupTaskCenter} />
+ 183:       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
+ 184:       <Route path="/hub/admin" component={HubAdminDashboard} />
+ 185:       <Route path="/hub/admin/governance" component={AdminGovernance} />
+--- Lines 182-186 ---
+ 182:       <Route path="/hub/applicant/tasks/:id" component={ApplicantFollowupTaskCenter} />
+ 183:       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
+ 184:       <Route path="/hub/admin" component={HubAdminDashboard} />
+ 185:       <Route path="/hub/admin/governance" component={AdminGovernance} />
+ 186:       <Route path="/hub/education/feedback" component={EducationFeedback} />
+--- Lines 183-187 ---
+ 183:       <Route path="/hub/admin/revenue" component={AdminRevenueConsole} />
+ 184:       <Route path="/hub/admin" component={HubAdminDashboard} />
+ 185:       <Route path="/hub/admin/governance" component={AdminGovernance} />
+ 186:       <Route path="/hub/education/feedback" component={EducationFeedback} />
+ 187:       <Route path="/hub/education/submit" component={TranscriptSubmission} />
+--- Lines 184-188 ---
+ 184:       <Route path="/hub/admin" component={HubAdminDashboard} />
+ 185:       <Route path="/hub/admin/governance" component={AdminGovernance} />
+ 186:       <Route path="/hub/education/feedback" component={EducationFeedback} />
+ 187:       <Route path="/hub/education/submit" component={TranscriptSubmission} />
+ 188:       
+--- Lines 185-189 ---
+ 185:       <Route path="/hub/admin/governance" component={AdminGovernance} />
+ 186:       <Route path="/hub/education/feedback" component={EducationFeedback} />
+ 187:       <Route path="/hub/education/submit" component={TranscriptSubmission} />
+ 188:       
+ 189:       {/* Legacy immigration page (accessible but not primary) */}
+--- Lines 188-192 ---
+ 188:       
+ 189:       {/* Legacy immigration page (accessible but not primary) */}
+ 190:       <Route path="/growth" component={GrowthLandingPage} />
+ 191:       <Route path="/immigration" component={ImmigrationWebsite} />
+ 192:     </Switch>
+--- Lines 189-193 ---
+ 189:       {/* Legacy immigration page (accessible but not primary) */}
+ 190:       <Route path="/growth" component={GrowthLandingPage} />
+ 191:       <Route path="/immigration" component={ImmigrationWebsite} />
+ 192:     </Switch>
+ 193:   );
+--- Lines 190-194 ---
+ 190:       <Route path="/growth" component={GrowthLandingPage} />
+ 191:       <Route path="/immigration" component={ImmigrationWebsite} />
+ 192:     </Switch>
+ 193:   );
+ 194: }
+--- Lines 229-233 ---
+ 229:           <Toaster />
+ 230:           <Suspense fallback={<div className="p-6">Loading...</div>}>
+ 231:           <Router />
+ 232:         </Suspense>
+ 233:         </LanguageProvider>

@@ -1,0 +1,29 @@
+{
+  "authority": "APP-REC-008-009",
+  "generated_utc": "2026-07-30T14:48:14.491334+00:00",
+  "inspection_targets": [
+    {
+      "authority": "APP-REC-008",
+      "file": "server/lib/supabase-dal.ts",
+      "functions": [
+        "listDocuments",
+        "createDocument"
+      ],
+      "runtime_evidence": "growth.prospect_documents not found in schema cache"
+    },
+    {
+      "authority": "APP-REC-009",
+      "file": "server/lib/supabase-dal.ts",
+      "functions": [
+        "recordAdmissionDecision"
+      ],
+      "runtime_evidence": "UUID field received \"flipmapping@gmail.com\""
+    }
+  ],
+  "mutation_authorized": false,
+  "expected_output": [
+    "Exact source line causing each failure",
+    "Root cause classification",
+    "Minimal bounded mutation proposal"
+  ]
+}

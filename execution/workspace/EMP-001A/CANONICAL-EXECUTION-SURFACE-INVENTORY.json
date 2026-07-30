@@ -1,0 +1,82 @@
+{
+  "builder_contract": {
+    "count": 6,
+    "examples": [
+      "execution/builder-baselines/BUILDER-CONTRACT-PRE-EOS-V2_2.json",
+      "execution/builder/delivery/builder-cib-input-contract.json",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md"
+    ]
+  },
+  "execution_contract": {
+    "count": 6,
+    "examples": [
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/indexes/execution_contract_index.json",
+      "execution/contracts/templates/execution_contract.template.json",
+      "execution/execution-contracts/FDR-010E35B-004-Runtime-Identity-Resolution-Execution-Contract.json",
+      "governance/doctrines/EXEC-STD-009-Execution-Capability-Contract.md"
+    ]
+  },
+  "execution_pipeline": {
+    "count": 21,
+    "examples": [
+      "execution/packages/EOS-RMP-001C-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/EOS-RMP-001D-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/EOS-RMP-001E-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-002-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-003-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-003A-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-003B-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-004-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-005-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-006-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-007-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-008-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-009-Claude-Package/governance/execution/EXECUTION-PIPELINE.md",
+      "execution/packages/GE-RMP-010-Claude-Package/governance/execution/EXECUTION-PIPELINE.md"
+    ]
+  },
+  "implementation_authority": {
+    "count": 72,
+    "examples": [
+      "execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_AUTHORITY.md",
+      "execution/packages/APP-REC-INVITE-002R/implementation-authority-package.json",
+      "execution/packages/EOS-RMP-001C-Claude-Package/governance/rmp/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/EOS-RMP-001D-Claude-Package/governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY-VERIFICATION.json",
+      "execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY.json",
+      "execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-002-Claude-Package/governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-003-Claude-Package/governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-003A-Claude-Package/governance/rmp/GE-RMP-003A-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-003B-Claude-Package/governance/rmp/GE-RMP-003B-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-004-Claude-Package/governance/rmp/GE-RMP-004-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-005-Claude-Package/governance/rmp/GE-RMP-005-IMPLEMENTATION-AUTHORITY.md",
+      "execution/packages/GE-RMP-006-Claude-Package/governance/rmp/GE-RMP-006-IMPLEMENTATION-AUTHORITY.md"
+    ]
+  },
+  "implementation_context": {
+    "count": 13,
+    "examples": [
+      "execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "execution/implementation-context/FDR-010E34B-IMPLEMENTATION-CONTEXT.json",
+      "execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_CONTEXT_MANIFEST.md",
+      "execution/packages/APP-REC-INVITE-002R/implementation-context-manifest.json",
+      "execution/packages/EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "execution/packages/INF-010E35A-Claude-Package/governance/icm/generated/INF-010E35A-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/IMPLEMENTATION-CONTEXT.md",
+      "execution/workspace/APP-REALIZATION-002H-IMPLEMENTATION-CONTEXT-CAPTURE.md",
+      "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json",
+      "governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "governance/execution/GE-RMP-003A-IMPLEMENTATION-CONTEXT.md",
+      "governance/implementation-context/INF-010E35A-IMPLEMENTATION-CONTEXT-MANIFEST.md"
+    ]
+  }
+}

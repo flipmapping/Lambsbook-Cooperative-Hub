@@ -1,0 +1,21 @@
+{
+  "work_package": "WP-1",
+  "surface": "Notification Channel Type",
+  "target": "client/src/components/notifications/ChannelSelector.tsx",
+  "timestamp_utc": "2026-07-25T09:22:58Z",
+  "lines": 41,
+  "sha256": "2c7e993de3f9072093e8e5af1d23c1245b5652b2f0e79d771eca6b3e67a8bee8",
+  "expected_mutation": {
+    "type": "bounded",
+    "description": "Extend Channel union with 'zalo' only",
+    "allowed_values_before": [
+      "email",
+      "in_app"
+    ],
+    "allowed_values_after": [
+      "email",
+      "in_app",
+      "zalo"
+    ]
+  }
+}

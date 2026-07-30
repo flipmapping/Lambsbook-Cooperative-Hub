@@ -1,0 +1,19 @@
+{
+  "authority": "APP-EXEC-002A",
+  "type": "Production Implementation Context",
+  "created": "2026-07-30 04:37 UTC",
+  "status": "PENDING_REPOSITORY_INSPECTION",
+  "required_artifacts": [
+    "IMPLEMENTATION-AUTHORITY.md",
+    "REPOSITORY-SURFACE-REGISTRY.json",
+    "IMPLEMENTATION-CONTEXT-MANIFEST.json",
+    "PRODUCTION-SURFACE-INVENTORY.md",
+    "REPOSITORY-MUTATION-SCOPE.md",
+    "IMPLEMENTATION-DEPENDENCY-MATRIX.md",
+    "CONSTRAINTS.md",
+    "VERIFICATION-PLAN.md",
+    "SUCCESS-CRITERIA.md",
+    "EXECUTION-TRUST-CHAIN.md"
+  ],
+  "note": "Populate every artifact from repository inspection. Do not infer implementation details."
+}

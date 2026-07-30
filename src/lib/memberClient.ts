@@ -17,7 +17,17 @@ export interface PendingInvitation {
 const API_BASE = "/api/member"
 
 function getAuthHeader(): HeadersInit {
-  const token = localStorage.getItem("access_token")
+  const token = (() => {
+    const raw = localStorage.getItem("supabase.auth.token");
+    if (!raw) return null;
+
+    try {
+      const session = JSON.parse(raw);
+      return session?.access_token ?? null;
+    } catch {
+      return null;
+    }
+})()
   if (!token) return {}
   return { Authorization: `Bearer ${token}` }
 }

@@ -1,0 +1,71 @@
+{
+  "dashboard": [
+    "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+    "client/src/components/dashboard/mockData.ts",
+    "client/src/components/dashboard/stubs.tsx",
+    "client/src/components/dashboard/types.ts",
+    "client/src/pages/Dashboard.tsx",
+    "client/src/pages/HubAdminDashboard.tsx",
+    "client/src/pages/HubDashboard.tsx",
+    "client/src/pages/MemberDashboard.tsx",
+    "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+    "client/src/pages/member/MemberDashboard.tsx",
+    "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+    "web/src/app/(protected)/dashboard/page.tsx",
+    "web/src/components/dashboard/CooperativeActivitySection.tsx",
+    "web/src/components/dashboard/DashboardHeroCurrentPosition.tsx",
+    "web/src/components/dashboard/DashboardTopBar.tsx",
+    "web/src/components/dashboard/IELTSSection.tsx",
+    "web/src/components/dashboard/IdeaPipelineSection.tsx",
+    "web/src/components/dashboard/InvitationAcceptanceSection.tsx",
+    "web/src/components/dashboard/LearningHistorySection.tsx",
+    "web/src/components/dashboard/MultilingualSection.tsx",
+    "web/src/components/dashboard/MyContributionsSection.tsx",
+    "web/src/components/dashboard/PipelineDetailPanel.tsx",
+    "web/src/components/dashboard/ProgramsSection.tsx",
+    "web/src/components/dashboard/RelationshipTrustSection.tsx",
+    "web/src/components/dashboard/SubmitIdeaModal.tsx",
+    "web/src/components/dashboard/mockData.ts",
+    "web/src/components/dashboard/types.ts",
+    "web/src/lib/dashboard/dashboardAdapter.ts"
+  ],
+  "layout": [
+    "web/src/growth/components/Layout/GrowthLayout.tsx",
+    "web/src/growth/components/Layout/index.ts"
+  ],
+  "organization": [
+    "client/src/components/admin/SBUManagement.tsx",
+    "client/src/pages/SBUEducation.tsx",
+    "server/middleware/blockSbuInjection.ts",
+    "server/middleware/requireSBUAccess.ts",
+    "server/middleware/requireSBURole.ts"
+  ],
+  "member": [
+    "client/src/pages/MemberDashboard.tsx",
+    "client/src/pages/MemberHub.tsx",
+    "client/src/pages/member/MemberDashboard.tsx",
+    "server/lib/supabase-member-client.ts",
+    "server/routes/member.ts",
+    "web/src/growth/components/Sections/MembershipSection.tsx"
+  ],
+  "auth": [
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "client/src/pages/AuthCallback.tsx",
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/pages/Login.tsx",
+    "server/integrations/zalo/auth.ts",
+    "server/integrations/zalo/oauth.ts",
+    "server/routes/devTestAuth.ts",
+    "server/services/supabase-auth.ts",
+    "web/src/app/(public)/auth/sign-in/page.tsx"
+  ],
+  "invitation": [
+    "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+    "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+    "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+    "web/src/components/dashboard/InvitationAcceptanceSection.tsx"
+  ]
+}

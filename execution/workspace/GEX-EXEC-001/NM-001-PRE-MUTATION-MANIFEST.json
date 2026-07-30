@@ -1,0 +1,257 @@
+{
+  "authority": "GEX-EXEC-001",
+  "mutation": "NM-001",
+  "artifact": "PreMutationSnapshot",
+  "files": [
+    {
+      "path": "client/src/components/AIChatWidget.tsx",
+      "exists": true,
+      "sha256": "02d973d1da067c2a6ccfb9ea556fb483d3fbff99695d148d5402f1ed81ceb5c6"
+    },
+    {
+      "path": "client/src/components/ContactSection.tsx",
+      "exists": true,
+      "sha256": "823856d7c319d9565107f8801c8f4906b76e9cd5e4cb96cba9a85add9fb97680"
+    },
+    {
+      "path": "client/src/components/HubConsultationForm.tsx",
+      "exists": true,
+      "sha256": "2f58f3a3cb1cd7551c186b58325573fe1040da60ebf35332097f4b3530bc4866"
+    },
+    {
+      "path": "client/src/components/admin/CommissionRulesManagement.tsx",
+      "exists": true,
+      "sha256": "ffeb15e4817651b75b98f3866ff9409173b3e13fc96bb149c3650e8cd014303f"
+    },
+    {
+      "path": "client/src/components/admin/EnrollmentWorkflow.tsx",
+      "exists": true,
+      "sha256": "9bf84ede297361226d9741ca47c271327664457333b586ed1fc37589218341c5"
+    },
+    {
+      "path": "client/src/components/admin/ProgramsManagement.tsx",
+      "exists": true,
+      "sha256": "42a9320d4fbd94ce29e0bfbcf6b467b2d6fd0c80ad288abdc23b2868812f021d"
+    },
+    {
+      "path": "client/src/components/admin/SBUManagement.tsx",
+      "exists": true,
+      "sha256": "1d37e629b5351e16c606d22f4b2e1345ba44300341319f495ff6ca34a58608d9"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+      "exists": true,
+      "sha256": "704fe7784a818cb7d2c68ff4e767fe2b7e7b56e65b863c378b11dad537d6fc61"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "exists": true,
+      "sha256": "d222cf1334360d0800574063fa03481b54a4b524770890e3cdd2cd2f13cda0b0"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "exists": true,
+      "sha256": "f16b239a65c0c387b112f7ead36e3eeebafac8b090f3b748b38b368d6fb61c04"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "exists": true,
+      "sha256": "3c24ecf28d4ab77a317c57fa44454c25690810e78e2737994f3b45fba7cf9ace"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "exists": true,
+      "sha256": "eafbfec69fb6c1dddbd4540cbbea38a1c49c7902d2796896a6c4e0b7ccf5e168"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectTimeline.tsx",
+      "exists": true,
+      "sha256": "936a916d2baaf16c64c331dba2dbb18bd5d0090733455091b9d89b7cb9725da5"
+    },
+    {
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "exists": true,
+      "sha256": "55992a835a39fd31d982a981025655635f99dcce6d0469d49a33f33956d16554"
+    },
+    {
+      "path": "client/src/components/dashboard/stubs.tsx",
+      "exists": true,
+      "sha256": "2098885dff3e9cf2814f292c7ec782dd4a1c959b13494e6b3486bbc137a880f6"
+    },
+    {
+      "path": "client/src/components/notifications/ChannelSelector.tsx",
+      "exists": true,
+      "sha256": "82aefb79a0a4071486ca0addde5d46181e4ad03d61c36c706ff642f0f0f870ad"
+    },
+    {
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "exists": true,
+      "sha256": "edbf38f97a0a2c9f22786ff09687cd79a296932525eba9835358ded714ba3c18"
+    },
+    {
+      "path": "client/src/lib/queryClient.ts",
+      "exists": true,
+      "sha256": "5eb2d8810d24e6c0901cdea9475caacb46395aa3db1cfc699dec77451e233c5a"
+    },
+    {
+      "path": "client/src/pages/AdminGovernance.tsx",
+      "exists": true,
+      "sha256": "2aea0f2150c844d488171d1b0ec80189d87e1f62225f2e2ba0c711f6d70fa0f2"
+    },
+    {
+      "path": "client/src/pages/AdminRevenueConsole.tsx",
+      "exists": true,
+      "sha256": "4812f9484f9ae04b2ce355d3f38aeb7c9ddb1f1c7d0266c29ad0c514427bca9d"
+    },
+    {
+      "path": "client/src/pages/AdmissionsWorkspace.tsx",
+      "exists": true,
+      "sha256": "1d0583b95a2ea0d29210cc79adb713631d37a5106823a348bff57f29344a175b"
+    },
+    {
+      "path": "client/src/pages/ApplicantActivityCenter.tsx",
+      "exists": true,
+      "sha256": "646fd3ac118b0c2734691e29adc73470144df1e48a31579d2722501b2d98c593"
+    },
+    {
+      "path": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "exists": true,
+      "sha256": "d12ca3bcb2bec7cbde60b58b79d3a55ef6ee94a9f91fd3fde7c9c17077a773ea"
+    },
+    {
+      "path": "client/src/pages/ApplicantAppointmentCenter.tsx",
+      "exists": true,
+      "sha256": "b5e12fd4148bd14134706c26aa6684dea9f3a37bb4c14959442d9850df508d42"
+    },
+    {
+      "path": "client/src/pages/ApplicantDocumentCenter.tsx",
+      "exists": true,
+      "sha256": "8be2bf507354e4bd864d9cbbdecf7c1dd9c6d0e94b385e74b0c61e31fa1557cf"
+    },
+    {
+      "path": "client/src/pages/ApplicantFollowupTaskCenter.tsx",
+      "exists": true,
+      "sha256": "a59899c8115d3e8678119cf601f05e47a1ec7435973d447516d40239df2de80c"
+    },
+    {
+      "path": "client/src/pages/ApplicantJourneyStatus.tsx",
+      "exists": true,
+      "sha256": "1e2aeb6cb12d959278da0333e1dba2a434a5bfc4fb2c6eb456edb29be660596a"
+    },
+    {
+      "path": "client/src/pages/ApplicantLifecycleTimeline.tsx",
+      "exists": true,
+      "sha256": "02b58a57dcfc06d4347e49234e3ae8767947591e6219b5d00a7659f36d909ee1"
+    },
+    {
+      "path": "client/src/pages/ApplicantStatusLookup.tsx",
+      "exists": true,
+      "sha256": "09fd65a8cca0aa35c0d29f03e3a143af057d0bc947f1b5a8b02b807db62ef2b7"
+    },
+    {
+      "path": "client/src/pages/Dashboard.tsx",
+      "exists": true,
+      "sha256": "6b0964840983f13f68e2100a19bcbb5235c3494888eb0d8d7d853b92ae63a75e"
+    },
+    {
+      "path": "client/src/pages/EducationFeedback.tsx",
+      "exists": true,
+      "sha256": "de8effe1681bd8b7331b0de2af533519812ded6d68d6aef6ef818bc37c499578"
+    },
+    {
+      "path": "client/src/pages/HubAdminDashboard.tsx",
+      "exists": true,
+      "sha256": "a1a18a44195865b747ff9285e751e400e74e166ebb77fd67ef9b8b7655961010"
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "exists": true,
+      "sha256": "3eab1832a0aa86480aa0f3c28a22c975a5b1a6358143545cb095c0ca8cef21e8"
+    },
+    {
+      "path": "client/src/pages/HubDashboard.tsx",
+      "exists": true,
+      "sha256": "faafd79cbd87eb6cee11db56c9c4988049f0c0d1402376a22f9f052b9e57eed2"
+    },
+    {
+      "path": "client/src/pages/Login.tsx",
+      "exists": true,
+      "sha256": "aef3b5f4b0b57115e1c4daaa6051f3bf009f39afacc6179f6acbee270108e989"
+    },
+    {
+      "path": "client/src/pages/MemberDashboard.tsx",
+      "exists": true,
+      "sha256": "5aeaaaa879429737c7c21846cf9142e2e5d6eaba2404b995a8095399e3af7b70"
+    },
+    {
+      "path": "client/src/pages/PartnerOnboarding.tsx",
+      "exists": true,
+      "sha256": "df33dff4d5ac25fd89cda5608ff9661357e742df04c5d36904a48c505c981119"
+    },
+    {
+      "path": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "exists": true,
+      "sha256": "638d9a14cfb2b61ae3cb5ee84abbbeb901240cafd5c61ed80240135a386960bc"
+    },
+    {
+      "path": "client/src/pages/ResetPassword.tsx",
+      "exists": true,
+      "sha256": "a548f931e2a312265f81f561363cf96abc687b6bdb5bf53d36785074b6e53599"
+    },
+    {
+      "path": "client/src/pages/TranscriptSubmission.tsx",
+      "exists": true,
+      "sha256": "52b7c53d50b1d6f88c09b8f14e818a92a66e4ce71c3ef7f6b707f82e16c27e50"
+    },
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "exists": true,
+      "sha256": "cb08df03e2a952fb1467cf0ab348b70807ad8fc104d9d7075665f7c734e09ef3"
+    },
+    {
+      "path": "server/lib/supabase-dal.ts",
+      "exists": true,
+      "sha256": "7c7cb7b2e70b763ccc04b54c6de1ccf1b5590f026c7a5e4c80d2a5bcc7165c1f"
+    },
+    {
+      "path": "server/lib/supabase-types.ts",
+      "exists": true,
+      "sha256": "b749e1bd25300232b19cbb46fb3ec60f0b8396afacb4fd841e1f64b22f0ac935"
+    },
+    {
+      "path": "server/routes.ts",
+      "exists": true,
+      "sha256": "dcbce19970f9615a9d1b452f21dca2bed106a26959ad1d80476af3a67106b15d"
+    },
+    {
+      "path": "server/routes/notification-preferences.route.ts",
+      "exists": true,
+      "sha256": "23bd5cb576c0394469856485090397216c7b1f1a5200492f7378fb9804000aa6"
+    },
+    {
+      "path": "server/services/admissions.ts",
+      "exists": true,
+      "sha256": "5080ab31b2fd5a52db59fda302b9fbf508af388eeb8e1d3b532088bfc40e7c6a"
+    },
+    {
+      "path": "server/services/notifications.ts",
+      "exists": true,
+      "sha256": "8de245b8d9ba1a90eef5be504079bfb3db062a9659e983091fe6c59fb1012e55"
+    },
+    {
+      "path": "server/storage.ts",
+      "exists": true,
+      "sha256": "1c6a2419bfdbad6d4a2079e783aefbedd4f1ea7ad0ea6256c520a39783d39371"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "exists": true,
+      "sha256": "bcbb7c9f78572a9aa9c56b03bd49d821ee9e0dd2ee325b1261f06c5d94dffa99"
+    },
+    {
+      "path": "shared/schema.ts",
+      "exists": true,
+      "sha256": "de24fb663194808196a4e97652d57ce4692c1cbbe43ed275014e043f6cc68453"
+    }
+  ]
+}

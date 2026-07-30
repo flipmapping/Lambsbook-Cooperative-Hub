@@ -1,0 +1,15 @@
+{
+  "authority": "GEX-EXEC-004",
+  "mission": "NM-001 Operational Verification",
+  "status": "READY",
+  "repository_mutation": false,
+  "verification_steps": [
+    "Start application",
+    "Execute one admissions stage transition",
+    "Capture HTTP response",
+    "Capture server log",
+    "Capture notification persistence evidence",
+    "Evaluate exactly-once publication",
+    "Issue operational certification decision"
+  ]
+}

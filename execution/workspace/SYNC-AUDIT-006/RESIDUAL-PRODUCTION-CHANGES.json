@@ -1,0 +1,55 @@
+{
+  "authority": "SYNC-AUDIT-006",
+  "timestamp": "2026-07-30T14:00:39.838049+00:00",
+  "residual_count": 12,
+  "residual_paths": [
+    {
+      "status": "??",
+      "path": "client/src/features/"
+    },
+    {
+      "status": "M",
+      "path": "server/lib/supabase-dal.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/messaging/"
+    },
+    {
+      "status": "M",
+      "path": "server/routes.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M10"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M11"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M15D"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M17"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M21"
+    },
+    {
+      "status": "D",
+      "path": "server/services/admissions.ts.pre-ge-comm-001-g20"
+    },
+    {
+      "status": "D",
+      "path": "server/services/admissions.ts.pre-ge-rmp-014-g11"
+    },
+    {
+      "status": "D",
+      "path": "server/services/admissions.ts.pre-ge-rmp-014-g7"
+    }
+  ]
+}

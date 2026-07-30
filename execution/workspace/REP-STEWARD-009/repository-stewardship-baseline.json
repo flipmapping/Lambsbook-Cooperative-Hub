@@ -1,0 +1,21 @@
+{
+  "authority": "REP-STEWARD-009",
+  "generated_at": "2026-07-30T03:38:51.663655Z",
+  "repository": "workspace",
+  "git_branch": "app-rec-006-runtime-identity",
+  "git_commit": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "total_files": 52759,
+  "top_level_directories": 92,
+  "lifecycle_summary": {
+    "Historical/Unknown": 940,
+    "Dependency": 47300,
+    "Temporary": 183,
+    "Execution Evidence": 3311,
+    "Production": 994,
+    "Build": 42
+  },
+  "historical_directory_count": 55,
+  "manifest_directory_count": 55,
+  "discovery_phase": "COMPLETE",
+  "cleanup_phase": "NOT_STARTED"
+}

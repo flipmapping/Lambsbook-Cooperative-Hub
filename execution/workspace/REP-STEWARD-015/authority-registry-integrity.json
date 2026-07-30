@@ -1,0 +1,19 @@
+{
+  "authority": "REP-STEWARD-015",
+  "generated_at": "2026-07-30T04:21:28.991553Z",
+  "registry_entries": 212,
+  "duplicate_authorities": [],
+  "missing_directories": [],
+  "empty_authorities": [
+    "APP-RMP-010E34B-003-backup",
+    "APP-RMP-010E34B-013-backup",
+    "APP-RMP-010E34B-016-backup",
+    "EMP-001G",
+    "FDR-010E35A-016-backup",
+    "GEX-001M-54",
+    "GEX-001M-79",
+    "GP-EXEC-014M-14A-backup",
+    "REP-STEWARD-014"
+  ],
+  "integrity_pass": true
+}

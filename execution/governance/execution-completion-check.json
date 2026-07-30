@@ -1,0 +1,20 @@
+{
+  "current_state": "EXECUTION_IN_PROGRESS",
+  "candidate_next_state": "EXECUTION_COMPLETE",
+  "checks": {
+    "replay_evidence": {
+      "path": "execution/workspace/GEX-EXEC-013/mutation-inventory.json",
+      "exists": true
+    },
+    "handoff": {
+      "path": "execution/workspace/GEX-HANDOFF-001/IMPLEMENTATION-HANDOFF.md",
+      "exists": true
+    },
+    "build_output": {
+      "path": "dist/index.js",
+      "exists": true
+    }
+  },
+  "transition_ready": true,
+  "missing_items": []
+}

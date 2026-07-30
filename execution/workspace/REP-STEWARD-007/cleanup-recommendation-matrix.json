@@ -1,0 +1,277 @@
+[
+  {
+    "directory": ".agents",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": ".phase5",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "<root>",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "BUILDER-SPRINT-001-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "CTBC document",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "EOS-RMP-001A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "EOS-RMP-001B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "EOS-RMP-001B-HF1-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "EOS-RMP-001C-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "EOS-RMP-001D-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "EOS-RMP-001E-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "GE-WEB-RMP-010E33A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "HUB-RMP-001-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "Lambsbook-Open-Brain",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "QR code",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E27B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E29A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E29B-Execution-Authority-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E30A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E30B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E31A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E31B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E32A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E32B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E33A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E33B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E34A-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "RMP-010E34B-Claude-Package",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "auth-runtime-phase2",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "auth-session-finalization",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "auth-storage-audit",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "codex-gateway-handoff",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "codex-handoff",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "content-authority",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "dashboard-auth-runtime",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "dashboard-runtime-repair-phase2",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "dashboard-runtime-trace",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "dashboard-stub-audit",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "deploy-asset-sweep",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "deploy-asset-trace",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "deploy-asset-triage",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "deploy-finalization",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "deploy-fix-phase1",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "deploy-full-asset-audit",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "eos",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "final-workspace-hygiene",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "home",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "mvp-delivery",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "mvp-phase-transition",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "navigation-runtime-trace",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "obom-v1",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "phase5-wp3b-materialization-package-v4",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "runtime-stabilization-final",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "testtar",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  },
+  {
+    "directory": "~",
+    "recommended_action": "No mutation",
+    "next_authority": "Future bounded cleanup authority if evidence warrants"
+  }
+]

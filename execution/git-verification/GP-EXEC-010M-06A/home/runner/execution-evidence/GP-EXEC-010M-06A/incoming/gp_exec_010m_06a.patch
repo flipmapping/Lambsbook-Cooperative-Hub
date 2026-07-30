@@ -1,0 +1,40 @@
+--- a/server/services/notifications.ts
++++ b/server/services/notifications.ts
+@@ -1,5 +1,6 @@
+ import nodemailer from "nodemailer";
+ import { storage } from "../storage";
++import { getZaloAuthentication } from "../integrations/zalo/auth";
+
+ let transporter: nodemailer.Transporter | null = null;
+
+@@ -187,20 +188,14 @@
+ // ── Zalo side-channel (GP-EXEC-009) ─────────────────────────────────────────
+ // Sends a copy of the notification via Zalo OA Message API.
+ // Called only when NotificationPayload.zaloPhone is present.
+-// Requires: ZALO_OA_ACCESS_TOKEN environment variable.
++// Requires: ZALO_ACCESS_TOKEN and ZALO_APP_SECRET (via getZaloAuthentication).
+ // Failure is logged and swallowed — does not affect email delivery or
+ // notification persistence.
+ async function sendZaloCopy(
+   payload: NotificationPayload
+ ): Promise<{ success: boolean; error?: string }> {
+   try {
+-    const accessToken = process.env.ZALO_OA_ACCESS_TOKEN;
+-    if (!accessToken) {
+-      console.warn(
+-        "[Zalo] ZALO_OA_ACCESS_TOKEN not configured. Zalo copy skipped."
+-      );
+-      return { success: false, error: "Zalo OA access token not configured" };
+-    }
++    const { accessToken, appSecretProof } = getZaloAuthentication();
+
+     const phone = payload.zaloPhone!;
+
+@@ -211,6 +206,7 @@
+         headers: {
+           "Content-Type": "application/json",
+           "access_token": accessToken,
++          "appsecret_proof": appSecretProof,
+         },
+         body: JSON.stringify({
+           recipient: { user_id: phone },

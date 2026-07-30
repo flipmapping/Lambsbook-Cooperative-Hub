@@ -1,0 +1,4 @@
+prospect_id,student_name,student_id,email,phone_number,preferred_language,journey_state,registration_link
+P000001,Nguyen Van An,VN000001,an@example.com,0900000001,vi,Registered,https://lambsbookcoop.com/register/P000001
+P000002,John Smith,EN000001,john@example.com,+12025550101,en,Interview Scheduled,https://lambsbookcoop.com/register/P000002
+P000003,王小明,TW000001,wang@example.com,+886912345678,zh-TW,Offer Issued,https://lambsbookcoop.com/register/P000003

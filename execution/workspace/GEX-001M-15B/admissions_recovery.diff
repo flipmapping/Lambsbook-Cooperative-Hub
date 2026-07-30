@@ -1,0 +1,28 @@
+--- admissions.ts.pre-GEX001M11
++++ admissions.ts
+@@ -23,23 +23,8 @@
+ async function createProspectCore(
+   payload: ProspectRegistrationPayload,
+ ) {
+-  const prospect = await supabaseDAL.createProspect({
+-    full_name:            payload.fullName,
+-    email:                payload.email,
+-    country:              payload.country,
+-    program_of_interest:  payload.programOfInterest,
+-    phone:                payload.phone ?? null,
+-  });
+-
+-  const funnel = await supabaseDAL.getFunnelByCode(resolveRegistrationFunnel());
+-
+-  if (funnel) {
+-    await supabaseDAL.createProspectJourney({
+-      prospect_id: prospect.id,
+-      funnel_id:   funnel.id,
+-      current_stage: 'registered',
+-    });
+-  }
++  const prospect = await createProspectCore(payload);
++
+ 
+   return prospect;
+ }

@@ -1,0 +1,105 @@
+[
+  {
+    "intent": "Education",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Events",
+      "Growth Engine",
+      "Member Workspace",
+      "Notifications",
+      "Organization Registry",
+      "Programs"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Recruitment",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Events",
+      "Growth Engine",
+      "Member Workspace",
+      "Notifications",
+      "Organization Registry",
+      "Programs"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Commerce",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Growth Engine",
+      "Member Workspace",
+      "Messaging",
+      "Notifications",
+      "Organization Registry"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Agriculture",
+    "required_modules": [
+      "Authentication",
+      "Community",
+      "Dashboard",
+      "Member Workspace",
+      "Notifications",
+      "Organization Registry",
+      "Programs"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Community",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Events",
+      "Member Workspace",
+      "Messaging",
+      "Notifications",
+      "Organization Registry"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Nonprofit",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Events",
+      "Growth Engine",
+      "Member Workspace",
+      "Notifications",
+      "Organization Registry"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Professional Services",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Member Workspace",
+      "Messaging",
+      "Notifications",
+      "Organization Registry"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  },
+  {
+    "intent": "Custom",
+    "required_modules": [
+      "Authentication",
+      "Dashboard",
+      "Member Workspace",
+      "Notifications",
+      "Organization Registry"
+    ],
+    "builder_action": "Compose Existing Capabilities"
+  }
+]

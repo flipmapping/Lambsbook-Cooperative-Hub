@@ -1,0 +1,38 @@
+{
+  "authority": "APP-BUILD-001",
+  "created": "2026-07-30T05:06:57.218249Z",
+  "repository_root": "/home/runner/workspace",
+  "branch": "app-rec-006-runtime-identity",
+  "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "inspection_scope": [
+    "Identity Layer",
+    "Member Profile wiring",
+    "Member Dashboard",
+    "Admin Dashboard",
+    "Workspace routing",
+    "Session restoration",
+    "Communication integration",
+    "Shared runtime state",
+    "API surfaces",
+    "Production React components",
+    "Production server routes"
+  ],
+  "required_outputs": [
+    "IMPLEMENTATION-AUTHORITY.md",
+    "REPOSITORY-SURFACE-REGISTRY.json",
+    "IMPLEMENTATION-CONTEXT-MANIFEST.json",
+    "PRODUCTION-SURFACE-INVENTORY.md",
+    "REPOSITORY-MUTATION-SCOPE.md",
+    "IMPLEMENTATION-DEPENDENCY-MATRIX.md",
+    "VERIFICATION-PLAN.md",
+    "SUCCESS-CRITERIA.md"
+  ],
+  "repository_stewardship": {
+    "consume_by_reference": [
+      "Authority Registry",
+      "Relationship Registry",
+      "Compliance Matrix",
+      "Execution Trust Chain"
+    ]
+  }
+}

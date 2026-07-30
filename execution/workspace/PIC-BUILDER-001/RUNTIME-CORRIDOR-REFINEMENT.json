@@ -1,0 +1,2046 @@
+{
+  "authority": "APP-BUILD-002B",
+  "timestamp": "2026-07-30T11:38:19.382769+00:00",
+  "source_surface_registry_sha256": "5ad74e85a968ed15d16e2d336b7baf386eef2acbc7c90048d19abd218d48c0b8",
+  "source_corridor_registry_sha256": "c04bfbac2f60c7690d1079114e54b33a87afe2035e1bc4006f006df62873d0ed",
+  "analysis": [
+    {
+      "surface_id": "ce931a2269184f4b06d6be36ead81f2ca3e95e44a5c8d600f47da1dfa35b9337",
+      "relative_path": "client/src/App.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth",
+            "session"
+          ]
+        },
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "router",
+            "Router\\("
+          ]
+        },
+        {
+          "corridor": "Workspace Routing",
+          "confidence": "medium",
+          "evidence": [
+            "<Route",
+            "Routes",
+            "Router"
+          ]
+        },
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "0088569b6ee7a7c7b22b20d6bae6339025155ee0e90e9186b1985da0b958c563",
+      "relative_path": "client/src/components/AIChatWidget.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "session"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "40696471449d086cc5fb14f8f9ecdbc1f2c597b6935d59269814aad4d3346918",
+      "relative_path": "client/src/components/AdvantagesSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b00a8435ebeca9a6de4e009419acea397a88403ac6c1affb67768aace498792c",
+      "relative_path": "client/src/components/ContactSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "f2cd8997ad9517ee1bdae9e75f76852c43debca27d233356bf1904dfc35e32e1",
+      "relative_path": "client/src/components/CountriesSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "63ce39c8ff162318eaef16f8c821ac4e8e3024cbffe5618f3a430657a9c3a667",
+      "relative_path": "client/src/components/EB3Categories.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "476c878d8767605848648cae0d34200d1bdf8aa22a25d0eec111beb9bb02c9dc",
+      "relative_path": "client/src/components/FAQSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "d336f7348caf7bcd6dc9948bd9e0589edd6c76c358b214b2ec602e1e72c697ea",
+      "relative_path": "client/src/components/Footer.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b36271bb100b70cfb099cab9923f9dba10e0476f6f67d821a09cc879afa185ff",
+      "relative_path": "client/src/components/Header.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "02399209e11334d67d94bcc240418f527a694e1a1e0708a4a193cdab92644966",
+      "relative_path": "client/src/components/HeroSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "31d64dc18ad3d5c2e88df09fd5d9d224c7939a38f59d40c1a470d05c4a945d2f",
+      "relative_path": "client/src/components/HubConsultationForm.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "83f6c359fa0a1ba1680845e898b74cf166cbd58bb314bce1d8fbfa2d0fdf0613",
+      "relative_path": "client/src/components/HubHeader.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "cde5fb0e4eacbe6fbb173bf3953cfd8619c1bbe98b9fa9af6e4c630c6a8e9958",
+      "relative_path": "client/src/components/JobCategoriesSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8eb12c67d8c5e6b38167fda6c65d55193e5b1a49490ff7d637754ab7b57606a4",
+      "relative_path": "client/src/components/LanguageSwitcher.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "ab722366c60bea868593b672c499293d92d2b6e97aed815c90a74a01d9eaa391",
+      "relative_path": "client/src/components/ProcessSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "0aa808a211634415f3df3a810a508039d36e3d34add0285a59d5df32bc6d5f7e",
+      "relative_path": "client/src/components/ServicesSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "9a63df5ee4e672c6d436bf55d423aaf7d3128add71a53ffcedf74769248b6c98",
+      "relative_path": "client/src/components/StudyAbroadSection.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "d8458a6d2b3f3c5835fa3f83c18585c36f857795816553f99f81b67c18c948be",
+      "relative_path": "client/src/components/SuccessStories.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "af5d075a8b45886db9ccb65ae26c70f8d38ec7c369f0c1ba8dbaa8f63be1c9bf",
+      "relative_path": "client/src/components/ThemeToggle.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "df34dbbcc3b3a51313d407b49ce85af62d1550b986414b57ca8ca8188ec6f738",
+      "relative_path": "client/src/components/admin/CommissionRulesManagement.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "5c76d1965d154b1e866196488344ba8b40f5ccbf66905eecec60d56c3289dae4",
+      "relative_path": "client/src/components/admin/EnrollmentWorkflow.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "45b6ce5fa76a3f750d128927c639e0067a071ddca1dd2dc71fab57515c01843a",
+      "relative_path": "client/src/components/admin/LandingPagesManagement.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "2d2392e99a5b2ade56a1fbe72b8066574f280dde8b624bea9337577632ea3a41",
+      "relative_path": "client/src/components/admin/ProgramsManagement.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "a466498ffdcfee8cba1a7ff3cb289b4da88b6798d41bbf9b14292ecab05348bb",
+      "relative_path": "client/src/components/admin/SBUManagement.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "268ebe3fe5bcd44c4325c68740567843b90596ee5d1ef6c9551187fd40aa8841",
+      "relative_path": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "7b9a8e0bf896bc37351f867da11001a0efc9762b54b90594d18e1d5f93494f9a",
+      "relative_path": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "bc1bacf8ca4f2aef5d00d9ebc292ab1517d5d89c399a5331510739bce39c2be9",
+      "relative_path": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "dffa7b9e7d4a94133de4e5f5146edbfde8b679a62230468540e913bd72cf770a",
+      "relative_path": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "f84b0a1ea4475f12cc285661bdadb42e505b9381b6f490ba76029036c8d42a5a",
+      "relative_path": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "3a9a3f05eb9a908d07be1707210a9b0f07acf7293aa492a9a92b30541add57f6",
+      "relative_path": "client/src/components/admissions/ProspectTimeline.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "4aa4f68878b86c2d55bc987b28124375da6bce40e248b6494abbd4cb846b8508",
+      "relative_path": "client/src/components/examples/AdvantagesSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "d8efc17988abc2415a73ffc9f9e2cd9b49180500268e4bc33c44181b8ec3de99",
+      "relative_path": "client/src/components/examples/ContactSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "92c7778893ac13322294cdf202a94d3d4d789aa4bbe8fbc39c93969b6440df09",
+      "relative_path": "client/src/components/examples/CountriesSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "34c601bf67b1939eac4a369537e9c43afb5e71c4355ca2fb3ef2e68879c13ade",
+      "relative_path": "client/src/components/examples/EB3Categories.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "7018890fba106bfcebe465ac6adc412d13c4e20da822744c13f6296de176065a",
+      "relative_path": "client/src/components/examples/FAQSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "a3e4b22de23c80752d7d7c3462649cf7b83b1aae48b14a9afe41fff4f9fbb88b",
+      "relative_path": "client/src/components/examples/Footer.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "7e3bbf0d15d67a66c7373164b2be8fcfedc4710b8b2e38594f75850665fbe8a3",
+      "relative_path": "client/src/components/examples/Header.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "0b699800448dbeac6031feb64efc1cb233015cf4c94388a95297c9274e251050",
+      "relative_path": "client/src/components/examples/HeroSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "e620ede6fffa9c91732465101ef901109ff4a773c03b60530cd344b8f6d92958",
+      "relative_path": "client/src/components/examples/JobCategoriesSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "92d4bed6044d8b0a0c9cd6d9a95cdab6d09bab244eb6d8b4e805b80c7c29f4ca",
+      "relative_path": "client/src/components/examples/ProcessSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "9bfc13ec878065e25871a0c674488dd8821afe050b60dd1fff19c59a4cdacfc8",
+      "relative_path": "client/src/components/examples/ServicesSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "cbdc268f009c19a6b546c2e76e87672d595dd03280c2b0d9cc159c555d8c1be4",
+      "relative_path": "client/src/components/examples/StudyAbroadSection.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "2f823db5d6444c1c1fedb0739adae11045c3838aea0179e1dc01c58cbc3fce6a",
+      "relative_path": "client/src/components/examples/SuccessStories.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "ee24a8c59e932d3271dc9d2f3104c6fbfc4fc33eb09cba479878b0af14f274b3",
+      "relative_path": "client/src/components/ui/accordion.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "23721d4aa91da8296c05fd4842c163f06514972e5d72c68901f7ab20573fa8c8",
+      "relative_path": "client/src/components/ui/alert-dialog.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "752a145674d57139f6c8b372357667b10ed275a078de931db81684f0d85229b8",
+      "relative_path": "client/src/components/ui/alert.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "e4ec5f931ba98d239853eb4359a4498afc0c02e9094f74c704a50a3eb5377e5b",
+      "relative_path": "client/src/components/ui/aspect-ratio.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3782b80acbb3aca101d82f5b50c553650e28437fe80018f068d3e935ea7e4b8a",
+      "relative_path": "client/src/components/ui/avatar.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "f01d021401171f9f7fc4babbdc971876e5db51a1d12aca11739fb1bebca0ce37",
+      "relative_path": "client/src/components/ui/badge.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "07c8798e9de45850c1e8cabd0e4c9eeed4f2c6266d7a4ca0313ee81a49a2722b",
+      "relative_path": "client/src/components/ui/breadcrumb.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "850d23676d29d6ce6945671c961e3cfaec1c7e37cb8e8649d0ce19a3e50b6c18",
+      "relative_path": "client/src/components/ui/button.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "200b12275bf8860e84bac1daceb97c1984d0f9445fba1c6244e4076221bc83ae",
+      "relative_path": "client/src/components/ui/calendar.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "124623c25a828db6449af12045b1e889e5cf1645dca9d733de383d8769c2c6d9",
+      "relative_path": "client/src/components/ui/card.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "07e8857e4d553c80e752f84129989bc2de9ba15d33e41afa132422e12e93720e",
+      "relative_path": "client/src/components/ui/carousel.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "createContext",
+            "useContext",
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "1b766d846c5a7cd20358af2f2a77fab9a280be4cd1c09b324764236a6ded6663",
+      "relative_path": "client/src/components/ui/chart.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "createContext",
+            "useContext",
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "f318a5777c142409a8f47e2c871cd9f919c8f05b3fab5ecd26d0ab3e19d70a52",
+      "relative_path": "client/src/components/ui/checkbox.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b99c347db1edd13cd7967481f348db573aaff0dcc6760d037d9369f56d62ffb1",
+      "relative_path": "client/src/components/ui/collapsible.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8726bd6b29fdd7448f875f9609011f6aae24f27883081184d59b41ec80a636c6",
+      "relative_path": "client/src/components/ui/command.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "4709db13b9e10ac4ec85f48f919f5ca9518783f0430c2b7dd61697d614e6746d",
+      "relative_path": "client/src/components/ui/dialog.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "ef8062e2d5a771aa944a77450047b6d23d8c69f7ee9f6a7692a4575aa4abd6bb",
+      "relative_path": "client/src/components/ui/drawer.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b692a9c7638f7e4d1715360f41b0786c3b22f23fc5af7099be0c0316549b4e85",
+      "relative_path": "client/src/components/ui/dropdown-menu.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "bf59e798e80aed06c59216f08223065c6cb9855a90e65816fa6e71930cefdd1f",
+      "relative_path": "client/src/components/ui/form.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "createContext",
+            "useContext",
+            "Provider"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "961fed66b53137f3a970011646c2af3f7de781d1bb430eb01e8ca1ad2791583d",
+      "relative_path": "client/src/components/ui/hover-card.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "45c8ae892b21773e80f3cc403a855d8ad31bb1ef69bfe8c7abb34fc3243e00f0",
+      "relative_path": "client/src/components/ui/input-otp.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "useContext"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "efccf60ac3d37e56fea54dae4ee243a41e5c4451d02c1946cdc3c30fa10ccb4f",
+      "relative_path": "client/src/components/ui/input.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "f51fd28839d23da3bde870adac9c4f49aee6ee0a572214359c5f3df45b0af4b6",
+      "relative_path": "client/src/components/ui/label.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "b9f2dd2ca10adec007c92f878372f2a990f6050807f1de2ea57d533ff26fa09a",
+      "relative_path": "client/src/components/ui/menubar.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "9d7abda712f5bb64cc4244862f9d576a4278ecf7d48fa0f935cd92719a4814fa",
+      "relative_path": "client/src/components/ui/navigation-menu.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "0cc7ae443a7bf523c79615332d9147d021ff51a89cbedd16cd8944e0fe9e07a7",
+      "relative_path": "client/src/components/ui/pagination.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b7c571a6fc919bb11d5d8e010ebeccc17335db2addd4c1c685fdf5df9696b987",
+      "relative_path": "client/src/components/ui/popover.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3f44cac4db998b2e04c73a72ff9f3cf9d97454d0ccc59d6ca98e181d74e5a1af",
+      "relative_path": "client/src/components/ui/progress.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "85e4fdce374391e33d1d98e0d8e3b7ed61c878ff02196217c116fa99e56a09a1",
+      "relative_path": "client/src/components/ui/radio-group.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "c1926c82691eb70dd33c779c4021f914f9c9b37392a02a1412f2af4d02ab3075",
+      "relative_path": "client/src/components/ui/resizable.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "2d974ff797675700673397fc267c6e5777ec4b5a96943b6735c5a37f8c80b12a",
+      "relative_path": "client/src/components/ui/scroll-area.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "18d58562ffd1fad84ab6689f90753bbabc8bedf9fb880d7f58e3dc6ea315ad5b",
+      "relative_path": "client/src/components/ui/select.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "942e53a6a38e977242c4dbc2592377b874de0f84a692a3899e5c78e690ceb150",
+      "relative_path": "client/src/components/ui/separator.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8bef4f16df3bdd5eaa0f45fc55621fa80208d7096d93444bfbbb0ce450bde224",
+      "relative_path": "client/src/components/ui/sheet.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "f0cb4675c938ed9123c0c139e769f9ba745309b77694b709b61c5191627b2a92",
+      "relative_path": "client/src/components/ui/sidebar.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "createContext",
+            "useContext",
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "e0d0b1afcb46a9c3113082087f64b6d426f425f5e80e4e8908d80d0622156bb3",
+      "relative_path": "client/src/components/ui/skeleton.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "08230162d8629480f37e9758a0ed105d95a0db6ac9a7a39a0e62220ba1c82ae6",
+      "relative_path": "client/src/components/ui/slider.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3b48fbbe00646f5cc2e70321d9316b9f3db7e6a87bce07ef9ad2de045a7149d2",
+      "relative_path": "client/src/components/ui/switch.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8fb400981d306228d89c48b0fc071e12e28b02b56fbf40856c54e48c1bd0967a",
+      "relative_path": "client/src/components/ui/table.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "baf7fc02c4a194913934a8a8cfc576011528cfaf3e655e4e266dccc0e58c8061",
+      "relative_path": "client/src/components/ui/tabs.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "c7906b677f3d150a34c9324b816dbf1b5e37d63ad138cd2d5390ed6f327d9d4e",
+      "relative_path": "client/src/components/ui/textarea.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3b6dd03f79af8ce751d56c44fc7a1be227c239e73c10b4266d25e50fa0088cf9",
+      "relative_path": "client/src/components/ui/toast.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "dc7094668304c6b3f1e235d4d65db7859caff8267441ff38c3f820510087e565",
+      "relative_path": "client/src/components/ui/toaster.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "7c1f1579a9a09a554c017478d52fec0475075e2402489716b8edd8db83467749",
+      "relative_path": "client/src/components/ui/toggle-group.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "createContext",
+            "useContext",
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "f08055313086f9de46205d263a0dff836905a3fceaee7971d5bbabcc3ee0cd98",
+      "relative_path": "client/src/components/ui/toggle.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "bd7818668dfa4b4a770fb78a99620ae518d55768a109d3b055e010b098d94fdd",
+      "relative_path": "client/src/components/ui/tooltip.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "2f03e8885f71a5f3da4c2f365ce77df8e73e7b7edf7c98a93c1b24e67092a266",
+      "relative_path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "523fbd4374d301eeb73dbb32a94a8d405a0c717c9e98ab02b80b0595d61d18f1",
+      "relative_path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "ce9a54cb8ee7858cb2c146d707ea13b4b87712acaa8c32a362f39f3d55a6d0f4",
+      "relative_path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "561c0b150c0722c2dc23e3bcccb8eee8e36931f4a1699829f90ec7d01d1608af",
+      "relative_path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "4dbcf72c8de53706b73034e18bdd0b81e20a19d233a14ceac26bf0cd7a2e091a",
+      "relative_path": "client/src/features/organization-studio/index.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b896e19b2a4900a1131153a67351efdbc15e6203dc61baf8df5b085367c99f56",
+      "relative_path": "client/src/hooks/use-mobile.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "b4ef2821711a3e6f4a28785ac6c186d773f97516951eb844e157bda48121b6ac",
+      "relative_path": "client/src/hooks/use-toast.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "d74e5567c52ce15591e8fb5372cd4f3270616fa4dadac1603e07db84167074dc",
+      "relative_path": "client/src/hooks/useFeedbackUsage.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "c322d956c0b72a3948a0a065234d9d091b9ff05500ccc8af4f6314a38e91c732",
+      "relative_path": "client/src/lib/hubTranslations.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Workspace Routing",
+          "confidence": "medium",
+          "evidence": [
+            "Routes"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "734b04f8991c0c5cf3f8e0845cfa745c325d85b81da45e9a330608ed876a59f7",
+      "relative_path": "client/src/lib/i18n.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "af180daa6dcd9ea685ae684e82c9d6b0fab58a2e935621415295f9156f4db493",
+      "relative_path": "client/src/lib/imageConstants.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "50310aa8524428f8f5d218dbf7ff0ef63eccab397aff39d5c4e24367d07d225b",
+      "relative_path": "client/src/lib/lambsbookTutoringContent.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "session"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "d5717a4373b342a7d898d0ae735d822f85d0f80411664838b1450adceb3f9541",
+      "relative_path": "client/src/lib/learning/types.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "4174db2b5432c130a919f3e9ce7492edc899f9ec052db153918b90de87ce7e4b",
+      "relative_path": "client/src/lib/queryClient.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "7be9b945e6138b8cb5a67ebec16e3088085c2a6fc6d213938be8f7f1cb2380b6",
+      "relative_path": "client/src/lib/supabase/client.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "38b257e77e08aec18c6ac300985ee126363ac86b4fb2528dccaba0396531e3b0",
+      "relative_path": "client/src/lib/utils.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "d44e9e9aff3ba788632e2a3fce4725a069a66582be2291fee23f9101b4555f08",
+      "relative_path": "client/src/main.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "a68f6b52c782e79876c59a9df4b2073675a8a56ac3125d2c54e4723bdfd8cf81",
+      "relative_path": "client/src/pages/AdminGovernance.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "56cbf0e1ae06d9fb2ca128c8704360c7bd4ec4402d6eec8d02ab44cb6cf0d7e5",
+      "relative_path": "client/src/pages/AdminRevenueConsole.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "a3fd7de3c3e955856043174c9bd0ff032dc0cd6b0b9b498134b343364e4f5902",
+      "relative_path": "client/src/pages/AdmissionsWorkspace.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "22965a800302dfc3cfab40af738e64883e5d039c1df7637fe423b996c8e8368d",
+      "relative_path": "client/src/pages/ApplicantActivityCenter.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8bb3e3c5f5e321e44e3f8d999927607315d2772d98f5dcebb183736eac0235a7",
+      "relative_path": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3b6d0255df11d1c95ed506b864044628daf5e725099aea50436c4d1c10a9af3f",
+      "relative_path": "client/src/pages/ApplicantAppointmentCenter.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "e86c3e7d1eef4b5e96fe216077456ef799eda4370f8f5c7b8feda74f100b5d6c",
+      "relative_path": "client/src/pages/ApplicantDocumentCenter.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8b8bf1ed415b0998d4758ff4469ee715317dc0bee0e301fdad8d73983a47cf62",
+      "relative_path": "client/src/pages/ApplicantFollowupTaskCenter.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "e406dd979bbd4fb8efcf0d57e906daeea6b1c48c5455fba67770fcc04185f01f",
+      "relative_path": "client/src/pages/ApplicantJourneyStatus.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "40a1e7975f05e47ef8ce7750bfcf3e63f43c7b15c930f456f37a8c9d20b9caa3",
+      "relative_path": "client/src/pages/ApplicantLifecycleTimeline.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "ca90c5a56be97ba56fa17e67803dd4ebc450da34d646d6953ce9aea75cfdf514",
+      "relative_path": "client/src/pages/ApplicantStatusLookup.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "d705f3b171a2fa6d9a74e87679dcde4295d1330c3b85ad2855880243031281f0",
+      "relative_path": "client/src/pages/EducationFeedback.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "fc1be9129b4096a53fc2befef4805a5c379025ee424dd8a9d9614dc73a21b92b",
+      "relative_path": "client/src/pages/FarmstayVision.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "4ecffecf1deab58ec5e6cf4e72624ff49b195b7c7817cb261314136c69b7d55b",
+      "relative_path": "client/src/pages/HubLanding.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "session"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "05b6c3dfaa317980b9e52cb29e63b5499416d2349bfbaa0c3f26166d4aaf1b47",
+      "relative_path": "client/src/pages/JourneyPages.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8daf4bdfc379d30179f55ef4e45e19911d16b23d75a7fd3ec41c6eacbacdca48",
+      "relative_path": "client/src/pages/LambsbookTutoring.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "5f4d25b5d708e7cb2db137ae148e57ae11b21bcfc8f50537c04731118af0f1a1",
+      "relative_path": "client/src/pages/Login.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "resend",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "91c9583d6e69eb3b9142865373e885309c6075f232b9602d3f1ee3f389e1f666",
+      "relative_path": "client/src/pages/MemberHub.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "e54a84423947e064c54855d273b613d776c60f28b1b74fb10dd8305b97dbe763",
+      "relative_path": "client/src/pages/PartnerOnboarding.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "ce013adfe443a70790d45d7a7570384f1871a1c8278f060e9446808c7a52e910",
+      "relative_path": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "be75b14e6d5fa68f4a4ee1868cc91ebd505676bf4aff4b5964c9dbff506ced4e",
+      "relative_path": "client/src/pages/ProspectRegistration.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "0e020368619491fbe637cd968ef4c098e57f2fe6b457d47c275c1edecfec737d",
+      "relative_path": "client/src/pages/ResetPassword.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "13b2b703fcc0098492a022486556a62146f26262ceaf0bf939d7bfa9ce853ee7",
+      "relative_path": "client/src/pages/SBUEducation.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "0878a5aa317cef481a7096a51dfce9adc1807ffe179fc9ca9b5f58d262b24545",
+      "relative_path": "client/src/pages/ScholarshipsPage.tsx",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "7b044f6ceb88ade38dcd10659ec1de681cc0dcdd04e642f7ce566fa5ae7754dd",
+      "relative_path": "client/src/pages/TranscriptSubmission.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "066a5b92f1fcedae58838a3559e01cdbd3aa0c6fb04528843b5df5d411f142f3",
+      "relative_path": "client/src/pages/TropicanaProgram.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "fe8fe5d621ec9d163114a5017dadd707081b789f0c6a1f54b976a480f67ed5bc",
+      "relative_path": "client/src/pages/not-found.tsx",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "router"
+          ]
+        },
+        {
+          "corridor": "Workspace Routing",
+          "confidence": "medium",
+          "evidence": [
+            "Router"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "81b99c289498dbfa65e54b63dbc451ecbe9bd27d638e15d1f931187e76708669",
+      "relative_path": "server/dal/financial.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "02265846d7ba06e040bffc22a9feb635d8b47004ea18f498a9994dc47af0a6bb",
+      "relative_path": "server/dal/governance.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "211cf2ad5f3770962d24a68a4a22b09489b6f277a1754b48f43da5324467e42e",
+      "relative_path": "server/db.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "e807f75fe756382dac41434e29abebb7dba3f88a77a102d608ea5314df700410",
+      "relative_path": "server/imports/adapters/csv/adapter.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "7553cda96afa8aa628c7cb737b023a614c0c1199cfde94e1f4f0e9dcd3e6c74c",
+      "relative_path": "server/imports/domain/prospectImport.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "0f265555a883216acafe91256c00fbbc679fdc17fa4daf5f8da94e21479a4296",
+      "relative_path": "server/imports/mappers/prospectRegistration.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "617e2f64c3851db2595816f99ea50f9ee6f241c948976973d0ba8ae17bcfad75",
+      "relative_path": "server/imports/pipeline/contracts.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "8baecbf9ff8e512cb335ace33a2e1f0eb7ef6e645b2b21d53c4f8f19c7f4702e",
+      "relative_path": "server/imports/pipeline/duplicates.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "cd30155778b50b528bdad99a8cdf345ef6d01b2a2d72c858138a0044878b4bf2",
+      "relative_path": "server/imports/pipeline/index.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "5412faf80ca629374a676a649aa9d27ef44fca9894efced1576ebccc91a1a75e",
+      "relative_path": "server/imports/pipeline/normalize.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3e74720aadad4e84390cd604e3d1e66c2121ebf9f4d8354a094c9155e6bcd5d4",
+      "relative_path": "server/imports/pipeline/persist.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "969dff494add08d63c23a30dc4b082e1fba8d25fcaf05cef16680d1c6edcab52",
+      "relative_path": "server/imports/pipeline/report.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "eed8cee458ebfc246733d526903aca28be73abbdfa093ef3262b1f63a4add924",
+      "relative_path": "server/imports/pipeline/runImportPipeline.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "6a3a01e86395e66e4c60c19c2fc1295fc7011a81bd4052ecb9a06cc547f95926",
+      "relative_path": "server/imports/pipeline/smoke.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "0d126c1651af73dcc5d8af066e1be03a63d0c21cb512c12e363fa97c233d7c8d",
+      "relative_path": "server/imports/pipeline/stage.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "99c45f56a9dc84e4ab41a55e984ffc1416cec6c11ddbebf0e3eb77adf9a15480",
+      "relative_path": "server/imports/pipeline/validate.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "01f3f4e7ae44ab9073418dfa55730d4841c8a4274fc956dd10d1eb59d6580d54",
+      "relative_path": "server/imports/reporting/engine.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "f97c73e8e3d7a02a69eed990d28b299f18701d1e9947eedac20bd3386fac2ad0",
+      "relative_path": "server/imports/staging/engine.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3e43bdbcb18feab2bc7a7af5e823ad44d6dd217de2bdc0fd12488a8ada21fb5c",
+      "relative_path": "server/imports/validation/contracts.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "242e1d66b07cfdbfc1bcbbab955ef707126115749f8b54bea935f0b5c38d8be1",
+      "relative_path": "server/imports/validation/engine.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "786114c6ebf98e577ec30dac884800bb7c9ce800b5323710ed03b916e1d33b68",
+      "relative_path": "server/index.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express",
+            "app\\.get"
+          ]
+        },
+        {
+          "corridor": "Workspace Routing",
+          "confidence": "medium",
+          "evidence": [
+            "Routes"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "507b73e68a749027bad6e6474aa5ac5562d42e42dbecb29eac5e9103897d1537",
+      "relative_path": "server/integrations/zalo/adapter.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "7d818232ed04431d512b1798c3812f509eff5c6802ebb25cf3361e47001e61c2",
+      "relative_path": "server/integrations/zalo/webhook.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "a95ccb10d7cce74f802a9ce418e3d4d70305791d4b2f0e9424f5b9c765b78b31",
+      "relative_path": "server/lib/index.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "9a90007cd014c66bf98ca0e7993e48bc412cfa0f82a78bfb1532cf254d2237a5",
+      "relative_path": "server/lib/openai.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "3aa562ec9d7d2619f411778d9695a4d36a82ad46039f9a14ccd3114d16fa5c89",
+      "relative_path": "server/lib/supabase-client.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth",
+            "session"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "6616235c0aa402d950992391f85e380db148f4ff84664599979dfc31db69bcf7",
+      "relative_path": "server/lib/supabase-dal.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "0ce56e4348623760f92b50ad75fd53e7e26f0a73d1c018df89937f86fc4467f3",
+      "relative_path": "server/lib/supabase-member-client.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "02a903655f67ef095700c6cccb662654d7caa7aea987ae01810e981b47b0aed4",
+      "relative_path": "server/lib/supabase-types.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "7fb0dc63cb5e242bbad2ead629646bf6173f7cdca296e92462fd7ad95587cf7a",
+      "relative_path": "server/lib/supabaseClients.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth",
+            "session"
+          ]
+        },
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "62b9e783ed78284f7f607e21ba8520c1027dda4f71acae2b96c2435e23de9530",
+      "relative_path": "server/messaging/interface.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "78786791a041835c66272a3fd9c09d7314ef3e42ad6a292b99258288118dd47e",
+      "relative_path": "server/middleware/blockSbuInjection.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "5d3b88de6c688b1ac5ea7f8480457c0b6fddce1aa577248c45badce01acae412",
+      "relative_path": "server/middleware/governanceRateLimit.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "b3d57918b477b8f3af88f6b690d157e85c8ea408d014bc53055d4b569a318758",
+      "relative_path": "server/middleware/requirePlatformAdmin.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "bc05737638f818821ad4f439c4541ff66b3f964281175505d2a3b766c7d2f234",
+      "relative_path": "server/middleware/requireSBUAccess.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "8edcdf44f49eb41a37837fa85bb33b735cf48ebdb6260696583d01ab15ee5b2b",
+      "relative_path": "server/middleware/requireSBURole.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "6d2178e147acb84106a116f78cbf755074563cf15f5b623a1ce322d9da78f47d",
+      "relative_path": "server/middleware/requireSuperAdmin.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "9c8478e2f57475ea6de40c94565c94399a5cc9ad506ef7ac12251378fee5c0c9",
+      "relative_path": "server/services/admissions.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Shared Runtime State",
+          "confidence": "medium",
+          "evidence": [
+            "Provider"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "resend",
+            "notification",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "70307c80545173491105d1b60ea00ebfb6687d759d06928fb2f1f49528d7f633",
+      "relative_path": "server/services/ai.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "d810fea1099ae624f8d40800eeb17418419c1d1c9cfbb3da499e99015a854840",
+      "relative_path": "server/services/education-feedback.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "bf59e1674bd08e75ba57c0b07f2d0399e7d8a139b912ae9532e50baf2e09dcea",
+      "relative_path": "server/services/financial-executor.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "0bb4329f1ad3919c317a69d63961f8802554c3d0b94309cd762e65bb810cef8b",
+      "relative_path": "server/services/google-drive.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth",
+            "identity"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "cf899cd11587645ab5e630761d1c2f9d644e90945beebc048dc1bb3756ad590d",
+      "relative_path": "server/services/governance-executor.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "04c2442bf4550323d55bfdfa9572e82fc7ce33e6aaad6732206d9cf1672cc3f2",
+      "relative_path": "server/services/hub-partners.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "572376e8642610bb1e2640bce30475ef93f259a6665853298ce0e4ccd843ff91",
+      "relative_path": "server/services/integrations.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "2ea5accbad208d08c017b3b72c6a8fec08168f757c6a144aefdd3722da6ffd1c",
+      "relative_path": "server/services/supabase-hub.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth",
+            "session",
+            "identity"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "ec918fc619e26ee133d8983fb89558ad75dedc653c961732e00e8d03037b9957",
+      "relative_path": "server/services/youtube-transcript.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "cb9e99f67748f4645a10ed397d3ecdc0cec657757a7e97cc3fafc68571451d03",
+      "relative_path": "server/static.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express",
+            "app\\.get"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "6af4f8e34285120717169f57249241ec070dfd0f878e186658aaa341e568c84f",
+      "relative_path": "server/storage.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "session"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "notification",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "eeb750dacd7510a22c947342a507b93389bbb4395c5b31fc19669ca6bee5a2ac",
+      "relative_path": "server/vite.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "API Surfaces",
+          "confidence": "medium",
+          "evidence": [
+            "express"
+          ]
+        },
+        {
+          "corridor": "Workspace Routing",
+          "confidence": "medium",
+          "evidence": [
+            "Routes"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "cd82659a047d33bd041de6d5214ebd3e9fe88ac9123f3a9e411c3942e16c6cbb",
+      "relative_path": "shared/imports/types.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "fd727637bd9ec2313b872851f2109148d3c75569bdd7363e0e6225e66411de81",
+      "relative_path": "shared/organization/builder-demo-scenarios.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "2d7d927eb48a6af5f8ab2a947f48f3f5cbc4d9ed2b551b859ed9914318f9d16c",
+      "relative_path": "shared/organization/builder-demo.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "77c7072b6552def1b58cfe750908fd9ba0018b32b09986150f7480efcb1064a7",
+      "relative_path": "shared/organization/builder-planner.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "32168feb0884d977a96bdc9c2314d72b1150e0eb55d6f6226b74fba85558c032",
+      "relative_path": "shared/organization/builder-validation.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "6360ea563c85d89836844874a08eb5dcee56fd917d2f1ad5b7f1d21e408a7dd1",
+      "relative_path": "shared/organization/capability-catalog.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "cd0ec11fcd3a7f2493414a1e7959d88d4cc6dbb2ec1579b0de48405c72e42dd2",
+      "relative_path": "shared/organization/capability-registry.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "notification",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "5d6fbde57a272c7c2f68f83e6da10491efe05d39aaea86806bc9a449afc55644",
+      "relative_path": "shared/organization/channel-catalog.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "resend"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "3c27167ad832c1682de44ab735f70162233cc938af1c0cf7dfe7a4d61a9c4590",
+      "relative_path": "shared/organization/execution-plan.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "auth"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "c0bbb974f4467c70d983046964aa6e026c3da1d08fc063644ff13b726324f682",
+      "relative_path": "shared/organization/organization-manifest.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "f0278cee9d45bd515f521b6812a8c4a473769edd9769ffe89d77baefacd44e49",
+      "relative_path": "shared/organization/workspace-catalog.ts",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "248adfc01eb4816dcacc7b777efec7f15df5a4c21da1eaa3f5214b3eb61e1e9a",
+      "relative_path": "shared/schema.ts",
+      "proposed_memberships": [
+        {
+          "corridor": "Identity Layer",
+          "confidence": "medium",
+          "evidence": [
+            "session"
+          ]
+        },
+        {
+          "corridor": "Communication Integration",
+          "confidence": "medium",
+          "evidence": [
+            "notification",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "surface_id": "ea49fc95eebe0cc715ab6ae90a0451f5bb5799c860a1c547b358ce5f458e5b4c",
+      "relative_path": "supabase/migrations/20260220234447_remote_schema.sql",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "58fe7909d404e656210db35c1c28c57ded52a838a0ae09b379187de6d4d77391",
+      "relative_path": "supabase/migrations/20260221_000000_baseline.sql",
+      "proposed_memberships": []
+    },
+    {
+      "surface_id": "9c024e443b1e31083aa12bcc5e0e5720ae608dfcaacdff3dad91efa72ef5b958",
+      "relative_path": "supabase/migrations/20260623022737_gateway_invitation_memorandum_metadata.sql",
+      "proposed_memberships": []
+    }
+  ]
+}

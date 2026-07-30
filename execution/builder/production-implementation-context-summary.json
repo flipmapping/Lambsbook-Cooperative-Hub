@@ -1,0 +1,8 @@
+{
+  "authority": "GE-BUILD-003",
+  "generated_utc": "2026-07-30T05:08:11.044546+00:00",
+  "branch": "app-rec-006-runtime-identity",
+  "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "resolution_strategy": "fallback",
+  "pic": "execution/builder/production-implementation-context.json"
+}

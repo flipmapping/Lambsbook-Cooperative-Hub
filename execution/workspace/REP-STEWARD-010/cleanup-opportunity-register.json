@@ -1,0 +1,72 @@
+{
+  "authority": "REP-STEWARD-010",
+  "generated_at": "2026-07-30T03:51:30.220884Z",
+  "baseline_summary": {
+    "authority": "REP-STEWARD-009",
+    "generated_at": "2026-07-30T03:38:51.663655Z",
+    "repository": "workspace",
+    "git_branch": "app-rec-006-runtime-identity",
+    "git_commit": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+    "total_files": 52759,
+    "top_level_directories": 92,
+    "lifecycle_summary": {
+      "Historical/Unknown": 940,
+      "Dependency": 47300,
+      "Temporary": 183,
+      "Execution Evidence": 3311,
+      "Production": 994,
+      "Build": 42
+    },
+    "historical_directory_count": 55,
+    "manifest_directory_count": 55,
+    "discovery_phase": "COMPLETE",
+    "cleanup_phase": "NOT_STARTED"
+  },
+  "lifecycle_summary": {
+    "Historical/Unknown": 940,
+    "Dependency": 47300,
+    "Temporary": 183,
+    "Execution Evidence": 3311,
+    "Production": 994,
+    "Build": 42
+  },
+  "historical_directory_count": 55,
+  "opportunities": [
+    {
+      "authority": "REP-CLEAN-001",
+      "title": "Historical Package Validation",
+      "benefit": "High",
+      "risk": "Low",
+      "effort": "Medium",
+      "prerequisite": "Review historical manifests",
+      "status": "Ready for Founder Review"
+    },
+    {
+      "authority": "REP-CLEAN-002",
+      "title": "Builder Output Governance",
+      "benefit": "High",
+      "risk": "Low",
+      "effort": "Low",
+      "prerequisite": "Validate builder package retention policy",
+      "status": "Pending"
+    },
+    {
+      "authority": "REP-CLEAN-003",
+      "title": "Temporary Workspace Hygiene",
+      "benefit": "Medium",
+      "risk": "Low",
+      "effort": "Low",
+      "prerequisite": "Confirm temporary directory policy",
+      "status": "Pending"
+    },
+    {
+      "authority": "REP-CLEAN-004",
+      "title": "Duplicate Documentation Review",
+      "benefit": "Medium",
+      "risk": "Medium",
+      "effort": "Medium",
+      "prerequisite": "Duplicate detection authority",
+      "status": "Future"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "authority": "GE-CERT-002",
+  "generated_utc": "2026-07-30T09:50:55.592149+00:00",
+  "implementation_status": "CERTIFIED",
+  "certified_pic": "execution/packages/GE-BUILD-006/GE-BUILD-006-CERTIFIED-PIC.zip",
+  "repository": {
+    "branch": "app-rec-006-runtime-identity",
+    "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+    "working_tree_clean": false
+  },
+  "implementation": {
+    "expected_commit": "e4a8e3cd51c4c87d3598d791a97fbe46f7128eba",
+    "baseline_commit": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+    "objective": "NM-001 notification implementation"
+  },
+  "next_stage": "Bounded Push Review"
+}

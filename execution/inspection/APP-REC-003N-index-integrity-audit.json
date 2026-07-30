@@ -1,0 +1,32 @@
+{
+  "implementation_authority": "FDR-010E35B",
+  "status": "PLANNING_COMPLETE",
+  "next_execution_phase": "IMPLEMENTATION",
+  "planning_frozen": true,
+  "present": [
+    {
+      "artifact": "FDR-010E35B-002-Runtime-Identity-Resolution-Implementation-Package.json",
+      "path": "execution/implementation-authorities/FDR-010E35B-002-Runtime-Identity-Resolution-Implementation-Package.json"
+    },
+    {
+      "artifact": "FDR-010E35B-004-Runtime-Identity-Resolution-Execution-Contract.json",
+      "path": "execution/execution-contracts/FDR-010E35B-004-Runtime-Identity-Resolution-Execution-Contract.json"
+    },
+    {
+      "artifact": "FDR-010E35B-005-Runtime-Identity-Resolution-Implementation-Work-Package.json",
+      "path": "execution/work-packages/FDR-010E35B-005-Runtime-Identity-Resolution-Implementation-Work-Package.json"
+    },
+    {
+      "artifact": "FDR-010E35B-006-Runtime-Identity-Resolution-Builder-Execution-Manifest.json",
+      "path": "execution/builder-manifests/FDR-010E35B-006-Runtime-Identity-Resolution-Builder-Execution-Manifest.json"
+    },
+    {
+      "artifact": "FDR-010E35B-007-Runtime-Identity-Resolution-Founder-Acceptance-Package.json",
+      "path": "execution/acceptance-packages/FDR-010E35B-007-Runtime-Identity-Resolution-Founder-Acceptance-Package.json"
+    }
+  ],
+  "missing": [
+    "FDR-010E35B-003-Runtime-Identity-Resolution-Builder-Package.json",
+    "FDR-010E35B-IMPLEMENT-Runtime-Identity-Resolution.json"
+  ]
+}

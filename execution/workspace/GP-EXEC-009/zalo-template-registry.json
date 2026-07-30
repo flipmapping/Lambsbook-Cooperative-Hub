@@ -1,0 +1,24 @@
+{
+  "authority": "GP-EXEC-009",
+  "generated": "2026-07-26T02:02:40.260856Z",
+  "templates": [
+    {
+      "logical_name": "gp_exec_009_test",
+      "purpose": "First certified end-to-end Zalo transport test",
+      "status": "PENDING_CREATION",
+      "template_id": "",
+      "transport": "ZBS_PHONE",
+      "recipient_mode": "PHONE",
+      "variables": [
+        {
+          "name": "recipient_name",
+          "required": true
+        },
+        {
+          "name": "message",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

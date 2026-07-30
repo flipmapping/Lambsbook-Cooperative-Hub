@@ -1,0 +1,16 @@
+{
+  "authority": "APP-BUILD-002C",
+  "timestamp": "2026-07-30T11:41:42.717154+00:00",
+  "candidate_count": 198,
+  "summary": {
+    "Identity Layer": 41,
+    "API Surfaces": 14,
+    "Workspace Routing": 5,
+    "Shared Runtime State": 26,
+    "Communication Integration": 46,
+    "no_membership": 101
+  },
+  "issue_count": 0,
+  "issues": [],
+  "status": "READY_FOR_REVIEW"
+}

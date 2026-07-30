@@ -1,0 +1,20 @@
+{
+  "authority": "GEX-EXEC-013",
+  "mutation_type": "Certified Replay Package",
+  "files": {
+    "server/routes.ts": [
+      "Import sendNotification",
+      "Publish AdmissionsStageTransitionEvent"
+    ],
+    "server/services/notifications.ts": [
+      "Add stage_transition notification type"
+    ]
+  },
+  "constraints": [
+    "Exactly two files modified",
+    "Exactly three certified hunks",
+    "No refactoring",
+    "No additional mutations"
+  ],
+  "next_phase": "Implementation Replay"
+}

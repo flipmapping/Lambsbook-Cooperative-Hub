@@ -1,0 +1,27 @@
+{
+  "authority": "APP-COM-003",
+  "component": "CommunicationResolution",
+  "version": "1.0",
+  "derived_from": "CommunicationIntent",
+  "immutable": true,
+  "purpose": "Resolve all business and organization communication semantics into a single execution context.",
+  "fields": {
+    "resolution_id": "uuid",
+    "intent_id": "uuid",
+    "organization_id": "uuid",
+    "communication_profile_id": "uuid",
+    "communication_policy_id": "uuid",
+    "template_key": "string",
+    "template_version": "string",
+    "resolved_channel": "string",
+    "resolved_provider": "string",
+    "resolved_language": "string",
+    "resolved_at": "timestamp"
+  },
+  "guarantees": [
+    "Immutable",
+    "Deterministic",
+    "ProviderIndependent",
+    "Auditable"
+  ]
+}

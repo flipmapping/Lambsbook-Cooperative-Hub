@@ -1,0 +1,20 @@
+{
+  "authority": "GP-EXEC-010M-01",
+  "generated": "2026-07-26T02:20:52.402096Z",
+  "repository": "/home/runner/workspace",
+  "findings": {
+    "notifications_file": "/home/runner/workspace/server/services/notifications.ts",
+    "contains_sendZaloCopy": true,
+    "contains_resend": true,
+    "contains_zalo_token": false,
+    "contains_zalo_phone": true,
+    "sha256": "8de245b8d9ba1a90eef5be504079bfb3db062a9659e983091fe6c59fb1012e55"
+  },
+  "environment": {
+    "ZALO_ACCESS_TOKEN": false,
+    "ZALO_REFRESH_TOKEN": false,
+    "ZALO_APP_ID": false,
+    "ZALO_APP_SECRET": false,
+    "ZALO_OA_SECRET_KEY": false
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "authority": "GEX-EXEC-001",
+  "artifact": "Execution Surface Registry",
+  "entry_mutation": "NM-001",
+  "rule": "Repository mutation SHALL occur only within registered surfaces.",
+  "surfaces": [
+    {
+      "path": "client/src/components/AIChatWidget.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/ContactSection.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/HubConsultationForm.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admin/CommissionRulesManagement.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admin/EnrollmentWorkflow.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admin/ProgramsManagement.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admin/SBUManagement.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectTimeline.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/dashboard/stubs.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/notifications/ChannelSelector.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/lib/queryClient.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/AdminGovernance.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/AdminRevenueConsole.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/AdmissionsWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantActivityCenter.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantAppointmentCenter.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantDocumentCenter.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantFollowupTaskCenter.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantJourneyStatus.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantLifecycleTimeline.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ApplicantStatusLookup.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/Dashboard.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/EducationFeedback.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/HubAdminDashboard.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/HubDashboard.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/Login.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/MemberDashboard.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/PartnerOnboarding.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/ResetPassword.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/TranscriptSubmission.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/lib/supabase-dal.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/lib/supabase-types.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/routes.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/routes/notification-preferences.route.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/services/admissions.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/services/notifications.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "server/storage.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    },
+    {
+      "path": "shared/schema.ts",
+      "mutation_authorized": true,
+      "status": "pending"
+    }
+  ]
+}

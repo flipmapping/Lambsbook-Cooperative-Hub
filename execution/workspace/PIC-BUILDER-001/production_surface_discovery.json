@@ -1,0 +1,35 @@
+{
+  "authority": "APP-BUILD-001",
+  "created": "2026-07-30T06:42:10.142928Z",
+  "inspection_mode": "Production Surface Discovery",
+  "runtime_roots": [
+    "client/src",
+    "server",
+    "shared",
+    "supabase",
+    "app"
+  ],
+  "ignore_prefixes": [
+    ".local",
+    ".git",
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    ".phase",
+    "archive",
+    "execution"
+  ],
+  "discovery_strategy": [
+    "Locate runtime roots",
+    "Locate application entry points",
+    "Traverse import graph",
+    "Locate API routes",
+    "Locate React pages",
+    "Locate shared state",
+    "Locate identity pipeline",
+    "Locate dashboard surfaces",
+    "Locate admin surfaces",
+    "Generate repository surface registry"
+  ]
+}

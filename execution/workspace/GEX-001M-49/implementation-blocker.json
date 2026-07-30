@@ -1,0 +1,19 @@
+{
+  "timestamp_utc": "2026-07-28T02:52:12.380184Z",
+  "implementation_authority": "GEX-001M-49",
+  "execution_state": "BLOCKED",
+  "repository_truth": "CERTIFIED",
+  "blocking_file": "server/imports/pipeline/persist.ts",
+  "blocking_reason": "Authorized implementation has not been performed.",
+  "next_required_action": "Implement persist.ts using the certified mapper and createProspectCore().",
+  "allowed_mutation_scope": [
+    "server/imports/pipeline/persist.ts"
+  ],
+  "exit_criteria": [
+    "Stub removed",
+    "Uses mapImportRecordToRegistrationPayload()",
+    "Uses createProspectCore()",
+    "npm run build passes",
+    "Acceptance gate passes"
+  ]
+}

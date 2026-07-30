@@ -1,0 +1,287 @@
+0001: 
+0002: // server/services/admissions.ts
+0003: // Admissions Service — RMP-010E13
+0004: // Persistence via SupabaseDAL. Response contract preserved from RMP-010E11.
+0005: import { supabaseDAL } from '../lib/supabase-dal';
+0006: import { sendNotification } from "./notifications";
+0007: import { registrationConfirmationTemplate } from "./emailTemplates";
+0008: 
+0009: export interface ProspectRegistrationPayload {
+0010:   fullName: string;
+0011:   email: string;
+0012:   country: string;
+0013:   programOfInterest: string;
+0014:   phone?: string;
+0015: }
+0016: 
+0017: export interface ProspectRegistrationResult {
+0018:   accepted: true;
+0019:   status: "validated";
+0020:   message: "Prospect registration accepted for future persistence.";
+0021: }
+0022: 
+0023: export async function createProspectCore(
+0024:   payload: ProspectRegistrationPayload,
+0025: ) {
+0026:   const prospect = await supabaseDAL.createProspect({
+0027:     full_name:            payload.fullName,
+0028:     email:                payload.email,
+0029:     country:              payload.country,
+0030:     program_of_interest:  payload.programOfInterest,
+0031:     phone:                payload.phone ?? null,
+0032:   });
+0033: 
+0034:   const funnel = await supabaseDAL.getFunnelByCode(resolveRegistrationFunnel());
+0035: 
+0036:   if (funnel) {
+0037:     await supabaseDAL.createProspectJourney({
+0038:       prospect_id: prospect.id,
+0039:       funnel_id:   funnel.id,
+0040:       current_stage: 'registered',
+0041:     });
+0042:   }
+0043: 
+0044:   return prospect;
+0045: }
+0046: 
+0047: 
+0048: 
+0049: const DEFAULT_FUNNEL_CODE = "CTBC-2026";
+0050: 
+0051: function resolveRegistrationFunnel(): string {
+0052:   return DEFAULT_FUNNEL_CODE;
+0053: }
+0054: 
+0055: export async function submitProspectRegistration(
+0056:   payload: ProspectRegistrationPayload,
+0057: ): Promise<ProspectRegistrationResult> {
+0058:   const prospect = await createProspectCore(payload);
+0059: 
+0060: const email = registrationConfirmationTemplate({
+0061:     fullName: payload.fullName,
+0062:     program: payload.programOfInterest,
+0063:   });
+0064: 
+0065:   await sendNotification({
+0066:     recipientEmail: payload.email,
+0067:     recipientId: prospect.id,
+0068:     recipientType: "prospect",
+0069:     type: "registration_confirmation",
+0070:     subject: email.subject,
+0071:     message: email.text,
+0072:   });
+0073: 
+0074: 
+0075:   await recordProspectActivity(
+0076:     prospect.id,
+0077:     "registration_confirmation_email_sent",
+0078:     {
+0079:       recipient: payload.email,
+0080:       subject: "Thank you for registering your interest in CTBC University",
+0081:       provider: "resend",
+0082:       channel: "email",
+0083:     },
+0084:   ).catch((err) =>
+0085:     console.error(
+0086:       "[ProspectActivity] Failed to record email activity:",
+0087:       err,
+0088:     ),
+0089:   );
+0090: 
+0091: 
+0092: 
+0093:   return {
+0094:     accepted: true,
+0095:     status: "validated",
+0096:     message: "Prospect registration accepted for future persistence.",
+0097:   };
+0098: }
+0099: 
+0100: export async function listProspects() {
+0101:   return supabaseDAL.listProspects();
+0102: }
+0103: 
+0104: export async function getProspect(id: string) {
+0105:   return supabaseDAL.getProspect(id);
+0106: }
+0107: 
+0108: export async function updateProspectStage(id: string, stage: string) {
+0109:   return supabaseDAL.updateProspectJourneyStage(id, stage);
+0110: }
+0111: 
+0112: export async function recordProspectLifecycleEvent(
+0113:   prospectId: string,
+0114:   fromStage: string | null,
+0115:   toStage: string,
+0116: ) {
+0117:   return supabaseDAL.recordLifecycleEvent({
+0118:     prospect_id: prospectId,
+0119:     from_stage:  fromStage,
+0120:     to_stage:    toStage,
+0121:   });
+0122: }
+0123: 
+0124: export async function getProspectLifecycleEvents(prospectId: string) {
+0125:   return supabaseDAL.listLifecycleEvents(prospectId);
+0126: }
+0127: 
+0128: export async function recordProspectActivity(
+0129:   prospectId: string,
+0130:   activityType: string,
+0131:   metadata?: Record<string, unknown> | null,
+0132: ) {
+0133:   return supabaseDAL.recordActivity({
+0134:     prospect_id:   prospectId,
+0135:     activity_type: activityType,
+0136:     metadata:      metadata ?? null,
+0137:   });
+0138: }
+0139: 
+0140: export async function getProspectActivities(prospectId: string) {
+0141:   return supabaseDAL.listActivities(prospectId);
+0142: }
+0143: 
+0144: export async function createProspectFollowupTask(
+0145:   prospectId: string,
+0146:   title: string,
+0147:   description?: string | null,
+0148:   dueDate?: string | null,
+0149: ) {
+0150:   return supabaseDAL.createFollowupTask({
+0151:     prospect_id:  prospectId,
+0152:     title,
+0153:     description:  description ?? null,
+0154:     due_date:     dueDate ?? null,
+0155:   });
+0156: }
+0157: 
+0158: export async function getProspectFollowupTasks(prospectId: string) {
+0159:   return supabaseDAL.listFollowupTasks(prospectId);
+0160: }
+0161: 
+0162: export async function updateProspectFollowupTask(
+0163:   taskId: string,
+0164:   title?: string,
+0165:   description?: string | null,
+0166:   dueDate?: string | null,
+0167: ) {
+0168:   return supabaseDAL.updateFollowupTask(taskId, {
+0169:     ...(title       !== undefined && { title }),
+0170:     ...(description !== undefined && { description }),
+0171:     ...(dueDate     !== undefined && { due_date: dueDate }),
+0172:   });
+0173: }
+0174: 
+0175: export async function completeProspectFollowupTask(taskId: string) {
+0176:   return supabaseDAL.completeFollowupTask(taskId);
+0177: }
+0178: 
+0179: export async function createProspectAppointment(
+0180:   prospectId: string,
+0181:   title: string,
+0182:   scheduledAt: string,
+0183:   durationMinutes?: number | null,
+0184:   location?: string | null,
+0185:   description?: string | null,
+0186: ) {
+0187:   return supabaseDAL.createAppointment({
+0188:     prospect_id:      prospectId,
+0189:     title,
+0190:     scheduled_at:     scheduledAt,
+0191:     duration_minutes: durationMinutes ?? null,
+0192:     location:         location ?? null,
+0193:     description:            description ?? null,
+0194:   });
+0195: }
+0196: 
+0197: export async function getProspectAppointments(prospectId: string) {
+0198:   return supabaseDAL.listAppointments(prospectId);
+0199: }
+0200: 
+0201: export async function updateProspectAppointment(
+0202:   appointmentId: string,
+0203:   title?: string,
+0204:   scheduledAt?: string,
+0205:   durationMinutes?: number | null,
+0206:   location?: string | null,
+0207:   description?: string | null,
+0208: ) {
+0209:   return supabaseDAL.updateAppointment(appointmentId, {
+0210:     ...(title            !== undefined && { title }),
+0211:     ...(scheduledAt      !== undefined && { scheduled_at: scheduledAt }),
+0212:     ...(durationMinutes  !== undefined && { duration_minutes: durationMinutes }),
+0213:     ...(location         !== undefined && { location }),
+0214:     ...(description            !== undefined && { description }),
+0215:   });
+0216: }
+0217: 
+0218: export async function cancelProspectAppointment(appointmentId: string) {
+0219:   return supabaseDAL.cancelAppointment(appointmentId);
+0220: }
+0221: 
+0222: export async function completeProspectAppointment(
+0223:   appointmentId: string,
+0224:   outcome: string,
+0225:   outcomeNotes?: string | null,
+0226: ) {
+0227:   return supabaseDAL.completeAppointment(appointmentId, outcome, outcomeNotes ?? null);
+0228: }
+0229: 
+0230: export async function createProspectDocument(
+0231:   prospectId: string,
+0232:   documentType: string,
+0233:   fileName: string,
+0234:   storageUrl?: string | null,
+0235:   description?: string | null,
+0236: ) {
+0237:   return supabaseDAL.createDocument({
+0238:     prospect_id:   prospectId,
+0239:     document_type: documentType,
+0240:     file_name:     fileName,
+0241:     storage_url:   storageUrl ?? null,
+0242:     description:         description ?? null,
+0243:   });
+0244: }
+0245: 
+0246: export async function getProspectDocuments(prospectId: string) {
+0247:   return supabaseDAL.listDocuments(prospectId);
+0248: }
+0249: 
+0250: export async function updateProspectDocument(
+0251:   documentId: string,
+0252:   documentType?: string,
+0253:   fileName?: string,
+0254:   storageUrl?: string | null,
+0255:   description?: string | null,
+0256: ) {
+0257:   return supabaseDAL.updateDocument(documentId, {
+0258:     ...(documentType !== undefined && { document_type: documentType }),
+0259:     ...(fileName     !== undefined && { file_name: fileName }),
+0260:     ...(storageUrl   !== undefined && { storage_url: storageUrl }),
+0261:     ...(description        !== undefined && { description }),
+0262:   });
+0263: }
+0264: 
+0265: export async function archiveProspectDocument(documentId: string) {
+0266:   return supabaseDAL.archiveDocument(documentId);
+0267: }
+0268: 
+0269: export async function recordProspectAdmissionDecision(
+0270:   prospectId: string,
+0271:   decision: string,
+0272:   rationale?: string | null,
+0273:   decidedBy?: string | null,
+0274:   offerReady?: boolean,
+0275: ) {
+0276:   return supabaseDAL.recordAdmissionDecision({
+0277:     prospect_id:  prospectId,
+0278:     decision,
+0279:     rationale:    rationale ?? null,
+0280:     decided_by:   decidedBy ?? null,
+0281:     offer_ready:  offerReady ?? false,
+0282:   });
+0283: }
+0284: 
+0285: export async function getProspectAdmissionDecisions(prospectId: string) {
+0286:   return supabaseDAL.listAdmissionDecisions(prospectId);
+0287: }

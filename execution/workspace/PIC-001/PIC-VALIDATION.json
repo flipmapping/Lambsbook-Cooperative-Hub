@@ -1,0 +1,18 @@
+{
+  "authority": "APP-EXEC-002A",
+  "created": "2026-07-30 04:46 UTC",
+  "repository_inspection_complete": false,
+  "missing_artifacts": [
+    "IMPLEMENTATION-AUTHORITY.md",
+    "REPOSITORY-SURFACE-REGISTRY.json",
+    "IMPLEMENTATION-CONTEXT-MANIFEST.json",
+    "PRODUCTION-SURFACE-INVENTORY.md",
+    "REPOSITORY-MUTATION-SCOPE.md",
+    "IMPLEMENTATION-DEPENDENCY-MATRIX.md",
+    "CONSTRAINTS.md",
+    "VERIFICATION-PLAN.md",
+    "SUCCESS-CRITERIA.md",
+    "EXECUTION-TRUST-CHAIN.md"
+  ],
+  "status": "BLOCKED_REPOSITORY_EVIDENCE_REQUIRED"
+}

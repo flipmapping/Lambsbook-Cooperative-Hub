@@ -1,0 +1,83 @@
+--- client/src/pages/HubAuthCallback.tsx
++++ client/src/pages/HubAuthCallback.tsx
+@@ -106,6 +106,20 @@
+ 
+
+         localStorage.setItem("supabase.auth.token", JSON.stringify(tokenData));
+
+ 
+
++        if (inviteToken) {
+
++          try {
+
++            await fetch("/api/member/onboarding/materialize-invitation", {
+
++              method: "POST",
+
++              headers: {
+
++                "Content-Type": "application/json",
+
++                Authorization: `Bearer ${accessToken}`,
+
++              },
+
++              body: JSON.stringify({ inviteToken }),
+
++            });
+
++          } catch (e) {
+
++            console.warn("Failed to materialize invitation:", e);
+
++          }
+
++        }
+
+         const prepared =
+
+           _prepareContinuationValues({
+
+             accessToken,
+
+@@ -147,20 +161,6 @@
+         }
+
+ 
+
+ 
+
+-        if (inviteToken) {
+
+-          try {
+
+-            await fetch("/api/member/onboarding/materialize-invitation", {
+
+-              method: "POST",
+
+-              headers: {
+
+-                "Content-Type": "application/json",
+
+-                Authorization: `Bearer ${accessToken}`,
+
+-              },
+
+-              body: JSON.stringify({ inviteToken }),
+
+-            });
+
+-          } catch (e) {
+
+-            console.warn("Failed to materialize invitation:", e);
+
+-          }
+
+-        }
+
+ 
+
+         setStatus("success");
+
+ 

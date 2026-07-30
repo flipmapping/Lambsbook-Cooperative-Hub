@@ -1,0 +1,54 @@
+[
+  {
+    "entry": "client/src/main.tsx",
+    "imports": [
+      "./App",
+      "react-dom/client"
+    ]
+  },
+  {
+    "entry": "client/src/App.tsx",
+    "imports": [
+      "../../web/src/growth",
+      "./lib/queryClient",
+      "@/components/AIChatWidget",
+      "@/components/AdvantagesSection",
+      "@/components/ContactSection",
+      "@/components/CountriesSection",
+      "@/components/EB3Categories",
+      "@/components/FAQSection",
+      "@/components/Footer",
+      "@/components/Header",
+      "@/components/HeroSection",
+      "@/components/JobCategoriesSection",
+      "@/components/ProcessSection",
+      "@/components/ServicesSection",
+      "@/components/StudyAbroadSection",
+      "@/components/SuccessStories",
+      "@/components/ui/toaster",
+      "@/components/ui/tooltip",
+      "@/lib/LanguageContext",
+      "@/lib/supabase/client",
+      "@/pages/AdminGovernance",
+      "@/pages/AdminRevenueConsole",
+      "@/pages/AuthCallback",
+      "@/pages/EducationFeedback",
+      "@/pages/FarmstayVision",
+      "@/pages/HubAuth",
+      "@/pages/HubAuthCallback",
+      "@/pages/HubDashboard",
+      "@/pages/HubLanding",
+      "@/pages/JourneyPages",
+      "@/pages/LambsbookTutoring",
+      "@/pages/Login",
+      "@/pages/MemberDashboard",
+      "@/pages/ResetPassword",
+      "@/pages/SBUEducation",
+      "@/pages/TropicanaProgram",
+      "@/pages/dashboard/InvitationAcceptancePage",
+      "@tanstack/react-query",
+      "react",
+      "wouter"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "schema": "EOS-067",
+  "builder_runtime": "v1",
+  "phases": [
+    {
+      "id": "validate_package",
+      "enabled": true
+    },
+    {
+      "id": "derive_pic",
+      "enabled": true
+    },
+    {
+      "id": "emit_report",
+      "enabled": true
+    }
+  ],
+  "on_failure": {
+    "halt": true,
+    "emit_builder_report": true
+  }
+}

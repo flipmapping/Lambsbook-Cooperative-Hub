@@ -1,0 +1,190 @@
+{
+  "authority": "SYNC-AUDIT-007",
+  "timestamp": "2026-07-30T14:08:30.586383+00:00",
+  "runtime_candidate_count": 31,
+  "maintenance_candidate_count": 14,
+  "runtime_candidates": [
+    {
+      "status": "M",
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx"
+    },
+    {
+      "status": "M",
+      "path": "client/src/components/notifications/ChannelSelector.tsx"
+    },
+    {
+      "status": "M",
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx"
+    },
+    {
+      "status": "??",
+      "path": "client/src/features/"
+    },
+    {
+      "status": "M",
+      "path": "client/src/pages/HubAuth.tsx"
+    },
+    {
+      "status": "M",
+      "path": "client/src/pages/HubAuthCallback.tsx"
+    },
+    {
+      "status": "??",
+      "path": "client/src/pages/HubAuthCallback.tsx.REORDER_CANDIDATE"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/adapters/"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/domain/"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/duplicates.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/index.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/normalize.ts"
+    },
+    {
+      "status": "M",
+      "path": "server/imports/pipeline/persist.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/report.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/runImportPipeline.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/smoke.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/stage.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/validate.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/reporting/"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/staging/"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/validation/"
+    },
+    {
+      "status": "??",
+      "path": "server/integrations/zalo/adapter.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/integrations/zalo/auth.ts"
+    },
+    {
+      "status": "M",
+      "path": "server/lib/supabase-dal.ts"
+    },
+    {
+      "status": "??",
+      "path": "server/messaging/"
+    },
+    {
+      "status": "M",
+      "path": "server/middleware/attachUserContext.ts"
+    },
+    {
+      "status": "M",
+      "path": "server/routes.ts"
+    },
+    {
+      "status": "M",
+      "path": "server/routes/member.ts"
+    },
+    {
+      "status": "M",
+      "path": "server/services/notifications.ts"
+    },
+    {
+      "status": "??",
+      "path": "shared/organization/"
+    },
+    {
+      "status": "M",
+      "path": "shared/schema.ts"
+    }
+  ],
+  "maintenance_candidates": [
+    {
+      "status": "??",
+      "path": "server/imports/mappers/prospectRegistration.ts.pre-GEX001M30"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/persist.ts.pre-GEX001M22"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/persist.ts.pre-GEX001M26"
+    },
+    {
+      "status": "??",
+      "path": "server/imports/pipeline/persist.ts.pre-GEX001M37"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M10"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M11"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M15D"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M17"
+    },
+    {
+      "status": "??",
+      "path": "server/services/admissions.ts.pre-GEX001M21"
+    },
+    {
+      "status": "D",
+      "path": "server/services/admissions.ts.pre-ge-comm-001-g20"
+    },
+    {
+      "status": "D",
+      "path": "server/services/admissions.ts.pre-ge-rmp-014-g11"
+    },
+    {
+      "status": "D",
+      "path": "server/services/admissions.ts.pre-ge-rmp-014-g7"
+    },
+    {
+      "status": "D",
+      "path": "server/services/notifications.ts.pre-ge-rmp-014"
+    },
+    {
+      "status": "D",
+      "path": "server/services/notifications.ts.pre-ge-rmp-014-g4"
+    }
+  ]
+}

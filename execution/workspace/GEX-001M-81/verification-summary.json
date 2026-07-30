@@ -1,0 +1,10 @@
+{
+  "implementation_authority": "GEX-001M-81",
+  "timestamp_utc": "2026-07-28T07:58:20Z",
+  "repository_lines": 3,
+  "evidence_lines": 55,
+  "repository_bytes": 101,
+  "evidence_bytes": 1578,
+  "diff_lines": 60,
+  "decision": "REVIEW REQUIRED"
+}

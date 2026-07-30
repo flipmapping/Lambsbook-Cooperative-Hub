@@ -1,0 +1,8 @@
+{
+  "timestamp_utc": "2026-07-28T02:56:25.376368Z",
+  "symbol": "createProspectCore",
+  "match_count": 1,
+  "matches": [
+    "server/services/admissions.ts:23:export async function createProspectCore("
+  ]
+}

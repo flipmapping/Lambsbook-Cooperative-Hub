@@ -1,0 +1,12 @@
+{
+  "schema": "PIC-1.0",
+  "status": "DERIVED",
+  "source_fab": "execution/packages/APP-REC-029/FAB.md",
+  "sections": {
+    "Mission": "Repair the authenticated identity corridor by implementing the minimum repository mutation\nrequired to capture structured runtime evidence from the authentication middleware and\nidentify the remaining runtime failure affecting GET /api/member/me.",
+    "Required Evidence": "Implementation Evidence\n\n- Unified source diff\n- Build output\n- Runtime log\n- GET /api/member/me response\n- Exception trace\n- Authentication decision trace\n- Acceptance verification",
+    "Acceptance Criteria": "Implementation shall:\n\n1. Preserve authentication behaviour.\n2. Compile successfully.\n3. Add structured runtime logging.\n4. Capture authentication decision points.\n5. Capture exceptions without changing control flow.\n6. Produce sufficient runtime evidence to diagnose the remaining failure.",
+    "Implementation Authority": "APP-REC-029",
+    "Mutation Surface": "Repository:\nLambsbook-Cooperative-Hub\n\nAuthorized Repository Mutation Surface:\n\n- server/middleware/attachUserContext.ts\n\nInspection Surface:\n\n- Authentication middleware\n- GET /api/member/me\n- Invitation acceptance authentication flow\n\nOut of Scope:\n\n- Builder Runtime\n- PIC generation\n- EOS governance\n- Database schema\n- Supabase migrations"
+  }
+}

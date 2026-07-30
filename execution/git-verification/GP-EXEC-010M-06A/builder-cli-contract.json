@@ -1,0 +1,12 @@
+[
+  {
+    "script": "execution/builders/build_claude_package.py",
+    "arguments": [
+      "\"cib\", help=\"Path to Claude Instruction Brief\",",
+      "\"--repo-root\", default=\".\", help=\"Repository root directory (default: current directory",
+      "\"--output-dir\", default=None, help=\"Output directory for package (default: <repo-root>/execution/packages/"
+    ],
+    "main_guard": true,
+    "uses_argparse": true
+  }
+]

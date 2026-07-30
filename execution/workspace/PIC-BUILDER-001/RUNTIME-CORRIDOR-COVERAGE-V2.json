@@ -1,0 +1,35 @@
+{
+  "authority": "APP-BUILD-002E",
+  "timestamp": "2026-07-30T13:37:56.264185+00:00",
+  "total_surfaces": 234,
+  "classified_surfaces": 133,
+  "unclassified_surfaces": 101,
+  "corridor_distribution": {
+    "Identity Layer": 51,
+    "Workspace Routing": 12,
+    "Shared Runtime State": 30,
+    "API Surfaces": 14,
+    "Communication Integration": 53,
+    "Member Dashboard": 9,
+    "Admin Dashboard": 1
+  },
+  "runtime_root_coverage": {
+    "client/src": {
+      "classified": 79,
+      "total": 154
+    },
+    "server": {
+      "classified": 45,
+      "total": 65
+    },
+    "shared": {
+      "classified": 9,
+      "total": 12
+    },
+    "supabase": {
+      "classified": 0,
+      "total": 3
+    }
+  },
+  "status": "REVIEW_RECOMMENDED"
+}

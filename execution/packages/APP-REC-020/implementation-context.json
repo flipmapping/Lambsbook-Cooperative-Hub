@@ -1,0 +1,9 @@
+{
+  "surface": [
+    "server/middleware/attachUserContext.ts"
+  ],
+  "mutation_class": "observability",
+  "preserve_runtime": true,
+  "preserve_http_semantics": true,
+  "preserve_authentication": true
+}

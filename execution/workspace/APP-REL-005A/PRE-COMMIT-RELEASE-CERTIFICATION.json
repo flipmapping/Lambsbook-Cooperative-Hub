@@ -1,0 +1,11 @@
+{
+  "authority": "APP-REL-005A",
+  "timestamp": "2026-07-30T14:50:53.369844+00:00",
+  "branch": "app-rec-006-runtime-identity",
+  "head_commit": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "release_contract_sha256": "16d1a73f365be7f5add4dc862e4feec0ced7917f2b0965e2710adfa959e59471",
+  "manifest_compliance": true,
+  "staged_file_count": 46,
+  "staged_manifest_sha256": "7ac97ae35c5df6a41ca983e2703fb8c8816c680891a620c0e8b2ba6cd7edefe2",
+  "ready_for_commit": true
+}

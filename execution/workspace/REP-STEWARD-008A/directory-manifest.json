@@ -1,0 +1,1393 @@
+[
+  {
+    "directory": ".agents",
+    "exists": true,
+    "files": 3,
+    "directories": 2,
+    "bytes": 6212,
+    "extensions": {
+      ".md": 2,
+      ".toml": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "agent_assets_metadata.toml",
+      "memory/deploy-backup-guard-trap.md",
+      "memory/MEMORY.md"
+    ]
+  },
+  {
+    "directory": ".phase5",
+    "exists": true,
+    "files": 28,
+    "directories": 31,
+    "bytes": 94903,
+    "extensions": {
+      ".commit": 1,
+      ".json": 1,
+      ".lines": 2,
+      ".md": 2,
+      ".path": 2,
+      ".sh": 7,
+      ".sha256": 2,
+      ".status": 1,
+      ".ts": 5,
+      ".tsx": 5
+    },
+    "markers": [
+      "archive/execution-materialization/claude-phase5-workpackage1/README.md"
+    ],
+    "sample_files": [
+      "baseline.commit",
+      "baseline.sha256",
+      "baseline.path",
+      "baseline.lines",
+      "candidate.path",
+      "candidate.sha256",
+      "candidate.lines",
+      "workpackage1.status",
+      "workpackages/WP3A/artifacts/PostAuthenticationContinuation.repository.ts",
+      "workpackages/WP3A/repository-source/PostAuthenticationContinuation.ts",
+      "execution/verification/WP3C-REPOSITORY-BASELINE.md",
+      "archive/execution-materialization/install.sh",
+      "archive/execution-materialization/manifest.json",
+      "archive/execution-materialization/artifacts/PostAuthenticationContinuation.candidate.ts",
+      "archive/execution-materialization/claude-phase5-workpackage1/README.md",
+      "archive/execution-materialization/claude-phase5-workpackage1/client/src/App.tsx",
+      "archive/execution-materialization/claude-phase5-workpackage1/client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx",
+      "archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuthCallback.tsx",
+      "archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx",
+      "archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages/HubAuthCallback.tsx",
+      "archive/execution-materialization/phase5-wp3b-materialization-package-installer003/artifacts/PostAuthenticationContinuation.candidate.ts",
+      "archive/execution-materialization/phase5-wp3b-materialization-package-installer003/payload/workpackages/WP3B/execute.sh",
+      "archive/execution-materialization/phase5-wp3b-materialization-package-installer003/payload/workpackages/WP3B/scripts/converge.sh",
+      "archive/execution-materialization/phase5-wp3b-materialization-package-installer003/payload/workpackages/WP3B/scripts/certify.sh"
+    ]
+  },
+  {
+    "directory": "<root>",
+    "exists": false,
+    "files": 0,
+    "directories": 0,
+    "bytes": 0,
+    "extensions": {},
+    "markers": [],
+    "sample_files": []
+  },
+  {
+    "directory": "BUILDER-SPRINT-001-Claude-Package",
+    "exists": true,
+    "files": 44,
+    "directories": 7,
+    "bytes": 88101,
+    "extensions": {
+      ".md": 18,
+      ".py": 13,
+      ".pyc": 13
+    },
+    "markers": [],
+    "sample_files": [
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc",
+      "execution/framework/__pycache__/context.cpython-311.pyc",
+      "execution/framework/__pycache__/corridors.cpython-311.pyc",
+      "execution/framework/__pycache__/__init__.cpython-311.pyc",
+      "execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "execution/framework/__pycache__/package.cpython-311.pyc",
+      "execution/framework/__pycache__/reporting.cpython-311.pyc",
+      "execution/framework/__pycache__/repository.cpython-311.pyc",
+      "execution/framework/__pycache__/runner.cpython-311.pyc",
+      "execution/framework/__pycache__/verification.cpython-311.pyc",
+      "execution/framework/__pycache__/applier.cpython-311.pyc",
+      "execution/framework/__pycache__/realizer.cpython-311.pyc",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md"
+    ]
+  },
+  {
+    "directory": "CTBC document",
+    "exists": true,
+    "files": 11,
+    "directories": 0,
+    "bytes": 6533248,
+    "extensions": {
+      ".jpeg": 1,
+      ".jpg": 3,
+      ".odt": 1,
+      ".odt#": 1,
+      ".pdf": 2,
+      ".png": 1,
+      ".txt": 1,
+      ".xlsx": 1
+    },
+    "markers": [],
+    "sample_files": [
+      ".~lock.Admin fees.odt#",
+      "Admin fees.odt",
+      "campus.jpg",
+      "logo 1.jpg",
+      "logo.jpg",
+      "Registration list.xlsx",
+      "WhatsApp Image 2026-06-28 at 15.03.50.jpeg",
+      "Adobe Scan 2026\u5e742\u67083\u65e5.pdf",
+      "dormitary.png",
+      "CTBC technology universaty.pdf",
+      "Recruitment Process for Vietnamese.txt"
+    ]
+  },
+  {
+    "directory": "EOS-RMP-001A-Claude-Package",
+    "exists": true,
+    "files": 20,
+    "directories": 5,
+    "bytes": 29226,
+    "extensions": {
+      ".md": 19,
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "EXECUTION-CONTRACT.md",
+      "PIC-EXECUTION-TRIGGER.md",
+      "governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001A-IMPLEMENTATION-AUTHORITY.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/cib/generated/CIB-EOS-RMP-001A-CLAUDE-PACKAGE-BUILDER-KERNEL.md",
+      "execution/builders/build_claude_package.py",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md",
+      "execution/builders/BUILDER-SPRINT-001.md",
+      "execution/builders/BUILDER-SPRINT-001-IMPLEMENTATION.md"
+    ]
+  },
+  {
+    "directory": "EOS-RMP-001B-Claude-Package",
+    "exists": true,
+    "files": 16,
+    "directories": 5,
+    "bytes": 26470,
+    "extensions": {
+      ".md": 15,
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001B-IMPLEMENTATION-AUTHORITY.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/cib/generated/CIB-EOS-RMP-001B-REPOSITORY-TRUTH-CONSUMPTION.md",
+      "execution/builders/build_claude_package.py",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md"
+    ]
+  },
+  {
+    "directory": "EOS-RMP-001B-HF1-Claude-Package",
+    "exists": true,
+    "files": 16,
+    "directories": 5,
+    "bytes": 36133,
+    "extensions": {
+      ".md": 15,
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+      "execution/builders/build_claude_package.py",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md"
+    ]
+  },
+  {
+    "directory": "EOS-RMP-001C-Claude-Package",
+    "exists": true,
+    "files": 17,
+    "directories": 5,
+    "bytes": 36873,
+    "extensions": {
+      ".md": 16,
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001C-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md",
+      "execution/builders/build_claude_package.py",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md"
+    ]
+  },
+  {
+    "directory": "EOS-RMP-001D-Claude-Package",
+    "exists": true,
+    "files": 17,
+    "directories": 5,
+    "bytes": 45131,
+    "extensions": {
+      ".md": 16,
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/FDR-EOS-001-CLAUDE-PACKAGE-BUILDER.md",
+      "governance/FDR-EOS-001-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001D-EXECUTION-DERIVATION.md",
+      "governance/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/AUTHORITY-NAMESPACE-RULE-v1.0.md",
+      "governance/CLAUDE-NAMESPACE-SYNCHRONIZATION.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md",
+      "execution/builders/build_claude_package.py",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-INTERFACE.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-IMPLEMENTATION-PLAN.md",
+      "execution/builders/BUILD-CLAUDE-PACKAGE-ROADMAP.md"
+    ]
+  },
+  {
+    "directory": "EOS-RMP-001E-Claude-Package",
+    "exists": true,
+    "files": 8,
+    "directories": 9,
+    "bytes": 34499,
+    "extensions": {
+      ".md": 7,
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "EXECUTION-CONTRACT-EOS-RMP-001E.md",
+      "START-HERE.md",
+      "governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+      "governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md",
+      "governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+      "governance/icm/generated/ICM-EOS-RMP-001E.md",
+      "execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+      "execution/builders/build_claude_package.py"
+    ]
+  },
+  {
+    "directory": "GE-WEB-RMP-010E33A-Claude-Package",
+    "exists": true,
+    "files": 36,
+    "directories": 5,
+    "bytes": 72434,
+    "extensions": {
+      ".md": 12,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc",
+      "execution/framework/__pycache__/context.cpython-311.pyc",
+      "execution/framework/__pycache__/corridors.cpython-311.pyc",
+      "execution/framework/__pycache__/__init__.cpython-311.pyc",
+      "execution/framework/__pycache__/mutations.cpython-311.pyc",
+      "execution/framework/__pycache__/package.cpython-311.pyc",
+      "execution/framework/__pycache__/reporting.cpython-311.pyc",
+      "execution/framework/__pycache__/repository.cpython-311.pyc",
+      "execution/framework/__pycache__/runner.cpython-311.pyc",
+      "execution/framework/__pycache__/verification.cpython-311.pyc",
+      "execution/framework/__pycache__/applier.cpython-311.pyc",
+      "execution/framework/__pycache__/realizer.cpython-311.pyc",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md"
+    ]
+  },
+  {
+    "directory": "HUB-RMP-001-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "directories": 5,
+    "bytes": 73020,
+    "extensions": {
+      ".md": 13,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/HUB-RMP-001-EXECUTION-DERIVATION.md",
+      "governance/HUB-RMP-001-INFRASTRUCTURE-CERTIFICATION.md",
+      "governance/HUB-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+      "governance/CIB-HUB-RMP-001-PUBLIC-EXPERIENCE-INTEGRATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py"
+    ]
+  },
+  {
+    "directory": "Lambsbook-Open-Brain",
+    "exists": true,
+    "files": 1,
+    "directories": 2,
+    "bytes": 531,
+    "extensions": {
+      ".json": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "execution/synchronization/SFP-OBS-001-foundation-sync.json"
+    ]
+  },
+  {
+    "directory": "QR code",
+    "exists": true,
+    "files": 2,
+    "directories": 0,
+    "bytes": 116817,
+    "extensions": {
+      ".jpg": 2
+    },
+    "markers": [],
+    "sample_files": [
+      "Whatsapp.jpg",
+      "zalo.jpg"
+    ]
+  },
+  {
+    "directory": "RMP-010E27B-Claude-Package",
+    "exists": true,
+    "files": 32,
+    "directories": 5,
+    "bytes": 69260,
+    "extensions": {
+      ".md": 8,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E27B-PROSPECT-TIMELINE-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/RELEASE-1-BACKLOG.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc",
+      "execution/framework/__pycache__/context.cpython-311.pyc",
+      "execution/framework/__pycache__/corridors.cpython-311.pyc",
+      "execution/framework/__pycache__/__init__.cpython-311.pyc",
+      "execution/framework/__pycache__/mutations.cpython-311.pyc"
+    ]
+  },
+  {
+    "directory": "RMP-010E29A-Claude-Package",
+    "exists": true,
+    "files": 35,
+    "directories": 5,
+    "bytes": 69665,
+    "extensions": {
+      ".md": 11,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E29A-PROSPECT-LIFECYCLE-EVENT-KERNEL.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/INF-010E29A-CERTIFICATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc",
+      "execution/framework/__pycache__/context.cpython-311.pyc"
+    ]
+  },
+  {
+    "directory": "RMP-010E29B-Execution-Authority-Package",
+    "exists": true,
+    "files": 35,
+    "directories": 5,
+    "bytes": 70894,
+    "extensions": {
+      ".md": 11,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E29B-PROSPECT-TIMELINE-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/INF-010E29A-CERTIFICATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc",
+      "execution/framework/__pycache__/context.cpython-311.pyc"
+    ]
+  },
+  {
+    "directory": "RMP-010E30A-Claude-Package",
+    "exists": true,
+    "files": 36,
+    "directories": 5,
+    "bytes": 71836,
+    "extensions": {
+      ".md": 12,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E30A-PROSPECT-ACTIVITY-KERNEL.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/FDR-010E30-EXECUTION-DERIVATION.md",
+      "governance/INF-010E30A-CERTIFICATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc"
+    ]
+  },
+  {
+    "directory": "RMP-010E30B-Claude-Package",
+    "exists": true,
+    "files": 36,
+    "directories": 5,
+    "bytes": 71134,
+    "extensions": {
+      ".md": 12,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E30B-PROSPECT-ACTIVITY-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/RMP-010E30B-EXECUTION-DERIVATION.md",
+      "governance/INF-010E30A-CERTIFICATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc"
+    ]
+  },
+  {
+    "directory": "RMP-010E31A-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "directories": 5,
+    "bytes": 72085,
+    "extensions": {
+      ".md": 13,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E31A-PROSPECT-FOLLOWUP-TASK-KERNEL.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/FDR-010E31-EXECUTION-DERIVATION.md",
+      "governance/INF-010E31A-CERTIFICATION.md",
+      "governance/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py"
+    ]
+  },
+  {
+    "directory": "RMP-010E31B-Claude-Package",
+    "exists": true,
+    "files": 38,
+    "directories": 5,
+    "bytes": 73086,
+    "extensions": {
+      ".md": 14,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E31B-PROSPECT-FOLLOWUP-TASK-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/RMP-010E31B-EXECUTION-DERIVATION.md",
+      "governance/INF-010E31A-CERTIFICATION.md",
+      "governance/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md",
+      "governance/RMP-010E31A-CERTIFICATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py"
+    ]
+  },
+  {
+    "directory": "RMP-010E32A-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "directories": 5,
+    "bytes": 72364,
+    "extensions": {
+      ".md": 13,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E32A-PROSPECT-APPOINTMENT-KERNEL.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/FDR-010E32-EXECUTION-DERIVATION.md",
+      "governance/INF-010E32A-CERTIFICATION.md",
+      "governance/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py"
+    ]
+  },
+  {
+    "directory": "RMP-010E32B-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "directories": 5,
+    "bytes": 72765,
+    "extensions": {
+      ".md": 13,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E32B-PROSPECT-APPOINTMENT-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/RMP-010E32B-EXECUTION-DERIVATION.md",
+      "governance/RMP-010E32A-CERTIFICATION.md",
+      "governance/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py"
+    ]
+  },
+  {
+    "directory": "RMP-010E33A-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "directories": 5,
+    "bytes": 72615,
+    "extensions": {
+      ".md": 13,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E33A-PROSPECT-DOCUMENT-KERNEL.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/FDR-010E33-EXECUTION-DERIVATION.md",
+      "governance/INF-010E33A-CERTIFICATION.md",
+      "governance/RMP-010E33A-IMPLEMENTATION-AUTHORITY.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py"
+    ]
+  },
+  {
+    "directory": "RMP-010E33B-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "directories": 5,
+    "bytes": 72040,
+    "extensions": {
+      ".md": 13,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E33B-PROSPECT-DOCUMENT-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/RMP-010E33B-EXECUTION-DERIVATION.md",
+      "governance/RMP-010E33B-IMPLEMENTATION-AUTHORITY.md",
+      "governance/INF-010E33A-CERTIFICATION.md",
+      "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+      "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+      "execution/contracts/EXECUTION-OPERATIONAL-PROFILES.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py"
+    ]
+  },
+  {
+    "directory": "RMP-010E34A-Claude-Package",
+    "exists": true,
+    "files": 10,
+    "directories": 4,
+    "bytes": 12180,
+    "extensions": {
+      ".md": 10
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E34A-PROSPECT-ADMISSION-DECISION-KERNEL.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/FDR-010E34-EXECUTION-DERIVATION.md",
+      "governance/INF-010E34A-CERTIFICATION.md",
+      "governance/RMP-010E34A-IMPLEMENTATION-AUTHORITY.md"
+    ]
+  },
+  {
+    "directory": "RMP-010E34B-Claude-Package",
+    "exists": true,
+    "files": 34,
+    "directories": 5,
+    "bytes": 48825,
+    "extensions": {
+      ".md": 10,
+      ".py": 12,
+      ".pyc": 12
+    },
+    "markers": [],
+    "sample_files": [
+      "governance/CIB-RMP-010E34B-PROSPECT-ADMISSION-DECISION-WORKSPACE.md",
+      "governance/BASELINE.md",
+      "governance/GOVERNANCE-SYNCHRONIZATION-INDEX.md",
+      "governance/EXECUTION-STARTUP-SYNCHRONIZATION.md",
+      "governance/RELEASE-1-STATUS.md",
+      "governance/RELEASE-1-MANIFEST.md",
+      "governance/EXECUTION-PIPELINE.md",
+      "governance/RMP-010E34B-EXECUTION-DERIVATION.md",
+      "governance/RMP-010E34A-CERTIFICATION.md",
+      "governance/INF-010E34A-CERTIFICATION.md",
+      "execution/framework/context.py",
+      "execution/framework/repository.py",
+      "execution/framework/reporting.py",
+      "execution/framework/anchors.py",
+      "execution/framework/corridors.py",
+      "execution/framework/verification.py",
+      "execution/framework/applier.py",
+      "execution/framework/package.py",
+      "execution/framework/__init__.py",
+      "execution/framework/runner.py",
+      "execution/framework/mutations.py",
+      "execution/framework/realizer.py",
+      "execution/framework/__pycache__/anchors.cpython-311.pyc",
+      "execution/framework/__pycache__/context.cpython-311.pyc",
+      "execution/framework/__pycache__/corridors.cpython-311.pyc"
+    ]
+  },
+  {
+    "directory": "auth-runtime-phase2",
+    "exists": true,
+    "files": 2,
+    "directories": 0,
+    "bytes": 9732,
+    "extensions": {
+      ".txt": 2
+    },
+    "markers": [],
+    "sample_files": [
+      "query-client.txt",
+      "member-hub.txt"
+    ]
+  },
+  {
+    "directory": "auth-session-finalization",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 67,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "final-head.txt"
+    ]
+  },
+  {
+    "directory": "auth-storage-audit",
+    "exists": true,
+    "files": 3,
+    "directories": 0,
+    "bytes": 941,
+    "extensions": {
+      ".txt": 3
+    },
+    "markers": [],
+    "sample_files": [
+      "manual-token-writes.txt",
+      "get-session-calls.txt",
+      "browser-client-usage.txt"
+    ]
+  },
+  {
+    "directory": "codex-gateway-handoff",
+    "exists": true,
+    "files": 10,
+    "directories": 0,
+    "bytes": 169089,
+    "extensions": {
+      ".md": 1,
+      ".ts": 3,
+      ".tsx": 6
+    },
+    "markers": [],
+    "sample_files": [
+      "AuthCallback.tsx",
+      "HubAuthCallback.tsx",
+      "HubAuth.tsx",
+      "App.tsx",
+      "InvitationAcceptanceSection.tsx",
+      "MemberHub.tsx",
+      "routes.ts",
+      "member.ts",
+      "supabase-dal.ts",
+      "FOUNDER_ARCHITECTURE_LOCK.md"
+    ]
+  },
+  {
+    "directory": "codex-handoff",
+    "exists": true,
+    "files": 11,
+    "directories": 0,
+    "bytes": 159117,
+    "extensions": {
+      ".md": 1,
+      ".ts": 4,
+      ".tsx": 6
+    },
+    "markers": [],
+    "sample_files": [
+      "App.tsx",
+      "InvitationAcceptanceSection.tsx",
+      "InvitationAcceptancePage.tsx",
+      "HubDashboard.tsx",
+      "MemberDashboard.tsx",
+      "MemberHub.tsx",
+      "supabase-dal.ts",
+      "supabaseClients.ts",
+      "member.ts",
+      "routes.ts",
+      "CODEX_HANDOFF_STATUS.md"
+    ]
+  },
+  {
+    "directory": "content-authority",
+    "exists": true,
+    "files": 2,
+    "directories": 4,
+    "bytes": 1467,
+    "extensions": {
+      ".md": 2
+    },
+    "markers": [
+      "ctbc-university/README.md"
+    ],
+    "sample_files": [
+      "ctbc-university/README.md",
+      "ctbc-university/SOURCE-AUTHORITY-INDEX.md"
+    ]
+  },
+  {
+    "directory": "dashboard-auth-runtime",
+    "exists": true,
+    "files": 4,
+    "directories": 0,
+    "bytes": 20107,
+    "extensions": {
+      ".txt": 4
+    },
+    "markers": [],
+    "sample_files": [
+      "supabase-client.txt",
+      "hub-auth-callback.txt",
+      "hub-auth.txt",
+      "member-dashboard.txt"
+    ]
+  },
+  {
+    "directory": "dashboard-runtime-repair-phase2",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 66,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "students-image-check.txt"
+    ]
+  },
+  {
+    "directory": "dashboard-runtime-trace",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 634,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "use-language-calls.txt"
+    ]
+  },
+  {
+    "directory": "dashboard-stub-audit",
+    "exists": true,
+    "files": 2,
+    "directories": 0,
+    "bytes": 984,
+    "extensions": {
+      ".txt": 2
+    },
+    "markers": [],
+    "sample_files": [
+      "stubs.txt",
+      "stub-language-usage.txt"
+    ]
+  },
+  {
+    "directory": "deploy-asset-sweep",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 859,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "generated-image-imports.txt"
+    ]
+  },
+  {
+    "directory": "deploy-asset-trace",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 96,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "countries-section-imports.txt"
+    ]
+  },
+  {
+    "directory": "deploy-asset-triage",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 0,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "generated-asset-references.txt"
+    ]
+  },
+  {
+    "directory": "deploy-finalization",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 671,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "final-status.txt"
+    ]
+  },
+  {
+    "directory": "deploy-fix-phase1",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 140,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "usa-image-verify.txt"
+    ]
+  },
+  {
+    "directory": "deploy-full-asset-audit",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 1756,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "all-assets-imports.txt"
+    ]
+  },
+  {
+    "directory": "eos",
+    "exists": true,
+    "files": 7,
+    "directories": 2,
+    "bytes": 4701,
+    "extensions": {
+      ".json": 1,
+      ".md": 4,
+      ".py": 2
+    },
+    "markers": [],
+    "sample_files": [
+      "EOS-PLATFORM-BASELINE.md",
+      "APPLICATION-REALIZATION-CHARTER.md",
+      "infrastructure/infrastructure_registry.py",
+      "infrastructure/infrastructure_registry.json",
+      "bootstrap/repository_bootstrap_protocol.py",
+      "bootstrap/REPOSITORY-BOOTSTRAP-PROTOCOL.md",
+      "bootstrap/REPOSITORY-BOOTSTRAP-CONTRACT.md"
+    ]
+  },
+  {
+    "directory": "final-workspace-hygiene",
+    "exists": true,
+    "files": 2,
+    "directories": 0,
+    "bytes": 940,
+    "extensions": {
+      ".txt": 2
+    },
+    "markers": [],
+    "sample_files": [
+      "git-status.txt",
+      "top-level-dirs.txt"
+    ]
+  },
+  {
+    "directory": "home",
+    "exists": true,
+    "files": 3,
+    "directories": 4,
+    "bytes": 10683,
+    "extensions": {
+      ".patch": 1,
+      ".ts": 2
+    },
+    "markers": [],
+    "sample_files": [
+      "runner/execution-evidence/GP-EXEC-010M-06A/incoming/auth.ts",
+      "runner/execution-evidence/GP-EXEC-010M-06A/incoming/notifications.ts",
+      "runner/execution-evidence/GP-EXEC-010M-06A/incoming/gp_exec_010m_06a.patch"
+    ]
+  },
+  {
+    "directory": "mvp-delivery",
+    "exists": true,
+    "files": 17,
+    "directories": 1,
+    "bytes": 31501,
+    "extensions": {
+      ".md": 17
+    },
+    "markers": [],
+    "sample_files": [
+      "canonical_mvp_outcome_specification_v1.md",
+      "mvp_surface_map_v1.md",
+      "mvp_execution_priority_v1.md",
+      "README_MVP_PHASE_TRANSITION.md",
+      "mvp_bounded_execution_sequence_v1.md",
+      "mvp_bounded_mutation_law_v1.md",
+      "mvp_execution_decomposition_v1.md",
+      "corridor1_auth_runtime_inspection_v1.md",
+      "corridor1_runtime_verification_checklist_v1.md",
+      "corridor1_live_runtime_observation_v1.md",
+      "corridor1_live_observation_closure_v1.md",
+      "constitutional_reconciliation/materialization_authority_tension_registry.md",
+      "constitutional_reconciliation/participation_contract_reconciliation_dossier.md",
+      "constitutional_reconciliation/participation_contract_reconciliation_dossier.EMPTY_BACKUP_20260527_034009.md",
+      "constitutional_reconciliation/retrieval_evidence_validity.md",
+      "constitutional_reconciliation/mutation_authorization_barrier.md",
+      "constitutional_reconciliation/reconciliation_closure_matrix.md"
+    ]
+  },
+  {
+    "directory": "mvp-phase-transition",
+    "exists": true,
+    "files": 3,
+    "directories": 1,
+    "bytes": 105734,
+    "extensions": {
+      ".txt": 3
+    },
+    "markers": [],
+    "sample_files": [
+      "cleanup/removed-inventory-targets.txt",
+      "cleanup/canonical-inspection-doctrine.txt",
+      "cleanup/source-topology-only.txt"
+    ]
+  },
+  {
+    "directory": "navigation-runtime-trace",
+    "exists": true,
+    "files": 5,
+    "directories": 0,
+    "bytes": 34582,
+    "extensions": {
+      ".txt": 5
+    },
+    "markers": [],
+    "sample_files": [
+      "t-calls.txt",
+      "language-context.txt",
+      "app-root.txt",
+      "main-entry.txt",
+      "hub-dashboard.txt"
+    ]
+  },
+  {
+    "directory": "obom-v1",
+    "exists": true,
+    "files": 5,
+    "directories": 0,
+    "bytes": 1884,
+    "extensions": {
+      ".md": 5
+    },
+    "markers": [],
+    "sample_files": [
+      "retrieval-order.md",
+      "index-map.md",
+      "synchronization-map.md",
+      "remote-target-map.md",
+      "truth-registry.md"
+    ]
+  },
+  {
+    "directory": "phase5-wp3b-materialization-package-v4",
+    "exists": true,
+    "files": 6,
+    "directories": 5,
+    "bytes": 162,
+    "extensions": {
+      ".sh": 6
+    },
+    "markers": [],
+    "sample_files": [
+      ".phase5/workpackages/WP3B/execute.sh",
+      ".phase5/workpackages/WP3B/scripts/certify.sh",
+      ".phase5/workpackages/WP3B/scripts/converge.sh",
+      ".phase5/workpackages/WP3B/scripts/rollback.sh",
+      ".phase5/workpackages/WP3B/scripts/verify.sh",
+      ".phase5/engine/run.sh"
+    ]
+  },
+  {
+    "directory": "runtime-stabilization-final",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 53,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "final-head.txt"
+    ]
+  },
+  {
+    "directory": "testtar",
+    "exists": true,
+    "files": 1,
+    "directories": 0,
+    "bytes": 6,
+    "extensions": {
+      ".txt": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "test.txt"
+    ]
+  },
+  {
+    "directory": "~",
+    "exists": true,
+    "files": 1,
+    "directories": 3,
+    "bytes": 0,
+    "extensions": {
+      ".py": 1
+    },
+    "markers": [],
+    "sample_files": [
+      "workspace/execution/scripts/GE-RMP-003A_growth_runtime_repair.py"
+    ]
+  }
+]

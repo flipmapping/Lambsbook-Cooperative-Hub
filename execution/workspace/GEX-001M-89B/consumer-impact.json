@@ -1,0 +1,18 @@
+{
+  "implementation_authority": "GEX-001M-89B",
+  "timestamp_utc": "2026-07-28T12:56:13Z",
+  "consumer_count": 2,
+  "consumers": [
+    {
+      "file": "server/imports/pipeline/runImportPipeline.ts",
+      "line": 14,
+      "code": "export function runImportPipeline("
+    },
+    {
+      "file": "server/imports/pipeline/smoke.ts",
+      "line": 3,
+      "code": "const result = runImportPipeline("
+    }
+  ],
+  "decision": "Atomic multi-file API evolution required"
+}

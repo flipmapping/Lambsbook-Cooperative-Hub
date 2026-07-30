@@ -1,0 +1,7 @@
+[
+  "client/src/components/admin/SBUManagement.tsx",
+  "client/src/pages/SBUEducation.tsx",
+  "server/middleware/blockSbuInjection.ts",
+  "server/middleware/requireSBUAccess.ts",
+  "server/middleware/requireSBURole.ts"
+]

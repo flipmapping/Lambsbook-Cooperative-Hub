@@ -1,0 +1,20 @@
+{
+  "implementation_authority": "GEX-001M-38",
+  "timestamp_utc": "2026-07-27T16:57:40.989609Z",
+  "inspection_required": false,
+  "repository_truth": "CERTIFIED",
+  "authorized_mutation": {
+    "files_allowed": [
+      "server/imports/pipeline/persist.ts"
+    ],
+    "files_forbidden": "ALL OTHER REPOSITORY FILES"
+  },
+  "baseline": {
+    "sha256": "5bb1937cf56fc41d08ae77b05a95d0b5e3678a559204eb6913c314d19769fe32"
+  },
+  "exit_criteria": [
+    "persist.ts implemented",
+    "stub removed",
+    "npm run build == 0"
+  ]
+}

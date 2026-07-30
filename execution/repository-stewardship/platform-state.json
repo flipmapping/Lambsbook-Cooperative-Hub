@@ -1,0 +1,30 @@
+{
+  "platform": "Repository Stewardship",
+  "platform_version": "1.0.0",
+  "operating_mode": "Operational Service",
+  "status": "ACTIVE",
+  "effective_authority": "EOS-SYNC-REP-001A",
+  "first_consumption_milestone": "REP-STEWARD-019",
+  "generated_utc": "2026-07-30T05:07:29.611228+00:00",
+  "repository": {
+    "root": "/home/runner/workspace",
+    "branch": "app-rec-006-runtime-identity",
+    "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1"
+  },
+  "governance_services": [
+    "Authority Registry",
+    "Relationship Registry",
+    "Compliance Matrix",
+    "Execution Trust Chain",
+    "Registry Integrity Validation"
+  ],
+  "operational_policy": {
+    "framework_frozen": true,
+    "adoption_driven_evolution": true,
+    "backward_compatibility_first": true,
+    "governance_by_reference": true,
+    "implementation_orchestration": false,
+    "new_authorities_require_validated_gap": true
+  },
+  "success_measure": "Implementation streams consume governance services naturally with minimal friction and without duplicating governance."
+}

@@ -1,0 +1,33 @@
+{
+  "validation_instance_id": "VII-3C693B9AF83445C48186882135D5A814",
+  "validation_program": "VAL-001B",
+  "pattern_id": "IPC-RP-001",
+  "interaction_name": "Invitation",
+  "status": "INITIALIZED",
+  "created": "2026-07-22T08:33:00.910689+00:00",
+  "repository_mutation": false,
+  "governance": {
+    "constitutional": [
+      "EOS-013",
+      "EOS-015"
+    ]
+  },
+  "semantic": [
+    "COIM"
+  ],
+  "realization": [
+    "EOS-015R"
+  ],
+  "canonical_assets": [
+    "IPC-001",
+    "IPC-RP-001"
+  ],
+  "domain_derivation": [
+    "MEX-004A"
+  ],
+  "validation_profiles": [
+    "VPC-001",
+    "VPC-002",
+    "VPC-004"
+  ]
+}

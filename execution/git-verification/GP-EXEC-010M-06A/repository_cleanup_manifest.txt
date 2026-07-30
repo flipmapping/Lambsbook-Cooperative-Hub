@@ -1,0 +1,1518 @@
+EOS-REPO-001A Repository Cleanup Manifest
+============================================================
+
+Deleted
+----------------------------------------
+_final_backup_quarantine
+docs/implementation-evidence/PHASE-1-BASELINE/MemberHub.pre-mutation.tsx
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.candidate
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.pre-gex-rec-004.20260723T142558Z
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.pre-gex-rec-020.20260723T162447Z
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.pre-gex-rec-020.20260723T162600Z
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.pre-gex-rec-021.20260723T161313Z
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.pre-gex-rec-021.20260723T161615Z
+execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md.pre-recovery.20260723T135347Z
+execution/sprints/APP-REC-005/apply_stage1_gate.py.placeholder.bak
+governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md.bak
+recovery/backups
+recovery/hubdashboard_implicit_any_cluster_rollback
+recovery/routes_typing_cluster_rollback
+recovery/top_level_await_cluster_rollback
+recovery/websocket_contract_fix
+server/services/admissions.ts.pre-ge-comm-001-g20
+server/services/admissions.ts.pre-ge-rmp-014-g11
+server/services/admissions.ts.pre-ge-rmp-014-g7
+server/services/notifications.ts.pre-ge-rmp-014
+server/services/notifications.ts.pre-ge-rmp-014-g4
+
+Skipped
+----------------------------------------
+_final_backup_quarantine/.gitignore.bak_20260408_055714    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/.gitignore.bak_20260408_055714')
+_final_backup_quarantine/.replit.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/.replit.bak')
+_final_backup_quarantine/.replit.bak_corrupted    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/.replit.bak_corrupted')
+_final_backup_quarantine/.replit.bak_next_runtime    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/.replit.bak_next_runtime')
+_final_backup_quarantine/App.tsx.bak.1779290465    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak.1779290465')
+_final_backup_quarantine/App.tsx.bak.1779290612    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak.1779290612')
+_final_backup_quarantine/App.tsx.bak.1779315521    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak.1779315521')
+_final_backup_quarantine/App.tsx.bak.1779315697    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak.1779315697')
+_final_backup_quarantine/App.tsx.bak_accept_invitation_route    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak_accept_invitation_route')
+_final_backup_quarantine/App.tsx.bak_auth_gate    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak_auth_gate')
+_final_backup_quarantine/App.tsx.bak_canonical_invitation_route    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak_canonical_invitation_route')
+_final_backup_quarantine/App.tsx.bak_remove_accept_invitation_route    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.bak_remove_accept_invitation_route')
+_final_backup_quarantine/App.tsx.pre-lazyload.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/App.tsx.pre-lazyload.bak')
+_final_backup_quarantine/ContributionActivity.tsx.bak_20260421_092958    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionActivity.tsx.bak_20260421_092958')
+_final_backup_quarantine/ContributionActivity.tsx.bak_20260421_110852    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionActivity.tsx.bak_20260421_110852')
+_final_backup_quarantine/ContributionActivity.tsx.bak_20260421_111817    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionActivity.tsx.bak_20260421_111817')
+_final_backup_quarantine/ContributionCard.tsx.bak_20260421_093319    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_20260421_093319')
+_final_backup_quarantine/ContributionCard.tsx.bak_20260422_024629    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_20260422_024629')
+_final_backup_quarantine/ContributionCard.tsx.bak_ack_p1_20260423_054154    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_ack_p1_20260423_054154')
+_final_backup_quarantine/ContributionCard.tsx.bak_ack_p2_20260423_060645    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_ack_p2_20260423_060645')
+_final_backup_quarantine/ContributionCard.tsx.bak_ack_p3_20260423_060703    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_ack_p3_20260423_060703')
+_final_backup_quarantine/ContributionCard.tsx.bak_clar_p1_20260423_033052    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_clar_p1_20260423_033052')
+_final_backup_quarantine/ContributionCard.tsx.bak_clar_p2_20260423_033253    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_clar_p2_20260423_033253')
+_final_backup_quarantine/ContributionCard.tsx.bak_clar_p3_20260423_033310    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_clar_p3_20260423_033310')
+_final_backup_quarantine/ContributionCard.tsx.bak_init_p1_20260422_131239    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_init_p1_20260422_131239')
+_final_backup_quarantine/ContributionCard.tsx.bak_init_p2_20260422_131536    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_init_p2_20260422_131536')
+_final_backup_quarantine/ContributionCard.tsx.bak_init_p3_20260422_131554    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_init_p3_20260422_131554')
+_final_backup_quarantine/ContributionCard.tsx.bak_micro_visual_20260422_112456    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_micro_visual_20260422_112456')
+_final_backup_quarantine/ContributionCard.tsx.bak_p1_20260422_101434    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_p1_20260422_101434')
+_final_backup_quarantine/ContributionCard.tsx.bak_p2_20260422_101622    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_p2_20260422_101622')
+_final_backup_quarantine/ContributionCard.tsx.bak_p3_20260422_101702    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_p3_20260422_101702')
+_final_backup_quarantine/ContributionCard.tsx.bak_p4_20260422_101829    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_p4_20260422_101829')
+_final_backup_quarantine/ContributionCard.tsx.bak_signal_20260422_054438    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/ContributionCard.tsx.bak_signal_20260422_054438')
+_final_backup_quarantine/CountriesSection.tsx.pre-webp.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/CountriesSection.tsx.pre-webp.bak')
+_final_backup_quarantine/HeroSection.tsx.pre-webp.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/HeroSection.tsx.pre-webp.bak')
+_final_backup_quarantine/HubAdminDashboard.tsx.bak.1779316409    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/HubAdminDashboard.tsx.bak.1779316409')
+_final_backup_quarantine/InvitationAcceptancePage.tsx.bak_button_visibility    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/InvitationAcceptancePage.tsx.bak_button_visibility')
+_final_backup_quarantine/InvitationAcceptancePage.tsx.bak_cleanup    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/InvitationAcceptancePage.tsx.bak_cleanup')
+_final_backup_quarantine/InvitationAcceptancePage.tsx.bak_step1    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/InvitationAcceptancePage.tsx.bak_step1')
+_final_backup_quarantine/InvitationAcceptancePage.tsx.pre-ux-clean.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/InvitationAcceptancePage.tsx.pre-ux-clean.bak')
+_final_backup_quarantine/JobCategoriesSection.tsx.pre-webp.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/JobCategoriesSection.tsx.pre-webp.bak')
+_final_backup_quarantine/MemberDashboard.tsx.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak')
+_final_backup_quarantine/MemberDashboard.tsx.bak_button_visibility_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_button_visibility_fix')
+_final_backup_quarantine/MemberDashboard.tsx.bak_contract_normalization_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_contract_normalization_20260515')
+_final_backup_quarantine/MemberDashboard.tsx.bak_final_invitation_batch    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_final_invitation_batch')
+_final_backup_quarantine/MemberDashboard.tsx.bak_invitation_ux_batch    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_invitation_ux_batch')
+_final_backup_quarantine/MemberDashboard.tsx.bak_member_me_contract_fix_20260401_151446    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_member_me_contract_fix_20260401_151446')
+_final_backup_quarantine/MemberDashboard.tsx.bak_member_me_path_fix_20260401_165256    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_member_me_path_fix_20260401_165256')
+_final_backup_quarantine/MemberDashboard.tsx.bak_member_me_retry_20260401_152225    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_member_me_retry_20260401_152225')
+_final_backup_quarantine/MemberDashboard.tsx.bak_member_precedence_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_member_precedence_restore')
+_final_backup_quarantine/MemberDashboard.tsx.bak_packet001_20260408_214208    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_packet001_20260408_214208')
+_final_backup_quarantine/MemberDashboard.tsx.bak_pending_invitation_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_pending_invitation_fix')
+_final_backup_quarantine/MemberDashboard.tsx.bak_phase3_accept_switch_20260401_110432    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_phase3_accept_switch_20260401_110432')
+_final_backup_quarantine/MemberDashboard.tsx.bak_phase3_accept_switch_retry_20260401_110759    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_phase3_accept_switch_retry_20260401_110759')
+_final_backup_quarantine/MemberDashboard.tsx.bak_redirect_20260409_092122    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_redirect_20260409_092122')
+_final_backup_quarantine/MemberDashboard.tsx.bak_redirect_20260409_104318    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_redirect_20260409_104318')
+_final_backup_quarantine/MemberDashboard.tsx.bak_render_boundary_normalization_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_render_boundary_normalization_20260515')
+_final_backup_quarantine/MemberDashboard.tsx.bak_soft_contain_20260410_021625    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberDashboard.tsx.bak_soft_contain_20260410_021625')
+_final_backup_quarantine/MemberHub.tsx.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak')
+_final_backup_quarantine/MemberHub.tsx.bak-chat-a    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak-chat-a')
+_final_backup_quarantine/MemberHub.tsx.bak.1779316392    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak.1779316392')
+_final_backup_quarantine/MemberHub.tsx.bak.1779317163    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak.1779317163')
+_final_backup_quarantine/MemberHub.tsx.bak.1779317224    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak.1779317224')
+_final_backup_quarantine/MemberHub.tsx.bak.1779317620    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak.1779317620')
+_final_backup_quarantine/MemberHub.tsx.bak.1779317662    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak.1779317662')
+_final_backup_quarantine/MemberHub.tsx.bak_activity_visibility_refinement_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_activity_visibility_refinement_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_backend_contract_convergence_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_backend_contract_convergence_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_cooperative_continuity_tone_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_cooperative_continuity_tone_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_failure_gate_softening_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_failure_gate_softening_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_full_speculative_tab_removal_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_full_speculative_tab_removal_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_jsx_balance_repair_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_jsx_balance_repair_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_jsx_orphan_div_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_jsx_orphan_div_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_loading_label_fix_20260410_045718    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_loading_label_fix_20260410_045718')
+_final_backup_quarantine/MemberHub.tsx.bak_membership_subscription_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_membership_subscription_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_membership_subscription_cleanup_retry_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_membership_subscription_cleanup_retry_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_mvp_contraction_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_mvp_contraction_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_operational_continuity_normalization_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_operational_continuity_normalization_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_operational_experience_normalization_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_operational_experience_normalization_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_orphan_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_orphan_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_overview_orphan_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_overview_orphan_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_action_affordance_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_action_affordance_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_interaction_feedback_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_interaction_feedback_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_momentum_visibility_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_momentum_visibility_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_readability_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_readability_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_status_signaling_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_status_signaling_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_summary_layer_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_summary_layer_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_participation_visibility_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_participation_visibility_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_probe_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_probe_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_readiness_probe_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_readiness_probe_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_recent_participation_feed_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_recent_participation_feed_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_recent_participation_visibility_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_recent_participation_visibility_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_semantic_governance_normalization_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_semantic_governance_normalization_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_subscription_gate_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_subscription_gate_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_subscription_gate_cleanup_retry_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_subscription_gate_cleanup_retry_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_subscription_orphan_cleanup_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_subscription_orphan_cleanup_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_temporal_continuity_humanization_20260515    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_temporal_continuity_humanization_20260515')
+_final_backup_quarantine/MemberHub.tsx.bak_token_align_20260410_032258    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_token_align_20260410_032258')
+_final_backup_quarantine/MemberHub.tsx.bak_visible_readiness_probe_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_visible_readiness_probe_20260516')
+_final_backup_quarantine/MemberHub.tsx.bak_visual_rhythm_normalization_20260516    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.bak_visual_rhythm_normalization_20260516')
+_final_backup_quarantine/MemberHub.tsx.finalrender.bak.1779317912    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.finalrender.bak.1779317912')
+_final_backup_quarantine/MemberHub.tsx.fix.bak.1779317706    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.fix.bak.1779317706')
+_final_backup_quarantine/MemberHub.tsx.loading_gate.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.loading_gate.bak')
+_final_backup_quarantine/MemberHub.tsx.render.bak.1779317745    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.render.bak.1779317745')
+_final_backup_quarantine/MemberHub.tsx.tabfix.bak.1779318787    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.tabfix.bak.1779318787')
+_final_backup_quarantine/MemberHub.tsx.visibletrust.bak.1779318110    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/MemberHub.tsx.visibletrust.bak.1779318110')
+_final_backup_quarantine/PipelineStageBadge.tsx.bak_20260421_111817    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/PipelineStageBadge.tsx.bak_20260421_111817')
+_final_backup_quarantine/PipelineStageBadge.tsx.bak_20260422_024615    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/PipelineStageBadge.tsx.bak_20260422_024615')
+_final_backup_quarantine/PipelineStageBadge.tsx.bak_elevation_vis_p1_20260422_220513    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/PipelineStageBadge.tsx.bak_elevation_vis_p1_20260422_220513')
+_final_backup_quarantine/PipelineStageBadge.tsx.bak_elevation_vis_p3_20260422_220656    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/PipelineStageBadge.tsx.bak_elevation_vis_p3_20260422_220656')
+_final_backup_quarantine/REGISTRY_INDEX.md.corrupted.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/REGISTRY_INDEX.md.corrupted.bak')
+_final_backup_quarantine/StudyAbroadSection.tsx.pre-webp.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/StudyAbroadSection.tsx.pre-webp.bak')
+_final_backup_quarantine/SuccessStories.tsx.pre-webp.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/SuccessStories.tsx.pre-webp.bak')
+_final_backup_quarantine/activity-feed-experience-contract.md.bak_clean_rewrite_20260418_015436    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/activity-feed-experience-contract.md.bak_clean_rewrite_20260418_015436')
+_final_backup_quarantine/attachUserContext.ts.bak-chat-a-authdiag    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/attachUserContext.ts.bak-chat-a-authdiag')
+_final_backup_quarantine/attachUserContext.ts.bak_tolerant_identity_20260401_134242    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/attachUserContext.ts.bak_tolerant_identity_20260401_134242')
+_final_backup_quarantine/build-server.mjs.bak_esm_alignment    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/build-server.mjs.bak_esm_alignment')
+_final_backup_quarantine/build-server.mjs.bak_frontend_build_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/build-server.mjs.bak_frontend_build_restore')
+_final_backup_quarantine/build.ts.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/build.ts.bak')
+_final_backup_quarantine/build.ts.bak2    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/build.ts.bak2')
+_final_backup_quarantine/build.ts.bak3    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/build.ts.bak3')
+_final_backup_quarantine/build.ts.bak4    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/build.ts.bak4')
+_final_backup_quarantine/contribution-state.ts.bak_20260421_235536    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_20260421_235536')
+_final_backup_quarantine/contribution-state.ts.bak_causation_p1_20260422_150159    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_causation_p1_20260422_150159')
+_final_backup_quarantine/contribution-state.ts.bak_causation_p2_20260422_150402    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_causation_p2_20260422_150402')
+_final_backup_quarantine/contribution-state.ts.bak_causation_p3_20260422_150419    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_causation_p3_20260422_150419')
+_final_backup_quarantine/contribution-state.ts.bak_causation_p4_20260422_152201    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_causation_p4_20260422_152201')
+_final_backup_quarantine/contribution-state.ts.bak_elevation_p1_20260422_144935    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_elevation_p1_20260422_144935')
+_final_backup_quarantine/contribution-state.ts.bak_expressed_cleanup_20260422_151511    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution-state.ts.bak_expressed_cleanup_20260422_151511')
+_final_backup_quarantine/contribution.ts.bak_20260421_235728    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/contribution.ts.bak_20260421_235728')
+_final_backup_quarantine/dashboard-entry-state-copy-alignment.md.bak_onboarding_mirror_note_20260418_011028    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/dashboard-entry-state-copy-alignment.md.bak_onboarding_mirror_note_20260418_011028')
+_final_backup_quarantine/detect-dead-strata.cjs.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/detect-dead-strata.cjs.bak')
+_final_backup_quarantine/detect-runtime-backups.cjs.pre-scope.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/detect-runtime-backups.cjs.pre-scope.bak')
+_final_backup_quarantine/enforce-canonical-runtime.cjs.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/enforce-canonical-runtime.cjs.bak')
+_final_backup_quarantine/enforce-canonical-runtime.cjs.pre-self-exclude.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/enforce-canonical-runtime.cjs.pre-self-exclude.bak')
+_final_backup_quarantine/index.cjs.bak_ws_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.cjs.bak_ws_fix')
+_final_backup_quarantine/index.cjs.bak_ws_fix_v2    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.cjs.bak_ws_fix_v2')
+_final_backup_quarantine/index.cjs.bak_ws_fix_v4    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.cjs.bak_ws_fix_v4')
+_final_backup_quarantine/index.cjs.bak_ws_fix_v5    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.cjs.bak_ws_fix_v5')
+_final_backup_quarantine/index.cjs.bak_ws_fix_v6    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.cjs.bak_ws_fix_v6')
+_final_backup_quarantine/index.cjs.bak_ws_fix_v7    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.cjs.bak_ws_fix_v7')
+_final_backup_quarantine/index.ts.bak_remove_duplicate_root    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_remove_duplicate_root')
+_final_backup_quarantine/index.ts.bak_remove_ok_catchall    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_remove_ok_catchall')
+_final_backup_quarantine/index.ts.bak_remove_root_ok    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_remove_root_ok')
+_final_backup_quarantine/index.ts.bak_restore_routes    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_restore_routes')
+_final_backup_quarantine/index.ts.bak_root_final    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_root_final')
+_final_backup_quarantine/index.ts.bak_root_force    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_root_force')
+_final_backup_quarantine/index.ts.bak_vite_condition_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/index.ts.bak_vite_condition_restore')
+_final_backup_quarantine/layout.tsx.bak_fix_root    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/layout.tsx.bak_fix_root')
+_final_backup_quarantine/member.ts.app_rec_invite_001g.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.app_rec_invite_001g.bak')
+_final_backup_quarantine/member.ts.app_rec_invite_001j.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.app_rec_invite_001j.bak')
+_final_backup_quarantine/member.ts.bak.1779375420    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak.1779375420')
+_final_backup_quarantine/member.ts.bak.1779422210    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak.1779422210')
+_final_backup_quarantine/member.ts.bak.pending_debug.1779443382    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak.pending_debug.1779443382')
+_final_backup_quarantine/member.ts.bak_governed_acceptance_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_governed_acceptance_restore')
+_final_backup_quarantine/member.ts.bak_materialize_invitation    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_materialize_invitation')
+_final_backup_quarantine/member.ts.bak_member_continuity_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_member_continuity_restore')
+_final_backup_quarantine/member.ts.bak_real_member_authority    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_real_member_authority')
+_final_backup_quarantine/member.ts.bak_restore_canonical_member_authority    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_restore_canonical_member_authority')
+_final_backup_quarantine/member.ts.bak_restore_real_invitation_logic    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_restore_real_invitation_logic')
+_final_backup_quarantine/member.ts.bak_userid_convergence    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.bak_userid_convergence')
+_final_backup_quarantine/member.ts.pre-error-restore.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.pre-error-restore.bak')
+_final_backup_quarantine/member.ts.pre-log-clean.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.pre-log-clean.bak')
+_final_backup_quarantine/member.ts.readiness-gap.bak.1779403431    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/member.ts.readiness-gap.bak.1779403431')
+_final_backup_quarantine/mock-data.ts.bak_20260422_000443    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/mock-data.ts.bak_20260422_000443')
+_final_backup_quarantine/mock-data.ts.bak_20260422_001058    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/mock-data.ts.bak_20260422_001058')
+_final_backup_quarantine/mock-data.ts.bak_fix_20260422_001249    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/mock-data.ts.bak_fix_20260422_001249')
+_final_backup_quarantine/mock-data.ts.bak_fix_contrib002_20260422_001612    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/mock-data.ts.bak_fix_contrib002_20260422_001612')
+_final_backup_quarantine/mock-data.ts.bak_fix_exact_20260422_001429    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/mock-data.ts.bak_fix_exact_20260422_001429')
+_final_backup_quarantine/next-frontend-experience-packet.md.bak_copy_clarity_note_20260418_005258    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/next-frontend-experience-packet.md.bak_copy_clarity_note_20260418_005258')
+_final_backup_quarantine/notification-transition-protocol.md.bak_rewrite_20260417_112137    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/notification-transition-protocol.md.bak_rewrite_20260417_112137')
+_final_backup_quarantine/package.json.bak_esm_start_alignment    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/package.json.bak_esm_start_alignment')
+_final_backup_quarantine/package.json.bak_frontend_build_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/package.json.bak_frontend_build_restore')
+_final_backup_quarantine/package.json.bak_production_env_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/package.json.bak_production_env_fix')
+_final_backup_quarantine/page.tsx.bak_20260421_063118    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_20260421_063118')
+_final_backup_quarantine/page.tsx.bak_20260421_064809    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_20260421_064809')
+_final_backup_quarantine/page.tsx.bak_fix_if    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_fix_if')
+_final_backup_quarantine/page.tsx.bak_fix_notification_mount_20260420_094658    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_fix_notification_mount_20260420_094658')
+_final_backup_quarantine/page.tsx.bak_fix_notification_mount_v2_20260420_095746    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_fix_notification_mount_v2_20260420_095746')
+_final_backup_quarantine/page.tsx.bak_fix_notification_mount_v3_20260420_100110    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_fix_notification_mount_v3_20260420_100110')
+_final_backup_quarantine/page.tsx.bak_handler_clean_v2    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_handler_clean_v2')
+_final_backup_quarantine/page.tsx.bak_handler_logic    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_handler_logic')
+_final_backup_quarantine/page.tsx.bak_imports    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_imports')
+_final_backup_quarantine/page.tsx.bak_step2A_exact    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_step2A_exact')
+_final_backup_quarantine/page.tsx.bak_step3A_R3    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_step3A_R3')
+_final_backup_quarantine/page.tsx.bak_top_level    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/page.tsx.bak_top_level')
+_final_backup_quarantine/requireSBURole.ts.bak_ws_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/requireSBURole.ts.bak_ws_fix')
+_final_backup_quarantine/routes.ts.login_restore.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/routes.ts.login_restore.bak')
+_final_backup_quarantine/runtime-guard.sh.bak_double_amp_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/runtime-guard.sh.bak_double_amp_fix')
+_final_backup_quarantine/runtime-guard.sh.bak_foreground_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/runtime-guard.sh.bak_foreground_fix')
+_final_backup_quarantine/runtime-guard.sh.bak_port_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/runtime-guard.sh.bak_port_fix')
+_final_backup_quarantine/runtime-guard.sh.bak_remove_duplicate_wait    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/runtime-guard.sh.bak_remove_duplicate_wait')
+_final_backup_quarantine/schema.ts.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/schema.ts.bak')
+_final_backup_quarantine/static.ts.bak_api_fallback_guard_20260401_161632    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/static.ts.bak_api_fallback_guard_20260401_161632')
+_final_backup_quarantine/supabase-auth.ts.bak_ws_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-auth.ts.bak_ws_fix')
+_final_backup_quarantine/supabase-client.ts.bak_ws_fix_v2    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-client.ts.bak_ws_fix_v2')
+_final_backup_quarantine/supabase-dal.ts.bak_full_schema_normalization    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-dal.ts.bak_full_schema_normalization')
+_final_backup_quarantine/supabase-dal.ts.bak_meh_members_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-dal.ts.bak_meh_members_fix')
+_final_backup_quarantine/supabase-dal.ts.bak_userid_convergence    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-dal.ts.bak_userid_convergence')
+_final_backup_quarantine/supabase-dal.ts.bak_verified_schema_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-dal.ts.bak_verified_schema_fix')
+_final_backup_quarantine/supabase-hub.ts.bak_semantic_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-hub.ts.bak_semantic_fix')
+_final_backup_quarantine/supabase-hub.ts.bak_ws_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-hub.ts.bak_ws_fix')
+_final_backup_quarantine/supabase-hub.ts.bak_ws_fix_v2    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-hub.ts.bak_ws_fix_v2')
+_final_backup_quarantine/supabase-hub.ts.bak_ws_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-hub.ts.bak_ws_restore')
+_final_backup_quarantine/supabase-hub.ts.login_session_fix.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-hub.ts.login_session_fix.bak')
+_final_backup_quarantine/supabase-member-client.ts.bak_ws_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-member-client.ts.bak_ws_fix')
+_final_backup_quarantine/supabase-member-client.ts.bak_ws_fix_v2    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-member-client.ts.bak_ws_fix_v2')
+_final_backup_quarantine/supabase-types.ts.bak_userid_convergence    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/supabase-types.ts.bak_userid_convergence')
+_final_backup_quarantine/tsconfig.json.bak_src_topology_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/tsconfig.json.bak_src_topology_restore')
+_final_backup_quarantine/vite.config.ts.bak_clean_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/vite.config.ts.bak_clean_fix')
+_final_backup_quarantine/vite.config.ts.bak_real_fix    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/vite.config.ts.bak_real_fix')
+_final_backup_quarantine/vite.config.ts.bak_src_topology_restore    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/vite.config.ts.bak_src_topology_restore')
+_final_backup_quarantine/vite.ts.bak_prod_guard    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/vite.ts.bak_prod_guard')
+_final_backup_quarantine/vite.ts.bak_remove_import    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/vite.ts.bak_remove_import')
+_final_backup_quarantine/vite.ts.bak_restore_config_ownership    ([Errno 2] No such file or directory: '/home/runner/workspace/_final_backup_quarantine/vite.ts.bak_restore_config_ownership')
+execution/builders/recovery
+execution/builders/recovery/BUILDER-RECOVERY-CERTIFICATION.md
+execution/implementation-evidence
+execution/implementation-evidence/BLD-PIC-001
+execution/implementation-evidence/BLD-PIC-001/Builder-Mutation-Target.json
+execution/implementation-evidence/gex001
+execution/implementation-evidence/gex001/HeroContent.pre-mutation.20260716T092239Z.txt
+execution/packages
+execution/packages/APP-REALIZATION-002B-PIC
+execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_AUTHORITY.md
+execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_CONTEXT_MANIFEST.md
+execution/packages/APP-REALIZATION-002B-PIC/PRODUCTION_IMPLEMENTATION_CONTRACT.md
+execution/packages/APP-REALIZATION-002B-PIC.zip
+execution/packages/APP-REC-INVITE-002R
+execution/packages/APP-REC-INVITE-002R/implementation-authority-package.json
+execution/packages/APP-REC-INVITE-002R/implementation-context-manifest.json
+execution/packages/BLD-AMS-001-EXEC-001-RMP-001-SMP-001.patch
+execution/packages/BLD-PIC-001
+execution/packages/BLD-PIC-001/generated
+execution/packages/EOS-RMP-001C-Claude-Package
+execution/packages/EOS-RMP-001C-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/EOS-RMP-001C-Claude-Package/START-HERE.md
+execution/packages/EOS-RMP-001C-Claude-Package/execution
+execution/packages/EOS-RMP-001C-Claude-Package/execution/builders
+execution/packages/EOS-RMP-001C-Claude-Package/governance
+execution/packages/EOS-RMP-001C-Claude-Package/governance/BASELINE.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/cib
+execution/packages/EOS-RMP-001C-Claude-Package/governance/cib/generated
+execution/packages/EOS-RMP-001C-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001C-PACKAGE-MATERIALIZATION.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/execution
+execution/packages/EOS-RMP-001C-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/execution-derivation
+execution/packages/EOS-RMP-001C-Claude-Package/governance/execution-derivation/EOS-RMP-001C-EXECUTION-DERIVATION.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/rmp
+execution/packages/EOS-RMP-001C-Claude-Package/governance/rmp/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/startup
+execution/packages/EOS-RMP-001C-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/EOS-RMP-001C-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/EOS-RMP-001D-Claude-Package
+execution/packages/EOS-RMP-001D-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/EOS-RMP-001D-Claude-Package/START-HERE.md
+execution/packages/EOS-RMP-001D-Claude-Package/execution
+execution/packages/EOS-RMP-001D-Claude-Package/execution/builders
+execution/packages/EOS-RMP-001D-Claude-Package/governance
+execution/packages/EOS-RMP-001D-Claude-Package/governance/BASELINE.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/cib
+execution/packages/EOS-RMP-001D-Claude-Package/governance/cib/generated
+execution/packages/EOS-RMP-001D-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001D-PACKAGE-FINALIZATION.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/execution
+execution/packages/EOS-RMP-001D-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/execution-derivation
+execution/packages/EOS-RMP-001D-Claude-Package/governance/execution-derivation/EOS-RMP-001D-EXECUTION-DERIVATION.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/rmp
+execution/packages/EOS-RMP-001D-Claude-Package/governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/startup
+execution/packages/EOS-RMP-001D-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/EOS-RMP-001D-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/EOS-RMP-001D-Claude-Package.zip
+execution/packages/EOS-RMP-001D-Claude-Package.zip.sha256
+execution/packages/EOS-RMP-001E-Claude-Package
+execution/packages/EOS-RMP-001E-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/EOS-RMP-001E-Claude-Package/START-HERE.md
+execution/packages/EOS-RMP-001E-Claude-Package/execution
+execution/packages/EOS-RMP-001E-Claude-Package/execution/builders
+execution/packages/EOS-RMP-001E-Claude-Package/governance
+execution/packages/EOS-RMP-001E-Claude-Package/governance/BASELINE.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/cib
+execution/packages/EOS-RMP-001E-Claude-Package/governance/cib/generated
+execution/packages/EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/execution
+execution/packages/EOS-RMP-001E-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/execution-derivation
+execution/packages/EOS-RMP-001E-Claude-Package/governance/execution-derivation/EOS-RMP-001E-EXECUTION-DERIVATION.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/icm
+execution/packages/EOS-RMP-001E-Claude-Package/governance/icm/generated
+execution/packages/EOS-RMP-001E-Claude-Package/governance/icm/generated/ICM-EOS-RMP-001E.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/rmp
+execution/packages/EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/startup
+execution/packages/EOS-RMP-001E-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/EOS-RMP-001E-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/EOS-RMP-001E-Claude-Package/implementation-context
+execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution
+execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders
+execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md
+execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/build_claude_package.py
+execution/packages/EOS-RMP-001E-Claude-Package.zip
+execution/packages/EOS-RMP-001E-Claude-Package.zip.sha256
+execution/packages/EOS-RMP-CERS-002
+execution/packages/EOS-RMP-CERS-002/PYTHON-RMP-IMPLEMENTATION-SPECIFICATION.md
+execution/packages/EOS-RMP-CERS-002/REPOSITORY-MUTATION-PACKAGE.md
+execution/packages/ESR-001
+execution/packages/ESR-001/generated
+execution/packages/ESR-001/generated/AUTHORITY-ACTIVATION-STATUS.json
+execution/packages/ESR-001/generated/CANONICAL-INPUT-RESOLUTION.json
+execution/packages/ESR-001/generated/EXECUTION-INPUT-DISCOVERY.json
+execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY-VERIFICATION.json
+execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY.json
+execution/packages/ESR-001/generated/SURFACE-POPULATION-PLAN.json
+execution/packages/EXEC-SYNC-001
+execution/packages/EXEC-SYNC-001/generated
+execution/packages/EXEC-SYNC-001/generated/EXEC-SYNC-001-BUILDER-CAR-ADOPTION.json
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/START-HERE.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/execution
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/execution/builders
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/BASELINE.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/cib
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/cib/generated
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/execution
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/execution-derivation
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/execution-derivation/EXECUTION-DERIVATION.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/icm
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/icm/generated
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/icm/generated/ICM-APP-REALIZATION-002B.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/rmp
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/startup
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/implementation-context
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package.zip
+execution/packages/FAB-APP-REALIZATION-002B-Claude-Package.zip.sha256
+execution/packages/FDR-010E34B
+execution/packages/FDR-010E34B/generated
+execution/packages/FDR-010E34B/generated/AUTHORITY-CLOSURE.json
+execution/packages/FDR-010E34B/generated/CONSTITUTIONAL-CONTENT-AUDIT.json
+execution/packages/FDR-010E34B/generated/REGISTRY-CONFORMANCE-AUDIT.json
+execution/packages/FDR-010E34B/generated/REPOSITORY-MUTATION-PACKAGE-VERIFICATION.json
+execution/packages/FDR-010E34B/generated/REPOSITORY-MUTATION-PACKAGE.json
+execution/packages/FDR-010E34B/generated/SURFACE-CERTIFICATION.json
+execution/packages/FDR-010E34B/generated/registry_payloads
+execution/packages/FDR-010E34B/generated/registry_payloads/LEASE-REGISTRY.json
+execution/packages/FDR-010E34B/generated/registry_payloads/REGISTRY-PAYLOAD-MANIFEST.json
+execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-CATALOG.json
+execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-DEPENDENCIES.json
+execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-REGISTRY.json
+execution/packages/GE-RMP-001
+execution/packages/GE-RMP-001/generated
+execution/packages/GE-RMP-001/generated/GE-RMP-001-ALLOCATION.json
+execution/packages/GE-RMP-002-Claude-Package
+execution/packages/GE-RMP-002-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-002-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-002-Claude-Package/execution
+execution/packages/GE-RMP-002-Claude-Package/execution/builders
+execution/packages/GE-RMP-002-Claude-Package/governance
+execution/packages/GE-RMP-002-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-002-Claude-Package/governance/cib
+execution/packages/GE-RMP-002-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-002-Claude-Package/governance/cib/generated/CIB-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md
+execution/packages/GE-RMP-002-Claude-Package/governance/execution
+execution/packages/GE-RMP-002-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-002-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-002-Claude-Package/governance/execution-derivation/FDR-GE-002-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-002-Claude-Package/governance/icm
+execution/packages/GE-RMP-002-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-002-Claude-Package/governance/icm/generated/ICM-GE-RMP-002-PUBLIC-EXPERIENCE-LANDING-PAGE.md
+execution/packages/GE-RMP-002-Claude-Package/governance/rmp
+execution/packages/GE-RMP-002-Claude-Package/governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-002-Claude-Package/governance/startup
+execution/packages/GE-RMP-002-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-002-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-002-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-002-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-002-Claude-Package/implementation-context
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/components
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/components/HeroSection.tsx
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/admissions.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/programs.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/scholarships.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/admissions.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/programs.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/scholarships.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/admissions.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/programs.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/scholarships.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/programs.json
+execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json
+execution/packages/GE-RMP-002-Claude-Package.zip
+execution/packages/GE-RMP-002-Claude-Package.zip.sha256
+execution/packages/GE-RMP-003-Claude-Package
+execution/packages/GE-RMP-003-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-003-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-003-Claude-Package/execution
+execution/packages/GE-RMP-003-Claude-Package/execution/builders
+execution/packages/GE-RMP-003-Claude-Package/governance
+execution/packages/GE-RMP-003-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-003-Claude-Package/governance/cib
+execution/packages/GE-RMP-003-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-003-Claude-Package/governance/cib/generated/CIB-GE-RMP-003-PROSPECT-REGISTRATION-CONVERSION.md
+execution/packages/GE-RMP-003-Claude-Package/governance/execution
+execution/packages/GE-RMP-003-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-003-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-003-Claude-Package/governance/execution-derivation/GE-RMP-003-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-003-Claude-Package/governance/icm
+execution/packages/GE-RMP-003-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-003-Claude-Package/governance/icm/generated/ICM-GE-RMP-003.md
+execution/packages/GE-RMP-003-Claude-Package/governance/rmp
+execution/packages/GE-RMP-003-Claude-Package/governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-003-Claude-Package/governance/startup
+execution/packages/GE-RMP-003-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-003-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-003-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-003-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-003-Claude-Package/implementation-context
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/server
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/server/services
+execution/packages/GE-RMP-003-Claude-Package/implementation-context/server/services/admissions.ts
+execution/packages/GE-RMP-003-Claude-Package.zip
+execution/packages/GE-RMP-003-Claude-Package.zip.sha256
+execution/packages/GE-RMP-003A-Claude-Package
+execution/packages/GE-RMP-003A-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-003A-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-003A-Claude-Package/execution
+execution/packages/GE-RMP-003A-Claude-Package/execution/builders
+execution/packages/GE-RMP-003A-Claude-Package/governance
+execution/packages/GE-RMP-003A-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/cib
+execution/packages/GE-RMP-003A-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-003A-Claude-Package/governance/cib/generated/CIB-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/execution
+execution/packages/GE-RMP-003A-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-003A-Claude-Package/governance/execution-derivation/FDR-GE-003A-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/icm
+execution/packages/GE-RMP-003A-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-003A-Claude-Package/governance/icm/generated/ICM-GE-RMP-003A-GROWTH-RUNTIME-REPAIR.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/rmp
+execution/packages/GE-RMP-003A-Claude-Package/governance/rmp/GE-RMP-003A-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/startup
+execution/packages/GE-RMP-003A-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-003A-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/components
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/components/HeroSection.tsx
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/programs.json
+execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json
+execution/packages/GE-RMP-003A-Claude-Package.zip
+execution/packages/GE-RMP-003A-Claude-Package.zip.sha256
+execution/packages/GE-RMP-003B-Claude-Package
+execution/packages/GE-RMP-003B-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-003B-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-003B-Claude-Package/execution
+execution/packages/GE-RMP-003B-Claude-Package/execution/builders
+execution/packages/GE-RMP-003B-Claude-Package/governance
+execution/packages/GE-RMP-003B-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/cib
+execution/packages/GE-RMP-003B-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-003B-Claude-Package/governance/cib/generated/CIB-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/execution
+execution/packages/GE-RMP-003B-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-003B-Claude-Package/governance/execution-derivation/FDR-GE-003B-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/icm
+execution/packages/GE-RMP-003B-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-003B-Claude-Package/governance/icm/generated/ICM-GE-RMP-003B-GROWTH-LANDING-EXPERIENCE.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/rmp
+execution/packages/GE-RMP-003B-Claude-Package/governance/rmp/GE-RMP-003B-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/startup
+execution/packages/GE-RMP-003B-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-003B-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/components
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/components/HeroSection.tsx
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/programs.json
+execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json
+execution/packages/GE-RMP-003B-Claude-Package.zip
+execution/packages/GE-RMP-003B-Claude-Package.zip.sha256
+execution/packages/GE-RMP-004
+execution/packages/GE-RMP-004/BUILDER-INPUT.md
+execution/packages/GE-RMP-004/CLAUDE-GENERATION-BRIEF.md
+execution/packages/GE-RMP-004/REPOSITORY-MUTATION-PACKAGE.md
+execution/packages/GE-RMP-004/builder-output.log
+execution/packages/GE-RMP-004-Claude-Package
+execution/packages/GE-RMP-004-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-004-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-004-Claude-Package/execution
+execution/packages/GE-RMP-004-Claude-Package/execution/builders
+execution/packages/GE-RMP-004-Claude-Package/governance
+execution/packages/GE-RMP-004-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-004-Claude-Package/governance/cib
+execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md
+execution/packages/GE-RMP-004-Claude-Package/governance/cib/generated/CIB-GE-RMP-004-RELEASE1-JOURNEY-INTEGRATION.md
+execution/packages/GE-RMP-004-Claude-Package/governance/execution
+execution/packages/GE-RMP-004-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-004-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-004-Claude-Package/governance/execution-derivation/FDR-GE-004-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-004-Claude-Package/governance/execution-derivation/GE-RMP-004-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-004-Claude-Package/governance/icm
+execution/packages/GE-RMP-004-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-004-Claude-Package/governance/icm/generated/ICM-GE-RMP-004-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md
+execution/packages/GE-RMP-004-Claude-Package/governance/icm/generated/ICM-GE-RMP-004.md
+execution/packages/GE-RMP-004-Claude-Package/governance/rmp
+execution/packages/GE-RMP-004-Claude-Package/governance/rmp/GE-RMP-004-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-004-Claude-Package/governance/startup
+execution/packages/GE-RMP-004-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-004-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-004-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-004-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-004-Claude-Package/implementation-context
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/components
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/components/HeroSection.tsx
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/server
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/server/services
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/server/services/admissions.ts
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/web
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/programs.json
+execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json
+execution/packages/GE-RMP-004-Claude-Package.zip
+execution/packages/GE-RMP-004-Claude-Package.zip.sha256
+execution/packages/GE-RMP-004A
+execution/packages/GE-RMP-004A/WORK-PACKAGE.md
+execution/packages/GE-RMP-005
+execution/packages/GE-RMP-005/RMP-REGENERATION-BRIEF.md
+execution/packages/GE-RMP-005/generated
+execution/packages/GE-RMP-005/generated/GE-RMP-005-IMPLEMENTATION-HANDOFF.json
+execution/packages/GE-RMP-005/generated/GE-RMP-005-IMPLEMENTATION-MUTATION-PLAN.json
+execution/packages/GE-RMP-005/generated/GE-RMP-005-PRE-MUTATION-BASELINE.json
+execution/packages/GE-RMP-005/generated/GE-RMP-005-REPOSITORY-REALITY.json
+execution/packages/GE-RMP-005/generated/GE-RMP-005-SURFACE-LEASE.json
+execution/packages/GE-RMP-005-Claude-Package
+execution/packages/GE-RMP-005-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-005-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-005-Claude-Package/execution
+execution/packages/GE-RMP-005-Claude-Package/execution/builders
+execution/packages/GE-RMP-005-Claude-Package/governance
+execution/packages/GE-RMP-005-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-005-Claude-Package/governance/cib
+execution/packages/GE-RMP-005-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-APPLICANT-JOURNEY-STATUS.md
+execution/packages/GE-RMP-005-Claude-Package/governance/cib/generated/CIB-GE-RMP-005-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md
+execution/packages/GE-RMP-005-Claude-Package/governance/execution
+execution/packages/GE-RMP-005-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-005-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-005-Claude-Package/governance/execution-derivation/FDR-GE-005-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-005-Claude-Package/governance/execution-derivation/GE-RMP-005-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-005-Claude-Package/governance/icm
+execution/packages/GE-RMP-005-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-005-Claude-Package/governance/icm/generated/ICM-GE-RMP-005-CTBC-RECRUITMENT-EXPERIENCE-ENHANCEMENT.md
+execution/packages/GE-RMP-005-Claude-Package/governance/icm/generated/ICM-GE-RMP-005.md
+execution/packages/GE-RMP-005-Claude-Package/governance/rmp
+execution/packages/GE-RMP-005-Claude-Package/governance/rmp/GE-RMP-005-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-005-Claude-Package/governance/startup
+execution/packages/GE-RMP-005-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-005-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-005-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-005-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-005-Claude-Package/implementation-context
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/server
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/server/services
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/server/services/admissions.ts
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/web
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/web/src
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/web/src/growth
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/web/src/growth/registry
+execution/packages/GE-RMP-005-Claude-Package/implementation-context/web/src/growth/registry/journey.json
+execution/packages/GE-RMP-005-Claude-Package.zip
+execution/packages/GE-RMP-005-Claude-Package.zip.sha256
+execution/packages/GE-RMP-006
+execution/packages/GE-RMP-006/RMP-REQUEST.md
+execution/packages/GE-RMP-006-Claude-Package
+execution/packages/GE-RMP-006-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-006-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-006-Claude-Package/execution
+execution/packages/GE-RMP-006-Claude-Package/execution/builders
+execution/packages/GE-RMP-006-Claude-Package/governance
+execution/packages/GE-RMP-006-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-006-Claude-Package/governance/cib
+execution/packages/GE-RMP-006-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-006-Claude-Package/governance/cib/generated/CIB-GE-RMP-006-APPLICANT-STATUS-LOOKUP.md
+execution/packages/GE-RMP-006-Claude-Package/governance/execution
+execution/packages/GE-RMP-006-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-006-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-006-Claude-Package/governance/execution-derivation/GE-RMP-006-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-006-Claude-Package/governance/icm
+execution/packages/GE-RMP-006-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-006-Claude-Package/governance/icm/generated/ICM-GE-RMP-006.md
+execution/packages/GE-RMP-006-Claude-Package/governance/rmp
+execution/packages/GE-RMP-006-Claude-Package/governance/rmp/GE-RMP-006-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-006-Claude-Package/governance/startup
+execution/packages/GE-RMP-006-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-006-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-006-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-006-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-006-Claude-Package/implementation-context
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/web
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/web/src
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/web/src/growth
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/web/src/growth/registry
+execution/packages/GE-RMP-006-Claude-Package/implementation-context/web/src/growth/registry/journey.json
+execution/packages/GE-RMP-006-Claude-Package.zip
+execution/packages/GE-RMP-006-Claude-Package.zip.sha256
+execution/packages/GE-RMP-007-Claude-Package
+execution/packages/GE-RMP-007-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-007-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-007-Claude-Package/execution
+execution/packages/GE-RMP-007-Claude-Package/execution/builders
+execution/packages/GE-RMP-007-Claude-Package/governance
+execution/packages/GE-RMP-007-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-007-Claude-Package/governance/cib
+execution/packages/GE-RMP-007-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-007-Claude-Package/governance/cib/generated/CIB-GE-RMP-007-APPLICANT-DOCUMENT-CENTER.md
+execution/packages/GE-RMP-007-Claude-Package/governance/execution
+execution/packages/GE-RMP-007-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-007-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-007-Claude-Package/governance/execution-derivation/GE-RMP-007-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-007-Claude-Package/governance/icm
+execution/packages/GE-RMP-007-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-007-Claude-Package/governance/icm/generated/ICM-GE-RMP-007.md
+execution/packages/GE-RMP-007-Claude-Package/governance/rmp
+execution/packages/GE-RMP-007-Claude-Package/governance/rmp/GE-RMP-007-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-007-Claude-Package/governance/startup
+execution/packages/GE-RMP-007-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-007-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-007-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-007-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-007-Claude-Package/implementation-context
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantStatusLookup.tsx
+execution/packages/GE-RMP-007-Claude-Package.zip
+execution/packages/GE-RMP-007-Claude-Package.zip.sha256
+execution/packages/GE-RMP-008-Claude-Package
+execution/packages/GE-RMP-008-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-008-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-008-Claude-Package/execution
+execution/packages/GE-RMP-008-Claude-Package/execution/builders
+execution/packages/GE-RMP-008-Claude-Package/governance
+execution/packages/GE-RMP-008-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-008-Claude-Package/governance/cib
+execution/packages/GE-RMP-008-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-008-Claude-Package/governance/cib/generated/CIB-GE-RMP-008-APPLICANT-APPOINTMENT-CENTER.md
+execution/packages/GE-RMP-008-Claude-Package/governance/execution
+execution/packages/GE-RMP-008-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-008-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-008-Claude-Package/governance/execution-derivation/GE-RMP-008-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-008-Claude-Package/governance/icm
+execution/packages/GE-RMP-008-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-008-Claude-Package/governance/icm/generated/ICM-GE-RMP-008.md
+execution/packages/GE-RMP-008-Claude-Package/governance/rmp
+execution/packages/GE-RMP-008-Claude-Package/governance/rmp/GE-RMP-008-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-008-Claude-Package/governance/startup
+execution/packages/GE-RMP-008-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-008-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-008-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-008-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-008-Claude-Package/implementation-context
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantDocumentCenter.tsx
+execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-008-Claude-Package.zip
+execution/packages/GE-RMP-008-Claude-Package.zip.sha256
+execution/packages/GE-RMP-009-Claude-Package
+execution/packages/GE-RMP-009-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-009-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-009-Claude-Package/execution
+execution/packages/GE-RMP-009-Claude-Package/execution/builders
+execution/packages/GE-RMP-009-Claude-Package/governance
+execution/packages/GE-RMP-009-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-009-Claude-Package/governance/cib
+execution/packages/GE-RMP-009-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-009-Claude-Package/governance/cib/generated/CIB-GE-RMP-009-APPLICANT-ADMISSION-DECISION-CENTER.md
+execution/packages/GE-RMP-009-Claude-Package/governance/execution
+execution/packages/GE-RMP-009-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-009-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-009-Claude-Package/governance/execution-derivation/GE-RMP-009-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-009-Claude-Package/governance/icm
+execution/packages/GE-RMP-009-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-009-Claude-Package/governance/icm/generated/ICM-GE-RMP-009.md
+execution/packages/GE-RMP-009-Claude-Package/governance/rmp
+execution/packages/GE-RMP-009-Claude-Package/governance/rmp/GE-RMP-009-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-009-Claude-Package/governance/startup
+execution/packages/GE-RMP-009-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-009-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-009-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-009-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-009-Claude-Package/implementation-context
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantAppointmentCenter.tsx
+execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-009-Claude-Package.zip
+execution/packages/GE-RMP-009-Claude-Package.zip.sha256
+execution/packages/GE-RMP-010-Claude-Package
+execution/packages/GE-RMP-010-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-010-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-010-Claude-Package/execution
+execution/packages/GE-RMP-010-Claude-Package/execution/builders
+execution/packages/GE-RMP-010-Claude-Package/governance
+execution/packages/GE-RMP-010-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-010-Claude-Package/governance/cib
+execution/packages/GE-RMP-010-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-010-Claude-Package/governance/cib/generated/CIB-GE-RMP-010-APPLICANT-LIFECYCLE-TIMELINE.md
+execution/packages/GE-RMP-010-Claude-Package/governance/execution
+execution/packages/GE-RMP-010-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-010-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-010-Claude-Package/governance/execution-derivation/GE-RMP-010-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-010-Claude-Package/governance/icm
+execution/packages/GE-RMP-010-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-010-Claude-Package/governance/icm/generated/ICM-GE-RMP-010.md
+execution/packages/GE-RMP-010-Claude-Package/governance/rmp
+execution/packages/GE-RMP-010-Claude-Package/governance/rmp/GE-RMP-010-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-010-Claude-Package/governance/startup
+execution/packages/GE-RMP-010-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-010-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-010-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-010-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-010-Claude-Package/implementation-context
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantAdmissionDecisionCenter.tsx
+execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-010-Claude-Package.zip
+execution/packages/GE-RMP-010-Claude-Package.zip.sha256
+execution/packages/GE-RMP-011-Claude-Package
+execution/packages/GE-RMP-011-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-011-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-011-Claude-Package/execution
+execution/packages/GE-RMP-011-Claude-Package/execution/builders
+execution/packages/GE-RMP-011-Claude-Package/governance
+execution/packages/GE-RMP-011-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-011-Claude-Package/governance/cib
+execution/packages/GE-RMP-011-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-011-Claude-Package/governance/cib/generated/CIB-GE-RMP-011-APPLICANT-ACTIVITY-CENTER.md
+execution/packages/GE-RMP-011-Claude-Package/governance/execution
+execution/packages/GE-RMP-011-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-011-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-011-Claude-Package/governance/execution-derivation/GE-RMP-011-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-011-Claude-Package/governance/icm
+execution/packages/GE-RMP-011-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-011-Claude-Package/governance/icm/generated/ICM-GE-RMP-011.md
+execution/packages/GE-RMP-011-Claude-Package/governance/rmp
+execution/packages/GE-RMP-011-Claude-Package/governance/rmp/GE-RMP-011-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-011-Claude-Package/governance/startup
+execution/packages/GE-RMP-011-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-011-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-011-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-011-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-011-Claude-Package/implementation-context
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantLifecycleTimeline.tsx
+execution/packages/GE-RMP-011-Claude-Package.zip
+execution/packages/GE-RMP-011-Claude-Package.zip.sha256
+execution/packages/GE-RMP-012-Claude-Package
+execution/packages/GE-RMP-012-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-012-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-012-Claude-Package/execution
+execution/packages/GE-RMP-012-Claude-Package/execution/builders
+execution/packages/GE-RMP-012-Claude-Package/governance
+execution/packages/GE-RMP-012-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-012-Claude-Package/governance/cib
+execution/packages/GE-RMP-012-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-012-Claude-Package/governance/cib/generated/CIB-GE-RMP-012-APPLICANT-FOLLOWUP-TASK-CENTER.md
+execution/packages/GE-RMP-012-Claude-Package/governance/execution
+execution/packages/GE-RMP-012-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-012-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-012-Claude-Package/governance/execution-derivation/GE-RMP-012-EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-012-Claude-Package/governance/icm
+execution/packages/GE-RMP-012-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-012-Claude-Package/governance/icm/generated/ICM-GE-RMP-012.md
+execution/packages/GE-RMP-012-Claude-Package/governance/rmp
+execution/packages/GE-RMP-012-Claude-Package/governance/rmp/GE-RMP-012-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-012-Claude-Package/governance/startup
+execution/packages/GE-RMP-012-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-012-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-012-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-012-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-012-Claude-Package/implementation-context
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantActivityCenter.tsx
+execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx
+execution/packages/GE-RMP-012-Claude-Package.zip
+execution/packages/GE-RMP-012-Claude-Package.zip.sha256
+execution/packages/GE-RMP-014-Claude-Package
+execution/packages/GE-RMP-014-Claude-Package/ADMISSIONS-INTEGRATION-AUTHORITY.json
+execution/packages/GE-RMP-014-Claude-Package/ADMISSIONS-MUTATION-AUTHORITY.json
+execution/packages/GE-RMP-014-Claude-Package/ADMISSIONS-PRE-MUTATION.json
+execution/packages/GE-RMP-014-Claude-Package/BASELINE.json
+execution/packages/GE-RMP-014-Claude-Package/CLAUDE.md
+execution/packages/GE-RMP-014-Claude-Package/CODE-MUTATION-CHECKLIST.json
+execution/packages/GE-RMP-014-Claude-Package/EMAIL-TEMPLATE-MODULE.json
+execution/packages/GE-RMP-014-Claude-Package/EXECUTE-NOW.json
+execution/packages/GE-RMP-014-Claude-Package/EXECUTION-READY.json
+execution/packages/GE-RMP-014-Claude-Package/EXECUTION-REQUEST.md
+execution/packages/GE-RMP-014-Claude-Package/GE-COMM-001-CERTIFICATION.json
+execution/packages/GE-RMP-014-Claude-Package/GE-COMM-001-END-TO-END-VALIDATION.json
+execution/packages/GE-RMP-014-Claude-Package/IMPLEMENT.md
+execution/packages/GE-RMP-014-Claude-Package/IMPLEMENTATION-PATCH-STATUS.json
+execution/packages/GE-RMP-014-Claude-Package/LIVE-VALIDATION-EVIDENCE.json
+execution/packages/GE-RMP-014-Claude-Package/MUTATION-AUTHORITY-D1.json
+execution/packages/GE-RMP-014-Claude-Package/MUTATION-WORK-ORDER.json
+execution/packages/GE-RMP-014-Claude-Package/NOTIFICATION-CONTRACT-EVOLUTION.json
+execution/packages/GE-RMP-014-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/GE-RMP-014-Claude-Package/PRE-MUTATION-CHECKPOINT.json
+execution/packages/GE-RMP-014-Claude-Package/PROSPECT-TIMELINE-EMAIL-LOGGING-AUTHORITY.json
+execution/packages/GE-RMP-014-Claude-Package/START-HERE.md
+execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-PLAN.json
+execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-SPEC.json
+execution/packages/GE-RMP-014-Claude-Package/execution
+execution/packages/GE-RMP-014-Claude-Package/execution/builders
+execution/packages/GE-RMP-014-Claude-Package/governance
+execution/packages/GE-RMP-014-Claude-Package/governance/BASELINE.md
+execution/packages/GE-RMP-014-Claude-Package/governance/cib
+execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated
+execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md
+execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md
+execution/packages/GE-RMP-014-Claude-Package/governance/execution
+execution/packages/GE-RMP-014-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/GE-RMP-014-Claude-Package/governance/execution-derivation
+execution/packages/GE-RMP-014-Claude-Package/governance/execution-derivation/EXECUTION-DERIVATION.md
+execution/packages/GE-RMP-014-Claude-Package/governance/icm
+execution/packages/GE-RMP-014-Claude-Package/governance/icm/generated
+execution/packages/GE-RMP-014-Claude-Package/governance/icm/generated/ICM-GE-RMP-014-CTBC-RECRUITMENT-EMAIL-ENABLEMENT.md
+execution/packages/GE-RMP-014-Claude-Package/governance/rmp
+execution/packages/GE-RMP-014-Claude-Package/governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md
+execution/packages/GE-RMP-014-Claude-Package/governance/startup
+execution/packages/GE-RMP-014-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/GE-RMP-014-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/GE-RMP-014-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/GE-RMP-014-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/GE-RMP-014-Claude-Package/implementation-context
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/client
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/package.json
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/server
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/admissions.ts
+execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/IMPLEMENTATION-PATCH.json
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/PROSPECT-TIMELINE-WORKING-COPY.json
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/admissions.ts
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/admissions.ts.pre-g17
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/admissions.ts.pre-g19
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/admissions.ts.pre-g9
+execution/packages/GE-RMP-014-Claude-Package/implementation-patch/notifications.ts
+execution/packages/GE-RMP-014-Claude-Package/working-copy
+execution/packages/GE-RMP-014-Claude-Package/working-copy/WORKING-COPY.json
+execution/packages/GE-RMP-014-Claude-Package/working-copy/notifications.ts
+execution/packages/GE-RMP-014-Claude-Package.zip
+execution/packages/GE-RMP-014-Claude-Package.zip.sha256
+execution/packages/IA-NEXT-001
+execution/packages/IA-NEXT-001/generated
+execution/packages/IA-NEXT-001/generated/IA-NEXT-001-EXECUTION-CHECKPOINT.json
+execution/packages/IA-NEXT-001/generated/IA-NEXT-001-FOUNDER-ASSIGNMENT.json
+execution/packages/IA-NEXT-001/generated/IA-NEXT-001-OPEN.json
+execution/packages/IAS-001
+execution/packages/IAS-001/generated
+execution/packages/IAS-001/generated/IAS-001-BUILDER-INPUT-CERTIFICATION.json
+execution/packages/IAS-001/generated/IAS-001-BUILDER-INPUT-SET-TEMPLATE.json
+execution/packages/IAS-001/generated/IAS-001-TEMPLATE-VALIDATION.json
+execution/packages/IAS-001/generated/IAS-001-WORK-PACKAGE.json
+execution/packages/IC-002B
+execution/packages/IC-002B/generated
+execution/packages/IC-002B/generated/IC-002B-CANONICAL-ROUTE-INVENTORY.json
+execution/packages/IC-002B/generated/IC-002B-FOUNDER-APPROVAL-PACKAGE.json
+execution/packages/IC-002B/generated/IC-002B-PROPOSED-CANONICAL-ROUTING.json
+execution/packages/INF-010E35A-Claude-Package
+execution/packages/INF-010E35A-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/INF-010E35A-Claude-Package/START-HERE.md
+execution/packages/INF-010E35A-Claude-Package/execution
+execution/packages/INF-010E35A-Claude-Package/execution/builders
+execution/packages/INF-010E35A-Claude-Package/governance
+execution/packages/INF-010E35A-Claude-Package/governance/BASELINE.md
+execution/packages/INF-010E35A-Claude-Package/governance/cib
+execution/packages/INF-010E35A-Claude-Package/governance/cib/generated
+execution/packages/INF-010E35A-Claude-Package/governance/cib/generated/CIB-INF-010E35A-INFRASTRUCTURE-MATERIALIZATION.md
+execution/packages/INF-010E35A-Claude-Package/governance/execution
+execution/packages/INF-010E35A-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/INF-010E35A-Claude-Package/governance/execution-derivation
+execution/packages/INF-010E35A-Claude-Package/governance/execution-derivation/INF-010E35A-EXECUTION-DERIVATION.md
+execution/packages/INF-010E35A-Claude-Package/governance/icm
+execution/packages/INF-010E35A-Claude-Package/governance/icm/generated
+execution/packages/INF-010E35A-Claude-Package/governance/icm/generated/INF-010E35A-IMPLEMENTATION-CONTEXT-MANIFEST.md
+execution/packages/INF-010E35A-Claude-Package/governance/rmp
+execution/packages/INF-010E35A-Claude-Package/governance/rmp/INF-010E35A-IMPLEMENTATION-AUTHORITY.md
+execution/packages/INF-010E35A-Claude-Package/governance/startup
+execution/packages/INF-010E35A-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/INF-010E35A-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/INF-010E35A-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/INF-010E35A-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/INF-010E35A-Claude-Package/implementation-context
+execution/packages/INF-010E35A-Claude-Package.zip
+execution/packages/INF-010E35A-Claude-Package.zip.sha256
+execution/packages/JPE-002-Claude-Package
+execution/packages/JPE-002-Claude-Package/PACKAGE-MANIFEST.md
+execution/packages/JPE-002-Claude-Package/START-HERE.md
+execution/packages/JPE-002-Claude-Package/execution
+execution/packages/JPE-002-Claude-Package/execution/builders
+execution/packages/JPE-002-Claude-Package/governance
+execution/packages/JPE-002-Claude-Package/governance/BASELINE.md
+execution/packages/JPE-002-Claude-Package/governance/cib
+execution/packages/JPE-002-Claude-Package/governance/cib/generated
+execution/packages/JPE-002-Claude-Package/governance/cib/generated/CIB-JPE-002-JOURNEY-PREFERENCE-ACTIVATION.md
+execution/packages/JPE-002-Claude-Package/governance/execution
+execution/packages/JPE-002-Claude-Package/governance/execution/EXECUTION-PIPELINE.md
+execution/packages/JPE-002-Claude-Package/governance/execution-derivation
+execution/packages/JPE-002-Claude-Package/governance/execution-derivation/JPE-002-EXECUTION-DERIVATION.md
+execution/packages/JPE-002-Claude-Package/governance/icm
+execution/packages/JPE-002-Claude-Package/governance/icm/generated
+execution/packages/JPE-002-Claude-Package/governance/icm/generated/ICM-JPE-002-JOURNEY-PREFERENCE-ACTIVATION.md
+execution/packages/JPE-002-Claude-Package/governance/rmp
+execution/packages/JPE-002-Claude-Package/governance/rmp/JPE-002-IMPLEMENTATION-AUTHORITY.md
+execution/packages/JPE-002-Claude-Package/governance/startup
+execution/packages/JPE-002-Claude-Package/governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+execution/packages/JPE-002-Claude-Package/governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+execution/packages/JPE-002-Claude-Package/governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+execution/packages/JPE-002-Claude-Package/governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+execution/packages/JPE-002-Claude-Package/implementation-context
+execution/packages/JPE-002-Claude-Package/web
+execution/packages/JPE-002-Claude-Package/web/src
+execution/packages/JPE-002-Claude-Package/web/src/growth
+execution/packages/JPE-002-Claude-Package/web/src/growth/components
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/GrowthProvider.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/Hero.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/HeroContent.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/index.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout/GrowthLayout.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout/index.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/Navigation.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/NavigationItem.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/index.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/AdmissionsSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CallToActionSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CooperativePrinciplesSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/FAQSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/JourneyDiscoverySection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/MembershipSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/ProgramsSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/ScholarshipsSection.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/index.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/content
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/admissions.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/faq.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/footer.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/home.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/navigation.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/programs.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/scholarships.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/admissions.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/faq.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/footer.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/home.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/navigation.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/programs.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/scholarships.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/admissions.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/faq.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/footer.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/home.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/navigation.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/programs.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/scholarships.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/hooks
+execution/packages/JPE-002-Claude-Package/web/src/growth/hooks/useContent.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/hooks/useLocale.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/hooks/useRegistry.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/index.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/pages
+execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing
+execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingPage.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingSections.tsx
+execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/index.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/admissions.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/assets.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/faq.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/journey.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/navigation.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/programs.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/registry/scholarships.json
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/bootstrap.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/cache.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/defaultProvider.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/loader.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/locales.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/providers.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/registry.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/resolver.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/types
+execution/packages/JPE-002-Claude-Package/web/src/growth/types/content.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/types/locale.ts
+execution/packages/JPE-002-Claude-Package/web/src/growth/types/registry.ts
+execution/packages/JPE-002-Claude-Package.zip
+execution/packages/JPE-002-Claude-Package.zip.sha256
+execution/packages/LEAP-002
+execution/packages/LEAP-002/LEAP-002-MASTER-EXECUTION-BRIEF.md
+execution/packages/LEAP-002/generated
+execution/packages/LEAP-002/generated/CIB-LEAP-002-JOURNEY-ORIENTED-LANDING-EXPERIENCE.md
+execution/packages/LEAP-002/generated/LEAP-002-BUILDER-INPUT-SET.json
+execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC-QUALIFICATION.json
+execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.md
+execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip
+execution/packages/LEAP-002/materialized
+execution/packages/LEAP-002/materialized/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip
+execution/packages/LEAP-IMPLEMENT-RDM-001
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/IMPLEMENT.md
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-001-IMPLEMENTATION-MANIFEST.json
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/evidence
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/mutation-corridor
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/mutation-corridor/CooperativePrinciplesSection.tsx
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE-QUALIFICATION.json
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE.zip
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-IMPLEMENTATION-MANIFEST.json
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/IMPLEMENT.md
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/JourneyDiscoverySection.tsx
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-002-IMPLEMENTATION-MANIFEST.json
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/evidence
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/mutation-corridor
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE.zip
+execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-IMPLEMENTATION-MANIFEST.json
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Build-Output.txt
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/FOUNDER-ACCEPTANCE.json
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Files-Modified.txt
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Remaining-Bounded-Gap.md
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Repository-Mutation-Summary.md
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Runtime-Validation.md
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/git-diff-stat.txt
+execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/git-diff.patch
+execution/packages/LEAP-PKG-001
+execution/packages/LEAP-PKG-001/builder-review
+execution/packages/LEAP-PKG-001/builder-review/BUILDER-REVIEW-SUMMARY.json
+execution/packages/LEAP-PKG-001/builder-review/LEAP-002-ARTIFACT-CLASSIFICATION.json
+execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-ASSEMBLY-MANIFEST.json
+execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-BUILDER-ASSEMBLY.json
+execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-BUILDER-EXECUTION.log
+execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-CONTRACT-DIVERGENCE.json
+execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-CONTRACT-EVIDENCE.md
+execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-REPOSITORY-BLOCKER.json
+execution/packages/LEAP-PKG-001/generated
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-ASSEMBLY-MANIFEST.json
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER-ASSEMBLY.json
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER-ASSEMBLY.json.sha256
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER-EXECUTION.log
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER-HELP.txt
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER.log
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-CONTRACT-DIVERGENCE.json
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-CONTRACT-EVIDENCE.md
+execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-REPOSITORY-BLOCKER.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE
+execution/packages/LER-001A-CONTACT-EXPERIENCE/IMPLEMENTATION-BRIEF.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/IMPLEMENTATION-PROMPT.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PACKAGE-CERTIFICATION.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PACKAGE-MANIFEST.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/CLAUDE-INSTRUCTION.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/IMPLEMENTATION-BRIEF.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/PACKAGE-CERTIFICATION.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/assets
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/assets/Whatsapp.jpg
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/assets/zalo.jpg
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/README.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/ContactSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/HANDOFF.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/LandingSections.tsx.patch
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/MANIFEST.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/README.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/CLAUDE-INSTRUCTION.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/IMPLEMENTATION-BRIEF.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/PACKAGE-CERTIFICATION.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/assets
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/assets/Whatsapp.jpg
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/assets/zalo.jpg
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/CallToActionSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/CooperativePrinciplesSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/FAQSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/LandingSections.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/MembershipSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/SURFACE.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/index.ts
+execution/packages/LER-001A-CONTACT-EXPERIENCE/assets
+execution/packages/LER-001A-CONTACT-EXPERIENCE/assets/ASSET-MANIFEST.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/ContactSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/GENERATED-FILES.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/IMPLEMENTATION-CONTEXT.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/IMPLEMENTATION-DELIVERABLES.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/LandingSections.patch.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/SPRINT-EXIT.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/mutations
+execution/packages/LER-001A-CONTACT-EXPERIENCE/mutations/CONTACT-COMPONENT-CONTRACT.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/mutations/IMPLEMENTATION-ORDER.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/mutations/REPOSITORY-MUTATION-PLAN.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/repository
+execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/ContactSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/HANDOFF.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/LandingSections.tsx.patch
+execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/MANIFEST.json
+execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/README.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/README.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/components
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/components/Sections
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/components/Sections/ContactSection.tsx
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/pages
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/pages/Landing
+execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/pages/Landing/LandingSections.tsx.patch
+execution/packages/LER-001A-CONTACT-EXPERIENCE/spec
+execution/packages/LER-001A-CONTACT-EXPERIENCE/spec/CONTACT-SECTION-SPEC.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/spec/IMPLEMENTATION-AUTHORITY.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/spec/MUTATION-MANIFEST.md
+execution/packages/LER-001A-CONTACT-EXPERIENCE/validation
+execution/packages/LER-001A-CONTACT-EXPERIENCE/validation/IMPLEMENTATION-CHECKLIST.md
+execution/packages/LES-001
+execution/packages/LES-001/LANDING-SURFACE-SOURCE
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/IMPLEMENTATION-WORKSPACE.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/PUBLICATION-CANDIDATE.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/ABVariantSelector.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/GrowthProvider.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Hero
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Hero/Hero.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Hero/HeroContent.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Hero/index.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout/GrowthLayout.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout/index.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Navigation
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Navigation/Navigation.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Navigation/NavigationItem.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Navigation/index.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/AdmissionsSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/CallToActionSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/CooperativePrinciplesSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/FAQSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/JourneyDiscoverySection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/MembershipSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/ProgramsSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/ScholarshipsSection.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/index.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/admissions.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/faq.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/footer.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/home.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/navigation.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/programs.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/scholarships.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/admissions.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/faq.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/footer.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/home.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/navigation.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/programs.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/scholarships.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/admissions.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/faq.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/footer.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/home.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/navigation.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/programs.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/scholarships.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks/useContent.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks/useLocale.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks/useRegistry.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/index.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingExperience.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingPage.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingSections.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingVariantA.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingVariantB.tsx
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/index.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/admissions.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/assets.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/faq.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/journey.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/navigation.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/programs.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/scholarships.json
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/bootstrap.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/cache.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/defaultProvider.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/loader.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/locales.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/providers.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/registry.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/resolver.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/types
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/types/content.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/types/locale.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE/types/registry.ts
+execution/packages/LES-001/LANDING-SURFACE-SOURCE.zip
+execution/packages/LES-001/generated
+execution/packages/LES-001/generated/PACKAGE-MANIFEST.json
+execution/packages/LES-001/generated/README.md
+execution/packages/LES-001/implementation-workspace
+execution/packages/LES-001/implementation-workspace/IMPLEMENTATION-WORKSPACE.json
+execution/packages/LES-001/implementation-workspace/LEAP-001
+execution/packages/LES-001/implementation-workspace/LEAP-001/MANIFEST.json
+execution/packages/LES-001/implementation-workspace/PUBLICATION-CANDIDATE.json
+execution/packages/LES-001/implementation-workspace/components
+execution/packages/LES-001/implementation-workspace/components/ABVariantSelector.tsx
+execution/packages/LES-001/implementation-workspace/components/GrowthProvider.tsx
+execution/packages/LES-001/implementation-workspace/components/Hero
+execution/packages/LES-001/implementation-workspace/components/Hero/Hero.tsx
+execution/packages/LES-001/implementation-workspace/components/Hero/HeroContent.tsx
+execution/packages/LES-001/implementation-workspace/components/Hero/index.ts
+execution/packages/LES-001/implementation-workspace/components/Layout
+execution/packages/LES-001/implementation-workspace/components/Layout/GrowthLayout.tsx
+execution/packages/LES-001/implementation-workspace/components/Layout/index.ts
+execution/packages/LES-001/implementation-workspace/components/Navigation
+execution/packages/LES-001/implementation-workspace/components/Navigation/Navigation.tsx
+execution/packages/LES-001/implementation-workspace/components/Navigation/NavigationItem.tsx
+execution/packages/LES-001/implementation-workspace/components/Navigation/index.ts
+execution/packages/LES-001/implementation-workspace/components/Sections
+execution/packages/LES-001/implementation-workspace/components/Sections/AdmissionsSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/CallToActionSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/CooperativePrinciplesSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/FAQSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/JourneyDiscoverySection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/MembershipSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/ProgramsSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/ScholarshipsSection.tsx
+execution/packages/LES-001/implementation-workspace/components/Sections/index.ts
+execution/packages/LES-001/implementation-workspace/content
+execution/packages/LES-001/implementation-workspace/content/en
+execution/packages/LES-001/implementation-workspace/content/en/admissions.json
+execution/packages/LES-001/implementation-workspace/content/en/faq.json
+execution/packages/LES-001/implementation-workspace/content/en/footer.json
+execution/packages/LES-001/implementation-workspace/content/en/home.json
+execution/packages/LES-001/implementation-workspace/content/en/navigation.json
+execution/packages/LES-001/implementation-workspace/content/en/programs.json
+execution/packages/LES-001/implementation-workspace/content/en/scholarships.json
+execution/packages/LES-001/implementation-workspace/content/vi
+execution/packages/LES-001/implementation-workspace/content/vi/admissions.json
+execution/packages/LES-001/implementation-workspace/content/vi/faq.json
+execution/packages/LES-001/implementation-workspace/content/vi/footer.json
+execution/packages/LES-001/implementation-workspace/content/vi/home.json
+execution/packages/LES-001/implementation-workspace/content/vi/navigation.json
+execution/packages/LES-001/implementation-workspace/content/vi/programs.json
+execution/packages/LES-001/implementation-workspace/content/vi/scholarships.json
+execution/packages/LES-001/implementation-workspace/content/zh
+execution/packages/LES-001/implementation-workspace/content/zh/admissions.json
+execution/packages/LES-001/implementation-workspace/content/zh/faq.json
+execution/packages/LES-001/implementation-workspace/content/zh/footer.json
+execution/packages/LES-001/implementation-workspace/content/zh/home.json
+execution/packages/LES-001/implementation-workspace/content/zh/navigation.json
+execution/packages/LES-001/implementation-workspace/content/zh/programs.json
+execution/packages/LES-001/implementation-workspace/content/zh/scholarships.json
+execution/packages/LES-001/implementation-workspace/hooks
+execution/packages/LES-001/implementation-workspace/hooks/useContent.ts
+execution/packages/LES-001/implementation-workspace/hooks/useLocale.ts
+execution/packages/LES-001/implementation-workspace/hooks/useRegistry.ts
+execution/packages/LES-001/implementation-workspace/index.ts
+execution/packages/LES-001/implementation-workspace/pages
+execution/packages/LES-001/implementation-workspace/pages/Landing
+execution/packages/LES-001/implementation-workspace/pages/Landing/LandingExperience.tsx
+execution/packages/LES-001/implementation-workspace/pages/Landing/LandingPage.tsx
+execution/packages/LES-001/implementation-workspace/pages/Landing/LandingSections.tsx
+execution/packages/LES-001/implementation-workspace/pages/Landing/LandingVariantA.tsx
+execution/packages/LES-001/implementation-workspace/pages/Landing/LandingVariantB.tsx
+execution/packages/LES-001/implementation-workspace/pages/Landing/index.ts
+execution/packages/LES-001/implementation-workspace/registry
+execution/packages/LES-001/implementation-workspace/registry/admissions.json
+execution/packages/LES-001/implementation-workspace/registry/assets.json
+execution/packages/LES-001/implementation-workspace/registry/faq.json
+execution/packages/LES-001/implementation-workspace/registry/journey.json
+execution/packages/LES-001/implementation-workspace/registry/navigation.json
+execution/packages/LES-001/implementation-workspace/registry/programs.json
+execution/packages/LES-001/implementation-workspace/registry/scholarships.json
+execution/packages/LES-001/implementation-workspace/runtime
+execution/packages/LES-001/implementation-workspace/runtime/bootstrap.ts
+execution/packages/LES-001/implementation-workspace/runtime/cache.ts
+execution/packages/LES-001/implementation-workspace/runtime/defaultProvider.ts
+execution/packages/LES-001/implementation-workspace/runtime/loader.ts
+execution/packages/LES-001/implementation-workspace/runtime/locales.ts
+execution/packages/LES-001/implementation-workspace/runtime/providers.ts
+execution/packages/LES-001/implementation-workspace/runtime/registry.ts
+execution/packages/LES-001/implementation-workspace/runtime/resolver.ts
+execution/packages/LES-001/implementation-workspace/types
+execution/packages/LES-001/implementation-workspace/types/content.ts
+execution/packages/LES-001/implementation-workspace/types/locale.ts
+execution/packages/LES-001/implementation-workspace/types/registry.ts
+execution/packages/MP-001
+execution/packages/MP-001/generated
+execution/packages/MP-001/generated/MP-001-BUILD-VALIDATION.json
+execution/packages/MP-001/generated/MP-001-CLOSURE.json
+execution/packages/MP-001/generated/MP-001-CONTRACT-VERIFICATION.json
+execution/packages/MP-001/generated/MP-001-EVIDENCE-RECOVERY.json
+execution/packages/MP-001/generated/MP-001-EXECUTION-CHECKPOINT.json
+execution/packages/MP-001/generated/MP-001-EXPERIENCE-ACCEPTANCE.json
+execution/packages/MP-001/generated/MP-001-FOUNDER-ACCEPTANCE-PACKAGE.json
+execution/packages/MP-001/generated/MP-001-MUTATION-CONTRACT.json
+execution/packages/MP-001/generated/MP-001-PRE-MUTATION-BASELINE.json
+execution/packages/MP-001/generated/MP-001-RUNTIME-VALIDATION.json
+execution/packages/RDM-AUTH-001-PIC
+execution/packages/RDM-AUTH-001-PIC/CLAUDE.md
+execution/packages/RDM-AUTH-001-PIC/IMPLEMENT.md
+execution/packages/RDM-AUTH-001-PIC/PACKAGE-MANIFEST.md
+execution/packages/RDM-AUTH-001-PIC/authorities
+execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-ENGINE.md
+execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-HANDOFF.json
+execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json
+execution/packages/RDM-AUTH-001-PIC/evidence
+execution/packages/RDM-AUTH-001-PIC/repository
+execution/packages/RDM-AUTH-001-PIC/repository/client
+execution/packages/RDM-AUTH-001-PIC/repository/client/src
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/NavigationConsumptionAuthority.ts
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/PostAuthenticationContinuation.ts
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/RuntimeNavigationPolicy.ts
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx
+execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx
+execution/packages/RDM-AUTH-001-PIC.zip
+execution/packages/RTP-010
+execution/packages/RTP-010/generated
+execution/packages/RTP-010/generated/RTP-010-GAP-CERTIFICATION.json
+execution/packages/generated
+execution/packages/generated/IMPLEMENTATION-AUTHORITY-REGISTRY.json
+execution/packages/generated/LES-001
+execution/packages/generated/LES-001/CLAUDE-EXECUTION-PACKAGE.json
+execution/packages/generated/LES-001/CLAUDE-IMPLEMENTATION-PROMPT.md
+execution/packages/generated/LES-001/CLAUDE-MUTATION-PACKAGE.md
+execution/packages/generated/LES-001/CLAUDE-SOURCE-PATCH.md
+execution/packages/generated/LES-001/LANDING-PAGE-IMPLEMENTATION-PACKAGE.json
+execution/packages/generated/LES-001/LANDING-PAGE-SOURCE-MUTATION.json
+execution/packages/generated/LES-001/REPOSITORY-MUTATION-PACKAGE.json
+execution/recovery
+execution/recovery/gex_rec_020.py
+recovery/backups/admin.ts.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/backups/admin.ts.bak')
+recovery/backups/admin.ts.bak.20260618022314    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/backups/admin.ts.bak.20260618022314')
+recovery/backups/supabase-dal.ts.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/backups/supabase-dal.ts.bak')
+recovery/backups/supabase-dal.ts.bak.20260618022314    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/backups/supabase-dal.ts.bak.20260618022314')
+recovery/backups/supabase-types.ts.bak.20260618023337    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/backups/supabase-types.ts.bak.20260618023337')
+recovery/backups/supabase-types.ts.bak.20260618023539    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/backups/supabase-types.ts.bak.20260618023539')
+recovery/hubdashboard_implicit_any_cluster_rollback/HubDashboard.tsx.pre_implicit_any_fix.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/hubdashboard_implicit_any_cluster_rollback/HubDashboard.tsx.pre_implicit_any_fix.bak')
+recovery/routes_typing_cluster_rollback/routes.ts.pre_routes_typing_fix.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/routes_typing_cluster_rollback/routes.ts.pre_routes_typing_fix.bak')
+recovery/top_level_await_cluster_rollback/index.ts.pre_top_level_await_fix.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/top_level_await_cluster_rollback/index.ts.pre_top_level_await_fix.bak')
+recovery/websocket_contract_fix/RECOVERY_MANIFEST.txt    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/RECOVERY_MANIFEST.txt')
+recovery/websocket_contract_fix/execution_authorization_decision.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/execution_authorization_decision.log')
+recovery/websocket_contract_fix/execution_authorization_review.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/execution_authorization_review.log')
+recovery/websocket_contract_fix/execution_run_and_verification.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/execution_run_and_verification.log')
+recovery/websocket_contract_fix/final_live_state_verification.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/final_live_state_verification.log')
+recovery/websocket_contract_fix/final_logic_implementation_plan.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/final_logic_implementation_plan.log')
+recovery/websocket_contract_fix/live_truth_revalidation.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/live_truth_revalidation.log')
+recovery/websocket_contract_fix/post_import_reinventory.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/post_import_reinventory.log')
+recovery/websocket_contract_fix/post_websocket_reinventory.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/post_websocket_reinventory.log')
+recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.cjs    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.cjs')
+recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.pre_impl.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.pre_impl.bak')
+recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.scaffold.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.scaffold.bak')
+recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.cjs    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.cjs')
+recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.pre_codegen.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.pre_codegen.bak')
+recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.pre_logic.bak    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.pre_logic.bak')
+recovery/websocket_contract_fix/websocket_contract_fix_execution_reconstructed.js    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_contract_fix_execution_reconstructed.js')
+recovery/websocket_contract_fix/websocket_contract_fix_execution_v2_reconstructed.js    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_contract_fix_execution_v2_reconstructed.js')
+recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.cjs    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.cjs')
+recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.js    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.js')
+recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.log')
+recovery/websocket_contract_fix/websocket_execution_artifact_upgrade_recovery.cjs    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_execution_artifact_upgrade_recovery.cjs')
+recovery/websocket_contract_fix/websocket_execution_artifact_upgrade_recovery.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_execution_artifact_upgrade_recovery.log')
+recovery/websocket_contract_fix/websocket_type_alias_discovery.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_type_alias_discovery.log')
+recovery/websocket_contract_fix/websocket_type_import_cluster.log    ([Errno 2] No such file or directory: '/home/runner/workspace/recovery/websocket_contract_fix/websocket_type_import_cluster.log')

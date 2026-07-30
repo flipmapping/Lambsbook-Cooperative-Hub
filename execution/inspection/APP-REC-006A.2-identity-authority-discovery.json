@@ -1,0 +1,2638 @@
+{
+  "server/routes.ts": [
+    {
+      "term": "member/me",
+      "line": 1597
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1433
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1562
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1597
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1648
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1673
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1685
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1697
+    }
+  ],
+  "server/middleware/attachUserContext.ts": [
+    {
+      "term": "attachUserContext",
+      "line": 5
+    },
+    {
+      "term": "attachUserContext",
+      "line": 25
+    }
+  ],
+  "server/routes/admin.ts": [
+    {
+      "term": "attachUserContext",
+      "line": 5
+    },
+    {
+      "term": "attachUserContext",
+      "line": 5
+    },
+    {
+      "term": "attachUserContext",
+      "line": 472
+    }
+  ],
+  "server/routes/devTestAuth.ts": [
+    {
+      "term": "attachUserContext",
+      "line": 4
+    },
+    {
+      "term": "attachUserContext",
+      "line": 4
+    },
+    {
+      "term": "attachUserContext",
+      "line": 8
+    }
+  ],
+  "server/routes/member.ts": [
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 23
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 76
+    },
+    {
+      "term": "attachUserContext",
+      "line": 142
+    },
+    {
+      "term": "attachUserContext",
+      "line": 261
+    },
+    {
+      "term": "attachUserContext",
+      "line": 367
+    },
+    {
+      "term": "attachUserContext",
+      "line": 477
+    },
+    {
+      "term": "attachUserContext",
+      "line": 530
+    },
+    {
+      "term": "attachUserContext",
+      "line": 575
+    }
+  ],
+  "client/src/lib/auth/PostAuthenticationContinuation.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 44
+    },
+    {
+      "term": "RuntimeState",
+      "line": 51
+    },
+    {
+      "term": "RuntimeState",
+      "line": 58
+    },
+    {
+      "term": "RuntimeState",
+      "line": 110
+    },
+    {
+      "term": "RuntimeState",
+      "line": 112
+    },
+    {
+      "term": "RuntimeState",
+      "line": 188
+    },
+    {
+      "term": "RuntimeState",
+      "line": 191
+    },
+    {
+      "term": "RuntimeState",
+      "line": 210
+    },
+    {
+      "term": "RuntimeState",
+      "line": 228
+    },
+    {
+      "term": "RuntimeState",
+      "line": 237
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 226
+    }
+  ],
+  "client/src/lib/auth/NavigationConsumptionAuthority.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 1
+    },
+    {
+      "term": "RuntimeState",
+      "line": 10
+    },
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 21
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 20
+    }
+  ],
+  "client/src/lib/auth/RuntimeNavigationPolicy.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 1
+    },
+    {
+      "term": "RuntimeState",
+      "line": 9
+    },
+    {
+      "term": "RuntimeState",
+      "line": 19
+    }
+  ],
+  "client/src/pages/MemberDashboard.tsx": [
+    {
+      "term": "member/me",
+      "line": 25
+    },
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "member/me",
+      "line": 33
+    }
+  ],
+  "client/src/pages/HubDashboard.tsx": [
+    {
+      "term": "member/me",
+      "line": 74
+    }
+  ],
+  "client/src/pages/MemberHub.tsx": [
+    {
+      "term": "member/me",
+      "line": 196
+    },
+    {
+      "term": "member/me",
+      "line": 197
+    },
+    {
+      "term": "member/me",
+      "line": 309
+    }
+  ],
+  "client/src/pages/HubAuth.tsx": [
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 17
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 265
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 304
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 20
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 270
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 309
+    }
+  ],
+  "client/src/pages/HubAuthCallback.tsx": [
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 13
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 124
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 16
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 129
+    }
+  ],
+  "src/components/RequireAuth.tsx": [
+    {
+      "term": "useMemberContext",
+      "line": 2
+    },
+    {
+      "term": "useMemberContext",
+      "line": 2
+    },
+    {
+      "term": "useMemberContext",
+      "line": 9
+    }
+  ],
+  "src/hooks/useMemberContext.ts": [
+    {
+      "term": "useMemberContext",
+      "line": 19
+    },
+    {
+      "term": "memberClient",
+      "line": 2
+    }
+  ],
+  "docs/ai/02-runtime-contract-table.md": [
+    {
+      "term": "member/me",
+      "line": 33
+    },
+    {
+      "term": "member/me",
+      "line": 44
+    },
+    {
+      "term": "member/me",
+      "line": 69
+    },
+    {
+      "term": "member/me",
+      "line": 93
+    },
+    {
+      "term": "member/me",
+      "line": 144
+    }
+  ],
+  "docs/ai/03-state-machine-and-flow.md": [
+    {
+      "term": "member/me",
+      "line": 50
+    },
+    {
+      "term": "member/me",
+      "line": 77
+    },
+    {
+      "term": "member/me",
+      "line": 128
+    },
+    {
+      "term": "member/me",
+      "line": 148
+    },
+    {
+      "term": "member/me",
+      "line": 156
+    },
+    {
+      "term": "member/me",
+      "line": 179
+    },
+    {
+      "term": "member/me",
+      "line": 193
+    },
+    {
+      "term": "member/me",
+      "line": 194
+    },
+    {
+      "term": "member/me",
+      "line": 195
+    },
+    {
+      "term": "member/me",
+      "line": 229
+    },
+    {
+      "term": "member/me",
+      "line": 235
+    },
+    {
+      "term": "member/me",
+      "line": 282
+    }
+  ],
+  "docs/ai/06-task-packet-template.md": [
+    {
+      "term": "member/me",
+      "line": 59
+    },
+    {
+      "term": "member/me",
+      "line": 166
+    }
+  ],
+  "docs/ai/10-mvp-system-specification.md": [
+    {
+      "term": "member/me",
+      "line": 158
+    },
+    {
+      "term": "member/me",
+      "line": 220
+    },
+    {
+      "term": "member/me",
+      "line": 243
+    }
+  ],
+  "docs/ai/system-control-plane.md": [
+    {
+      "term": "member/me",
+      "line": 209
+    },
+    {
+      "term": "member/me",
+      "line": 215
+    },
+    {
+      "term": "member/me",
+      "line": 231
+    },
+    {
+      "term": "member/me",
+      "line": 247
+    },
+    {
+      "term": "member/me",
+      "line": 248
+    },
+    {
+      "term": "attachUserContext",
+      "line": 172
+    },
+    {
+      "term": "attachUserContext",
+      "line": 295
+    },
+    {
+      "term": "attachUserContext",
+      "line": 296
+    }
+  ],
+  "docs/architecture/CAD-WP2-DELEGATION-CONTRACT.md": [
+    {
+      "term": "RuntimeState",
+      "line": 31
+    },
+    {
+      "term": "RuntimeState",
+      "line": 66
+    },
+    {
+      "term": "RuntimeState",
+      "line": 78
+    },
+    {
+      "term": "RuntimeState",
+      "line": 84
+    },
+    {
+      "term": "RuntimeState",
+      "line": 92
+    },
+    {
+      "term": "RuntimeState",
+      "line": 112
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 29
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 114
+    }
+  ],
+  "docs/runtime-recovery/post-recovery-auth-continuity-milestone.md": [
+    {
+      "term": "attachUserContext",
+      "line": 11
+    }
+  ],
+  "docs/implementation-evidence/FDR-010E35C/MUT-001/IMPLEMENTATION-EVIDENCE.md": [
+    {
+      "term": "RuntimeState",
+      "line": 60
+    },
+    {
+      "term": "RuntimeState",
+      "line": 67
+    },
+    {
+      "term": "RuntimeState",
+      "line": 80
+    },
+    {
+      "term": "RuntimeState",
+      "line": 132
+    },
+    {
+      "term": "RuntimeState",
+      "line": 134
+    },
+    {
+      "term": "RuntimeState",
+      "line": 224
+    },
+    {
+      "term": "RuntimeState",
+      "line": 227
+    },
+    {
+      "term": "RuntimeState",
+      "line": 247
+    },
+    {
+      "term": "RuntimeState",
+      "line": 259
+    },
+    {
+      "term": "RuntimeState",
+      "line": 267
+    },
+    {
+      "term": "RuntimeState",
+      "line": 287
+    },
+    {
+      "term": "RuntimeState",
+      "line": 296
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 285
+    }
+  ],
+  "docs/implementation-evidence/FDR-010E35C/MUT-001/NEXT-STAGE.md": [
+    {
+      "term": "RuntimeState",
+      "line": 21
+    }
+  ],
+  "docs/implementation-evidence/FDR-010E35C/MUT-001/VALIDATION-EXECUTION-REQUEST.md": [
+    {
+      "term": "RuntimeState",
+      "line": 22
+    },
+    {
+      "term": "RuntimeState",
+      "line": 33
+    }
+  ],
+  "web/src/app/(protected)/dashboard/page.tsx": [
+    {
+      "term": "member/me",
+      "line": 79
+    }
+  ],
+  "mvp-delivery/canonical_mvp_outcome_specification_v1.md": [
+    {
+      "term": "member/me",
+      "line": 74
+    },
+    {
+      "term": "attachUserContext",
+      "line": 110
+    }
+  ],
+  "mvp-delivery/mvp_surface_map_v1.md": [
+    {
+      "term": "attachUserContext",
+      "line": 26
+    },
+    {
+      "term": "attachUserContext",
+      "line": 27
+    }
+  ],
+  "mvp-delivery/mvp_execution_priority_v1.md": [
+    {
+      "term": "attachUserContext",
+      "line": 22
+    }
+  ],
+  "mvp-delivery/mvp_execution_decomposition_v1.md": [
+    {
+      "term": "attachUserContext",
+      "line": 35
+    },
+    {
+      "term": "attachUserContext",
+      "line": 36
+    }
+  ],
+  "mvp-delivery/corridor1_auth_runtime_inspection_v1.md": [
+    {
+      "term": "attachUserContext",
+      "line": 39
+    },
+    {
+      "term": "attachUserContext",
+      "line": 39
+    },
+    {
+      "term": "attachUserContext",
+      "line": 52
+    },
+    {
+      "term": "attachUserContext",
+      "line": 54
+    },
+    {
+      "term": "attachUserContext",
+      "line": 67
+    },
+    {
+      "term": "attachUserContext",
+      "line": 68
+    }
+  ],
+  "mvp-delivery/corridor1_runtime_verification_checklist_v1.md": [
+    {
+      "term": "member/me",
+      "line": 40
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 43
+    },
+    {
+      "term": "attachUserContext",
+      "line": 44
+    }
+  ],
+  "mvp-delivery/corridor1_live_runtime_observation_v1.md": [
+    {
+      "term": "attachUserContext",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 52
+    }
+  ],
+  "mvp-delivery/corridor1_live_observation_closure_v1.md": [
+    {
+      "term": "member/me",
+      "line": 31
+    },
+    {
+      "term": "attachUserContext",
+      "line": 37
+    },
+    {
+      "term": "attachUserContext",
+      "line": 45
+    },
+    {
+      "term": "attachUserContext",
+      "line": 46
+    },
+    {
+      "term": "attachUserContext",
+      "line": 50
+    },
+    {
+      "term": "attachUserContext",
+      "line": 57
+    }
+  ],
+  "mvp-delivery/constitutional_reconciliation/materialization_authority_tension_registry.md": [
+    {
+      "term": "attachUserContext",
+      "line": 45
+    },
+    {
+      "term": "attachUserContext",
+      "line": 49
+    },
+    {
+      "term": "attachUserContext",
+      "line": 72
+    },
+    {
+      "term": "attachUserContext",
+      "line": 91
+    },
+    {
+      "term": "attachUserContext",
+      "line": 134
+    }
+  ],
+  "mvp-delivery/constitutional_reconciliation/reconciliation_closure_matrix.md": [
+    {
+      "term": "attachUserContext",
+      "line": 90
+    }
+  ],
+  "tcrs/03-contracts/DISC-INV-003.md": [
+    {
+      "term": "member/me",
+      "line": 9
+    }
+  ],
+  "tcrs/04-workflows/DISC-INV-002.md": [
+    {
+      "term": "member/me",
+      "line": 9
+    }
+  ],
+  "tcrs/00-obom/mvp-surface-authority-map.md": [
+    {
+      "term": "useMemberContext",
+      "line": 52
+    }
+  ],
+  "recovery/canonical_membership_runtime_table.md": [
+    {
+      "term": "member/me",
+      "line": 15
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 38
+    },
+    {
+      "term": "attachUserContext",
+      "line": 38
+    },
+    {
+      "term": "attachUserContext",
+      "line": 49
+    },
+    {
+      "term": "attachUserContext",
+      "line": 49
+    },
+    {
+      "term": "attachUserContext",
+      "line": 60
+    },
+    {
+      "term": "attachUserContext",
+      "line": 60
+    },
+    {
+      "term": "attachUserContext",
+      "line": 71
+    },
+    {
+      "term": "attachUserContext",
+      "line": 71
+    }
+  ],
+  "recovery/open_brain_membership_runtime_capture.md": [
+    {
+      "term": "member/me",
+      "line": 47
+    },
+    {
+      "term": "member/me",
+      "line": 145
+    },
+    {
+      "term": "member/me",
+      "line": 149
+    },
+    {
+      "term": "member/me",
+      "line": 153
+    },
+    {
+      "term": "attachUserContext",
+      "line": 9
+    },
+    {
+      "term": "attachUserContext",
+      "line": 14
+    },
+    {
+      "term": "attachUserContext",
+      "line": 15
+    },
+    {
+      "term": "attachUserContext",
+      "line": 30
+    },
+    {
+      "term": "attachUserContext",
+      "line": 36
+    }
+  ],
+  "recovery/memberhub_invitations_realization_v1.md": [
+    {
+      "term": "attachUserContext",
+      "line": 13
+    },
+    {
+      "term": "attachUserContext",
+      "line": 79
+    },
+    {
+      "term": "attachUserContext",
+      "line": 187
+    },
+    {
+      "term": "attachUserContext",
+      "line": 373
+    }
+  ],
+  "codex-handoff/HubDashboard.tsx": [
+    {
+      "term": "member/me",
+      "line": 74
+    }
+  ],
+  "codex-handoff/MemberDashboard.tsx": [
+    {
+      "term": "member/me",
+      "line": 25
+    },
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "member/me",
+      "line": 33
+    }
+  ],
+  "codex-handoff/MemberHub.tsx": [
+    {
+      "term": "member/me",
+      "line": 195
+    },
+    {
+      "term": "member/me",
+      "line": 196
+    },
+    {
+      "term": "member/me",
+      "line": 308
+    }
+  ],
+  "codex-handoff/member.ts": [
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 23
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 70
+    },
+    {
+      "term": "attachUserContext",
+      "line": 136
+    },
+    {
+      "term": "attachUserContext",
+      "line": 215
+    },
+    {
+      "term": "attachUserContext",
+      "line": 325
+    },
+    {
+      "term": "attachUserContext",
+      "line": 378
+    },
+    {
+      "term": "attachUserContext",
+      "line": 423
+    }
+  ],
+  "codex-handoff/routes.ts": [
+    {
+      "term": "member/me",
+      "line": 1257
+    },
+    {
+      "term": "attachUserContext",
+      "line": 41
+    },
+    {
+      "term": "attachUserContext",
+      "line": 41
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1093
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1222
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1257
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1308
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1333
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1345
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1357
+    }
+  ],
+  "codex-gateway-handoff/MemberHub.tsx": [
+    {
+      "term": "member/me",
+      "line": 195
+    },
+    {
+      "term": "member/me",
+      "line": 196
+    },
+    {
+      "term": "member/me",
+      "line": 308
+    }
+  ],
+  "codex-gateway-handoff/routes.ts": [
+    {
+      "term": "member/me",
+      "line": 1257
+    },
+    {
+      "term": "attachUserContext",
+      "line": 41
+    },
+    {
+      "term": "attachUserContext",
+      "line": 41
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1093
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1222
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1257
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1308
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1333
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1345
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1357
+    }
+  ],
+  "codex-gateway-handoff/member.ts": [
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 23
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 70
+    },
+    {
+      "term": "attachUserContext",
+      "line": 136
+    },
+    {
+      "term": "attachUserContext",
+      "line": 215
+    },
+    {
+      "term": "attachUserContext",
+      "line": 325
+    },
+    {
+      "term": "attachUserContext",
+      "line": 378
+    },
+    {
+      "term": "attachUserContext",
+      "line": 423
+    }
+  ],
+  ".phase5/workpackages/WP3A/artifacts/PostAuthenticationContinuation.repository.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 68
+    },
+    {
+      "term": "RuntimeState",
+      "line": 76
+    },
+    {
+      "term": "RuntimeState",
+      "line": 84
+    },
+    {
+      "term": "RuntimeState",
+      "line": 88
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 86
+    }
+  ],
+  ".phase5/workpackages/WP3A/repository-source/PostAuthenticationContinuation.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 68
+    },
+    {
+      "term": "RuntimeState",
+      "line": 76
+    },
+    {
+      "term": "RuntimeState",
+      "line": 84
+    },
+    {
+      "term": "RuntimeState",
+      "line": 88
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 86
+    }
+  ],
+  ".phase5/archive/execution-materialization/artifacts/PostAuthenticationContinuation.candidate.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 28
+    },
+    {
+      "term": "RuntimeState",
+      "line": 32
+    },
+    {
+      "term": "RuntimeState",
+      "line": 39
+    },
+    {
+      "term": "RuntimeState",
+      "line": 71
+    },
+    {
+      "term": "RuntimeState",
+      "line": 75
+    },
+    {
+      "term": "RuntimeState",
+      "line": 81
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 79
+    }
+  ],
+  ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/lib/auth/PostAuthenticationContinuation.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 68
+    },
+    {
+      "term": "RuntimeState",
+      "line": 76
+    },
+    {
+      "term": "RuntimeState",
+      "line": 84
+    },
+    {
+      "term": "RuntimeState",
+      "line": 88
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 86
+    }
+  ],
+  ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx": [
+    {
+      "term": "member/me",
+      "line": 195
+    },
+    {
+      "term": "member/me",
+      "line": 196
+    },
+    {
+      "term": "member/me",
+      "line": 308
+    }
+  ],
+  "governance/repository-hygiene/execution-script-classification.md": [
+    {
+      "term": "RuntimeState",
+      "line": 59
+    }
+  ],
+  "governance/cib/generated/CIB-HUB-RMP-002-AUTHENTICATION-NORMALIZATION.md": [
+    {
+      "term": "RuntimeState",
+      "line": 65
+    }
+  ],
+  "governance/icm/generated/ICM-APP-REALIZATION-002H.md": [
+    {
+      "term": "attachUserContext",
+      "line": 103
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/IMPLEMENT.md": [
+    {
+      "term": "RuntimeState",
+      "line": 33
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/PostAuthenticationContinuation.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 44
+    },
+    {
+      "term": "RuntimeState",
+      "line": 51
+    },
+    {
+      "term": "RuntimeState",
+      "line": 58
+    },
+    {
+      "term": "RuntimeState",
+      "line": 110
+    },
+    {
+      "term": "RuntimeState",
+      "line": 112
+    },
+    {
+      "term": "RuntimeState",
+      "line": 188
+    },
+    {
+      "term": "RuntimeState",
+      "line": 191
+    },
+    {
+      "term": "RuntimeState",
+      "line": 204
+    },
+    {
+      "term": "RuntimeState",
+      "line": 222
+    },
+    {
+      "term": "RuntimeState",
+      "line": 231
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 220
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/NavigationConsumptionAuthority.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 1
+    },
+    {
+      "term": "RuntimeState",
+      "line": 10
+    },
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 21
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 20
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/RuntimeNavigationPolicy.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 1
+    },
+    {
+      "term": "RuntimeState",
+      "line": 9
+    },
+    {
+      "term": "RuntimeState",
+      "line": 19
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx": [
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 17
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 265
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 304
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 20
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 270
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 309
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx": [
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 13
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 124
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 16
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 129
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json": [
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 14
+    },
+    {
+      "term": "RuntimeState",
+      "line": 25
+    }
+  ],
+  "execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-ENGINE.md": [
+    {
+      "term": "RuntimeState",
+      "line": 25
+    }
+  ],
+  "execution/sprints/SFP-001/REPOSITORY-TRUTH-SUMMARY.md": [
+    {
+      "term": "RuntimeState",
+      "line": 226
+    },
+    {
+      "term": "RuntimeState",
+      "line": 439
+    }
+  ],
+  "execution/sprints/LES-001/bootstrap/REPOSITORY-BOOTSTRAP.md": [
+    {
+      "term": "RuntimeState",
+      "line": 163
+    }
+  ],
+  "execution/sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md": [
+    {
+      "term": "useMemberContext",
+      "line": 609
+    },
+    {
+      "term": "memberClient",
+      "line": 610
+    },
+    {
+      "term": "attachUserContext",
+      "line": 414
+    },
+    {
+      "term": "RuntimeState",
+      "line": 371
+    }
+  ],
+  "execution/sprints/LES-001/repository_mutation_package/inspection/PRODUCTION-SURFACE-DISCOVERY.json": [
+    {
+      "term": "useMemberContext",
+      "line": 989
+    },
+    {
+      "term": "memberClient",
+      "line": 994
+    },
+    {
+      "term": "attachUserContext",
+      "line": 804
+    }
+  ],
+  "execution/sprints/APP-REC-004/README.md": [
+    {
+      "term": "member/me",
+      "line": 22
+    },
+    {
+      "term": "attachUserContext",
+      "line": 19
+    }
+  ],
+  "execution/sprints/APP-REC-004/LIVE-TEST-CHECKLIST.md": [
+    {
+      "term": "member/me",
+      "line": 8
+    },
+    {
+      "term": "member/me",
+      "line": 9
+    },
+    {
+      "term": "member/me",
+      "line": 19
+    },
+    {
+      "term": "member/me",
+      "line": 20
+    }
+  ],
+  "execution/sprints/APP-REC-005/IMPLEMENTATION-SPEC.md": [
+    {
+      "term": "member/me",
+      "line": 39
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    }
+  ],
+  "execution/sprints/APP-REC-005/STAGE2-QUERY-STRUCTURAL-CAPTURE.json": [
+    {
+      "term": "member/me",
+      "line": 6
+    },
+    {
+      "term": "member/me",
+      "line": 10
+    },
+    {
+      "term": "member/me",
+      "line": 11
+    },
+    {
+      "term": "member/me",
+      "line": 16
+    },
+    {
+      "term": "member/me",
+      "line": 16
+    }
+  ],
+  "execution/sprints/APP-REC-005/STAGE2-QUERY-STRUCTURAL-CAPTURE.md": [
+    {
+      "term": "member/me",
+      "line": 9
+    },
+    {
+      "term": "member/me",
+      "line": 12
+    },
+    {
+      "term": "member/me",
+      "line": 16
+    },
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "member/me",
+      "line": 28
+    }
+  ],
+  "execution/workspace/FDR-010E35A-001-repository-truth.json": [
+    {
+      "term": "attachUserContext",
+      "line": 19
+    },
+    {
+      "term": "attachUserContext",
+      "line": 83
+    },
+    {
+      "term": "attachUserContext",
+      "line": 89
+    }
+  ],
+  "execution/workspace/FDR-010E35A-002-surface-inventory.json": [
+    {
+      "term": "attachUserContext",
+      "line": 17
+    }
+  ],
+  "execution/workspace/FDR-010E35A-018-backup.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 44
+    },
+    {
+      "term": "RuntimeState",
+      "line": 51
+    },
+    {
+      "term": "RuntimeState",
+      "line": 58
+    },
+    {
+      "term": "RuntimeState",
+      "line": 110
+    },
+    {
+      "term": "RuntimeState",
+      "line": 112
+    },
+    {
+      "term": "RuntimeState",
+      "line": 186
+    },
+    {
+      "term": "RuntimeState",
+      "line": 189
+    },
+    {
+      "term": "RuntimeState",
+      "line": 202
+    },
+    {
+      "term": "RuntimeState",
+      "line": 220
+    },
+    {
+      "term": "RuntimeState",
+      "line": 229
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 218
+    }
+  ],
+  "execution/workspace/FDR-010E35A-026-backup-member.ts": [
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 23
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 70
+    },
+    {
+      "term": "attachUserContext",
+      "line": 136
+    },
+    {
+      "term": "attachUserContext",
+      "line": 253
+    },
+    {
+      "term": "attachUserContext",
+      "line": 359
+    },
+    {
+      "term": "attachUserContext",
+      "line": 469
+    },
+    {
+      "term": "attachUserContext",
+      "line": 522
+    },
+    {
+      "term": "attachUserContext",
+      "line": 567
+    }
+  ],
+  "execution/workspace/APP-REALIZATION-002H-IMPLEMENTATION-CONTEXT-CAPTURE.md": [
+    {
+      "term": "attachUserContext",
+      "line": 51
+    }
+  ],
+  "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts": [
+    {
+      "term": "member/me",
+      "line": 1562
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1398
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1527
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1562
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1613
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1638
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1650
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1662
+    }
+  ],
+  "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts": [
+    {
+      "term": "member/me",
+      "line": 1562
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    },
+    {
+      "term": "attachUserContext",
+      "line": 42
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1398
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1527
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1562
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1613
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1638
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1650
+    },
+    {
+      "term": "attachUserContext",
+      "line": 1662
+    }
+  ],
+  "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx": [
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 17
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 265
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 304
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 20
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 270
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 309
+    }
+  ],
+  "execution/workspace/FDR-010E35A-016-backup/client/src/lib/auth/PostAuthenticationContinuation.ts": [
+    {
+      "term": "RuntimeState",
+      "line": 44
+    },
+    {
+      "term": "RuntimeState",
+      "line": 51
+    },
+    {
+      "term": "RuntimeState",
+      "line": 58
+    },
+    {
+      "term": "RuntimeState",
+      "line": 110
+    },
+    {
+      "term": "RuntimeState",
+      "line": 112
+    },
+    {
+      "term": "RuntimeState",
+      "line": 186
+    },
+    {
+      "term": "RuntimeState",
+      "line": 189
+    },
+    {
+      "term": "RuntimeState",
+      "line": 202
+    },
+    {
+      "term": "RuntimeState",
+      "line": 220
+    },
+    {
+      "term": "RuntimeState",
+      "line": 229
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 218
+    }
+  ],
+  "execution/workspace/FDR-010E35A-025-backup/member.ts": [
+    {
+      "term": "member/me",
+      "line": 27
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 3
+    },
+    {
+      "term": "attachUserContext",
+      "line": 16
+    },
+    {
+      "term": "attachUserContext",
+      "line": 23
+    },
+    {
+      "term": "attachUserContext",
+      "line": 29
+    },
+    {
+      "term": "attachUserContext",
+      "line": 70
+    },
+    {
+      "term": "attachUserContext",
+      "line": 136
+    },
+    {
+      "term": "attachUserContext",
+      "line": 253
+    },
+    {
+      "term": "attachUserContext",
+      "line": 359
+    },
+    {
+      "term": "attachUserContext",
+      "line": 469
+    },
+    {
+      "term": "attachUserContext",
+      "line": 522
+    },
+    {
+      "term": "attachUserContext",
+      "line": 567
+    }
+  ],
+  "execution/workspace/EMP-001C/EXECUTION-TAXONOMY.json": [
+    {
+      "term": "RuntimeState",
+      "line": 471
+    }
+  ],
+  "execution/runtime-validation/FDR-010E35A-003-runtime-dependency-analysis.json": [
+    {
+      "term": "attachUserContext",
+      "line": 12
+    }
+  ],
+  "execution/runtime-validation/FDR-010E35A-028-runtime-capture.json": [
+    {
+      "term": "member/me",
+      "line": 7
+    },
+    {
+      "term": "member/me",
+      "line": 8
+    }
+  ],
+  "execution/runtime-validation/FDR-010E35A-029-runtime-truth-capture.json": [
+    {
+      "term": "member/me",
+      "line": 7
+    },
+    {
+      "term": "member/me",
+      "line": 8
+    },
+    {
+      "term": "member/me",
+      "line": 9
+    },
+    {
+      "term": "member/me",
+      "line": 12
+    }
+  ],
+  "execution/runtime-validation/FDR-010E35A-016-member-identity-contract.json": [
+    {
+      "term": "member/me",
+      "line": 538
+    }
+  ],
+  "execution/runtime-validation/FDR-010E35A-017-live-member-identity.json": [
+    {
+      "term": "member/me",
+      "line": 6
+    },
+    {
+      "term": "member/me",
+      "line": 12
+    }
+  ],
+  "execution/implementation-authorities/FDR-010E35B-Founder-Runtime-Identity-Continuation.json": [
+    {
+      "term": "RuntimeState",
+      "line": 9
+    }
+  ],
+  "execution/implementation-authorities/FDR-010E35B-002-Runtime-Identity-Resolution-Implementation-Package.json": [
+    {
+      "term": "RuntimeState",
+      "line": 8
+    },
+    {
+      "term": "RuntimeState",
+      "line": 9
+    },
+    {
+      "term": "RuntimeState",
+      "line": 10
+    },
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 18
+    },
+    {
+      "term": "RuntimeState",
+      "line": 24
+    }
+  ],
+  "execution/implementation-authorities/FDR-010E35C-Post-Authentication-Runtime-Identity-Resolution.json": [
+    {
+      "term": "RuntimeState",
+      "line": 14
+    },
+    {
+      "term": "RuntimeState",
+      "line": 20
+    }
+  ],
+  "execution/execution-contracts/FDR-010E35B-004-Runtime-Identity-Resolution-Execution-Contract.json": [
+    {
+      "term": "RuntimeState",
+      "line": 12
+    },
+    {
+      "term": "RuntimeState",
+      "line": 23
+    }
+  ],
+  "execution/work-packages/FDR-010E35B-005-Runtime-Identity-Resolution-Implementation-Work-Package.json": [
+    {
+      "term": "RuntimeState",
+      "line": 18
+    },
+    {
+      "term": "RuntimeState",
+      "line": 26
+    },
+    {
+      "term": "RuntimeState",
+      "line": 47
+    },
+    {
+      "term": "RuntimeState",
+      "line": 49
+    }
+  ],
+  "execution/builder-manifests/FDR-010E35B-006-Runtime-Identity-Resolution-Builder-Execution-Manifest.json": [
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 31
+    },
+    {
+      "term": "RuntimeState",
+      "line": 33
+    }
+  ],
+  "execution/acceptance-packages/FDR-010E35B-007-Runtime-Identity-Resolution-Founder-Acceptance-Package.json": [
+    {
+      "term": "RuntimeState",
+      "line": 42
+    },
+    {
+      "term": "RuntimeState",
+      "line": 43
+    }
+  ],
+  "execution/bounded-mutations/FDR-010E35B-WP001-Runtime-Identity-Model.json": [
+    {
+      "term": "RuntimeState",
+      "line": 12
+    },
+    {
+      "term": "RuntimeState",
+      "line": 15
+    },
+    {
+      "term": "RuntimeState",
+      "line": 16
+    }
+  ],
+  "execution/bounded-mutations/FDR-010E35B-WP001A-Runtime-Identity-Type-Contract.json": [
+    {
+      "term": "RuntimeState",
+      "line": 12
+    },
+    {
+      "term": "RuntimeState",
+      "line": 32
+    }
+  ],
+  "execution/execution-dispatch/FDR-010E35C-MUT-001-EXEC-001-Pre-Mutation-Execution-Plan.json": [
+    {
+      "term": "RuntimeState",
+      "line": 19
+    }
+  ],
+  "execution/execution-dispatch/FDR-010E35C-MUT-001-EXEC-002-Execution-Sequence.json": [
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 18
+    }
+  ],
+  "execution/execution-dispatch/FDR-010E35C-MUT-001-VAL-002-Validation-Dispatch.json": [
+    {
+      "term": "RuntimeState",
+      "line": 19
+    },
+    {
+      "term": "RuntimeState",
+      "line": 27
+    }
+  ],
+  "execution/execution-dispatch/FDR-010E35C-MUT-001-VAL-003-Execution-Request-Dispatch.json": [
+    {
+      "term": "RuntimeState",
+      "line": 20
+    }
+  ],
+  "execution/repository-inspections/FDR-010E35C-001-Continuation-Corridor-Inspection.json": [
+    {
+      "term": "RuntimeState",
+      "line": 16
+    },
+    {
+      "term": "RuntimeState",
+      "line": 19
+    },
+    {
+      "term": "RuntimeState",
+      "line": 20
+    }
+  ],
+  "execution/repository-inspections/FDR-010E35C-002-Inspection-Checklist.json": [
+    {
+      "term": "RuntimeState",
+      "line": 11
+    },
+    {
+      "term": "RuntimeState",
+      "line": 19
+    },
+    {
+      "term": "RuntimeState",
+      "line": 27
+    },
+    {
+      "term": "RuntimeState",
+      "line": 36
+    }
+  ],
+  "execution/mutation-authorizations/FDR-010E35C-MUT-001-EXEC-003.json": [
+    {
+      "term": "RuntimeState",
+      "line": 15
+    }
+  ],
+  "execution/validation-requests/FDR-010E35C-MUT-001-VAL-001.json": [
+    {
+      "term": "RuntimeState",
+      "line": 17
+    },
+    {
+      "term": "RuntimeState",
+      "line": 30
+    }
+  ],
+  "execution/validation-sessions/FDR-010E35C-MUT-001-VAL-004-Validation-Session.json": [
+    {
+      "term": "RuntimeState",
+      "line": 19
+    }
+  ],
+  "execution/validation-sessions/FDR-010E35C-MUT-001-VAL-004-EXECUTION.md": [
+    {
+      "term": "RuntimeState",
+      "line": 25
+    },
+    {
+      "term": "RuntimeState",
+      "line": 36
+    }
+  ],
+  "execution/handoff/FDR-010E35C-MUT-001-HANDOFF.json": [
+    {
+      "term": "RuntimeState",
+      "line": 29
+    }
+  ],
+  "execution/handoff/FDR-010E35C-MUT-001-IMPLEMENTATION-ENGINE.md": [
+    {
+      "term": "RuntimeState",
+      "line": 34
+    }
+  ],
+  "execution/rapid-delivery/RDM-AUTH-001.json": [
+    {
+      "term": "RuntimeState",
+      "line": 10
+    },
+    {
+      "term": "RuntimeState",
+      "line": 11
+    },
+    {
+      "term": "RuntimeState",
+      "line": 34
+    }
+  ],
+  "execution/rapid-delivery/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json": [
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 14
+    },
+    {
+      "term": "RuntimeState",
+      "line": 25
+    }
+  ],
+  "execution/rapid-delivery/RDM-AUTH-001-IMPLEMENT.md": [
+    {
+      "term": "RuntimeState",
+      "line": 33
+    }
+  ],
+  "execution/rapid-delivery/RDM-AUTH-001-ENGINE.md": [
+    {
+      "term": "RuntimeState",
+      "line": 25
+    }
+  ],
+  "execution/runtime-certification/RUNTIME-SURFACE-REPORT.md": [
+    {
+      "term": "useMemberContext",
+      "line": 75
+    },
+    {
+      "term": "useMemberContext",
+      "line": 108
+    },
+    {
+      "term": "memberClient",
+      "line": 76
+    },
+    {
+      "term": "memberClient",
+      "line": 109
+    },
+    {
+      "term": "memberClient",
+      "line": 133
+    },
+    {
+      "term": "attachUserContext",
+      "line": 55
+    },
+    {
+      "term": "attachUserContext",
+      "line": 230
+    }
+  ],
+  "execution/runtime-certification/RUNTIME-DIVERGENCE-REPORT.md": [
+    {
+      "term": "useMemberContext",
+      "line": 43
+    },
+    {
+      "term": "memberClient",
+      "line": 44
+    },
+    {
+      "term": "attachUserContext",
+      "line": 30
+    },
+    {
+      "term": "attachUserContext",
+      "line": 40
+    },
+    {
+      "term": "attachUserContext",
+      "line": 111
+    }
+  ],
+  "execution/runtime-certification/RUNTIME-EVIDENCE-REPORT.md": [
+    {
+      "term": "useMemberContext",
+      "line": 183
+    },
+    {
+      "term": "useMemberContext",
+      "line": 400
+    },
+    {
+      "term": "memberClient",
+      "line": 184
+    },
+    {
+      "term": "memberClient",
+      "line": 348
+    },
+    {
+      "term": "memberClient",
+      "line": 476
+    },
+    {
+      "term": "memberClient",
+      "line": 779
+    },
+    {
+      "term": "attachUserContext",
+      "line": 164
+    },
+    {
+      "term": "attachUserContext",
+      "line": 267
+    },
+    {
+      "term": "attachUserContext",
+      "line": 755
+    }
+  ],
+  "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md": [
+    {
+      "term": "member/me",
+      "line": 230
+    },
+    {
+      "term": "member/me",
+      "line": 232
+    },
+    {
+      "term": "member/me",
+      "line": 516
+    },
+    {
+      "term": "member/me",
+      "line": 556
+    },
+    {
+      "term": "member/me",
+      "line": 559
+    },
+    {
+      "term": "member/me",
+      "line": 561
+    },
+    {
+      "term": "member/me",
+      "line": 563
+    },
+    {
+      "term": "member/me",
+      "line": 565
+    },
+    {
+      "term": "member/me",
+      "line": 567
+    },
+    {
+      "term": "member/me",
+      "line": 569
+    },
+    {
+      "term": "member/me",
+      "line": 571
+    },
+    {
+      "term": "member/me",
+      "line": 573
+    },
+    {
+      "term": "member/me",
+      "line": 575
+    },
+    {
+      "term": "member/me",
+      "line": 577
+    },
+    {
+      "term": "useMemberContext",
+      "line": 481
+    },
+    {
+      "term": "useMemberContext",
+      "line": 481
+    },
+    {
+      "term": "useMemberContext",
+      "line": 483
+    },
+    {
+      "term": "useMemberContext",
+      "line": 484
+    },
+    {
+      "term": "useMemberContext",
+      "line": 486
+    },
+    {
+      "term": "useMemberContext",
+      "line": 488
+    },
+    {
+      "term": "useMemberContext",
+      "line": 490
+    },
+    {
+      "term": "useMemberContext",
+      "line": 492
+    },
+    {
+      "term": "useMemberContext",
+      "line": 493
+    },
+    {
+      "term": "useMemberContext",
+      "line": 494
+    },
+    {
+      "term": "useMemberContext",
+      "line": 496
+    },
+    {
+      "term": "memberClient",
+      "line": 485
+    },
+    {
+      "term": "memberClient",
+      "line": 498
+    },
+    {
+      "term": "memberClient",
+      "line": 500
+    },
+    {
+      "term": "attachUserContext",
+      "line": 503
+    },
+    {
+      "term": "attachUserContext",
+      "line": 505
+    },
+    {
+      "term": "attachUserContext",
+      "line": 506
+    },
+    {
+      "term": "attachUserContext",
+      "line": 507
+    },
+    {
+      "term": "attachUserContext",
+      "line": 508
+    },
+    {
+      "term": "attachUserContext",
+      "line": 510
+    },
+    {
+      "term": "attachUserContext",
+      "line": 510
+    },
+    {
+      "term": "attachUserContext",
+      "line": 512
+    },
+    {
+      "term": "attachUserContext",
+      "line": 514
+    },
+    {
+      "term": "attachUserContext",
+      "line": 516
+    },
+    {
+      "term": "attachUserContext",
+      "line": 518
+    },
+    {
+      "term": "attachUserContext",
+      "line": 520
+    },
+    {
+      "term": "attachUserContext",
+      "line": 522
+    },
+    {
+      "term": "attachUserContext",
+      "line": 524
+    },
+    {
+      "term": "attachUserContext",
+      "line": 526
+    },
+    {
+      "term": "attachUserContext",
+      "line": 526
+    },
+    {
+      "term": "attachUserContext",
+      "line": 528
+    },
+    {
+      "term": "attachUserContext",
+      "line": 530
+    },
+    {
+      "term": "attachUserContext",
+      "line": 530
+    },
+    {
+      "term": "attachUserContext",
+      "line": 532
+    },
+    {
+      "term": "attachUserContext",
+      "line": 534
+    },
+    {
+      "term": "attachUserContext",
+      "line": 534
+    },
+    {
+      "term": "attachUserContext",
+      "line": 536
+    },
+    {
+      "term": "attachUserContext",
+      "line": 538
+    },
+    {
+      "term": "attachUserContext",
+      "line": 540
+    },
+    {
+      "term": "attachUserContext",
+      "line": 542
+    },
+    {
+      "term": "attachUserContext",
+      "line": 544
+    },
+    {
+      "term": "attachUserContext",
+      "line": 546
+    },
+    {
+      "term": "attachUserContext",
+      "line": 548
+    },
+    {
+      "term": "attachUserContext",
+      "line": 550
+    },
+    {
+      "term": "attachUserContext",
+      "line": 552
+    },
+    {
+      "term": "attachUserContext",
+      "line": 554
+    },
+    {
+      "term": "attachUserContext",
+      "line": 573
+    },
+    {
+      "term": "attachUserContext",
+      "line": 585
+    }
+  ],
+  "execution/runtime-certification/reports/DASHBOARD-ENTRY-CORRIDOR.md": [
+    {
+      "term": "member/me",
+      "line": 23
+    },
+    {
+      "term": "member/me",
+      "line": 24
+    },
+    {
+      "term": "member/me",
+      "line": 25
+    },
+    {
+      "term": "member/me",
+      "line": 42
+    },
+    {
+      "term": "member/me",
+      "line": 43
+    },
+    {
+      "term": "member/me",
+      "line": 50
+    },
+    {
+      "term": "attachUserContext",
+      "line": 47
+    },
+    {
+      "term": "attachUserContext",
+      "line": 47
+    },
+    {
+      "term": "attachUserContext",
+      "line": 48
+    },
+    {
+      "term": "attachUserContext",
+      "line": 49
+    },
+    {
+      "term": "attachUserContext",
+      "line": 51
+    },
+    {
+      "term": "attachUserContext",
+      "line": 53
+    },
+    {
+      "term": "attachUserContext",
+      "line": 54
+    },
+    {
+      "term": "attachUserContext",
+      "line": 55
+    },
+    {
+      "term": "attachUserContext",
+      "line": 56
+    },
+    {
+      "term": "attachUserContext",
+      "line": 57
+    },
+    {
+      "term": "attachUserContext",
+      "line": 58
+    },
+    {
+      "term": "attachUserContext",
+      "line": 59
+    },
+    {
+      "term": "attachUserContext",
+      "line": 60
+    },
+    {
+      "term": "attachUserContext",
+      "line": 62
+    },
+    {
+      "term": "attachUserContext",
+      "line": 64
+    },
+    {
+      "term": "attachUserContext",
+      "line": 65
+    }
+  ],
+  "execution/inspection/APP-REC-005B-engineering-surface-inspection.json": [
+    {
+      "term": "RuntimeState",
+      "line": 12
+    },
+    {
+      "term": "RuntimeState",
+      "line": 13
+    },
+    {
+      "term": "RuntimeState",
+      "line": 21
+    },
+    {
+      "term": "RuntimeState",
+      "line": 26
+    },
+    {
+      "term": "RuntimeState",
+      "line": 41
+    },
+    {
+      "term": "RuntimeState",
+      "line": 58
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 15
+    },
+    {
+      "term": "resolvePostAuthenticationDestination",
+      "line": 50
+    }
+  ],
+  "execution/inspection/APP-REC-005C-runtime-flow.json": [
+    {
+      "term": "RuntimeState",
+      "line": 8
+    },
+    {
+      "term": "RuntimeState",
+      "line": 14
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 4
+    }
+  ],
+  "execution/implementation-planning/APP-REC-006A-WP001-MUTATION-SPECIFICATION.json": [
+    {
+      "term": "RuntimeState",
+      "line": 18
+    },
+    {
+      "term": "RuntimeState",
+      "line": 31
+    },
+    {
+      "term": "RuntimeState",
+      "line": 33
+    },
+    {
+      "term": "postAuthenticationContinuation",
+      "line": 14
+    }
+  ]
+}

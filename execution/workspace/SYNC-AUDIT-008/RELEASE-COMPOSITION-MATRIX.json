@@ -1,0 +1,67 @@
+{
+  "authority": "SYNC-AUDIT-008",
+  "timestamp": "2026-07-30T14:09:46.958539+00:00",
+  "groups": {
+    "founder_decision_required": {
+      "count": 4,
+      "paths": [
+        "client/src/features/",
+        "server/lib/supabase-dal.ts",
+        "server/messaging/",
+        "server/routes.ts"
+      ]
+    },
+    "identity_authentication": {
+      "count": 5,
+      "paths": [
+        "client/src/pages/HubAuth.tsx",
+        "client/src/pages/HubAuthCallback.tsx",
+        "client/src/pages/HubAuthCallback.tsx.REORDER_CANDIDATE",
+        "server/middleware/attachUserContext.ts",
+        "server/routes/member.ts"
+      ]
+    },
+    "import_pipeline": {
+      "count": 14,
+      "paths": [
+        "server/imports/adapters/",
+        "server/imports/domain/",
+        "server/imports/pipeline/duplicates.ts",
+        "server/imports/pipeline/index.ts",
+        "server/imports/pipeline/normalize.ts",
+        "server/imports/pipeline/persist.ts",
+        "server/imports/pipeline/report.ts",
+        "server/imports/pipeline/runImportPipeline.ts",
+        "server/imports/pipeline/smoke.ts",
+        "server/imports/pipeline/stage.ts",
+        "server/imports/pipeline/validate.ts",
+        "server/imports/reporting/",
+        "server/imports/staging/",
+        "server/imports/validation/"
+      ]
+    },
+    "invitation_notifications": {
+      "count": 4,
+      "paths": [
+        "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+        "client/src/components/notifications/ChannelSelector.tsx",
+        "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+        "server/services/notifications.ts"
+      ]
+    },
+    "shared_model": {
+      "count": 2,
+      "paths": [
+        "shared/organization/",
+        "shared/schema.ts"
+      ]
+    },
+    "zalo_integration": {
+      "count": 2,
+      "paths": [
+        "server/integrations/zalo/adapter.ts",
+        "server/integrations/zalo/auth.ts"
+      ]
+    }
+  }
+}

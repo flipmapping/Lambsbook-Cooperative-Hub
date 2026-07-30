@@ -1,0 +1,41 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "component": "NotificationIntentStore",
+  "version": "1.0",
+  "purpose": "Canonical immutable persistence of CommunicationIntent before provider execution.",
+  "primary_key": "notification_intent_id",
+  "derived_from": "CommunicationIntent",
+  "record": {
+    "notification_intent_id": "uuid",
+    "communication_intent_id": "uuid",
+    "prospect_id": "uuid",
+    "journey_state": "string",
+    "intent_type": "string",
+    "preferred_language": "string",
+    "template_key": "string",
+    "template_version": "string",
+    "requested_channels": [
+      "resend",
+      "zalo"
+    ],
+    "status": "pending",
+    "created_at": "timestamp"
+  },
+  "immutability": {
+    "append_only": true,
+    "payload_mutation": false,
+    "status_updates": [
+      "pending",
+      "queued",
+      "sent",
+      "failed",
+      "retrying"
+    ]
+  },
+  "guarantees": [
+    "Replayable",
+    "Traceable",
+    "Auditable",
+    "Idempotent"
+  ]
+}

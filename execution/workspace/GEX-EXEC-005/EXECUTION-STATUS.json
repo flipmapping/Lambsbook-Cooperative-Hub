@@ -1,0 +1,6 @@
+{
+  "authority": "GEX-EXEC-005",
+  "repository_mutation": false,
+  "next_gate": "Collect live runtime evidence",
+  "ready_for_nm002": false
+}

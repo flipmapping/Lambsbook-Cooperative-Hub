@@ -1,0 +1,34 @@
+{
+  "file": "server/services/admissions.ts",
+  "sha256": "b9f24af06ad6f27dd5bc0abac9f93c7d904b04117023aed5e625ee4f582dfc34",
+  "inventory": {
+    "createProspectCore": {
+      "present": true,
+      "count": 1
+    },
+    "submitProspectRegistration": {
+      "present": true,
+      "count": 1
+    },
+    "createProspect": {
+      "present": true,
+      "count": 2
+    },
+    "createProspectJourney": {
+      "present": true,
+      "count": 2
+    },
+    "sendNotification": {
+      "present": true,
+      "count": 1
+    },
+    "recordProspectActivity": {
+      "present": true,
+      "count": 1
+    },
+    "registrationTemplate": {
+      "present": true,
+      "count": 1
+    }
+  }
+}

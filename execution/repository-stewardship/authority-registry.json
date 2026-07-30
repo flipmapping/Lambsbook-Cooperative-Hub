@@ -1,0 +1,2130 @@
+{
+  "summary": {
+    "authority": "REP-STEWARD-014",
+    "generated_at": "2026-07-30T04:17:32.065946Z",
+    "authority_count": 212,
+    "registry_version": 1
+  },
+  "registry": [
+    {
+      "authority": "APP-COM-001",
+      "json_files": 2,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-29T15:47:22.971303",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-002",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-29T15:51:27.038993",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-003",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-29T16:18:47.777886",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-004",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-29T16:20:56.627398",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:26:21.172829",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-EXEC-LOG-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:27:56.917612",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-IMP-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:21:43.820010",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-IMP-001A",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:25:26.437743",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-INTEGRATION-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T00:55:11.896941",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-INTEGRATION-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T00:59:25.219906",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-NEXT-SPRINT",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T00:42:59.641093",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-RELEASE-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T00:47:36.179372",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-SPRINT-BOARD-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T01:01:06.010435",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-EXEC-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:43:07.416604",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-IMP-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:44:18.617563",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T15:44:07.621844",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T15:57:16.090948",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T15:58:37.074548",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-004",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:04:05.275912",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:17:38.051407",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-006",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:23:45.790839",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-007",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:27:25.317106",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-008",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T03:51:31.296683",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-009",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T07:04:22.699516",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-010",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T07:06:46.459968",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-011",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T07:07:41.035598",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-012",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T07:28:47.259642",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-013",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T07:31:14.376512",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-014",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T07:34:11.819524",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-015",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T10:02:02.108384",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-016",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T10:32:40.693458",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MUT-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:45:30.546556",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-READY-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T14:38:50.663529",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-REC",
+      "json_files": 0,
+      "markdown_files": 3,
+      "total_files": 6,
+      "last_modified": "2026-07-25T09:02:42.711076",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-REC-RPC-INSPECTION",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-28T04:00:18.258234",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-RMP-010E34B-003-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "APP-RMP-010E34B-013-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "APP-RMP-010E34B-016-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "ARCH-HANDOFF-002B",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T14:26:03.098655",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "BUILDER-ACTIVATION-001",
+      "json_files": 1,
+      "markdown_files": 2,
+      "total_files": 4,
+      "last_modified": "2026-07-30T04:11:58.583265",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "BUILDER-HANDOFF-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-30T04:16:58.230421",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "BUILDER-INVOCATION-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-30T04:14:45.504917",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "COM-ARCH-002",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-29T15:53:25.826838",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "COMM-RUNTIME-WORKPACKAGE-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:24:08.367448",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001A",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T03:27:06.714596",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001B",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T03:28:04.722870",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001C",
+      "json_files": 2,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-24T03:35:43.917371",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001D",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-24T03:38:06.052215",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001E",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T03:39:14.129043",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001F",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T03:41:01.226028",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001G",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "EMP-001M-01",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-24T03:51:13.090740",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-02",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-24T03:53:20.231976",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-06",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T09:44:54.622548",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-07",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T15:29:47.117393",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-08",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-24T16:07:46.473726",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-002",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-24T03:43:42.502812",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ENGINEERING-ACTIVATION-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:54:16.491439",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ENGINEERING-HANDOFF-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:47:28.174625",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EXECUTION-BASELINE-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T01:58:52.357543",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "FDR-010E34B",
+      "json_files": 7,
+      "markdown_files": 0,
+      "total_files": 7,
+      "last_modified": "2026-07-12T14:05:19.630839",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "FDR-010E35A-016-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "FDR-010E35A-025-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-06-24T10:47:28.436942",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-11A",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-27T06:16:04.587729",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-13B",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T06:55:46.259521",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-15B",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-27T13:03:00.176311",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-27",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 2,
+      "last_modified": "2026-07-27T15:18:37.069741",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-35",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-27T16:45:46.521574",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-38",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-27T16:57:40.989814",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-41",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:23:29.985800",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-45",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:34:54.401862",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-46",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:43:33.214657",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-47",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:46:53.107099",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-48",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:51:02.627305",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-49",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:52:12.380458",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-50",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 3,
+      "last_modified": "2026-07-27T15:42:21.297474",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-51",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:56:25.376863",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-52",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T02:58:22.910694",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-54",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-55",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 3,
+      "last_modified": "2026-07-28T03:26:53.214838",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-62",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T03:32:59.222881",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-63",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T03:39:13.422743",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-73",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T05:03:38.006706",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-75",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T05:07:33.642591",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-78",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T06:00:28.111846",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-79",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-001M-80",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T07:43:38.926777",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-81",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 2,
+      "last_modified": "2026-07-28T07:58:20.157969",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-89B",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T12:56:13.275423",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-90",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T13:03:06.586101",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-91A",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T13:08:05.197533",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-92C",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T13:38:30.635805",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-92F",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T13:43:05.097034",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-93",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T13:48:46.476150",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-93A",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T13:52:53.117662",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-BUILD-001",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:14:53.810431",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GEX-CLOSE-001G",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:16:08.784957",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-CLOSE-001H",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:21:53.758464",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-CLOSE-001J",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:24:48.930400",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-001",
+      "json_files": 4,
+      "markdown_files": 4,
+      "total_files": 8,
+      "last_modified": "2026-07-29T16:28:37.363458",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-004",
+      "json_files": 1,
+      "markdown_files": 3,
+      "total_files": 4,
+      "last_modified": "2026-07-30T01:56:28.933842",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-005",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T00:54:28.888647",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-006",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T00:56:21.038786",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-011",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-30T03:50:59.759309",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-012",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:56:48.029084",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-013",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:57:33.845096",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-HANDOFF-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T04:07:59.089817",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-JOURNEY-002A",
+      "json_files": 1,
+      "markdown_files": 9,
+      "total_files": 11,
+      "last_modified": "2026-07-29T13:51:53.259883",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-NOTIFY-001",
+      "json_files": 13,
+      "markdown_files": 23,
+      "total_files": 37,
+      "last_modified": "2026-07-29T16:06:09.517837",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-26T02:02:40.261071",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009B",
+      "json_files": 0,
+      "markdown_files": 3,
+      "total_files": 3,
+      "last_modified": "2026-07-25T09:04:29.310819",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009C",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-25T09:15:01.960516",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009C-08",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-25T09:22:58.091394",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-014M-14A-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "GP-EXEC-015A",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:27:02.162996",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015B",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:28:22.030078",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015C",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:30:11.167830",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015D",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:31:21.568964",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015E",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:36:21.932571",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015F",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:38:19.957031",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015F-R1",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T16:40:09.254410",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015F-R2",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T16:42:07.966894",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015G",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 3,
+      "last_modified": "2026-07-27T16:45:00.821601",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015H",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:55:39.310894",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015I",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 3,
+      "last_modified": "2026-07-28T02:49:18.895785",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015J",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T02:54:43.179409",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015K",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T02:57:45.514916",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015L",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T03:06:47.288144",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-016",
+      "json_files": 0,
+      "markdown_files": 2,
+      "total_files": 3,
+      "last_modified": "2026-07-28T03:17:14.719679",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-017",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T03:29:27.505499",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-018",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T04:09:23.647861",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-019",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T04:59:07.764184",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-020",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-28T08:05:31.550775",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-020A",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-28T09:10:01.849819",
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "IMPLEMENTATION-INSPECTION-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T02:22:07.179039",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "IMPLEMENTATION-READINESS-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:18:28.944033",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "LES-001",
+      "json_files": 3,
+      "markdown_files": 0,
+      "total_files": 4,
+      "last_modified": "2026-07-10T10:35:58.174738",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001A-01",
+      "json_files": 6,
+      "markdown_files": 1,
+      "total_files": 7,
+      "last_modified": "2026-07-27T05:38:37.492091",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001A-02",
+      "json_files": 6,
+      "markdown_files": 1,
+      "total_files": 7,
+      "last_modified": "2026-07-27T05:42:40.225876",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001A-03",
+      "json_files": 7,
+      "markdown_files": 1,
+      "total_files": 8,
+      "last_modified": "2026-07-27T05:49:14.689054",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001B-01",
+      "json_files": 5,
+      "markdown_files": 1,
+      "total_files": 6,
+      "last_modified": "2026-07-27T06:12:16.052539",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001B-02",
+      "json_files": 4,
+      "markdown_files": 1,
+      "total_files": 5,
+      "last_modified": "2026-07-27T06:16:53.952177",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001C-01",
+      "json_files": 6,
+      "markdown_files": 1,
+      "total_files": 7,
+      "last_modified": "2026-07-27T06:21:30.801296",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001C-02",
+      "json_files": 6,
+      "markdown_files": 1,
+      "total_files": 7,
+      "last_modified": "2026-07-27T06:47:54.489742",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001D-01",
+      "json_files": 5,
+      "markdown_files": 1,
+      "total_files": 6,
+      "last_modified": "2026-07-27T06:53:05.034356",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001D-02",
+      "json_files": 6,
+      "markdown_files": 1,
+      "total_files": 7,
+      "last_modified": "2026-07-27T06:56:44.866663",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001D-03",
+      "json_files": 6,
+      "markdown_files": 1,
+      "total_files": 7,
+      "last_modified": "2026-07-27T10:54:12.070928",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001E-01",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-27T11:04:54.941557",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001E-02",
+      "json_files": 3,
+      "markdown_files": 1,
+      "total_files": 4,
+      "last_modified": "2026-07-27T13:03:54.892969",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001E-03",
+      "json_files": 2,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-27T13:27:41.344894",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-01",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T14:44:50.709541",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-02",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T15:00:47.409194",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-03",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T15:04:02.620076",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-04",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T15:07:47.355865",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-05",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-27T15:11:39.168310",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-06",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-27T15:13:50.637383",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-07",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-27T15:36:31.517989",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-08",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-27T16:00:07.253932",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-09",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-27T16:05:18.302438",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T15:48:51.140028",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-004",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T15:52:02.899537",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:24:29.974930",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:25:53.166449",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:36:33.770431",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:39:12.374971",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:46:52.203398",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-006",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:47:50.716180",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-007",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:50:58.722431",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-008",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:52:03.763024",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-009",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T16:54:22.636119",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-010",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T01:28:27.074567",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-011",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:23:02.639327",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-012",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:44:49.772264",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:05:39.539032",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T16:24:14.317424",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-004",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T10:35:23.988470",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-004A",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T13:43:51.479747",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T13:47:04.505976",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-006",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T13:49:33.054168",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-007",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T13:50:59.334605",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-008",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:57:20.741936",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-009",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T03:52:08.119331",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-010",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T04:12:32.806475",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-011",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T04:15:17.193816",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T14:34:11.771500",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-EXEC-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T15:37:18.358566",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-IMP-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T13:53:27.523879",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-IMP-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-29T13:56:31.437026",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-MVP-001D",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-28T13:41:25.939494",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-STUDIO-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T02:54:57.499144",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "RECOVERY-BACKLOG",
+      "json_files": 1,
+      "markdown_files": 2,
+      "total_files": 3,
+      "last_modified": "2026-07-30T02:16:03.100264",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-001A",
+      "json_files": 2,
+      "markdown_files": 1,
+      "total_files": 3,
+      "last_modified": "2026-07-30T03:05:06.941535",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-001B",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-30T03:16:39.579510",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-002",
+      "json_files": 7,
+      "markdown_files": 0,
+      "total_files": 7,
+      "last_modified": "2026-07-30T03:17:18.595557",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-003",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:18:03.864446",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-004",
+      "json_files": 2,
+      "markdown_files": 0,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:19:06.450513",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-005",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:23:24.607338",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-006",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:24:27.414209",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-007",
+      "json_files": 4,
+      "markdown_files": 0,
+      "total_files": 4,
+      "last_modified": "2026-07-30T03:25:09.961873",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-008",
+      "json_files": 1,
+      "markdown_files": 0,
+      "total_files": 1,
+      "last_modified": "2026-07-30T03:30:40.678489",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-008A",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:30:35.222931",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-009",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:38:51.664978",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-010",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:51:30.221145",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-011",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T04:10:43.454976",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-012",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T04:13:34.751306",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-013",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T04:15:53.845586",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-014",
+      "json_files": 0,
+      "markdown_files": 0,
+      "total_files": 0,
+      "last_modified": null,
+      "has_json": false,
+      "has_markdown": false,
+      "status": "Empty"
+    },
+    {
+      "authority": "REPOSITORY-RECONCILIATION-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T02:11:50.209189",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "RUNTIME-READINESS-REVIEW-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "total_files": 2,
+      "last_modified": "2026-07-30T03:26:39.855112",
+      "has_json": true,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "SPRINT-CONTROL-BOARD-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T01:30:43.297481",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "SPRINT-EXECUTION-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "total_files": 1,
+      "last_modified": "2026-07-30T01:03:58.797380",
+      "has_json": false,
+      "has_markdown": true,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "truth_registry",
+      "json_files": 2,
+      "markdown_files": 0,
+      "total_files": 2,
+      "last_modified": "2026-07-28T02:32:32.717702",
+      "has_json": true,
+      "has_markdown": false,
+      "status": "Evidence Present"
+    }
+  ]
+}

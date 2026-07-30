@@ -1,0 +1,22 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "release": "1.0",
+  "status": "Implementation Handoff",
+  "consumer": "Repository Mutation Sprint",
+  "consume_in_order": [
+    "RELEASE-MANIFEST.json",
+    "NOTIFICATION-MUTATION-BACKLOG.json",
+    "MUTATION-EXECUTION-RECORD.template.md",
+    "NOTIFICATION-IMPLEMENTATION-BLUEPRINT.md",
+    "NOTIFICATION-PIPELINE-MUTATION-MAP.md"
+  ],
+  "implementation_rules": [
+    "Never modify frozen architecture artifacts.",
+    "Execute one mutation at a time.",
+    "Complete runtime verification before the next mutation.",
+    "Record evidence in the Mutation Execution Record.",
+    "Reference the Release Manifest in every implementation PR or commit."
+  ],
+  "entry_mutation": "NM-001",
+  "completion_condition": "NM-008 verified with Founder acceptance."
+}

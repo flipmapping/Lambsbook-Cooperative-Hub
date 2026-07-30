@@ -1,0 +1,11 @@
+{
+  "authority": "GE-CERT-003",
+  "generated_utc": "2026-07-30T09:52:39.980796+00:00",
+  "repository_head": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "baseline_commit": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+  "expected_commit": "e4a8e3cd51c4c87d3598d791a97fbe46f7128eba",
+  "baseline_exists": true,
+  "expected_exists": false,
+  "expected_is_descendant_of_baseline": false,
+  "ready_for_bounded_push_review": false
+}

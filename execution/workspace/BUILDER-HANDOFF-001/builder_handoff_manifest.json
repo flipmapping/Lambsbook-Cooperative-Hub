@@ -1,0 +1,29 @@
+{
+  "authority": "APP-EXEC-002A",
+  "eos_authority": "EOS-CRSG-001",
+  "created": "2026-07-30 04:16 UTC",
+  "execution_mode": "Builder Handoff",
+  "expected_output": "Exactly one Production Implementation Context (PIC) ZIP",
+  "inputs": [
+    {
+      "file": "execution/workspace/BUILDER-ACTIVATION-001/builder_request.json",
+      "sha256": "7017b028a9636f945637656b4db02d8518c541617c064c71208b8cdeb153e0b9"
+    },
+    {
+      "file": "execution/workspace/BUILDER-ACTIVATION-001/BUILDER-ACTIVATION.md",
+      "sha256": "d77388d5ed5ce461be8da956f19f026d90187f81ef419ce1cd8175d1993c0820"
+    },
+    {
+      "file": "execution/workspace/BUILDER-ACTIVATION-001/BUILDER-ACTIVATION-001A.md",
+      "sha256": "259ea52882468e5d4fb220e19e17242cdec25e96b77d54d04f8bdbfe3b1265e7"
+    },
+    {
+      "file": "execution/workspace/BUILDER-INVOCATION-001/builder_invocation_manifest.json",
+      "sha256": "b11f85a228709ed9d68d3413cd1ebb7c7e586dd49f1a243858e6ec853da4b5cf"
+    },
+    {
+      "file": "execution/workspace/BUILDER-INVOCATION-001/BUILDER-INVOCATION.md",
+      "sha256": "7b5b9c5bbfd08fca6f524febc53ee9f717efb4901dd640ceb9047206687bd463"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "authority": "EMP-001M-01",
+  "name": "Execution Compiler Runtime Contract",
+  "version": "1.0",
+  "purpose": "Define the stable runtime interfaces shared by all Execution Compiler components.",
+  "compiler_context": {
+    "execution_authority": "string",
+    "implementation_context": "object",
+    "repository": "object",
+    "providers": [
+      "AuthorityProvider",
+      "RepositoryProvider",
+      "StandardsProvider"
+    ]
+  },
+  "pipeline": [
+    "ContextResolver",
+    "AuthorityResolver",
+    "RepositoryResolver",
+    "ValidationEngine",
+    "NormalizationEngine",
+    "BuilderInputGenerator",
+    "ExplainabilityEngine"
+  ],
+  "compiler_result": {
+    "normalized_execution_model": "object",
+    "builder_input": "object",
+    "diagnostics": "list"
+  },
+  "principles": [
+    "Deterministic",
+    "Composable",
+    "Replaceable",
+    "Provider-based",
+    "Testable"
+  ]
+}

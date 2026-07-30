@@ -1,0 +1,13 @@
+{
+  "authorized": [
+    "server/middleware/attachUserContext.ts"
+  ],
+  "forbidden": [
+    "authentication",
+    "authorization",
+    "routing",
+    "database",
+    "schema",
+    "scope_expansion"
+  ]
+}

@@ -1,0 +1,34 @@
+# GP-EXEC-017 Admissions Mutation Index
+
+Total Preview Lines: 287
+Relevant Lines: 29
+
+0006: import { sendNotification } from "./notifications";
+0009: export interface ProspectRegistrationPayload {
+0017: export interface ProspectRegistrationResult {
+0023: export async function createProspectCore(
+0055: export async function submitProspectRegistration(
+0065:   await sendNotification({
+0081:       provider: "resend",
+0100: export async function listProspects() {
+0104: export async function getProspect(id: string) {
+0108: export async function updateProspectStage(id: string, stage: string) {
+0112: export async function recordProspectLifecycleEvent(
+0124: export async function getProspectLifecycleEvents(prospectId: string) {
+0128: export async function recordProspectActivity(
+0140: export async function getProspectActivities(prospectId: string) {
+0144: export async function createProspectFollowupTask(
+0158: export async function getProspectFollowupTasks(prospectId: string) {
+0162: export async function updateProspectFollowupTask(
+0175: export async function completeProspectFollowupTask(taskId: string) {
+0179: export async function createProspectAppointment(
+0197: export async function getProspectAppointments(prospectId: string) {
+0201: export async function updateProspectAppointment(
+0218: export async function cancelProspectAppointment(appointmentId: string) {
+0222: export async function completeProspectAppointment(
+0230: export async function createProspectDocument(
+0246: export async function getProspectDocuments(prospectId: string) {
+0250: export async function updateProspectDocument(
+0265: export async function archiveProspectDocument(documentId: string) {
+0269: export async function recordProspectAdmissionDecision(
+0285: export async function getProspectAdmissionDecisions(prospectId: string) {

@@ -1,0 +1,15 @@
+[
+  "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+  "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingPage.tsx",
+  "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingPage.tsx",
+  "execution/workspace/LES-001/LandingPage.working.tsx",
+  "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+  "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+  "execution/workspace/LES-001/implementation/baselines/LandingPage.original.tsx",
+  "execution/workspace/LES-001/implementation/generated_baselines/LandingPage.generated.baseline.tsx",
+  "execution/workspace/LES-001/implementation/mutation_history/LandingPage.before_mutation_001.tsx",
+  "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+  "web/src/app/(protected)/dashboard/page.tsx",
+  "web/src/app/(public)/auth/sign-in/page.tsx",
+  "web/src/growth/pages/Landing/LandingPage.tsx"
+]

@@ -1,0 +1,7 @@
+{
+  "authority": "GP-EXEC-010M-03R",
+  "generated": "2026-07-26T02:26:10.315728Z",
+  "http_status": null,
+  "endpoint": "https://<REPLACE_WITH_OFFICIAL_TEMPLATE_LIST_ENDPOINT>",
+  "message": "Read-only template discovery"
+}

@@ -1,0 +1,10 @@
+{
+  "implementation_authority": "GEX-001M-80",
+  "timestamp_utc": "2026-07-28T07:43:38Z",
+  "evidence_file": "execution/workspace/GEX-001M-79/evidence/persist.ts",
+  "repository_file": "server/imports/pipeline/persist.ts",
+  "evidence_sha256": "f092c2bb0d9b5c5e59a6241cad32bffab77db868d2e4827c6b6766d3efcfd62b",
+  "repository_sha256": "5bb1937cf56fc41d08ae77b05a95d0b5e3678a559204eb6913c314d19769fe32",
+  "identical": false,
+  "decision": "MATERIALIZATION REQUIRED"
+}

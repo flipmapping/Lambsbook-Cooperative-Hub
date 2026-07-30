@@ -1,0 +1,28 @@
+APP-REC-047
+Generated: 2026-07-27T12:56:13.528118Z
+
+REPOSITORY CERTIFICATION COMPLETE
+
+The backend runtime has been certified.
+
+The next required evidence cannot be obtained from repository inspection.
+
+Founder actions:
+
+1. Open:
+   http://127.0.0.1:5000/hub/dashboard
+
+2. Wait until the page finishes loading.
+
+3. Capture ONE screenshot showing the complete browser window:
+   - address bar
+   - page contents
+   - any visible error
+
+4. If the browser console contains any red errors,
+   include the Console tab in the screenshot
+   or copy the errors.
+
+Return the screenshot in the next chat message.
+
+No repository mutation should occur before reviewing this evidence.

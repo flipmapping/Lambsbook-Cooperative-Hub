@@ -1,0 +1,37 @@
+{
+  "authority": "GE-HANDOFF-001",
+  "generated_utc": "2026-07-30T06:41:35.638653+00:00",
+  "repository": {
+    "branch": "app-rec-006-runtime-identity",
+    "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1",
+    "working_tree_entries": 369,
+    "working_tree_clean": false
+  },
+  "execution_chain": [
+    "Builder",
+    "PIC",
+    "Claude",
+    "Growth Engine Certification",
+    "Bounded Commit",
+    "GitHub Synchronization",
+    "Runtime Verification"
+  ],
+  "package": [
+    {
+      "file": "execution/packages/GE-BUILD-005/production-implementation-context.json",
+      "sha256": "89be811282f0317bb46f302b58c0d6da38b197c8a83aacc9e2dbe100aef01051"
+    },
+    {
+      "file": "execution/packages/GE-BUILD-005/production-implementation-context-certification.json",
+      "sha256": "3fe6c744e71c5748ccf4e56ceba474c901ab62813619a13c9c357c147fe59d6c"
+    },
+    {
+      "file": "execution/packages/GE-BUILD-005/governance-resolution.json",
+      "sha256": "2415b13b5f32453f36ec6e68fb86ab922480fc260a2c0b8425f9509b37dce31b"
+    },
+    {
+      "file": "execution/packages/GE-BUILD-005/PACKAGE-MANIFEST.json",
+      "sha256": "df892bdd27c830b4de3846fc97f3ef69db4a97816c2ef06575a1f90c936400eb"
+    }
+  ]
+}

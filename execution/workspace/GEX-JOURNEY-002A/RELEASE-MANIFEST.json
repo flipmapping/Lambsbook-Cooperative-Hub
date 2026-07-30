@@ -1,0 +1,59 @@
+{
+  "implementation_authority": "GEX-JOURNEY-002A",
+  "status": "FOUNDER_VERIFIED",
+  "generated_utc": "2026-07-29T13:47:39Z",
+  "artifact_count": 10,
+  "artifacts": [
+    {
+      "name": "CERTIFICATION.md",
+      "size_bytes": 894,
+      "sha256": "06288cf9e2ba2f55e796c195f1cd0028da750683fa96bd418fd2cbbecd45bca9"
+    },
+    {
+      "name": "Communication-Matrix.md",
+      "size_bytes": 2403,
+      "sha256": "60620bbca389d336575d4007d221f85c98282ed7ab187366c772500c38cedca6"
+    },
+    {
+      "name": "Consumer-Mapping.md",
+      "size_bytes": 1866,
+      "sha256": "4ffd9341ebe54009d1f55f142a5432819a74a6a53fcfb468a1a4a16b4255a2e7"
+    },
+    {
+      "name": "INDEX.md",
+      "size_bytes": 1053,
+      "sha256": "947fae9509431346bf2aa787b80708f7f1ab2be97d5b6839e3057067489c3f21"
+    },
+    {
+      "name": "Journey-State-Model.md",
+      "size_bytes": 1964,
+      "sha256": "2cc8b2f7402c34f268c7de575a11cdba6c6ce5b90380fdbabf4e8177b83b6700"
+    },
+    {
+      "name": "Member-Action-Matrix.md",
+      "size_bytes": 1784,
+      "sha256": "debdf26aae8885ecb0a30396151070dec236c4e72e543e5622d5ea24a4b7643c"
+    },
+    {
+      "name": "PACKAGE-CHECKSUMS.sha256",
+      "size_bytes": 1151,
+      "sha256": "f0cc9e89263c2edcb7ba61c60043ab234bf738b2eaeec77e72f31638d0dd16dc"
+    },
+    {
+      "name": "PACKAGE-INVENTORY.md",
+      "size_bytes": 732,
+      "sha256": "dc6ffe43d8afb0c345b87281eb4483f6dba31cb663da14c8296cf3f077861f2b"
+    },
+    {
+      "name": "README.md",
+      "size_bytes": 360,
+      "sha256": "75b9b49f041b6d84646e60bfd0a34624f14efa5421357c97bae4710730af6222"
+    },
+    {
+      "name": "RELEASE-MANIFEST.json",
+      "size_bytes": 1453,
+      "sha256": "0f402c6ec6e6f86b62b110f0f3813d0247a91d706f8073fa1c000b582854a03a"
+    }
+  ],
+  "package_ready": true
+}

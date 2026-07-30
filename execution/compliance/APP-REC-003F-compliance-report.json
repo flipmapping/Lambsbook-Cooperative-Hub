@@ -1,0 +1,21 @@
+{
+  "authority": "APP-REC-003F",
+  "generated_at": "2026-07-24T05:03:19.187595Z",
+  "handoff_exists": true,
+  "status": "FAIL",
+  "checks": {
+    "implementation_authority": false,
+    "target_repository": false,
+    "implementation_context_manifest": false,
+    "execution_derivation": false,
+    "repository_mutation_plan": false,
+    "verification_plan": false,
+    "runtime_validation_plan": false,
+    "rollback_strategy": false,
+    "mutation_boundaries": false,
+    "bounded_scope_declared": false
+  },
+  "notes": [
+    "One or more required Builder contract elements are missing."
+  ]
+}

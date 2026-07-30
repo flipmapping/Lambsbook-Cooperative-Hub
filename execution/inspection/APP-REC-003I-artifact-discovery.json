@@ -1,0 +1,1716 @@
+{
+  "authority": "APP-REC-003I",
+  "generated_at": "2026-07-24T05:44:00.307279Z",
+  "execution_root": "/home/runner/workspace/execution",
+  "artifact_count": 427,
+  "artifacts": [
+    {
+      "path": "execution/acceptance-packages/FDR-010E35B-007-Runtime-Identity-Resolution-Founder-Acceptance-Package.json",
+      "size": 1527
+    },
+    {
+      "path": "execution/bounded-mutations/FDR-010E35B-WP001-Runtime-Identity-Model.json",
+      "size": 1205
+    },
+    {
+      "path": "execution/bounded-mutations/FDR-010E35B-WP001A-Runtime-Identity-Type-Contract.json",
+      "size": 1169
+    },
+    {
+      "path": "execution/builder/APP-REALIZATION-002B.builder.json",
+      "size": 886
+    },
+    {
+      "path": "execution/builder/delivery/builder-authority-lineage.json",
+      "size": 239
+    },
+    {
+      "path": "execution/builder/delivery/builder-cib-input-contract.json",
+      "size": 1465
+    },
+    {
+      "path": "execution/builder/delivery/builder-cib-resolution.json",
+      "size": 27024
+    },
+    {
+      "path": "execution/builder/delivery/builder-cli-contract.json",
+      "size": 193
+    },
+    {
+      "path": "execution/builder/delivery/builder-execution-readiness.json",
+      "size": 4689
+    },
+    {
+      "path": "execution/builder/delivery/builder-input-acceptance.json",
+      "size": 398
+    },
+    {
+      "path": "execution/builder/delivery/candidate-packages.json",
+      "size": 46417
+    },
+    {
+      "path": "execution/builder/delivery/recovery-truth-table.json",
+      "size": 574
+    },
+    {
+      "path": "execution/builder/incoming/APP-REC-003C-awaiting-builder.json",
+      "size": 704
+    },
+    {
+      "path": "execution/builder-baselines/BUILDER-CONTRACT-PRE-EOS-V2_2.json",
+      "size": 2869
+    },
+    {
+      "path": "execution/builder-discoveries/BUILD-PIC-GAP-001.json",
+      "size": 1137
+    },
+    {
+      "path": "execution/builder-manifests/FDR-010E35B-006-Runtime-Identity-Resolution-Builder-Execution-Manifest.json",
+      "size": 1348
+    },
+    {
+      "path": "execution/builder-requests/BUILD-PIC-FDR-010E35C.json",
+      "size": 851
+    },
+    {
+      "path": "execution/builder-specifications/BUILDER-LIFECYCLE-CONFORMANCE-SPEC.json",
+      "size": 2179
+    },
+    {
+      "path": "execution/builder-work/builder-work-package.json",
+      "size": 498
+    },
+    {
+      "path": "execution/builders/.mutation_workspace/BLD-PIC-001-SLICE-002/IMPLEMENTATION-TARGET.json",
+      "size": 573
+    },
+    {
+      "path": "execution/builders/authority_registry/repository_registry.json",
+      "size": 455
+    },
+    {
+      "path": "execution/builders/services/artifact_materialization/service_manifest.json",
+      "size": 304
+    },
+    {
+      "path": "execution/builders/services/package_integrity/service_manifest.json",
+      "size": 146
+    },
+    {
+      "path": "execution/builders/services/repository_resolution/integration/authority_registry_integration.json",
+      "size": 444
+    },
+    {
+      "path": "execution/builders/services/repository_resolution/service_manifest.json",
+      "size": 276
+    },
+    {
+      "path": "execution/builders/workspace_registry/execution_workspace_lifecycle.json",
+      "size": 797
+    },
+    {
+      "path": "execution/certifications/RDM-CTBC-008-CERTIFICATION.json",
+      "size": 501
+    },
+    {
+      "path": "execution/checkpoints/EXECUTION-CHECKPOINT.json",
+      "size": 1167
+    },
+    {
+      "path": "execution/compliance/APP-REC-003F-compliance-report.json",
+      "size": 594
+    },
+    {
+      "path": "execution/constitutional-baseline/BUILDER-CONSTITUTIONAL-BASELINE-v1.2.1.json",
+      "size": 681
+    },
+    {
+      "path": "execution/constitutional-baseline/EXEC-SYNC-001-v2.0-FDR-010E35A.json",
+      "size": 785
+    },
+    {
+      "path": "execution/constitutional-baseline/EXEC-SYNC-002-BLD-CAR-001.json",
+      "size": 733
+    },
+    {
+      "path": "execution/constitutional-baseline/EXEC-SYNC-005-EOS-EXEC-017.json",
+      "size": 767
+    },
+    {
+      "path": "execution/constitutional-baseline/EXEC-SYNC-006-PIC-Qualification-Gate.json",
+      "size": 743
+    },
+    {
+      "path": "execution/constitutional-baseline/EXEC-SYNC-007-Builder-Implementation-Transition.json",
+      "size": 680
+    },
+    {
+      "path": "execution/contracts/RDM-CTBC-001-Contract.zip",
+      "size": 734
+    },
+    {
+      "path": "execution/contracts/checkpoint/registry/registry.json",
+      "size": 170
+    },
+    {
+      "path": "execution/contracts/indexes/execution_contract_index.json",
+      "size": 71
+    },
+    {
+      "path": "execution/contracts/registry.json",
+      "size": 456
+    },
+    {
+      "path": "execution/contracts/templates/execution_contract.template.json",
+      "size": 382
+    },
+    {
+      "path": "execution/eos-standards/EOS-EXEC-016-Implementation-Execution-Protocol.json",
+      "size": 1242
+    },
+    {
+      "path": "execution/evidence/builder-run-20260722-163137.json",
+      "size": 559
+    },
+    {
+      "path": "execution/execution-contracts/FDR-010E35B-004-Runtime-Identity-Resolution-Execution-Contract.json",
+      "size": 1363
+    },
+    {
+      "path": "execution/execution-dispatch/FDR-010E35B-DISPATCH-001.json",
+      "size": 1048
+    },
+    {
+      "path": "execution/execution-dispatch/FDR-010E35C-MUT-001-EXEC-001-Pre-Mutation-Execution-Plan.json",
+      "size": 1347
+    },
+    {
+      "path": "execution/execution-dispatch/FDR-010E35C-MUT-001-EXEC-002-Execution-Sequence.json",
+      "size": 1893
+    },
+    {
+      "path": "execution/execution-dispatch/FDR-010E35C-MUT-001-VAL-002-Validation-Dispatch.json",
+      "size": 1261
+    },
+    {
+      "path": "execution/execution-dispatch/FDR-010E35C-MUT-001-VAL-003-Execution-Request-Dispatch.json",
+      "size": 892
+    },
+    {
+      "path": "execution/founder-downloads/GE-RMP-014-Claude-Package.zip",
+      "size": 21972
+    },
+    {
+      "path": "execution/founder-downloads/LER-001A-PIC-Claude-FINAL.zip",
+      "size": 71165
+    },
+    {
+      "path": "execution/founder-downloads/LER-001A-PIC-Claude.zip",
+      "size": 68397
+    },
+    {
+      "path": "execution/handoff/FDR-010E35C-MUT-001-HANDOFF.json",
+      "size": 1199
+    },
+    {
+      "path": "execution/handoffs/APP-REC-003C/EXECUTION-HANDOFF.json",
+      "size": 987
+    },
+    {
+      "path": "execution/implementation-authorities/BLD-PIC-001-PIC-Materialization-Service.json",
+      "size": 608
+    },
+    {
+      "path": "execution/implementation-authorities/FDR-010E34B-CLOSEOUT.json",
+      "size": 607
+    },
+    {
+      "path": "execution/implementation-authorities/FDR-010E35A.json",
+      "size": 425
+    },
+    {
+      "path": "execution/implementation-authorities/FDR-010E35B-002-Runtime-Identity-Resolution-Implementation-Package.json",
+      "size": 1681
+    },
+    {
+      "path": "execution/implementation-authorities/FDR-010E35B-Founder-Runtime-Identity-Continuation.json",
+      "size": 1079
+    },
+    {
+      "path": "execution/implementation-authorities/FDR-010E35C-Post-Authentication-Runtime-Identity-Resolution.json",
+      "size": 1603
+    },
+    {
+      "path": "execution/implementation-context/FDR-010E34B-IMPLEMENTATION-CONTEXT.json",
+      "size": 1084
+    },
+    {
+      "path": "execution/implementation-evidence/BLD-PIC-001/Builder-Mutation-Target.json",
+      "size": 662
+    },
+    {
+      "path": "execution/implementation-index/FDR-010E35B-Canonical-Implementation-Index.json",
+      "size": 891
+    },
+    {
+      "path": "execution/implementation-tasks/BLD-PIC-001-IMPL-001-Builder-Source-Implementation.json",
+      "size": 925
+    },
+    {
+      "path": "execution/implementation-tasks/BLD-PIC-001-IMPL-002-Builder-Mutation.json",
+      "size": 1160
+    },
+    {
+      "path": "execution/implementation-work-packages/BLD-PIC-001-WP001-PIC-Materialization.json",
+      "size": 956
+    },
+    {
+      "path": "execution/inspection/APP-REC-003G-handoff-inspection.json",
+      "size": 778
+    },
+    {
+      "path": "execution/mex-inspection/inventory.json",
+      "size": 123965
+    },
+    {
+      "path": "execution/mex-inspection.zip",
+      "size": 65661
+    },
+    {
+      "path": "execution/mutation-authorizations/FDR-010E35C-MUT-001-EXEC-003.json",
+      "size": 946
+    },
+    {
+      "path": "execution/mutation-requests/FDR-010E35C-MUT-001.json",
+      "size": 1890
+    },
+    {
+      "path": "execution/packages/APP-REALIZATION-002B-PIC.zip",
+      "size": 1329
+    },
+    {
+      "path": "execution/packages/APP-REC-INVITE-002R/implementation-authority-package.json",
+      "size": 1041
+    },
+    {
+      "path": "execution/packages/APP-REC-INVITE-002R/implementation-context-manifest.json",
+      "size": 204
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001D-Claude-Package.zip",
+      "size": 8794
+    },
+    {
+      "path": "execution/packages/EOS-RMP-001E-Claude-Package.zip",
+      "size": 17688
+    },
+    {
+      "path": "execution/packages/ESR-001/generated/AUTHORITY-ACTIVATION-STATUS.json",
+      "size": 2359
+    },
+    {
+      "path": "execution/packages/ESR-001/generated/CANONICAL-INPUT-RESOLUTION.json",
+      "size": 956
+    },
+    {
+      "path": "execution/packages/ESR-001/generated/EXECUTION-INPUT-DISCOVERY.json",
+      "size": 24755
+    },
+    {
+      "path": "execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY-VERIFICATION.json",
+      "size": 108
+    },
+    {
+      "path": "execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY.json",
+      "size": 657
+    },
+    {
+      "path": "execution/packages/ESR-001/generated/SURFACE-POPULATION-PLAN.json",
+      "size": 896
+    },
+    {
+      "path": "execution/packages/EXEC-SYNC-001/generated/EXEC-SYNC-001-BUILDER-CAR-ADOPTION.json",
+      "size": 738
+    },
+    {
+      "path": "execution/packages/FAB-APP-REALIZATION-002B-Claude-Package.zip",
+      "size": 8222
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/AUTHORITY-CLOSURE.json",
+      "size": 714
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/CONSTITUTIONAL-CONTENT-AUDIT.json",
+      "size": 1572
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/REGISTRY-CONFORMANCE-AUDIT.json",
+      "size": 813
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/REPOSITORY-MUTATION-PACKAGE-VERIFICATION.json",
+      "size": 895
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/REPOSITORY-MUTATION-PACKAGE.json",
+      "size": 1512
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/SURFACE-CERTIFICATION.json",
+      "size": 1159
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/registry_payloads/LEASE-REGISTRY.json",
+      "size": 52
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/registry_payloads/REGISTRY-PAYLOAD-MANIFEST.json",
+      "size": 751
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-CATALOG.json",
+      "size": 47
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-DEPENDENCIES.json",
+      "size": 51
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/registry_payloads/SURFACE-REGISTRY.json",
+      "size": 103
+    },
+    {
+      "path": "execution/packages/GE-RMP-001/generated/GE-RMP-001-ALLOCATION.json",
+      "size": 592
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/admissions.json",
+      "size": 5712
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/programs.json",
+      "size": 1606
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/scholarships.json",
+      "size": 1033
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/admissions.json",
+      "size": 6571
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/programs.json",
+      "size": 1787
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/scholarships.json",
+      "size": 1119
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/admissions.json",
+      "size": 4933
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/programs.json",
+      "size": 1404
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/scholarships.json",
+      "size": 965
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/GE-RMP-002-Claude-Package.zip",
+      "size": 27818
+    },
+    {
+      "path": "execution/packages/GE-RMP-003-Claude-Package.zip",
+      "size": 12887
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/GE-RMP-003A-Claude-Package.zip",
+      "size": 18579
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/GE-RMP-003B-Claude-Package.zip",
+      "size": 19890
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/GE-RMP-004-Claude-Package.zip",
+      "size": 23864
+    },
+    {
+      "path": "execution/packages/GE-RMP-005/generated/GE-RMP-005-IMPLEMENTATION-HANDOFF.json",
+      "size": 834
+    },
+    {
+      "path": "execution/packages/GE-RMP-005/generated/GE-RMP-005-IMPLEMENTATION-MUTATION-PLAN.json",
+      "size": 1411
+    },
+    {
+      "path": "execution/packages/GE-RMP-005/generated/GE-RMP-005-PRE-MUTATION-BASELINE.json",
+      "size": 1133
+    },
+    {
+      "path": "execution/packages/GE-RMP-005/generated/GE-RMP-005-REPOSITORY-REALITY.json",
+      "size": 1246
+    },
+    {
+      "path": "execution/packages/GE-RMP-005/generated/GE-RMP-005-SURFACE-LEASE.json",
+      "size": 525
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/web/src/growth/registry/journey.json",
+      "size": 576
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package.zip",
+      "size": 20161
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/web/src/growth/registry/journey.json",
+      "size": 615
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package.zip",
+      "size": 13685
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package.zip",
+      "size": 14892
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package.zip",
+      "size": 15502
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package.zip",
+      "size": 15675
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package.zip",
+      "size": 16029
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package.zip",
+      "size": 15607
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package.zip",
+      "size": 15687
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/ADMISSIONS-INTEGRATION-AUTHORITY.json",
+      "size": 623
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/ADMISSIONS-MUTATION-AUTHORITY.json",
+      "size": 693
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/ADMISSIONS-PRE-MUTATION.json",
+      "size": 441
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/BASELINE.json",
+      "size": 724
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/CODE-MUTATION-CHECKLIST.json",
+      "size": 862
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/EMAIL-TEMPLATE-MODULE.json",
+      "size": 325
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/EXECUTE-NOW.json",
+      "size": 857
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/EXECUTION-READY.json",
+      "size": 408
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/GE-COMM-001-CERTIFICATION.json",
+      "size": 652
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/GE-COMM-001-END-TO-END-VALIDATION.json",
+      "size": 669
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/IMPLEMENTATION-PATCH-STATUS.json",
+      "size": 566
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/LIVE-VALIDATION-EVIDENCE.json",
+      "size": 607
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/MUTATION-AUTHORITY-D1.json",
+      "size": 755
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/MUTATION-WORK-ORDER.json",
+      "size": 1024
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/NOTIFICATION-CONTRACT-EVOLUTION.json",
+      "size": 332
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/PRE-MUTATION-CHECKPOINT.json",
+      "size": 650
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/PROSPECT-TIMELINE-EMAIL-LOGGING-AUTHORITY.json",
+      "size": 838
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-PLAN.json",
+      "size": 582
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/TRANSPORT-MUTATION-SPEC.json",
+      "size": 1263
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/package.json",
+      "size": 4494
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/implementation-patch/IMPLEMENTATION-PATCH.json",
+      "size": 840
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/implementation-patch/PROSPECT-TIMELINE-WORKING-COPY.json",
+      "size": 917
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/working-copy/WORKING-COPY.json",
+      "size": 187
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package.zip",
+      "size": 41744
+    },
+    {
+      "path": "execution/packages/IA-NEXT-001/generated/IA-NEXT-001-EXECUTION-CHECKPOINT.json",
+      "size": 535
+    },
+    {
+      "path": "execution/packages/IA-NEXT-001/generated/IA-NEXT-001-FOUNDER-ASSIGNMENT.json",
+      "size": 1103
+    },
+    {
+      "path": "execution/packages/IA-NEXT-001/generated/IA-NEXT-001-OPEN.json",
+      "size": 678
+    },
+    {
+      "path": "execution/packages/IAS-001/generated/IAS-001-BUILDER-INPUT-CERTIFICATION.json",
+      "size": 1127
+    },
+    {
+      "path": "execution/packages/IAS-001/generated/IAS-001-BUILDER-INPUT-SET-TEMPLATE.json",
+      "size": 703
+    },
+    {
+      "path": "execution/packages/IAS-001/generated/IAS-001-TEMPLATE-VALIDATION.json",
+      "size": 1457
+    },
+    {
+      "path": "execution/packages/IAS-001/generated/IAS-001-WORK-PACKAGE.json",
+      "size": 1124
+    },
+    {
+      "path": "execution/packages/IC-002B/generated/IC-002B-CANONICAL-ROUTE-INVENTORY.json",
+      "size": 1348
+    },
+    {
+      "path": "execution/packages/IC-002B/generated/IC-002B-FOUNDER-APPROVAL-PACKAGE.json",
+      "size": 1102
+    },
+    {
+      "path": "execution/packages/IC-002B/generated/IC-002B-PROPOSED-CANONICAL-ROUTING.json",
+      "size": 819
+    },
+    {
+      "path": "execution/packages/INF-010E35A-Claude-Package.zip",
+      "size": 8141
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/admissions.json",
+      "size": 5712
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/home.json",
+      "size": 351
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/programs.json",
+      "size": 1606
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/en/scholarships.json",
+      "size": 1033
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/admissions.json",
+      "size": 6571
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/home.json",
+      "size": 407
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/programs.json",
+      "size": 1787
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/vi/scholarships.json",
+      "size": 1119
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/admissions.json",
+      "size": 4891
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/home.json",
+      "size": 323
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/programs.json",
+      "size": 1404
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/content/zh/scholarships.json",
+      "size": 959
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/admissions.json",
+      "size": 434
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/assets.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/faq.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/journey.json",
+      "size": 615
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/navigation.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package.zip",
+      "size": 55376
+    },
+    {
+      "path": "execution/packages/LEAP-002/generated/LEAP-002-BUILDER-INPUT-SET.json",
+      "size": 789
+    },
+    {
+      "path": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC-QUALIFICATION.json",
+      "size": 495
+    },
+    {
+      "path": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+      "size": 628
+    },
+    {
+      "path": "execution/packages/LEAP-002/materialized/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+      "size": 628
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-001-IMPLEMENTATION-MANIFEST.json",
+      "size": 874
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE-QUALIFICATION.json",
+      "size": 835
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE.zip",
+      "size": 1593
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-IMPLEMENTATION-MANIFEST.json",
+      "size": 874
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/LEAP-IMPLEMENT-RDM-001-SLICE-002-IMPLEMENTATION-MANIFEST.json",
+      "size": 770
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE.zip",
+      "size": 1605
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-IMPLEMENTATION-MANIFEST.json",
+      "size": 770
+    },
+    {
+      "path": "execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/FOUNDER-ACCEPTANCE.json",
+      "size": 429
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/BUILDER-REVIEW-SUMMARY.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-002-ARTIFACT-CLASSIFICATION.json",
+      "size": 952
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-ASSEMBLY-MANIFEST.json",
+      "size": 1229
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-BUILDER-ASSEMBLY.json",
+      "size": 1224
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-CONTRACT-DIVERGENCE.json",
+      "size": 577
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-PKG-001-REPOSITORY-BLOCKER.json",
+      "size": 940
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-ASSEMBLY-MANIFEST.json",
+      "size": 1229
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-BUILDER-ASSEMBLY.json",
+      "size": 1224
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-CONTRACT-DIVERGENCE.json",
+      "size": 577
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/generated/LEAP-PKG-001-REPOSITORY-BLOCKER.json",
+      "size": 940
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PACKAGE-CERTIFICATION.json",
+      "size": 3777
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/PACKAGE-CERTIFICATION.json",
+      "size": 3777
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/MANIFEST.json",
+      "size": 316
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/PACKAGE-CERTIFICATION.json",
+      "size": 2113
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/SURFACE.json",
+      "size": 197
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/MANIFEST.json",
+      "size": 316
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/IMPLEMENTATION-WORKSPACE.json",
+      "size": 726
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/PUBLICATION-CANDIDATE.json",
+      "size": 2542
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/admissions.json",
+      "size": 5712
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/home.json",
+      "size": 351
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/programs.json",
+      "size": 1606
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/en/scholarships.json",
+      "size": 1033
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/admissions.json",
+      "size": 6571
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/home.json",
+      "size": 407
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/programs.json",
+      "size": 1787
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/vi/scholarships.json",
+      "size": 1119
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/admissions.json",
+      "size": 4891
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/home.json",
+      "size": 323
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/programs.json",
+      "size": 1404
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/content/zh/scholarships.json",
+      "size": 959
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/admissions.json",
+      "size": 434
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/assets.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/faq.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/journey.json",
+      "size": 615
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/navigation.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE.zip",
+      "size": 30931
+    },
+    {
+      "path": "execution/packages/LES-001/generated/PACKAGE-MANIFEST.json",
+      "size": 1685
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/IMPLEMENTATION-WORKSPACE.json",
+      "size": 726
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/LEAP-001/MANIFEST.json",
+      "size": 11335
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/PUBLICATION-CANDIDATE.json",
+      "size": 2542
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/admissions.json",
+      "size": 5712
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/home.json",
+      "size": 351
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/programs.json",
+      "size": 1606
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/en/scholarships.json",
+      "size": 1033
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/admissions.json",
+      "size": 6571
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/home.json",
+      "size": 407
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/programs.json",
+      "size": 1787
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/vi/scholarships.json",
+      "size": 1119
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/admissions.json",
+      "size": 4891
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/faq.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/footer.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/home.json",
+      "size": 323
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/navigation.json",
+      "size": 59
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/programs.json",
+      "size": 1404
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/content/zh/scholarships.json",
+      "size": 959
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/admissions.json",
+      "size": 434
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/assets.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/faq.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/journey.json",
+      "size": 615
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/navigation.json",
+      "size": 38
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/programs.json",
+      "size": 496
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/registry/scholarships.json",
+      "size": 343
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-BUILD-VALIDATION.json",
+      "size": 3313
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-CLOSURE.json",
+      "size": 705
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-CONTRACT-VERIFICATION.json",
+      "size": 265
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-EVIDENCE-RECOVERY.json",
+      "size": 958
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-EXECUTION-CHECKPOINT.json",
+      "size": 630
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-EXPERIENCE-ACCEPTANCE.json",
+      "size": 459
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-FOUNDER-ACCEPTANCE-PACKAGE.json",
+      "size": 536
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-MUTATION-CONTRACT.json",
+      "size": 1091
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-PRE-MUTATION-BASELINE.json",
+      "size": 521
+    },
+    {
+      "path": "execution/packages/MP-001/generated/MP-001-RUNTIME-VALIDATION.json",
+      "size": 294
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-HANDOFF.json",
+      "size": 1050
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/authorities/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json",
+      "size": 1816
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC.zip",
+      "size": 15181
+    },
+    {
+      "path": "execution/packages/RTP-010/generated/RTP-010-GAP-CERTIFICATION.json",
+      "size": 852
+    },
+    {
+      "path": "execution/packages/generated/IMPLEMENTATION-AUTHORITY-REGISTRY.json",
+      "size": 705
+    },
+    {
+      "path": "execution/packages/generated/LES-001/CLAUDE-EXECUTION-PACKAGE.json",
+      "size": 2195
+    },
+    {
+      "path": "execution/packages/generated/LES-001/LANDING-PAGE-IMPLEMENTATION-PACKAGE.json",
+      "size": 763
+    },
+    {
+      "path": "execution/packages/generated/LES-001/LANDING-PAGE-SOURCE-MUTATION.json",
+      "size": 578
+    },
+    {
+      "path": "execution/packages/generated/LES-001/REPOSITORY-MUTATION-PACKAGE.json",
+      "size": 572
+    },
+    {
+      "path": "execution/plans/BLD-PIC-001-RUNTIME-MUTATION-PLAN.json",
+      "size": 412
+    },
+    {
+      "path": "execution/projections/indexes/projection_index.json",
+      "size": 62
+    },
+    {
+      "path": "execution/projections/registry.json",
+      "size": 383
+    },
+    {
+      "path": "execution/projections/schemas/projection_schema.template.json",
+      "size": 163
+    },
+    {
+      "path": "execution/rapid-delivery/RDM-AUTH-001-HANDOFF.json",
+      "size": 1050
+    },
+    {
+      "path": "execution/rapid-delivery/RDM-AUTH-001-IMPLEMENTATION-PACKAGE.json",
+      "size": 1816
+    },
+    {
+      "path": "execution/rapid-delivery/RDM-AUTH-001.json",
+      "size": 1611
+    },
+    {
+      "path": "execution/registry/discoveries/SDR-ADM-001.json",
+      "size": 603
+    },
+    {
+      "path": "execution/registry/surfaces/LEASE-REGISTRY.json",
+      "size": 299
+    },
+    {
+      "path": "execution/registry/surfaces/SURFACE-CATALOG.json",
+      "size": 294
+    },
+    {
+      "path": "execution/registry/surfaces/SURFACE-DEPENDENCIES.json",
+      "size": 298
+    },
+    {
+      "path": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+      "size": 350
+    },
+    {
+      "path": "execution/reports/SCR-001-SURFACE-CERTIFICATION.json",
+      "size": 562
+    },
+    {
+      "path": "execution/repository-inspections/FDR-010E35C-001-Continuation-Corridor-Inspection.json",
+      "size": 1078
+    },
+    {
+      "path": "execution/repository-inspections/FDR-010E35C-002-Inspection-Checklist.json",
+      "size": 1605
+    },
+    {
+      "path": "execution/runtime/builder_runtime_composition.json",
+      "size": 534
+    },
+    {
+      "path": "execution/runtime/builder_runtime_readiness.json",
+      "size": 561
+    },
+    {
+      "path": "execution/runtime/publication/publication_pipeline_manifest.json",
+      "size": 346
+    },
+    {
+      "path": "execution/runtime-validation/APP-RMP-010E34B-021-build.json",
+      "size": 117
+    },
+    {
+      "path": "execution/runtime-validation/APP-RUNTIME-022-founder-runtime.json",
+      "size": 1873
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-003-runtime-dependency-analysis.json",
+      "size": 788
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-004-runtime-environment.json",
+      "size": 343
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-007-build-output.json",
+      "size": 80
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-013-routing-entrypoints.json",
+      "size": 1176
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-014-navigation-policy.json",
+      "size": 557
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-015-hub-dashboard-dispatch.json",
+      "size": 2283
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-016-member-identity-contract.json",
+      "size": 12086
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-017-live-member-identity.json",
+      "size": 811
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-019-build-validation.json",
+      "size": 159
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-020-founder-login-validation.json",
+      "size": 901
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-027-build-validation.json",
+      "size": 139
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-028-runtime-capture.json",
+      "size": 463
+    },
+    {
+      "path": "execution/runtime-validation/FDR-010E35A-029-runtime-truth-capture.json",
+      "size": 585
+    },
+    {
+      "path": "execution/runtime-validation/RTB-ADM-001-HANDOFF.json",
+      "size": 148
+    },
+    {
+      "path": "execution/runtime-validation/RTB-ADM-001.json",
+      "size": 1425
+    },
+    {
+      "path": "execution/runtime-validation/release1_runtime_status.json",
+      "size": 313
+    },
+    {
+      "path": "execution/sprints/APP-REC-005/STAGE2-QUERY-STRUCTURAL-CAPTURE.json",
+      "size": 3178
+    },
+    {
+      "path": "execution/sprints/LES-001/SPRINT.json",
+      "size": 444
+    },
+    {
+      "path": "execution/sprints/LES-001/implementation/IMPLEMENTATION-PLAN.json",
+      "size": 867
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/RMP-MANIFEST.json",
+      "size": 713
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/certification/TARGET-DISCOVERY-CERTIFICATION.json",
+      "size": 469
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/contracts/MUTATION-AUTHORITY-CONTRACT.json",
+      "size": 611
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/inspection/LANDING-EXPERIENCE-TARGETS.json",
+      "size": 12231
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/inspection/PRODUCTION-SURFACE-DISCOVERY.json",
+      "size": 35719
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/inspection/REPOSITORY-INSPECTION-CONTRACT.json",
+      "size": 723
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/SMP-MANIFEST.json",
+      "size": 925
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/candidate_working_copy/CANDIDATE-WORKING-COPY.json",
+      "size": 2303
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/certification/IMMUTABLE-WORKING-COPY-CERTIFICATION.json",
+      "size": 525
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/certification/SOURCE-SNAPSHOT-CERTIFICATION.json",
+      "size": 409
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/fragments/FRAGMENT-001.json",
+      "size": 386
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/implementation/FRAGMENT-001-IMPLEMENTATION.json",
+      "size": 518
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/implementation/FRAGMENT-001-INCREMENT-001.json",
+      "size": 525
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/implementation/FRAGMENT-001-SOURCE-EXTRACT.json",
+      "size": 600
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/inspection/IMPLEMENTATION-MODULE-INSPECTION.json",
+      "size": 301
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/inspection/SELECTED-TARGET.json",
+      "size": 459
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/inspection/SEMANTIC-IMPLEMENTATION-RESOLUTION.json",
+      "size": 302
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/inspection/SEMANTIC-MUTATION-ANALYSIS.json",
+      "size": 794
+    },
+    {
+      "path": "execution/sprints/LES-001/source_mutation_package/inspection/SEMANTIC-SOURCE-INSPECTION.json",
+      "size": 316
+    },
+    {
+      "path": "execution/sprints/SFP-001/BLD-AMS-001/AMS-MANIFEST.json",
+      "size": 448
+    },
+    {
+      "path": "execution/sprints/SFP-001/founder_acceptance/SFP-FA-001-foundation-acceptance.json",
+      "size": 428
+    },
+    {
+      "path": "execution/sprints/SFP-001/retirement/SFP-RET-001-retirement-package.json",
+      "size": 426
+    },
+    {
+      "path": "execution/sprints/SFP-001/state/IAG-MANIFEST.json",
+      "size": 207
+    },
+    {
+      "path": "execution/surface-registry/SURF-ADM-001.json",
+      "size": 749
+    },
+    {
+      "path": "execution/surface-registry/SURF-AUTH-001.json",
+      "size": 827
+    },
+    {
+      "path": "execution/validation-requests/FDR-010E35C-MUT-001-VAL-001.json",
+      "size": 1353
+    },
+    {
+      "path": "execution/validation-sessions/FDR-010E35C-MUT-001-VAL-004-Validation-Session.json",
+      "size": 905
+    },
+    {
+      "path": "execution/work-packages/FDR-010E35B-005-Runtime-Identity-Resolution-Implementation-Work-Package.json",
+      "size": 1711
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-011.json",
+      "size": 1073
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-preparation.json",
+      "size": 1726
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-014A-readiness.json",
+      "size": 533
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-015.json",
+      "size": 1713
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-report.json",
+      "size": 570
+    },
+    {
+      "path": "execution/workspace/EMP-001A/CANONICAL-EXECUTION-SURFACE-INVENTORY.json",
+      "size": 5462
+    },
+    {
+      "path": "execution/workspace/EMP-001B/CANONICAL-AUTHORITY-CANDIDATES.json",
+      "size": 4190
+    },
+    {
+      "path": "execution/workspace/EMP-001C/EXECUTION-COMPILER-SPEC.json",
+      "size": 1308
+    },
+    {
+      "path": "execution/workspace/EMP-001C/EXECUTION-TAXONOMY.json",
+      "size": 169648
+    },
+    {
+      "path": "execution/workspace/EMP-001D/CONSTITUTIONAL-INPUT-BINDINGS.json",
+      "size": 1328
+    },
+    {
+      "path": "execution/workspace/EMP-001E/CONSTITUTIONAL-DEPENDENCY-AUDIT.json",
+      "size": 22741
+    },
+    {
+      "path": "execution/workspace/EMP-001F/CONSTITUTIONAL-GAP-REGISTER.json",
+      "size": 1096
+    },
+    {
+      "path": "execution/workspace/EMP-001M-01/EXECUTION-COMPILER-RUNTIME-CONTRACT.json",
+      "size": 888
+    },
+    {
+      "path": "execution/workspace/EMP-001M-02/CANONICAL-EXECUTION-MODEL.json",
+      "size": 686
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/ACTIVE-RUNTIME-AUTHORITY-SET.json",
+      "size": 51496
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/AUTHORITY-RESIDENCY.json",
+      "size": 11761
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/CANONICAL-AUTHORITY-CLASSIFICATION.json",
+      "size": 52790
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/CANONICAL-AUTHORITY-INVENTORY.json",
+      "size": 52686
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/IMPLEMENTATION-READINESS.json",
+      "size": 1523
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/SEMANTIC-AUTHORITY-CONFLICTS.json",
+      "size": 43517
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/SURFACE-GAP-ANALYSIS.json",
+      "size": 731
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-001-repository-truth.json",
+      "size": 4151
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-002-surface-inventory.json",
+      "size": 1185
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-016-readiness.json",
+      "size": 884
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-025-readiness.json",
+      "size": 363
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-026-report.json",
+      "size": 310
+    },
+    {
+      "path": "execution/workspace/GE-RMP-002B-content-surface-truth.json",
+      "size": 575
+    },
+    {
+      "path": "execution/workspace/GE-RMP-002C-registry-creation.json",
+      "size": 598
+    },
+    {
+      "path": "execution/workspace/LES-001/IMPLEMENTATION-READINESS.json",
+      "size": 563
+    },
+    {
+      "path": "execution/workspace/LES-001/WORKING-SOURCE-SEMANTIC.json",
+      "size": 670
+    },
+    {
+      "path": "execution/workspace/LES-001/WORKING-SOURCE.json",
+      "size": 395
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RANKING.json",
+      "size": 218043
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RESOLUTION.json",
+      "size": 134220
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-BUNDLE.json",
+      "size": 17615
+    },
+    {
+      "path": "execution/workspace/LES-001/authority_retrieval/LES-001-AUTHORITY-INVENTORY.json",
+      "size": 129769
+    },
+    {
+      "path": "execution/workspace/LES-001/content_authority/LANDING-PAGE-CONTENT-AUTHORITY.json",
+      "size": 580
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/BUILDER-EXECUTION.json",
+      "size": 536
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/CLAUDE-IMPLEMENTATION-REQUEST.json",
+      "size": 984
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION-AUTHORITY.json",
+      "size": 625
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json",
+      "size": 9010
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION-TASK-001.json",
+      "size": 518
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/IMPLEMENTATION.json",
+      "size": 804
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LANDING-PAGE-ASSEMBLY.json",
+      "size": 452
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LANDING-PAGE-IMPLEMENTATION-SPEC.json",
+      "size": 713
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LANDING-PAGE-IMPLEMENTATION-WORKSPACE.json",
+      "size": 689
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SEMANTIC-MUTATION-AUTHORITY.json",
+      "size": 493
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SOURCE-GENERATION-REQUEST.json",
+      "size": 512
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SURFACE-CATALOG.json",
+      "size": 4783
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SURFACE-INVENTORY.json",
+      "size": 2324
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SURFACE-MUTATION-EXECUTION.json",
+      "size": 1364
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/SURFACE-REUSE-MAP.json",
+      "size": 2307
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/baselines/BASELINE.json",
+      "size": 324
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/generated_baselines/BASELINE-CERTIFICATION.json",
+      "size": 481
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/mutation_history/MUTATION-001.json",
+      "size": 528
+    }
+  ]
+}

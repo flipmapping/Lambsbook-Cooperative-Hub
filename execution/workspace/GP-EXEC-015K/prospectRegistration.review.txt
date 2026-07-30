@@ -1,0 +1,18 @@
+0001: import type { ProspectImportRecord } from "../../../shared/imports/types";
+0002: import type { ProspectRegistrationPayload } from "../../services/admissions";
+0003: 
+0004: /**
+0005:  * Canonical Import → Domain mapper.
+0006:  * Pure transformation with no persistence or side effects.
+0007:  */
+0008: export function mapImportRecordToRegistrationPayload(
+0009:   record: ProspectImportRecord,
+0010: ): ProspectRegistrationPayload {
+0011:   return {
+0012:     fullName: record.fullName,
+0013:     email: record.email ?? "",
+0014:     phone: record.phone,
+0015:     country: record.province ?? "",
+0016:     programOfInterest: record.program ?? "",
+0017:   };
+0018: }

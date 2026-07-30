@@ -1,0 +1,47 @@
+{
+  "authority": "GEX-BUILD-001",
+  "package": "Production-Implementation-Context",
+  "version": "1.0",
+  "files": [
+    {
+      "name": "RELEASE-MANIFEST.json",
+      "sha256": "793f20362a00b06b12e41f8c34c327020fe288f030d46fe3f16ff198905e7554",
+      "bytes": 1744
+    },
+    {
+      "name": "IMPLEMENTATION-HANDOFF.json",
+      "sha256": "6fe19110540eb7564eb9723c3dd5406a073d6a34f4648da0f90cdf18b4eaa1b0",
+      "bytes": 792
+    },
+    {
+      "name": "NOTIFICATION-MUTATION-BACKLOG.json",
+      "sha256": "e3c3ac7d66be4d0851b1943358fb5e806d2420279e3281be627bbb5e0a8f4f90",
+      "bytes": 1970
+    },
+    {
+      "name": "NOTIFICATION-IMPLEMENTATION-BLUEPRINT.md",
+      "sha256": "baa84317162031a1d162d9a4b9cdc5e65cbce85c32d58fbbc1fe32fea9cbbffd",
+      "bytes": 17756
+    },
+    {
+      "name": "NOTIFICATION-PIPELINE-MUTATION-MAP.md",
+      "sha256": "8ea87a74b982020a8260fb52e8174195079f8637941234dd4689e357ff989a7b",
+      "bytes": 12793
+    },
+    {
+      "name": "MUTATION-EXECUTION-RECORD.template.md",
+      "sha256": "a0572d4cae74477632e51d64342acc5f63385fe9643c6608954038e7fd0bdcce",
+      "bytes": 414
+    },
+    {
+      "name": "EXECUTION-SURFACE-REGISTRY.json",
+      "sha256": "a9ab536303de17124f1680ea02d380d648784e2836cb002cc912b0ec0c27efdf",
+      "bytes": 6943
+    },
+    {
+      "name": "NM-001-PRE-MUTATION-MANIFEST.json",
+      "sha256": "06ff9a46df2e22534c6defb8964f15c64e2d8cd2b273f1dd2d41b5a18939a563",
+      "bytes": 9049
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "authority": "APP-COM-001",
+  "component": "CommunicationRecord",
+  "version": "1.0",
+  "immutable": false,
+  "derived_from": "CommunicationIntent",
+  "purpose": "Runtime persistence boundary for provider-independent communication execution.",
+  "fields": {
+    "record_id": "uuid",
+    "intent_id": "uuid",
+    "organization_id": "uuid",
+    "profile_id": "uuid",
+    "template_key": "string",
+    "template_version": "string",
+    "selected_provider": "string|null",
+    "selected_channel": "string",
+    "runtime_status": [
+      "pending",
+      "queued",
+      "processing",
+      "delivered",
+      "failed",
+      "cancelled"
+    ],
+    "created_at": "timestamp",
+    "updated_at": "timestamp"
+  },
+  "guarantees": [
+    "ProviderIndependent",
+    "Auditable",
+    "Retryable",
+    "Traceable"
+  ]
+}

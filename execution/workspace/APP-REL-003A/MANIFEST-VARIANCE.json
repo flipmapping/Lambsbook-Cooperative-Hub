@@ -1,0 +1,108 @@
+{
+  "authority": "APP-REL-003A",
+  "timestamp": "2026-07-30T14:34:02.686634+00:00",
+  "missing_from_index": [
+    "client/src/features/",
+    "server/imports/adapters/",
+    "server/imports/domain/",
+    "server/imports/reporting/",
+    "server/imports/staging/",
+    "server/imports/validation/",
+    "server/messaging/",
+    "shared/organization/"
+  ],
+  "unexpected_staged": [
+    {
+      "path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/README.md",
+      "status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/index.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/imports/adapters/csv/adapter.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/imports/domain/prospectImport.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/imports/reporting/engine.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/imports/staging/engine.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/imports/validation/contracts.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/imports/validation/engine.ts",
+      "status": "A"
+    },
+    {
+      "path": "server/messaging/interface.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/builder-demo-scenarios.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/builder-demo.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/builder-planner.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/builder-validation.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/capability-catalog.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/channel-catalog.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/execution-plan.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/organization-manifest.ts",
+      "status": "A"
+    },
+    {
+      "path": "shared/organization/workspace-catalog.ts",
+      "status": "A"
+    }
+  ]
+}

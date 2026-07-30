@@ -1,0 +1,15 @@
+{
+  "authority": "FDR-010E35B",
+  "inspection": "APP-REC-004A-R",
+  "decision": "PREREQUISITE REQUIRED",
+  "missing": [
+    "implementation_scope",
+    "target_repository",
+    "target_modules",
+    "mutation_boundaries",
+    "execution_sequence",
+    "validation_strategy",
+    "rollback_strategy"
+  ],
+  "repository_mutation": false
+}

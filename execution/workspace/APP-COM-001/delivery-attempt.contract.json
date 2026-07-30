@@ -1,0 +1,23 @@
+{
+  "authority": "APP-COM-001",
+  "component": "DeliveryAttempt",
+  "version": "1.0",
+  "derived_from": "CommunicationRecord",
+  "append_only": true,
+  "fields": {
+    "attempt_id": "uuid",
+    "record_id": "uuid",
+    "provider": "string",
+    "channel": "string",
+    "attempt_number": "integer",
+    "provider_message_id": "string|null",
+    "status": [
+      "success",
+      "failed",
+      "timeout"
+    ],
+    "started_at": "timestamp",
+    "completed_at": "timestamp|null",
+    "error_code": "string|null"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "component": "NotificationTemplateResolver",
+  "version": "1.0",
+  "inputs": {
+    "current_stage": "string",
+    "preferred_language": "en|vi|zh-TW",
+    "channel": "resend|zalo"
+  },
+  "output": {
+    "template_key": "string",
+    "template_version": "string"
+  },
+  "resolution_key": [
+    "current_stage",
+    "preferred_language",
+    "channel"
+  ],
+  "guarantees": [
+    "Deterministic",
+    "PureFunction",
+    "SideEffectFree",
+    "Versioned"
+  ]
+}

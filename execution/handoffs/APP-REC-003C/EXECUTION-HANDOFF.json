@@ -1,0 +1,35 @@
+{
+  "handoff_id": "EOS-HO-001",
+  "generated_at": "2026-07-24T04:25:02Z",
+  "producer": "Builder Recovery Stream",
+  "consumer": "Main Application Recovery Stream",
+  "execution_state": "GOVERNANCE_HOLD",
+  "builder": {
+    "baseline": "EOS-BLD-001",
+    "commit": "61bef8a1cbc82f2fb959081c803df13aad5d393e",
+    "status": "CERTIFIED"
+  },
+  "pending_request": {
+    "authority": "APP-REC-003C",
+    "queue_status": "WAITING_FOR_BUILDER_PACKAGE"
+  },
+  "completed": [
+    "Builder Recovery",
+    "Builder Certification",
+    "Builder Invocation Verification",
+    "Governance Boundary Resolution",
+    "EMP-002 Governance Hold"
+  ],
+  "blocked_by": [
+    "Canonical Builder Input not yet resolved by Governance"
+  ],
+  "resume_contract": [
+    "Governance identifies canonical Builder Input",
+    "Invoke certified Builder",
+    "Verify package",
+    "Founder approval",
+    "Repository mutation"
+  ],
+  "repository_mutation_authorized": false,
+  "builder_invocation_authorized": false
+}

@@ -1,0 +1,21 @@
+{
+  "package_id": "SFP-OBS-001",
+  "status": "ready_for_sync",
+  "created": "2026-07-09T17:30:34.132878Z",
+  "source_repository": "APP-001",
+  "target_repository": "OB-001",
+  "authority": "BLD-ARCH-002",
+  "sprint": "SFP Sprint 1 - Foundation",
+  "runtime_capabilities": [
+    "BLD-ARR-001",
+    "BLD-RRS-001",
+    "BLD-RRS-002",
+    "BLD-AMS-001",
+    "BLD-EWL-001",
+    "BLD-RPS-001",
+    "BLD-COMP-001",
+    "BLD-RUN-001"
+  ],
+  "founder_acceptance": "SFP-FA-001",
+  "result": "Runtime foundation synchronized to governance."
+}

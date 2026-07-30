@@ -1,0 +1,8 @@
+{
+  "authority": "APP-EXEC-002A",
+  "created": "2026-07-30 04:28 UTC",
+  "request": "Execute Builder",
+  "input_package": "execution/workspace/BUILDER-HANDOFF-001/BUILDER-HANDOFF-001.zip",
+  "expected_output": "Exactly one Production Implementation Context (PIC) ZIP",
+  "post_condition": "Implementation session shall consume the generated PIC and begin repository mutations."
+}

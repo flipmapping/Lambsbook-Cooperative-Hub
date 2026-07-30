@@ -1,0 +1,4666 @@
+[
+  {
+    "component": "find",
+    "file": ".local/skills/canvas/SKILL.md"
+  },
+  {
+    "component": "locate",
+    "file": ".local/skills/canvas/SKILL.md"
+  },
+  {
+    "component": "items",
+    "file": ".local/skills/image-search/SKILL.md"
+  },
+  {
+    "component": "Current",
+    "file": ".local/skills/mockup-extract/SKILL.md"
+  },
+  {
+    "component": "items",
+    "file": ".local/skills/external-apis/references/brave.md"
+  },
+  {
+    "component": "Minimal",
+    "file": ".local/skills/mockup-sandbox/SKILL.md"
+  },
+  {
+    "component": "Bold",
+    "file": ".local/skills/mockup-sandbox/SKILL.md"
+  },
+  {
+    "component": "Dashboard",
+    "file": ".local/skills/mockup-sandbox/SKILL.md"
+  },
+  {
+    "component": "onHashChange",
+    "file": ".local/skills/mockup-sandbox/templates/ds-entry/App.tsx"
+  },
+  {
+    "component": "useApi",
+    "file": ".local/skills/repl-setup/references/vue.md"
+  },
+  {
+    "component": "initializeRevenueCat",
+    "file": ".local/skills/revenuecat/references/initial-setup.md"
+  },
+  {
+    "component": "SubscriptionProvider",
+    "file": ".local/skills/revenuecat/references/initial-setup.md"
+  },
+  {
+    "component": "useSubscription",
+    "file": ".local/skills/revenuecat/references/initial-setup.md"
+  },
+  {
+    "component": "data",
+    "file": ".local/skills/shopify/files/shopifyStorefrontClient.ts"
+  },
+  {
+    "component": "getWhopClient",
+    "file": ".local/skills/whop/references/whop-client.ts"
+  },
+  {
+    "component": "AlertDialogHeader",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "AlertDialogFooter",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "BreadcrumbSeparator",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "BreadcrumbEllipsis",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "ChartStyle",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/chart.tsx"
+  },
+  {
+    "component": "CommandDialog",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/command.tsx"
+  },
+  {
+    "component": "CommandShortcut",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/command.tsx"
+  },
+  {
+    "component": "ContextMenuShortcut",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/context-menu.tsx"
+  },
+  {
+    "component": "DialogHeader",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "DialogFooter",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "Drawer",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerHeader",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerFooter",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DropdownMenuShortcut",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/dropdown-menu.tsx"
+  },
+  {
+    "component": "useFormField",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/form.tsx"
+  },
+  {
+    "component": "MenubarShortcut",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/menubar.tsx"
+  },
+  {
+    "component": "Pagination",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationLink",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationPrevious",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationNext",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationEllipsis",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "ResizablePanelGroup",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "ResizableHandle",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "SheetHeader",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "SheetFooter",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "handleKeyDown",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "button",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/sonner.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/components/ui/toaster.tsx"
+  },
+  {
+    "component": "useIsMobile",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "onChange",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "addToRemoveQueue",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/hooks/use-toast.tsx"
+  },
+  {
+    "component": "reducer",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/hooks/use-toast.tsx"
+  },
+  {
+    "component": "update",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/hooks/use-toast.tsx"
+  },
+  {
+    "component": "dismiss",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/hooks/use-toast.tsx"
+  },
+  {
+    "component": "cn",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/lib/utils.tsx"
+  },
+  {
+    "component": "DesignSystemBrowser",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/DesignSystemBrowser.tsx"
+  },
+  {
+    "component": "onHashChange",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/DesignSystemBrowser.tsx"
+  },
+  {
+    "component": "select",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/DesignSystemBrowser.tsx"
+  },
+  {
+    "component": "selectPage",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/DesignSystemBrowser.tsx"
+  },
+  {
+    "component": "OverviewPage",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/foundations.tsx"
+  },
+  {
+    "component": "ColorsPage",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/foundations.tsx"
+  },
+  {
+    "component": "FontsPage",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/foundations.tsx"
+  },
+  {
+    "component": "LayoutPage",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/foundations.tsx"
+  },
+  {
+    "component": "Row",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/parts.tsx"
+  },
+  {
+    "component": "Stack",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/parts.tsx"
+  },
+  {
+    "component": "Guidelines",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/parts.tsx"
+  },
+  {
+    "component": "AccordionDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/accordion.tsx"
+  },
+  {
+    "component": "AlertDialogDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/alert-dialog.tsx"
+  },
+  {
+    "component": "AlertDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/alert.tsx"
+  },
+  {
+    "component": "AspectRatioDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/aspect-ratio.tsx"
+  },
+  {
+    "component": "AvatarDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/avatar.tsx"
+  },
+  {
+    "component": "BadgeDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/badge.tsx"
+  },
+  {
+    "component": "BreadcrumbDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/breadcrumb.tsx"
+  },
+  {
+    "component": "ButtonGroupDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/button-group.tsx"
+  },
+  {
+    "component": "ButtonDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/button.tsx"
+  },
+  {
+    "component": "CalendarDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/calendar.tsx"
+  },
+  {
+    "component": "CardDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/card.tsx"
+  },
+  {
+    "component": "CarouselDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/carousel.tsx"
+  },
+  {
+    "component": "ChartDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/chart.tsx"
+  },
+  {
+    "component": "CheckboxDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/checkbox.tsx"
+  },
+  {
+    "component": "CollapsibleDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/collapsible.tsx"
+  },
+  {
+    "component": "CommandDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/command.tsx"
+  },
+  {
+    "component": "ContextMenuDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/context-menu.tsx"
+  },
+  {
+    "component": "DialogDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/dialog.tsx"
+  },
+  {
+    "component": "DrawerDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/drawer.tsx"
+  },
+  {
+    "component": "DropdownMenuDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/dropdown-menu.tsx"
+  },
+  {
+    "component": "EmptyDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/empty.tsx"
+  },
+  {
+    "component": "FieldDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/field.tsx"
+  },
+  {
+    "component": "FormDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/form.tsx"
+  },
+  {
+    "component": "HoverCardDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/hover-card.tsx"
+  },
+  {
+    "component": "InputGroupDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/input-group.tsx"
+  },
+  {
+    "component": "InputOtpDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/input-otp.tsx"
+  },
+  {
+    "component": "InputDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/input.tsx"
+  },
+  {
+    "component": "ItemDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/item.tsx"
+  },
+  {
+    "component": "KbdDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/kbd.tsx"
+  },
+  {
+    "component": "MenubarDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/menubar.tsx"
+  },
+  {
+    "component": "NavigationMenuDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/navigation-menu.tsx"
+  },
+  {
+    "component": "PaginationDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/pagination.tsx"
+  },
+  {
+    "component": "PopoverDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/popover.tsx"
+  },
+  {
+    "component": "ProgressDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/progress.tsx"
+  },
+  {
+    "component": "RadioGroupDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/radio-group.tsx"
+  },
+  {
+    "component": "ResizableDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/resizable.tsx"
+  },
+  {
+    "component": "ScrollAreaDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/scroll-area.tsx"
+  },
+  {
+    "component": "SelectDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/select.tsx"
+  },
+  {
+    "component": "SeparatorDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/separator.tsx"
+  },
+  {
+    "component": "SheetDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/sheet.tsx"
+  },
+  {
+    "component": "SidebarDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/sidebar.tsx"
+  },
+  {
+    "component": "SkeletonDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/skeleton.tsx"
+  },
+  {
+    "component": "SliderDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/slider.tsx"
+  },
+  {
+    "component": "SonnerDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/sonner.tsx"
+  },
+  {
+    "component": "SpinnerDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/spinner.tsx"
+  },
+  {
+    "component": "SwitchDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/switch.tsx"
+  },
+  {
+    "component": "TableDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/table.tsx"
+  },
+  {
+    "component": "TabsDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/tabs.tsx"
+  },
+  {
+    "component": "TextareaDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/textarea.tsx"
+  },
+  {
+    "component": "ToastDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/toast.tsx"
+  },
+  {
+    "component": "ToggleGroupDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/toggle-group.tsx"
+  },
+  {
+    "component": "ToggleDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/toggle.tsx"
+  },
+  {
+    "component": "TooltipDemo",
+    "file": ".local/skills/artifacts/artifacts/design-system/files/src/preview/demos/tooltip.tsx"
+  },
+  {
+    "component": "NotFoundScreen",
+    "file": ".local/skills/artifacts/artifacts/expo/files/app/+not-found.tsx"
+  },
+  {
+    "component": "RootLayout",
+    "file": ".local/skills/artifacts/artifacts/expo/files/app/_layout.tsx"
+  },
+  {
+    "component": "TabLayout",
+    "file": ".local/skills/artifacts/artifacts/expo/files/app/(tabs)/_layout.tsx"
+  },
+  {
+    "component": "TabOneScreen",
+    "file": ".local/skills/artifacts/artifacts/expo/files/app/(tabs)/index.tsx"
+  },
+  {
+    "component": "ErrorFallback",
+    "file": ".local/skills/artifacts/artifacts/expo/files/components/ErrorFallback.tsx"
+  },
+  {
+    "component": "formatErrorDetails",
+    "file": ".local/skills/artifacts/artifacts/expo/files/components/ErrorFallback.tsx"
+  },
+  {
+    "component": "KeyboardAwareScrollViewCompat",
+    "file": ".local/skills/artifacts/artifacts/expo/files/components/KeyboardAwareScrollViewCompat.tsx"
+  },
+  {
+    "component": "useColors",
+    "file": ".local/skills/artifacts/artifacts/expo/files/hooks/useColors.ts"
+  },
+  {
+    "component": "basePath",
+    "file": ".local/skills/artifacts/artifacts/expo/files/scripts/build.js"
+  },
+  {
+    "component": "cleanup",
+    "file": ".local/skills/artifacts/artifacts/expo/files/scripts/build.js"
+  },
+  {
+    "component": "extractFromBundle",
+    "file": ".local/skills/artifacts/artifacts/expo/files/scripts/build.js"
+  },
+  {
+    "component": "updateForPlatform",
+    "file": ".local/skills/artifacts/artifacts/expo/files/scripts/build.js"
+  },
+  {
+    "component": "updateForPlatform",
+    "file": ".local/skills/artifacts/artifacts/expo/files/scripts/build.js"
+  },
+  {
+    "component": "basePath",
+    "file": ".local/skills/artifacts/artifacts/expo/files/server/serve.js"
+  },
+  {
+    "component": "mockupPreviewPlugin",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/mockupPreviewPlugin.ts"
+  },
+  {
+    "component": "AlertDialogHeader",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "AlertDialogFooter",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "BreadcrumbSeparator",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "BreadcrumbEllipsis",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "ChartStyle",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/chart.tsx"
+  },
+  {
+    "component": "CommandDialog",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/command.tsx"
+  },
+  {
+    "component": "CommandShortcut",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/command.tsx"
+  },
+  {
+    "component": "ContextMenuShortcut",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/context-menu.tsx"
+  },
+  {
+    "component": "DialogHeader",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "DialogFooter",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "Drawer",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerHeader",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerFooter",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DropdownMenuShortcut",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/dropdown-menu.tsx"
+  },
+  {
+    "component": "useFormField",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/form.tsx"
+  },
+  {
+    "component": "MenubarShortcut",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/menubar.tsx"
+  },
+  {
+    "component": "Pagination",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationLink",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationPrevious",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationNext",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationEllipsis",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "ResizablePanelGroup",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "ResizableHandle",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "SheetHeader",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "SheetFooter",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "handleKeyDown",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "button",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sonner.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/toaster.tsx"
+  },
+  {
+    "component": "useIsMobile",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "onChange",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "addToRemoveQueue",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "reducer",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "update",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "dismiss",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "cn",
+    "file": ".local/skills/artifacts/artifacts/mockup-sandbox/files/src/lib/utils.ts"
+  },
+  {
+    "component": "AlertDialogHeader",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "AlertDialogFooter",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "BreadcrumbSeparator",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "BreadcrumbEllipsis",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "ChartStyle",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/chart.tsx"
+  },
+  {
+    "component": "CommandDialog",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/command.tsx"
+  },
+  {
+    "component": "CommandShortcut",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/command.tsx"
+  },
+  {
+    "component": "ContextMenuShortcut",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/context-menu.tsx"
+  },
+  {
+    "component": "DialogHeader",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "DialogFooter",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "Drawer",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerHeader",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerFooter",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DropdownMenuShortcut",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/dropdown-menu.tsx"
+  },
+  {
+    "component": "useFormField",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/form.tsx"
+  },
+  {
+    "component": "MenubarShortcut",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/menubar.tsx"
+  },
+  {
+    "component": "Pagination",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationLink",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationPrevious",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationNext",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationEllipsis",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "ResizablePanelGroup",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "ResizableHandle",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "SheetHeader",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "SheetFooter",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "handleKeyDown",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "button",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sonner.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/components/ui/toaster.tsx"
+  },
+  {
+    "component": "useIsMobile",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "onChange",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "addToRemoveQueue",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "reducer",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "update",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "dismiss",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "cn",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/lib/utils.ts"
+  },
+  {
+    "component": "NotFound",
+    "file": ".local/skills/artifacts/artifacts/react-vite/files/src/pages/not-found.tsx"
+  },
+  {
+    "component": "App",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "isInteractive",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "consumesArrowKeys",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "postNav",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "onKeyDown",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "onClick",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "onTouchStart",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "onTouchEnd",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "update",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "onKeyDown",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "onMessage",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/App.tsx"
+  },
+  {
+    "component": "safeParseSlidesManifest",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/data/slidesManifestSchema.ts"
+  },
+  {
+    "component": "parseSlidesManifest",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/data/slidesManifestSchema.ts"
+  },
+  {
+    "component": "analyzeSlideLayout",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "visibleRect",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "rowIsFree",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "middle",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "finishLine",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "size",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "spacing",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/layoutValidation.ts"
+  },
+  {
+    "component": "findElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "updateElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "setElementFrame",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "textBodyOf",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "setText",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "addElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "removeElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "reorderRootElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "bringToFront",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "sendToBack",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "normalizeRootElementIds",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "getRootElements",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "selectAllRootElementIds",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "planRootPointerSelection",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "translateRootElements",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "removeRootElements",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "bringRootElementsToFront",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "sendRootElementsToBack",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "bringRootElementsForward",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "sendRootElementsBackward",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "nextId",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "duplicateRootElements",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "groupRootElements",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "canUngroupRootElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "ungroupRootElement",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "visit",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "remove",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "rename",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "angle",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/operations.ts"
+  },
+  {
+    "component": "isWorkspaceToRuntimeMessage",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/protocol.ts"
+  },
+  {
+    "component": "isRuntimeToWorkspaceMessage",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/protocol.ts"
+  },
+  {
+    "component": "parseWorkspaceToRuntimeMessage",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/protocol.ts"
+  },
+  {
+    "component": "parseRuntimeToWorkspaceMessage",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/protocol.ts"
+  },
+  {
+    "component": "isSlideDocument",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/schema.ts"
+  },
+  {
+    "component": "parseSlideDocument",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/schema.ts"
+  },
+  {
+    "component": "visit",
+    "file": ".local/skills/artifacts/artifacts/slides/files/src/sdm/core/schema.ts"
+  },
+  {
+    "component": "App",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/App.tsx"
+  },
+  {
+    "component": "ReplitLoadingScene",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/components/video/ReplitLoadingScene.tsx"
+  },
+  {
+    "component": "VideoTemplate",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/components/video/VideoTemplate.tsx"
+  },
+  {
+    "component": "useIsMobile",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "onChange",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "cn",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/lib/utils.ts"
+  },
+  {
+    "component": "staggerDelay",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/lib/video/animations.ts"
+  },
+  {
+    "component": "customSpring",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/lib/video/animations.ts"
+  },
+  {
+    "component": "withDelay",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/lib/video/animations.ts"
+  },
+  {
+    "component": "useVideoPlayer",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/lib/video/hooks.ts"
+  },
+  {
+    "component": "useSceneTimer",
+    "file": ".local/skills/artifacts/artifacts/video-js/files/src/lib/video/hooks.ts"
+  },
+  {
+    "component": "ExampleInfographic",
+    "file": ".local/secondary_skills/infographic-builder/react-fallback.md"
+  },
+  {
+    "component": "ssrHtmlShell",
+    "file": ".local/secondary_skills/programmatic-seo/SKILL.md"
+  },
+  {
+    "component": "getTermHtml",
+    "file": ".local/secondary_skills/programmatic-seo/SKILL.md"
+  },
+  {
+    "component": "getTermIndexHtml",
+    "file": ".local/secondary_skills/programmatic-seo/SKILL.md"
+  },
+  {
+    "component": "ptToHalfPt",
+    "file": ".local/secondary_skills/resume-maker/SKILL.md"
+  },
+  {
+    "component": "ptToTwip",
+    "file": ".local/secondary_skills/resume-maker/SKILL.md"
+  },
+  {
+    "component": "ptToHalfPt",
+    "file": ".local/secondary_skills/resume-maker/SKILL.md"
+  },
+  {
+    "component": "ptToTwip",
+    "file": ".local/secondary_skills/resume-maker/SKILL.md"
+  },
+  {
+    "component": "handler",
+    "file": ".local/secondary_skills/website-cloning/pitfalls.md"
+  },
+  {
+    "component": "serveStatic",
+    "file": "server/static.ts"
+  },
+  {
+    "component": "log",
+    "file": "server/index.ts"
+  },
+  {
+    "component": "msg",
+    "file": "server/routes.ts"
+  },
+  {
+    "component": "getOpenAI",
+    "file": "server/lib/openai.ts"
+  },
+  {
+    "component": "getSupabaseAdmin",
+    "file": "server/lib/supabase-client.ts"
+  },
+  {
+    "component": "isSupabaseConfigured",
+    "file": "server/lib/supabase-client.ts"
+  },
+  {
+    "component": "getSupabaseMember",
+    "file": "server/lib/supabase-member-client.ts"
+  },
+  {
+    "component": "isSupabaseMemberConfigured",
+    "file": "server/lib/supabase-member-client.ts"
+  },
+  {
+    "component": "createAuthenticatedClient",
+    "file": "server/lib/supabase-member-client.ts"
+  },
+  {
+    "component": "getUserClient",
+    "file": "server/lib/supabaseClients.ts"
+  },
+  {
+    "component": "getServiceClient",
+    "file": "server/lib/supabaseClients.ts"
+  },
+  {
+    "component": "isSupabaseConfigured",
+    "file": "server/lib/supabaseClients.ts"
+  },
+  {
+    "component": "blockSbuInjection",
+    "file": "server/middleware/blockSbuInjection.ts"
+  },
+  {
+    "component": "requireSuperAdmin",
+    "file": "server/middleware/requireSuperAdmin.ts"
+  },
+  {
+    "component": "requireSBURole",
+    "file": "server/middleware/requireSBURole.ts"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "server/routes/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "server/routes/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "server/routes/member.ts"
+  },
+  {
+    "component": "parseDocumentMetadata",
+    "file": "server/services/google-drive.ts"
+  },
+  {
+    "component": "extractSubmissionSections",
+    "file": "server/services/google-drive.ts"
+  },
+  {
+    "component": "getValueChainRoles",
+    "file": "server/services/hub-partners.ts"
+  },
+  {
+    "component": "validateDocument",
+    "file": "server/services/education-feedback.ts"
+  },
+  {
+    "component": "validateTranscriptRequest",
+    "file": "server/services/education-feedback.ts"
+  },
+  {
+    "component": "registrationConfirmationTemplate",
+    "file": "server/services/emailTemplates.ts"
+  },
+  {
+    "component": "json",
+    "file": "server/services/notifications.ts"
+  },
+  {
+    "component": "getZaloAuthentication",
+    "file": "server/integrations/zalo/auth.ts"
+  },
+  {
+    "component": "mapCsvRows",
+    "file": "server/imports/adapters/csv/adapter.ts"
+  },
+  {
+    "component": "runImportPipeline",
+    "file": "server/imports/pipeline/runImportPipeline.ts"
+  },
+  {
+    "component": "stageProspects",
+    "file": "server/imports/staging/engine.ts"
+  },
+  {
+    "component": "validateProspect",
+    "file": "server/imports/validation/engine.ts"
+  },
+  {
+    "component": "generateImportReport",
+    "file": "server/imports/reporting/engine.ts"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "client/src/App.tsx"
+  },
+  {
+    "component": "AIChatWidget",
+    "file": "client/src/components/AIChatWidget.tsx"
+  },
+  {
+    "component": "scrollToBottom",
+    "file": "client/src/components/AIChatWidget.tsx"
+  },
+  {
+    "component": "handleSend",
+    "file": "client/src/components/AIChatWidget.tsx"
+  },
+  {
+    "component": "handleKeyPress",
+    "file": "client/src/components/AIChatWidget.tsx"
+  },
+  {
+    "component": "AdvantagesSection",
+    "file": "client/src/components/AdvantagesSection.tsx"
+  },
+  {
+    "component": "ContactSection",
+    "file": "client/src/components/ContactSection.tsx"
+  },
+  {
+    "component": "CountriesSection",
+    "file": "client/src/components/CountriesSection.tsx"
+  },
+  {
+    "component": "EB3Categories",
+    "file": "client/src/components/EB3Categories.tsx"
+  },
+  {
+    "component": "FAQSection",
+    "file": "client/src/components/FAQSection.tsx"
+  },
+  {
+    "component": "Footer",
+    "file": "client/src/components/Footer.tsx"
+  },
+  {
+    "component": "Header",
+    "file": "client/src/components/Header.tsx"
+  },
+  {
+    "component": "handleNavClick",
+    "file": "client/src/components/Header.tsx"
+  },
+  {
+    "component": "JobCategoriesSection",
+    "file": "client/src/components/JobCategoriesSection.tsx"
+  },
+  {
+    "component": "ProcessSection",
+    "file": "client/src/components/ProcessSection.tsx"
+  },
+  {
+    "component": "ServicesSection",
+    "file": "client/src/components/ServicesSection.tsx"
+  },
+  {
+    "component": "StudyAbroadSection",
+    "file": "client/src/components/StudyAbroadSection.tsx"
+  },
+  {
+    "component": "SuccessStories",
+    "file": "client/src/components/SuccessStories.tsx"
+  },
+  {
+    "component": "ThemeToggle",
+    "file": "client/src/components/ThemeToggle.tsx"
+  },
+  {
+    "component": "toggleTheme",
+    "file": "client/src/components/ThemeToggle.tsx"
+  },
+  {
+    "component": "HeroSection",
+    "file": "client/src/components/HeroSection.tsx"
+  },
+  {
+    "component": "HubHeader",
+    "file": "client/src/components/HubHeader.tsx"
+  },
+  {
+    "component": "handleNavClick",
+    "file": "client/src/components/HubHeader.tsx"
+  },
+  {
+    "component": "LanguageSwitcher",
+    "file": "client/src/components/LanguageSwitcher.tsx"
+  },
+  {
+    "component": "HubConsultationForm",
+    "file": "client/src/components/HubConsultationForm.tsx"
+  },
+  {
+    "component": "ChartStyle",
+    "file": "client/src/components/ui/chart.tsx"
+  },
+  {
+    "component": "useFormField",
+    "file": "client/src/components/ui/form.tsx"
+  },
+  {
+    "component": "handleKeyDown",
+    "file": "client/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "button",
+    "file": "client/src/components/ui/sidebar.tsx"
+  },
+  {
+    "component": "SheetHeader",
+    "file": "client/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "SheetFooter",
+    "file": "client/src/components/ui/sheet.tsx"
+  },
+  {
+    "component": "BreadcrumbSeparator",
+    "file": "client/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "BreadcrumbEllipsis",
+    "file": "client/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "component": "MenubarShortcut",
+    "file": "client/src/components/ui/menubar.tsx"
+  },
+  {
+    "component": "DialogHeader",
+    "file": "client/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "DialogFooter",
+    "file": "client/src/components/ui/dialog.tsx"
+  },
+  {
+    "component": "ContextMenuShortcut",
+    "file": "client/src/components/ui/context-menu.tsx"
+  },
+  {
+    "component": "Toaster",
+    "file": "client/src/components/ui/toaster.tsx"
+  },
+  {
+    "component": "Pagination",
+    "file": "client/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationLink",
+    "file": "client/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationPrevious",
+    "file": "client/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationNext",
+    "file": "client/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "PaginationEllipsis",
+    "file": "client/src/components/ui/pagination.tsx"
+  },
+  {
+    "component": "Drawer",
+    "file": "client/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerHeader",
+    "file": "client/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "DrawerFooter",
+    "file": "client/src/components/ui/drawer.tsx"
+  },
+  {
+    "component": "ResizablePanelGroup",
+    "file": "client/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "ResizableHandle",
+    "file": "client/src/components/ui/resizable.tsx"
+  },
+  {
+    "component": "CommandDialog",
+    "file": "client/src/components/ui/command.tsx"
+  },
+  {
+    "component": "CommandShortcut",
+    "file": "client/src/components/ui/command.tsx"
+  },
+  {
+    "component": "DropdownMenuShortcut",
+    "file": "client/src/components/ui/dropdown-menu.tsx"
+  },
+  {
+    "component": "AlertDialogHeader",
+    "file": "client/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "AlertDialogFooter",
+    "file": "client/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "component": "CommissionRulesManagement",
+    "file": "client/src/components/admin/CommissionRulesManagement.tsx"
+  },
+  {
+    "component": "getProgramName",
+    "file": "client/src/components/admin/CommissionRulesManagement.tsx"
+  },
+  {
+    "component": "handleAddRule",
+    "file": "client/src/components/admin/CommissionRulesManagement.tsx"
+  },
+  {
+    "component": "handleCreateRuleSet",
+    "file": "client/src/components/admin/CommissionRulesManagement.tsx"
+  },
+  {
+    "component": "handleCreateRule",
+    "file": "client/src/components/admin/CommissionRulesManagement.tsx"
+  },
+  {
+    "component": "EnrollmentWorkflow",
+    "file": "client/src/components/admin/EnrollmentWorkflow.tsx"
+  },
+  {
+    "component": "LandingPagesManagement",
+    "file": "client/src/components/admin/LandingPagesManagement.tsx"
+  },
+  {
+    "component": "getSBU",
+    "file": "client/src/components/admin/LandingPagesManagement.tsx"
+  },
+  {
+    "component": "getLandingPageUrl",
+    "file": "client/src/components/admin/LandingPagesManagement.tsx"
+  },
+  {
+    "component": "copyToClipboard",
+    "file": "client/src/components/admin/LandingPagesManagement.tsx"
+  },
+  {
+    "component": "SBUManagement",
+    "file": "client/src/components/admin/SBUManagement.tsx"
+  },
+  {
+    "component": "handleEdit",
+    "file": "client/src/components/admin/SBUManagement.tsx"
+  },
+  {
+    "component": "handleSave",
+    "file": "client/src/components/admin/SBUManagement.tsx"
+  },
+  {
+    "component": "ProgramsManagement",
+    "file": "client/src/components/admin/ProgramsManagement.tsx"
+  },
+  {
+    "component": "resetForm",
+    "file": "client/src/components/admin/ProgramsManagement.tsx"
+  },
+  {
+    "component": "handleEdit",
+    "file": "client/src/components/admin/ProgramsManagement.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "client/src/components/admin/ProgramsManagement.tsx"
+  },
+  {
+    "component": "getSubPrograms",
+    "file": "client/src/components/admin/ProgramsManagement.tsx"
+  },
+  {
+    "component": "getSBUName",
+    "file": "client/src/components/admin/ProgramsManagement.tsx"
+  },
+  {
+    "component": "AdvantagesSectionExample",
+    "file": "client/src/components/examples/AdvantagesSection.tsx"
+  },
+  {
+    "component": "ContactSectionExample",
+    "file": "client/src/components/examples/ContactSection.tsx"
+  },
+  {
+    "component": "CountriesSectionExample",
+    "file": "client/src/components/examples/CountriesSection.tsx"
+  },
+  {
+    "component": "EB3CategoriesExample",
+    "file": "client/src/components/examples/EB3Categories.tsx"
+  },
+  {
+    "component": "FAQSectionExample",
+    "file": "client/src/components/examples/FAQSection.tsx"
+  },
+  {
+    "component": "FooterExample",
+    "file": "client/src/components/examples/Footer.tsx"
+  },
+  {
+    "component": "HeaderExample",
+    "file": "client/src/components/examples/Header.tsx"
+  },
+  {
+    "component": "HeroSectionExample",
+    "file": "client/src/components/examples/HeroSection.tsx"
+  },
+  {
+    "component": "JobCategoriesSectionExample",
+    "file": "client/src/components/examples/JobCategoriesSection.tsx"
+  },
+  {
+    "component": "ProcessSectionExample",
+    "file": "client/src/components/examples/ProcessSection.tsx"
+  },
+  {
+    "component": "ServicesSectionExample",
+    "file": "client/src/components/examples/ServicesSection.tsx"
+  },
+  {
+    "component": "StudyAbroadSectionExample",
+    "file": "client/src/components/examples/StudyAbroadSection.tsx"
+  },
+  {
+    "component": "SuccessStoriesExample",
+    "file": "client/src/components/examples/SuccessStories.tsx"
+  },
+  {
+    "component": "ToggleControl",
+    "file": "client/src/components/notifications/ToggleControl.tsx"
+  },
+  {
+    "component": "ChannelSelector",
+    "file": "client/src/components/notifications/ChannelSelector.tsx"
+  },
+  {
+    "component": "NotificationPreferencesPanel",
+    "file": "client/src/components/notifications/NotificationPreferencesPanel.tsx"
+  },
+  {
+    "component": "handleToggle",
+    "file": "client/src/components/notifications/NotificationPreferencesPanel.tsx"
+  },
+  {
+    "component": "handleChannelChange",
+    "file": "client/src/components/notifications/NotificationPreferencesPanel.tsx"
+  },
+  {
+    "component": "groupPipelineByStage",
+    "file": "client/src/components/dashboard/mockData.ts"
+  },
+  {
+    "component": "InvitationAcceptanceSection",
+    "file": "client/src/components/dashboard/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "handleRetry",
+    "file": "client/src/components/dashboard/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "DashboardHeroCurrentPosition",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "DashboardTopBar",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "IdeaPipelineSection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "MyContributionsSection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "CooperativeActivitySection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "RelationshipTrustSection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "PipelineDetailPanel",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "SubmitIdeaModal",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "LearningHistorySection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "IELTSSection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "MultilingualSection",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "ActivityFeed",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "NotificationPreferencesPanel",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "ContributionActivity",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "NotificationBell",
+    "file": "client/src/components/dashboard/stubs.tsx"
+  },
+  {
+    "component": "ProspectTimeline",
+    "file": "client/src/components/admissions/ProspectTimeline.tsx"
+  },
+  {
+    "component": "ProspectActivityWorkspace",
+    "file": "client/src/components/admissions/ProspectActivityWorkspace.tsx"
+  },
+  {
+    "component": "ProspectFollowupTaskWorkspace",
+    "file": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx"
+  },
+  {
+    "component": "ProspectDocumentWorkspace",
+    "file": "client/src/components/admissions/ProspectDocumentWorkspace.tsx"
+  },
+  {
+    "component": "ProspectAdmissionDecisionWorkspace",
+    "file": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx"
+  },
+  {
+    "component": "cn",
+    "file": "client/src/lib/utils.ts"
+  },
+  {
+    "component": "useTranslation",
+    "file": "client/src/lib/i18n.ts"
+  },
+  {
+    "component": "t",
+    "file": "client/src/lib/i18n.ts"
+  },
+  {
+    "component": "text",
+    "file": "client/src/lib/queryClient.ts"
+  },
+  {
+    "component": "LanguageProvider",
+    "file": "client/src/lib/LanguageContext.tsx"
+  },
+  {
+    "component": "useLanguage",
+    "file": "client/src/lib/LanguageContext.tsx"
+  },
+  {
+    "component": "setLanguage",
+    "file": "client/src/lib/LanguageContext.tsx"
+  },
+  {
+    "component": "useHubTranslation",
+    "file": "client/src/lib/hubTranslations.ts"
+  },
+  {
+    "component": "t",
+    "file": "client/src/lib/hubTranslations.ts"
+  },
+  {
+    "component": "createClient",
+    "file": "client/src/lib/supabase/client.ts"
+  },
+  {
+    "component": "inviteToken",
+    "file": "client/src/lib/auth/PostAuthenticationContinuation.ts"
+  },
+  {
+    "component": "resolvePostAuthenticationDestination",
+    "file": "client/src/lib/auth/NavigationConsumptionAuthority.ts"
+  },
+  {
+    "component": "resolveRuntimeDestination",
+    "file": "client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  },
+  {
+    "component": "AdminGovernance",
+    "file": "client/src/pages/AdminGovernance.tsx"
+  },
+  {
+    "component": "AdminRevenueConsole",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "startEditing",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "cancelEditing",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "updateAllocationValue",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "calculateTotal",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "saveAllocations",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "getStatusBadge",
+    "file": "client/src/pages/AdminRevenueConsole.tsx"
+  },
+  {
+    "component": "AuthCallback",
+    "file": "client/src/pages/AuthCallback.tsx"
+  },
+  {
+    "component": "EducationFeedback",
+    "file": "client/src/pages/EducationFeedback.tsx"
+  },
+  {
+    "component": "handlePreview",
+    "file": "client/src/pages/EducationFeedback.tsx"
+  },
+  {
+    "component": "formatDate",
+    "file": "client/src/pages/EducationFeedback.tsx"
+  },
+  {
+    "component": "Login",
+    "file": "client/src/pages/Login.tsx"
+  },
+  {
+    "component": "handleResend",
+    "file": "client/src/pages/Login.tsx"
+  },
+  {
+    "component": "PartnerOnboarding",
+    "file": "client/src/pages/PartnerOnboarding.tsx"
+  },
+  {
+    "component": "onSubmit",
+    "file": "client/src/pages/PartnerOnboarding.tsx"
+  },
+  {
+    "component": "ResetPassword",
+    "file": "client/src/pages/ResetPassword.tsx"
+  },
+  {
+    "component": "handleBlur",
+    "file": "client/src/pages/ResetPassword.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "client/src/pages/ResetPassword.tsx"
+  },
+  {
+    "component": "TranscriptSubmission",
+    "file": "client/src/pages/TranscriptSubmission.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "client/src/pages/TranscriptSubmission.tsx"
+  },
+  {
+    "component": "handleReset",
+    "file": "client/src/pages/TranscriptSubmission.tsx"
+  },
+  {
+    "component": "NotFound",
+    "file": "client/src/pages/not-found.tsx"
+  },
+  {
+    "component": "Dashboard",
+    "file": "client/src/pages/Dashboard.tsx"
+  },
+  {
+    "component": "MemberDashboard",
+    "file": "client/src/pages/MemberDashboard.tsx"
+  },
+  {
+    "component": "HubDashboard",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "pushActivity",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "handleSubmitIdea",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "handleJoinDiscussion",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "handleToggleSupport",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "handleToggleAdoption",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "handleInvitationAccepted",
+    "file": "client/src/pages/HubDashboard.tsx"
+  },
+  {
+    "component": "MemberHub",
+    "file": "client/src/pages/MemberHub.tsx"
+  },
+  {
+    "component": "HubAuth",
+    "file": "client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleBlur",
+    "file": "client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleForgotPassword",
+    "file": "client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "HubAuthCallback",
+    "file": "client/src/pages/HubAuthCallback.tsx"
+  },
+  {
+    "component": "HubAdminDashboard",
+    "file": "client/src/pages/HubAdminDashboard.tsx"
+  },
+  {
+    "component": "StatCard",
+    "file": "client/src/pages/HubAdminDashboard.tsx"
+  },
+  {
+    "component": "AdmissionsWorkspace",
+    "file": "client/src/pages/AdmissionsWorkspace.tsx"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "client/src/pages/ProspectDetailWorkspace.tsx"
+  },
+  {
+    "component": "ApplicantStatusLookup",
+    "file": "client/src/pages/ApplicantStatusLookup.tsx"
+  },
+  {
+    "component": "ApplicantDocumentCenter",
+    "file": "client/src/pages/ApplicantDocumentCenter.tsx"
+  },
+  {
+    "component": "ApplicantAppointmentCenter",
+    "file": "client/src/pages/ApplicantAppointmentCenter.tsx"
+  },
+  {
+    "component": "ApplicantAdmissionDecisionCenter",
+    "file": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx"
+  },
+  {
+    "component": "ApplicantLifecycleTimeline",
+    "file": "client/src/pages/ApplicantLifecycleTimeline.tsx"
+  },
+  {
+    "component": "ApplicantActivityCenter",
+    "file": "client/src/pages/ApplicantActivityCenter.tsx"
+  },
+  {
+    "component": "ApplicantFollowupTaskCenter",
+    "file": "client/src/pages/ApplicantFollowupTaskCenter.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "FarmstayVision",
+    "file": "client/src/pages/FarmstayVision.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/pages/FarmstayVision.tsx"
+  },
+  {
+    "component": "LambsbookTutoring",
+    "file": "client/src/pages/LambsbookTutoring.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/pages/LambsbookTutoring.tsx"
+  },
+  {
+    "component": "isLoggedIn",
+    "file": "client/src/pages/LambsbookTutoring.tsx"
+  },
+  {
+    "component": "handleGetStarted",
+    "file": "client/src/pages/LambsbookTutoring.tsx"
+  },
+  {
+    "component": "TropicanaProgram",
+    "file": "client/src/pages/TropicanaProgram.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/pages/TropicanaProgram.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "client/src/pages/TropicanaProgram.tsx"
+  },
+  {
+    "component": "SBUEducation",
+    "file": "client/src/pages/SBUEducation.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/pages/SBUEducation.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "client/src/pages/SBUEducation.tsx"
+  },
+  {
+    "component": "JourneyContribute",
+    "file": "client/src/pages/JourneyPages.tsx"
+  },
+  {
+    "component": "JourneyLearn",
+    "file": "client/src/pages/JourneyPages.tsx"
+  },
+  {
+    "component": "HubLanding",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getSbus",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCollaborationPrinciples",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getFaqItems",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCommitments",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "chooseJourney",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToCollaboration",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "cardContent",
+    "file": "client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "InvitationAcceptancePage",
+    "file": "client/src/pages/dashboard/InvitationAcceptancePage.tsx"
+  },
+  {
+    "component": "useIsMobile",
+    "file": "client/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "onChange",
+    "file": "client/src/hooks/use-mobile.tsx"
+  },
+  {
+    "component": "addToRemoveQueue",
+    "file": "client/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "reducer",
+    "file": "client/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "update",
+    "file": "client/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "dismiss",
+    "file": "client/src/hooks/use-toast.ts"
+  },
+  {
+    "component": "useFeedbackUsage",
+    "file": "client/src/hooks/useFeedbackUsage.ts"
+  },
+  {
+    "component": "updateAuthAndUsage",
+    "file": "client/src/hooks/useFeedbackUsage.ts"
+  },
+  {
+    "component": "handleStorageChange",
+    "file": "client/src/hooks/useFeedbackUsage.ts"
+  },
+  {
+    "component": "KpiCard",
+    "file": "src/components/KpiCard.tsx"
+  },
+  {
+    "component": "Layout",
+    "file": "src/components/Layout.tsx"
+  },
+  {
+    "component": "Sidebar",
+    "file": "src/components/Sidebar.tsx"
+  },
+  {
+    "component": "TopBar",
+    "file": "src/components/TopBar.tsx"
+  },
+  {
+    "component": "RequireAuth",
+    "file": "src/components/RequireAuth.tsx"
+  },
+  {
+    "component": "token",
+    "file": "src/lib/memberClient.ts"
+  },
+  {
+    "component": "Dashboard",
+    "file": "src/pages/Dashboard.tsx"
+  },
+  {
+    "component": "useMemberContext",
+    "file": "src/hooks/useMemberContext.ts"
+  },
+  {
+    "component": "inviteToken",
+    "file": "docs/implementation-evidence/FDR-010E35C/MUT-001/IMPLEMENTATION-EVIDENCE.md"
+  },
+  {
+    "component": "DashboardPage",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "pushActivity",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "handleSubmitIdea",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "handleJoinDiscussion",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "handleToggleSupport",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "handleToggleAdoption",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "handleInvitationAccepted",
+    "file": "web/src/app/(protected)/dashboard/page.tsx"
+  },
+  {
+    "component": "InvitationOutcomePage",
+    "file": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx"
+  },
+  {
+    "component": "SignInPage",
+    "file": "web/src/app/(public)/auth/sign-in/page.tsx"
+  },
+  {
+    "component": "groupPipelineByStage",
+    "file": "web/src/components/dashboard/mockData.ts"
+  },
+  {
+    "component": "DashboardTopBar",
+    "file": "web/src/components/dashboard/DashboardTopBar.tsx"
+  },
+  {
+    "component": "DashboardHeroCurrentPosition",
+    "file": "web/src/components/dashboard/DashboardHeroCurrentPosition.tsx"
+  },
+  {
+    "component": "IdeaPipelineSection",
+    "file": "web/src/components/dashboard/IdeaPipelineSection.tsx"
+  },
+  {
+    "component": "MyContributionsSection",
+    "file": "web/src/components/dashboard/MyContributionsSection.tsx"
+  },
+  {
+    "component": "CooperativeActivitySection",
+    "file": "web/src/components/dashboard/CooperativeActivitySection.tsx"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "web/src/components/dashboard/ProgramsSection.tsx"
+  },
+  {
+    "component": "RelationshipTrustSection",
+    "file": "web/src/components/dashboard/RelationshipTrustSection.tsx"
+  },
+  {
+    "component": "PipelineDetailPanel",
+    "file": "web/src/components/dashboard/PipelineDetailPanel.tsx"
+  },
+  {
+    "component": "SubmitIdeaModal",
+    "file": "web/src/components/dashboard/SubmitIdeaModal.tsx"
+  },
+  {
+    "component": "LearningHistorySection",
+    "file": "web/src/components/dashboard/LearningHistorySection.tsx"
+  },
+  {
+    "component": "IELTSSection",
+    "file": "web/src/components/dashboard/IELTSSection.tsx"
+  },
+  {
+    "component": "MultilingualSection",
+    "file": "web/src/components/dashboard/MultilingualSection.tsx"
+  },
+  {
+    "component": "InvitationAcceptanceSection",
+    "file": "web/src/components/dashboard/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "ActivityItem",
+    "file": "web/src/components/activity/ActivityItem.tsx"
+  },
+  {
+    "component": "ActivityFeed",
+    "file": "web/src/components/activity/ActivityFeed.tsx"
+  },
+  {
+    "component": "NotificationItem",
+    "file": "web/src/components/notifications/NotificationItem.tsx"
+  },
+  {
+    "component": "NotificationPanel",
+    "file": "web/src/components/notifications/NotificationPanel.tsx"
+  },
+  {
+    "component": "NotificationBell",
+    "file": "web/src/components/notifications/NotificationBell.tsx"
+  },
+  {
+    "component": "ChannelSelector",
+    "file": "web/src/components/notifications/ChannelSelector.tsx"
+  },
+  {
+    "component": "NotificationPreferencesPanel",
+    "file": "web/src/components/notifications/NotificationPreferencesPanel.tsx"
+  },
+  {
+    "component": "ToggleControl",
+    "file": "web/src/components/notifications/ToggleControl.tsx"
+  },
+  {
+    "component": "ContributionActivity",
+    "file": "web/src/components/contributions/ContributionActivity.tsx"
+  },
+  {
+    "component": "ContributionCard",
+    "file": "web/src/components/contributions/ContributionCard.tsx"
+  },
+  {
+    "component": "PipelineStageBadge",
+    "file": "web/src/components/contributions/PipelineStageBadge.tsx"
+  },
+  {
+    "component": "getStageProgressionConditions",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "isInPipeline",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "canTransitionToAcknowledged",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "canTransitionToEngaged",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "canTransitionToMaterialized",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "canTransitionToArchived",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "toReversalViewModel",
+    "file": "web/src/types/contribution-state.ts"
+  },
+  {
+    "component": "createClient",
+    "file": "web/src/lib/supabase/client.ts"
+  },
+  {
+    "component": "getDashboardData",
+    "file": "web/src/lib/dashboard/dashboardAdapter.ts"
+  },
+  {
+    "component": "GrowthProvider",
+    "file": "web/src/growth/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "useGrowthContext",
+    "file": "web/src/growth/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "HeroContent",
+    "file": "web/src/growth/components/Hero/HeroContent.tsx"
+  },
+  {
+    "component": "Hero",
+    "file": "web/src/growth/components/Hero/Hero.tsx"
+  },
+  {
+    "component": "NavigationItem",
+    "file": "web/src/growth/components/Navigation/NavigationItem.tsx"
+  },
+  {
+    "component": "Navigation",
+    "file": "web/src/growth/components/Navigation/Navigation.tsx"
+  },
+  {
+    "component": "GrowthLayout",
+    "file": "web/src/growth/components/Layout/GrowthLayout.tsx"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "web/src/growth/components/Sections/ProgramsSection.tsx"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "web/src/growth/components/Sections/ScholarshipsSection.tsx"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "web/src/growth/components/Sections/AdmissionsSection.tsx"
+  },
+  {
+    "component": "FAQSection",
+    "file": "web/src/growth/components/Sections/FAQSection.tsx"
+  },
+  {
+    "component": "MembershipSection",
+    "file": "web/src/growth/components/Sections/MembershipSection.tsx"
+  },
+  {
+    "component": "CallToActionSection",
+    "file": "web/src/growth/components/Sections/CallToActionSection.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "web/src/growth/components/Sections/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "toggle",
+    "file": "web/src/growth/components/Sections/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "JourneyDiscoverySection",
+    "file": "web/src/growth/components/Sections/JourneyDiscoverySection.tsx"
+  },
+  {
+    "component": "ContactSection",
+    "file": "web/src/growth/components/Sections/ContactSection.tsx"
+  },
+  {
+    "component": "useContent",
+    "file": "web/src/growth/hooks/useContent.ts"
+  },
+  {
+    "component": "useRegistry",
+    "file": "web/src/growth/hooks/useRegistry.ts"
+  },
+  {
+    "component": "useLocale",
+    "file": "web/src/growth/hooks/useLocale.ts"
+  },
+  {
+    "component": "useJourneyPreference",
+    "file": "web/src/growth/hooks/useJourneyPreference.ts"
+  },
+  {
+    "component": "isGrowthLocale",
+    "file": "web/src/growth/types/locale.ts"
+  },
+  {
+    "component": "getCached",
+    "file": "web/src/growth/runtime/cache.ts"
+  },
+  {
+    "component": "setCached",
+    "file": "web/src/growth/runtime/cache.ts"
+  },
+  {
+    "component": "clearRuntimeCache",
+    "file": "web/src/growth/runtime/cache.ts"
+  },
+  {
+    "component": "resolveLocale",
+    "file": "web/src/growth/runtime/resolver.ts"
+  },
+  {
+    "component": "registerRuntimeProvider",
+    "file": "web/src/growth/runtime/providers.ts"
+  },
+  {
+    "component": "getRuntimeProvider",
+    "file": "web/src/growth/runtime/providers.ts"
+  },
+  {
+    "component": "loadContent",
+    "file": "web/src/growth/runtime/loader.ts"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "web/src/growth/runtime/loader.ts"
+  },
+  {
+    "component": "initializeGrowthRuntime",
+    "file": "web/src/growth/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isGrowthRuntimeInitialized",
+    "file": "web/src/growth/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isRegistryName",
+    "file": "web/src/growth/runtime/registry.ts"
+  },
+  {
+    "component": "getRegistryNames",
+    "file": "web/src/growth/runtime/registry.ts"
+  },
+  {
+    "component": "LandingPage",
+    "file": "web/src/growth/pages/Landing/LandingPage.tsx"
+  },
+  {
+    "component": "LandingSections",
+    "file": "web/src/growth/pages/Landing/LandingSections.tsx"
+  },
+  {
+    "component": "JourneyPreferenceProvider",
+    "file": "web/src/growth/context/JourneyPreferenceContext.tsx"
+  },
+  {
+    "component": "useJourneyPreferenceContext",
+    "file": "web/src/growth/context/JourneyPreferenceContext.tsx"
+  },
+  {
+    "component": "journey",
+    "file": "web/src/growth/context/JourneyPreferenceContext.tsx"
+  },
+  {
+    "component": "timestamp2",
+    "file": "dist/index.js"
+  },
+  {
+    "component": "msg",
+    "file": "dist/index.js"
+  },
+  {
+    "component": "msg",
+    "file": "dist/index.js"
+  },
+  {
+    "component": "__vite__mapDeps",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "qE",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "k2",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "m",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "c",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "t",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "k",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "b",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "te",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "H",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "I",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "ie",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "h",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "b",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "d",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "a",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "v",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "K_",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "f",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "m",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "y",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "l",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "a",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "nt",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "uO",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "a",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "r",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "m",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "c",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "a",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "i",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "c",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "GO",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "c",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "v",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "s",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "m",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "f",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "g",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "n",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "P",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "u",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "f",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "f",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "d",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "d",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "r",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "t",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "RS",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "a6",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "ke",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "k",
+    "file": "dist/public/assets/index-Cw8x0WbX.js"
+  },
+  {
+    "component": "J",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "We",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "x",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "or",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "At",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "ur",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "t",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "a",
+    "file": "dist/public/assets/PartnerOnboarding-DyS5K-Ng.js"
+  },
+  {
+    "component": "r",
+    "file": "dist/public/assets/TranscriptSubmission-Se9NJ5oC.js"
+  },
+  {
+    "component": "i",
+    "file": "dist/public/assets/TranscriptSubmission-Se9NJ5oC.js"
+  },
+  {
+    "component": "t",
+    "file": "dist/public/assets/TranscriptSubmission-Se9NJ5oC.js"
+  },
+  {
+    "component": "i",
+    "file": "dist/public/assets/TranscriptSubmission-Se9NJ5oC.js"
+  },
+  {
+    "component": "r",
+    "file": "dist/public/assets/TranscriptSubmission-Se9NJ5oC.js"
+  },
+  {
+    "component": "c",
+    "file": "dist/public/assets/TranscriptSubmission-Se9NJ5oC.js"
+  },
+  {
+    "component": "c",
+    "file": "dist/public/assets/ApplicantStatusLookup-CurBA-Db.js"
+  },
+  {
+    "component": "ipKeyGenerator",
+    "file": ".cache/replit/security-scan/dependencyAudit.json"
+  },
+  {
+    "component": "msg",
+    "file": "recovery/memberhub_invitations_realization_v1.md"
+  },
+  {
+    "component": "CountriesSection",
+    "file": "recovery/image_variable_cluster_rollback/CountriesSection.tsx"
+  },
+  {
+    "component": "JobCategoriesSection",
+    "file": "recovery/image_variable_cluster_rollback/JobCategoriesSection.tsx"
+  },
+  {
+    "component": "SuccessStories",
+    "file": "recovery/image_variable_cluster_rollback/SuccessStories.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "codex-handoff/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "codex-handoff/App.tsx"
+  },
+  {
+    "component": "InvitationAcceptanceSection",
+    "file": "codex-handoff/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "handleRetry",
+    "file": "codex-handoff/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "InvitationAcceptancePage",
+    "file": "codex-handoff/InvitationAcceptancePage.tsx"
+  },
+  {
+    "component": "HubDashboard",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "pushActivity",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "handleSubmitIdea",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "handleJoinDiscussion",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "handleToggleSupport",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "handleToggleAdoption",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "handleInvitationAccepted",
+    "file": "codex-handoff/HubDashboard.tsx"
+  },
+  {
+    "component": "MemberDashboard",
+    "file": "codex-handoff/MemberDashboard.tsx"
+  },
+  {
+    "component": "MemberHub",
+    "file": "codex-handoff/MemberHub.tsx"
+  },
+  {
+    "component": "getUserClient",
+    "file": "codex-handoff/supabaseClients.ts"
+  },
+  {
+    "component": "getServiceClient",
+    "file": "codex-handoff/supabaseClients.ts"
+  },
+  {
+    "component": "isSupabaseConfigured",
+    "file": "codex-handoff/supabaseClients.ts"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "codex-handoff/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "codex-handoff/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "codex-handoff/routes.ts"
+  },
+  {
+    "component": "AuthCallback",
+    "file": "codex-gateway-handoff/AuthCallback.tsx"
+  },
+  {
+    "component": "HubAuthCallback",
+    "file": "codex-gateway-handoff/HubAuthCallback.tsx"
+  },
+  {
+    "component": "HubAuth",
+    "file": "codex-gateway-handoff/HubAuth.tsx"
+  },
+  {
+    "component": "handleBlur",
+    "file": "codex-gateway-handoff/HubAuth.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "codex-gateway-handoff/HubAuth.tsx"
+  },
+  {
+    "component": "handleForgotPassword",
+    "file": "codex-gateway-handoff/HubAuth.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "codex-gateway-handoff/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "codex-gateway-handoff/App.tsx"
+  },
+  {
+    "component": "InvitationAcceptanceSection",
+    "file": "codex-gateway-handoff/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "handleRetry",
+    "file": "codex-gateway-handoff/InvitationAcceptanceSection.tsx"
+  },
+  {
+    "component": "MemberHub",
+    "file": "codex-gateway-handoff/MemberHub.tsx"
+  },
+  {
+    "component": "msg",
+    "file": "codex-gateway-handoff/routes.ts"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "codex-gateway-handoff/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "codex-gateway-handoff/member.ts"
+  },
+  {
+    "component": "handleNavigate",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/App.tsx"
+  },
+  {
+    "component": "HubAuth",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleBlur",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleForgotPassword",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "HubAuthCallback",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuthCallback.tsx"
+  },
+  {
+    "component": "MemberHub",
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx"
+  },
+  {
+    "component": "HubAuthCallback",
+    "file": ".phase5/archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages/HubAuthCallback.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "governance/rmp/LES-001-IMPLEMENTATION-AUTHORITY.md"
+  },
+  {
+    "component": "resolvePostAuthenticationDestination",
+    "file": "execution/scripts/apply_WP6C_NavigationAuthority.py"
+  },
+  {
+    "component": "resolveRuntimeDestination",
+    "file": "execution/scripts/apply_WP7A_RuntimeNavigationPolicy.py"
+  },
+  {
+    "component": "resolvePostAuthenticationDestination",
+    "file": "execution/scripts/apply_WP7A_NavigationAuthority.py"
+  },
+  {
+    "component": "resolvePostAuthenticationDestination",
+    "file": "execution/scripts/apply_WP7A_NavigationAuthority.py"
+  },
+  {
+    "component": "resolveRuntimeDestination",
+    "file": "execution/scripts/apply_WP7B_RuntimeNavigationPolicy.py"
+  },
+  {
+    "component": "resolveRuntimeDestination",
+    "file": "execution/scripts/apply_WP7B_RuntimeNavigationPolicy.py"
+  },
+  {
+    "component": "isGrowthLocale",
+    "file": "execution/scripts/RMP-006C1_growth_runtime_types.py"
+  },
+  {
+    "component": "getCached",
+    "file": "execution/scripts/RMP-006C2_growth_runtime_loader.py"
+  },
+  {
+    "component": "setCached",
+    "file": "execution/scripts/RMP-006C2_growth_runtime_loader.py"
+  },
+  {
+    "component": "clearRuntimeCache",
+    "file": "execution/scripts/RMP-006C2_growth_runtime_loader.py"
+  },
+  {
+    "component": "resolveLocale",
+    "file": "execution/scripts/RMP-006C2_growth_runtime_loader.py"
+  },
+  {
+    "component": "loadContent",
+    "file": "execution/scripts/RMP-006C2_growth_runtime_loader.py"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "execution/scripts/RMP-006C2_growth_runtime_loader.py"
+  },
+  {
+    "component": "useContent",
+    "file": "execution/scripts/RMP-006D1_growth_hooks.py"
+  },
+  {
+    "component": "useRegistry",
+    "file": "execution/scripts/RMP-006D1_growth_hooks.py"
+  },
+  {
+    "component": "useLocale",
+    "file": "execution/scripts/RMP-006D1_growth_hooks.py"
+  },
+  {
+    "component": "GrowthProvider",
+    "file": "execution/scripts/RMP-006D2_growth_provider.py"
+  },
+  {
+    "component": "useGrowthContext",
+    "file": "execution/scripts/RMP-006D2_growth_provider.py"
+  },
+  {
+    "component": "useLocale",
+    "file": "execution/scripts/RMP-006D2_growth_provider.py"
+  },
+  {
+    "component": "isRegistryName",
+    "file": "execution/scripts/RMP-006E1_growth_runtime_registry.py"
+  },
+  {
+    "component": "getRegistryNames",
+    "file": "execution/scripts/RMP-006E1_growth_runtime_registry.py"
+  },
+  {
+    "component": "loadContent",
+    "file": "execution/scripts/RMP-006E2_growth_runtime_loader.py"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "execution/scripts/RMP-006E2_growth_runtime_loader.py"
+  },
+  {
+    "component": "Hero",
+    "file": "execution/scripts/RMP-007A1_growth_hero.py"
+  },
+  {
+    "component": "HeroContent",
+    "file": "execution/scripts/RMP-007A1_growth_hero.py"
+  },
+  {
+    "component": "hero",
+    "file": "execution/scripts/RMP-007A1_growth_hero.py"
+  },
+  {
+    "component": "NavigationItem",
+    "file": "execution/scripts/RMP-007A2_growth_navigation.py"
+  },
+  {
+    "component": "Navigation",
+    "file": "execution/scripts/RMP-007A2_growth_navigation.py"
+  },
+  {
+    "component": "GrowthLayout",
+    "file": "execution/scripts/RMP-007A3_growth_layout.py"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/scripts/RMP-007B1_growth_landing.py"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/scripts/RMP-007B2_growth_sections.py"
+  },
+  {
+    "component": "registerRuntimeProvider",
+    "file": "execution/scripts/RMP-008B1_growth_runtime_provider.py"
+  },
+  {
+    "component": "getRuntimeProvider",
+    "file": "execution/scripts/RMP-008B1_growth_runtime_provider.py"
+  },
+  {
+    "component": "loadContent",
+    "file": "execution/scripts/RMP-008B2_growth_loader_provider.py"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "execution/scripts/RMP-008B2_growth_loader_provider.py"
+  },
+  {
+    "component": "initializeGrowthRuntime",
+    "file": "execution/scripts/RMP-008B3_growth_runtime_bootstrap.py"
+  },
+  {
+    "component": "isGrowthRuntimeInitialized",
+    "file": "execution/scripts/RMP-008B3_growth_runtime_bootstrap.py"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "execution/scripts/RMP-009A1_growth_programs_section.py"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "execution/scripts/RMP-009A2_growth_scholarships_section.py"
+  },
+  {
+    "component": "isRegistryName",
+    "file": "execution/scripts/RMP-009A3a_growth_registry_extension.py"
+  },
+  {
+    "component": "getRegistryNames",
+    "file": "execution/scripts/RMP-009A3a_growth_registry_extension.py"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/scripts/RMP-009A3_growth_admissions_section.py"
+  },
+  {
+    "component": "FAQSection",
+    "file": "execution/scripts/RMP-009A4_growth_faq_section.py"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/scripts/RMP-009B1_growth_landing_composition.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "preserved",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "execution/scripts/RMP-010E9_create_prospect_registration.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/RMP-010E10_client_registration_workflow.py"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "execution/scripts/RMP-010E10_client_registration_workflow.py"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/scripts/RMP-010E10_client_registration_workflow.py"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "execution/scripts/RMP-010E10_client_registration_workflow.py"
+  },
+  {
+    "component": "submitProspectRegistration",
+    "file": "execution/scripts/RMP-010E11_create_admissions_api.py"
+  },
+  {
+    "component": "submitProspectRegistration",
+    "file": "execution/scripts/RMP-010E11_create_admissions_api.py"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "execution/scripts/RMP-010E12_client_api_contract_convergence.py"
+  },
+  {
+    "component": "submitProspectRegistration",
+    "file": "execution/scripts/RMP-010E13_admissions_persistence_kernel.py"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/scripts/RMP-010E23A_scholarships_surface_refinement.py"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/scripts/RMP-010E23A_scholarships_surface_refinement.py"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/scripts/RMP-010E23A_scholarships_surface_refinement.py"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "execution/scripts/RMP-010E23A_scholarships_surface_refinement.py"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/scripts/RMP-010E23A_scholarships_surface_refinement.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E24_prospect_detail_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E24_prospect_detail_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E24_prospect_detail_workspace.py"
+  },
+  {
+    "component": "AdmissionsWorkspace",
+    "file": "execution/scripts/RMP-010E24_prospect_detail_workspace.py"
+  },
+  {
+    "component": "AdmissionsWorkspace",
+    "file": "execution/scripts/RMP-010E24_prospect_detail_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E29B_prospect_timeline_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E29B_prospect_timeline_workspace.py"
+  },
+  {
+    "component": "ProspectTimeline",
+    "file": "execution/scripts/RMP-010E29B_prospect_timeline_workspace.py"
+  },
+  {
+    "component": "ProspectTimeline",
+    "file": "execution/scripts/RMP-010E29B_prospect_timeline_workspace.py"
+  },
+  {
+    "component": "ProspectTimeline",
+    "file": "execution/scripts/RMP-010E29B_prospect_timeline_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E30B_prospect_activity_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E30B_prospect_activity_workspace.py"
+  },
+  {
+    "component": "ProspectActivityWorkspace",
+    "file": "execution/scripts/RMP-010E30B_prospect_activity_workspace.py"
+  },
+  {
+    "component": "ProspectActivityWorkspace",
+    "file": "execution/scripts/RMP-010E30B_prospect_activity_workspace.py"
+  },
+  {
+    "component": "ProspectActivityWorkspace",
+    "file": "execution/scripts/RMP-010E30B_prospect_activity_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E31B_prospect_followup_task_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E31B_prospect_followup_task_workspace.py"
+  },
+  {
+    "component": "ProspectFollowupTaskWorkspace",
+    "file": "execution/scripts/RMP-010E31B_prospect_followup_task_workspace.py"
+  },
+  {
+    "component": "ProspectFollowupTaskWorkspace",
+    "file": "execution/scripts/RMP-010E31B_prospect_followup_task_workspace.py"
+  },
+  {
+    "component": "ProspectFollowupTaskWorkspace",
+    "file": "execution/scripts/RMP-010E31B_prospect_followup_task_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E32B_prospect_appointment_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E32B_prospect_appointment_workspace.py"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "execution/scripts/RMP-010E32B_prospect_appointment_workspace.py"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "execution/scripts/RMP-010E32B_prospect_appointment_workspace.py"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "execution/scripts/RMP-010E32B_prospect_appointment_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E33B_prospect_document_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E33B_prospect_document_workspace.py"
+  },
+  {
+    "component": "ProspectDocumentWorkspace",
+    "file": "execution/scripts/RMP-010E33B_prospect_document_workspace.py"
+  },
+  {
+    "component": "ProspectDocumentWorkspace",
+    "file": "execution/scripts/RMP-010E33B_prospect_document_workspace.py"
+  },
+  {
+    "component": "ProspectDocumentWorkspace",
+    "file": "execution/scripts/RMP-010E33B_prospect_document_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E34B_prospect_admission_decision_workspace.py"
+  },
+  {
+    "component": "ProspectDetailWorkspace",
+    "file": "execution/scripts/RMP-010E34B_prospect_admission_decision_workspace.py"
+  },
+  {
+    "component": "ProspectAdmissionDecisionWorkspace",
+    "file": "execution/scripts/RMP-010E34B_prospect_admission_decision_workspace.py"
+  },
+  {
+    "component": "ProspectAdmissionDecisionWorkspace",
+    "file": "execution/scripts/RMP-010E34B_prospect_admission_decision_workspace.py"
+  },
+  {
+    "component": "ProspectAdmissionDecisionWorkspace",
+    "file": "execution/scripts/RMP-010E34B_prospect_admission_decision_workspace.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/GE-RMP-003_prospect_registration_conversion.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/GE-RMP-003_prospect_registration_conversion.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/scripts/GE-RMP-004_release1_journey_integration.py"
+  },
+  {
+    "component": "ApplicantStatusLookup",
+    "file": "execution/scripts/GE-RMP-006_applicant_status_lookup.py"
+  },
+  {
+    "component": "ApplicantStatusLookup",
+    "file": "execution/scripts/GE-RMP-006_applicant_status_lookup.py"
+  },
+  {
+    "component": "ApplicantDocumentCenter",
+    "file": "execution/scripts/GE-RMP-007_applicant_document_center.py"
+  },
+  {
+    "component": "ApplicantDocumentCenter",
+    "file": "execution/scripts/GE-RMP-007_applicant_document_center.py"
+  },
+  {
+    "component": "ApplicantAppointmentCenter",
+    "file": "execution/scripts/GE-RMP-008_applicant_appointment_center.py"
+  },
+  {
+    "component": "ApplicantAppointmentCenter",
+    "file": "execution/scripts/GE-RMP-008_applicant_appointment_center.py"
+  },
+  {
+    "component": "ApplicantAdmissionDecisionCenter",
+    "file": "execution/scripts/GE-RMP-009_applicant_admission_decision_center.py"
+  },
+  {
+    "component": "ApplicantAdmissionDecisionCenter",
+    "file": "execution/scripts/GE-RMP-009_applicant_admission_decision_center.py"
+  },
+  {
+    "component": "ApplicantLifecycleTimeline",
+    "file": "execution/scripts/GE-RMP-010_applicant_lifecycle_timeline.py"
+  },
+  {
+    "component": "ApplicantLifecycleTimeline",
+    "file": "execution/scripts/GE-RMP-010_applicant_lifecycle_timeline.py"
+  },
+  {
+    "component": "ApplicantActivityCenter",
+    "file": "execution/scripts/GE-RMP-011_applicant_activity_center.py"
+  },
+  {
+    "component": "ApplicantActivityCenter",
+    "file": "execution/scripts/GE-RMP-011_applicant_activity_center.py"
+  },
+  {
+    "component": "ApplicantFollowupTaskCenter",
+    "file": "execution/scripts/GE-RMP-012_applicant_followup_task_center.py"
+  },
+  {
+    "component": "ApplicantFollowupTaskCenter",
+    "file": "execution/scripts/GE-RMP-012_applicant_followup_task_center.py"
+  },
+  {
+    "component": "cardContent",
+    "file": "execution/scripts/GE-RMP-003A_growth_runtime_repair.py"
+  },
+  {
+    "component": "cardContent",
+    "file": "execution/scripts/GE-RMP-003A_growth_runtime_repair.py"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/scripts/GE-RMP-005_applicant_journey_status.py"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/scripts/GE-RMP-005_applicant_journey_status.py"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-003-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-003-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "HubLanding",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getSbus",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCollaborationPrinciples",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getFaqItems",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCommitments",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToCollaboration",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "cardContent",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "HeroSection",
+    "file": "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/components/HeroSection.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "ApplicantStatusLookup",
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantStatusLookup.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "ApplicantDocumentCenter",
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantDocumentCenter.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "ApplicantAppointmentCenter",
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantAppointmentCenter.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "ApplicantAdmissionDecisionCenter",
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantAdmissionDecisionCenter.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "ApplicantLifecycleTimeline",
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantLifecycleTimeline.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/packages/generated/LES-001/CLAUDE-EXECUTION-PACKAGE.json"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx"
+  },
+  {
+    "component": "ApplicantJourneyStatus",
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx"
+  },
+  {
+    "component": "ApplicantActivityCenter",
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantActivityCenter.tsx"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "HeroSection",
+    "file": "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/components/HeroSection.tsx"
+  },
+  {
+    "component": "GrowthProvider",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "useGrowthContext",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "ABVariantSelector",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/ABVariantSelector.tsx"
+  },
+  {
+    "component": "HeroContent",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Hero/HeroContent.tsx"
+  },
+  {
+    "component": "Hero",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Hero/Hero.tsx"
+  },
+  {
+    "component": "NavigationItem",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Navigation/NavigationItem.tsx"
+  },
+  {
+    "component": "Navigation",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Navigation/Navigation.tsx"
+  },
+  {
+    "component": "GrowthLayout",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout/GrowthLayout.tsx"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/ProgramsSection.tsx"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/ScholarshipsSection.tsx"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/AdmissionsSection.tsx"
+  },
+  {
+    "component": "FAQSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/FAQSection.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "JourneyDiscoverySection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/JourneyDiscoverySection.tsx"
+  },
+  {
+    "component": "MembershipSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/MembershipSection.tsx"
+  },
+  {
+    "component": "CallToActionSection",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/CallToActionSection.tsx"
+  },
+  {
+    "component": "useContent",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks/useContent.ts"
+  },
+  {
+    "component": "useRegistry",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks/useRegistry.ts"
+  },
+  {
+    "component": "useLocale",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/hooks/useLocale.ts"
+  },
+  {
+    "component": "isGrowthLocale",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/types/locale.ts"
+  },
+  {
+    "component": "getCached",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/cache.ts"
+  },
+  {
+    "component": "setCached",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/cache.ts"
+  },
+  {
+    "component": "clearRuntimeCache",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/cache.ts"
+  },
+  {
+    "component": "resolveLocale",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/resolver.ts"
+  },
+  {
+    "component": "registerRuntimeProvider",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/providers.ts"
+  },
+  {
+    "component": "getRuntimeProvider",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/providers.ts"
+  },
+  {
+    "component": "loadContent",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/loader.ts"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/loader.ts"
+  },
+  {
+    "component": "initializeGrowthRuntime",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isGrowthRuntimeInitialized",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isRegistryName",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/registry.ts"
+  },
+  {
+    "component": "getRegistryNames",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/runtime/registry.ts"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingPage.tsx"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingSections.tsx"
+  },
+  {
+    "component": "LandingVariantA",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingVariantA.tsx"
+  },
+  {
+    "component": "LandingVariantB",
+    "file": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/pages/Landing/LandingVariantB.tsx"
+  },
+  {
+    "component": "GrowthProvider",
+    "file": "execution/packages/LES-001/implementation-workspace/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "useGrowthContext",
+    "file": "execution/packages/LES-001/implementation-workspace/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "ABVariantSelector",
+    "file": "execution/packages/LES-001/implementation-workspace/components/ABVariantSelector.tsx"
+  },
+  {
+    "component": "HeroContent",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Hero/HeroContent.tsx"
+  },
+  {
+    "component": "Hero",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Hero/Hero.tsx"
+  },
+  {
+    "component": "GrowthLayout",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Layout/GrowthLayout.tsx"
+  },
+  {
+    "component": "NavigationItem",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Navigation/NavigationItem.tsx"
+  },
+  {
+    "component": "Navigation",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Navigation/Navigation.tsx"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/ProgramsSection.tsx"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/ScholarshipsSection.tsx"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/AdmissionsSection.tsx"
+  },
+  {
+    "component": "FAQSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/FAQSection.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "JourneyDiscoverySection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/JourneyDiscoverySection.tsx"
+  },
+  {
+    "component": "MembershipSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/MembershipSection.tsx"
+  },
+  {
+    "component": "CallToActionSection",
+    "file": "execution/packages/LES-001/implementation-workspace/components/Sections/CallToActionSection.tsx"
+  },
+  {
+    "component": "useContent",
+    "file": "execution/packages/LES-001/implementation-workspace/hooks/useContent.ts"
+  },
+  {
+    "component": "useRegistry",
+    "file": "execution/packages/LES-001/implementation-workspace/hooks/useRegistry.ts"
+  },
+  {
+    "component": "useLocale",
+    "file": "execution/packages/LES-001/implementation-workspace/hooks/useLocale.ts"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingPage.tsx"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingSections.tsx"
+  },
+  {
+    "component": "LandingVariantA",
+    "file": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingVariantA.tsx"
+  },
+  {
+    "component": "LandingVariantB",
+    "file": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingVariantB.tsx"
+  },
+  {
+    "component": "getCached",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/cache.ts"
+  },
+  {
+    "component": "setCached",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/cache.ts"
+  },
+  {
+    "component": "clearRuntimeCache",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/cache.ts"
+  },
+  {
+    "component": "resolveLocale",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/resolver.ts"
+  },
+  {
+    "component": "registerRuntimeProvider",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/providers.ts"
+  },
+  {
+    "component": "getRuntimeProvider",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/providers.ts"
+  },
+  {
+    "component": "loadContent",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/loader.ts"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/loader.ts"
+  },
+  {
+    "component": "initializeGrowthRuntime",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isGrowthRuntimeInitialized",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isRegistryName",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/registry.ts"
+  },
+  {
+    "component": "getRegistryNames",
+    "file": "execution/packages/LES-001/implementation-workspace/runtime/registry.ts"
+  },
+  {
+    "component": "isGrowthLocale",
+    "file": "execution/packages/LES-001/implementation-workspace/types/locale.ts"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "HubLanding",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getSbus",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCollaborationPrinciples",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getFaqItems",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCommitments",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToCollaboration",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "cardContent",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "HeroSection",
+    "file": "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/components/HeroSection.tsx"
+  },
+  {
+    "component": "ScholarshipsPage",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "HubLanding",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getSbus",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCollaborationPrinciples",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getFaqItems",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "getCommitments",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "scrollToCollaboration",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "cardContent",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx"
+  },
+  {
+    "component": "HeroSection",
+    "file": "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/components/HeroSection.tsx"
+  },
+  {
+    "component": "inviteToken",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/PostAuthenticationContinuation.ts"
+  },
+  {
+    "component": "resolvePostAuthenticationDestination",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/NavigationConsumptionAuthority.ts"
+  },
+  {
+    "component": "resolveRuntimeDestination",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/RuntimeNavigationPolicy.ts"
+  },
+  {
+    "component": "HubAuth",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleBlur",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleForgotPassword",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "HubAuthCallback",
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx"
+  },
+  {
+    "component": "ProspectRegistration",
+    "file": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "handleChange",
+    "file": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-001-EXECUTION-PACKAGE/mutation-corridor/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "JourneyDiscoverySection",
+    "file": "execution/packages/LEAP-IMPLEMENT-RDM-001/generated/LEAP-IMPLEMENT-RDM-001-SLICE-002-EXECUTION-PACKAGE/JourneyDiscoverySection.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Repository-Mutation-Summary.md"
+  },
+  {
+    "component": "GrowthProvider",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "useGrowthContext",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/GrowthProvider.tsx"
+  },
+  {
+    "component": "HeroContent",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/HeroContent.tsx"
+  },
+  {
+    "component": "Hero",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/Hero.tsx"
+  },
+  {
+    "component": "NavigationItem",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/NavigationItem.tsx"
+  },
+  {
+    "component": "Navigation",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/Navigation.tsx"
+  },
+  {
+    "component": "GrowthLayout",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout/GrowthLayout.tsx"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/ProgramsSection.tsx"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/ScholarshipsSection.tsx"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/AdmissionsSection.tsx"
+  },
+  {
+    "component": "FAQSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/FAQSection.tsx"
+  },
+  {
+    "component": "JourneyDiscoverySection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/JourneyDiscoverySection.tsx"
+  },
+  {
+    "component": "MembershipSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/MembershipSection.tsx"
+  },
+  {
+    "component": "CallToActionSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CallToActionSection.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "toggle",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "useContent",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/hooks/useContent.ts"
+  },
+  {
+    "component": "useRegistry",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/hooks/useRegistry.ts"
+  },
+  {
+    "component": "useLocale",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/hooks/useLocale.ts"
+  },
+  {
+    "component": "isGrowthLocale",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/types/locale.ts"
+  },
+  {
+    "component": "getCached",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/cache.ts"
+  },
+  {
+    "component": "setCached",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/cache.ts"
+  },
+  {
+    "component": "clearRuntimeCache",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/cache.ts"
+  },
+  {
+    "component": "resolveLocale",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/resolver.ts"
+  },
+  {
+    "component": "registerRuntimeProvider",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/providers.ts"
+  },
+  {
+    "component": "getRuntimeProvider",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/providers.ts"
+  },
+  {
+    "component": "loadContent",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/loader.ts"
+  },
+  {
+    "component": "loadRegistry",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/loader.ts"
+  },
+  {
+    "component": "initializeGrowthRuntime",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isGrowthRuntimeInitialized",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/bootstrap.ts"
+  },
+  {
+    "component": "isRegistryName",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/registry.ts"
+  },
+  {
+    "component": "getRegistryNames",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/runtime/registry.ts"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingPage.tsx"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingSections.tsx"
+  },
+  {
+    "component": "ContactSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/mutations/CONTACT-COMPONENT-CONTRACT.md"
+  },
+  {
+    "component": "ContactSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/ContactSection.tsx"
+  },
+  {
+    "component": "ContactSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/repository/ContactSection.tsx"
+  },
+  {
+    "component": "ContactSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/components/Sections/ContactSection.tsx"
+  },
+  {
+    "component": "ContactSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC/context/repository/ContactSection.tsx"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/LandingSections.tsx"
+  },
+  {
+    "component": "CallToActionSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/CallToActionSection.tsx"
+  },
+  {
+    "component": "MembershipSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/MembershipSection.tsx"
+  },
+  {
+    "component": "FAQSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/FAQSection.tsx"
+  },
+  {
+    "component": "CooperativePrinciplesSection",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "toggle",
+    "file": "execution/packages/LER-001A-CONTACT-EXPERIENCE/PIC-FINAL/repository/CooperativePrinciplesSection.tsx"
+  },
+  {
+    "component": "getZaloAuthentication",
+    "file": "execution/packages/GP-EXEC-010M-06A/IMPLEMENTATION_BRIEF.md"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/sprints/LES-001/source_mutation_package/inspection/SEMANTIC-MUTATION-ANALYSIS.json"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/sprints/LES-001/source_mutation_package/implementation/FRAGMENT-001-SOURCE-EXTRACT.json"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/sprints/LES-001/source_mutation_package/candidate_working_copy/CANDIDATE-WORKING-COPY.json"
+  },
+  {
+    "component": "inviteToken",
+    "file": "execution/workspace/FDR-010E35A-018-backup.ts"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "execution/workspace/FDR-010E35A-026-backup-member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "execution/workspace/FDR-010E35A-026-backup-member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "execution/workspace/FDR-010E35A-026-backup-member.ts"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/LandingPage.working.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/WORKING-SOURCE-SEMANTIC.json"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx"
+  },
+  {
+    "component": "LandingNavigation",
+    "file": "execution/workspace/LES-001/implementation/NAVIGATION-FRAGMENT.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "GrowthLayout",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "Hero",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "HeroContent",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "Navigation",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "ProgramsSection",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "ScholarshipsSection",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "AdmissionsSection",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "FAQSection",
+    "file": "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/implementation/baselines/LandingPage.original.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/implementation/mutation_history/LandingPage.before_mutation_001.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/implementation/generated_baselines/LandingPage.generated.baseline.tsx"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-BUNDLE.json"
+  },
+  {
+    "component": "LandingPage",
+    "file": "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-CONTEXT.md"
+  },
+  {
+    "component": "ProspectFollowupTaskWorkspace",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx"
+  },
+  {
+    "component": "ProspectDocumentWorkspace",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectDocumentWorkspace.tsx"
+  },
+  {
+    "component": "ProspectAdmissionDecisionWorkspace",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx"
+  },
+  {
+    "component": "ApplicantFollowupTaskCenter",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantFollowupTaskCenter.tsx"
+  },
+  {
+    "component": "ApplicantAppointmentCenter",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantAppointmentCenter.tsx"
+  },
+  {
+    "component": "ApplicantDocumentCenter",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantDocumentCenter.tsx"
+  },
+  {
+    "component": "ApplicantAdmissionDecisionCenter",
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantAdmissionDecisionCenter.tsx"
+  },
+  {
+    "component": "msg",
+    "file": "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "execution/workspace/APP-RMP-010E34B-013-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx"
+  },
+  {
+    "component": "msg",
+    "file": "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts"
+  },
+  {
+    "component": "ProspectAppointmentWorkspace",
+    "file": "execution/workspace/APP-RMP-010E34B-016-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx"
+  },
+  {
+    "component": "handleNavigate",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/App.tsx"
+  },
+  {
+    "component": "scrollToContact",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/App.tsx"
+  },
+  {
+    "component": "Login",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/Login.tsx"
+  },
+  {
+    "component": "handleResend",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/Login.tsx"
+  },
+  {
+    "component": "HubAuth",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleBlur",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleSubmit",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "handleForgotPassword",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx"
+  },
+  {
+    "component": "inviteToken",
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/lib/auth/PostAuthenticationContinuation.ts"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "execution/workspace/FDR-010E35A-025-backup/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "execution/workspace/FDR-010E35A-025-backup/member.ts"
+  },
+  {
+    "component": "msg",
+    "file": "execution/workspace/FDR-010E35A-025-backup/member.ts"
+  },
+  {
+    "component": "ContactSection",
+    "file": "execution/claude/materialization/LER-001A/ContactSection.tsx"
+  },
+  {
+    "component": "LandingSections",
+    "file": "execution/claude/materialization/LER-001A/LandingSections.tsx"
+  },
+  {
+    "component": "AuthCallback",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "HubAuthCallback",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "Dashboard",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "HubAdminDashboard",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "HubDashboard",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "MemberDashboard",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "Dashboard",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "DashboardPage",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "MemberHub",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "DashboardHeroCurrentPosition",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "DashboardTopBar",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "DashboardHeroCurrentPosition",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "DashboardTopBar",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "getDashboardData",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "useMemberContext",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md"
+  },
+  {
+    "component": "attachUserContextSafe",
+    "file": "execution/runtime-certification/reports/DASHBOARD-ENTRY-CORRIDOR.md"
+  },
+  {
+    "component": "json",
+    "file": "execution/evidence/GP-EXEC-009/notifications_final.ts"
+  },
+  {
+    "component": "getZaloAuthentication",
+    "file": "execution/builder-working-tree/GP-EXEC-010M-06A/server/integrations/zalo/auth.ts"
+  },
+  {
+    "component": "json",
+    "file": "execution/builder-working-tree/GP-EXEC-010M-06A/server/services/notifications.ts"
+  },
+  {
+    "component": "getZaloAuthentication",
+    "file": "execution/git-verification/GP-EXEC-010M-06A/home/runner/execution-evidence/GP-EXEC-010M-06A/incoming/auth.ts"
+  },
+  {
+    "component": "json",
+    "file": "execution/git-verification/GP-EXEC-010M-06A/home/runner/execution-evidence/GP-EXEC-010M-06A/incoming/notifications.ts"
+  },
+  {
+    "component": "getZaloAuthentication",
+    "file": "home/runner/execution-evidence/GP-EXEC-010M-06A/incoming/auth.ts"
+  },
+  {
+    "component": "json",
+    "file": "home/runner/execution-evidence/GP-EXEC-010M-06A/incoming/notifications.ts"
+  }
+]

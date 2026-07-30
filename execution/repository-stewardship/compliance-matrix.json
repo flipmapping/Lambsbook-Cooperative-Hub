@@ -1,0 +1,69 @@
+{
+  "authority": "REP-STEWARD-012",
+  "generated_at": "2026-07-30T04:13:34.750950Z",
+  "constitutional_reference": "EOS-CRSG-001",
+  "stages": [
+    {
+      "stage": "Repository Inspection",
+      "required": true,
+      "evidence": [
+        "repository_root",
+        "active_branch",
+        "pre_mutation_head_sha"
+      ]
+    },
+    {
+      "stage": "Repository Mutation",
+      "required": true,
+      "evidence": [
+        "post_mutation_head_sha",
+        "commit_sha"
+      ]
+    },
+    {
+      "stage": "Canonical Repository Synchronization",
+      "required": true,
+      "evidence": [
+        "remote_name",
+        "remote_head_sha",
+        "sync_status"
+      ]
+    },
+    {
+      "stage": "Artifact Build",
+      "required": true,
+      "evidence": [
+        "artifact_identifier",
+        "artifact_hash",
+        "build_timestamp"
+      ]
+    },
+    {
+      "stage": "Deployment Synchronization",
+      "required": true,
+      "evidence": [
+        "deployment_target",
+        "deployment_revision",
+        "deployment_timestamp"
+      ]
+    },
+    {
+      "stage": "Runtime Verification",
+      "required": true,
+      "evidence": [
+        "runtime_revision",
+        "runtime_build_identifier",
+        "verification_timestamp"
+      ]
+    },
+    {
+      "stage": "Operational Certification",
+      "required": true,
+      "evidence": [
+        "implementation_authority",
+        "certification_status",
+        "reviewer"
+      ]
+    }
+  ]
+}

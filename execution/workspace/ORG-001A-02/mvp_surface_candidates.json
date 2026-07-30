@@ -1,0 +1,30 @@
+[
+  {
+    "surface": "Welcome",
+    "action": "Extend"
+  },
+  {
+    "surface": "Conversation",
+    "action": "New"
+  },
+  {
+    "surface": "Capability Recommendations",
+    "action": "Extend"
+  },
+  {
+    "surface": "Organization Blueprint",
+    "action": "New"
+  },
+  {
+    "surface": "Confirmation",
+    "action": "Extend"
+  },
+  {
+    "surface": "Workspace Progress",
+    "action": "Extend"
+  },
+  {
+    "surface": "Organization Home",
+    "action": "Extend"
+  }
+]

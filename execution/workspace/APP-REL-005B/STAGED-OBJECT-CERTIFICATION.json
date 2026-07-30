@@ -1,0 +1,283 @@
+{
+  "authority": "APP-REL-005B",
+  "timestamp": "2026-07-30T14:51:27.548957+00:00",
+  "staged_file_count": 46,
+  "objects": [
+    {
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "mode": "100644",
+      "blob": "fbef360a72eabe1c0b46a62a3dcca5fd58cfbf47",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/components/notifications/ChannelSelector.tsx",
+      "mode": "100644",
+      "blob": "5f23e8e0ae26a1f8a5eed085c5d566a1c5f0ac8f",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "mode": "100644",
+      "blob": "fa31d72448b156ef7e0d5b67e5f23e16e45f07c0",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "mode": "100644",
+      "blob": "89c45a368dc4917ba6051c90938a617e66c046f6",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "mode": "100644",
+      "blob": "a97d138847709f83467a53cccc02b601b67ad821",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "mode": "100644",
+      "blob": "fd0515e8295ba809bd3d43ff92724f9cffa48299",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "mode": "100644",
+      "blob": "21f8fe7a4797e0319c89473ed14e79146fdcc7bb",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/features/organization-studio/README.md",
+      "mode": "100644",
+      "blob": "b1da6932de95f2ecda4b22f20dfbdee3f7cbd97b",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/features/organization-studio/index.ts",
+      "mode": "100644",
+      "blob": "02fbbdafb5485e21494824d5f1d919742a916a46",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "mode": "100644",
+      "blob": "3b080e2684001f0ebfaef4265d36aea4a8835191",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/pages/HubAuthCallback.tsx",
+      "mode": "100644",
+      "blob": "6db47dc784ce4ba7a26717df33bd9d23df129186",
+      "stage": "0"
+    },
+    {
+      "path": "client/src/pages/HubAuthCallback.tsx.REORDER_CANDIDATE",
+      "mode": "100644",
+      "blob": "b4964484ad4df06d7e1603cd0e5dd9ec81edd822",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/adapters/csv/adapter.ts",
+      "mode": "100644",
+      "blob": "4c62f73e0c63b4bca1b0e0a83bae8a231001087a",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/domain/prospectImport.ts",
+      "mode": "100644",
+      "blob": "e2bee8af6da88e9bcb14500e2c2682f651d83a27",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/duplicates.ts",
+      "mode": "100644",
+      "blob": "0c2351b12cf0be29ae32dbb985588e9d47511e56",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/index.ts",
+      "mode": "100644",
+      "blob": "fd08df1802dba1cd264b10c664018559c3279685",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/normalize.ts",
+      "mode": "100644",
+      "blob": "4267c2dd8bcea3e0b5694dd6febd2c109c2c5bd5",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/persist.ts",
+      "mode": "100644",
+      "blob": "62bce79c496346d205def1e33d740567f3257baf",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/report.ts",
+      "mode": "100644",
+      "blob": "178ff75564052035151f101f588a609d6b462e24",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/runImportPipeline.ts",
+      "mode": "100644",
+      "blob": "cb29f7ad231deae2cf2606c8725eea7385e7959f",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/smoke.ts",
+      "mode": "100644",
+      "blob": "b0094793c0bc6f3b94fee493174ec78f73f33196",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/stage.ts",
+      "mode": "100644",
+      "blob": "88b09b33aad41588a25c29b1a91b3a4d8344fc81",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/pipeline/validate.ts",
+      "mode": "100644",
+      "blob": "9989e94c81b852bb7d9693fd26dfe1d3cb8292ad",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/reporting/engine.ts",
+      "mode": "100644",
+      "blob": "863689c56a81bf70ff7b116ce42ee53f9c4f1628",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/staging/engine.ts",
+      "mode": "100644",
+      "blob": "debdfe67a14b005fd7384560c110d8e1111ea203",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/validation/contracts.ts",
+      "mode": "100644",
+      "blob": "85d3e92f1e768be2051a49a1e2735c75c7f81742",
+      "stage": "0"
+    },
+    {
+      "path": "server/imports/validation/engine.ts",
+      "mode": "100644",
+      "blob": "48aa8845384a049c99aa8c048704638fdc3a701a",
+      "stage": "0"
+    },
+    {
+      "path": "server/integrations/zalo/adapter.ts",
+      "mode": "100644",
+      "blob": "72579d78ac9dfa5c2abec58cc043eca5185024a5",
+      "stage": "0"
+    },
+    {
+      "path": "server/integrations/zalo/auth.ts",
+      "mode": "100644",
+      "blob": "6c613d1989bdc5bb11d61b910cef632c5a2b04ba",
+      "stage": "0"
+    },
+    {
+      "path": "server/lib/supabase-dal.ts",
+      "mode": "100644",
+      "blob": "4a81ffc925941e5f4c70787fe21b92b8f51c9237",
+      "stage": "0"
+    },
+    {
+      "path": "server/messaging/interface.ts",
+      "mode": "100644",
+      "blob": "2eb91c08cacb28117f6b4ac5195654e2a3693964",
+      "stage": "0"
+    },
+    {
+      "path": "server/middleware/attachUserContext.ts",
+      "mode": "100644",
+      "blob": "64b11c02c2d0a776f44d8d0e4950e6d7ce84cf54",
+      "stage": "0"
+    },
+    {
+      "path": "server/routes.ts",
+      "mode": "100644",
+      "blob": "2942a636873b629b4a6c40fb2a8f22b6cc5f9b46",
+      "stage": "0"
+    },
+    {
+      "path": "server/routes/member.ts",
+      "mode": "100644",
+      "blob": "3e45533afb171265f700a5abdd9549ca79b02271",
+      "stage": "0"
+    },
+    {
+      "path": "server/services/notifications.ts",
+      "mode": "100644",
+      "blob": "81e04c766884e20921a3dbe12a71763e91190458",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/builder-demo-scenarios.ts",
+      "mode": "100644",
+      "blob": "8fdb2de7b949c48a30eff303283a67087c139251",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/builder-demo.ts",
+      "mode": "100644",
+      "blob": "4024ade8a7db8268350305b52cb7a5dcbc27c988",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/builder-planner.ts",
+      "mode": "100644",
+      "blob": "25d33bb233c3733878052bf370cc8ea3277aa2a1",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/builder-validation.ts",
+      "mode": "100644",
+      "blob": "a595044d03d67c3f844669cc76a2ce4f37d93ebc",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/capability-catalog.ts",
+      "mode": "100644",
+      "blob": "13a4a70aa3b989bb391029aa1670c3021c810e4b",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "mode": "100644",
+      "blob": "d98804bff3b5aab440cfe20f02d638a1197dd6dc",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/channel-catalog.ts",
+      "mode": "100644",
+      "blob": "40d756b2661801c29ebb3bd10f8c733ffe7b6bd4",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/execution-plan.ts",
+      "mode": "100644",
+      "blob": "16632dca421d4c771a82186d089f3ba8673c2285",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/organization-manifest.ts",
+      "mode": "100644",
+      "blob": "f82284c0604e9e19f12c55520e3c3adb35259ae1",
+      "stage": "0"
+    },
+    {
+      "path": "shared/organization/workspace-catalog.ts",
+      "mode": "100644",
+      "blob": "4fca7f8f2a02d03df6d94001bd42dd9adf91e6cf",
+      "stage": "0"
+    },
+    {
+      "path": "shared/schema.ts",
+      "mode": "100644",
+      "blob": "30d9275cb92e0eecd641ffe15b1329545cb0da40",
+      "stage": "0"
+    }
+  ]
+}

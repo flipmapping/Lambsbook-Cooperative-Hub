@@ -1,0 +1,25 @@
+{
+  "authority": "APP-REALIZE-001",
+  "candidate_surfaces": [
+    {
+      "path": "client/src",
+      "exists": true,
+      "typescript_files": 154
+    },
+    {
+      "path": "web/src",
+      "exists": true,
+      "typescript_files": 79
+    },
+    {
+      "path": "src",
+      "exists": true,
+      "typescript_files": 17
+    },
+    {
+      "path": "server",
+      "exists": true,
+      "typescript_files": 65
+    }
+  ]
+}

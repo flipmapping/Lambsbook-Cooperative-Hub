@@ -1,0 +1,315 @@
+{
+  "authority": "EMP-001E",
+  "status": "AUDIT",
+  "phases": [
+    {
+      "phase": "Authority Resolution",
+      "dependencies": [
+        {
+          "logical_input": "Implementation Authority Standard",
+          "match_count": 1,
+          "matches": [
+            "governance/execution/IAS-001-IMPLEMENTATION-AUTHORITY-STANDARD.md"
+          ]
+        },
+        {
+          "logical_input": "Implementation Authority",
+          "match_count": 89,
+          "matches": [
+            "EOS-RMP-001A-Claude-Package/governance/EOS-RMP-001A-IMPLEMENTATION-AUTHORITY.md",
+            "EOS-RMP-001B-Claude-Package/governance/EOS-RMP-001B-IMPLEMENTATION-AUTHORITY.md",
+            "EOS-RMP-001B-HF1-Claude-Package/governance/EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY.md",
+            "EOS-RMP-001B-HF1-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+            "EOS-RMP-001C-Claude-Package/governance/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+            "EOS-RMP-001D-Claude-Package/governance/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+            "EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+            "GE-WEB-RMP-010E33A-Claude-Package/governance/GE-WEB-RMP-010E33A-IMPLEMENTATION-AUTHORITY.md",
+            "HUB-RMP-001-Claude-Package/governance/HUB-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E31A-Claude-Package/governance/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E31B-Claude-Package/governance/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E32A-Claude-Package/governance/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E32B-Claude-Package/governance/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E33A-Claude-Package/governance/RMP-010E33A-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E33B-Claude-Package/governance/RMP-010E33B-IMPLEMENTATION-AUTHORITY.md",
+            "RMP-010E34A-Claude-Package/governance/RMP-010E34A-IMPLEMENTATION-AUTHORITY.md",
+            "attached_assets/Pasted-IMPLEMENTATION-AUTHORITY-LER-001-Landing-Experience-Ref_1784348024281.txt",
+            "attached_assets/Pasted-IMPLEMENTATION-AUTHORITY-LER-001-Landing-Experience-Ref_1784348103628.txt",
+            "execution/packages/APP-REC-INVITE-002R/implementation-authority-package.json",
+            "execution/packages/EOS-RMP-001C-Claude-Package/governance/rmp/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/EOS-RMP-001D-Claude-Package/governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/EOS-RMP-001E-Claude-Package/governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY-VERIFICATION.json",
+            "execution/packages/ESR-001/generated/IMPLEMENTATION-AUTHORITY.json",
+            "execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-002-Claude-Package/governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-003-Claude-Package/governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-003A-Claude-Package/governance/rmp/GE-RMP-003A-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-003B-Claude-Package/governance/rmp/GE-RMP-003B-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-004-Claude-Package/governance/rmp/GE-RMP-004-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-005-Claude-Package/governance/rmp/GE-RMP-005-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-006-Claude-Package/governance/rmp/GE-RMP-006-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-007-Claude-Package/governance/rmp/GE-RMP-007-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-008-Claude-Package/governance/rmp/GE-RMP-008-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-009-Claude-Package/governance/rmp/GE-RMP-009-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-010-Claude-Package/governance/rmp/GE-RMP-010-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-011-Claude-Package/governance/rmp/GE-RMP-011-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-012-Claude-Package/governance/rmp/GE-RMP-012-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/GE-RMP-014-Claude-Package/governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/INF-010E35A-Claude-Package/governance/rmp/INF-010E35A-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/JPE-002-Claude-Package/governance/rmp/JPE-002-IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/LER-001A-CONTACT-EXPERIENCE/spec/IMPLEMENTATION-AUTHORITY.md",
+            "execution/packages/generated/IMPLEMENTATION-AUTHORITY-REGISTRY.json",
+            "execution/sprints/DASHBOARD-ADAPTER-001/IMPLEMENTATION-AUTHORITY.md",
+            "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-BUNDLE.json",
+            "execution/workspace/LES-001/authority_retrieval/IMPLEMENTATION-AUTHORITY-CONTEXT.md",
+            "execution/workspace/LES-001/implementation/IMPLEMENTATION-AUTHORITY.json",
+            "governance/cib/generated/CIB-EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY-DISCOVERY.md",
+            "governance/execution/BIS-002-IMPLEMENTATION-AUTHORITY-TEMPLATE.md",
+            "governance/execution/IAS-001-IMPLEMENTATION-AUTHORITY-STANDARD.md",
+            "governance/execution/evidence/LES-001-IMPLEMENTATION-AUTHORITY-MATERIALIZATION.json",
+            "governance/rmp/EOS-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-001A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-001B-HF1-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-001B-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-001C-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-001D-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-001E-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RMP-CERS-002-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/EOS-RTB-001-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-001-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-002-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-003-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-003A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-003B-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-004-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-005-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-006-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-007-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-008-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-009-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-010-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-011-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-012-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/INF-010E35A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/JPE-002-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/LES-001-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E27B-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E28-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E29A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E30A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E31A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E32A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E33A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E33B-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E34A-IMPLEMENTATION-AUTHORITY.md",
+            "governance/rmp/RMP-010E34B-IMPLEMENTATION-AUTHORITY.md"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "Repository Resolution",
+      "dependencies": [
+        {
+          "logical_input": "Repository Resolution Contract",
+          "match_count": 0,
+          "matches": []
+        }
+      ]
+    },
+    {
+      "phase": "Implementation Context Resolution",
+      "dependencies": [
+        {
+          "logical_input": "Implementation Context Manifest Specification",
+          "match_count": 0,
+          "matches": []
+        },
+        {
+          "logical_input": "Implementation Context",
+          "match_count": 79,
+          "matches": [
+            "EOS-RMP-001E-Claude-Package/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+            "EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+            "execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+            "execution/implementation-context/FDR-010E34B-IMPLEMENTATION-CONTEXT.json",
+            "execution/packages/APP-REC-INVITE-002R/implementation-context-manifest.json",
+            "execution/packages/EOS-RMP-001E-Claude-Package/governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+            "execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/IMPLEMENTATION-CONTEXT-MANIFEST-SPEC.md",
+            "execution/packages/EOS-RMP-001E-Claude-Package/implementation-context/execution/builders/build_claude_package.py",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/admissions.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/programs.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/en/scholarships.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/admissions.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/programs.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/vi/scholarships.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/admissions.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/programs.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/content/zh/scholarships.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+            "execution/packages/GE-RMP-002-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+            "execution/packages/GE-RMP-003-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-003-Claude-Package/implementation-context/server/services/admissions.ts",
+            "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+            "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx",
+            "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+            "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+            "execution/packages/GE-RMP-003A-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+            "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+            "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx",
+            "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+            "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+            "execution/packages/GE-RMP-003B-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/components/HeroSection.tsx",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/HubLanding.tsx",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/client/src/pages/ScholarshipsPage.tsx",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/server/services/admissions.ts",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/programs.json",
+            "execution/packages/GE-RMP-004-Claude-Package/implementation-context/web/src/growth/registry/scholarships.json",
+            "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-005-Claude-Package/implementation-context/server/services/admissions.ts",
+            "execution/packages/GE-RMP-005-Claude-Package/implementation-context/web/src/growth/registry/journey.json",
+            "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-006-Claude-Package/implementation-context/web/src/growth/registry/journey.json",
+            "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantStatusLookup.tsx",
+            "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantDocumentCenter.tsx",
+            "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantAppointmentCenter.tsx",
+            "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+            "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantLifecycleTimeline.tsx",
+            "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx",
+            "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantActivityCenter.tsx",
+            "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+            "execution/packages/GE-RMP-014-Claude-Package/implementation-context/client/src/pages/ProspectRegistration.tsx",
+            "execution/packages/GE-RMP-014-Claude-Package/implementation-context/package.json",
+            "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/admissions.ts",
+            "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts",
+            "execution/packages/INF-010E35A-Claude-Package/governance/icm/generated/INF-010E35A-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+            "execution/packages/LER-001A-CONTACT-EXPERIENCE/generated/IMPLEMENTATION-CONTEXT.md",
+            "execution/workspace/APP-REALIZATION-002H-IMPLEMENTATION-CONTEXT-CAPTURE.md",
+            "execution/workspace/LES-001/implementation/IMPLEMENTATION-CONTEXT.json",
+            "governance/cib/generated/CIB-EOS-RMP-001E-IMPLEMENTATION-CONTEXT-MANIFEST.md",
+            "governance/execution/GE-RMP-003A-IMPLEMENTATION-CONTEXT.md",
+            "governance/implementation-context/INF-010E35A-IMPLEMENTATION-CONTEXT-MANIFEST.md"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "Dependency Resolution",
+      "dependencies": [
+        {
+          "logical_input": "Execution Contracts",
+          "match_count": 1,
+          "matches": [
+            "execution/execution-contracts/FDR-010E35B-004-Runtime-Identity-Resolution-Execution-Contract.json"
+          ]
+        },
+        {
+          "logical_input": "Execution Standards",
+          "match_count": 0,
+          "matches": []
+        }
+      ]
+    },
+    {
+      "phase": "Validation",
+      "dependencies": [
+        {
+          "logical_input": "Execution Capability Contract",
+          "match_count": 16,
+          "matches": [
+            "BUILDER-SPRINT-001-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "GE-WEB-RMP-010E33A-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "HUB-RMP-001-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E27B-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E29A-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E29B-Execution-Authority-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E30A-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E30B-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E31A-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E31B-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E32A-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E32B-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E33A-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "RMP-010E33B-Claude-Package/execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "execution/contracts/EXECUTION-CAPABILITY-CONTRACT.md",
+            "governance/doctrines/EXEC-STD-009-Execution-Capability-Contract.md"
+          ]
+        },
+        {
+          "logical_input": "Execution Startup Protocol",
+          "match_count": 15,
+          "matches": [
+            "BUILDER-SPRINT-001-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "GE-WEB-RMP-010E33A-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "HUB-RMP-001-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E27B-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E29A-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E29B-Execution-Authority-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E30A-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E30B-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E31A-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E31B-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E32A-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E32B-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E33A-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "RMP-010E33B-Claude-Package/execution/contracts/EXECUTION-STARTUP-PROTOCOL.md",
+            "execution/contracts/EXECUTION-STARTUP-PROTOCOL.md"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "Normalization",
+      "dependencies": [
+        {
+          "logical_input": "EOS Execution Standards",
+          "match_count": 0,
+          "matches": []
+        }
+      ]
+    },
+    {
+      "phase": "Builder Input Generation",
+      "dependencies": [
+        {
+          "logical_input": "Builder CIB Input Contract",
+          "match_count": 1,
+          "matches": [
+            "execution/builder/delivery/builder-cib-input-contract.json"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "Explainability",
+      "dependencies": [
+        {
+          "logical_input": "Compiler Decision Log Specification",
+          "match_count": 0,
+          "matches": []
+        }
+      ]
+    }
+  ]
+}

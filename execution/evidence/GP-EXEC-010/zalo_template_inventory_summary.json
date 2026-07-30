@@ -1,0 +1,7 @@
+{
+  "authority": "GP-EXEC-010M-03C",
+  "generated": "2026-07-26T02:31:29.800586Z",
+  "endpoint": "https://business.openapi.zalo.me/template/all?offset=0&limit=100&filterPreset=0",
+  "http_status": 200,
+  "success": true
+}

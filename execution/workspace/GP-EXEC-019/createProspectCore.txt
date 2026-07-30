@@ -1,0 +1,32 @@
+0023: export async function createProspectCore(
+0024:   payload: ProspectRegistrationPayload,
+0025: ) {
+0026:   const prospect = await supabaseDAL.createProspect({
+0027:     full_name:            payload.fullName,
+0028:     email:                payload.email,
+0029:     country:              payload.country,
+0030:     program_of_interest:  payload.programOfInterest,
+0031:     phone:                payload.phone ?? null,
+0032:   });
+0033: 
+0034:   const funnel = await supabaseDAL.getFunnelByCode(resolveRegistrationFunnel());
+0035: 
+0036:   if (funnel) {
+0037:     await supabaseDAL.createProspectJourney({
+0038:       prospect_id: prospect.id,
+0039:       funnel_id:   funnel.id,
+0040:       current_stage: 'registered',
+0041:     });
+0042:   }
+0043: 
+0044:   return prospect;
+0045: }
+0046: 
+0047: 
+0048: 
+0049: const DEFAULT_FUNNEL_CODE = "CTBC-2026";
+0050: 
+0051: function resolveRegistrationFunnel(): string {
+0052:   return DEFAULT_FUNNEL_CODE;
+0053: }
+0054: 

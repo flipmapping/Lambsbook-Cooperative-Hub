@@ -1,0 +1,21 @@
+{
+  "execution_order": [
+    {
+      "id": "NM-001",
+      "title": "Notification Publication Verification",
+      "status": "Complete only after notification publication evidence is verified."
+    },
+    {
+      "id": "APP-REC-ADM-001",
+      "title": "Admission Decision Identity Contract",
+      "priority": 1,
+      "reason": "Resolve reviewer identity from authenticated context instead of free-text input."
+    },
+    {
+      "id": "APP-REC-DOC-001",
+      "title": "Prospect Documents Workspace Recovery",
+      "priority": 2,
+      "reason": "Restore missing growth.prospect_documents schema and related API behavior."
+    }
+  ]
+}

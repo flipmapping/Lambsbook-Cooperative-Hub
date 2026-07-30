@@ -1,0 +1,15 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "component": "NotificationDeliveryProjection",
+  "purpose": "Operational read model for queue execution.",
+  "derived_from": "NotificationIntentStore",
+  "fields": [
+    "notification_intent_id",
+    "channel",
+    "provider",
+    "delivery_status",
+    "provider_reference",
+    "attempt_count",
+    "last_attempt_at"
+  ]
+}

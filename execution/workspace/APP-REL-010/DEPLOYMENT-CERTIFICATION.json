@@ -1,0 +1,8 @@
+{
+  "authority": "APP-REL-010",
+  "timestamp": "2026-07-30T15:08:34.173139+00:00",
+  "commit_sha": "4043f0ee7b41ea8052a43c386fed61e0f53d4df1",
+  "deployment_attempted": true,
+  "deployment_success": false,
+  "deployment_exit_code": -1
+}

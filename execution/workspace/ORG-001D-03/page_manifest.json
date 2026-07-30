@@ -1,0 +1,67 @@
+[
+  {
+    "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+    "name": "InvitationAcceptancePage.tsx",
+    "parent": "client/src/pages/dashboard"
+  },
+  {
+    "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingPage.tsx",
+    "name": "LandingPage.tsx",
+    "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing"
+  },
+  {
+    "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingPage.tsx",
+    "name": "LandingPage.tsx",
+    "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+  },
+  {
+    "path": "execution/workspace/LES-001/LandingPage.working.tsx",
+    "name": "LandingPage.working.tsx",
+    "parent": "execution/workspace/LES-001"
+  },
+  {
+    "path": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+    "name": "LandingPage.generated.tsx",
+    "parent": "execution/workspace/LES-001/implementation"
+  },
+  {
+    "path": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+    "name": "LandingPage.v1.tsx",
+    "parent": "execution/workspace/LES-001/implementation"
+  },
+  {
+    "path": "execution/workspace/LES-001/implementation/baselines/LandingPage.original.tsx",
+    "name": "LandingPage.original.tsx",
+    "parent": "execution/workspace/LES-001/implementation/baselines"
+  },
+  {
+    "path": "execution/workspace/LES-001/implementation/generated_baselines/LandingPage.generated.baseline.tsx",
+    "name": "LandingPage.generated.baseline.tsx",
+    "parent": "execution/workspace/LES-001/implementation/generated_baselines"
+  },
+  {
+    "path": "execution/workspace/LES-001/implementation/mutation_history/LandingPage.before_mutation_001.tsx",
+    "name": "LandingPage.before_mutation_001.tsx",
+    "parent": "execution/workspace/LES-001/implementation/mutation_history"
+  },
+  {
+    "path": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+    "name": "page.tsx",
+    "parent": "web/src/app/(protected)/dashboard/invitations/[invitationId]"
+  },
+  {
+    "path": "web/src/app/(protected)/dashboard/page.tsx",
+    "name": "page.tsx",
+    "parent": "web/src/app/(protected)/dashboard"
+  },
+  {
+    "path": "web/src/app/(public)/auth/sign-in/page.tsx",
+    "name": "page.tsx",
+    "parent": "web/src/app/(public)/auth/sign-in"
+  },
+  {
+    "path": "web/src/growth/pages/Landing/LandingPage.tsx",
+    "name": "LandingPage.tsx",
+    "parent": "web/src/growth/pages/Landing"
+  }
+]

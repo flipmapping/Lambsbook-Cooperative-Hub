@@ -1,0 +1,897 @@
+{
+  "entry_page_candidates": [
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "name": "InvitationAcceptancePage.tsx",
+      "parent": "client/src/pages/dashboard"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingPage.tsx",
+      "name": "LandingPage.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingPage.tsx",
+      "name": "LandingPage.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/workspace/LES-001/LandingPage.working.tsx",
+      "name": "LandingPage.working.tsx",
+      "parent": "execution/workspace/LES-001"
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LandingPage.generated.tsx",
+      "name": "LandingPage.generated.tsx",
+      "parent": "execution/workspace/LES-001/implementation"
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/LandingPage.v1.tsx",
+      "name": "LandingPage.v1.tsx",
+      "parent": "execution/workspace/LES-001/implementation"
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/baselines/LandingPage.original.tsx",
+      "name": "LandingPage.original.tsx",
+      "parent": "execution/workspace/LES-001/implementation/baselines"
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/generated_baselines/LandingPage.generated.baseline.tsx",
+      "name": "LandingPage.generated.baseline.tsx",
+      "parent": "execution/workspace/LES-001/implementation/generated_baselines"
+    },
+    {
+      "path": "execution/workspace/LES-001/implementation/mutation_history/LandingPage.before_mutation_001.tsx",
+      "name": "LandingPage.before_mutation_001.tsx",
+      "parent": "execution/workspace/LES-001/implementation/mutation_history"
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+      "name": "page.tsx",
+      "parent": "web/src/app/(protected)/dashboard/invitations/[invitationId]"
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/page.tsx",
+      "name": "page.tsx",
+      "parent": "web/src/app/(protected)/dashboard"
+    },
+    {
+      "path": "web/src/app/(public)/auth/sign-in/page.tsx",
+      "name": "page.tsx",
+      "parent": "web/src/app/(public)/auth/sign-in"
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "name": "LandingPage.tsx",
+      "parent": "web/src/growth/pages/Landing"
+    }
+  ],
+  "layout_candidates": [
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout"
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Layout"
+    },
+    {
+      "path": "web/src/growth/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "web/src/growth/components/Layout"
+    }
+  ],
+  "dashboard_components": [
+    {
+      "path": "client/src/components/admin/ProgramsManagement.tsx",
+      "name": "ProgramsManagement.tsx",
+      "parent": "client/src/components/admin"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+      "name": "ProspectActivityWorkspace.tsx",
+      "parent": "client/src/components/admissions"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "name": "ProspectAdmissionDecisionWorkspace.tsx",
+      "parent": "client/src/components/admissions"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "name": "ProspectAppointmentWorkspace.tsx",
+      "parent": "client/src/components/admissions"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "name": "ProspectDocumentWorkspace.tsx",
+      "parent": "client/src/components/admissions"
+    },
+    {
+      "path": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "name": "ProspectFollowupTaskWorkspace.tsx",
+      "parent": "client/src/components/admissions"
+    },
+    {
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "name": "InvitationAcceptanceSection.tsx",
+      "parent": "client/src/components/dashboard"
+    },
+    {
+      "path": "client/src/components/dashboard/mockData.ts",
+      "name": "mockData.ts",
+      "parent": "client/src/components/dashboard"
+    },
+    {
+      "path": "client/src/components/dashboard/stubs.tsx",
+      "name": "stubs.tsx",
+      "parent": "client/src/components/dashboard"
+    },
+    {
+      "path": "client/src/components/dashboard/types.ts",
+      "name": "types.ts",
+      "parent": "client/src/components/dashboard"
+    },
+    {
+      "path": "client/src/components/notifications/ChannelSelector.tsx",
+      "name": "ChannelSelector.tsx",
+      "parent": "client/src/components/notifications"
+    },
+    {
+      "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "name": "NotificationPreferencesPanel.tsx",
+      "parent": "client/src/components/notifications"
+    },
+    {
+      "path": "client/src/components/notifications/ToggleControl.tsx",
+      "name": "ToggleControl.tsx",
+      "parent": "client/src/components/notifications"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/GrowthProvider.tsx",
+      "name": "GrowthProvider.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/Hero.tsx",
+      "name": "Hero.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/HeroContent.tsx",
+      "name": "HeroContent.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Hero"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Layout"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/Navigation.tsx",
+      "name": "Navigation.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/NavigationItem.tsx",
+      "name": "NavigationItem.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Navigation"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/AdmissionsSection.tsx",
+      "name": "AdmissionsSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CallToActionSection.tsx",
+      "name": "CallToActionSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/CooperativePrinciplesSection.tsx",
+      "name": "CooperativePrinciplesSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/FAQSection.tsx",
+      "name": "FAQSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/JourneyDiscoverySection.tsx",
+      "name": "JourneyDiscoverySection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/MembershipSection.tsx",
+      "name": "MembershipSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/ProgramsSection.tsx",
+      "name": "ProgramsSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/ScholarshipsSection.tsx",
+      "name": "ScholarshipsSection.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/components/Sections/ContactSection.tsx",
+      "name": "ContactSection.tsx",
+      "parent": "execution/packages/LER-001A-CONTACT-EXPERIENCE/source/web/src/growth/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/GrowthProvider.tsx",
+      "name": "GrowthProvider.tsx",
+      "parent": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components"
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Layout"
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/MembershipSection.tsx",
+      "name": "MembershipSection.tsx",
+      "parent": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections/ProgramsSection.tsx",
+      "name": "ProgramsSection.tsx",
+      "parent": "execution/packages/LES-001/LANDING-SURFACE-SOURCE/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/ABVariantSelector.tsx",
+      "name": "ABVariantSelector.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/GrowthProvider.tsx",
+      "name": "GrowthProvider.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Hero/Hero.tsx",
+      "name": "Hero.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Hero"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Hero/HeroContent.tsx",
+      "name": "HeroContent.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Hero"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Hero/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Hero"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Layout"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Layout/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Layout"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Navigation/Navigation.tsx",
+      "name": "Navigation.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Navigation"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Navigation/NavigationItem.tsx",
+      "name": "NavigationItem.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Navigation"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Navigation/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Navigation"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/AdmissionsSection.tsx",
+      "name": "AdmissionsSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/CallToActionSection.tsx",
+      "name": "CallToActionSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/CooperativePrinciplesSection.tsx",
+      "name": "CooperativePrinciplesSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/FAQSection.tsx",
+      "name": "FAQSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/JourneyDiscoverySection.tsx",
+      "name": "JourneyDiscoverySection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/MembershipSection.tsx",
+      "name": "MembershipSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/ProgramsSection.tsx",
+      "name": "ProgramsSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/ScholarshipsSection.tsx",
+      "name": "ScholarshipsSection.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/components/Sections/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/LES-001/implementation-workspace/components/Sections"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "name": "ProspectAdmissionDecisionWorkspace.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "name": "ProspectAppointmentWorkspace.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "name": "ProspectDocumentWorkspace.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "name": "ProspectFollowupTaskWorkspace.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "name": "ProspectAppointmentWorkspace.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-013-backup/client/src/components/admissions"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "name": "ProspectAppointmentWorkspace.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-016-backup/client/src/components/admissions"
+    },
+    {
+      "path": "src/components/RequireAuth.tsx",
+      "name": "RequireAuth.tsx",
+      "parent": "src/components"
+    },
+    {
+      "path": "web/src/components/dashboard/CooperativeActivitySection.tsx",
+      "name": "CooperativeActivitySection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/DashboardHeroCurrentPosition.tsx",
+      "name": "DashboardHeroCurrentPosition.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/DashboardTopBar.tsx",
+      "name": "DashboardTopBar.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/IELTSSection.tsx",
+      "name": "IELTSSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/IdeaPipelineSection.tsx",
+      "name": "IdeaPipelineSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "name": "InvitationAcceptanceSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/LearningHistorySection.tsx",
+      "name": "LearningHistorySection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/MultilingualSection.tsx",
+      "name": "MultilingualSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/MyContributionsSection.tsx",
+      "name": "MyContributionsSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/PipelineDetailPanel.tsx",
+      "name": "PipelineDetailPanel.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/ProgramsSection.tsx",
+      "name": "ProgramsSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/RelationshipTrustSection.tsx",
+      "name": "RelationshipTrustSection.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/SubmitIdeaModal.tsx",
+      "name": "SubmitIdeaModal.tsx",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/mockData.ts",
+      "name": "mockData.ts",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/dashboard/types.ts",
+      "name": "types.ts",
+      "parent": "web/src/components/dashboard"
+    },
+    {
+      "path": "web/src/components/notifications/ChannelSelector.tsx",
+      "name": "ChannelSelector.tsx",
+      "parent": "web/src/components/notifications"
+    },
+    {
+      "path": "web/src/components/notifications/NotificationBell.tsx",
+      "name": "NotificationBell.tsx",
+      "parent": "web/src/components/notifications"
+    },
+    {
+      "path": "web/src/components/notifications/NotificationItem.tsx",
+      "name": "NotificationItem.tsx",
+      "parent": "web/src/components/notifications"
+    },
+    {
+      "path": "web/src/components/notifications/NotificationPanel.tsx",
+      "name": "NotificationPanel.tsx",
+      "parent": "web/src/components/notifications"
+    },
+    {
+      "path": "web/src/components/notifications/NotificationPreferencesPanel.tsx",
+      "name": "NotificationPreferencesPanel.tsx",
+      "parent": "web/src/components/notifications"
+    },
+    {
+      "path": "web/src/components/notifications/ToggleControl.tsx",
+      "name": "ToggleControl.tsx",
+      "parent": "web/src/components/notifications"
+    },
+    {
+      "path": "web/src/growth/components/GrowthProvider.tsx",
+      "name": "GrowthProvider.tsx",
+      "parent": "web/src/growth/components"
+    },
+    {
+      "path": "web/src/growth/components/Hero/Hero.tsx",
+      "name": "Hero.tsx",
+      "parent": "web/src/growth/components/Hero"
+    },
+    {
+      "path": "web/src/growth/components/Hero/HeroContent.tsx",
+      "name": "HeroContent.tsx",
+      "parent": "web/src/growth/components/Hero"
+    },
+    {
+      "path": "web/src/growth/components/Hero/index.ts",
+      "name": "index.ts",
+      "parent": "web/src/growth/components/Hero"
+    },
+    {
+      "path": "web/src/growth/components/Layout/GrowthLayout.tsx",
+      "name": "GrowthLayout.tsx",
+      "parent": "web/src/growth/components/Layout"
+    },
+    {
+      "path": "web/src/growth/components/Layout/index.ts",
+      "name": "index.ts",
+      "parent": "web/src/growth/components/Layout"
+    },
+    {
+      "path": "web/src/growth/components/Navigation/Navigation.tsx",
+      "name": "Navigation.tsx",
+      "parent": "web/src/growth/components/Navigation"
+    },
+    {
+      "path": "web/src/growth/components/Navigation/NavigationItem.tsx",
+      "name": "NavigationItem.tsx",
+      "parent": "web/src/growth/components/Navigation"
+    },
+    {
+      "path": "web/src/growth/components/Navigation/index.ts",
+      "name": "index.ts",
+      "parent": "web/src/growth/components/Navigation"
+    },
+    {
+      "path": "web/src/growth/components/Sections/AdmissionsSection.tsx",
+      "name": "AdmissionsSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/CallToActionSection.tsx",
+      "name": "CallToActionSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/ContactSection.tsx",
+      "name": "ContactSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/CooperativePrinciplesSection.tsx",
+      "name": "CooperativePrinciplesSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/FAQSection.tsx",
+      "name": "FAQSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/JourneyDiscoverySection.tsx",
+      "name": "JourneyDiscoverySection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/MembershipSection.tsx",
+      "name": "MembershipSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/ProgramsSection.tsx",
+      "name": "ProgramsSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/ScholarshipsSection.tsx",
+      "name": "ScholarshipsSection.tsx",
+      "parent": "web/src/growth/components/Sections"
+    },
+    {
+      "path": "web/src/growth/components/Sections/index.ts",
+      "name": "index.ts",
+      "parent": "web/src/growth/components/Sections"
+    }
+  ],
+  "api_candidates": [
+    {
+      "path": "execution/builder-working-tree/GP-EXEC-010M-06A/server/integrations/zalo/auth.ts",
+      "name": "auth.ts",
+      "parent": "execution/builder-working-tree/GP-EXEC-010M-06A/server/integrations/zalo"
+    },
+    {
+      "path": "execution/builder-working-tree/GP-EXEC-010M-06A/server/services/notifications.ts",
+      "name": "notifications.ts",
+      "parent": "execution/builder-working-tree/GP-EXEC-010M-06A/server/services"
+    },
+    {
+      "path": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts",
+      "name": "notifications.ts",
+      "parent": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/server/lib/supabase-dal.ts",
+      "name": "supabase-dal.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/server/lib"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/lib/supabase-dal.ts",
+      "name": "supabase-dal.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server/lib"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts",
+      "name": "routes.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/services/admissions.ts",
+      "name": "admissions.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server/services"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/lib/supabase-dal.ts",
+      "name": "supabase-dal.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server/lib"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts",
+      "name": "routes.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/services/admissions.ts",
+      "name": "admissions.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server/services"
+    },
+    {
+      "path": "execution/workspace/GP-EXEC-014M-14A-backup/server/services/admissions.ts",
+      "name": "admissions.ts",
+      "parent": "execution/workspace/GP-EXEC-014M-14A-backup/server/services"
+    },
+    {
+      "path": "server/routes/devTestAuth.ts",
+      "name": "devTestAuth.ts",
+      "parent": "server/routes"
+    },
+    {
+      "path": "server/routes/member.ts",
+      "name": "member.ts",
+      "parent": "server/routes"
+    },
+    {
+      "path": "server/routes/notification-preferences.route.ts",
+      "name": "notification-preferences.route.ts",
+      "parent": "server/routes"
+    }
+  ],
+  "route_candidates": [
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx",
+      "name": "HubAuth.tsx",
+      "parent": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages"
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuthCallback.tsx",
+      "name": "HubAuthCallback.tsx",
+      "parent": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages"
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx",
+      "name": "MemberHub.tsx",
+      "parent": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages"
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages/HubAuthCallback.tsx",
+      "name": "HubAuthCallback.tsx",
+      "parent": ".phase5/archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages"
+    },
+    {
+      "path": "client/src/pages/AdmissionsWorkspace.tsx",
+      "name": "AdmissionsWorkspace.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/AuthCallback.tsx",
+      "name": "AuthCallback.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/Dashboard.tsx",
+      "name": "Dashboard.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/HubAdminDashboard.tsx",
+      "name": "HubAdminDashboard.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "name": "HubAuth.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/HubAuthCallback.tsx",
+      "name": "HubAuthCallback.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/HubDashboard.tsx",
+      "name": "HubDashboard.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/Login.tsx",
+      "name": "Login.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/MemberDashboard.tsx",
+      "name": "MemberDashboard.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/MemberHub.tsx",
+      "name": "MemberHub.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "name": "ProspectDetailWorkspace.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/TropicanaProgram.tsx",
+      "name": "TropicanaProgram.tsx",
+      "parent": "client/src/pages"
+    },
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "name": "InvitationAcceptancePage.tsx",
+      "parent": "client/src/pages/dashboard"
+    },
+    {
+      "path": "client/src/pages/member/MemberDashboard.tsx",
+      "name": "MemberDashboard.tsx",
+      "parent": "client/src/pages/member"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingPage.tsx",
+      "name": "LandingPage.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/LandingSections.tsx",
+      "name": "LandingSections.tsx",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing"
+    },
+    {
+      "path": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/JPE-002-Claude-Package/web/src/growth/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingExperience.tsx",
+      "name": "LandingExperience.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingPage.tsx",
+      "name": "LandingPage.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingSections.tsx",
+      "name": "LandingSections.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingVariantA.tsx",
+      "name": "LandingVariantA.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/LandingVariantB.tsx",
+      "name": "LandingVariantB.tsx",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/packages/LES-001/implementation-workspace/pages/Landing/index.ts",
+      "name": "index.ts",
+      "parent": "execution/packages/LES-001/implementation-workspace/pages/Landing"
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx",
+      "name": "HubAuth.tsx",
+      "parent": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages"
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx",
+      "name": "HubAuthCallback.tsx",
+      "parent": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+      "name": "ApplicantAdmissionDecisionCenter.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantAppointmentCenter.tsx",
+      "name": "ApplicantAppointmentCenter.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantDocumentCenter.tsx",
+      "name": "ApplicantDocumentCenter.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantFollowupTaskCenter.tsx",
+      "name": "ApplicantFollowupTaskCenter.tsx",
+      "parent": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts",
+      "name": "routes.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server"
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts",
+      "name": "routes.ts",
+      "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server"
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx",
+      "name": "HubAuth.tsx",
+      "parent": "execution/workspace/FDR-010E35A-016-backup/client/src/pages"
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/Login.tsx",
+      "name": "Login.tsx",
+      "parent": "execution/workspace/FDR-010E35A-016-backup/client/src/pages"
+    },
+    {
+      "path": "server/routes/devTestAuth.ts",
+      "name": "devTestAuth.ts",
+      "parent": "server/routes"
+    },
+    {
+      "path": "server/routes/member.ts",
+      "name": "member.ts",
+      "parent": "server/routes"
+    },
+    {
+      "path": "server/routes/notification-preferences.route.ts",
+      "name": "notification-preferences.route.ts",
+      "parent": "server/routes"
+    },
+    {
+      "path": "src/pages/Dashboard.tsx",
+      "name": "Dashboard.tsx",
+      "parent": "src/pages"
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingPage.tsx",
+      "name": "LandingPage.tsx",
+      "parent": "web/src/growth/pages/Landing"
+    },
+    {
+      "path": "web/src/growth/pages/Landing/LandingSections.tsx",
+      "name": "LandingSections.tsx",
+      "parent": "web/src/growth/pages/Landing"
+    },
+    {
+      "path": "web/src/growth/pages/Landing/index.ts",
+      "name": "index.ts",
+      "parent": "web/src/growth/pages/Landing"
+    }
+  ]
+}

@@ -1,0 +1,1471 @@
+{
+  "authority": "REP-STEWARD-013",
+  "generated_at": "2026-07-30T04:15:53.844324Z",
+  "constitutional_reference": "EOS-CRSG-001",
+  "evaluated_authorities": 209,
+  "results": [
+    {
+      "authority": "APP-COM-001",
+      "json_files": 2,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-002",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-003",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-004",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-EXEC-LOG-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-IMP-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-IMP-001A",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-INTEGRATION-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-INTEGRATION-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-NEXT-SPRINT",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-RELEASE-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-COM-SPRINT-BOARD-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-EXEC-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-IMP-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-004",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-006",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-007",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-008",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-009",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-010",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-011",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-012",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-013",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-014",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-015",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MEMBER-016",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-MUT-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-READY-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-REC",
+      "json_files": 0,
+      "markdown_files": 3,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-REC-RPC-INSPECTION",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "APP-RMP-010E34B-003-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "APP-RMP-010E34B-013-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "APP-RMP-010E34B-016-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "ARCH-HANDOFF-002B",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "BUILDER-ACTIVATION-001",
+      "json_files": 1,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "BUILDER-INVOCATION-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "COM-ARCH-002",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "COMM-RUNTIME-WORKPACKAGE-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001A",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001B",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001C",
+      "json_files": 2,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001D",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001E",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001F",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001G",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "EMP-001M-01",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-02",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-06",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-07",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-001M-08",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EMP-002",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ENGINEERING-ACTIVATION-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ENGINEERING-HANDOFF-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "EXECUTION-BASELINE-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "FDR-010E34B",
+      "json_files": 7,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "FDR-010E35A-016-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "FDR-010E35A-025-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-11A",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-13B",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-15B",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-27",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-35",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-38",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-41",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-45",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-46",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-47",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-48",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-49",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-50",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-51",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-52",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-54",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-55",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-62",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-63",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-73",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-75",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-78",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-79",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-001M-80",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-81",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-89B",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-90",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-91A",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-92C",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-92F",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-93",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-001M-93A",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-BUILD-001",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GEX-CLOSE-001G",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-CLOSE-001H",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-CLOSE-001J",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-001",
+      "json_files": 4,
+      "markdown_files": 4,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-004",
+      "json_files": 1,
+      "markdown_files": 3,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-005",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-006",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-011",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-012",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-EXEC-013",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-HANDOFF-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-JOURNEY-002A",
+      "json_files": 1,
+      "markdown_files": 9,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GEX-NOTIFY-001",
+      "json_files": 13,
+      "markdown_files": 23,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009B",
+      "json_files": 0,
+      "markdown_files": 3,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009C",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-009C-08",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-014M-14A-backup",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "GP-EXEC-015A",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015B",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015C",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015D",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015E",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015F",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015F-R1",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015F-R2",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015G",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015H",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015I",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015J",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015K",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-015L",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-016",
+      "json_files": 0,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-017",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-018",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-019",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-020",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "GP-EXEC-020A",
+      "json_files": 0,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "No Evidence"
+    },
+    {
+      "authority": "IMPLEMENTATION-INSPECTION-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "IMPLEMENTATION-READINESS-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "LES-001",
+      "json_files": 3,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001A-01",
+      "json_files": 6,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001A-02",
+      "json_files": 6,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001A-03",
+      "json_files": 7,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001B-01",
+      "json_files": 5,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001B-02",
+      "json_files": 4,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001C-01",
+      "json_files": 6,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001C-02",
+      "json_files": 6,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001D-01",
+      "json_files": 5,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001D-02",
+      "json_files": 6,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001D-03",
+      "json_files": 6,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001E-01",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001E-02",
+      "json_files": 3,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001E-03",
+      "json_files": 2,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-01",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-02",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-03",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-04",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-05",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-06",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-07",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-08",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-001F-09",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-004",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-006",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-007",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-008",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-009",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-010",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-011",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-COM-EXEC-012",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-003",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-004",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-004A",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-005",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-006",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-007",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-008",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-009",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-010",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-DEMO-011",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-EXEC-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-IMP-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-IMP-002",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-MVP-001D",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "ORG-STUDIO-EXEC-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "RECOVERY-BACKLOG",
+      "json_files": 1,
+      "markdown_files": 2,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-001A",
+      "json_files": 2,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-001B",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-002",
+      "json_files": 7,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-003",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-004",
+      "json_files": 2,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-005",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-006",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-007",
+      "json_files": 4,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-008",
+      "json_files": 1,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-008A",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-009",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-010",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-011",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REP-STEWARD-012",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "REPOSITORY-RECONCILIATION-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "RUNTIME-READINESS-REVIEW-001",
+      "json_files": 1,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "SPRINT-CONTROL-BOARD-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "SPRINT-EXECUTION-001",
+      "json_files": 0,
+      "markdown_files": 1,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    },
+    {
+      "authority": "truth_registry",
+      "json_files": 2,
+      "markdown_files": 0,
+      "stages_defined": 7,
+      "status": "Evidence Present"
+    }
+  ]
+}

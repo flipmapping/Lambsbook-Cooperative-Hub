@@ -1,0 +1,27 @@
+{
+  "authority": "GEX-COM-TRANS-001",
+  "component": "CommunicationIntent",
+  "version": "1.0",
+  "immutable": true,
+  "derived_from": "AdmissionsStageTransitionEvent",
+  "fields": {
+    "intent_id": "uuid",
+    "intent_type": "registration_confirmation",
+    "prospect_id": "uuid",
+    "journey_state": "string",
+    "preferred_language": "en|vi|zh-TW",
+    "template_key": "string",
+    "template_version": "string",
+    "channels": [
+      "resend",
+      "zalo"
+    ],
+    "created_at": "timestamp"
+  },
+  "guarantees": [
+    "AppendOnly",
+    "Immutable",
+    "Idempotent",
+    "ProviderIndependent"
+  ]
+}

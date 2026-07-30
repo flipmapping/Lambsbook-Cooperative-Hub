@@ -1,0 +1,12 @@
+{
+  "authority": "GEX-EXEC-004A",
+  "purpose": "Operational Evidence Collection",
+  "required_artifacts": [
+    "http-request.txt",
+    "http-response.json",
+    "server.log",
+    "notification-record.json",
+    "verification-notes.md"
+  ],
+  "completion_rule": "Populate each artifact with evidence from a live stage-transition execution before requesting Growth Engine certification."
+}

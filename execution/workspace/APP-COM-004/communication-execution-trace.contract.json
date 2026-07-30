@@ -1,0 +1,26 @@
+{
+  "authority": "APP-COM-004",
+  "component": "CommunicationExecutionTrace",
+  "version": "1.0",
+  "purpose": "Provide immutable end-to-end correlation across the communication runtime.",
+  "immutable": true,
+  "fields": {
+    "trace_id": "uuid",
+    "intent_id": "uuid",
+    "resolution_id": "uuid",
+    "dispatch_id": "uuid",
+    "record_id": "uuid",
+    "delivery_attempt_ids": [
+      "uuid"
+    ],
+    "organization_id": "uuid",
+    "created_at": "timestamp"
+  },
+  "guarantees": [
+    "Immutable",
+    "AppendOnlyReferences",
+    "Auditable",
+    "ProviderIndependent",
+    "EndToEndTraceability"
+  ]
+}

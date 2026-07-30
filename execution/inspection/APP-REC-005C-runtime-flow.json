@@ -1,0 +1,18 @@
+{
+  "inspection": "APP-REC-005C",
+  "relationships": {
+    "postAuthenticationContinuation": [
+      "_normalizeAuthentication",
+      "_validateContinuationContext",
+      "_resolveInvitationContinuation",
+      "_determineRuntimeState",
+      "_prepareRuntimePublication"
+    ],
+    "_normalizeAuthentication": [],
+    "_validateContinuationContext": [],
+    "_resolveInvitationContinuation": [],
+    "_determineRuntimeState": [],
+    "_prepareRuntimePublication": []
+  },
+  "mutation": false
+}

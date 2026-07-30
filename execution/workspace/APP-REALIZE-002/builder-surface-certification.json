@@ -1,0 +1,84 @@
+{
+  "authority": "APP-REALIZE-002",
+  "matches": [
+    {
+      "file": "client/src/features/organization-studio/index.ts",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/App.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/pages/MemberHub.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/pages/HubAdminDashboard.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/pages/AdmissionsWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/pages/ProspectDetailWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    },
+    {
+      "file": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "keywords": [
+        "Workspace"
+      ]
+    }
+  ],
+  "match_count": 13
+}

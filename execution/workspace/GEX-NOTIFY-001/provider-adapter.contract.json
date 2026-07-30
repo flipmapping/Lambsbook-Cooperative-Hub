@@ -1,0 +1,18 @@
+{
+  "authority": "GEX-COM-TRANS-001",
+  "component": "ProviderAdapterContract",
+  "version": "1.0",
+  "input": "CommunicationIntent",
+  "output": {
+    "delivery_id": "string",
+    "provider": "string",
+    "status": "queued|sent|failed",
+    "provider_reference": "string"
+  },
+  "rules": [
+    "Adapters SHALL NOT implement business rules.",
+    "Adapters SHALL NOT resolve templates.",
+    "Adapters SHALL NOT mutate journey state.",
+    "Adapters SHALL execute CommunicationIntent only."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "authority": "APP-GOV-001",
+  "generated_utc": "2026-07-30T06:37:10.952241+00:00",
+  "repository": {
+    "root": "/home/runner/workspace",
+    "branch": "app-rec-006-runtime-identity",
+    "head_sha": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1"
+  },
+  "repository_stewardship_platform": {
+    "mode": "Operational Service",
+    "consumption_by_reference": true
+  },
+  "governance_service_check": {
+    "platform_state": {
+      "path": "/home/runner/workspace/execution/repository-stewardship/platform-state.json",
+      "available": true
+    },
+    "authority_registry": {
+      "path": "/home/runner/workspace/execution/repository-stewardship/authority-registry.json",
+      "available": false
+    },
+    "relationship_registry": {
+      "path": "/home/runner/workspace/execution/repository-stewardship/relationship-registry.json",
+      "available": true
+    },
+    "compliance_matrix": {
+      "path": "/home/runner/workspace/execution/workspace/REP-STEWARD-012/execution-trust-chain-compliance-matrix.json",
+      "available": true
+    },
+    "execution_trust_chain": {
+      "path": "/home/runner/workspace/execution/workspace/REP-STEWARD-011/execution-trust-chain-baseline.json",
+      "available": true
+    }
+  },
+  "all_services_available": false
+}

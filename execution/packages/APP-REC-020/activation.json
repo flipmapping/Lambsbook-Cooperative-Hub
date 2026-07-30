@@ -1,0 +1,7 @@
+{
+  "package": "APP-REC-020",
+  "execution_mode": "builder_activation",
+  "builder": "Builder v1.2",
+  "repository": "Lambsbook-Cooperative-Hub",
+  "output_directory": "execution/packages/APP-REC-020/PIC"
+}

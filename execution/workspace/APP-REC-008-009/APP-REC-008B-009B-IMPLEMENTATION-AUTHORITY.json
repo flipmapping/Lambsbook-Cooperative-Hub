@@ -1,0 +1,45 @@
+{
+  "authority": "APP-REC-008B-009B",
+  "generated_utc": "2026-07-30T15:05:04.611522+00:00",
+  "execution_mode": "BOUNDED_RECOVERY_IMPLEMENTATION",
+  "runtime_evidence": {
+    "documents": "growth.prospect_documents not found in schema cache",
+    "decision": "UUID field received \"flipmapping@gmail.com\""
+  },
+  "implementation_contract": {
+    "phase_order": [
+      "Validate",
+      "Explain",
+      "Implement",
+      "Verify"
+    ],
+    "evidence_challenge_gate": {
+      "if_evidence_invalid": "STOP_WITH_EXPLANATION",
+      "if_evidence_confirmed": "CONTINUE_IMPLEMENTATION"
+    }
+  },
+  "authorized_corridor": {
+    "include": [
+      "Admissions route handlers",
+      "Admissions DAL",
+      "DTOs",
+      "Validators",
+      "Supporting utilities directly used by admissions documents and decisions"
+    ],
+    "exclude": [
+      "Notification implementation",
+      "Governance",
+      "Authentication architecture",
+      "Repository-wide refactoring",
+      "Unrelated modules"
+    ]
+  },
+  "deliverables": [
+    "Root-cause confirmation",
+    "Affected files",
+    "Minimal bounded mutation",
+    "Build impact",
+    "Verification steps",
+    "Residual risks"
+  ]
+}

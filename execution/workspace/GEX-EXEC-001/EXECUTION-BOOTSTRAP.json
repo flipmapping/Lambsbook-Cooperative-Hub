@@ -1,0 +1,22 @@
+{
+  "authority": "GEX-EXEC-001",
+  "execution_mode": "Repository Mutation",
+  "status": "Initialized",
+  "created_at_utc": "2026-07-29T16:09:20Z",
+  "consumes_authority": "GEX-NOTIFY-001",
+  "architecture_status": "Frozen",
+  "entry_mutation": "NM-001",
+  "execution_rules": [
+    "Do not modify GEX-NOTIFY-001 artifacts.",
+    "Repository mutations only.",
+    "One verified mutation at a time.",
+    "Mutation Execution Record required.",
+    "Runtime evidence required before advancing."
+  ],
+  "consumed_artifacts": [
+    "RELEASE-MANIFEST.json",
+    "IMPLEMENTATION-HANDOFF.json",
+    "NOTIFICATION-MUTATION-BACKLOG.json",
+    "MUTATION-EXECUTION-RECORD.template.md"
+  ]
+}

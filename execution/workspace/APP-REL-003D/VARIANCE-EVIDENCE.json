@@ -1,0 +1,163 @@
+{
+  "authority": "APP-REL-003D",
+  "timestamp": "2026-07-30T14:37:15.666692+00:00",
+  "missing": [
+    {
+      "path": "client/src/features/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "server/imports/adapters/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "server/imports/domain/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "server/imports/reporting/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "server/imports/staging/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "server/imports/validation/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "server/messaging/",
+      "exists": true,
+      "git_status": ""
+    },
+    {
+      "path": "shared/organization/",
+      "exists": true,
+      "git_status": ""
+    }
+  ],
+  "unexpected": [
+    {
+      "path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "client/src/features/organization-studio/README.md",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "client/src/features/organization-studio/index.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/imports/adapters/csv/adapter.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/imports/domain/prospectImport.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/imports/reporting/engine.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/imports/staging/engine.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/imports/validation/contracts.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/imports/validation/engine.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "server/messaging/interface.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/builder-demo-scenarios.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/builder-demo.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/builder-planner.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/builder-validation.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/capability-catalog.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/channel-catalog.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/execution-plan.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/organization-manifest.ts",
+      "exists": true,
+      "git_status": "A "
+    },
+    {
+      "path": "shared/organization/workspace-catalog.ts",
+      "exists": true,
+      "git_status": "A "
+    }
+  ]
+}

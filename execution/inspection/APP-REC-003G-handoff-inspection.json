@@ -1,0 +1,33 @@
+{
+  "authority": "APP-REC-003G",
+  "generated_at": "2026-07-24T05:12:26.569998Z",
+  "handoff_exists": true,
+  "handoff_path": "/home/runner/workspace/execution/handoffs/APP-REC-003C/EXECUTION-HANDOFF.json",
+  "top_level_keys": [
+    "blocked_by",
+    "builder",
+    "builder_invocation_authorized",
+    "completed",
+    "consumer",
+    "execution_state",
+    "generated_at",
+    "handoff_id",
+    "pending_request",
+    "producer",
+    "repository_mutation_authorized",
+    "resume_contract"
+  ],
+  "referenced_files": [],
+  "referenced_directories": [],
+  "embedded_json_objects": [
+    "root",
+    "root.builder",
+    "root.pending_request"
+  ],
+  "summary": [
+    "Top-level keys: 12",
+    "Referenced files: 0",
+    "Referenced directories: 0"
+  ],
+  "status": "INSPECTED"
+}

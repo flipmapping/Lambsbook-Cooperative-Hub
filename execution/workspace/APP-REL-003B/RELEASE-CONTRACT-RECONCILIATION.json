@@ -1,0 +1,140 @@
+{
+  "authority": "APP-REL-003B",
+  "timestamp": "2026-07-30T14:35:42.750856+00:00",
+  "release_contract_sha256": "16d1a73f365be7f5add4dc862e4feec0ced7917f2b0965e2710adfa959e59471",
+  "summary": {
+    "certified": 31,
+    "matching": 23,
+    "missing": 8,
+    "unexpected": 23
+  },
+  "matching": [
+    "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+    "client/src/components/notifications/ChannelSelector.tsx",
+    "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/pages/HubAuthCallback.tsx.REORDER_CANDIDATE",
+    "server/imports/pipeline/duplicates.ts",
+    "server/imports/pipeline/index.ts",
+    "server/imports/pipeline/normalize.ts",
+    "server/imports/pipeline/persist.ts",
+    "server/imports/pipeline/report.ts",
+    "server/imports/pipeline/runImportPipeline.ts",
+    "server/imports/pipeline/smoke.ts",
+    "server/imports/pipeline/stage.ts",
+    "server/imports/pipeline/validate.ts",
+    "server/integrations/zalo/adapter.ts",
+    "server/integrations/zalo/auth.ts",
+    "server/lib/supabase-dal.ts",
+    "server/middleware/attachUserContext.ts",
+    "server/routes.ts",
+    "server/routes/member.ts",
+    "server/services/notifications.ts",
+    "shared/schema.ts"
+  ],
+  "missing": [
+    "client/src/features/",
+    "server/imports/adapters/",
+    "server/imports/domain/",
+    "server/imports/reporting/",
+    "server/imports/staging/",
+    "server/imports/validation/",
+    "server/messaging/",
+    "shared/organization/"
+  ],
+  "unexpected": [
+    {
+      "path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/README.md",
+      "git_status": "A"
+    },
+    {
+      "path": "client/src/features/organization-studio/index.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/adapters/csv/adapter.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/domain/prospectImport.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/reporting/engine.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/staging/engine.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/validation/contracts.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/imports/validation/engine.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "server/messaging/interface.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-demo-scenarios.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-demo.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-planner.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/builder-validation.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/capability-catalog.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/channel-catalog.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/execution-plan.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/organization-manifest.ts",
+      "git_status": "A"
+    },
+    {
+      "path": "shared/organization/workspace-catalog.ts",
+      "git_status": "A"
+    }
+  ]
+}

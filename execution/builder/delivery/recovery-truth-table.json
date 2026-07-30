@@ -1,0 +1,18 @@
+{
+  "Implementation Authority": {
+    "value": "GE-RMP-014",
+    "provenance": "Existing GE-RMP-014 implementation authority (validated by package CIB)"
+  },
+  "Repository": {
+    "value": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub",
+    "provenance": "Git remote / repository root"
+  },
+  "Production Surface": {
+    "value": null,
+    "provenance": "To be copied verbatim from existing production definition"
+  },
+  "Implementation Context Manifest": {
+    "value": null,
+    "provenance": "To be copied verbatim from existing implementation manifest"
+  }
+}

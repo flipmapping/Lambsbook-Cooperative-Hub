@@ -1,0 +1,1557 @@
+{
+  "authority": "SYNC-AUDIT-003",
+  "timestamp": "2026-07-30T13:57:14.910505+00:00",
+  "total_paths": 380,
+  "summary": {
+    "documentation:deleted": 1,
+    "execution_artifacts:modified": 4,
+    "execution_artifacts:untracked": 293,
+    "other:deleted": 9,
+    "other:modified": 4,
+    "other:untracked": 23,
+    "production_client:modified": 5,
+    "production_client:untracked": 2,
+    "production_server:deleted": 5,
+    "production_server:modified": 6,
+    "production_server:untracked": 25,
+    "production_shared:modified": 1,
+    "production_shared:untracked": 1,
+    "repository_stewardship_platform:untracked": 1
+  },
+  "categories": {
+    "production_client": [
+      {
+        "state": "modified",
+        "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx"
+      },
+      {
+        "state": "modified",
+        "path": "client/src/components/notifications/ChannelSelector.tsx"
+      },
+      {
+        "state": "modified",
+        "path": "client/src/components/notifications/NotificationPreferencesPanel.tsx"
+      },
+      {
+        "state": "modified",
+        "path": "client/src/pages/HubAuth.tsx"
+      },
+      {
+        "state": "modified",
+        "path": "client/src/pages/HubAuthCallback.tsx"
+      },
+      {
+        "state": "untracked",
+        "path": "client/src/features/"
+      },
+      {
+        "state": "untracked",
+        "path": "client/src/pages/HubAuthCallback.tsx.REORDER_CANDIDATE"
+      }
+    ],
+    "documentation": [
+      {
+        "state": "deleted",
+        "path": "docs/implementation-evidence/PHASE-1-BASELINE/MemberHub.pre-mutation.tsx"
+      }
+    ],
+    "execution_artifacts": [
+      {
+        "state": "modified",
+        "path": "execution/builder/delivery/generated-cib/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md"
+      },
+      {
+        "state": "modified",
+        "path": "execution/packages/GE-RMP-014-Claude-Package.zip"
+      },
+      {
+        "state": "modified",
+        "path": "execution/packages/GE-RMP-014-Claude-Package.zip.sha256"
+      },
+      {
+        "state": "modified",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/PACKAGE-MANIFEST.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/adapters/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/automation/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder-execution/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder-working-tree/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/README.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/activate.py"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/activation.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/builder-certification.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/builder-spec.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/builder.py"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/context.py"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/delivery/recovery-truth-table.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/derive_pic.py"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/execution-plan.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/governance-resolution.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/pipeline.py"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/production-implementation-context-certification.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/production-implementation-context-summary.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/production-implementation-context.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/register_builder.py"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builder/registration.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/builders/recovery/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/certifications/GP-EXEC-010M-09/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/checkpoints/EXECUTION-CHECKPOINT.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/compiler/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/compliance/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/contracts/checkpoint/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/engines/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/evidence/GP-EXEC-009/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/evidence/GP-EXEC-010/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/git-verification/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/EER-GEX-EXEC-001.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/EOS-LIFECYCLE-001.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/EOS-VAL-001.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/execution-completion-check.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/execution-repository-evidence.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/execution-state-graph.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/execution-state.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/execution-transition-audit.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/execution-transition-check.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/mutation-isolation-report.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/governance/working-tree-classification.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/handoffs/APP-REC-003C/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/implementation-planning/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/implementation/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/inspection/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/merge/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/APP-REC-019B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/APP-REC-020/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/APP-REC-029/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-BUILD-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-BUILD-006/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-CERT-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-REC-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/START-HERE.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/governance/BASELINE.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/governance/cib/generated/CIB-GE-RMP-014-MAIN-APPLICATION-RECOVERY.md"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/governance/execution-derivation/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/governance/execution/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GE-RMP-014-Claude-Package/governance/startup/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GP-EXEC-009_IMPLEMENTATION_PACKAGE.zip"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GP-EXEC-009_IMPLEMENTATION_PACKAGE/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/GP-EXEC-010M-06A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/packages/_builder_certification/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/recovery/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/registry/stream-registry.json"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/released-baselines/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/tools/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-003/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-004/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-EXEC-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-EXEC-LOG-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-IMP-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-IMP-001A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-INTEGRATION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-INTEGRATION-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-NEXT-SPRINT/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-RELEASE-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-COM-SPRINT-BOARD-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-EXEC-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-GOV-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-IMP-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-IMPL-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-IMPL-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-003/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-004/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-006/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-007/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-008/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-009/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-010/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-011/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-012/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-013/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-014/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-015/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MEMBER-016/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-MUT-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-READY-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-REALIZE-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-REALIZE-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-REC-018C-20260726T153726Z-attachUserContext.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-REC-RPC-INSPECTION/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/APP-REC/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ARCH-HANDOFF-002B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/BUILDER-ACTIVATION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/BUILDER-EXECUTION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/BUILDER-HANDOFF-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/BUILDER-INVOCATION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/BUILDER-RUN-REQUEST-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/COM-ARCH-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/COMM-RUNTIME-WORKPACKAGE-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001C/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001D/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001E/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001F/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001M-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001M-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001M-06/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001M-07/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-001M-08/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EMP-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ENGINEERING-ACTIVATION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ENGINEERING-HANDOFF-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/EXECUTION-BASELINE-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-11A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-13B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-15B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-35/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-38/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-41/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-45/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-47/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-48/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-49/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-50/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-51/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-52/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-54/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-55/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-62/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-63/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-78/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-79/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-80/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-81/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-89B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-90/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-91A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-92C/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-92F/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-93/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-001M-93A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-BUILD-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-CLOSE-001G/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-CLOSE-001H/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-CLOSE-001J/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-004/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-006/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-011/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-012/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-EXEC-013/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-HANDOFF-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-JOURNEY-002A-Release.sha256"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-JOURNEY-002A-Release.zip"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-JOURNEY-002A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GEX-NOTIFY-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-009/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-009B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-009C-08/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-009C/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-014M-14A-backup/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015C/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015D/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015E/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015F-R1/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015F-R2/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015F/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015G/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015H/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015I/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015J/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015K/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-015L/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-016/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-017/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-018/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-019/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-020/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/GP-EXEC-020A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/IMPLEMENTATION-INSPECTION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/IMPLEMENTATION-READINESS-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001A-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001A-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001A-03/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001B-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001B-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001C-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001C-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001D-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001D-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001D-03/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001E-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001E-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001E-03/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-01/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-02/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-03/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-04/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-05/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-06/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-07/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-08/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-001F-09/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-003/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-004/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-003/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-006/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-007/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-008/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-009/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-010/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-011/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-COM-EXEC-012/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-003/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-004/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-004A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-006/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-007/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-008/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-009/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-010/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-011/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-012/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-013/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-014/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-015/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-016/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-017/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-018/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-DEMO-019/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-EXEC-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-EXEC-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-IMP-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-IMP-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-MVP-001D/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/ORG-STUDIO-EXEC-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/PIC-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/PIC-BUILDER-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/PREPARATION-CLOSEOUT-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/RECOVERY-BACKLOG/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-001A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-001B/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-002/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-003/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-004/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-005/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-006/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-007/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-008/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-008A/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-009/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-010/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-011/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-012/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-013/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-014/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-015/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-016/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REP-STEWARD-017/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/REPOSITORY-RECONCILIATION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/RUNTIME-READINESS-REVIEW-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/SPRINT-CONTROL-BOARD-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/SPRINT-EXECUTION-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/SYNC-AUDIT-001/"
+      },
+      {
+        "state": "untracked",
+        "path": "execution/workspace/truth_registry/"
+      }
+    ],
+    "other": [
+      {
+        "state": "modified",
+        "path": "governance/execution-derivation/generated/EXECUTION-DERIVATION.md"
+      },
+      {
+        "state": "modified",
+        "path": "package-lock.json"
+      },
+      {
+        "state": "modified",
+        "path": "package.json"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/RECOVERY_MANIFEST.txt"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_cluster_collapse_execution_v3.cjs"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_cluster_collapse_final_execution.cjs"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_contract_fix_execution_reconstructed.js"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_contract_fix_execution_v2_reconstructed.js"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.cjs"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_execution_artifact_upgrade.js"
+      },
+      {
+        "state": "deleted",
+        "path": "recovery/websocket_contract_fix/websocket_execution_artifact_upgrade_recovery.cjs"
+      },
+      {
+        "state": "deleted",
+        "path": "runner/workspace/claude-phase5-workpackage1.zip"
+      },
+      {
+        "state": "modified",
+        "path": "src/lib/memberClient.ts"
+      },
+      {
+        "state": "untracked",
+        "path": ".app-rec-031-awaiting-runtime"
+      },
+      {
+        "state": "untracked",
+        "path": "APP-REC-020-Claude-Package.zip"
+      },
+      {
+        "state": "untracked",
+        "path": "APP_REC_007_reorder.patch"
+      },
+      {
+        "state": "untracked",
+        "path": "governance/decisions/"
+      },
+      {
+        "state": "untracked",
+        "path": "governance/deferred/"
+      },
+      {
+        "state": "untracked",
+        "path": "governance/rmp/GE-RMP-014-IMPLEMENTATION-AUTHORITY.md"
+      },
+      {
+        "state": "untracked",
+        "path": "home/"
+      },
+      {
+        "state": "untracked",
+        "path": "repository_cleanup_candidates.txt"
+      },
+      {
+        "state": "untracked",
+        "path": "repository_cleanup_manifest.txt"
+      },
+      {
+        "state": "untracked",
+        "path": "repository_decision_matrix.md"
+      },
+      {
+        "state": "untracked",
+        "path": "repository_hygiene_stage1_report.md"
+      },
+      {
+        "state": "untracked",
+        "path": "repository_impact_audit.md"
+      },
+      {
+        "state": "untracked",
+        "path": "tcrs/06-discoveries/DISC-ROUTE-001-canonical-member-router.md"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/capture_invitation_api_contract.md"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/identity_corridor_inventory.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/implementation_readiness_check.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/repository_decision_matrix.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/repository_hygiene_stage1.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/repository_impact_audit.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/runtime_surface_verification.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/stage2_cleanup_candidates.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/stage2_cleanup_execute.py"
+      },
+      {
+        "state": "untracked",
+        "path": "tools/verify_invitation_journey.py"
+      }
+    ],
+    "production_server": [
+      {
+        "state": "modified",
+        "path": "server/imports/pipeline/persist.ts"
+      },
+      {
+        "state": "modified",
+        "path": "server/lib/supabase-dal.ts"
+      },
+      {
+        "state": "modified",
+        "path": "server/middleware/attachUserContext.ts"
+      },
+      {
+        "state": "modified",
+        "path": "server/routes.ts"
+      },
+      {
+        "state": "modified",
+        "path": "server/routes/member.ts"
+      },
+      {
+        "state": "deleted",
+        "path": "server/services/admissions.ts.pre-ge-comm-001-g20"
+      },
+      {
+        "state": "deleted",
+        "path": "server/services/admissions.ts.pre-ge-rmp-014-g11"
+      },
+      {
+        "state": "deleted",
+        "path": "server/services/admissions.ts.pre-ge-rmp-014-g7"
+      },
+      {
+        "state": "modified",
+        "path": "server/services/notifications.ts"
+      },
+      {
+        "state": "deleted",
+        "path": "server/services/notifications.ts.pre-ge-rmp-014"
+      },
+      {
+        "state": "deleted",
+        "path": "server/services/notifications.ts.pre-ge-rmp-014-g4"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/adapters/"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/domain/"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/mappers/prospectRegistration.ts.pre-GEX001M30"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/duplicates.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/index.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/normalize.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/persist.ts.pre-GEX001M22"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/persist.ts.pre-GEX001M26"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/persist.ts.pre-GEX001M37"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/report.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/runImportPipeline.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/smoke.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/stage.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/pipeline/validate.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/reporting/"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/staging/"
+      },
+      {
+        "state": "untracked",
+        "path": "server/imports/validation/"
+      },
+      {
+        "state": "untracked",
+        "path": "server/integrations/zalo/adapter.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/integrations/zalo/auth.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "server/messaging/"
+      },
+      {
+        "state": "untracked",
+        "path": "server/services/admissions.ts.pre-GEX001M10"
+      },
+      {
+        "state": "untracked",
+        "path": "server/services/admissions.ts.pre-GEX001M11"
+      },
+      {
+        "state": "untracked",
+        "path": "server/services/admissions.ts.pre-GEX001M15D"
+      },
+      {
+        "state": "untracked",
+        "path": "server/services/admissions.ts.pre-GEX001M17"
+      },
+      {
+        "state": "untracked",
+        "path": "server/services/admissions.ts.pre-GEX001M21"
+      }
+    ],
+    "production_shared": [
+      {
+        "state": "modified",
+        "path": "shared/schema.ts"
+      },
+      {
+        "state": "untracked",
+        "path": "shared/organization/"
+      }
+    ],
+    "repository_stewardship_platform": [
+      {
+        "state": "untracked",
+        "path": "execution/repository-stewardship/"
+      }
+    ]
+  }
+}

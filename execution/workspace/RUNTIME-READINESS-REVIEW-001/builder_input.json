@@ -1,0 +1,29 @@
+{
+  "authority": "APP-EXEC-002A",
+  "created": "2026-07-30 03:26 UTC",
+  "mission": "Builder Production Implementation Context",
+  "runtime_corridors": [
+    "Identity Layer",
+    "Member Runtime",
+    "Admin Runtime",
+    "Runtime Integration",
+    "Production Readiness"
+  ],
+  "allowed_statuses": [
+    "Complete",
+    "Partially Implemented",
+    "Stub",
+    "Missing",
+    "Blocked"
+  ],
+  "required_pic_sections": [
+    "Implementation Authority",
+    "Repository Surface Registry",
+    "Implementation Context Manifest",
+    "Production Surface Inventory",
+    "Repository Mutation Scope",
+    "Constraints",
+    "Verification Plan",
+    "Success Criteria"
+  ]
+}

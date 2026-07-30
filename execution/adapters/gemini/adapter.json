@@ -1,0 +1,8 @@
+{
+  "adapter": "gemini",
+  "pic_schema": "PIC-1.0",
+  "status": "PLANNED",
+  "input": "PIC.json",
+  "output": "Implementation Package",
+  "responsibility": "Translate a canonical PIC into an implementation-agent-specific execution package."
+}

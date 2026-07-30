@@ -1,0 +1,370 @@
+{
+  ".agents": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  ".cache": {
+    "category": "Dependency",
+    "file_count": 727
+  },
+  ".config": {
+    "category": "Dependency",
+    "file_count": 754
+  },
+  ".git": {
+    "category": "Dependency",
+    "file_count": 3310
+  },
+  ".local": {
+    "category": "Dependency",
+    "file_count": 911
+  },
+  ".phase5": {
+    "category": "Historical/Unknown",
+    "file_count": 28
+  },
+  ".pythonlibs": {
+    "category": "Dependency",
+    "file_count": 16
+  },
+  ".upm": {
+    "category": "Dependency",
+    "file_count": 1
+  },
+  "<root>": {
+    "category": "Historical/Unknown",
+    "file_count": 149
+  },
+  "BUILDER-SPRINT-001-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 44
+  },
+  "CTBC document": {
+    "category": "Historical/Unknown",
+    "file_count": 11
+  },
+  "EOS-RMP-001A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 20
+  },
+  "EOS-RMP-001B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 16
+  },
+  "EOS-RMP-001B-HF1-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 16
+  },
+  "EOS-RMP-001C-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 17
+  },
+  "EOS-RMP-001D-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 17
+  },
+  "EOS-RMP-001E-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 8
+  },
+  "GE-WEB-RMP-010E33A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 36
+  },
+  "HUB-RMP-001-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "Lambsbook-Open-Brain": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "QR code": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "RMP-010E27B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 32
+  },
+  "RMP-010E29A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 35
+  },
+  "RMP-010E29B-Execution-Authority-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 35
+  },
+  "RMP-010E30A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 36
+  },
+  "RMP-010E30B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 36
+  },
+  "RMP-010E31A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E31B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 38
+  },
+  "RMP-010E32A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E32B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E33A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E33B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 37
+  },
+  "RMP-010E34A-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 10
+  },
+  "RMP-010E34B-Claude-Package": {
+    "category": "Historical/Unknown",
+    "file_count": 34
+  },
+  "attached_assets": {
+    "category": "Temporary",
+    "file_count": 34
+  },
+  "auth-runtime-phase2": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "auth-session-finalization": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "auth-storage-audit": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  "backup-secure": {
+    "category": "Temporary",
+    "file_count": 1
+  },
+  "backups": {
+    "category": "Temporary",
+    "file_count": 4
+  },
+  "builders": {
+    "category": "Execution Evidence",
+    "file_count": 24
+  },
+  "client": {
+    "category": "Production",
+    "file_count": 159
+  },
+  "codex-gateway-handoff": {
+    "category": "Historical/Unknown",
+    "file_count": 10
+  },
+  "codex-handoff": {
+    "category": "Historical/Unknown",
+    "file_count": 11
+  },
+  "content": {
+    "category": "Production",
+    "file_count": 9
+  },
+  "content-authority": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "dashboard-auth-runtime": {
+    "category": "Historical/Unknown",
+    "file_count": 4
+  },
+  "dashboard-runtime-repair-phase2": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "dashboard-runtime-trace": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "dashboard-stub-audit": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "deploy-asset-sweep": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-asset-trace": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-asset-triage": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-finalization": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-fix-phase1": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "deploy-full-asset-audit": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "dist": {
+    "category": "Build",
+    "file_count": 42
+  },
+  "docs": {
+    "category": "Production",
+    "file_count": 62
+  },
+  "eos": {
+    "category": "Historical/Unknown",
+    "file_count": 7
+  },
+  "execution": {
+    "category": "Execution Evidence",
+    "file_count": 2816
+  },
+  "exports": {
+    "category": "Execution Evidence",
+    "file_count": 8
+  },
+  "final-workspace-hygiene": {
+    "category": "Historical/Unknown",
+    "file_count": 2
+  },
+  "founder-review": {
+    "category": "Execution Evidence",
+    "file_count": 1
+  },
+  "governance": {
+    "category": "Production",
+    "file_count": 446
+  },
+  "home": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  "infrastructure": {
+    "category": "Production",
+    "file_count": 6
+  },
+  "logo": {
+    "category": "Production",
+    "file_count": 1
+  },
+  "logs": {
+    "category": "Temporary",
+    "file_count": 23
+  },
+  "media": {
+    "category": "Production",
+    "file_count": 4
+  },
+  "mvp-delivery": {
+    "category": "Historical/Unknown",
+    "file_count": 17
+  },
+  "mvp-phase-transition": {
+    "category": "Historical/Unknown",
+    "file_count": 3
+  },
+  "navigation-runtime-trace": {
+    "category": "Historical/Unknown",
+    "file_count": 5
+  },
+  "node_modules": {
+    "category": "Dependency",
+    "file_count": 41581
+  },
+  "obom-v1": {
+    "category": "Historical/Unknown",
+    "file_count": 5
+  },
+  "phase5-wp3b-materialization-package-v4": {
+    "category": "Historical/Unknown",
+    "file_count": 6
+  },
+  "public": {
+    "category": "Production",
+    "file_count": 11
+  },
+  "recovery": {
+    "category": "Execution Evidence",
+    "file_count": 448
+  },
+  "runtime-stabilization-final": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "screenshots": {
+    "category": "Temporary",
+    "file_count": 15
+  },
+  "script": {
+    "category": "Production",
+    "file_count": 1
+  },
+  "scripts": {
+    "category": "Production",
+    "file_count": 14
+  },
+  "server": {
+    "category": "Production",
+    "file_count": 75
+  },
+  "shared": {
+    "category": "Production",
+    "file_count": 12
+  },
+  "src": {
+    "category": "Production",
+    "file_count": 17
+  },
+  "supabase": {
+    "category": "Production",
+    "file_count": 15
+  },
+  "tcrs": {
+    "category": "Production",
+    "file_count": 33
+  },
+  "testtar": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  },
+  "tmp": {
+    "category": "Temporary",
+    "file_count": 106
+  },
+  "tools": {
+    "category": "Production",
+    "file_count": 18
+  },
+  "validation": {
+    "category": "Execution Evidence",
+    "file_count": 14
+  },
+  "web": {
+    "category": "Production",
+    "file_count": 111
+  },
+  "~": {
+    "category": "Historical/Unknown",
+    "file_count": 1
+  }
+}

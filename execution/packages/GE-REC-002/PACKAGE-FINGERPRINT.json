@@ -1,0 +1,15 @@
+{
+  "authority": "GE-REC-004",
+  "generated_utc": "2026-07-30T10:01:52.962221+00:00",
+  "package_version": "1.0",
+  "package_file": "execution/packages/GE-REC-002/GE-REC-002-CANONICAL-REGENERATION.zip",
+  "package_sha256": "45dc996f5bdd785bf2dcb5653db69a0a1e2302e0c4981fccb4f5f19fe57998c5",
+  "execution_contract": {
+    "immutable_package": true,
+    "single_input_artifact": true,
+    "implementation_agent_must_echo_sha256": true,
+    "commit_changes": false,
+    "push_to_remote": false
+  },
+  "next_stage": "Implementation Agent Execution"
+}

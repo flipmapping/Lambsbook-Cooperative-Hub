@@ -1,0 +1,9 @@
+{
+  "authority": "GE-REC-001",
+  "generated_utc": "2026-07-30T09:56:55.080792+00:00",
+  "expected_commit": "e4a8e3cd51c4c87d3598d791a97fbe46f7128eba",
+  "recovery_decision": "REGENERATE_FROM_CERTIFIED_PIC",
+  "reason": "Implementation commit cannot be verified in the canonical repository or any available execution repository.",
+  "next_executor": "Implementation Agent",
+  "next_input": "GE-BUILD-006-CERTIFIED-PIC.zip"
+}

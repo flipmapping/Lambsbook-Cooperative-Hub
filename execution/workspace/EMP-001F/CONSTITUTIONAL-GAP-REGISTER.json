@@ -1,0 +1,36 @@
+{
+  "authority": "EMP-001F",
+  "purpose": "Identify unresolved constitutional interfaces and classify whether each requires materialization, aliasing, or certification.",
+  "gaps": [
+    {
+      "phase": "Repository Resolution",
+      "logical_input": "Repository Resolution Contract",
+      "recommended_disposition": "UNRESOLVED",
+      "resolution": null
+    },
+    {
+      "phase": "Implementation Context Resolution",
+      "logical_input": "Implementation Context Manifest Specification",
+      "recommended_disposition": "UNRESOLVED",
+      "resolution": null
+    },
+    {
+      "phase": "Dependency Resolution",
+      "logical_input": "Execution Standards",
+      "recommended_disposition": "UNRESOLVED",
+      "resolution": null
+    },
+    {
+      "phase": "Normalization",
+      "logical_input": "EOS Execution Standards",
+      "recommended_disposition": "UNRESOLVED",
+      "resolution": null
+    },
+    {
+      "phase": "Explainability",
+      "logical_input": "Compiler Decision Log Specification",
+      "recommended_disposition": "UNRESOLVED",
+      "resolution": null
+    }
+  ]
+}

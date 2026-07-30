@@ -1,0 +1,28 @@
+{
+  "authority": "APP-REC-008A-009A",
+  "generated_utc": "2026-07-30T14:49:59.011105+00:00",
+  "inspection_scope": {
+    "routes": [
+      "server/routes.ts"
+    ],
+    "dal": [
+      "server/lib/supabase-dal.ts"
+    ]
+  },
+  "questions": {
+    "APP-REC-008": [
+      "Does growth.prospect_documents exist in the target database?",
+      "Is the DAL referencing the correct schema/table?",
+      "Is the configured Supabase project the intended one?",
+      "Is code mutation required?"
+    ],
+    "APP-REC-009": [
+      "Where does flipmapping@gmail.com enter the request flow?",
+      "Which parameter ultimately requires UUID?",
+      "Where should identifier resolution occur?",
+      "What is the minimal bounded mutation?"
+    ]
+  },
+  "mutation_authorized": false,
+  "expected_deliverable": "Inspection report with exact source locations and bounded mutation proposal."
+}

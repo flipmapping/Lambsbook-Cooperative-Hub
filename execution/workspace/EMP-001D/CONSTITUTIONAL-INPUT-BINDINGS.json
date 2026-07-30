@@ -1,0 +1,58 @@
+{
+  "authority": "EMP-001D",
+  "purpose": "Bind each Execution Compiler phase to its constitutional inputs without introducing implementation logic.",
+  "phases": [
+    {
+      "phase": "Authority Resolution",
+      "expected_inputs": [
+        "Implementation Authority Standard",
+        "Implementation Authority"
+      ]
+    },
+    {
+      "phase": "Repository Resolution",
+      "expected_inputs": [
+        "Repository Resolution Contract"
+      ]
+    },
+    {
+      "phase": "Implementation Context Resolution",
+      "expected_inputs": [
+        "Implementation Context Manifest Specification",
+        "Implementation Context"
+      ]
+    },
+    {
+      "phase": "Dependency Resolution",
+      "expected_inputs": [
+        "Execution Contracts",
+        "Execution Standards"
+      ]
+    },
+    {
+      "phase": "Validation",
+      "expected_inputs": [
+        "Execution Capability Contract",
+        "Execution Startup Protocol"
+      ]
+    },
+    {
+      "phase": "Normalization",
+      "expected_inputs": [
+        "EOS Execution Standards"
+      ]
+    },
+    {
+      "phase": "Builder Input Generation",
+      "expected_inputs": [
+        "Builder CIB Input Contract"
+      ]
+    },
+    {
+      "phase": "Explainability",
+      "expected_inputs": [
+        "Compiler Decision Log Specification"
+      ]
+    }
+  ]
+}

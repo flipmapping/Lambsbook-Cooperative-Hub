@@ -1,0 +1,7 @@
+{
+  "conversation_states": 9,
+  "supported_intents": 8,
+  "builder_visibility": "Hidden",
+  "builder_contract": "Reference Only",
+  "workspace_strategy": "Compose Existing Modules"
+}

@@ -1,0 +1,33 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "artifact": "MutationExecutionRecord",
+  "version": "1.0",
+  "required_for": [
+    "NM-001",
+    "NM-002",
+    "NM-003",
+    "NM-004",
+    "NM-005",
+    "NM-006",
+    "NM-007",
+    "NM-008"
+  ],
+  "fields": {
+    "mutation_id": "",
+    "objective": "",
+    "implementation_surface": [],
+    "pre_mutation_inspection": "",
+    "repository_changes": [],
+    "runtime_verification": [],
+    "evidence": [],
+    "rollback_strategy": "",
+    "status": "planned"
+  },
+  "status_values": [
+    "planned",
+    "in_progress",
+    "verified",
+    "rolled_back"
+  ],
+  "rule": "No subsequent mutation may begin until the current MutationExecutionRecord reaches status 'verified'."
+}

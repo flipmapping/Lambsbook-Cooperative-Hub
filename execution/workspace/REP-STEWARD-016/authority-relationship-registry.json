@@ -1,0 +1,15 @@
+{
+  "authority": "REP-STEWARD-016",
+  "generated_at": "2026-07-30T04:23:18.979212Z",
+  "relationship_types": [
+    "supersedes",
+    "superseded_by",
+    "depends_on",
+    "implements",
+    "validated_by",
+    "consumes_evidence_from",
+    "produces_evidence_for"
+  ],
+  "authority_count": 212,
+  "relationships": []
+}

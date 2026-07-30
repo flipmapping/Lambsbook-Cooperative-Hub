@@ -1,0 +1,71 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "artifact": "Notification Mutation Backlog",
+  "version": "1.0",
+  "execution_rule": "Complete each mutation and verify runtime evidence before starting the next.",
+  "mutations": [
+    {
+      "id": "NM-001",
+      "title": "Publish AdmissionsStageTransitionEvent",
+      "depends_on": [],
+      "verification": "A stage transition emits exactly one immutable event."
+    },
+    {
+      "id": "NM-002",
+      "title": "Implement NotificationTemplateResolver runtime",
+      "depends_on": [
+        "NM-001"
+      ],
+      "verification": "Template resolution is deterministic for identical inputs."
+    },
+    {
+      "id": "NM-003",
+      "title": "Materialize CommunicationIntent",
+      "depends_on": [
+        "NM-002"
+      ],
+      "verification": "Exactly one CommunicationIntent is created per event."
+    },
+    {
+      "id": "NM-004",
+      "title": "Persist NotificationIntent",
+      "depends_on": [
+        "NM-003"
+      ],
+      "verification": "NotificationIntent is stored immutably with status 'pending'."
+    },
+    {
+      "id": "NM-005",
+      "title": "Feed NotificationQueue",
+      "depends_on": [
+        "NM-004"
+      ],
+      "verification": "NotificationQueue consumes persisted NotificationIntent only."
+    },
+    {
+      "id": "NM-006",
+      "title": "Connect ResendAdapter",
+      "depends_on": [
+        "NM-005"
+      ],
+      "verification": "Resend delivers CommunicationIntent without business logic."
+    },
+    {
+      "id": "NM-007",
+      "title": "Connect ZaloAdapter",
+      "depends_on": [
+        "NM-005"
+      ],
+      "verification": "Zalo delivers the identical CommunicationIntent."
+    },
+    {
+      "id": "NM-008",
+      "title": "Founder End-to-End Validation",
+      "depends_on": [
+        "NM-006",
+        "NM-007"
+      ],
+      "verification": "Registration, persistence, journey progression, Resend, and Zalo all succeed using the same CommunicationIntent."
+    }
+  ]
+}

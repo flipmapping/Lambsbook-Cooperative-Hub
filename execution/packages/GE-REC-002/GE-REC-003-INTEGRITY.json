@@ -1,0 +1,16 @@
+{
+  "authority": "GE-REC-003",
+  "generated_utc": "2026-07-30T09:58:58.707757+00:00",
+  "bundle": "execution/packages/GE-REC-002/GE-REC-002-CANONICAL-REGENERATION.zip",
+  "integrity": {
+    "required_entries_present": true,
+    "input_package_matches": true,
+    "authorized_surfaces": [
+      "server/routes.ts",
+      "server/services/notifications.ts"
+    ],
+    "commit_changes": false,
+    "push_to_remote": false
+  },
+  "ready_for_execution": true
+}

@@ -1,0 +1,35 @@
+{
+  "authority": "GEX-NOTIFY-001",
+  "event": "AdmissionsStageTransitionEvent",
+  "version": "1.0",
+  "event_type": "admissions.stage.transition",
+  "publisher": "AdmissionsWorkspace",
+  "consumers": [
+    "NotificationGenerator",
+    "NotificationQueue",
+    "ResendAdapter",
+    "ZaloAdapter",
+    "AuditLog",
+    "FutureChannels"
+  ],
+  "payload": {
+    "event_id": "uuid",
+    "occurred_at": "timestamp",
+    "prospect_id": "uuid",
+    "previous_stage": "string|null",
+    "current_stage": "string",
+    "preferred_language": "en|vi|zh-TW",
+    "triggered_by": "user_id|system",
+    "template_context": {
+      "student_name": "string",
+      "student_id": "string",
+      "registration_link": "string"
+    }
+  },
+  "guarantees": [
+    "Immutable",
+    "AppendOnly",
+    "Idempotent",
+    "Traceable"
+  ]
+}

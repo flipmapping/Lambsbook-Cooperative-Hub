@@ -1,0 +1,2022 @@
+[
+  {
+    "file": "server/routes.ts",
+    "matches": [
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "server/lib/supabase-member-client.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "server/lib/supabaseClients.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "server/middleware/requireSBURole.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "server/middleware/attachUserContext.ts",
+    "matches": [
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "server/routes/admin.ts",
+    "matches": [
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "server/routes/devTestAuth.ts",
+    "matches": [
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "server/routes/member.ts",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "server/services/supabase-hub.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "client/src/components/AIChatWidget.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/ContactSection.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/HubConsultationForm.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admin/CommissionRulesManagement.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admin/EnrollmentWorkflow.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admin/SBUManagement.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admin/ProgramsManagement.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/notifications/NotificationPreferencesPanel.tsx",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "sb-access-token"
+    ]
+  },
+  {
+    "file": "client/src/components/admissions/ProspectTimeline.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admissions/ProspectActivityWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/lib/queryClient.ts",
+    "matches": [
+      "Authorization",
+      "apiRequest",
+      "getAuthToken",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "matches": [
+      "accept-invitation"
+    ]
+  },
+  {
+    "file": "client/src/pages/AdminGovernance.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/AdminRevenueConsole.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/EducationFeedback.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/Login.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/PartnerOnboarding.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ResetPassword.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/TranscriptSubmission.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/Dashboard.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/MemberDashboard.tsx",
+    "matches": [
+      "accept-invitation",
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/HubDashboard.tsx",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "client/src/pages/MemberHub.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "getAuthToken",
+      "postWithAuth",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "client/src/pages/HubAuth.tsx",
+    "matches": [
+      "Authorization",
+      "apiRequest",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "client/src/pages/HubAuthCallback.tsx",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "client/src/pages/HubAdminDashboard.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/AdmissionsWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ProspectDetailWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantStatusLookup.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantDocumentCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantAppointmentCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantLifecycleTimeline.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantActivityCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantFollowupTaskCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+    "matches": [
+      "accept-invitation",
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "src/lib/openBrain.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "src/lib/memberClient.ts",
+    "matches": [
+      "Authorization",
+      "accept-invitation"
+    ]
+  },
+  {
+    "file": "src/pages/Dashboard.tsx",
+    "matches": [
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "web/src/app/(protected)/dashboard/page.tsx",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+    "matches": [
+      "Authorization",
+      "sb-access-token"
+    ]
+  },
+  {
+    "file": "web/src/components/dashboard/InvitationAcceptanceSection.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "sb-access-token"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/fromHttp.browser.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/fromHttp.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/credential-provider-http/dist-es/fromHttp/fromHttp.browser.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/credential-provider-http/dist-es/fromHttp/fromHttp.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/credential-provider-http/dist-types/fromHttp/fromHttpTypes.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/credential-provider-http/dist-types/ts3.4/fromHttp/fromHttpTypes.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-es/submodules/sso-oidc/models/errors.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-es/submodules/sso-oidc/schemas/schemas_0.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-cjs/submodules/sso-oidc/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/signin/commands/CreateOAuth2TokenCommand.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/signin/models/enums.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/index.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/SSOOIDC.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/SSOOIDCClient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/commands/CreateTokenCommand.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/models/errors.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/models/models_0.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/submodules/sso-oidc/schemas/schemas_0.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/ts3.4/submodules/sso-oidc/models/errors.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@aws-sdk/nested-clients/dist-types/ts3.4/submodules/sso-oidc/schemas/schemas_0.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@neondatabase/serverless/index.js",
+    "matches": [
+      "Authorization",
+      "getAuthToken"
+    ]
+  },
+  {
+    "file": "node_modules/@neondatabase/serverless/index.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpBearerAuth.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@smithy/core/dist-cjs/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@smithy/credential-provider-imds/dist-es/fromContainerMetadata.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@smithy/credential-provider-imds/dist-cjs/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@smithy/types/dist-types/ts3.4/auth/auth.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@smithy/types/dist-types/auth/auth.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/GoTrueClient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/GoTrueClient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/lib/constants.js",
+    "matches": [
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/lib/fetch.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/lib/constants.d.ts",
+    "matches": [
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/main/lib/types.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/GoTrueAdminApi.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/GoTrueClient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/GoTrueAdminApi.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/GoTrueClient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/lib/constants.js",
+    "matches": [
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/lib/fetch.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/lib/constants.d.ts",
+    "matches": [
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/dist/module/lib/types.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/src/GoTrueAdminApi.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/src/GoTrueClient.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/src/lib/constants.ts",
+    "matches": [
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/src/lib/fetch.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/auth-js/src/lib/types.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/phoenix/assets/js/phoenix/socket.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/realtime-js/dist/main/RealtimeChannel.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/realtime-js/dist/module/RealtimeChannel.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/realtime-js/src/RealtimeChannel.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/storage-js/dist/umd/supabase.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/storage-js/src/packages/StorageVectorsClient.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/supabase-js/dist/umd/supabase.js",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/supabase-js/src/SupabaseClient.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/supabase-js/src/lib/fetch.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/functions-js/dist/main/FunctionsClient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/functions-js/dist/main/FunctionsClient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/functions-js/dist/module/FunctionsClient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/functions-js/dist/module/FunctionsClient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@supabase/functions-js/src/FunctionsClient.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@types/node/http.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/@types/passport/index.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/vite/dist/node/index.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/gaxios/build/src/common.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/awsclient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/awsrequestsigner.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/baseexternalclient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/downscopedclient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/idtokenclient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/jwtaccess.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/jwtclient.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/oauth2client.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/oauth2common.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/authclient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/baseexternalclient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/downscopedclient.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/google-auth-library/build/src/auth/oauth2client.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/compute/alpha.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/compute/beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/compute/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/analyticshub/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/bigquerydatatransfer/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/binaryauthorization/v1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/binaryauthorization/v1beta1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/binaryauthorization/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/binaryauthorization/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/certificatemanager/v1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/certificatemanager/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudfunctions/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudfunctions/v1beta2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudfunctions/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudfunctions/v2alpha.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudfunctions/v2beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudresourcemanager/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudresourcemanager/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudresourcemanager/v3.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudscheduler/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudscheduler/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudsupport/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudsupport/v2beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudtasks/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudtasks/v2beta2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/cloudtasks/v2beta3.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/connectors/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/container/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/container/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/content/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/contentwarehouse/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dataplex/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dataportability/v1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dataportability/v1beta.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dataportability/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dataportability/v1beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dfareporting/v4.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dialogflow/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dialogflow/v2beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dialogflow/v3.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dialogflow/v3beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/displayvideo/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/displayvideo/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/displayvideo/v3.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/displayvideo/v4.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/dlp/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/domains/v1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/domains/v1alpha2.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/domains/v1beta1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/domains/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/domains/v1alpha2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/domains/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/eventarc/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/gameservices/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/gameservices/v1beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/genomics/v1alpha2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/genomics/v2alpha1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/gkehub/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/gkehub/v1alpha.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/gkehub/v1beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/gkeonprem/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/iam/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/iap/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/identitytoolkit/v3.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/integrations/v1alpha.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/lifesciences/v2beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/ml/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/monitoring/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/monitoring/v3.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/networksecurity/v1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/networksecurity/v1beta1.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/networksecurity/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/networksecurity/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/networkservices/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/networkservices/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/pubsub/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/pubsub/v1beta2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/run/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/searchads360/v0.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/serviceconsumermanagement/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/serviceconsumermanagement/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/servicecontrol/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/servicecontrol/v2.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/servicemanagement/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/servicenetworking/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/servicenetworking/v1beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/serviceusage/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/serviceusage/v1beta1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/spanner/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/sts/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/sts/v1beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/workstations/v1.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/apis/workstations/v1beta.d.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/googleapis/build/src/generator/synth.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/https-proxy-agent/dist/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/nodemailer/lib/nodemailer.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/nodemailer/lib/fetch/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/nodemailer/lib/smtp-connection/http-proxy-client.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/client.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/realtime/websocket.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/realtime/ws.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/src/client.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/src/realtime/websocket.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/src/realtime/ws.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/src/beta/realtime/websocket.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/src/beta/realtime/ws.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/beta/realtime/websocket.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/openai/beta/realtime/ws.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/passport/lib/authenticator.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/.vite/deps/@supabase_ssr.js",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "node_modules/ws/lib/websocket.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/next/dist/compiled/edge-runtime/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/next/dist/compiled/stream-http/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/next/dist/compiled/@edge-runtime/primitives/fetch.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/next/dist/compiled/@edge-runtime/primitives/load.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/next/dist/compiled/http-proxy-agent/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "node_modules/next/dist/compiled/https-proxy-agent/index.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "dist/index.js",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "dist/public/assets/index-CwQcX6jY.js",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "sb-access-token",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "dist/public/assets/Dashboard-isb9lu_N.js",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "dist/public/assets/MemberHub-Tq4iZNsb.js",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-handoff/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-handoff/InvitationAcceptanceSection.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "sb-access-token"
+    ]
+  },
+  {
+    "file": "codex-handoff/InvitationAcceptancePage.tsx",
+    "matches": [
+      "accept-invitation",
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "codex-handoff/HubDashboard.tsx",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "codex-handoff/MemberDashboard.tsx",
+    "matches": [
+      "accept-invitation",
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "codex-handoff/MemberHub.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "getAuthToken",
+      "postWithAuth",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-handoff/supabaseClients.ts",
+    "matches": [
+      "Authorization"
+    ]
+  },
+  {
+    "file": "codex-handoff/member.ts",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "codex-handoff/routes.ts",
+    "matches": [
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/HubAuthCallback.tsx",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/HubAuth.tsx",
+    "matches": [
+      "apiRequest",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/InvitationAcceptanceSection.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "sb-access-token"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/MemberHub.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "getAuthToken",
+      "postWithAuth",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/routes.ts",
+    "matches": [
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "codex-gateway-handoff/member.ts",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx",
+    "matches": [
+      "apiRequest",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuthCallback.tsx",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "getAuthToken",
+      "postWithAuth",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": ".phase5/archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages/HubAuthCallback.tsx",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/pages/ApplicantStatusLookup.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/pages/ApplicantDocumentCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/pages/ApplicantAppointmentCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/pages/ApplicantLifecycleTimeline.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantJourneyStatus.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/pages/ApplicantActivityCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "matches": [
+      "accept-invitation"
+    ]
+  },
+  {
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx",
+    "matches": [
+      "apiRequest",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx",
+    "matches": [
+      "Authorization",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/workspace/FDR-010E35A-026-backup-member.ts",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectFollowupTaskWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectDocumentWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/components/admissions/ProspectAdmissionDecisionWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantFollowupTaskCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantAppointmentCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantDocumentCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-003-backup/client/src/pages/ApplicantAdmissionDecisionCenter.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts",
+    "matches": [
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-013-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts",
+    "matches": [
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  },
+  {
+    "file": "execution/workspace/APP-RMP-010E34B-016-backup/client/src/components/admissions/ProspectAppointmentWorkspace.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/App.tsx",
+    "matches": [
+      "accept-invitation",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/Login.tsx",
+    "matches": [
+      "apiRequest"
+    ]
+  },
+  {
+    "file": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx",
+    "matches": [
+      "apiRequest",
+      "supabase\\.auth\\.token"
+    ]
+  },
+  {
+    "file": "execution/workspace/FDR-010E35A-025-backup/member.ts",
+    "matches": [
+      "Authorization",
+      "accept-invitation",
+      "attachUserContext"
+    ]
+  }
+]

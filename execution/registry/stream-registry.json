@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "streams": {
+    "APP-REC-003C": {
+      "status": "COMPLETE",
+      "execution_state": "GOVERNANCE_HOLD",
+      "checkpoint": "execution/checkpoints/EXECUTION-CHECKPOINT.json",
+      "handoff": "execution/handoffs/APP-REC-003C/EXECUTION-HANDOFF.json",
+      "completed_at": "2026-07-24T05:45:07Z",
+      "next_owner": "Governance",
+      "resume_condition": "Canonical Builder Input or equivalent governance outcome"
+    }
+  }
+}

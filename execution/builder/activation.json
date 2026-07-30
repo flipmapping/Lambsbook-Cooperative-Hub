@@ -1,0 +1,22 @@
+{
+  "schema": "EOS-061",
+  "status": "ACTIVE",
+  "created_utc": "2026-07-27T00:29:03.515010+00:00",
+  "builder": {
+    "name": "Builder",
+    "version": "1.2"
+  },
+  "activation": {
+    "entrypoint": "",
+    "runtime": "",
+    "arguments": []
+  },
+  "inputs": {
+    "work_package": "execution/packages/<WORK_PACKAGE>",
+    "fab": "FAB.md"
+  },
+  "outputs": {
+    "pic": "execution/packages/<WORK_PACKAGE>/PIC",
+    "evidence": "execution/packages/<WORK_PACKAGE>/evidence"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "authority": "ORG-DEMO-017",
+  "platform_root": "/home/runner/workspace/execution/repository-stewardship",
+  "required_services": {
+    "authority-registry.json": true,
+    "compliance-matrix.json": true,
+    "execution-trust-chain-baseline.json": true,
+    "platform-state.json": true,
+    "relationship-registry.json": true
+  },
+  "platform_ready": true
+}

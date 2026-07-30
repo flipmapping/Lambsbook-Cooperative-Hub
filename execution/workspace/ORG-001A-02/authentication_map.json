@@ -1,0 +1,4 @@
+{
+  "classification": "Reuse",
+  "reason": "Organization Studio uses the existing authentication and identity pipeline."
+}

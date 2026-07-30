@@ -1,0 +1,497 @@
+[
+  {
+    "directory": ".agents",
+    "exists": true,
+    "files": 3,
+    "subdirectories": 2,
+    "bytes": 6212,
+    "latest_modified": "2026-07-25T04:05:02.875076",
+    "markers": []
+  },
+  {
+    "directory": ".phase5",
+    "exists": true,
+    "files": 28,
+    "subdirectories": 31,
+    "bytes": 94903,
+    "latest_modified": "2026-06-28T03:41:42.204159",
+    "markers": []
+  },
+  {
+    "directory": "<root>",
+    "exists": false,
+    "files": 0,
+    "subdirectories": 0,
+    "bytes": 0,
+    "latest_modified": null,
+    "markers": []
+  },
+  {
+    "directory": "BUILDER-SPRINT-001-Claude-Package",
+    "exists": true,
+    "files": 44,
+    "subdirectories": 7,
+    "bytes": 88101,
+    "latest_modified": "2026-07-07T02:41:52.725323",
+    "markers": []
+  },
+  {
+    "directory": "CTBC document",
+    "exists": true,
+    "files": 11,
+    "subdirectories": 0,
+    "bytes": 6533248,
+    "latest_modified": "2026-07-12T03:47:56.073212",
+    "markers": []
+  },
+  {
+    "directory": "EOS-RMP-001A-Claude-Package",
+    "exists": true,
+    "files": 20,
+    "subdirectories": 5,
+    "bytes": 29226,
+    "latest_modified": "2026-07-22T08:43:18.848276",
+    "markers": []
+  },
+  {
+    "directory": "EOS-RMP-001B-Claude-Package",
+    "exists": true,
+    "files": 16,
+    "subdirectories": 5,
+    "bytes": 26470,
+    "latest_modified": "2026-07-07T07:00:41.316430",
+    "markers": []
+  },
+  {
+    "directory": "EOS-RMP-001B-HF1-Claude-Package",
+    "exists": true,
+    "files": 16,
+    "subdirectories": 5,
+    "bytes": 36133,
+    "latest_modified": "2026-07-07T07:45:24.980430",
+    "markers": []
+  },
+  {
+    "directory": "EOS-RMP-001C-Claude-Package",
+    "exists": true,
+    "files": 17,
+    "subdirectories": 5,
+    "bytes": 36873,
+    "latest_modified": "2026-07-07T08:07:36.996430",
+    "markers": []
+  },
+  {
+    "directory": "EOS-RMP-001D-Claude-Package",
+    "exists": true,
+    "files": 17,
+    "subdirectories": 5,
+    "bytes": 45131,
+    "latest_modified": "2026-07-07T09:28:32.532430",
+    "markers": []
+  },
+  {
+    "directory": "EOS-RMP-001E-Claude-Package",
+    "exists": true,
+    "files": 8,
+    "subdirectories": 9,
+    "bytes": 34499,
+    "latest_modified": "2026-07-07T16:04:50.286891",
+    "markers": []
+  },
+  {
+    "directory": "GE-WEB-RMP-010E33A-Claude-Package",
+    "exists": true,
+    "files": 36,
+    "subdirectories": 5,
+    "bytes": 72434,
+    "latest_modified": "2026-07-07T00:03:29.129307",
+    "markers": []
+  },
+  {
+    "directory": "HUB-RMP-001-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "subdirectories": 5,
+    "bytes": 73020,
+    "latest_modified": "2026-07-06T15:45:24.715625",
+    "markers": []
+  },
+  {
+    "directory": "Lambsbook-Open-Brain",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 2,
+    "bytes": 531,
+    "latest_modified": "2026-07-09T17:30:34.133773",
+    "markers": []
+  },
+  {
+    "directory": "QR code",
+    "exists": true,
+    "files": 2,
+    "subdirectories": 0,
+    "bytes": 116817,
+    "latest_modified": "2026-07-18T07:16:11.270392",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E27B-Claude-Package",
+    "exists": true,
+    "files": 32,
+    "subdirectories": 5,
+    "bytes": 69260,
+    "latest_modified": "2026-07-05T09:15:14.628567",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E29A-Claude-Package",
+    "exists": true,
+    "files": 35,
+    "subdirectories": 5,
+    "bytes": 69665,
+    "latest_modified": "2026-07-05T15:19:06.145063",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E29B-Execution-Authority-Package",
+    "exists": true,
+    "files": 35,
+    "subdirectories": 5,
+    "bytes": 70894,
+    "latest_modified": "2026-07-05T23:58:10.018251",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E30A-Claude-Package",
+    "exists": true,
+    "files": 36,
+    "subdirectories": 5,
+    "bytes": 71836,
+    "latest_modified": "2026-07-06T02:35:00.108738",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E30B-Claude-Package",
+    "exists": true,
+    "files": 36,
+    "subdirectories": 5,
+    "bytes": 71134,
+    "latest_modified": "2026-07-06T03:22:08.988738",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E31A-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "subdirectories": 5,
+    "bytes": 72085,
+    "latest_modified": "2026-07-06T04:25:18.520738",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E31B-Claude-Package",
+    "exists": true,
+    "files": 38,
+    "subdirectories": 5,
+    "bytes": 73086,
+    "latest_modified": "2026-07-06T04:53:52.936738",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E32A-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "subdirectories": 5,
+    "bytes": 72364,
+    "latest_modified": "2026-07-06T05:42:36.708738",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E32B-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "subdirectories": 5,
+    "bytes": 72765,
+    "latest_modified": "2026-07-06T06:16:56.909067",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E33A-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "subdirectories": 5,
+    "bytes": 72615,
+    "latest_modified": "2026-07-06T12:22:15.559618",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E33B-Claude-Package",
+    "exists": true,
+    "files": 37,
+    "subdirectories": 5,
+    "bytes": 72040,
+    "latest_modified": "2026-07-06T12:40:38.532942",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E34A-Claude-Package",
+    "exists": true,
+    "files": 10,
+    "subdirectories": 4,
+    "bytes": 12180,
+    "latest_modified": "2026-07-06T13:38:47.560942",
+    "markers": []
+  },
+  {
+    "directory": "RMP-010E34B-Claude-Package",
+    "exists": true,
+    "files": 34,
+    "subdirectories": 5,
+    "bytes": 48825,
+    "latest_modified": "2026-07-06T15:11:54.349989",
+    "markers": []
+  },
+  {
+    "directory": "auth-runtime-phase2",
+    "exists": true,
+    "files": 2,
+    "subdirectories": 0,
+    "bytes": 9732,
+    "latest_modified": "2026-05-26T10:19:24.326363",
+    "markers": []
+  },
+  {
+    "directory": "auth-session-finalization",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 67,
+    "latest_modified": "2026-05-26T10:23:30.887363",
+    "markers": []
+  },
+  {
+    "directory": "auth-storage-audit",
+    "exists": true,
+    "files": 3,
+    "subdirectories": 0,
+    "bytes": 941,
+    "latest_modified": "2026-05-26T10:13:05.015363",
+    "markers": []
+  },
+  {
+    "directory": "codex-gateway-handoff",
+    "exists": true,
+    "files": 10,
+    "subdirectories": 0,
+    "bytes": 169089,
+    "latest_modified": "2026-06-22T15:53:55.901954",
+    "markers": []
+  },
+  {
+    "directory": "codex-handoff",
+    "exists": true,
+    "files": 11,
+    "subdirectories": 0,
+    "bytes": 159117,
+    "latest_modified": "2026-06-22T09:31:48.088260",
+    "markers": []
+  },
+  {
+    "directory": "content-authority",
+    "exists": true,
+    "files": 2,
+    "subdirectories": 4,
+    "bytes": 1467,
+    "latest_modified": "2026-07-12T03:23:09.949212",
+    "markers": []
+  },
+  {
+    "directory": "dashboard-auth-runtime",
+    "exists": true,
+    "files": 4,
+    "subdirectories": 0,
+    "bytes": 20107,
+    "latest_modified": "2026-05-26T10:09:58.908363",
+    "markers": []
+  },
+  {
+    "directory": "dashboard-runtime-repair-phase2",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 66,
+    "latest_modified": "2026-05-26T07:35:43.894363",
+    "markers": []
+  },
+  {
+    "directory": "dashboard-runtime-trace",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 634,
+    "latest_modified": "2026-05-26T05:09:40.782000",
+    "markers": []
+  },
+  {
+    "directory": "dashboard-stub-audit",
+    "exists": true,
+    "files": 2,
+    "subdirectories": 0,
+    "bytes": 984,
+    "latest_modified": "2026-05-26T10:08:34.356363",
+    "markers": []
+  },
+  {
+    "directory": "deploy-asset-sweep",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 859,
+    "latest_modified": "2026-05-26T04:08:24.898000",
+    "markers": []
+  },
+  {
+    "directory": "deploy-asset-trace",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 96,
+    "latest_modified": "2026-05-26T04:05:14.521000",
+    "markers": []
+  },
+  {
+    "directory": "deploy-asset-triage",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 0,
+    "latest_modified": "2026-05-26T04:03:58.786000",
+    "markers": []
+  },
+  {
+    "directory": "deploy-finalization",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 671,
+    "latest_modified": "2026-05-26T04:16:24.447000",
+    "markers": []
+  },
+  {
+    "directory": "deploy-fix-phase1",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 140,
+    "latest_modified": "2026-05-26T04:06:42.267000",
+    "markers": []
+  },
+  {
+    "directory": "deploy-full-asset-audit",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 1756,
+    "latest_modified": "2026-05-26T04:12:15.678000",
+    "markers": []
+  },
+  {
+    "directory": "eos",
+    "exists": true,
+    "files": 7,
+    "subdirectories": 2,
+    "bytes": 4701,
+    "latest_modified": "2026-07-22T16:03:13.447583",
+    "markers": []
+  },
+  {
+    "directory": "final-workspace-hygiene",
+    "exists": true,
+    "files": 2,
+    "subdirectories": 0,
+    "bytes": 940,
+    "latest_modified": "2026-05-26T03:27:18.680000",
+    "markers": []
+  },
+  {
+    "directory": "home",
+    "exists": true,
+    "files": 3,
+    "subdirectories": 4,
+    "bytes": 10683,
+    "latest_modified": "2026-07-26T03:40:15.385158",
+    "markers": []
+  },
+  {
+    "directory": "mvp-delivery",
+    "exists": true,
+    "files": 17,
+    "subdirectories": 1,
+    "bytes": 31501,
+    "latest_modified": "2026-07-25T07:26:04.803076",
+    "markers": []
+  },
+  {
+    "directory": "mvp-phase-transition",
+    "exists": true,
+    "files": 3,
+    "subdirectories": 1,
+    "bytes": 105734,
+    "latest_modified": "2026-05-26T13:34:21.764043",
+    "markers": []
+  },
+  {
+    "directory": "navigation-runtime-trace",
+    "exists": true,
+    "files": 5,
+    "subdirectories": 0,
+    "bytes": 34582,
+    "latest_modified": "2026-05-26T08:06:40.940363",
+    "markers": []
+  },
+  {
+    "directory": "obom-v1",
+    "exists": true,
+    "files": 5,
+    "subdirectories": 0,
+    "bytes": 1884,
+    "latest_modified": "2026-05-29T14:33:35.703538",
+    "markers": []
+  },
+  {
+    "directory": "phase5-wp3b-materialization-package-v4",
+    "exists": true,
+    "files": 6,
+    "subdirectories": 5,
+    "bytes": 162,
+    "latest_modified": "2026-06-27T03:27:01.702016",
+    "markers": []
+  },
+  {
+    "directory": "runtime-stabilization-final",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 53,
+    "latest_modified": "2026-05-26T07:38:11.538363",
+    "markers": []
+  },
+  {
+    "directory": "testtar",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 0,
+    "bytes": 6,
+    "latest_modified": "2026-07-05T01:40:16.008808",
+    "markers": []
+  },
+  {
+    "directory": "~",
+    "exists": true,
+    "files": 1,
+    "subdirectories": 3,
+    "bytes": 0,
+    "latest_modified": "2026-07-13T10:25:56.372465",
+    "markers": []
+  }
+]

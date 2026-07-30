@@ -1,0 +1,36 @@
+{
+  "authority": "COM-ARCH-002",
+  "component": "OrganizationCommunicationPolicy",
+  "version": "1.0",
+  "purpose": "Canonical execution policy governing organization communication decisions.",
+  "owned_by": "Organization",
+  "fields": {
+    "policy_id": "uuid",
+    "organization_id": "uuid",
+    "default_provider": "string|null",
+    "allowed_channels": [
+      "resend",
+      "zalo",
+      "whatsapp"
+    ],
+    "quiet_hours": {
+      "start": "HH:MM",
+      "end": "HH:MM",
+      "timezone": "IANA timezone"
+    },
+    "retry_policy": {
+      "max_attempts": "integer",
+      "backoff_strategy": "fixed|exponential"
+    },
+    "priority_rules": "object",
+    "commercial_tier": "string",
+    "compliance_profile": "string",
+    "effective_from": "timestamp"
+  },
+  "guarantees": [
+    "OrganizationOwned",
+    "Versioned",
+    "Auditable",
+    "ProviderIndependent"
+  ]
+}

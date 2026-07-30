@@ -1,0 +1,42 @@
+{
+  "inspection": "APP-REC-006A",
+  "authority": "FDR-010E35B-005",
+  "task": {
+    "id": "WP-001",
+    "title": "Introduce Runtime Identity Resolution capability"
+  },
+  "implementation_surfaces": [
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+    "client/src/lib/auth/NavigationConsumptionAuthority.ts"
+  ],
+  "engineering_flow": {
+    "postAuthenticationContinuation": 226,
+    "_normalizeAuthentication": 130,
+    "_validateContinuationContext": 141,
+    "_resolveInvitationContinuation": 170,
+    "_determineRuntimeState": 188,
+    "_prepareRuntimePublication": 209
+  },
+  "mutation_constraints": [
+    "Authentication",
+    "Authorization",
+    "JWT",
+    "Database schema",
+    "RLS",
+    "Invitation semantics",
+    "Application routing topology"
+  ],
+  "definition_of_done": [
+    "Runtime identity is resolved before RuntimeState publication.",
+    "Identity and outcome are independent runtime concepts.",
+    "Navigation consumes RuntimeState only.",
+    "Existing member journey preserved.",
+    "Existing invitation journey preserved.",
+    "Existing anonymous journey preserved.",
+    "Build passes.",
+    "Runtime validation passes."
+  ],
+  "repository_mutation": false,
+  "status": "READY_FOR_MUTATION_SPECIFICATION_REVIEW"
+}

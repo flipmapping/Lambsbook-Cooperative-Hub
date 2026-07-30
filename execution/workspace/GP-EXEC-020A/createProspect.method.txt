@@ -1,0 +1,19 @@
+0055:   async createProspect(data: ProspectInsert): Promise<Prospect> {
+0056:     this.ensureConfigured();
+0057:     const supabase = getSupabaseAdmin();
+0058: 
+0059:     const { data: prospect, error } = await supabase
+0060:       .schema('growth').from('prospects')
+0061:       .insert({
+0062:         full_name: data.full_name,
+0063:         email: data.email,
+0064:         country: data.country,
+0065:         program_of_interest: data.program_of_interest,
+0066:         phone: data.phone ?? null,
+0067:       })
+0068:       .select()
+0069:       .single();
+0070: 
+0071:     if (error) throw new Error(`Failed to create prospect: ${error.message}`);
+0072:     return prospect;
+0073:   }

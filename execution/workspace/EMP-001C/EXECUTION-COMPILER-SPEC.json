@@ -1,0 +1,59 @@
+{
+  "authority": "EMP-001C",
+  "name": "Execution Compiler",
+  "status": "INITIALIZED",
+  "mission": "Deterministically transform approved governance intent into certified Builder execution inputs.",
+  "compiler_phases": [
+    {
+      "id": "phase-01",
+      "name": "Authority Resolution",
+      "implemented": false
+    },
+    {
+      "id": "phase-02",
+      "name": "Repository Resolution",
+      "implemented": false
+    },
+    {
+      "id": "phase-03",
+      "name": "Implementation Context Resolution",
+      "implemented": false
+    },
+    {
+      "id": "phase-04",
+      "name": "Dependency Resolution",
+      "implemented": false
+    },
+    {
+      "id": "phase-05",
+      "name": "Validation",
+      "implemented": false
+    },
+    {
+      "id": "phase-06",
+      "name": "Normalization",
+      "implemented": false
+    },
+    {
+      "id": "phase-07",
+      "name": "Builder Input Generation",
+      "implemented": false
+    },
+    {
+      "id": "phase-08",
+      "name": "Explainability",
+      "implemented": false
+    }
+  ],
+  "compiler_inputs": [
+    "Execution Standards",
+    "Implementation Authority",
+    "Implementation Context",
+    "Repository Resolution",
+    "Execution Contracts"
+  ],
+  "compiler_output": {
+    "artifact": "Certified Builder Input",
+    "consumer": "Builder"
+  }
+}

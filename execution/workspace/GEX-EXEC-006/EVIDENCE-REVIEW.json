@@ -1,0 +1,15 @@
+{
+  "authority": "GEX-EXEC-006",
+  "purpose": "Operational Evidence Review",
+  "required_evidence": [
+    "http-request.txt",
+    "http-response.json",
+    "server.log",
+    "notification-record.json",
+    "verification-notes.md"
+  ],
+  "decision": {
+    "operationally_certified": null,
+    "review_complete": false
+  }
+}

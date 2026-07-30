@@ -1,0 +1,15 @@
+{
+  "start": "Welcome",
+  "states": [
+    "Welcome",
+    "Goal Discovery",
+    "Intent Classification",
+    "Clarification",
+    "Capability Recommendation",
+    "Blueprint Review",
+    "Founder Confirmation",
+    "Builder Execution",
+    "Workspace Ready"
+  ],
+  "end": "Workspace Ready"
+}

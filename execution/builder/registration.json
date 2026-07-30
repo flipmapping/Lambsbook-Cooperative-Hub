@@ -1,0 +1,12 @@
+{
+  "schema": "EOS-061",
+  "status": "UNREGISTERED",
+  "created_utc": "2026-07-27T00:40:09.314043+00:00",
+  "purpose": "The Builder Registration Contract is the sole authority permitted to populate execution/builder/activation.json.",
+  "required_fields": [
+    "activation.entrypoint",
+    "activation.runtime",
+    "activation.arguments"
+  ],
+  "governance_rule": "Execution streams SHALL NOT modify activation.json directly. Only the Builder Registration process may register or update the Builder activation surface."
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Who do you want to serve?",
+    "purpose": "Identify primary audience"
+  },
+  {
+    "question": "What outcome do you want to achieve?",
+    "purpose": "Define mission"
+  },
+  {
+    "question": "Will people collaborate as members?",
+    "purpose": "Determine governance"
+  },
+  {
+    "question": "Do you need programs or events?",
+    "purpose": "Determine capability composition"
+  },
+  {
+    "question": "Will you recruit new participants?",
+    "purpose": "Determine Growth Engine usage"
+  }
+]

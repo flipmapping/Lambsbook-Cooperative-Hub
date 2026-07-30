@@ -1,0 +1,72 @@
+[
+  {
+    "path": "execution/builder-working-tree/GP-EXEC-010M-06A/server/integrations/zalo/auth.ts",
+    "name": "auth.ts",
+    "parent": "execution/builder-working-tree/GP-EXEC-010M-06A/server/integrations/zalo"
+  },
+  {
+    "path": "execution/builder-working-tree/GP-EXEC-010M-06A/server/services/notifications.ts",
+    "name": "notifications.ts",
+    "parent": "execution/builder-working-tree/GP-EXEC-010M-06A/server/services"
+  },
+  {
+    "path": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services/notifications.ts",
+    "name": "notifications.ts",
+    "parent": "execution/packages/GE-RMP-014-Claude-Package/implementation-context/server/services"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-003-backup/server/lib/supabase-dal.ts",
+    "name": "supabase-dal.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-003-backup/server/lib"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/lib/supabase-dal.ts",
+    "name": "supabase-dal.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server/lib"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts",
+    "name": "routes.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/services/admissions.ts",
+    "name": "admissions.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-013-backup/server/services"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/lib/supabase-dal.ts",
+    "name": "supabase-dal.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server/lib"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts",
+    "name": "routes.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server"
+  },
+  {
+    "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/services/admissions.ts",
+    "name": "admissions.ts",
+    "parent": "execution/workspace/APP-RMP-010E34B-016-backup/server/services"
+  },
+  {
+    "path": "execution/workspace/GP-EXEC-014M-14A-backup/server/services/admissions.ts",
+    "name": "admissions.ts",
+    "parent": "execution/workspace/GP-EXEC-014M-14A-backup/server/services"
+  },
+  {
+    "path": "server/routes/devTestAuth.ts",
+    "name": "devTestAuth.ts",
+    "parent": "server/routes"
+  },
+  {
+    "path": "server/routes/member.ts",
+    "name": "member.ts",
+    "parent": "server/routes"
+  },
+  {
+    "path": "server/routes/notification-preferences.route.ts",
+    "name": "notification-preferences.route.ts",
+    "parent": "server/routes"
+  }
+]

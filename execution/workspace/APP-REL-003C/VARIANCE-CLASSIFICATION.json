@@ -1,0 +1,158 @@
+{
+  "authority": "APP-REL-003C",
+  "timestamp": "2026-07-30T14:36:37.272686+00:00",
+  "missing": [
+    {
+      "path": "client/src/features/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/adapters/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/domain/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/reporting/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/staging/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/validation/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/messaging/",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/",
+      "classification": "manual_review"
+    }
+  ],
+  "unexpected": [
+    {
+      "path": "client/src/features/organization-studio/ConversationWorkspace.tsx",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationBlueprint.tsx",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudio.tsx",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "client/src/features/organization-studio/OrganizationStudioModel.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "client/src/features/organization-studio/README.md",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "client/src/features/organization-studio/index.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/adapters/csv/adapter.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/domain/prospectImport.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/reporting/engine.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/staging/engine.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/validation/contracts.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/imports/validation/engine.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "server/messaging/interface.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/builder-demo-scenarios.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/builder-demo.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/builder-planner.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/builder-validation.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/capability-catalog.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/capability-registry.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/channel-catalog.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/execution-plan.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/organization-manifest.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    },
+    {
+      "path": "shared/organization/workspace-catalog.ts",
+      "git_status": "A",
+      "classification": "manual_review"
+    }
+  ],
+  "summary": {
+    "manual_review": 31
+  }
+}

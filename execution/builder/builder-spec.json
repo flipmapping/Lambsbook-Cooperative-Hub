@@ -1,0 +1,40 @@
+{
+  "schema": "EOS-063",
+  "status": "APPROVED",
+  "created_utc": "2026-07-27T01:05:26.988701+00:00",
+  "identity": {
+    "component": "Builder",
+    "version": "1.0.0",
+    "supported_eos": "2.2"
+  },
+  "interface": {
+    "invocation": "",
+    "required_arguments": []
+  },
+  "inputs": {
+    "fab": "execution/packages/<WORK_PACKAGE>/FAB.md",
+    "repository_root": ".",
+    "execution_context": "optional"
+  },
+  "outputs": {
+    "pic": "execution/packages/<WORK_PACKAGE>/PIC/",
+    "evidence": "execution/packages/<WORK_PACKAGE>/evidence/",
+    "execution_report": "execution/packages/<WORK_PACKAGE>/builder-report.json"
+  },
+  "lifecycle": [
+    "initialize",
+    "validate_inputs",
+    "derive_pic",
+    "emit_evidence",
+    "complete"
+  ],
+  "failure_semantics": {
+    "exit_codes": true,
+    "structured_errors": true,
+    "partial_certification_allowed": false
+  },
+  "conformance": {
+    "registration_requires_certification": true,
+    "activation_requires_registration": true
+  }
+}

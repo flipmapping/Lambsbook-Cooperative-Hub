@@ -1,0 +1,23 @@
+{
+  "authority": "APP-REC-007A",
+  "generated_utc": "2026-07-30T14:37:54.590892+00:00",
+  "endpoint_under_test": "GET /api/admissions/prospects/{id}/documents",
+  "classification": {
+    "failure_type": null,
+    "http_status": 500,
+    "stack_trace_present": false,
+    "express_error_present": false,
+    "supabase_error_present": false,
+    "sql_error_present": false,
+    "root_module": null,
+    "root_function": null,
+    "mutation_required": null
+  },
+  "evidence_to_collect": [
+    "Complete Node.js stack trace",
+    "Browser response body",
+    "Server console log",
+    "Supabase error (if present)"
+  ],
+  "decision": "Do not modify the repository until the runtime failure has been classified."
+}

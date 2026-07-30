@@ -1,0 +1,64 @@
+{
+  "inspection": "APP-REC-005B",
+  "mutation": false,
+  "surfaces": [
+    {
+      "path": "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "exists": true,
+      "exports": [
+        "AuthenticationMode",
+        "ContinuationContext",
+        "ContinuationOutcome",
+        "CanonicalRuntimeState",
+        "RuntimeState",
+        "RuntimePublication",
+        "postAuthenticationContinuation"
+      ],
+      "functions": [
+        "_normalizeAuthentication",
+        "_validateContinuationContext",
+        "_resolveInvitationContinuation",
+        "_determineRuntimeState",
+        "_prepareRuntimePublication"
+      ],
+      "imports": [],
+      "keyword_hits": {
+        "RuntimeState": 10
+      },
+      "line_count": 243
+    },
+    {
+      "path": "client/src/lib/auth/RuntimeNavigationPolicy.ts",
+      "exists": true,
+      "exports": [
+        "resolveRuntimeDestination"
+      ],
+      "functions": [],
+      "imports": [
+        "./PostAuthenticationContinuation"
+      ],
+      "keyword_hits": {
+        "RuntimeState": 3,
+        "navigation": 1
+      },
+      "line_count": 37
+    },
+    {
+      "path": "client/src/lib/auth/NavigationConsumptionAuthority.ts",
+      "exists": true,
+      "exports": [
+        "resolvePostAuthenticationDestination"
+      ],
+      "functions": [],
+      "imports": [
+        "./PostAuthenticationContinuation",
+        "./RuntimeNavigationPolicy"
+      ],
+      "keyword_hits": {
+        "RuntimeState": 4,
+        "navigation": 1
+      },
+      "line_count": 24
+    }
+  ]
+}

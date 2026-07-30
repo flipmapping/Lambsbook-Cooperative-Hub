@@ -1,0 +1,15 @@
+{
+  "kernel_version": "1.0.0",
+  "checkpoint_input": "EXECUTION-CHECKPOINT.json",
+  "generated_outputs": [
+    "execution-summary",
+    "handoff",
+    "dashboard",
+    "stream-status",
+    "publication-summary",
+    "dependency-view",
+    "completion-manifest"
+  ],
+  "deterministic": true,
+  "manual_override": false
+}
