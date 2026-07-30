@@ -130,9 +130,9 @@ export const notifications = pgTable("notifications", {
   type: text("type").notNull(),
   channel: text("channel").notNull(),
   channels: jsonb("channels")
-    .$type<{ email: boolean; in_app: boolean }>()
+    .$type<{ email: boolean; in_app: boolean; zalo: boolean }>()
     .notNull()
-    .default(sql`'{"email":true,"in_app":true}'::jsonb`),
+    .default(sql`'{"email":true,"in_app":true,"zalo":false}'::jsonb`),
   subject: text("subject"),
   message: text("message").notNull(),
   status: text("status").notNull().default("pending"),
@@ -153,9 +153,9 @@ export const notificationPreferences = pgTable("notification_preferences", {
   enabled: boolean("enabled").notNull().default(true),
   channel: text("channel").notNull(),
   channels: jsonb("channels")
-    .$type<{ email: boolean; in_app: boolean }>()
+    .$type<{ email: boolean; in_app: boolean; zalo: boolean }>()
     .notNull()
-    .default(sql`'{"email":true,"in_app":true}'::jsonb`),
+    .default(sql`'{"email":true,"in_app":true,"zalo":false}'::jsonb`),
 
   createdAt: timestamp("created_at").defaultNow(),
 });

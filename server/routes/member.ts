@@ -31,6 +31,12 @@ router.get("/me", attachUserContextSafe, async (req: Request, res: Response) => 
     const authReq = req as AuthenticatedRequest;
 const user = authReq.user;
 
+    console.group("[APP-REC-IDENTITY]");
+    console.log("JWT user.id:", user?.id);
+    console.log("JWT email:", user?.email);
+    console.groupEnd();
+
+
     if (!user?.id) {
       return res.status(401).json({
         error: "Unauthorized"
@@ -38,7 +44,13 @@ const user = authReq.user;
     }
 
 
+    
+    console.log("[MEMBER_ROUTE]", {
+      authenticatedUserId: user.id,
+    });
+
     const member =
+
       await supabaseDAL.getMemberByUserId(user.id);
 
 
@@ -128,7 +140,22 @@ const user = authReq.user;
       invitation: data || null
     });
   } catch (err) {
-    console.error(err);
+    console.error("========================================");
+    console.error("ACCEPT_INVITATION_EXCEPTION");
+    console.error("invitationId:", req.body?.invitationId);
+    console.error("userId:", (req as AuthenticatedRequest).user?.id ?? null);
+    console.error("tokenPresent:", !!(req as AuthenticatedRequest).user?.token);
+
+    if (err instanceof Error) {
+      console.error("name:", err.name);
+      console.error("message:", err.message);
+      console.error("stack:");
+      console.error(err.stack);
+    } else {
+      console.error("non_error_value:", err);
+    }
+
+    console.error("========================================");
 
     return res.status(500).json({
       error: "Server error"
@@ -231,8 +258,10 @@ const user = authReq.user;
     return res.status(201).json({
       invitation: {
         id: data.id,
-        status: data.status
-      }
+        status: data.status,
+        token: data.token
+      },
+      invitationUrl: `/hub/signup?invite=${data.token}`
     });
 
   } catch (err) {
@@ -385,13 +414,32 @@ const user = authReq.user;
     const supabase =
       getUserClient(user.token);
 
-    const { error } =
+    const { data: memberId, error } =
       await supabase.rpc(
         "accept_member_invitation",
         {
           p_invitation_id: invitationId
         }
       );
+
+    console.log(
+      "ACCEPT_INVITATION_RPC_RESULT",
+      JSON.stringify({
+        invitationId,
+        memberId,
+        hasMemberId: memberId !== null && memberId !== undefined,
+        error: error?.message ?? null
+      }, null, 2)
+    );
+
+    if (!error && !memberId) {
+      return res.status(500).json({
+        error: {
+          code: "RPC_RETURNED_NULL",
+          message: "accept_member_invitation completed without returning a member id."
+        }
+      });
+    }
 
     if (error) {
       console.error(
@@ -462,6 +510,7 @@ const user = authReq.user;
     });
 
   } catch (err) {
+    console.error("ACCEPT_INVITATION_EXCEPTION", err);
     console.error(err);
 
     return res.status(500).json({

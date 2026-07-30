@@ -1,3 +1,55 @@
-export async function persist(..._args: unknown[]) {
-  throw new Error("persist not implemented");
+import type { ProspectImportRecord, ImportResult } from "../../../shared/imports/types";
+import { createProspectCore } from "../../services/admissions";
+import { mapImportRecordToRegistrationPayload } from "../mappers/prospectRegistration";
+
+/**
+ * GEX-001M-55 — CSV Import Persistence
+ *
+ * Processes each ProspectImportRecord sequentially.
+ * Per-record failures are isolated: a failure on one row does not abort
+ * processing of subsequent rows.
+ * Populates ImportResult.imported, ImportResult.skipped, and
+ * ImportResult.errors according to the canonical contract.
+ */
+export async function persist(
+  rows: ProspectImportRecord[],
+): Promise<ImportResult> {
+  const result: ImportResult = {
+    batch: {
+      id:           rows[0]?.batchId ?? "",
+      source:       rows[0]?.source ?? "",
+      filename:     "",
+      importedAt:   new Date(),
+      totalRows:    rows.length,
+      validRows:    0,
+      invalidRows:  0,
+      duplicateRows: 0,
+    },
+    imported: 0,
+    skipped:  0,
+    errors:   [],
+    warnings: [],
+  };
+
+  for (const record of rows) {
+    try {
+      const payload = mapImportRecordToRegistrationPayload(record);
+      await createProspectCore(payload);
+      result.imported += 1;
+      result.batch.validRows += 1;
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : String(error);
+
+      result.skipped += 1;
+      result.batch.invalidRows += 1;
+      result.errors.push({
+        rowNumber: record.rowNumber,
+        field:     "record",
+        message,
+      });
+    }
+  }
+
+  return result;
 }

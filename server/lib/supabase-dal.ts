@@ -29,7 +29,12 @@ export class SupabaseDAL {
 
   async createMember(data: MemberInsert): Promise<Member> {
     this.ensureConfigured();
-    const supabase = getSupabaseAdmin();
+    
+    console.log("[DAL_CONTEXT]", {
+      supabaseUrl: process.env.SUPABASE_URL,
+      lookupUserId: userId,
+    });
+
 
     const { data: member, error } = await supabase
       .schema('meh').from('members')
@@ -79,7 +84,15 @@ export class SupabaseDAL {
       .maybeSingle();
 
     if (error) throw new Error(`Failed to get funnel: ${error.message}`);
+    
+    console.log("[DAL_RESULT]", {
+      found: !!data,
+      memberId: data?.id ?? null,
+      memberUserId: data?.user_id ?? null,
+    });
+
     return data;
+
   }
 
   async createProspectJourney(data: ProspectJourneyInsert): Promise<ProspectJourney> {

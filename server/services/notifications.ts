@@ -32,6 +32,8 @@ export interface NotificationPayload {
   subject: string;
   message: string;
   enquiryId?: string;
+  /** If supplied, a Zalo OA copy is dispatched alongside the email. */
+  zaloPhone?: string;
 }
 
 export async function sendNotification(payload: NotificationPayload): Promise<{ success: boolean; error?: string }> {
@@ -58,6 +60,14 @@ export async function sendNotification(payload: NotificationPayload): Promise<{ 
         status: "failed",
         error: result.error,
       });
+    }
+
+    // Zalo side-channel: fires only when zaloPhone is present; does not
+    // alter the email result, the notification record, or any caller.
+    if (payload.zaloPhone) {
+      sendZaloCopy(payload).catch((err) =>
+        console.error("[Zalo] Side-channel failed:", err)
+      );
     }
 
     return result;
@@ -180,4 +190,51 @@ export async function notifyFollowUpReminder(
     message: `This is a reminder to follow up on the ${enquiry.inquiryType} enquiry from ${enquiry.name}.\n\nLog in to the dashboard to view the enquiry and update the status.`,
     enquiryId,
   }).catch((err) => console.error("Failed to send reminder:", err));
+}
+
+// ── Zalo side-channel (GP-EXEC-009) ─────────────────────────────────────────
+// Sends a copy of the notification via the Zalo OA Message API.
+// Invoked only when NotificationPayload.zaloPhone is present.
+// Requires: ZALO_OA_ACCESS_TOKEN environment variable.
+// Failure is logged and swallowed — no effect on email delivery or persistence.
+async function sendZaloCopy(
+  payload: NotificationPayload
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const accessToken = process.env.ZALO_OA_ACCESS_TOKEN;
+    if (!accessToken) {
+      console.warn("[Zalo] ZALO_OA_ACCESS_TOKEN not configured. Zalo copy skipped.");
+      return { success: false, error: "Zalo OA access token not configured" };
+    }
+
+    const phone = payload.zaloPhone!;
+
+    const response = await fetch(
+      "https://openapi.zalo.me/v3.0/oa/message/cs",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "access_token": accessToken,
+        },
+        body: JSON.stringify({
+          recipient: { user_id: phone },
+          message: { text: `${payload.subject}\n\n${payload.message}` },
+        }),
+      }
+    );
+
+    const json = (await response.json()) as { error: number; message: string };
+    if (json.error !== 0) {
+      console.error(`[Zalo] API error ${json.error}: ${json.message}`);
+      return { success: false, error: `Zalo API error ${json.error}: ${json.message}` };
+    }
+
+    console.log(`[Zalo] Copy sent to ${phone}: ${payload.subject}`);
+    return { success: true };
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : String(error);
+    console.error("[Zalo] Copy failed:", errorMsg);
+    return { success: false, error: errorMsg };
+  }
 }

@@ -47,6 +47,8 @@ import { getSupabaseAdmin } from "./lib/supabase-client";
 import { supabaseDAL } from "./lib";
 import { zaloWebhookHandler } from "./integrations/zalo/webhook";
 import { zaloOAuthCallbackHandler } from "./integrations/zalo/oauth";
+import { zaloAdapter } from "./integrations/zalo/adapter";
+
 
 export async function registerRoutes(
   httpServer: Server,
@@ -742,6 +744,21 @@ export async function registerRoutes(
   app.get(
     "/api/integrations/zalo/oauth/callback",
     zaloOAuthCallbackHandler,
+  );
+
+
+  app.post(
+    "/api/integrations/zalo/test-send",
+    async (req, res) => {
+      const { recipientId, message } = req.body;
+
+      const result = await zaloAdapter.sendTextMessage(
+        recipientId,
+        message,
+      );
+
+      res.json(result);
+    },
   );
 
   app.get("/api/activity-logs", async (req: Request, res: Response) => {

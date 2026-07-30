@@ -1,4 +1,4 @@
-type Channel = "email" | "in_app";
+type Channel = "email" | "in_app" | "zalo";
 
 type ChannelSelectorProps = {
   value: Channel;
@@ -7,8 +7,9 @@ type ChannelSelectorProps = {
 };
 
 const CHANNELS: { key: Channel; label: string }[] = [
-  { key: "email", label: "Email" },
+  { key: "email",  label: "Email"  },
   { key: "in_app", label: "In-app" },
+  { key: "zalo",   label: "Zalo"   },
 ];
 
 export default function ChannelSelector({

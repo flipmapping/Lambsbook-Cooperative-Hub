@@ -21,6 +21,7 @@
 // - onAccepted: () => void — signals HubDashboard to transition to member state
 
 import { useState } from "react";
+import { apiRequest } from "@/lib/queryClient";
 
 const HUB_API_BASE = import.meta.env.VITE_HUB_API_BASE_URL ?? "";
 
@@ -44,49 +45,21 @@ export function InvitationAcceptanceSection({
     setStatus("submitting");
     setErrorMessage(null);
 
-    const token =
-      typeof window !== "undefined"
-        ? localStorage.getItem("sb-access-token") ?? ""
-        : "";
+    
+      try {
+        const res = await apiRequest(
+          "POST",
+          "/api/member/accept-invitation",
+          {
+            invitationId: pendingInvitationId,
+          },
+        );
 
-    try {
-      const res = await fetch(`${HUB_API_BASE}/api/member/accept-invitation`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ invitationId: pendingInvitationId }),
-      });
 
-      if (res.ok) {
+      
         onAccepted();
         return;
-      }
 
-      const body = await res.json().catch(() => ({}));
-
-      if (res.status === 400) {
-        setErrorMessage(
-          body?.message ??
-            "This invitation has already been accepted or is no longer valid."
-        );
-      } else if (res.status === 401 || res.status === 403) {
-        setErrorMessage("You are not authorized to accept this invitation.");
-      } else if (res.status === 404) {
-        setErrorMessage("Invitation not found.");
-      } else if (res.status === 409) {
-        setErrorMessage(
-          body?.error?.message ??
-            "This invitation has already been accepted or is no longer valid."
-        );
-      } else {
-        setErrorMessage(
-          "Unable to accept the invitation right now. Please try again."
-        );
-      }
-
-      setStatus("error");
     } catch {
       setErrorMessage(
         "Unable to reach the server. Please check your connection and try again."

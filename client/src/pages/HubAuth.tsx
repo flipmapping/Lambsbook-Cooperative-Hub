@@ -261,15 +261,46 @@ prepared,
 mode,
 );
 
+console.group("[APP-REC-017] Authentication Runtime");
+console.log("mode:", mode);
+console.log("gateway.invite.token:", localStorage.getItem("gateway.invite.token"));
+console.log("ContinuationContext:", continuationContext);
+
 const runtimeState =
 await postAuthenticationContinuation(
 continuationContext,
 );
 
+console.log("RuntimeState:", runtimeState);
+
 const destination =
 resolvePostAuthenticationDestination(
 runtimeState,
 );
+
+console.log("Destination:", destination);
+console.groupEnd();
+
+const inviteToken =
+localStorage.getItem("gateway.invite.token");
+
+if (inviteToken) {
+try {
+await fetch("/api/member/onboarding/materialize-invitation", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+Authorization: `Bearer ${result.session.access_token}`,
+},
+body: JSON.stringify({ inviteToken }),
+});
+} catch (e) {
+console.warn(
+"Failed to materialize invitation:",
+e,
+);
+}
+}
 
 setLocation(destination);
 } else {
@@ -309,6 +340,27 @@ const destination =
 resolvePostAuthenticationDestination(
 runtimeState,
 );
+
+const inviteToken =
+localStorage.getItem("gateway.invite.token");
+
+if (inviteToken) {
+try {
+await fetch("/api/member/onboarding/materialize-invitation", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+Authorization: `Bearer ${result.session.access_token}`,
+},
+body: JSON.stringify({ inviteToken }),
+});
+} catch (e) {
+console.warn(
+"Failed to materialize invitation:",
+e,
+);
+}
+}
 
 setLocation(destination);
 }

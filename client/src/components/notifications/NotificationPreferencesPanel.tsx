@@ -2,9 +2,11 @@ import ToggleControl from "./ToggleControl";
 import ChannelSelector from "./ChannelSelector";
 import { useState, useEffect } from "react";
 
+type Channel = "email" | "in_app" | "zalo";
+
 export default function NotificationPreferencesPanel() {
   const [enabled, setEnabled] = useState(true);
-  const [channel, setChannel] = useState<"email" | "in_app">("in_app");
+  const [channel, setChannel] = useState<Channel>("in_app");
 
   // ⚠️ TEMP: replace with real auth provider later
   const token = localStorage.getItem("token") || "";
@@ -42,7 +44,9 @@ export default function NotificationPreferencesPanel() {
       .then(data => {
         if (data) {
           setEnabled(data.enabled);
-          setChannel(data.channel);
+          if (data.channel === "email" || data.channel === "in_app" || data.channel === "zalo") {
+            setChannel(data.channel as Channel);
+          }
         }
       })
       .catch(() => {
@@ -59,7 +63,7 @@ export default function NotificationPreferencesPanel() {
     });
   };
 
-  const handleChannelChange = (next: "email" | "in_app") => {
+  const handleChannelChange = (next: Channel) => {
     setChannel(next); // optimistic
 
     savePreferences({
