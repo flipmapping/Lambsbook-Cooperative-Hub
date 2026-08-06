@@ -1,0 +1,25 @@
+client/src/pages/HubAdminDashboard.tsx(347,48): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+client/src/pages/HubAdminDashboard.tsx(347,57): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+client/src/pages/HubAdminDashboard.tsx(348,50): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+client/src/pages/HubAdminDashboard.tsx(348,59): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+client/src/pages/HubAuth.tsx(20,8): error TS2305: Module '"@/lib/auth/PostAuthenticationContinuation"' has no exported member 'MembershipResolution'.
+client/src/pages/HubAuth.tsx(257,7): error TS2353: Object literal may only specify known properties, and 'membershipResolution' does not exist in type 'ContinuationContext'.
+client/src/pages/ScholarshipsPage.tsx(348,12): error TS2741: Property 'source' is missing in type '{ inquiryOptions: { value: string; labelKey: string; }[]; }' but required in type 'HubConsultationFormProps'.
+server/lib/supabase-dal.ts(35,21): error TS2304: Cannot find name 'userId'.
+server/lib/supabase-dal.ts(39,43): error TS2304: Cannot find name 'supabase'.
+server/lib/supabase-dal.ts(199,66): error TS2339: Property 'code' does not exist on type '{ code: any; }[]'.
+server/lib/supabase-dal.ts(383,26): error TS2551: Property 'due_at' does not exist on type 'FollowupTaskInsert'. Did you mean 'due_date'?
+server/lib/supabase-dal.ts(420,18): error TS2551: Property 'due_at' does not exist on type 'FollowupTaskUpdate'. Did you mean 'due_date'?
+server/lib/supabase-dal.ts(420,61): error TS2551: Property 'due_at' does not exist on type 'FollowupTaskUpdate'. Did you mean 'due_date'?
+server/lib/supabase-dal.ts(458,39): error TS2339: Property 'description' does not exist on type 'ProspectAppointmentInsert'.
+server/lib/supabase-dal.ts(493,18): error TS2339: Property 'description' does not exist on type 'ProspectAppointmentUpdate'.
+server/lib/supabase-dal.ts(493,78): error TS2339: Property 'description' does not exist on type 'ProspectAppointmentUpdate'.
+server/lib/supabase-dal.ts(547,30): error TS2339: Property 'storage_path' does not exist on type 'ProspectDocumentInsert'.
+server/lib/supabase-dal.ts(548,35): error TS2339: Property 'description' does not exist on type 'ProspectDocumentInsert'.
+server/lib/supabase-dal.ts(581,18): error TS2339: Property 'storage_path' does not exist on type 'ProspectDocumentUpdate'.
+server/lib/supabase-dal.ts(581,71): error TS2339: Property 'storage_path' does not exist on type 'ProspectDocumentUpdate'.
+server/lib/supabase-dal.ts(582,18): error TS2339: Property 'description' does not exist on type 'ProspectDocumentUpdate'.
+server/lib/supabase-dal.ts(582,75): error TS2339: Property 'description' does not exist on type 'ProspectDocumentUpdate'.
+server/routes/member.ts(36,37): error TS2339: Property 'email' does not exist on type 'RequestUserContext'.
+server/services/admissions.ts(193,5): error TS2353: Object literal may only specify known properties, and 'description' does not exist in type 'ProspectAppointmentInsert'.
+server/services/admissions.ts(242,5): error TS2353: Object literal may only specify known properties, and 'description' does not exist in type 'ProspectDocumentInsert'.

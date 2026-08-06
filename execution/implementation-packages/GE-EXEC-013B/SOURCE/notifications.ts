@@ -1,6 +1,5 @@
 import { Resend } from "resend";
 import { storage } from "../storage";
-import type { CampaignContent, CampaignRequest } from "./campaign-contract";
 
 // GE-RMP-014 — Resend transport (replaces Nodemailer)
 // Authorized surface: server/services/notifications.ts
@@ -191,80 +190,6 @@ export async function notifyFollowUpReminder(
     message: `This is a reminder to follow up on the ${enquiry.inquiryType} enquiry from ${enquiry.name}.\n\nLog in to the dashboard to view the enquiry and update the status.`,
     enquiryId,
   }).catch((err) => console.error("Failed to send reminder:", err));
-}
-
-// ── Campaign-aware email (GE-EXEC-013B) ─────────────────────────────────────
-// Adopts the canonical campaign contract (server/services/campaign-contract.ts)
-// for email delivery. Purely additive: does not alter NotificationPayload,
-// sendNotification(), sendEmail(), or any existing caller. Reuses the
-// existing Resend transport and notification persistence via
-// sendNotification() — no new transport, no new orchestration layer.
-
-export interface CampaignEmailResult {
-  recipientId: string;
-  success: boolean;
-  error?: string;
-}
-
-export interface CampaignEmailSummary {
-  sent: number;
-  failed: number;
-  results: CampaignEmailResult[];
-}
-
-/**
- * Substitutes {{key}} placeholders in `text` using `templateData`.
- * Unknown placeholders are left as-is rather than removed, so a missing
- * key is visible/debuggable instead of silently disappearing.
- */
-function applyTemplateData(
-  text: string,
-  templateData?: Record<string, string>,
-): string {
-  if (!templateData) return text;
-  return text.replace(/\{\{(\w+)\}\}/g, (match, key: string) =>
-    Object.prototype.hasOwnProperty.call(templateData, key) ? templateData[key] : match,
-  );
-}
-
-/**
- * Sends a campaign email to every recipient in a CampaignRequest, via the
- * existing sendNotification()/sendEmail() Resend transport. Recipients
- * without an email are reported as failed rather than throwing. Subject
- * and message support {{key}} substitution from CampaignContent.templateData.
- */
-export async function sendCampaignEmail(
-  request: CampaignRequest,
-): Promise<CampaignEmailSummary> {
-  const content: CampaignContent = request.content;
-  const baseSubject = content.subject ?? content.title ?? "(No subject)";
-  const baseMessage = content.message ?? "";
-
-  const results: CampaignEmailResult[] = [];
-
-  for (const recipient of request.recipients) {
-    if (!recipient.email) {
-      results.push({ recipientId: recipient.id, success: false, error: "No email on record" });
-      continue;
-    }
-
-    const subject = applyTemplateData(baseSubject, content.templateData);
-    const message = applyTemplateData(baseMessage, content.templateData);
-
-    const result = await sendNotification({
-      recipientEmail: recipient.email,
-      recipientId: recipient.id,
-      recipientType: "prospect",
-      type: "campaign_email",
-      subject,
-      message,
-    });
-
-    results.push({ recipientId: recipient.id, success: result.success, error: result.error });
-  }
-
-  const sent = results.filter((r) => r.success).length;
-  return { sent, failed: results.length - sent, results };
 }
 
 // ── Zalo side-channel (GP-EXEC-009) ─────────────────────────────────────────
