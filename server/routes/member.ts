@@ -65,6 +65,7 @@ const user = authReq.user;
       membership_status: member.membership_status,
       member_type: member.member_type,
       activity_status: member.activity_status,
+      join_date: member.join_date,
 
       // Canonical authenticated identity
       user_id: user.id,
