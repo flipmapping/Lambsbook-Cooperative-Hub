@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "server/services/csv-import.ts",
+    "server/services/admissions.ts",
+    "server/lib/supabase-dal.ts",
+    "server/lib/supabase-client.ts",
+    "server/services/notifications.ts",
+    "server/storage.ts",
+    "server/db.ts",
+    "server/services/campaign-contract.ts",
+    "server/services/emailTemplates.ts",
+    "server/services/import-certification.ts",
+    "server/services/xlsx-parser.ts"
+  ],
+  "exclude": [
+    "execution/**",
+    "downloads/**",
+    ".recovery/**",
+    "node_modules/**"
+  ]
+}

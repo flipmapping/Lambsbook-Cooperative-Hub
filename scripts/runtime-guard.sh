@@ -49,11 +49,11 @@ NODE_ENV=development npx tsx server/index.ts &
 SERVER_PID=$!
 
 echo
-echo "4) Waiting for backend (retry up to 10s)..."
+echo "4) Waiting for backend (retry up to 30s)..."
 
 SUCCESS=false
 
-for i in {1..10}; do
+for i in {1..30}; do
   sleep 1
   PROBE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 1 http://localhost:5000/ || true)
 

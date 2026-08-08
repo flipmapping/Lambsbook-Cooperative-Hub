@@ -19,6 +19,9 @@ export function resolveRuntimeDestination(
   runtimeState: RuntimeState,
 ): string {
   switch (runtimeState.outcome) {
+    case "admin":
+      return "/hub/admin";
+
     case "member":
       return "/hub/dashboard";
 

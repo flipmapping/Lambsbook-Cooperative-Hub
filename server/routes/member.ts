@@ -44,7 +44,7 @@ const user = authReq.user;
     }
 
 
-    
+
     console.log("[MEMBER_ROUTE]", {
       authenticatedUserId: user.id,
     });
@@ -255,13 +255,23 @@ const user = authReq.user;
         note: note ?? null
       });
 
+    const appOrigin =
+      process.env.APP_URL ??
+      (process.env.REPLIT_DEV_DOMAIN
+        ? `https://${process.env.REPLIT_DEV_DOMAIN}`
+        : "http://localhost:5000");
+
+    const invitationBase =
+      process.env.INVITATION_BASE_URL ??
+      "https://lambsbookcoop.com";
+
     return res.status(201).json({
       invitation: {
         id: data.id,
         status: data.status,
         token: data.token
       },
-      invitationUrl: `/hub/signup?invite=${data.token}`
+      invitationUrl: `${invitationBase}/invitation-link/${data.token}`
     });
 
   } catch (err) {
@@ -550,16 +560,20 @@ const user = authReq.user;
       const invitees =
         await supabaseDAL.getDirectInvitees(member.id);
 
+      // APP-MEX-001D: return business fields, not raw UUIDs
       return res.json({
         invitor: invitor
           ? {
-              id: invitor.id
+              member_type:  invitor.member_type ?? null,
+              join_date:    (invitor as any).join_date ?? null,
             }
           : null,
 
         invitees: invitees.map(invitee => ({
-          id: invitee.id
-        }))
+          member_type:  invitee.member_type ?? null,
+          join_date:    (invitee as any).join_date ?? null,
+          activity_status: invitee.activity_status ?? null,
+        })),
       });
 
     } catch (err) {
@@ -653,5 +667,134 @@ router.get(
   }
 );
 
+
+/**
+ * GET /api/member/profile/preferences
+ * APP-MEX-001D — Hydrate profile preferences from backend persistence.
+ */
+router.get(
+  "/profile/preferences",
+  attachUserContextSafe,
+  async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+      const user = authReq.user;
+
+      if (!user?.id) {
+        return res.status(401).json({ error: "Unauthorized" });
+      }
+
+      const member = await supabaseDAL.getMemberByUserId(user.id);
+      if (!member) {
+        return res.status(404).json({ error: "Member not found" });
+      }
+
+      const prefs = await supabaseDAL.getMemberProfilePreferences(member.id);
+
+      return res.json(prefs);
+    } catch (err) {
+      console.error("GET_PROFILE_PREFERENCES_ERROR", err);
+      return res.status(500).json({ error: "Failed to fetch profile preferences" });
+    }
+  }
+);
+
+/**
+ * PUT /api/member/profile/preferences
+ * APP-MEX-001D — Persist profile preferences to backend.
+ * Accepts: { avatar_reference?, profile_visibility?, contact_methods? }
+ */
+router.put(
+  "/profile/preferences",
+  attachUserContextSafe,
+  async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+      const user = authReq.user;
+
+      if (!user?.id) {
+        return res.status(401).json({ error: "Unauthorized" });
+      }
+
+      const { avatar_reference, profile_visibility, contact_methods } = req.body ?? {};
+
+      // Input validation
+      if (
+        profile_visibility !== undefined &&
+        profile_visibility !== "private" &&
+        profile_visibility !== "public"
+      ) {
+        return res.status(400).json({
+          error: {
+            code: "INVALID_VISIBILITY",
+            message: "profile_visibility must be 'private' or 'public'",
+          },
+        });
+      }
+
+      if (contact_methods !== undefined) {
+        if (!Array.isArray(contact_methods)) {
+          return res.status(400).json({
+            error: {
+              code: "INVALID_CONTACT_METHODS",
+              message: "contact_methods must be an array",
+            },
+          });
+        }
+        if (contact_methods.length > 2) {
+          return res.status(400).json({
+            error: {
+              code: "TOO_MANY_CONTACT_METHODS",
+              message: "contact_methods may contain at most 2 entries",
+            },
+          });
+        }
+        for (const cm of contact_methods) {
+          if (
+            typeof cm !== "object" || cm === null ||
+            typeof cm.platform !== "string" ||
+            typeof cm.handle   !== "string"
+          ) {
+            return res.status(400).json({
+              error: {
+                code: "INVALID_CONTACT_METHOD_SHAPE",
+                message: "Each contact method must have platform (string) and handle (string)",
+              },
+            });
+          }
+        }
+      }
+
+      if (
+        avatar_reference !== undefined &&
+        avatar_reference !== null &&
+        typeof avatar_reference !== "string"
+      ) {
+        return res.status(400).json({
+          error: {
+            code: "INVALID_AVATAR_REFERENCE",
+            message: "avatar_reference must be a string or null",
+          },
+        });
+      }
+
+      const member = await supabaseDAL.getMemberByUserId(user.id);
+      if (!member) {
+        return res.status(404).json({ error: "Member not found" });
+      }
+
+      await supabaseDAL.updateMemberProfilePreferences(member.id, {
+        ...(avatar_reference   !== undefined && { avatar_reference }),
+        ...(profile_visibility !== undefined && { profile_visibility }),
+        ...(contact_methods    !== undefined && { contact_methods }),
+      });
+
+      return res.json({ success: true });
+    } catch (err) {
+      console.error("PUT_PROFILE_PREFERENCES_ERROR", err);
+      return res.status(500).json({ error: "Failed to update profile preferences" });
+    }
+  }
+);
 
 export default router;

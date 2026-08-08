@@ -4,7 +4,7 @@ hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
 channel = "stable-24_05"
-packages = ["mailutils", "unzip", "btrfs-progs", "linuxquota", "supabase-cli", "zip"]
+packages = ["mailutils", "unzip", "btrfs-progs", "linuxquota", "supabase-cli", "zip", "strace"]
 
 [deployment]
 deploymentTarget = "autoscale"
@@ -38,6 +38,10 @@ waitForPort = 5000
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 5099
+externalPort = 3000
 
 [agent]
 integrations = ["javascript_openai_ai_integrations:1.0.0"]

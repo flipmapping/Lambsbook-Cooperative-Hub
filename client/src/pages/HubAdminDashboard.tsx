@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -9,12 +9,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { 
   Users, BookOpen, DollarSign, GraduationCap, 
   Activity, Settings, RefreshCw, Play, Pause,
   UserCheck, UserX, ArrowUpCircle, ArrowDownCircle,
-  Plus, CheckCircle, XCircle, Clock
+  Plus, CheckCircle, XCircle, Clock, Upload, FileText,
+  Search, Send
 } from "lucide-react";
 import { EnrollmentWorkflow } from "@/components/admin/EnrollmentWorkflow";
 import { ProgramsManagement } from "@/components/admin/ProgramsManagement";
@@ -71,12 +73,36 @@ interface Stats {
   collaborations: { total: number; active: number };
 }
 
+interface Prospect {
+  id: string;
+  full_name: string;
+  phone: string;
+  student_number: string | null;
+  import_status: string;
+}
+
 export default function HubAdminDashboard() {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("overview");
   const [memberFilter, setMemberFilter] = useState<{ membership?: string; activity?: string }>({});
   const [tutorFilter, setTutorFilter] = useState<string>("");
   const [earningFilter, setEarningFilter] = useState<{ status?: string }>({});
+  const [csvFile, setCsvFile] = useState<File | null>(null);
+  const [excelFile, setExcelFile] = useState<File | null>(null);
+  const [csvSummary, setCsvSummary] = useState<{
+    total: number; imported: number; skipped: number;
+    errors: { rowNumber: number; email: string | null; reason: string }[];
+    successes: { rowNumber: number; email: string | null; phone: string | null; prospectId: string }[];
+  } | null>(null);
+  const csvInputRef = useRef<HTMLInputElement>(null);
+  const excelInputRef = useRef<HTMLInputElement>(null);
+
+  // --- Prospect Campaign section state (GE-EXEC-004A) ---
+  const [prospectSearch, setProspectSearch] = useState("");
+  const [selectedProspectIds, setSelectedProspectIds] = useState<Set<string>>(new Set());
+  const [zaloDialogOpen, setZaloDialogOpen] = useState(false);
+  const [sentProspectIds, setSentProspectIds] = useState<Set<string>>(new Set());
+  const [failedProspectIds, setFailedProspectIds] = useState<Set<string>>(new Set());
 
   const { data: stats, isLoading: statsLoading } = useQuery<Stats>({
     queryKey: ["/api/admin/stats"],
@@ -96,6 +122,13 @@ export default function HubAdminDashboard() {
 
   const { data: tutors = [], isLoading: tutorsLoading } = useQuery<Tutor[]>({
     queryKey: ["/api/admin/tutors", tutorFilter],
+  });
+
+  // Assumption: mirrors the existing /api/admin/* list pattern above.
+  // No GET endpoint for prospects was visible in this file — if it doesn't
+  // exist yet, this query will simply 404/error and the list renders empty.
+  const { data: prospects = [], isLoading: prospectsLoading } = useQuery<Prospect[]>({
+    queryKey: ["/api/admin/prospects"],
   });
 
   const updateMembershipMutation = useMutation({
@@ -201,6 +234,173 @@ export default function HubAdminDashboard() {
     },
   });
 
+  const csvImportMutation = useMutation({
+    mutationFn: async (file: File) => {
+      const text = await file.text();
+      const res = await fetch("/api/admin/prospects/csv-import", {
+        method: "POST",
+        headers: { "Content-Type": "text/csv" },
+        body: text,
+      });
+      const json = await res.json();
+      if (!res.ok && res.status !== 422) throw new Error(json?.error ?? "Import failed");
+      return json;
+    },
+    onSuccess: (summary) => {
+      setCsvSummary(summary);
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/members"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/stats"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/earnings"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/prospects"] });
+      toast({
+        title: summary.imported > 0
+          ? `Import complete — ${summary.imported} prospect${summary.imported !== 1 ? "s" : ""} created`
+          : "Import finished — 0 prospects created",
+        description: summary.skipped > 0
+          ? `${summary.skipped} row${summary.skipped !== 1 ? "s" : ""} skipped`
+          : undefined,
+      });
+    },
+    onError: (err: Error) => {
+      toast({ title: "Import failed", description: err.message, variant: "destructive" });
+    },
+  });
+
+  // GE-EXEC-004B-REV3 — Excel (.xlsx) import, same summary UI as CSV.
+  const excelImportMutation = useMutation({
+    mutationFn: async (file: File) => {
+      const buffer = await file.arrayBuffer();
+      const res = await fetch("/api/admin/prospects/excel-import", {
+        method: "POST",
+        headers: { "Content-Type": "application/octet-stream" },
+        body: buffer,
+      });
+      const json = await res.json();
+      if (!res.ok && res.status !== 422) throw new Error(json?.error ?? "Import failed");
+      return json;
+    },
+    onSuccess: (summary) => {
+      setCsvSummary(summary);
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/members"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/stats"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/earnings"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/prospects"] });
+      toast({
+        title: summary.imported > 0
+          ? `Import complete — ${summary.imported} prospect${summary.imported !== 1 ? "s" : ""} created`
+          : "Import finished — 0 prospects created",
+        description: summary.skipped > 0
+          ? `${summary.skipped} row${summary.skipped !== 1 ? "s" : ""} skipped`
+          : undefined,
+      });
+    },
+    onError: (err: Error) => {
+      toast({ title: "Import failed", description: err.message, variant: "destructive" });
+    },
+  });
+
+  // GE-EXEC-004B-REV3 — delete selected / delete all prospects.
+  const deleteSelectedProspectsMutation = useMutation({
+    mutationFn: async (ids: string[]) => {
+      const res = await apiRequest("DELETE", "/api/admin/prospects", { ids });
+      return res.json();
+    },
+    onSuccess: (_data, ids) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/prospects"] });
+      clearProspectSelection();
+      toast({ title: `${ids.length} prospect${ids.length !== 1 ? "s" : ""} deleted` });
+    },
+    onError: (err: Error) => {
+      toast({ title: "Delete failed", description: err.message, variant: "destructive" });
+    },
+  });
+
+  const deleteAllProspectsMutation = useMutation({
+    mutationFn: async () => {
+      const res = await apiRequest("DELETE", "/api/admin/prospects/all");
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/prospects"] });
+      clearProspectSelection();
+      toast({ title: "All prospects deleted" });
+    },
+    onError: (err: Error) => {
+      toast({ title: "Delete failed", description: err.message, variant: "destructive" });
+    },
+  });
+
+  // GE-EXEC-004B-REV3 — real Zalo ZNS broadcast (see server/services/zalo-transport.ts).
+  // Reports per-recipient success/failure rather than assuming success.
+  const zaloBroadcastMutation = useMutation({
+    mutationFn: async (ids: string[]) => {
+      const res = await apiRequest("POST", "/api/admin/prospects/zalo-broadcast", { ids });
+      return res.json() as Promise<{ sent: number; failed: number; results: Array<{ prospectId: string; success: boolean; reason?: string }> }>;
+    },
+    onSuccess: (result) => {
+      const newlySent = new Set<string>();
+      const newlyFailed = new Set<string>();
+      result.results.forEach((r) => {
+        if (r.success) newlySent.add(r.prospectId);
+        else newlyFailed.add(r.prospectId);
+      });
+      setSentProspectIds((prev) => new Set([...prev, ...newlySent]));
+      setFailedProspectIds((prev) => new Set([...prev, ...newlyFailed]));
+      toast({
+        title: result.sent > 0 ? `Broadcast sent to ${result.sent} recipient${result.sent !== 1 ? "s" : ""}` : "Broadcast failed for all recipients",
+        description: result.failed > 0
+          ? `${result.failed} failed — ${result.results.find((r) => !r.success)?.reason ?? "see server logs"}`
+          : undefined,
+        variant: result.sent > 0 ? undefined : "destructive",
+      });
+      setZaloDialogOpen(false);
+      clearProspectSelection();
+    },
+    onError: (err: Error) => {
+      toast({ title: "Broadcast failed", description: err.message, variant: "destructive" });
+    },
+  });
+
+  // --- Prospect Campaign helpers (GE-EXEC-004A) ---
+  const filteredProspects = prospects.filter((p) => {
+    const q = prospectSearch.trim().toLowerCase();
+    if (!q) return true;
+    return (
+      p.full_name?.toLowerCase().includes(q) ||
+      p.phone?.toLowerCase().includes(q) ||
+      (p.student_number ?? "").toLowerCase().includes(q)
+    );
+  });
+
+  const toggleProspectSelection = (id: string) => {
+    setSelectedProspectIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const selectAllProspects = () => {
+    setSelectedProspectIds(new Set(filteredProspects.map((p) => p.id)));
+  };
+
+  const clearProspectSelection = () => setSelectedProspectIds(new Set());
+
+  const selectedProspects = prospects.filter((p) => selectedProspectIds.has(p.id));
+
+  // GE-EXEC-004B-REV3 — sends via the real backend Zalo ZNS transport.
+  const handleZaloBroadcast = () => {
+    zaloBroadcastMutation.mutate(Array.from(selectedProspectIds));
+  };
+
+  const campaignSummary = {
+    selected: selectedProspectIds.size,
+    ready: prospects.length - sentProspectIds.size - failedProspectIds.size,
+    sent: sentProspectIds.size,
+    failed: failedProspectIds.size,
+  };
+
   const StatCard = ({ title, value, icon: Icon, subtitle }: { title: string; value: number | string; icon: any; subtitle?: string }) => (
     <Card data-testid={`stat-card-${title.toLowerCase().replace(/\s+/g, '-')}`}>
       <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
@@ -235,6 +435,7 @@ export default function HubAdminDashboard() {
           <TabsTrigger value="settings" data-testid="tab-settings">Settings</TabsTrigger>
           <TabsTrigger value="enrollment" data-testid="tab-enrollment">Enrollment</TabsTrigger>
           <TabsTrigger value="admissions" data-testid="tab-admissions">Admissions</TabsTrigger>
+          <TabsTrigger value="prospects" data-testid="tab-prospects">Prospects</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -650,6 +851,377 @@ export default function HubAdminDashboard() {
 
         <TabsContent value="admissions" className="space-y-4">
           <AdmissionsWorkspace />
+        </TabsContent>
+
+        <TabsContent value="prospects" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Campaign Prospect Import</CardTitle>
+              <CardDescription>
+                Required:{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">full_name</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">phone</code>.
+                Optional:{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">student_number</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">external_reference</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">email</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">program_of_interest</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">school</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">province</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">notes</code>,{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">campaign_source</code>.
+                Missing optional fields are imported successfully and stored as empty/null.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <div className="flex items-end gap-3 flex-wrap">
+                <div className="flex-1 min-w-0 space-y-1.5">
+                  <Label htmlFor="csv-file-input">CSV File</Label>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <Input
+                      id="csv-file-input"
+                      ref={csvInputRef}
+                      type="file"
+                      accept=".csv,text/csv,text/plain"
+                      className="cursor-pointer max-w-xs"
+                      data-testid="input-csv-file"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0] ?? null;
+                        setCsvFile(file);
+                        setCsvSummary(null);
+                      }}
+                    />
+                    {csvFile && (
+                      <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <FileText className="h-4 w-4 shrink-0" />
+                        {csvFile.name} ({(csvFile.size / 1024).toFixed(1)} KB)
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <Button
+                  onClick={() => csvFile && csvImportMutation.mutate(csvFile)}
+                  disabled={!csvFile || csvImportMutation.isPending}
+                  data-testid="button-csv-upload"
+                >
+                  {csvImportMutation.isPending ? (
+                    <>
+                      <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+                      Uploading…
+                    </>
+                  ) : (
+                    <>
+                      <Upload className="h-4 w-4 mr-2" />
+                      Upload
+                    </>
+                  )}
+                </Button>
+              </div>
+
+              {/* GE-EXEC-004B-REV3 — Excel (.xlsx) import, same pipeline as CSV. */}
+              <div className="flex items-end gap-3 flex-wrap">
+                <div className="flex-1 min-w-0 space-y-1.5">
+                  <Label htmlFor="excel-file-input">Excel File (.xlsx)</Label>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <Input
+                      id="excel-file-input"
+                      ref={excelInputRef}
+                      type="file"
+                      accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                      className="cursor-pointer max-w-xs"
+                      data-testid="input-excel-file"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0] ?? null;
+                        setExcelFile(file);
+                        setCsvSummary(null);
+                      }}
+                    />
+                    {excelFile && (
+                      <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <FileText className="h-4 w-4 shrink-0" />
+                        {excelFile.name} ({(excelFile.size / 1024).toFixed(1)} KB)
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground">Legacy .xls is not supported — save as .xlsx first.</p>
+                </div>
+                <Button
+                  onClick={() => excelFile && excelImportMutation.mutate(excelFile)}
+                  disabled={!excelFile || excelImportMutation.isPending}
+                  data-testid="button-excel-upload"
+                >
+                  {excelImportMutation.isPending ? (
+                    <>
+                      <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+                      Uploading…
+                    </>
+                  ) : (
+                    <>
+                      <Upload className="h-4 w-4 mr-2" />
+                      Upload
+                    </>
+                  )}
+                </Button>
+              </div>
+
+              {csvSummary && (
+                <div className="space-y-4 border-t pt-4" data-testid="csv-import-summary">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div className="rounded-lg border bg-muted/30 p-3 text-center">
+                      <div className="text-2xl font-bold">{csvSummary.total}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">Total rows</div>
+                    </div>
+                    <div className="rounded-lg border p-3 text-center">
+                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">{csvSummary.imported}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">Imported</div>
+                    </div>
+                    <div className="rounded-lg border p-3 text-center">
+                      <div className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{csvSummary.skipped}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">Skipped</div>
+                    </div>
+                    <div className="rounded-lg border p-3 text-center">
+                      <div className="text-2xl font-bold text-destructive">{csvSummary.errors.length}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">Errors</div>
+                    </div>
+                  </div>
+
+                  {csvSummary.errors.length > 0 && (
+                    <div className="space-y-1.5">
+                      <p className="text-sm font-medium text-destructive flex items-center gap-1.5">
+                        <XCircle className="h-4 w-4" /> Errors
+                      </p>
+                      <div className="max-h-48 overflow-y-auto rounded-md border divide-y text-sm" data-testid="csv-error-list">
+                        {csvSummary.errors.map((err, i) => (
+                          <div key={i} className="flex items-start gap-2 px-3 py-2">
+                            <span className="text-muted-foreground shrink-0 tabular-nums">
+                              {err.rowNumber > 0 ? `Row ${err.rowNumber}` : "—"}
+                            </span>
+                            {err.email && (
+                              <span className="text-muted-foreground shrink-0">{err.email}</span>
+                            )}
+                            <span className="text-destructive">{err.reason}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {csvSummary.successes.length > 0 && (
+                    <div className="space-y-1.5">
+                      <p className="text-sm font-medium text-green-600 dark:text-green-400 flex items-center gap-1.5">
+                        <CheckCircle className="h-4 w-4" /> Imported
+                      </p>
+                      <div className="max-h-48 overflow-y-auto rounded-md border divide-y text-sm" data-testid="csv-success-list">
+                        {csvSummary.successes.map((s) => (
+                          <div key={s.prospectId} className="flex items-center gap-2 px-3 py-2">
+                            <span className="text-muted-foreground shrink-0 tabular-nums">Row {s.rowNumber}</span>
+                            <span className="flex-1 truncate">{s.phone ?? s.email ?? s.prospectId.slice(0, 8)}</span>
+                            <span className="text-muted-foreground text-xs font-mono shrink-0">{s.prospectId.slice(0, 8)}…</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    data-testid="button-csv-reset"
+                    onClick={() => {
+                      setCsvFile(null);
+                      setCsvSummary(null);
+                      if (csvInputRef.current) csvInputRef.current.value = "";
+                    }}
+                  >
+                    Clear
+                  </Button>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* --- Prospect Campaign section (GE-EXEC-004A) --- */}
+          <Card data-testid="card-prospect-campaign">
+            <CardHeader>
+              <CardTitle>Prospect Campaign</CardTitle>
+              <CardDescription>
+                Select imported prospects and send a Zalo broadcast.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="relative max-w-sm">
+                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search name, phone, or student number"
+                  className="pl-8"
+                  value={prospectSearch}
+                  onChange={(e) => setProspectSearch(e.target.value)}
+                  data-testid="input-prospect-search"
+                />
+              </div>
+
+              <div className="flex items-center gap-3 flex-wrap">
+                <Button variant="outline" size="sm" onClick={selectAllProspects} data-testid="button-select-all-prospects">
+                  Select All
+                </Button>
+                <Button variant="outline" size="sm" onClick={clearProspectSelection} data-testid="button-clear-prospect-selection">
+                  Clear Selection
+                </Button>
+                <span className="text-sm text-muted-foreground" data-testid="text-selected-count">
+                  {selectedProspectIds.size} selected
+                </span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-destructive hover:text-destructive"
+                  disabled={selectedProspectIds.size === 0 || deleteSelectedProspectsMutation.isPending}
+                  onClick={() => deleteSelectedProspectsMutation.mutate(Array.from(selectedProspectIds))}
+                  data-testid="button-delete-selected-prospects"
+                >
+                  Delete Selected
+                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm" className="text-destructive hover:text-destructive" data-testid="button-delete-all-prospects">
+                      Delete All
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent data-testid="dialog-delete-all-confirm">
+                    <DialogHeader>
+                      <DialogTitle>Delete all prospects?</DialogTitle>
+                    </DialogHeader>
+                    <p className="text-sm text-muted-foreground">
+                      This permanently deletes every prospect in the repository ({prospects.length} total). This cannot be undone.
+                    </p>
+                    <DialogFooter>
+                      <Button
+                        variant="destructive"
+                        disabled={deleteAllProspectsMutation.isPending}
+                        onClick={() => deleteAllProspectsMutation.mutate()}
+                        data-testid="button-confirm-delete-all"
+                      >
+                        Delete All
+                      </Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
+                <div className="flex-1" />
+                <Dialog open={zaloDialogOpen} onOpenChange={setZaloDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button disabled={selectedProspectIds.size === 0} data-testid="button-send-zalo">
+                      <Send className="h-4 w-4 mr-2" />
+                      Send via Zalo
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent data-testid="dialog-zalo-preview">
+                    <DialogHeader>
+                      <DialogTitle>Zalo Broadcast Preview</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Recipients</span>
+                        <span className="font-medium" data-testid="text-recipient-count">{selectedProspectIds.size}</span>
+                      </div>
+                      <div className="space-y-1.5">
+                        <span className="text-muted-foreground">Message preview</span>
+                        <div className="rounded-md border bg-muted/30 p-3">
+                          Hi {"{{full_name}}"}, thanks for your interest{" "}
+                          {"{{program_of_interest}}"}! We'll be in touch shortly.
+                        </div>
+                      </div>
+                      <div className="space-y-1.5">
+                        <span className="text-muted-foreground">Template variables</span>
+                        <div className="flex gap-1.5 flex-wrap">
+                          <Badge variant="outline">{"{{full_name}}"}</Badge>
+                          <Badge variant="outline">{"{{phone}}"}</Badge>
+                          <Badge variant="outline">{"{{program_of_interest}}"}</Badge>
+                        </div>
+                      </div>
+                    </div>
+                    <DialogFooter>
+                      <Button variant="outline" onClick={() => setZaloDialogOpen(false)} data-testid="button-zalo-cancel">
+                        Cancel
+                      </Button>
+                      <Button onClick={handleZaloBroadcast} disabled={zaloBroadcastMutation.isPending} data-testid="button-zalo-broadcast">
+                        {zaloBroadcastMutation.isPending ? "Sending…" : "Broadcast"}
+                      </Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              <div className="rounded-md border">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b bg-muted/30">
+                      <th className="w-10 p-2"></th>
+                      <th className="text-left p-2 font-medium">Full Name</th>
+                      <th className="text-left p-2 font-medium">Phone</th>
+                      <th className="text-left p-2 font-medium">Student Number</th>
+                      <th className="text-left p-2 font-medium">Import Status</th>
+                    </tr>
+                  </thead>
+                  <tbody data-testid="prospect-list-body">
+                    {prospectsLoading ? (
+                      <tr>
+                        <td colSpan={5} className="p-4 text-center text-muted-foreground">Loading prospects…</td>
+                      </tr>
+                    ) : filteredProspects.length === 0 ? (
+                      <tr>
+                        <td colSpan={5} className="p-4 text-center text-muted-foreground">No prospects found</td>
+                      </tr>
+                    ) : (
+                      filteredProspects.map((p) => (
+                        <tr key={p.id} className="border-b last:border-0" data-testid={`row-prospect-${p.id}`}>
+                          <td className="p-2">
+                            <Checkbox
+                              checked={selectedProspectIds.has(p.id)}
+                              onCheckedChange={() => toggleProspectSelection(p.id)}
+                              data-testid={`checkbox-prospect-${p.id}`}
+                            />
+                          </td>
+                          <td className="p-2">{p.full_name}</td>
+                          <td className="p-2">{p.phone}</td>
+                          <td className="p-2">{p.student_number ?? "—"}</td>
+                          <td className="p-2">
+                            <Badge variant={sentProspectIds.has(p.id) ? "default" : "outline"}>
+                              {sentProspectIds.has(p.id) ? "sent" : p.import_status}
+                            </Badge>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card data-testid="card-campaign-summary">
+            <CardHeader>
+              <CardTitle>Campaign Summary</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="rounded-lg border bg-muted/30 p-3 text-center">
+                  <div className="text-2xl font-bold" data-testid="text-summary-selected">{campaignSummary.selected}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">Selected</div>
+                </div>
+                <div className="rounded-lg border p-3 text-center">
+                  <div className="text-2xl font-bold" data-testid="text-summary-ready">{campaignSummary.ready}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">Ready</div>
+                </div>
+                <div className="rounded-lg border p-3 text-center">
+                  <div className="text-2xl font-bold text-green-600 dark:text-green-400" data-testid="text-summary-sent">{campaignSummary.sent}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">Sent</div>
+                </div>
+                <div className="rounded-lg border p-3 text-center">
+                  <div className="text-2xl font-bold text-destructive" data-testid="text-summary-failed">{campaignSummary.failed}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">Failed</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>

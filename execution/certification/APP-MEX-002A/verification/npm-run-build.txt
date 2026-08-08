@@ -1,0 +1,48 @@
+
+> rest-express@1.0.0 prebuild
+> npm run guard:all
+
+
+> rest-express@1.0.0 guard:all
+> npm run guard:runtime && npm run guard:dead-strata && node scripts/runtime-guards/assert-canonical-topology.cjs && node scripts/runtime-guards/detect-runtime-backups.cjs
+
+
+> rest-express@1.0.0 guard:runtime
+> node scripts/runtime-guards/enforce-canonical-runtime.cjs
+
+
+Canonical runtime enforcement passed.
+
+
+> rest-express@1.0.0 guard:dead-strata
+> node scripts/runtime-guards/detect-dead-strata.cjs
+
+
+=== DEAD STRATA REGIONS ===
+
+codex-gateway-handoff/routes.ts
+codex-handoff/routes.ts
+execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts
+execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts
+execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/server/routes.ts
+server/routes.ts
+
+Total regions: 6
+
+
+=== CANONICAL TOPOLOGY ASSERTION ===
+
+[OK REQUIRED] app.use("/api/member", memberRoutes);
+[OK FORBIDDEN] app.use("/api/hub/member"
+
+Topology assertion PASSED.
+
+
+=== RUNTIME BACKUP FILES ===
+
+client/src/pages/MemberHub.tsx.pre-app-mex-001b.bak
+client/src/pages/MemberHub.tsx.pre-app-mex-001c.bak
+client/src/pages/MemberHub.tsx.pre-app-pic-003.bak
+
+Total backup artifacts: 3
+

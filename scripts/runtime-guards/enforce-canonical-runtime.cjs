@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { scan } = require('../repository/traversal.cjs');
 
 const ROOT = process.cwd();
 
@@ -33,13 +34,50 @@ function shouldExclude(relative) {
   );
 }
 
-function walk(dir) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+const visited = new Set();
+const MAX_DEPTH = 50;
+
+function walk(dir, depth = 0) {
+
+  if (depth > MAX_DEPTH) {
+    violations.push({
+      type: 'TRAVERSAL_DEPTH_EXCEEDED',
+      file: path.relative(ROOT, dir)
+    });
+    return;
+  }
+
+  let real;
+
+  try {
+    real = fs.realpathSync(dir);
+  } catch {
+    return;
+  }
+
+  if (visited.has(real))
+    return;
+
+  visited.add(real);
+
+  let entries;
+
+  try {
+    entries = fs.readdirSync(dir, { withFileTypes: true });
+  } catch {
+    return;
+  }
+
+  for (const entry of entries) {
+
     const full = path.join(dir, entry.name);
+
+    if (entry.isSymbolicLink())
+      continue;
 
     if (entry.isDirectory()) {
       if (EXCLUDED_DIRS.includes(entry.name)) continue;
-      walk(full);
+      walk(full, depth + 1);
       continue;
     }
 

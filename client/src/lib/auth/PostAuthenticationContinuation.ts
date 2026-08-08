@@ -36,6 +36,7 @@ export interface ContinuationContext {
 }
 
 export type ContinuationOutcome =
+  | "admin"
   | "member"
   | "pending_invitation"
   | "anonymous"
@@ -117,6 +118,37 @@ interface _DeterminedRuntimeState {
 }
 
 /**
+ * Output of _resolveCanonicalMembership() — the sole authority for
+ * admin / member / pending-invitation / unaffiliated resolution.
+ *
+ * Sourced exclusively from GET /api/member/me. The locally-cached
+ * gateway.invite.token is never consulted here: it is advisory only
+ * (used elsewhere to materialize an invitation after signup) and must
+ * never override what the canonical membership authority reports.
+ */
+interface _CanonicalMembershipResolution {
+  readonly outcome: ContinuationOutcome;
+  readonly memberId: string | undefined;
+  readonly pendingInvitationId: string | undefined;
+}
+
+/**
+ * Flat GET /api/member/me response shape (certified backend contract,
+ * APP-COMPAT-004A). No nested objects — a 404 means no canonical
+ * member exists.
+ */
+interface _CanonicalMemberRecord {
+  readonly id?: string;
+  readonly membership_status?: string;
+  readonly member_type?: string;
+  readonly activity_status?: string;
+  readonly user_id?: string;
+  readonly role?: string;
+  readonly sbu_id?: string;
+  readonly is_super_admin?: boolean;
+}
+
+/**
  * Stage 5 output — produced by _prepareRuntimePublication().
  */
 interface _PreparedRuntimePublication {
@@ -185,24 +217,109 @@ function _resolveInvitationContinuation(
   };
 }
 
-function _determineRuntimeState(
+const _ADMIN_ROLES: ReadonlySet<string> = new Set([
+  "platform_admin",
+  "hub_admin",
+]);
+
+const _PENDING_MEMBERSHIP_STATUSES: ReadonlySet<string> = new Set([
+  "pending",
+  "invited",
+]);
+
+/**
+ * Canonical membership resolution — GET /api/member/me.
+ *
+ * This is the single source of truth for admin / member / pending /
+ * unaffiliated status. Any failure to reach or parse this endpoint
+ * fails safe to the least-privileged outcome ("non_member") rather
+ * than guessing admin or member status.
+ *
+ * Per APP-COMPAT-004A: the response is a flat record (no nested
+ * objects), and administrator evaluation considers BOTH `role` and
+ * `is_super_admin`.
+ */
+async function _resolveCanonicalMembership(
+  _normalized: _NormalizedAuthentication,
+): Promise<_CanonicalMembershipResolution> {
+  const unaffiliated: _CanonicalMembershipResolution = {
+    outcome: "non_member",
+    memberId: undefined,
+    pendingInvitationId: undefined,
+  };
+
+  try {
+    const response = await fetch("/api/member/me", {
+      headers: {
+        Authorization: `Bearer ${_normalized.accessToken}`,
+      },
+    });
+
+    // "No canonical member exists."
+    if (response.status === 404) {
+      return unaffiliated;
+    }
+
+    if (!response.ok) {
+      return unaffiliated;
+    }
+
+    const member = (await response.json()) as _CanonicalMemberRecord;
+
+    const isPending =
+      typeof member.membership_status === "string" &&
+      _PENDING_MEMBERSHIP_STATUSES.has(member.membership_status);
+
+    const isAdmin =
+      member.is_super_admin === true ||
+      (typeof member.role === "string" && _ADMIN_ROLES.has(member.role));
+
+    if (isAdmin && !isPending) {
+      return {
+        outcome: "admin",
+        memberId: member.id,
+        pendingInvitationId: undefined,
+      };
+    }
+
+    if (isPending) {
+      return {
+        outcome: "pending_invitation",
+        memberId: undefined,
+        pendingInvitationId: member.id,
+      };
+    }
+
+    if (member.id) {
+      return {
+        outcome: "member",
+        memberId: member.id,
+        pendingInvitationId: undefined,
+      };
+    }
+
+    return unaffiliated;
+  } catch {
+    return unaffiliated;
+  }
+}
+
+async function _determineRuntimeState(
   _validated: _ValidatedContinuationContext,
   _invitationStage: _InvitationContinuationStage,
-): _DeterminedRuntimeState {
-  if (_invitationStage.kind === "invitation") {
-    return {
-      authenticationMode: _validated.normalized.authenticationMode,
-      outcome: "pending_invitation",
-      memberId: undefined,
-      pendingInvitationId: _invitationStage.inviteToken,
-    };
-  }
+): Promise<_DeterminedRuntimeState> {
+  // NOTE: _invitationStage (derived from the locally-cached
+  // gateway.invite.token) is intentionally NOT consulted for outcome
+  // resolution below. It remains advisory only — callers may still use
+  // it to materialize an invitation post-signup — but canonical
+  // membership authority (GET /api/member/me) alone determines routing.
+  const membership = await _resolveCanonicalMembership(_validated.normalized);
 
   return {
     authenticationMode: _validated.normalized.authenticationMode,
-    outcome: "member",
-    memberId: undefined,
-    pendingInvitationId: undefined,
+    outcome: membership.outcome,
+    memberId: membership.memberId,
+    pendingInvitationId: membership.pendingInvitationId,
   };
 }
 
@@ -234,7 +351,7 @@ export async function postAuthenticationContinuation(
     _resolveInvitationContinuation(validated);
 
   const runtimeState =
-    _determineRuntimeState(validated, invitationStage);
+    await _determineRuntimeState(validated, invitationStage);
 
   const prepared =
     _prepareRuntimePublication(runtimeState);

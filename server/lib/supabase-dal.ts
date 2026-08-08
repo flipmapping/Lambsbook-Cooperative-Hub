@@ -29,11 +29,9 @@ export class SupabaseDAL {
 
   async createMember(data: MemberInsert): Promise<Member> {
     this.ensureConfigured();
-    
-    console.log("[DAL_CONTEXT]", {
-      supabaseUrl: process.env.SUPABASE_URL,
-      lookupUserId: userId,
-    });
+
+    const supabase = getSupabaseAdmin();
+
 
 
     const { data: member, error } = await supabase
@@ -84,12 +82,6 @@ export class SupabaseDAL {
       .maybeSingle();
 
     if (error) throw new Error(`Failed to get funnel: ${error.message}`);
-    
-    console.log("[DAL_RESULT]", {
-      found: !!data,
-      memberId: data?.id ?? null,
-      memberUserId: data?.user_id ?? null,
-    });
 
     return data;
 
@@ -196,9 +188,86 @@ export class SupabaseDAL {
       program_of_interest: data.program_of_interest,
       phone:               data.phone ?? null,
       created_at:          data.created_at,
-      funnel_code:         data.prospect_journeys?.[0]?.funnels?.code ?? null,
+      funnel_code:         data.prospect_journeys?.[0]?.funnels?.[0]?.code ?? null,
       current_stage:       data.prospect_journeys?.[0]?.current_stage ?? null,
     };
+  }
+
+  // GE-EXEC-004B-HF1 — mirrors getAllMembers()/getAllPrograms()/
+  // getAllTutors()/getAllCollaborations(): plain select('*') against
+  // the base table, newest first.
+  // GE-EXEC-004B-REV3 — mirrors deleteProgramEligibility()/deleteMember():
+  // plain .delete().eq('id', id) against the base table.
+  async deleteProspect(id: string): Promise<void> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { error } = await supabase
+      .schema('growth').from('prospects')
+      .delete()
+      .eq('id', id);
+
+    if (error) throw new Error(`Failed to delete prospect: ${error.message}`);
+  }
+
+  // Bulk delete by id list (selected-rows deletion from the campaign UI).
+  async deleteProspects(ids: string[]): Promise<void> {
+    this.ensureConfigured();
+    if (ids.length === 0) return;
+    const supabase = getSupabaseAdmin();
+
+    const { error } = await supabase
+      .schema('growth').from('prospects')
+      .delete()
+      .in('id', ids);
+
+    if (error) throw new Error(`Failed to delete prospects: ${error.message}`);
+  }
+
+  // Deletes every row in the prospects table. Supabase/PostgREST requires
+  // an explicit filter on delete, so a tautological "id is not null" is
+  // used to express "all rows" rather than an unfiltered delete.
+  async deleteAllProspects(): Promise<void> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { error } = await supabase
+      .schema('growth').from('prospects')
+      .delete()
+      .not('id', 'is', null);
+
+    if (error) throw new Error(`Failed to delete all prospects: ${error.message}`);
+  }
+
+  // Lightweight lookup for cross-batch duplicate detection during import.
+  // Returns only the columns needed to compare against incoming rows.
+  async getProspectContactIndex(): Promise<Array<{
+    id: string;
+    phone: string | null;
+    email: string | null;
+  }>> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospects')
+      .select('id, phone, email');
+
+    if (error) throw new Error(`Failed to load prospect contact index: ${error.message}`);
+    return data || [];
+  }
+
+  async getAllProspects(): Promise<Prospect[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('growth').from('prospects')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(`Failed to get prospects: ${error.message}`);
+    return data || [];
   }
 
   async updateProspectJourneyStage(
@@ -303,7 +372,7 @@ export class SupabaseDAL {
         prospect_id:  data.prospect_id,
         title:        data.title,
         description:  data.description ?? null,
-        due_at:     data.due_at ?? null,
+        due_date:     data.due_date ?? null,
       })
       .select()
       .single();
@@ -340,7 +409,7 @@ export class SupabaseDAL {
       .update({
         ...(data.title        !== undefined && { title: data.title }),
         ...(data.description  !== undefined && { description: data.description }),
-        ...(data.due_at     !== undefined && { due_at: data.due_at }),
+        ...(data.due_date     !== undefined && { due_date: data.due_date }),
       })
       .eq('id', taskId)
       .select()
@@ -378,7 +447,7 @@ export class SupabaseDAL {
         scheduled_at:      data.scheduled_at,
         duration_minutes:  data.duration_minutes ?? null,
         location:          data.location ?? null,
-        description:             data.description ?? null,
+        notes:                   data.notes ?? null,
       })
       .select()
       .single();
@@ -413,7 +482,7 @@ export class SupabaseDAL {
         ...(data.scheduled_at     !== undefined && { scheduled_at: data.scheduled_at }),
         ...(data.duration_minutes !== undefined && { duration_minutes: data.duration_minutes }),
         ...(data.location         !== undefined && { location: data.location }),
-        ...(data.description            !== undefined && { description: data.description }),
+        ...(data.notes            !== undefined && { notes: data.notes }),
       })
       .eq('id', appointmentId)
       .select()
@@ -467,8 +536,8 @@ export class SupabaseDAL {
         prospect_id:   data.prospect_id,
         document_type: data.document_type,
         file_name:     data.file_name,
-        storage_path:   data.storage_path ?? null,
-        description:         data.description ?? null,
+        storage_url:   data.storage_url ?? null,
+        notes:               data.notes ?? null,
       })
       .select()
       .single();
@@ -501,8 +570,8 @@ export class SupabaseDAL {
       .update({
         ...(data.document_type !== undefined && { document_type: data.document_type }),
         ...(data.file_name     !== undefined && { file_name: data.file_name }),
-        ...(data.storage_path   !== undefined && { storage_path: data.storage_path }),
-        ...(data.description         !== undefined && { description: data.description }),
+        ...(data.storage_url   !== undefined && { storage_url: data.storage_url }),
+        ...(data.notes         !== undefined && { notes: data.notes }),
       })
       .eq('id', documentId)
       .select()
@@ -575,6 +644,65 @@ export class SupabaseDAL {
     }
 
     return data;
+  }
+
+  // ── APP-MEX-001D: Profile preference persistence ─────────────────────────
+
+  async getMemberProfilePreferences(memberId: string): Promise<{
+    avatar_reference:   string | null;
+    profile_visibility: 'private' | 'public';
+    contact_methods:    Array<{ id: string; platform: string; handle: string }>;
+  }> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .schema('meh').from('members')
+      .select('avatar_reference, profile_visibility, contact_methods')
+      .eq('id', memberId)
+      .single();
+
+    if (error) {
+      throw new Error(`Failed to get member profile preferences: ${error.message}`);
+    }
+
+    return {
+      avatar_reference:   (data as any).avatar_reference   ?? null,
+      profile_visibility: (data as any).profile_visibility === 'public'
+        ? 'public'
+        : 'private',
+      contact_methods:    Array.isArray((data as any).contact_methods)
+        ? (data as any).contact_methods
+        : [],
+    };
+  }
+
+  async updateMemberProfilePreferences(
+    memberId: string,
+    prefs: {
+      avatar_reference?:   string | null;
+      profile_visibility?: 'private' | 'public';
+      contact_methods?:    Array<{ id: string; platform: string; handle: string }>;
+    },
+  ): Promise<void> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    const update: Record<string, unknown> = {
+      updated_at: new Date().toISOString(),
+    };
+    if (prefs.avatar_reference   !== undefined) update.avatar_reference   = prefs.avatar_reference;
+    if (prefs.profile_visibility !== undefined) update.profile_visibility = prefs.profile_visibility;
+    if (prefs.contact_methods    !== undefined) update.contact_methods    = prefs.contact_methods;
+
+    const { error } = await supabase
+      .schema('meh').from('members')
+      .update(update)
+      .eq('id', memberId);
+
+    if (error) {
+      throw new Error(`Failed to update member profile preferences: ${error.message}`);
+    }
   }
 
   async getMemberById(id: string): Promise<Member | null> {

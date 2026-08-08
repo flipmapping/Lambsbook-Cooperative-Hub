@@ -63,6 +63,10 @@ const ApplicantAdmissionDecisionCenter = lazy(() => import('@/pages/ApplicantAdm
 const ApplicantLifecycleTimeline = lazy(() => import('@/pages/ApplicantLifecycleTimeline'));
 const ApplicantActivityCenter = lazy(() => import('@/pages/ApplicantActivityCenter'));
 const ApplicantFollowupTaskCenter = lazy(() => import('@/pages/ApplicantFollowupTaskCenter'));
+const OrganizationStudio = lazy(() => import('@/pages/OrganizationStudio'));
+const CommunitySquare = lazy(() => import('@/pages/CommunitySquare'));
+const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
+const CommunityIntent = lazy(() => import('@/pages/CommunityIntent'));
 console.log("[TRACE-P1] App.tsx: module evaluated");
 
 function ImmigrationWebsite() {
@@ -90,45 +94,45 @@ function ImmigrationWebsite() {
   return (
     <div className="min-h-screen bg-background">
       <Header onNavigate={handleNavigate} />
-      
+
       <main>
         <div ref={sectionRefs.home}>
           <HeroSection onNavigate={handleNavigate} />
         </div>
-        
+
         <div ref={sectionRefs.eb3}>
           <EB3Categories onLearnMore={scrollToContact} />
         </div>
-        
+
         <ProcessSection />
-        
+
         <div ref={sectionRefs.services}>
           <ServicesSection />
         </div>
-        
+
         <JobCategoriesSection />
-        
+
         <StudyAbroadSection onContact={scrollToContact} />
-        
+
         <div ref={sectionRefs.countries}>
           <CountriesSection onContact={scrollToContact} />
         </div>
-        
+
         <AdvantagesSection />
-        
+
         <div ref={sectionRefs.success}>
           <SuccessStories />
         </div>
-        
+
         <div ref={sectionRefs.faq}>
           <FAQSection />
         </div>
-        
+
         <div ref={sectionRefs.contact}>
           <ContactSection />
         </div>
       </main>
-      
+
       <Footer />
       <AIChatWidget />
     </div>
@@ -143,13 +147,13 @@ function Router() {
       <Route path="/hub" component={HubLanding} />
       <Route path="/journeys/contribute" component={JourneyContribute} />
       <Route path="/journeys/learn" component={JourneyLearn} />
-      
+
       {/* Admin routes */}
       <Route path="/admin" component={Dashboard} />
       <Route path="/dashboard" component={HubDashboard} />
       <Route path="/login" component={Login} />
       <Route path="/auth/callback" component={AuthCallback} />
-      
+
       {/* Hub authentication */}
       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
@@ -162,7 +166,7 @@ function Router() {
       />
       <Route path="/hub/accept-invitation" component={HubDashboard} />
       <Route path="/hub/member" component={HubDashboard} />
-      
+
       {/* Education programs */}
       <Route path="/hub/sbu/education" component={SBUEducation} />
       <Route path="/hub/sbu/education/lambsbook-tutoring" component={LambsbookTutoring} />
@@ -185,7 +189,11 @@ function Router() {
       <Route path="/hub/admin/governance" component={AdminGovernance} />
       <Route path="/hub/education/feedback" component={EducationFeedback} />
       <Route path="/hub/education/submit" component={TranscriptSubmission} />
-      
+      <Route path="/organization" component={OrganizationStudio} />
+      <Route path="/organization/community-square" component={CommunitySquare} />
+      <Route path="/organization/community" component={CommunityPage} />
+      <Route path="/organization/community/start" component={CommunityIntent} />
+
       {/* Legacy immigration page (accessible but not primary) */}
       <Route path="/growth" component={GrowthLandingPage} />
       <Route path="/immigration" component={ImmigrationWebsite} />

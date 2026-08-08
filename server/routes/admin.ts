@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response, text as expressText, raw as expressRaw } from 'express';
 import type { AuthenticatedRequest } from '../types/requestContext';
 import { supabaseDAL } from '../lib';
 import { createAuthenticatedClient } from '../lib/supabase-member-client';
@@ -11,6 +11,10 @@ import type {
   TutorUpdate,
   MembershipStatus, ActivityStatus, TutorStatus
 } from '../lib/supabase-types';
+
+import { importProspectsFromCsv } from '../services/csv-import';
+import { importProspectsFromExcel } from '../services/csv-import';
+import { sendZaloBroadcast } from '../services/zalo-transport';
 
 const router = Router();
 
@@ -284,7 +288,7 @@ router.get('/earnings', async (req: Request, res: Response) => {
     let earnings = await supabaseDAL.getAllEarnings();
 
     const { member_id, program_id, earning_status, period } = req.query;
-    
+
     if (member_id && typeof member_id === 'string') {
       earnings = earnings.filter(e => e.member_id === member_id);
     }
@@ -385,7 +389,7 @@ router.post('/tutors/check-free-class-requirement', async (_req: Request, res: R
   try {
     const FREE_CLASS_MINUTES_REQUIRED = 30;
     const tutors = await supabaseDAL.getAllTutors();
-    
+
     let demotedCount = 0;
     for (const tutor of tutors) {
       if (tutor.tutor_status === 'verified' && tutor.free_class_minutes_last_30_days < FREE_CLASS_MINUTES_REQUIRED) {
@@ -507,6 +511,129 @@ router.post('/enrollment-payment', attachUserContext, async (req: Request, res: 
     return res.status(201).json({ data });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to create enrollment payment';
+    return res.status(500).json({ error: message });
+  }
+});
+
+// GE-EXEC-004B — Campaign Launch: list imported prospects for the
+// Prospect Campaign workflow (table/search/selection binds to this).
+// Mirrors the existing getAllMembers/getAllPrograms/getAllTutors/
+// getAllCollaborations convention used throughout this router.
+router.get('/prospects', async (_req: Request, res: Response) => {
+  try {
+    const prospects = await supabaseDAL.getAllProspects();
+    res.json(prospects);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch prospects';
+    res.status(500).json({ error: message });
+  }
+});
+
+// GE-PIC-001 — CSV Prospect Import
+// POST /api/admin/prospects/csv-import
+// Body: raw CSV text (Content-Type: text/csv or text/plain)
+// Accepts up to 5MB of CSV content via express.text() middleware.
+router.post(
+  '/prospects/csv-import',
+  expressText({ type: ['text/csv', 'text/plain'], limit: '5mb' }),
+  async (req: Request, res: Response) => {
+    try {
+      const csvText: string = req.body;
+      if (typeof csvText !== 'string' || !csvText.trim()) {
+        return res.status(400).json({ error: 'Request body must be CSV text.' });
+      }
+      const summary = await importProspectsFromCsv(csvText);
+      const status = summary.errors.length > 0 && summary.imported === 0 ? 422 : 200;
+      return res.status(status).json(summary);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'CSV import failed';
+      return res.status(500).json({ error: message });
+    }
+  },
+);
+
+// GE-EXEC-004B-REV3 — Campaign Operations: delete all prospects.
+// Registered before the bulk-delete route since Express matches
+// literal path segments ('/prospects/all') ahead of no conflicting
+// pattern here, but kept above for readability/ordering clarity.
+router.delete('/prospects/all', async (_req: Request, res: Response) => {
+  try {
+    await supabaseDAL.deleteAllProspects();
+    return res.json({ success: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to delete all prospects';
+    return res.status(500).json({ error: message });
+  }
+});
+
+// GE-EXEC-004B-REV3 — Campaign Operations: delete selected prospects.
+// Body: { ids: string[] }
+router.delete('/prospects', async (req: Request, res: Response) => {
+  try {
+    const ids = req.body?.ids;
+    if (!Array.isArray(ids) || ids.some((id) => typeof id !== 'string') || ids.length === 0) {
+      return res.status(400).json({ error: 'Request body must include a non-empty "ids" array of strings.' });
+    }
+    await supabaseDAL.deleteProspects(ids);
+    return res.json({ success: true, deleted: ids.length });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to delete prospects';
+    return res.status(500).json({ error: message });
+  }
+});
+
+// GE-EXEC-004B-REV3 — Campaign Operations: Excel (.xlsx/.xls) prospect
+// import. Reuses the same row-validation/duplicate-detection/persistence
+// pipeline as CSV import (see services/csv-import.ts). Raw binary body,
+// same 5MB ceiling as the CSV route.
+router.post(
+  '/prospects/excel-import',
+  expressRaw({
+    type: [
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+      'application/vnd.ms-excel', // .xls (legacy binary format is NOT supported by this parser — see csv-import.ts)
+      'application/octet-stream',
+    ],
+    limit: '5mb',
+  }),
+  async (req: Request, res: Response) => {
+    try {
+      const buffer: Buffer = req.body;
+      if (!Buffer.isBuffer(buffer) || buffer.length === 0) {
+        return res.status(400).json({ error: 'Request body must be binary .xlsx content.' });
+      }
+      const summary = await importProspectsFromExcel(buffer);
+      const status = summary.errors.length > 0 && summary.imported === 0 ? 422 : 200;
+      return res.status(status).json(summary);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Excel import failed';
+      return res.status(500).json({ error: message });
+    }
+  },
+);
+
+// GE-EXEC-004B-REV3 — Campaign Operations: send the Zalo campaign to
+// the selected prospects.
+//
+// IMPORTANT / NOT independently verifiable in this environment: this
+// calls services/zalo-transport.ts, which talks to Zalo's real ZNS
+// (Zalo Notification Service) API. It requires ZALO_ZNS_ACCESS_TOKEN
+// and ZALO_ZNS_TEMPLATE_ID to be configured, and an approved ZNS
+// template on the Zalo side. Without those, every recipient will come
+// back as a reported failure rather than silently "succeeding" — see
+// zalo-transport.ts for details.
+router.post('/prospects/zalo-broadcast', async (req: Request, res: Response) => {
+  try {
+    const ids = req.body?.ids;
+    if (!Array.isArray(ids) || ids.some((id) => typeof id !== 'string') || ids.length === 0) {
+      return res.status(400).json({ error: 'Request body must include a non-empty "ids" array of strings.' });
+    }
+    const prospects = await supabaseDAL.getAllProspects();
+    const targets = prospects.filter((p: any) => ids.includes(p.id));
+    const result = await sendZaloBroadcast(targets);
+    return res.json(result);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Zalo broadcast failed';
     return res.status(500).json({ error: message });
   }
 });

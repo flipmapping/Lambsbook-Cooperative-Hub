@@ -1,0 +1,1022 @@
+{
+  "authority": "GE-EXEC-004",
+  "generated_utc": "2026-07-31T04:16:14.886985+00:00",
+  "surface": "Invitation Surface",
+  "inspection_complete": true,
+  "candidate_files": [
+    {
+      "path": "replit.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "FOUNDER_CONVERGENCE_MUTATION_PACKAGE_V1.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "FOUNDER_DECISION_INVITED_EMAIL.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "repository_hygiene_stage1_report.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": ".local/skills/deployment/SKILL.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".local/secondary_skills/ai-secretary/SKILL.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".local/secondary_skills/ai-recruiter/SKILL.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".local/tasks/inviter-incentive-payout-policy.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "server/routes.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "server/lib/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "server/lib/supabase-types.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "server/routes/admin.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "server/routes/member.ts",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "server/services/supabase-hub.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "client/src/components/dashboard/types.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/lib/hubTranslations.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/MemberDashboard.tsx",
+      "matches": [
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/HubDashboard.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/MemberHub.tsx",
+      "matches": [
+        "/invitation",
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/HubAuth.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/HubAuthCallback.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/HubAdminDashboard.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "matches": [
+        "acceptInvitation"
+      ]
+    },
+    {
+      "path": "src/lib/memberClient.ts",
+      "matches": [
+        "acceptInvitation"
+      ]
+    },
+    {
+      "path": "docs/collaborator-system-design.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/dashboard-sync-contract.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/08-backup-and-recovery-protocol.md",
+      "matches": [
+        "/invitation",
+        "invitation/"
+      ]
+    },
+    {
+      "path": "docs/ai/02-runtime-contract-table.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/03-state-machine-and-flow.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/10-mvp-system-specification.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/system-control-plane.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/notification-cross-surface-contract.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/next-frontend-experience-packet.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/dashboard-entry-state-contract.md",
+      "matches": [
+        "invitation/",
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/ai/dashboard-entry-state-copy-alignment.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/architecture/CAD-WP2-DELEGATION-CONTRACT.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "docs/implementation-evidence/FDR-010E35C/MUT-001/IMPLEMENTATION-EVIDENCE.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "scripts/create-supabase-tables.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/page.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "web/src/app/(protected)/dashboard/invitations/[invitationId]/page.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "web/src/components/dashboard/types.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "web/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "mvp-delivery/canonical_mvp_outcome_specification_v1.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "mvp-delivery/corridor1_live_observation_closure_v1.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "tcrs/04-workflows/DISC-INV-002.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "tcrs/00-obom/mvp-surface-authority-map.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "recovery/canonical_membership_runtime_table.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "recovery/open_brain_membership_runtime_capture.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "recovery/economic_runtime_mapping_matrix_v1.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "recovery/memberhub_invitations_realization_v1.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "recovery/memberhub_mvp_founder_signoff_package_v1.md",
+      "matches": [
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "recovery/MEMBERHUB_INVITATION_PATCH_V1.md",
+      "matches": [
+        "/invitation",
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "codex-handoff/InvitationAcceptanceSection.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/InvitationAcceptancePage.tsx",
+      "matches": [
+        "acceptInvitation"
+      ]
+    },
+    {
+      "path": "codex-handoff/HubDashboard.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/MemberDashboard.tsx",
+      "matches": [
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/MemberHub.tsx",
+      "matches": [
+        "/invitation",
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/member.ts",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-handoff/routes.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-gateway-handoff/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "codex-gateway-handoff/InvitationAcceptanceSection.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-gateway-handoff/MemberHub.tsx",
+      "matches": [
+        "/invitation",
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-gateway-handoff/routes.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-gateway-handoff/member.ts",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "codex-gateway-handoff/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/workpackages/WP3A/artifacts/PostAuthenticationContinuation.repository.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/workpackages/WP3A/repository-source/PostAuthenticationContinuation.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/artifacts/PostAuthenticationContinuation.candidate.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuth.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/HubAuthCallback.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/claude-phase5-workpackage1/client/src/pages/MemberHub.tsx",
+      "matches": [
+        "/invitation",
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": ".phase5/archive/execution-materialization/phase5-wp2d-b-candidate/client/src/pages/HubAuthCallback.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "governance/cib/generated/CIB-HUB-RMP-002-AUTHENTICATION-NORMALIZATION.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "governance/execution/LES-001-SURFACE-INVENTORY.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "governance/execution/evidence/LES-001-SURFACE-INVENTORY.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "governance/icm/generated/ICM-APP-REALIZATION-002H.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/IC-002B/generated/IC-002B-CANONICAL-ROUTE-INVENTORY.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuth.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/packages/RDM-AUTH-001-PIC/repository/client/src/pages/HubAuthCallback.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/packages/APP-REC-INVITE-002R/implementation-authority-package.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/packages/APP-REC-029/EVIDENCE/materialization-runtime-checklist.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/packages/APP-REC-029/EVIDENCE/NEXT_RUNTIME_CAPTURE.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/inspection/PRODUCTION-SURFACE-DISCOVERY.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/sprints/LES-001/repository_mutation_package/inspection/LANDING-EXPERIENCE-TARGETS.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-018-backup.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-026-backup-member.ts",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-REALIZATION-002H-IMPLEMENTATION-CONTEXT-CAPTURE.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-003-backup/server/lib/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-013-backup/server/lib/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-RMP-010E34B-016-backup/server/lib/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/CANONICAL-AUTHORITY-INVENTORY.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/CANONICAL-AUTHORITY-CLASSIFICATION.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/ACTIVE-RUNTIME-AUTHORITY-SET.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E34B/AUTHORITY-RESIDENCY.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-016-backup/client/src/App.tsx",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-016-backup/client/src/pages/HubAuth.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-016-backup/client/src/lib/auth/PostAuthenticationContinuation.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/FDR-010E35A-025-backup/member.ts",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-REC/APP-REC-007M-20_rpc_authorization_corridor_20260725_084755.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001A-01/component_inventory.json",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001A-01/capability_inventory.json",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001A-03/pages_inventory.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001C-01/composition_catalog.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001C-01/dashboard_catalog.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001C-01/reusable_surface_index.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001C-02/candidate_pages.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001D-01/page_anchors.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001D-01/implementation_anchor_map.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001D-02/page_targets.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001D-02/implementation_targets.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001D-03/page_manifest.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001D-03/canonical_surface_map.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-001E-01/canonical_surfaces.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/ORG-DEMO-003/canonical-router-certification.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-NOTIFY-001/ADMIN-RUNTIME-INSPECTION.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-NOTIFY-001/ADMIN-IMPLEMENTATION-CONTEXT.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/client/src/components/dashboard/InvitationAcceptanceSection.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/client/src/pages/HubAdminDashboard.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/client/src/pages/HubAuth.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/client/src/pages/HubDashboard.tsx",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/client/src/pages/MemberDashboard.tsx",
+      "matches": [
+        "acceptInvitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+      "matches": [
+        "acceptInvitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/server/routes.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/server/lib/supabase-dal.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/GEX-EXEC-001/NM-001-PRE-MUTATION-SNAPSHOT/server/lib/supabase-types.ts",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/IMPLEMENTATION-INSPECTION-001/IMPLEMENTATION-INSPECTION.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/IMPLEMENTATION-INSPECTION-001/implementation_inventory.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/REP-STEWARD-001A/repository-files.json",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/REP-STEWARD-002/execution-register.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/workspace/REP-STEWARD-002/documentation-register.json",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/REP-STEWARD-002/unknown-register.json",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/workspace/PIC-BUILDER-001/repository_inspection_results.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/runtime-certification/RUNTIME-SURFACE-REPORT.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/runtime-certification/RUNTIME-DIVERGENCE-REPORT.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/runtime-certification/RUNTIME-EVIDENCE-REPORT.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/runtime-certification/reports/DASHBOARD-ENTRY-CORRIDOR.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/builder-work/builder-work-package.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/mex-inspection/inventory.json",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/mex-inspection/SUMMARY.md",
+      "matches": [
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/tools/reports/auth_corridor_inspection.json",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "execution/git-verification/GP-EXEC-010M-06A/repository_hygiene_stage1_report.md",
+      "matches": [
+        "/invitation",
+        "invite"
+      ]
+    },
+    {
+      "path": "execution/git-verification/GP-EXEC-010M-06A/tools/capture_invitation_api_contract.md",
+      "matches": [
+        "/invitation"
+      ]
+    },
+    {
+      "path": "tools/capture_invitation_api_contract.md",
+      "matches": [
+        "/invitation"
+      ]
+    }
+  ],
+  "next_mutation": "Locate the canonical invitation URL builder and replace relative-path generation with an absolute URL using the configured application origin."
+}
