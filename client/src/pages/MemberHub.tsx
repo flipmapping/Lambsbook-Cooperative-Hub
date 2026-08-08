@@ -15,8 +15,12 @@ import {
   User, CreditCard, Users, BookOpen, DollarSign, 
   GraduationCap, Activity, AlertTriangle, CheckCircle,
   ArrowUpCircle, Clock, Eye, EyeOff, RefreshCw,
-  Lock, Shield, Camera, Plus, Trash2, QrCode, Phone
+  Lock, Shield, Camera, Plus, Trash2, QrCode, Phone,
+  Compass
 } from "lucide-react";
+import { useMemberPurpose }  from "@/hooks/useMemberPurpose";
+import { PurposeCard }       from "@/components/member/PurposeCard";
+import { IdentityCard }      from "@/components/member/IdentityCard";
 import HubAdminDashboard from "@/pages/HubAdminDashboard";
 
 type MembershipStatus = "free" | "paid";
@@ -188,12 +192,11 @@ function getAuthToken(): string | null {
 }
 
 // ============================================================================
-// APP-MEX-001C — Profile Preference Persistence
+// APP-MEX-001D — Backend-backed Profile Preference Persistence
 // ----------------------------------------------------------------------------
-// Persists visibility, contact methods, and avatar to localStorage keyed by
-// userId. Backend persistence endpoint does not yet exist; this is the
-// minimum frontend implementation within the authorized boundary.
-// Backend dependency: POST /api/member/profile/preferences (not yet available)
+// Primary: GET/PUT /api/member/profile/preferences (backend)
+// Fallback: localStorage keyed by userId (compatibility layer from APP-MEX-001C)
+// Backend supersedes localStorage when available.
 // ============================================================================
 
 const PROFILE_STORE_KEY = (userId: string) =>
@@ -205,7 +208,7 @@ interface PersistedProfile {
   avatarDataUrl: string | null;
 }
 
-function loadPersistedProfile(userId: string): PersistedProfile {
+function loadLocalProfile(userId: string): PersistedProfile {
   try {
     const raw = localStorage.getItem(PROFILE_STORE_KEY(userId));
     if (!raw) {
@@ -226,14 +229,11 @@ function loadPersistedProfile(userId: string): PersistedProfile {
   }
 }
 
-function savePersistedProfile(
-  userId: string,
-  data: PersistedProfile
-): void {
+function saveLocalProfile(userId: string, data: PersistedProfile): void {
   try {
     localStorage.setItem(PROFILE_STORE_KEY(userId), JSON.stringify(data));
   } catch {
-    // Storage unavailable — silently continue. State remains in-memory.
+    // Storage unavailable — silently continue.
   }
 }
 
@@ -270,6 +270,26 @@ async function postWithAuth(url: string, data?: unknown) {
     throw new Error(text || res.statusText);
   }
   return res.json();
+}
+
+async function putWithAuth(url: string, data?: unknown) {
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
+
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: data ? JSON.stringify(data) : undefined,
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || res.statusText);
+  }
+  return res.status === 204 ? null : res.json();
 }
 
 async function deleteWithAuth(url: string) {
@@ -373,27 +393,63 @@ export default function MemberHub() {
     enabled: isAuthenticated && !profileLoading && !!profile,
   });
 
-  // APP-MEX-001C — Hydrate persisted profile preferences once userId is known
+  // ── APP-MEX-001D: Backend profile preferences ─────────────────────────────
+  const { data: backendPrefs } = useQuery<{
+    avatar_reference:   string | null;
+    profile_visibility: "private" | "public";
+    contact_methods:    ContactMethod[];
+  }>({
+    queryKey: ["/api/member/profile/preferences"],
+    queryFn: () => fetchWithAuth("/api/member/profile/preferences"),
+    enabled: isAuthenticated && !profileLoading && !!profile,
+    staleTime: 60_000,
+  });
+
+  // APP-MEX-001D — Backend-first hydration; localStorage as compatibility fallback
   useEffect(() => {
     const userId = profile?.user_id ?? profile?.id ?? null;
     if (!userId || profileHydrated) return;
 
-    const persisted = loadPersistedProfile(String(userId));
-    setProfileVisibility(persisted.visibility);
-    setContactMethods(persisted.contactMethods);
-    setAvatarDataUrl(persisted.avatarDataUrl);
-    setProfileHydrated(true);
-  }, [profile, profileHydrated]);
+    if (backendPrefs) {
+      // Backend supersedes localStorage
+      setProfileVisibility(backendPrefs.profile_visibility);
+      setContactMethods(backendPrefs.contact_methods ?? []);
+      // avatar_reference is a server-side key; avatarDataUrl is local display.
+      // Keep local avatarDataUrl if backend has no reference yet.
+      if (!backendPrefs.avatar_reference) {
+        const local = loadLocalProfile(String(userId));
+        setAvatarDataUrl(local.avatarDataUrl);
+      }
+      setProfileHydrated(true);
+    } else {
+      // Backend not yet available — fall back to localStorage
+      const local = loadLocalProfile(String(userId));
+      setProfileVisibility(local.visibility);
+      setContactMethods(local.contactMethods);
+      setAvatarDataUrl(local.avatarDataUrl);
+      setProfileHydrated(true);
+    }
+  }, [profile, profileHydrated, backendPrefs]);
 
-  // APP-MEX-001C — Persist profile preferences on every change
+  // APP-MEX-001D — Persist to backend + localStorage on every change
   useEffect(() => {
     const userId = profile?.user_id ?? profile?.id ?? null;
     if (!userId || !profileHydrated) return;
 
-    savePersistedProfile(String(userId), {
+    // localStorage fallback (always kept in sync)
+    saveLocalProfile(String(userId), {
       visibility: profileVisibility,
       contactMethods,
       avatarDataUrl,
+    });
+
+    // Backend persistence (fire-and-forget; errors are non-blocking)
+    putWithAuth("/api/member/profile/preferences", {
+      profile_visibility: profileVisibility,
+      contact_methods:    contactMethods,
+      // avatar_reference not sent here; only updated when a new image is uploaded
+    }).catch((err: unknown) => {
+      console.warn("[APP-MEX-001D] Failed to persist profile preferences to backend:", err);
     });
   }, [profile, profileHydrated, profileVisibility, contactMethods, avatarDataUrl]);
 
@@ -404,6 +460,14 @@ export default function MemberHub() {
     invitationLoading ||
     relationshipsLoading ||
     false;
+
+  // APP-MEX-002A: Living Member Digital Twin — Purpose & Identity projections
+  const { purpose, identity } = useMemberPurpose({
+    profile,
+    activity,
+    relationships: relationshipsData,
+    isLoading:     isDashboardLoading,
+  });
 
   const selectProgramMutation = useMutation({
     mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/select`),
@@ -693,8 +757,9 @@ export default function MemberHub() {
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid grid-cols-7 w-full" data-testid="tabs-member">
+        <TabsList className="grid grid-cols-8 w-full" data-testid="tabs-member">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
+          <TabsTrigger value="twin" data-testid="tab-twin">My Purpose</TabsTrigger>
           <TabsTrigger value="profile" data-testid="tab-profile">Profile</TabsTrigger>
           <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
           <TabsTrigger value="earnings" data-testid="tab-earnings">Earnings</TabsTrigger>
@@ -708,7 +773,36 @@ export default function MemberHub() {
             Consumes authenticated identity only.
             No authentication, role resolution, or routing here.
         ================================================================ */}
-        <TabsContent value="profile" className="space-y-4" data-testid="tab-content-profile">
+        {/* ================================================================
+            DIGITAL TWIN TAB — APP-MEX-002A
+            MemberHub is a composition surface only.
+            PurposeCard and IdentityCard own their own semantic logic.
+            No business state lives here.
+        ================================================================ */}
+        <TabsContent value="twin" className="space-y-4" data-testid="tab-content-twin">
+
+          {(!purpose || !identity) ? (
+            <div className="flex items-center gap-3 text-sm text-muted-foreground py-8 justify-center">
+              <Compass className="h-5 w-5 animate-pulse" />
+              Loading your cooperative purpose...
+            </div>
+          ) : (
+            <div className="grid gap-4 lg:grid-cols-2">
+              <PurposeCard
+                projection={purpose}
+                data-testid="purpose-card"
+              />
+              <IdentityCard
+                projection={identity}
+                onNavigate={(dest) => setActiveTab(dest)}
+                data-testid="identity-card"
+              />
+            </div>
+          )}
+
+        </TabsContent>
+
+                <TabsContent value="profile" className="space-y-4" data-testid="tab-content-profile">
 
           {/* ── 1. Identity card with Profile Image placeholder ─────────── */}
           <Card data-testid="card-member-identity">
