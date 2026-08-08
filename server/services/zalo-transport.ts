@@ -26,6 +26,8 @@
  * template's actual parameter names from inside this sandbox.
  */
 
+import { createHmac } from "node:crypto";
+
 export interface ZaloRecipient {
   id: string;
   full_name?: string | null;
@@ -46,11 +48,18 @@ export interface ZaloBroadcastResult {
 
 const ZNS_ENDPOINT = 'https://business.openapi.zalo.me/message/template';
 
-function getConfig(): { accessToken: string; templateId: string } | null {
+function getConfig(): {
+  accessToken: string;
+  templateId: string;
+  appSecret: string;
+} | null {
   const accessToken = process.env.ZALO_ZNS_ACCESS_TOKEN;
   const templateId = process.env.ZALO_ZNS_TEMPLATE_ID;
-  if (!accessToken || !templateId) return null;
-  return { accessToken, templateId };
+  const appSecret = process.env.ZALO_APP_SECRET;
+
+  if (!accessToken || !templateId || !appSecret) return null;
+
+  return { accessToken, templateId, appSecret };
 }
 
 /** Normalizes to Zalo's expected phone format: no leading 0, no separators, no country code prefix char. */
@@ -63,6 +72,7 @@ async function sendOne(
   recipient: ZaloRecipient,
   accessToken: string,
   templateId: string,
+  appSecret: string,
 ): Promise<ZaloSendResult> {
   if (!recipient.phone) {
     return { prospectId: recipient.id, success: false, reason: 'No phone number on record' };
@@ -78,6 +88,9 @@ async function sendOne(
       body: JSON.stringify({
         phone: normalizePhoneForZalo(recipient.phone),
         template_id: templateId,
+        appsecret_proof: createHmac('sha256', appSecret)
+          .update(accessToken)
+          .digest('hex'),
         template_data: {
           full_name: recipient.full_name ?? '',
         },
@@ -125,7 +138,12 @@ export async function sendZaloBroadcast(
   for (const recipient of recipients) {
     // Sent sequentially (not Promise.all) to stay well under Zalo's
     // per-second rate limit for template sends.
-    const result = await sendOne(recipient, config.accessToken, config.templateId);
+    const result = await sendOne(
+      recipient,
+      config.accessToken,
+      config.templateId,
+      config.appSecret,
+    );
     results.push(result);
   }
 
