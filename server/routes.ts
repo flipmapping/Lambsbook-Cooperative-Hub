@@ -1175,17 +1175,6 @@ export async function registerRoutes(
     },
   );
 
-  // Hub Members
-  app.get("/api/hub/members", async (req: Request, res: Response) => {
-    try {
-      const members = await hubService.getHubMembers();
-      res.json(members);
-    } catch (error) {
-      console.error("Hub members error:", error);
-      res.status(500).json({ error: "Failed to fetch hub members" });
-    }
-  });
-
   // Transactions
   app.get("/api/hub/transactions", async (req: Request, res: Response) => {
     try {
