@@ -134,12 +134,12 @@ interface RawCell {
 
 function parseRowCells(rowXml: string, sharedStrings: string[]): RawCell[] {
   const cells: RawCell[] = [];
-  const cellRegex = /<c\b([^>]*)>([\s\S]*?)<\/c>|<c\b([^>]*)\/>/g;
+  const cellRegex = /<c\b([^>]*)\/>|<c\b([^>]*)>([\s\S]*?)<\/c>/g;
   let match: RegExpExecArray | null;
 
   while ((match = cellRegex.exec(rowXml))) {
-    const attrs = match[1] ?? match[3] ?? '';
-    const body = match[2] ?? '';
+    const attrs = match[1] ?? match[2] ?? '';
+    const body = match[3] ?? '';
 
     const refMatch = /r="([A-Z]+)\d+"/.exec(attrs);
     if (!refMatch) continue;
