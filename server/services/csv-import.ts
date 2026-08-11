@@ -227,14 +227,16 @@ function mapRowToPayload(
   // Missing optional fields must never reject a CSV row.
   return {
     fullName:          row['full_name'].trim(),
+    studentNumber:     row['student_number']?.trim() || undefined,
     email,
+    phone:             row['phone']?.trim() || undefined,
+    externalReference: row['external_reference']?.trim() || undefined,
     country:           row['country']?.trim() || '',
     programOfInterest: row['program_of_interest']?.trim() || '',
     school:            row['school']?.trim() || undefined,
     province:          row['province']?.trim() || undefined,
     notes:             row['notes']?.trim() || undefined,
     campaignSource:    row['campaign_source']?.trim() || undefined,
-    phone:             row['phone']?.trim() || undefined,
   };
 }
 
