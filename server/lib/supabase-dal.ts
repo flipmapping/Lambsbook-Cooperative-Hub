@@ -58,10 +58,16 @@ export class SupabaseDAL {
       .schema('growth').from('prospects')
       .insert({
         full_name: data.full_name,
+        student_number: data.student_number ?? null,
         email: data.email,
+        phone: data.phone ?? null,
+        external_reference: data.external_reference ?? null,
         country: data.country,
         program_of_interest: data.program_of_interest,
-        phone: data.phone ?? null,
+        school: data.school ?? null,
+        province: data.province ?? null,
+        notes: data.notes ?? null,
+        campaign_source: data.campaign_source ?? null,
       })
       .select()
       .single();

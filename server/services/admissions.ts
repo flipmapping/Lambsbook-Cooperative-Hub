@@ -8,10 +8,16 @@ import { registrationConfirmationTemplate } from "./emailTemplates";
 
 export interface ProspectRegistrationPayload {
   fullName: string;
+  studentNumber?: string;
   email: string;
+  phone?: string;
+  externalReference?: string;
   country: string;
   programOfInterest: string;
-  phone?: string;
+  school?: string;
+  province?: string;
+  notes?: string;
+  campaignSource?: string;
 }
 
 export interface ProspectRegistrationResult {
@@ -25,10 +31,16 @@ export async function createProspectCore(
 ) {
   const prospect = await supabaseDAL.createProspect({
     full_name:            payload.fullName,
+    student_number:       payload.studentNumber ?? null,
     email:                payload.email,
+    phone:                payload.phone ?? null,
+    external_reference:   payload.externalReference ?? null,
     country:              payload.country,
     program_of_interest:  payload.programOfInterest,
-    phone:                payload.phone ?? null,
+    school:               payload.school ?? null,
+    province:             payload.province ?? null,
+    notes:                payload.notes ?? null,
+    campaign_source:      payload.campaignSource ?? null,
   });
 
   const funnel = await supabaseDAL.getFunnelByCode(resolveRegistrationFunnel());

@@ -23,6 +23,7 @@ export function mapCsvRows(
       fullName: row["Name"]?.trim() ?? "",
       phone: row["Phone"]?.trim() ?? "",
       email: row["Email"]?.trim() || undefined,
+      studentNumber: row["Student Number"]?.trim() || undefined,
       school: row["School"]?.trim() || undefined,
       province: row["Province"]?.trim() || undefined,
       program: row["Program of interest"]?.trim() || undefined,

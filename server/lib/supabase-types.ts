@@ -242,19 +242,31 @@ export interface GatewayInvitationInsert {
 export interface Prospect {
   id: string;
   full_name: string;
+  student_number: string | null;
   email: string;
+  phone: string | null;
+  external_reference: string | null;
   country: string;
   program_of_interest: string;
-  phone: string | null;
+  school: string | null;
+  province: string | null;
+  notes: string | null;
+  campaign_source: string | null;
   created_at: string;
 }
 
 export interface ProspectInsert {
   full_name: string;
+  student_number?: string | null;
   email: string;
+  phone?: string | null;
+  external_reference?: string | null;
   country: string;
   program_of_interest: string;
-  phone?: string | null;
+  school?: string | null;
+  province?: string | null;
+  notes?: string | null;
+  campaign_source?: string | null;
 }
 export interface Funnel {
   id: string;

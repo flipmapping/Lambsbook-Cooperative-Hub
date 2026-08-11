@@ -8,9 +8,11 @@ export interface ProspectImportRecord {
   phone: string;
   email?: string;
 
+  studentNumber?: string;
   school?: string;
   province?: string;
   program?: string;
+  notes?: string;
 
   consentStatus: ConsentStatus;
 

@@ -32,7 +32,7 @@ import type { ProspectRegistrationPayload } from './admissions';
 import { randomUUID, createHash } from 'crypto';
 import { writeImportCertification } from './import-certification';
 import { supabaseDAL } from '../lib/supabase-dal';
-import { parseXlsx } from './xlsx-parser';
+import ExcelJS from 'exceljs';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -230,6 +230,10 @@ function mapRowToPayload(
     email,
     country:           row['country']?.trim() || '',
     programOfInterest: row['program_of_interest']?.trim() || '',
+    school:            row['school']?.trim() || undefined,
+    province:          row['province']?.trim() || undefined,
+    notes:             row['notes']?.trim() || undefined,
+    campaignSource:    row['campaign_source']?.trim() || undefined,
     phone:             row['phone']?.trim() || undefined,
   };
 }
@@ -425,7 +429,56 @@ export async function importProspectsFromExcel(
   let rows: Record<string, string>[];
   try {
 
-    rows = parseXlsx(fileBuffer);
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.load(fileBuffer);
+
+    const worksheet = workbook.worksheets[0];
+
+    if (!worksheet) {
+      throw new Error("Excel workbook contains no worksheets.");
+    }
+
+    const headerRow = worksheet.getRow(1);
+    const headerValues = Array.isArray(headerRow.values)
+      ? headerRow.values
+      : [];
+    const headers = headerValues
+      .slice(1)
+      .map((value) => String(value ?? "").trim().toLowerCase());
+
+    rows = [];
+
+    worksheet.eachRow((row, rowNumber) => {
+      if (rowNumber === 1) return;
+
+      const rowValues = Array.isArray(row.values)
+        ? row.values
+        : [];
+      const values = rowValues.slice(1);
+      const record: Record<string, string> = {};
+
+      headers.forEach((header, index) => {
+        if (!header) return;
+
+        const value = values[index];
+
+        if (value === null || value === undefined) {
+          record[header] = "";
+        } else if (typeof value === "object" && "text" in value) {
+          record[header] = String((value as { text: unknown }).text ?? "");
+        } else if (typeof value === "object" && "result" in value) {
+          record[header] = String((value as { result: unknown }).result ?? "");
+        } else {
+          record[header] = String(value);
+        }
+      });
+
+      const hasData = Object.values(record).some(
+        (value) => value.trim() !== "",
+      );
+
+      if (hasData) rows.push(record);
+    });
 
     if (process.env.GE_IMPORT_CERTIFICATION === "1") {
       writeImportCertification({

@@ -10,9 +10,15 @@ export function mapImportRecordToRegistrationPayload(
 ): ProspectRegistrationPayload {
   return {
     fullName: record.fullName,
+    studentNumber: record.studentNumber,
     email: record.email ?? "",
     phone: record.phone,
+    externalReference: record.externalId,
     country: record.province ?? "",
     programOfInterest: record.program ?? "",
+    school: record.school,
+    province: record.province,
+    notes: record.notes,
+    campaignSource: record.source,
   };
 }
