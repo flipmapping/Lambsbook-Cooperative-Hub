@@ -1,0 +1,99 @@
+{
+  "authority": "EMP-001M-07",
+  "generated_at": "2026-08-10T10:16:57Z",
+  "compiler_root": "execution/compiler",
+  "modules": [
+    {
+      "module": "__init__.py",
+      "syntax_valid": true,
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "constants": []
+    },
+    {
+      "module": "context_resolver.py",
+      "syntax_valid": true,
+      "imports": [
+        "contracts.CompilerContext",
+        "events.ExecutionEvent",
+        "models.CanonicalExecutionModel"
+      ],
+      "classes": [
+        "ContextResolver"
+      ],
+      "functions": [],
+      "constants": []
+    },
+    {
+      "module": "contracts.py",
+      "syntax_valid": true,
+      "imports": [
+        "dataclasses.dataclass"
+      ],
+      "classes": [
+        "CompilerContext"
+      ],
+      "functions": [],
+      "constants": []
+    },
+    {
+      "module": "diagnostics.py",
+      "syntax_valid": true,
+      "imports": [
+        "dataclasses.dataclass"
+      ],
+      "classes": [
+        "Diagnostic"
+      ],
+      "functions": [],
+      "constants": []
+    },
+    {
+      "module": "events.py",
+      "syntax_valid": true,
+      "imports": [
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "datetime.datetime",
+        "datetime.timezone",
+        "typing.Any"
+      ],
+      "classes": [
+        "ExecutionEvent"
+      ],
+      "functions": [],
+      "constants": []
+    },
+    {
+      "module": "models.py",
+      "syntax_valid": true,
+      "imports": [
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "typing.Any"
+      ],
+      "classes": [
+        "CanonicalExecutionModel"
+      ],
+      "functions": [],
+      "constants": []
+    },
+    {
+      "module": "providers.py",
+      "syntax_valid": true,
+      "imports": [
+        "abc.ABC",
+        "abc.abstractmethod"
+      ],
+      "classes": [
+        "AuthorityProvider",
+        "RepositoryProvider",
+        "StandardsProvider"
+      ],
+      "functions": [],
+      "constants": []
+    }
+  ],
+  "readme": "# Execution Compiler SDK\n\nThis package defines the stable runtime interfaces used by all\nExecution Compiler components.\n\nImplementation begins with the Context Resolver.\n\n\nExecution Event Contract\n------------------------\n\nEvery compiler stage emits immutable ExecutionEvent objects.\n\nAdministrative artifacts (checkpoint, summary,\ndashboard, handoff, publication) are derived\nfrom execution events by EOS rather than\nbeing authored by compiler components.\n"
+}

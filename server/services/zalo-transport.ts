@@ -26,7 +26,7 @@
  * template's actual parameter names from inside this sandbox.
  */
 
-import { createHmac } from "node:crypto";
+import { createHash, createHmac } from "node:crypto";
 
 export interface ZaloRecipient {
   id: string;
@@ -46,7 +46,7 @@ export interface ZaloBroadcastResult {
   results: ZaloSendResult[];
 }
 
-const ZNS_ENDPOINT = 'https://business.openapi.zalo.me/message/template';
+const ZNS_ENDPOINT = 'https://business.openapi.zalo.me/message/template/hashphone';
 
 function getConfig(): {
   accessToken: string;
@@ -84,16 +84,22 @@ async function sendOne(
       headers: {
         'Content-Type': 'application/json',
         access_token: accessToken,
+          appsecret_proof: createHmac('sha256', appSecret)
+            .update(accessToken)
+            .digest('hex'),
+      
       },
       body: JSON.stringify({
-        phone: normalizePhoneForZalo(recipient.phone),
-        template_id: templateId,
-        appsecret_proof: createHmac('sha256', appSecret)
-          .update(accessToken)
+        hash_phone: createHash('sha256')
+          .update(normalizePhoneForZalo(recipient.phone))
           .digest('hex'),
+        template_id: templateId,
         template_data: {
-          full_name: recipient.full_name ?? '',
+          student_name: recipient.full_name ?? '',
+          phone_number: normalizePhoneForZalo(recipient.phone),
+          student_id: recipient.id,
         },
+        tracking_id: `zalo-test-${recipient.id}`.slice(0, 48),
       }),
     });
 

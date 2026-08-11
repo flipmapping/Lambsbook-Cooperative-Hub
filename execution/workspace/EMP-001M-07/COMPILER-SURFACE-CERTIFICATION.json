@@ -1,0 +1,42 @@
+{
+  "authority": "EMP-001M-07",
+  "generated_at": "2026-08-10T10:13:22Z",
+  "canonical_repository": ".",
+  "compiler_root": "execution/compiler",
+  "compiler_exists": true,
+  "file_count": 8,
+  "files": [
+    {
+      "path": "execution/compiler/README.md",
+      "size": 457
+    },
+    {
+      "path": "execution/compiler/__init__.py",
+      "size": 89
+    },
+    {
+      "path": "execution/compiler/context_resolver.py",
+      "size": 1189
+    },
+    {
+      "path": "execution/compiler/contracts.py",
+      "size": 156
+    },
+    {
+      "path": "execution/compiler/diagnostics.py",
+      "size": 99
+    },
+    {
+      "path": "execution/compiler/events.py",
+      "size": 426
+    },
+    {
+      "path": "execution/compiler/models.py",
+      "size": 606
+    },
+    {
+      "path": "execution/compiler/providers.py",
+      "size": 298
+    }
+  ]
+}

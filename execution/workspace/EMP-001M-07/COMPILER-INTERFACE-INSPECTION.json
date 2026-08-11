@@ -1,0 +1,288 @@
+{
+  "authority": "EMP-001M-07",
+  "generated_at": "2026-08-10T10:26:16Z",
+  "compiler_root": "execution/compiler",
+  "modules": [
+    {
+      "module": "__init__.py",
+      "classes": []
+    },
+    {
+      "module": "context_resolver.py",
+      "classes": [
+        {
+          "name": "ContextResolver",
+          "bases": [],
+          "decorators": [],
+          "methods": [
+            {
+              "name": "resolve",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "self",
+                  "annotation": null,
+                  "default": null
+                },
+                {
+                  "name": "context",
+                  "annotation": "CompilerContext",
+                  "default": null
+                }
+              ],
+              "return_annotation": "tuple[CanonicalExecutionModel, ExecutionEvent]",
+              "decorators": []
+            }
+          ],
+          "fields": [
+            {
+              "name": "stage",
+              "annotation": null,
+              "default": "'ContextResolver'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "contracts.py",
+      "classes": [
+        {
+          "name": "CompilerContext",
+          "bases": [],
+          "decorators": [
+            "dataclass"
+          ],
+          "methods": [],
+          "fields": [
+            {
+              "name": "execution_authority",
+              "annotation": "str",
+              "default": null
+            },
+            {
+              "name": "implementation_context",
+              "annotation": "object",
+              "default": null
+            },
+            {
+              "name": "repository",
+              "annotation": "object",
+              "default": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "diagnostics.py",
+      "classes": [
+        {
+          "name": "Diagnostic",
+          "bases": [],
+          "decorators": [
+            "dataclass"
+          ],
+          "methods": [],
+          "fields": [
+            {
+              "name": "severity",
+              "annotation": "str",
+              "default": null
+            },
+            {
+              "name": "message",
+              "annotation": "str",
+              "default": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "events.py",
+      "classes": [
+        {
+          "name": "ExecutionEvent",
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "methods": [],
+          "fields": [
+            {
+              "name": "event_type",
+              "annotation": "str",
+              "default": null
+            },
+            {
+              "name": "stage",
+              "annotation": "str",
+              "default": null
+            },
+            {
+              "name": "authority",
+              "annotation": "str",
+              "default": null
+            },
+            {
+              "name": "timestamp",
+              "annotation": "str",
+              "default": "field(default_factory=lambda: datetime.now(timezone.utc).isoformat())"
+            },
+            {
+              "name": "payload",
+              "annotation": "dict[str, Any]",
+              "default": "field(default_factory=dict)"
+            },
+            {
+              "name": "diagnostics",
+              "annotation": "list[str]",
+              "default": "field(default_factory=list)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "models.py",
+      "classes": [
+        {
+          "name": "CanonicalExecutionModel",
+          "bases": [],
+          "decorators": [
+            "dataclass"
+          ],
+          "methods": [],
+          "fields": [
+            {
+              "name": "execution_authority",
+              "annotation": "dict",
+              "default": "field(default_factory=dict)"
+            },
+            {
+              "name": "implementation_context",
+              "annotation": "dict",
+              "default": "field(default_factory=dict)"
+            },
+            {
+              "name": "repository",
+              "annotation": "dict",
+              "default": "field(default_factory=dict)"
+            },
+            {
+              "name": "resolved_authorities",
+              "annotation": "list",
+              "default": "field(default_factory=list)"
+            },
+            {
+              "name": "resolved_dependencies",
+              "annotation": "list",
+              "default": "field(default_factory=list)"
+            },
+            {
+              "name": "validation",
+              "annotation": "dict",
+              "default": "field(default_factory=dict)"
+            },
+            {
+              "name": "normalization",
+              "annotation": "dict",
+              "default": "field(default_factory=dict)"
+            },
+            {
+              "name": "builder_input",
+              "annotation": "dict | None",
+              "default": "None"
+            },
+            {
+              "name": "explainability",
+              "annotation": "dict",
+              "default": "field(default_factory=dict)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "providers.py",
+      "classes": [
+        {
+          "name": "AuthorityProvider",
+          "bases": [
+            "ABC"
+          ],
+          "decorators": [],
+          "methods": [
+            {
+              "name": "resolve",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "self",
+                  "annotation": null,
+                  "default": null
+                }
+              ],
+              "return_annotation": null,
+              "decorators": [
+                "abstractmethod"
+              ]
+            }
+          ],
+          "fields": []
+        },
+        {
+          "name": "RepositoryProvider",
+          "bases": [
+            "ABC"
+          ],
+          "decorators": [],
+          "methods": [
+            {
+              "name": "resolve",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "self",
+                  "annotation": null,
+                  "default": null
+                }
+              ],
+              "return_annotation": null,
+              "decorators": [
+                "abstractmethod"
+              ]
+            }
+          ],
+          "fields": []
+        },
+        {
+          "name": "StandardsProvider",
+          "bases": [
+            "ABC"
+          ],
+          "decorators": [],
+          "methods": [
+            {
+              "name": "resolve",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "self",
+                  "annotation": null,
+                  "default": null
+                }
+              ],
+              "return_annotation": null,
+              "decorators": [
+                "abstractmethod"
+              ]
+            }
+          ],
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

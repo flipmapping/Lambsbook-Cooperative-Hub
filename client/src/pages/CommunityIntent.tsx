@@ -35,7 +35,7 @@ const EMPTY_INTENT: CommunityIntent = {
   coverImageUrl: '',
 };
 
-type Stage = 'goal' | 'define' | 'review';
+type Stage = 'goal' | 'define' | 'review' | 'readiness' | 'preview';
 
 export default function CommunityIntentPage() {
   const [, setLocation] = useLocation();
@@ -315,13 +315,138 @@ export default function CommunityIntentPage() {
               </button>
               <button
                 type="button"
-                onClick={handleConfirmIntent}
+                onClick={() => setStage('readiness')}
                 className="rounded-md bg-primary px-5 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90"
               >
-                Save Community Intent
+                Check Readiness
+              </button>
+            </div>
+  
+        {stage === 'readiness' && (
+          <section className="rounded-lg border border-border bg-card p-6">
+            <h2 className="mb-2 text-xl font-semibold">Community Readiness</h2>
+            <p className="mb-6 text-sm text-muted-foreground">
+              We checked whether the platform currently has an authoritative
+              Community creation mechanism for this request.
+            </p>
+
+            <div className="rounded-md border border-border p-4">
+              <div className="font-medium">Community Creation</div>
+              <div className="mt-1 text-sm font-semibold">
+                NOT READY
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                No authoritative Community creation mechanism is currently
+                available. Nothing has been created or saved.
+              </p>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              <button
+                type="button"
+                onClick={() => setStage('review')}
+                className="rounded-md border border-border bg-card px-4 py-2 transition-colors hover:bg-accent"
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                onClick={() => setStage('preview')}
+                className="rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                View Outcome Preview
               </button>
             </div>
           </section>
+        )}
+
+        {stage === 'preview' && (
+          <section className="rounded-lg border border-border bg-card p-6">
+            <h2 className="mb-2 text-xl font-semibold">Outcome Preview</h2>
+            <p className="mb-6 text-sm text-muted-foreground">
+              This is a preview of the community you described. It is not a
+              persisted Community.
+            </p>
+
+            <dl className="space-y-4">
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Community name</dt>
+                <dd className="mt-1 font-medium">{intent.name}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Goal</dt>
+                <dd className="mt-1">{intent.goal}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Description</dt>
+                <dd className="mt-1">{intent.description}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Category</dt>
+                <dd className="mt-1">{intent.category}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Audience</dt>
+                <dd className="mt-1">{intent.audience}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Visibility</dt>
+                <dd className="mt-1">{intent.visibility}</dd>
+              </div>
+
+              {intent.coverImageUrl && (
+                <div className="rounded-md border border-border bg-card p-3">
+                  <div className="text-sm font-medium">Cover image</div>
+                  <div className="mt-3 overflow-hidden rounded-md border border-border bg-muted">
+                    <img
+                      src={intent.coverImageUrl}
+                      alt={`Cover image for ${intent.name || 'community'}`}
+                      className="h-auto max-h-72 w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-2 break-all text-xs text-muted-foreground">
+                    {intent.coverImageUrl}
+                  </div>
+                </div>
+              )}
+            </dl>
+
+            <div className="mt-6 rounded-md border border-border p-4">
+              <div className="font-medium">Creation status</div>
+              <div className="mt-1 text-sm font-semibold">
+                NOT READY
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                This preview does not create, save, publish, or represent a
+                persistent Community.
+              </p>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              <button
+                type="button"
+                onClick={() => setStage('readiness')}
+                className="rounded-md border border-border bg-card px-4 py-2 transition-colors hover:bg-accent"
+              >
+                Back to Readiness
+              </button>
+              <button
+                type="button"
+                onClick={() => setStage('define')}
+                className="rounded-md border border-border bg-card px-4 py-2 transition-colors hover:bg-accent"
+              >
+                Edit Intent
+              </button>
+            </div>
+          </section>
+        )}
+
+        </section>
         )}
       </main>
     </div>

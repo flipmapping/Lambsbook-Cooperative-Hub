@@ -69,6 +69,7 @@ const user = authReq.user;
 
       // Canonical authenticated identity
       user_id: user.id,
+      email: user.email ?? null,
       role: user.role ?? null,
       sbu_id: user.sbu_id ?? null,
       is_super_admin: user.is_super_admin ?? false,

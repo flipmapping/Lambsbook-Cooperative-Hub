@@ -1,0 +1,53 @@
+{
+  "authority": "EMP-001M-08A",
+  "providers": {
+    "AuthorityProvider": {
+      "constructed": false,
+      "defined": true,
+      "evidence": [
+        {
+          "detail": "class AuthorityProvider",
+          "kind": "DEFINED",
+          "line": 3,
+          "path": "execution/compiler/providers.py"
+        }
+      ],
+      "imported": false,
+      "referenced": false,
+      "used": false
+    },
+    "RepositoryProvider": {
+      "constructed": false,
+      "defined": true,
+      "evidence": [
+        {
+          "detail": "class RepositoryProvider",
+          "kind": "DEFINED",
+          "line": 9,
+          "path": "execution/compiler/providers.py"
+        }
+      ],
+      "imported": false,
+      "referenced": false,
+      "used": false
+    },
+    "StandardsProvider": {
+      "constructed": false,
+      "defined": true,
+      "evidence": [
+        {
+          "detail": "class StandardsProvider",
+          "kind": "DEFINED",
+          "line": 15,
+          "path": "execution/compiler/providers.py"
+        }
+      ],
+      "imported": false,
+      "referenced": false,
+      "used": false
+    }
+  },
+  "purpose": "Provider lifecycle certification for compiler contract evidence.",
+  "repository_sha": "f1282ee1e7a0943d9a605d5d5a360a0b16ef4655",
+  "source_of_truth": "execution/compiler/*.py"
+}

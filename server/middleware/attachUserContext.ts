@@ -121,6 +121,7 @@ export async function attachUserContext(
     authReq.user = {
       id: userId,
       token,
+      email: userData.user.email ?? undefined,
       ...(hasProfile
         ? {
             sbu_id: profile.sbu_id,

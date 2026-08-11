@@ -1,0 +1,66 @@
+{
+  "authority": "EMP-001M-07",
+  "generated_at": "2026-08-10T10:57:54Z",
+  "target": "execution/compiler/context_resolver.py",
+  "provider_usage": {
+    "AuthorityProvider": {
+      "imported": false,
+      "referenced": false,
+      "constructed": false
+    },
+    "RepositoryProvider": {
+      "imported": false,
+      "referenced": false,
+      "constructed": false
+    },
+    "StandardsProvider": {
+      "imported": false,
+      "referenced": false,
+      "constructed": false
+    }
+  },
+  "provider_contracts": {
+    "AuthorityProvider": {
+      "bases": [
+        "ABC"
+      ],
+      "methods": [
+        "resolve"
+      ]
+    },
+    "RepositoryProvider": {
+      "bases": [
+        "ABC"
+      ],
+      "methods": [
+        "resolve"
+      ]
+    },
+    "StandardsProvider": {
+      "bases": [
+        "ABC"
+      ],
+      "methods": [
+        "resolve"
+      ]
+    }
+  },
+  "imports": [
+    "contracts.CompilerContext",
+    "events.ExecutionEvent",
+    "models.CanonicalExecutionModel"
+  ],
+  "constructor_calls": [
+    "CanonicalExecutionModel",
+    "ExecutionEvent"
+  ],
+  "attribute_references": [
+    "context.execution_authority",
+    "context.implementation_context",
+    "context.repository",
+    "model.execution_authority",
+    "model.implementation_context",
+    "model.repository",
+    "self.stage"
+  ]
+}

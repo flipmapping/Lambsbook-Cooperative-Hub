@@ -3,6 +3,7 @@ import type { Request } from "express";
 export interface RequestUserContext {
   id: string;
   token: string;
+  email?: string;
   sbu_id?: string;
   role?: string;
   is_super_admin?: boolean;

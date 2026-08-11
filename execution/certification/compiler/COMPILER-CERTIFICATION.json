@@ -1,0 +1,1072 @@
+{
+  "schema_version": "1.0",
+  "authority": "EMP-COMPILER-CERT-001",
+  "result": "PASS",
+  "certification_timestamp": "2026-08-10T14:45:44.612369+00:00",
+  "started_at": "2026-08-10T14:45:44.438475+00:00",
+  "repository": {
+    "root": "/home/runner/workspace",
+    "git_head": "f1282ee1e7a0943d9a605d5d5a360a0b16ef4655",
+    "git_status_at_certification": [
+      " M client/src/pages/CommunityIntent.tsx",
+      " M package.json",
+      " M server/middleware/attachUserContext.ts",
+      " M server/routes/member.ts",
+      " M server/services/xlsx-parser.ts",
+      " M server/services/zalo-transport.ts",
+      " M server/types/requestContext.ts",
+      "?? execution/compiler/contract_manifest.py",
+      "?? execution/contracts/compiler-contract.json",
+      "?? execution/runtime-certification/detect-dead-strata.before-boundary-20260808T172722Z.cjs",
+      "?? execution/runtime-certification/server.routes.before-dead-strata-20260808T161752Z.ts",
+      "?? execution/workspace/EMP-001M-07/COMPILER-CONTRACT-INSPECTION.json",
+      "?? execution/workspace/EMP-001M-07/COMPILER-INTERFACE-INSPECTION.json",
+      "?? execution/workspace/EMP-001M-07/COMPILER-SURFACE-CERTIFICATION.json",
+      "?? execution/workspace/EMP-001M-07/CONTEXT-RESOLVER-SMOKE.json",
+      "?? execution/workspace/EMP-001M-07/PROVIDER-DEPENDENCY-INSPECTION.json",
+      "?? execution/workspace/EMP-001M-08A/",
+      "?? supabase/migrations/20260810200000_community_membership_001_foundation.sql",
+      "?? tools/compiler_certify.py",
+      "?? tools/compiler_context_resolver_smoke.py",
+      "?? tools/compiler_contract_inspection.py",
+      "?? tools/compiler_interface_inspection.py",
+      "?? tools/compiler_provider_dependency_inspection.py",
+      "?? tools/compiler_surface_certification.py"
+    ]
+  },
+  "source": {
+    "root": "execution/compiler",
+    "files": [
+      "execution/compiler/__init__.py",
+      "execution/compiler/context_resolver.py",
+      "execution/compiler/contract_manifest.py",
+      "execution/compiler/contracts.py",
+      "execution/compiler/diagnostics.py",
+      "execution/compiler/events.py",
+      "execution/compiler/models.py",
+      "execution/compiler/providers.py"
+    ],
+    "source_count": 8,
+    "bundle_sha256": "e8ebac8403d8a6af5b0822dfd3ba1d44e82139d1f4df57d0cfc11cc07b9e9dd4"
+  },
+  "declared_contract": {
+    "path": "execution/contracts/compiler-contract.json",
+    "sha256": "68e03887798ed5c2350d1ef5455050de35cf95020fe3fe4383f7f78606129d9b",
+    "schema_version": "1.0"
+  },
+  "generated_artifacts": [
+    {
+      "path": "execution/contracts/compiler-contract.json",
+      "sha256": "68e03887798ed5c2350d1ef5455050de35cf95020fe3fe4383f7f78606129d9b",
+      "status": "VALID",
+      "content_sha256": "f5eab1512c794ad174566c0b43b8ae4e85754ab046fb56074de82123587c8250",
+      "top_level_keys": [
+        "authority",
+        "contract_type",
+        "provider_lifecycle",
+        "repository_sha",
+        "schema_version",
+        "source_count",
+        "source_of_truth",
+        "sources"
+      ]
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/REGISTRY-CONFORMANCE-AUDIT.json",
+      "sha256": "4bc811cd55d2f55325ceab75ebd197833e6e0cf54fd2b3013e1c96b28a7c2956",
+      "status": "VALID",
+      "content_sha256": "70090a6f595f0c68c6a63ab1468be483642dcbe8ca8d61da3bef1680b7e93f45",
+      "top_level_keys": []
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/REPOSITORY-MUTATION-PACKAGE-VERIFICATION.json",
+      "sha256": "875f1cd49b3d719aa0ce1ed13ce674d649b162353081bd7e4dc5306696d021de",
+      "status": "VALID",
+      "content_sha256": "622620dccf297807d157daf3d7e68f32dd31e5faa75dc9c4f2fc381607a95a82",
+      "top_level_keys": [
+        "artifact_count",
+        "corridor_violations",
+        "existing_targets",
+        "results"
+      ]
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/REPOSITORY-MUTATION-PACKAGE.json",
+      "sha256": "6d2ed2d4f2c4cdd3767c9532706715c0616bf0b07ab45b7bf6e0030513fcb25b",
+      "status": "VALID",
+      "content_sha256": "eeba1ff1e11b4f2e7c066b32d0f896d4785d80d44ab6aef94e23c8a98457125b",
+      "top_level_keys": [
+        "artifact_manifest",
+        "builder_dependency",
+        "generated_at",
+        "implementation",
+        "implementation_authority",
+        "mutation_corridor",
+        "next_phase",
+        "planned_artifacts",
+        "publication_authorized",
+        "publication_gate",
+        "repository",
+        "repository_mutation_authorized",
+        "status",
+        "surface",
+        "updated_at",
+        "verification"
+      ]
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/SURFACE-CERTIFICATION.json",
+      "sha256": "902b7af9ec3eee034ef0f124529d7ba6b2185d28f62a94428edf0e37c34b0ec2",
+      "status": "VALID",
+      "content_sha256": "eb8b82f327409a8ac77181ab66f8d32372e0a5ee48d51d9434c637aa83f47c62",
+      "top_level_keys": [
+        "authority",
+        "basis",
+        "certified_at",
+        "evidence",
+        "publication_required",
+        "repository_mutation_required",
+        "status",
+        "surface"
+      ]
+    },
+    {
+      "path": "execution/packages/FDR-010E34B/generated/registry_payloads/REGISTRY-PAYLOAD-MANIFEST.json",
+      "sha256": "f48780534a44286149d624da9c42e6b832ba74ee3caae8b7bffeb2a5a1547bfc",
+      "status": "VALID",
+      "content_sha256": "684e95fdc2004e7a9f84eba6b21c1b2120f19c868f89ec154117eee6bce05d39",
+      "top_level_keys": [
+        "authority",
+        "generated_at",
+        "implementation",
+        "payloads"
+      ]
+    },
+    {
+      "path": "execution/packages/generated/LES-001/REPOSITORY-MUTATION-PACKAGE.json",
+      "sha256": "4f570773ca9ade06738dd4762d2b755564bf2371a91d65e526b426b81d20d390",
+      "status": "VALID",
+      "content_sha256": "798f19b918e13220037dc01cff85773f6cddc2cc8593dea62e7373f60f62316d",
+      "top_level_keys": [
+        "authority",
+        "builder_generated",
+        "execution_package",
+        "generated",
+        "implementation_prompt",
+        "mutation_scope",
+        "package_id",
+        "repository_id",
+        "sprint",
+        "status",
+        "target_module"
+      ]
+    },
+    {
+      "path": "execution/reports/SCR-001-SURFACE-CERTIFICATION.json",
+      "sha256": "b6dc618a98b14d69fd8fa183011140c647bb18602d48b8efed0a9e3945ab6691",
+      "status": "VALID",
+      "content_sha256": "a00dd4d45b90ec8fb4027395f6b72186b0711ce284fef60cb3c8511e7fcac836",
+      "top_level_keys": [
+        "authority",
+        "contact_surface_present",
+        "mutation_surface",
+        "rendered_components",
+        "repository_truth",
+        "status"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-REALIZE-001/production-surface-certification.json",
+      "sha256": "9810cb6a1dc071435e58f180fbe70302d2d8ebb296b1bdca4dabe3dfee929a07",
+      "status": "VALID",
+      "content_sha256": "02a8023b96f7a1b817271d8e83155363c09ff21c7245efeda9bf6fc0e3f0c047",
+      "top_level_keys": [
+        "authority",
+        "candidate_surfaces"
+      ]
+    },
+    {
+      "path": "execution/workspace/APP-REALIZE-002/builder-surface-certification.json",
+      "sha256": "2dbb36da78faecf5898d1b2d54fa5ee143e06399dab9e0f93ebf3c145f733b2e",
+      "status": "VALID",
+      "content_sha256": "2cc3ba3e9615c5beb309b9da7aaf84580ad3dc758e21a25c76ad5868800f7049",
+      "top_level_keys": [
+        "authority",
+        "match_count",
+        "matches"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001C/EXECUTION-COMPILER-SPEC.json",
+      "sha256": "5eff6ac89695296cd7e855b387a5c884eb87b1396b259415a7ba0885ec0ddcbe",
+      "status": "VALID",
+      "content_sha256": "dc887a40ea9b4f3a81fec932f002d0a33d5e92ab5b351083e2ade761148c0325",
+      "top_level_keys": [
+        "authority",
+        "compiler_inputs",
+        "compiler_output",
+        "compiler_phases",
+        "mission",
+        "name",
+        "status"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-01/EXECUTION-COMPILER-RUNTIME-CONTRACT.json",
+      "sha256": "08b3249a7e505ecde8259a7eb306e6c972414da799f448bb63c924458569ff94",
+      "status": "VALID",
+      "content_sha256": "3676b73352e3d458e5135874b1cddc89335333987a7c435253c4b8022cbf18eb",
+      "top_level_keys": [
+        "authority",
+        "compiler_context",
+        "compiler_result",
+        "name",
+        "pipeline",
+        "principles",
+        "purpose",
+        "version"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-06/EXECUTION-COMPILER-TOPOLOGY.json",
+      "sha256": "a17bc59467b447807ad283f1a1b68a159d3421b4da13fbbed47887a4bff0758d",
+      "status": "VALID",
+      "content_sha256": "bdea4ab1b9f00cb913c21252abc4385cbbf9f5e3937621822865ccf0cd2dc7c7",
+      "top_level_keys": [
+        "authority",
+        "generated_at",
+        "repositories"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-07/COMPILER-CONTRACT-INSPECTION.json",
+      "sha256": "6da853c86ecfb84dd24a65e5ed11560d73002d892985e7fa71d567c8e16e153a",
+      "status": "VALID",
+      "content_sha256": "566cfe36dcdeb0b15bbb33d0d98f4bf85ce2d2b8e70d1bee8df4866865ff894d",
+      "top_level_keys": [
+        "authority",
+        "compiler_root",
+        "generated_at",
+        "modules",
+        "readme"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-07/COMPILER-INTERFACE-INSPECTION.json",
+      "sha256": "ab3422a08518b355cb8cdd83a39fb0a36fcf39eadac5c9a7eabb09fab2ba785d",
+      "status": "VALID",
+      "content_sha256": "7c7b61323d6e18ddbea66f670669c38cc20ed494165d9feee691ccdfd426e278",
+      "top_level_keys": [
+        "authority",
+        "compiler_root",
+        "generated_at",
+        "modules"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-07/COMPILER-SURFACE-CERTIFICATION.json",
+      "sha256": "49a2178bb0fe9364c770ea7c3a26db022982326e96064b3d38b57e58d8415070",
+      "status": "VALID",
+      "content_sha256": "cf6c86a5ced5a8b2fcaf3fb682caa7da694350a5e3a3a4b1693eec1a1eb46093",
+      "top_level_keys": [
+        "authority",
+        "canonical_repository",
+        "compiler_exists",
+        "compiler_root",
+        "file_count",
+        "files",
+        "generated_at"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-07/PROVIDER-DEPENDENCY-INSPECTION.json",
+      "sha256": "cd22d0f6545abb2a01000de5685c731343eaff8691d7fc85cd7aadb0c9f58cd8",
+      "status": "VALID",
+      "content_sha256": "b41937063373ab48496f66edb12e1a5f02e17ce8c1af5de13dc3ecabb3c5a7b7",
+      "top_level_keys": [
+        "attribute_references",
+        "authority",
+        "constructor_calls",
+        "generated_at",
+        "imports",
+        "provider_contracts",
+        "provider_usage",
+        "target"
+      ]
+    },
+    {
+      "path": "execution/workspace/EMP-001M-08A/PROVIDER-LIFECYCLE-CERTIFICATION.json",
+      "sha256": "0fde1287111f9ab72f06ccceed2059dd4fa5083b61e4dc981cf9fce93756e262",
+      "status": "VALID",
+      "content_sha256": "5c79642f1fbe8ea12e189ac1d1017110b970652f54dfcb2e27c6fef020465052",
+      "top_level_keys": [
+        "authority",
+        "providers",
+        "purpose",
+        "repository_sha",
+        "source_of_truth"
+      ]
+    }
+  ],
+  "package_lineage": [
+    "execution/implementation-context/FDR-010E34B-IMPLEMENTATION-CONTEXT.json",
+    "execution/workspace/APP-RMP-010E34B-011.json",
+    "execution/workspace/APP-RMP-010E34B-013-preparation.json",
+    "execution/workspace/APP-RMP-010E34B-014A-readiness.json",
+    "execution/workspace/APP-RMP-010E34B-015.json",
+    "execution/workspace/APP-RMP-010E34B-016-report.json",
+    "execution/workspace/EMP-001C/EXECUTION-COMPILER-SPEC.json",
+    "execution/workspace/EMP-001M-01/EXECUTION-COMPILER-RUNTIME-CONTRACT.json",
+    "execution/workspace/EMP-001M-06/EXECUTION-COMPILER-TOPOLOGY.json",
+    "execution/workspace/EMP-001M-07/COMPILER-CONTRACT-INSPECTION.json",
+    "execution/workspace/EMP-001M-07/COMPILER-INTERFACE-INSPECTION.json",
+    "execution/workspace/EMP-001M-07/COMPILER-SURFACE-CERTIFICATION.json",
+    "governance/cib/generated/CIB-RMP-010E34B-PROSPECT-ADMISSION-DECISION-WORKSPACE.md",
+    "governance/execution-derivation/FDR-010E34B-EXECUTION-DERIVATION.md",
+    "governance/execution-derivation/RMP-010E34B-EXECUTION-DERIVATION.md",
+    "governance/execution/FDR-010E34B-BUILDER-PHASE-AUTHORIZATION.md",
+    "governance/execution/FDR-010E34B-PHASE-GATE.md",
+    "governance/execution/RMP-010E34B-BUILDER-VALIDATION-CERTIFICATION.md",
+    "governance/execution/RMP-010E34B-CERTIFIED-LINEAGE.md",
+    "governance/execution/RMP-010E34B-PHASE-TRANSITION.md",
+    "governance/rmp/RMP-010E34B-IMPLEMENTATION-AUTHORITY.md",
+    "governance/rmp/certified/RMP-010E34B-CERTIFICATION.md"
+  ],
+  "live_registry": {
+    "path": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+    "sha256": "38a229b52f229f7dd53bdc9e815a4eb8e89841decf3aa938a914608726edcd5c",
+    "generated_registry_path": null
+  },
+  "interfaces": [
+    {
+      "path": "execution/compiler/__init__.py",
+      "imports": [],
+      "objects": []
+    },
+    {
+      "path": "execution/compiler/context_resolver.py",
+      "imports": [
+        "contracts.CompilerContext",
+        "events.ExecutionEvent",
+        "models.CanonicalExecutionModel"
+      ],
+      "objects": [
+        {
+          "kind": "ClassDef",
+          "name": "ContextResolver",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "resolve",
+          "arguments": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "context",
+              "annotation": "CompilerContext"
+            }
+          ],
+          "return_annotation": "tuple[CanonicalExecutionModel, ExecutionEvent]",
+          "bases": null,
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "execution/compiler/contract_manifest.py",
+      "imports": [
+        "__future__.annotations",
+        "argparse",
+        "ast",
+        "hashlib",
+        "json",
+        "pathlib.Path",
+        "subprocess",
+        "typing.Any"
+      ],
+      "objects": [
+        {
+          "kind": "FunctionDef",
+          "name": "git_sha",
+          "arguments": [],
+          "return_annotation": "str",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "sha256",
+          "arguments": [
+            {
+              "name": "path",
+              "annotation": "Path"
+            }
+          ],
+          "return_annotation": "str",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "annotation",
+          "arguments": [
+            {
+              "name": "node",
+              "annotation": "ast.AST | None"
+            }
+          ],
+          "return_annotation": "str | None",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "argument_data",
+          "arguments": [
+            {
+              "name": "arg",
+              "annotation": "ast.arg"
+            }
+          ],
+          "return_annotation": "dict[str, Any]",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "method_data",
+          "arguments": [
+            {
+              "name": "node",
+              "annotation": "ast.FunctionDef | ast.AsyncFunctionDef"
+            }
+          ],
+          "return_annotation": "dict[str, Any]",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "class_data",
+          "arguments": [
+            {
+              "name": "node",
+              "annotation": "ast.ClassDef"
+            }
+          ],
+          "return_annotation": "dict[str, Any]",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "module_data",
+          "arguments": [
+            {
+              "name": "path",
+              "annotation": "Path"
+            }
+          ],
+          "return_annotation": "dict[str, Any]",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "provider_lifecycle",
+          "arguments": [],
+          "return_annotation": "list[dict[str, Any]]",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "build_manifest",
+          "arguments": [],
+          "return_annotation": "dict[str, Any]",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "verify_manifest",
+          "arguments": [],
+          "return_annotation": "bool",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "main",
+          "arguments": [],
+          "return_annotation": "None",
+          "bases": null,
+          "classification": "USED",
+          "evidence": {
+            "referenced": true,
+            "constructed": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "execution/compiler/contracts.py",
+      "imports": [
+        "dataclasses.dataclass"
+      ],
+      "objects": [
+        {
+          "kind": "ClassDef",
+          "name": "CompilerContext",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "execution/compiler/diagnostics.py",
+      "imports": [
+        "dataclasses.dataclass"
+      ],
+      "objects": [
+        {
+          "kind": "ClassDef",
+          "name": "Diagnostic",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "execution/compiler/events.py",
+      "imports": [
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "datetime.datetime",
+        "datetime.timezone",
+        "typing.Any"
+      ],
+      "objects": [
+        {
+          "kind": "ClassDef",
+          "name": "ExecutionEvent",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "execution/compiler/models.py",
+      "imports": [
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "typing.Any"
+      ],
+      "objects": [
+        {
+          "kind": "ClassDef",
+          "name": "CanonicalExecutionModel",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "execution/compiler/providers.py",
+      "imports": [
+        "abc.ABC",
+        "abc.abstractmethod"
+      ],
+      "objects": [
+        {
+          "kind": "ClassDef",
+          "name": "AuthorityProvider",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [
+            "ABC"
+          ],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        },
+        {
+          "kind": "ClassDef",
+          "name": "RepositoryProvider",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [
+            "ABC"
+          ],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        },
+        {
+          "kind": "ClassDef",
+          "name": "StandardsProvider",
+          "arguments": null,
+          "return_annotation": null,
+          "bases": [
+            "ABC"
+          ],
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "resolve",
+          "arguments": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "return_annotation": null,
+          "bases": null,
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "resolve",
+          "arguments": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "return_annotation": null,
+          "bases": null,
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "resolve",
+          "arguments": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "return_annotation": null,
+          "bases": null,
+          "classification": "UNUSED",
+          "evidence": {
+            "referenced": false,
+            "constructed": false
+          }
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "execution/compiler/__init__.py",
+      "imports": []
+    },
+    {
+      "path": "execution/compiler/context_resolver.py",
+      "imports": [
+        "contracts.CompilerContext",
+        "events.ExecutionEvent",
+        "models.CanonicalExecutionModel"
+      ]
+    },
+    {
+      "path": "execution/compiler/contract_manifest.py",
+      "imports": [
+        "__future__.annotations",
+        "argparse",
+        "ast",
+        "hashlib",
+        "json",
+        "pathlib.Path",
+        "subprocess",
+        "typing.Any"
+      ]
+    },
+    {
+      "path": "execution/compiler/contracts.py",
+      "imports": [
+        "dataclasses.dataclass"
+      ]
+    },
+    {
+      "path": "execution/compiler/diagnostics.py",
+      "imports": [
+        "dataclasses.dataclass"
+      ]
+    },
+    {
+      "path": "execution/compiler/events.py",
+      "imports": [
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "datetime.datetime",
+        "datetime.timezone",
+        "typing.Any"
+      ]
+    },
+    {
+      "path": "execution/compiler/models.py",
+      "imports": [
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "typing.Any"
+      ]
+    },
+    {
+      "path": "execution/compiler/providers.py",
+      "imports": [
+        "abc.ABC",
+        "abc.abstractmethod"
+      ]
+    }
+  ],
+  "object_classification": {
+    "counts": {
+      "DEFINED": 0,
+      "USED": 11,
+      "UNUSED": 12,
+      "INVALID": 0
+    },
+    "objects": [
+      {
+        "path": "execution/compiler/context_resolver.py",
+        "kind": "ClassDef",
+        "name": "ContextResolver",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/context_resolver.py",
+        "kind": "FunctionDef",
+        "name": "resolve",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "git_sha",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "sha256",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "annotation",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "argument_data",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "method_data",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "class_data",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "module_data",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "provider_lifecycle",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "build_manifest",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "verify_manifest",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contract_manifest.py",
+        "kind": "FunctionDef",
+        "name": "main",
+        "classification": "USED",
+        "evidence": {
+          "referenced": true,
+          "constructed": true
+        }
+      },
+      {
+        "path": "execution/compiler/contracts.py",
+        "kind": "ClassDef",
+        "name": "CompilerContext",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/diagnostics.py",
+        "kind": "ClassDef",
+        "name": "Diagnostic",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/events.py",
+        "kind": "ClassDef",
+        "name": "ExecutionEvent",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/models.py",
+        "kind": "ClassDef",
+        "name": "CanonicalExecutionModel",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/providers.py",
+        "kind": "ClassDef",
+        "name": "AuthorityProvider",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/providers.py",
+        "kind": "ClassDef",
+        "name": "RepositoryProvider",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/providers.py",
+        "kind": "ClassDef",
+        "name": "StandardsProvider",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/providers.py",
+        "kind": "FunctionDef",
+        "name": "resolve",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/providers.py",
+        "kind": "FunctionDef",
+        "name": "resolve",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      },
+      {
+        "path": "execution/compiler/providers.py",
+        "kind": "FunctionDef",
+        "name": "resolve",
+        "classification": "UNUSED",
+        "evidence": {
+          "referenced": false,
+          "constructed": false
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "authority": "EMP-COMPILER-CERT-001",
+    "source_of_truth": "execution/compiler",
+    "declared_contract": "execution/contracts/compiler-contract.json",
+    "live_registry": "execution/registry/surfaces/SURFACE-REGISTRY.json",
+    "package_lineage_count": 22
+  },
+  "hashes": {
+    "source_bundle_sha256": "e8ebac8403d8a6af5b0822dfd3ba1d44e82139d1f4df57d0cfc11cc07b9e9dd4",
+    "declared_contract_sha256": "68e03887798ed5c2350d1ef5455050de35cf95020fe3fe4383f7f78606129d9b",
+    "live_registry_sha256": "38a229b52f229f7dd53bdc9e815a4eb8e89841decf3aa938a914608726edcd5c"
+  },
+  "fracture": null
+}

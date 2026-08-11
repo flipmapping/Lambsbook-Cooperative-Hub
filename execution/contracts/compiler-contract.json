@@ -1,0 +1,452 @@
+{
+  "authority": "EMP-001M-08",
+  "contract_type": "EXECUTION_COMPILER_CONTRACT",
+  "provider_lifecycle": [
+    {
+      "constructed": false,
+      "defined": true,
+      "imported": false,
+      "name": "AuthorityProvider",
+      "referenced": false,
+      "used": false
+    },
+    {
+      "constructed": false,
+      "defined": true,
+      "imported": false,
+      "name": "RepositoryProvider",
+      "referenced": false,
+      "used": false
+    },
+    {
+      "constructed": false,
+      "defined": true,
+      "imported": false,
+      "name": "StandardsProvider",
+      "referenced": false,
+      "used": false
+    }
+  ],
+  "repository_sha": "37da5a9b580bfc98ccb01f2443acd85b343083b1",
+  "schema_version": "1.0",
+  "source_count": 8,
+  "source_of_truth": "execution/compiler/*.py",
+  "sources": [
+    {
+      "classes": [],
+      "functions": [],
+      "path": "execution/compiler/__init__.py",
+      "sha256": "8294dd806a58b3844963ef5184b8bb88e16fed55c3bcf66f45157a49896e12e0"
+    },
+    {
+      "classes": [
+        {
+          "bases": [],
+          "fields": [],
+          "methods": [
+            {
+              "arguments": {
+                "keyword_only": [],
+                "kwarg": null,
+                "positional": [
+                  {
+                    "annotation": null,
+                    "name": "self"
+                  },
+                  {
+                    "annotation": "CompilerContext",
+                    "name": "context"
+                  }
+                ],
+                "vararg": null
+              },
+              "async": false,
+              "name": "resolve",
+              "returns": "tuple[CanonicalExecutionModel, ExecutionEvent]"
+            }
+          ],
+          "name": "ContextResolver"
+        }
+      ],
+      "functions": [],
+      "path": "execution/compiler/context_resolver.py",
+      "sha256": "ad61b35bcd9b70ff6456fba40dd8014d04108a7d803487e6e9b3597ab4b0f27b"
+    },
+    {
+      "classes": [],
+      "functions": [
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [
+              {
+                "annotation": "ast.AST | None",
+                "name": "node"
+              }
+            ],
+            "vararg": null
+          },
+          "async": false,
+          "name": "annotation",
+          "returns": "str | None"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [
+              {
+                "annotation": "ast.arg",
+                "name": "arg"
+              }
+            ],
+            "vararg": null
+          },
+          "async": false,
+          "name": "argument_data",
+          "returns": "dict[str, Any]"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [],
+            "vararg": null
+          },
+          "async": false,
+          "name": "build_manifest",
+          "returns": "dict[str, Any]"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [
+              {
+                "annotation": "ast.ClassDef",
+                "name": "node"
+              }
+            ],
+            "vararg": null
+          },
+          "async": false,
+          "name": "class_data",
+          "returns": "dict[str, Any]"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [],
+            "vararg": null
+          },
+          "async": false,
+          "name": "git_sha",
+          "returns": "str"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [],
+            "vararg": null
+          },
+          "async": false,
+          "name": "main",
+          "returns": "None"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [
+              {
+                "annotation": "ast.FunctionDef | ast.AsyncFunctionDef",
+                "name": "node"
+              }
+            ],
+            "vararg": null
+          },
+          "async": false,
+          "name": "method_data",
+          "returns": "dict[str, Any]"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [
+              {
+                "annotation": "Path",
+                "name": "path"
+              }
+            ],
+            "vararg": null
+          },
+          "async": false,
+          "name": "module_data",
+          "returns": "dict[str, Any]"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [],
+            "vararg": null
+          },
+          "async": false,
+          "name": "provider_lifecycle",
+          "returns": "list[dict[str, Any]]"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [
+              {
+                "annotation": "Path",
+                "name": "path"
+              }
+            ],
+            "vararg": null
+          },
+          "async": false,
+          "name": "sha256",
+          "returns": "str"
+        },
+        {
+          "arguments": {
+            "keyword_only": [],
+            "kwarg": null,
+            "positional": [],
+            "vararg": null
+          },
+          "async": false,
+          "name": "verify_manifest",
+          "returns": "bool"
+        }
+      ],
+      "path": "execution/compiler/contract_manifest.py",
+      "sha256": "8cc29562af5d836808d1d19bca1c38c668eed6f16b20b0f5162c3a088b1597bf"
+    },
+    {
+      "classes": [
+        {
+          "bases": [],
+          "fields": [
+            {
+              "annotation": "str",
+              "name": "execution_authority"
+            },
+            {
+              "annotation": "object",
+              "name": "implementation_context"
+            },
+            {
+              "annotation": "object",
+              "name": "repository"
+            }
+          ],
+          "methods": [],
+          "name": "CompilerContext"
+        }
+      ],
+      "functions": [],
+      "path": "execution/compiler/contracts.py",
+      "sha256": "9ac140931052985746d837565afa8cc607ef427bfe53a1189a97181bcd960cbc"
+    },
+    {
+      "classes": [
+        {
+          "bases": [],
+          "fields": [
+            {
+              "annotation": "str",
+              "name": "severity"
+            },
+            {
+              "annotation": "str",
+              "name": "message"
+            }
+          ],
+          "methods": [],
+          "name": "Diagnostic"
+        }
+      ],
+      "functions": [],
+      "path": "execution/compiler/diagnostics.py",
+      "sha256": "db52dbc29dc84757e5e627ced681b80fc63f602edf631e7b0975ab5aa1efc806"
+    },
+    {
+      "classes": [
+        {
+          "bases": [],
+          "fields": [
+            {
+              "annotation": "str",
+              "name": "event_type"
+            },
+            {
+              "annotation": "str",
+              "name": "stage"
+            },
+            {
+              "annotation": "str",
+              "name": "authority"
+            },
+            {
+              "annotation": "str",
+              "name": "timestamp"
+            },
+            {
+              "annotation": "dict[str, Any]",
+              "name": "payload"
+            },
+            {
+              "annotation": "list[str]",
+              "name": "diagnostics"
+            }
+          ],
+          "methods": [],
+          "name": "ExecutionEvent"
+        }
+      ],
+      "functions": [],
+      "path": "execution/compiler/events.py",
+      "sha256": "3ee89aab8ae2148ca02f316ac9b407d5da2eb49f247297fa1d4ffa22d73b9f91"
+    },
+    {
+      "classes": [
+        {
+          "bases": [],
+          "fields": [
+            {
+              "annotation": "dict",
+              "name": "execution_authority"
+            },
+            {
+              "annotation": "dict",
+              "name": "implementation_context"
+            },
+            {
+              "annotation": "dict",
+              "name": "repository"
+            },
+            {
+              "annotation": "list",
+              "name": "resolved_authorities"
+            },
+            {
+              "annotation": "list",
+              "name": "resolved_dependencies"
+            },
+            {
+              "annotation": "dict",
+              "name": "validation"
+            },
+            {
+              "annotation": "dict",
+              "name": "normalization"
+            },
+            {
+              "annotation": "dict | None",
+              "name": "builder_input"
+            },
+            {
+              "annotation": "dict",
+              "name": "explainability"
+            }
+          ],
+          "methods": [],
+          "name": "CanonicalExecutionModel"
+        }
+      ],
+      "functions": [],
+      "path": "execution/compiler/models.py",
+      "sha256": "7b4acf3454b696e75f17f65a0e26534103b629dfc07375ce1a6d908f7dac84fe"
+    },
+    {
+      "classes": [
+        {
+          "bases": [
+            "ABC"
+          ],
+          "fields": [],
+          "methods": [
+            {
+              "arguments": {
+                "keyword_only": [],
+                "kwarg": null,
+                "positional": [
+                  {
+                    "annotation": null,
+                    "name": "self"
+                  }
+                ],
+                "vararg": null
+              },
+              "async": false,
+              "name": "resolve",
+              "returns": null
+            }
+          ],
+          "name": "AuthorityProvider"
+        },
+        {
+          "bases": [
+            "ABC"
+          ],
+          "fields": [],
+          "methods": [
+            {
+              "arguments": {
+                "keyword_only": [],
+                "kwarg": null,
+                "positional": [
+                  {
+                    "annotation": null,
+                    "name": "self"
+                  }
+                ],
+                "vararg": null
+              },
+              "async": false,
+              "name": "resolve",
+              "returns": null
+            }
+          ],
+          "name": "RepositoryProvider"
+        },
+        {
+          "bases": [
+            "ABC"
+          ],
+          "fields": [],
+          "methods": [
+            {
+              "arguments": {
+                "keyword_only": [],
+                "kwarg": null,
+                "positional": [
+                  {
+                    "annotation": null,
+                    "name": "self"
+                  }
+                ],
+                "vararg": null
+              },
+              "async": false,
+              "name": "resolve",
+              "returns": null
+            }
+          ],
+          "name": "StandardsProvider"
+        }
+      ],
+      "functions": [],
+      "path": "execution/compiler/providers.py",
+      "sha256": "635e7b12403572305f103d3218eb7b6aa4be168fe9e1c0adbe650ae051131f36"
+    }
+  ]
+}
