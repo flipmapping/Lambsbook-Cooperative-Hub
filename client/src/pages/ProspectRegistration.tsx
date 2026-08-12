@@ -65,6 +65,7 @@ export default function ProspectRegistration() {
           phone:             form.phone,
           country:           form.country,
           programOfInterest: form.programOfInterest,
+          language,
         }),
       });
 

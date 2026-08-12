@@ -76,8 +76,16 @@ interface Stats {
 interface Prospect {
   id: string;
   full_name: string;
-  phone: string;
+  phone: string | null;
   student_number: string | null;
+  email: string | null;
+  country: string | null;
+  program_of_interest: string | null;
+  external_reference: string | null;
+  school: string | null;
+  province: string | null;
+  notes: string | null;
+  campaign_source: string | null;
   import_status: string;
 }
 
@@ -1158,17 +1166,25 @@ export default function HubAdminDashboard() {
                       <th className="text-left p-2 font-medium">Full Name</th>
                       <th className="text-left p-2 font-medium">Phone</th>
                       <th className="text-left p-2 font-medium">Student Number</th>
+                      <th className="text-left p-2 font-medium">Email</th>
+                      <th className="text-left p-2 font-medium">Country</th>
+                      <th className="text-left p-2 font-medium">Program</th>
+                      <th className="text-left p-2 font-medium">School</th>
+                      <th className="text-left p-2 font-medium">Province</th>
+                      <th className="text-left p-2 font-medium">External Reference</th>
+                      <th className="text-left p-2 font-medium">Notes</th>
+                      <th className="text-left p-2 font-medium">Campaign Source</th>
                       <th className="text-left p-2 font-medium">Import Status</th>
                     </tr>
                   </thead>
                   <tbody data-testid="prospect-list-body">
                     {prospectsLoading ? (
                       <tr>
-                        <td colSpan={5} className="p-4 text-center text-muted-foreground">Loading prospects…</td>
+                        <td colSpan={13} className="p-4 text-center text-muted-foreground">Loading prospects…</td>
                       </tr>
                     ) : filteredProspects.length === 0 ? (
                       <tr>
-                        <td colSpan={5} className="p-4 text-center text-muted-foreground">No prospects found</td>
+                        <td colSpan={13} className="p-4 text-center text-muted-foreground">No prospects found</td>
                       </tr>
                     ) : (
                       filteredProspects.map((p) => (
@@ -1181,8 +1197,16 @@ export default function HubAdminDashboard() {
                             />
                           </td>
                           <td className="p-2">{p.full_name}</td>
-                          <td className="p-2">{p.phone}</td>
+                          <td className="p-2">{p.phone ?? "—"}</td>
                           <td className="p-2">{p.student_number ?? "—"}</td>
+                          <td className="p-2">{p.email ?? "—"}</td>
+                          <td className="p-2">{p.country ?? "—"}</td>
+                          <td className="p-2">{p.program_of_interest ?? "—"}</td>
+                          <td className="p-2">{p.school ?? "—"}</td>
+                          <td className="p-2">{p.province ?? "—"}</td>
+                          <td className="p-2">{p.external_reference ?? "—"}</td>
+                          <td className="p-2">{p.notes ?? "—"}</td>
+                          <td className="p-2">{p.campaign_source ?? "—"}</td>
                           <td className="p-2">
                             <Badge variant={sentProspectIds.has(p.id) ? "default" : "outline"}>
                               {sentProspectIds.has(p.id) ? "sent" : p.import_status}

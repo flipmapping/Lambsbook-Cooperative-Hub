@@ -1,5 +1,5 @@
 import type { ProspectImportRecord, ImportResult } from "../../../shared/imports/types";
-import { createProspectCore } from "../../services/admissions";
+import { createImportedProspect } from "../../services/admissions";
 import { mapImportRecordToRegistrationPayload } from "../mappers/prospectRegistration";
 
 /**
@@ -34,7 +34,7 @@ export async function persist(
   for (const record of rows) {
     try {
       const payload = mapImportRecordToRegistrationPayload(record);
-      await createProspectCore(payload);
+      await createImportedProspect(payload);
       result.imported += 1;
       result.batch.validRows += 1;
     } catch (error) {

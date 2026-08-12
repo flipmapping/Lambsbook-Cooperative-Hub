@@ -32,6 +32,7 @@ export interface ZaloRecipient {
   id: string;
   full_name?: string | null;
   phone?: string | null;
+  student_number?: string | null;
 }
 
 export interface ZaloSendResult {
@@ -84,9 +85,6 @@ async function sendOne(
       headers: {
         'Content-Type': 'application/json',
         access_token: accessToken,
-          appsecret_proof: createHmac('sha256', appSecret)
-            .update(accessToken)
-            .digest('hex'),
       
       },
       body: JSON.stringify({
@@ -97,13 +95,19 @@ async function sendOne(
         template_data: {
           student_name: recipient.full_name ?? '',
           phone_number: normalizePhoneForZalo(recipient.phone),
-          student_id: recipient.id,
+          student_id: recipient.student_number ?? "", 
         },
         tracking_id: `zalo-test-${recipient.id}`.slice(0, 48),
       }),
     });
 
     const body = await response.json().catch(() => null);
+
+    console.error("[Zalo ZNS] API response:", {
+      httpStatus: response.status,
+      ok: response.ok,
+      body,
+    });
 
     // Zalo's ZNS API reports application-level errors as error !== 0
     // inside a 200 response, not via HTTP status.

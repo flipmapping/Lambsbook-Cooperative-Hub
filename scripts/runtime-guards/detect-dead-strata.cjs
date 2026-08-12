@@ -16,6 +16,7 @@ const EXCLUDED = [
 const targets = [];
 
 const EXCLUDED_PATH_FRAGMENTS = [
+  'archive/',
   'scripts/runtime-guards/',
   'topology-convergence/runtime-maps/'
 ];

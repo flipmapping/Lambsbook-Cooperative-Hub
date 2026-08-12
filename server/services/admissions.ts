@@ -14,6 +14,7 @@ export interface ProspectRegistrationPayload {
   externalReference?: string;
   country: string;
   programOfInterest: string;
+  language?: "en" | "vi" | "zh";
   school?: string;
   province?: string;
   notes?: string;
@@ -58,6 +59,32 @@ export async function createProspectCore(
 
 
 
+/**
+ * Import-only prospect persistence.
+ *
+ * Imported prospects are prospects, not registrations.
+ * Therefore this function creates the prospect record only and does not
+ * create a prospect journey or assign current_stage=registered.
+ */
+export async function createImportedProspect(
+  payload: ProspectRegistrationPayload,
+) {
+  return supabaseDAL.createProspect({
+    full_name:            payload.fullName,
+    student_number:       payload.studentNumber ?? null,
+    email:                payload.email,
+    phone:                payload.phone ?? null,
+    external_reference:   payload.externalReference ?? null,
+    country:              payload.country,
+    program_of_interest:  payload.programOfInterest,
+    school:               payload.school ?? null,
+    province:             payload.province ?? null,
+    notes:                payload.notes ?? null,
+    campaign_source:      payload.campaignSource ?? null,
+  });
+}
+
+
 const DEFAULT_FUNNEL_CODE = "CTBC-2026";
 
 function resolveRegistrationFunnel(): string {
@@ -72,6 +99,7 @@ export async function submitProspectRegistration(
 const email = registrationConfirmationTemplate({
     fullName: payload.fullName,
     program: payload.programOfInterest,
+    language: payload.language,
   });
 
   await sendNotification({

@@ -1,0 +1,49 @@
+{
+  "workbook": {
+    "sha256": "df1ef0cdd61027e88246c08877bd4c612307897b267683857ded518672579fb8",
+    "byteLength": 7041,
+    "rowCount": 3
+  },
+  "headers": [
+    "full_name",
+    "phone",
+    "email",
+    "country",
+    "program_of_interest",
+    "student_number"
+  ],
+  "normalizedHeaders": [
+    "full_name",
+    "phone",
+    "email",
+    "country",
+    "program_of_interest",
+    "student_number"
+  ],
+  "parsedRows": [
+    {
+      "full_name": "Bill Tam",
+      "phone": "0363192508",
+      "email": "flipmapping@gmail.com",
+      "country": "Vietnam",
+      "program_of_interest": "CTBC",
+      "student_number": "0000000000"
+    },
+    {
+      "full_name": "Hằng Nguyen",
+      "phone": "09699912 72",
+      "email": "iamgifted1210@gmail.com",
+      "country": "Vietnam",
+      "program_of_interest": "Tropicana",
+      "student_number": "1111111111"
+    },
+    {
+      "full_name": "譚錦標",
+      "phone": "0363192509",
+      "email": "",
+      "country": "Hong Kong",
+      "program_of_interest": "",
+      "student_number": ""
+    }
+  ]
+}

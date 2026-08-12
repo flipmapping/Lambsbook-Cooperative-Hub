@@ -135,7 +135,7 @@ export class SupabaseDAL {
         program_of_interest,
         phone,
         created_at,
-        prospect_journeys ( current_stage, funnels ( code ) )
+        prospect_journeys!inner ( current_stage, funnels ( code ) )
       `)
       .order('created_at', { ascending: false });
 
