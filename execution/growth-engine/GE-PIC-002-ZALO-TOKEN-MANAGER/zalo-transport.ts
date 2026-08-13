@@ -91,7 +91,7 @@ async function sendOne(
         template_data: {
           student_name: recipient.full_name ?? '',
           phone_number: normalizePhoneForZalo(recipient.phone),
-          student_id: recipient.student_number ?? "", 
+          student_id: recipient.student_number ?? "",
         },
         tracking_id: `zalo-test-${recipient.id}`.slice(0, 48),
       }),
