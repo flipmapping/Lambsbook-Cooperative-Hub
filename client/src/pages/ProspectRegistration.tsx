@@ -77,6 +77,20 @@ export default function ProspectRegistration() {
         return;
       }
 
+      const result = await response.json().catch(() => null) as {
+        accepted?: boolean;
+        status?: string;
+        message?: string;
+      } | null;
+
+      if (
+        result?.accepted !== true ||
+        result?.status !== "validated"
+      ) {
+        setSubmitError(t('pr_err_submit'));
+        return;
+      }
+
       setSubmitted(true);
     } catch {
       setSubmitError(t('pr_err_network'));
@@ -225,10 +239,21 @@ export default function ProspectRegistration() {
                 data-testid="select-program"
               >
                 <option value="" disabled>{t('pr_select_program')}</option>
-                <option value="business-administration">{t('pr_prog_business')}</option>
-                <option value="finance">{t('pr_prog_finance')}</option>
-                <option value="information-management">{t('pr_prog_im')}</option>
-                <option value="other">{t('pr_prog_other')}</option>
+                <optgroup label={t('pr_group_ctbc')}>
+                  <option value="ctbc_university_semiconductor_technology">{t('pr_prog_ctbc_semiconductor')}</option>
+                  <option value="ctbc_university_mechanical_engineering">{t('pr_prog_ctbc_mechanical')}</option>
+                  <option value="ctbc_university_refrigeration_air_conditioning_energy">{t('pr_prog_ctbc_refrigeration')}</option>
+                  <option value="ctbc_university_restaurant_management">{t('pr_prog_ctbc_restaurant')}</option>
+                  <option value="ctbc_university_culinary_arts">{t('pr_prog_ctbc_culinary')}</option>
+                  <option value="ctbc_university_health_care">{t('pr_prog_ctbc_healthcare')}</option>
+                  <option value="ctbc_university_other">{t('pr_prog_ctbc_other')}</option>
+                </optgroup>
+                <optgroup label={t('pr_group_tropicana')}>
+                  <option value="tropicana_academy_culinary_arts">{t('pr_prog_trop_culinary')}</option>
+                  <option value="tropicana_academy_hospitality">{t('pr_prog_trop_hospitality')}</option>
+                  <option value="tropicana_academy_caregiving">{t('pr_prog_trop_caregiving')}</option>
+                  <option value="tropicana_academy_other">{t('pr_prog_trop_other')}</option>
+                </optgroup>
               </select>
             </div>
 

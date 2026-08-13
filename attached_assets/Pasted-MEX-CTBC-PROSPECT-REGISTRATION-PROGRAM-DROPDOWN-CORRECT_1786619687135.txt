@@ -1,0 +1,231 @@
+MEX/CTBC-PROSPECT-REGISTRATION — PROGRAM DROPDOWN CORRECTION
+
+AUTHORITY
+CTBC Prospect Registration UI
+
+OBJECTIVE
+Correct the program-of-interest dropdown on:
+
+/hub/prospect-registration
+
+The current options are incorrect:
+- Business Management
+- Finance
+- Information Management
+- Other
+
+Replace them with the actual programs currently offered by CTBC University and Tropicana Academy.
+
+IMPORTANT
+This is a bounded UI/content correction.
+Do not redesign the page.
+Do not change the registration API.
+Do not change the database schema.
+Do not change prospect submission behavior.
+Do not modify unrelated fields.
+Do not create a new language system.
+
+============================================================
+CANONICAL PROGRAM OPTIONS
+============================================================
+
+CTBC University
+
+1. Semiconductor Technology
+2. Mechanical Engineering
+3. Refrigeration, Air Conditioning & Energy Technology
+4. Restaurant Management
+5. Culinary Arts
+6. Health Care
+7. Other
+
+Tropicana Academy
+
+8. Culinary arts
+9. Hospitality
+10. Caregiving
+11. Other
+
+The dropdown must preserve the distinction between the two institutions.
+
+Recommended display structure:
+
+CTBC University
+  Semiconductor Technology
+  Mechanical Engineering
+  Refrigeration, Air Conditioning & Energy Technology
+  Restaurant Management
+  Culinary Arts
+  Health Care
+  Other
+
+Tropicana Academy
+  Culinary arts
+  Hospitality
+  Caregiving
+  Other
+
+If the existing UI supports grouped <optgroup> options, use that mechanism.
+Otherwise use the smallest existing UI pattern that clearly preserves the
+institution grouping.
+
+============================================================
+LANGUAGE REQUIREMENT
+============================================================
+
+The page's DEFAULT language is ENGLISH.
+
+When the visitor selects:
+
+English → display English program labels.
+Vietnamese → display Vietnamese program labels.
+Chinese → display Chinese program labels.
+
+Do NOT change the default language.
+
+Use the page's EXISTING language-selection/state mechanism.
+
+Do NOT introduce a second translation mechanism.
+
+Do NOT hard-code the currently selected language independently of the
+existing page language state.
+
+============================================================
+IMPORTANT DATA CONTRACT
+============================================================
+
+Do not use translated labels as the canonical stored value if the existing
+registration model supports stable program identifiers.
+
+Prefer stable internal values such as:
+
+ctbc_university_semiconductor_technology
+ctbc_university_mechanical_engineering
+ctbc_university_refrigeration_air_conditioning_energy
+ctbc_university_restaurant_management
+ctbc_university_culinary_arts
+ctbc_university_health_care
+ctbc_university_other
+
+tropicana_academy_culinary_arts
+tropicana_academy_hospitality
+tropicana_academy_caregiving
+tropicana_academy_other
+
+ONLY introduce these identifiers if the existing implementation does not
+already have an established value contract.
+
+If an existing program value contract already exists, preserve it and change
+only the displayed choices/labels.
+
+Do not silently change the backend contract.
+
+============================================================
+EXECUTION DISCIPLINE
+============================================================
+
+ONE ATOMIC CHANGE.
+
+First inspect ONLY the prospect-registration page/component and its existing
+language/program-option definition.
+
+Determine:
+
+1. Exact source file for the dropdown.
+2. Exact existing program-option structure.
+3. Existing language/i18n mechanism used by this page.
+4. Whether the submitted value is separate from the displayed label.
+
+Then make the smallest possible mutation.
+
+Do NOT perform broad repository discovery.
+
+Do NOT inspect unrelated prospect, admissions, GE, Organization Studio,
+Community, Zalo, or backend surfaces unless the dropdown's existing contract
+requires it.
+
+============================================================
+VERIFICATION
+============================================================
+
+After the mutation:
+
+1. Verify the incorrect options no longer exist on this page.
+2. Verify all 11 correct choices exist.
+3. Verify CTBC University and Tropicana Academy remain distinguishable.
+4. Verify English is the default.
+5. Verify Vietnamese selection changes the labels to Vietnamese.
+6. Verify Chinese selection changes the labels to Chinese.
+7. Verify the selected value still reaches the existing registration
+   submission contract.
+8. Run the smallest relevant typecheck/build/test available.
+
+Do not send a real prospect registration.
+
+Do not mutate the database.
+
+Do not modify API contracts.
+
+============================================================
+RUNTIME PROOF
+============================================================
+
+The final verification must be founder-visible in the browser:
+
+/hub/prospect-registration
+
+Confirm:
+
+ENGLISH:
+CTBC University
+  Semiconductor Technology
+  Mechanical Engineering
+  Refrigeration, Air Conditioning & Energy Technology
+  Restaurant Management
+  Culinary Arts
+  Health Care
+  Other
+
+Tropicana Academy
+  Culinary arts
+  Hospitality
+  Caregiving
+  Other
+
+Then switch the page language to Vietnamese and confirm the same 11
+programs are displayed in Vietnamese.
+
+Then switch to Chinese and confirm the same 11 programs are displayed
+in Chinese.
+
+The program selection must remain functional.
+
+============================================================
+STOP CONDITION
+============================================================
+
+Return:
+
+STATUS: PASS or BLOCKED
+
+SOURCE FILE:
+<exact file>
+
+LANGUAGE MECHANISM:
+<existing mechanism>
+
+PROGRAM VALUE CONTRACT:
+<existing or newly corrected contract>
+
+MUTATION:
+<exactly what changed>
+
+VERIFICATION:
+<typecheck/build/test result>
+
+RUNTIME:
+PASS / BLOCKED
+
+STOP.
+
+Do not continue into unrelated improvements.

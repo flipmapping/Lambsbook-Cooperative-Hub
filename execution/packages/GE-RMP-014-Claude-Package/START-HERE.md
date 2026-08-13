@@ -6,7 +6,7 @@ GE-RMP-014
 
 Repository
 
-https://github.com/flipmapping/Lambsbook-Cooperative-Hub
+Current canonical Replit repository root
 
 Authority Stream
 
@@ -14,7 +14,7 @@ Authority Stream
 
 Production Surface
 
-server/services/notifications.ts
+server/services/zalo-transport.ts
 
 --------------------------------------------------
 
@@ -30,7 +30,7 @@ Execution SHALL synchronize using the governance artifacts contained within this
 
 Package Generated
 
-2026-07-24 00:25 UTC
+2026-08-13 02:35 UTC
 
 --------------------------------------------------
 

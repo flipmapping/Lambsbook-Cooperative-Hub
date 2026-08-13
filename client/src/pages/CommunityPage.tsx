@@ -17,7 +17,20 @@ const CONTRIBUTIONS = [
   { id: 'c2', name: 'Community fundraiser', detail: 'Supported this quarter\'s program costs' },
 ];
 
-export default function CommunityPage() {
+export interface CommunityInvitationContext {
+  inviter?: string;
+  targetName?: string;
+  targetPurpose?: string;
+  message?: string;
+}
+
+interface CommunityPageProps {
+  invitation?: CommunityInvitationContext;
+}
+
+export default function CommunityPage({
+  invitation,
+}: CommunityPageProps) {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
 
@@ -31,10 +44,23 @@ export default function CommunityPage() {
     <div className="min-h-screen bg-background">
       <main className="mx-auto max-w-4xl px-6 py-10">
         <header className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight">CTBC Community</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">
+            {invitation?.targetName ?? "CTBC Community"}
+          </h1>
           <p className="mt-1 text-muted-foreground">
-            The people and story behind the cooperative.
+            {invitation?.targetPurpose ??
+              "The people and story behind the cooperative."}
           </p>
+          {invitation?.inviter && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              Invited by {invitation.inviter}
+            </p>
+          )}
+          {invitation?.message && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              {invitation.message}
+            </p>
+          )}
         </header>
 
         <section id="story" className="mb-10">
