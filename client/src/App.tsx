@@ -164,6 +164,7 @@ function Router() {
         path="/dashboard/invitations/:invitationId"
         component={InvitationAcceptancePage}
       />
+      <Route path="/invitation-link/:token" component={InvitationAcceptancePage} />
       <Route path="/hub/accept-invitation" component={HubDashboard} />
       <Route path="/hub/member" component={HubDashboard} />
 

@@ -1,12 +1,26 @@
 import { useParams } from "wouter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function InvitationAcceptancePage() {
   const params = useParams();
+const [invitationId, setInvitationId] = useState<string | null>(params.invitationId ?? null);
   const [accepting, setAccepting] = useState(false);
 
-  const acceptInvitation = async () => {
+  useEffect(() => {
+  if (invitationId || !params.token) return;
+
+  apiRequest("POST", "/api/member/onboarding/materialize-invitation", {
+    inviteToken: params.token,
+  }).then((data: any) => {
+    if (data?.invitationId) setInvitationId(data.invitationId);
+  }).catch((err) => {
+    console.error(err);
+    console.error("INVITATION_TOKEN_MATERIALIZATION_FAILED");
+  });
+}, [invitationId, params.token]);
+
+const acceptInvitation = async () => {
     if (accepting) return;
 
     try {
@@ -16,7 +30,7 @@ export default function InvitationAcceptancePage() {
         "POST",
         "/api/member/accept-invitation",
         {
-          invitationId: params.invitationId,
+          invitationId: invitationId,
         }
       );
 

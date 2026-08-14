@@ -144,6 +144,100 @@ function NotificationDeliveryPanel({
   );
 }
 
+interface NotificationTemplate {
+  templateKey: string;
+  version: number;
+  status: string;
+  enSubject: string;
+  viSubject: string | null;
+  zhSubject: string | null;
+  approvedVariables: string[];
+}
+
+function NotificationTemplatesPanel() {
+  const { data: templates = [], isLoading, isError } =
+    useQuery<NotificationTemplate[]>({
+      queryKey: ["/api/admin/notification-templates"],
+    });
+
+  if (isLoading) {
+    return (
+      <Card>
+        <CardContent className="p-6 text-sm text-muted-foreground">
+          Loading notification templates…
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Card>
+        <CardContent className="p-6 text-sm text-destructive">
+          Failed to load notification templates.
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card data-testid="card-notification-templates">
+      <CardHeader>
+        <CardTitle>Notification Templates</CardTitle>
+        <CardDescription>
+          Registered notification templates and their approved variables.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        {templates.length === 0 ? (
+          <p className="text-sm text-muted-foreground">
+            No notification templates found.
+          </p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left p-2 font-medium">Template</th>
+                  <th className="text-left p-2 font-medium">Version</th>
+                  <th className="text-left p-2 font-medium">Status</th>
+                  <th className="text-left p-2 font-medium">English Subject</th>
+                  <th className="text-left p-2 font-medium">Vietnamese Subject</th>
+                  <th className="text-left p-2 font-medium">Chinese Subject</th>
+                  <th className="text-left p-2 font-medium">Approved Variables</th>
+                </tr>
+              </thead>
+              <tbody>
+                {templates.map((template) => (
+                  <tr
+                    key={`${template.templateKey}-${template.version}`}
+                    className="border-b last:border-0"
+                    data-testid={`row-notification-template-${template.templateKey}`}
+                  >
+                    <td className="p-2 font-medium">{template.templateKey}</td>
+                    <td className="p-2">{template.version}</td>
+                    <td className="p-2">
+                      <Badge variant="outline">{template.status}</Badge>
+                    </td>
+                    <td className="p-2">{template.enSubject}</td>
+                    <td className="p-2">{template.viSubject ?? "—"}</td>
+                    <td className="p-2">{template.zhSubject ?? "—"}</td>
+                    <td className="p-2">
+                      {template.approvedVariables.length > 0
+                        ? template.approvedVariables.join(", ")
+                        : "—"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function HubAdminDashboard() {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("overview");
@@ -499,7 +593,12 @@ export default function HubAdminDashboard() {
           <TabsTrigger value="enrollment" data-testid="tab-enrollment">Enrollment</TabsTrigger>
           <TabsTrigger value="admissions" data-testid="tab-admissions">Admissions</TabsTrigger>
           <TabsTrigger value="prospects" data-testid="tab-prospects">Prospects</TabsTrigger>
+          <TabsTrigger value="notification-templates" data-testid="tab-notification-templates">Notification Templates</TabsTrigger>
         </TabsList>
+
+        <TabsContent value="notification-templates" className="space-y-4">
+          <NotificationTemplatesPanel />
+        </TabsContent>
 
         <TabsContent value="overview" className="space-y-6">
           {statsLoading ? (

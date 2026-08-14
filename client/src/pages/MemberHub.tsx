@@ -237,9 +237,16 @@ function saveLocalProfile(userId: string, data: PersistedProfile): void {
   }
 }
 
+async function getCanonicalAuthToken(): Promise<string> {
+  const { data, error } = await createClient().auth.getSession();
+  if (error || !data.session?.access_token) {
+    throw new Error('Not authenticated');
+  }
+  return data.session.access_token;
+}
+
 async function fetchWithAuth(url: string) {
-  const token = getAuthToken();
-  if (!token) throw new Error('Not authenticated');
+  const token = await getCanonicalAuthToken();
 
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` },
@@ -253,8 +260,7 @@ async function fetchWithAuth(url: string) {
 }
 
 async function postWithAuth(url: string, data?: unknown) {
-  const token = getAuthToken();
-  if (!token) throw new Error('Not authenticated');
+  const token = await getCanonicalAuthToken();
 
   const res = await fetch(url, {
     method: 'POST',
