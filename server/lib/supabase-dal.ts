@@ -1448,6 +1448,28 @@ export class SupabaseDAL {
     return data || [];
   }
 
+  async getGatewayInvitationsByInviter(
+    inviterUserId: string
+  ): Promise<GatewayInvitation[]> {
+    this.ensureConfigured();
+
+    const supabase = getSupabaseAdmin();
+
+    const { data, error } = await supabase
+      .from('gateway_invitations')
+      .select('*')
+      .eq('inviter_user_id', inviterUserId)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      throw new Error(
+        `Failed to get gateway invitations: ${error.message}`
+      );
+    }
+
+    return data || [];
+  }
+
   async createGatewayInvitation(
     data: GatewayInvitationInsert
   ): Promise<GatewayInvitation> {

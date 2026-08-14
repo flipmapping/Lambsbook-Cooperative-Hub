@@ -86,7 +86,14 @@ app.use((req, res, next) => {
 });
 
 async function bootstrap() {
-registerRoutes(httpServer, app);
+  if (process.env.NODE_ENV === "production") {
+    const productionIndex = new URL("../dist/public/index.html", import.meta.url);
+    app.get("/", (_req, res) => {
+      res.sendFile(productionIndex.pathname);
+    });
+  }
+
+  registerRoutes(httpServer, app);
 
 app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;

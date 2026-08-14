@@ -168,6 +168,36 @@ const user = authReq.user;
 /**
  * POST /api/member/invitations
  */
+router.get("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    const user = authReq.user;
+
+    if (!user?.id) {
+      return res.status(401).json({
+        error: {
+          code: "UNAUTHENTICATED",
+          message: "Authentication required",
+        },
+      });
+    }
+
+    const invitations =
+      await supabaseDAL.getGatewayInvitationsByInviter(user.id);
+
+    return res.json({ invitations });
+  } catch (err) {
+    console.error("GET_INVITATIONS_RUNTIME", err);
+
+    return res.status(500).json({
+      error: {
+        code: "SERVER_ERROR",
+        message: "Server error",
+      },
+    });
+  }
+});
+
 router.post("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {
   try {
     const authReq = req as AuthenticatedRequest;

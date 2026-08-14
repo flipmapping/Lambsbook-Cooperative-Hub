@@ -11,6 +11,7 @@ import {
   type SiteContent, type InsertSiteContent, siteContent,
   type IntegrationConfig, type InsertIntegrationConfig, integrationConfigs,
   type ActivityLog, type InsertActivityLog, activityLogs,
+  type NotificationTemplate, notificationTemplates,
 } from "@shared/schema";
 import { notificationPreferences, InsertNotificationPreferences } from "@shared/schema";
 import { db } from "./db";
@@ -49,6 +50,7 @@ export interface IStorage {
   updateFollowUp(id: string, followUp: Partial<InsertFollowUp>): Promise<FollowUp | undefined>;
 
   getNotifications(recipientId?: string): Promise<Notification[]>;
+  getNotificationTemplates(): Promise<NotificationTemplate[]>;
   createNotification(notification: InsertNotification): Promise<Notification>;
   updateNotification(id: string, notification: Partial<InsertNotification>): Promise<Notification | undefined>;
 
@@ -251,6 +253,12 @@ export class DatabaseStorage implements IStorage {
       return db.select().from(notifications).where(eq(notifications.recipientId, recipientId)).orderBy(desc(notifications.createdAt));
     }
     return db.select().from(notifications).orderBy(desc(notifications.createdAt));
+  }
+
+  async getNotificationTemplates(): Promise<NotificationTemplate[]> {
+    return db.select().from(notificationTemplates).orderBy(
+      desc(notificationTemplates.updatedAt),
+    );
   }
 
   async createNotification(notification: InsertNotification): Promise<Notification> {

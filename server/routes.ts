@@ -650,6 +650,16 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/admin/notification-templates", async (_req: Request, res: Response) => {
+    try {
+      const templates = await storage.getNotificationTemplates();
+      res.json(templates);
+    } catch (error) {
+      console.error("[Notification Templates] Failed to fetch templates:", error);
+      res.status(500).json({ error: "Failed to fetch notification templates" });
+    }
+  });
+
   app.get("/api/notifications", async (req: Request, res: Response) => {
     try {
       const { recipientId } = req.query;
