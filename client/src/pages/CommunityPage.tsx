@@ -26,16 +26,21 @@ export interface CommunityInvitationContext {
 
 interface CommunityPageProps {
   invitation?: CommunityInvitationContext;
+  onRecipientAction?: (
+    outcome: "join" | "express_interest" | "declined",
+  ) => void;
 }
 
 export default function CommunityPage({
   invitation,
+  onRecipientAction,
 }: CommunityPageProps) {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
 
   const handleExpressInterest = (e: React.FormEvent) => {
     e.preventDefault();
+    onRecipientAction?.("express_interest");
     // Wire this up to the real intake endpoint once available.
     setSubmitted(true);
   };

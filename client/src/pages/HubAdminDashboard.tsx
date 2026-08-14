@@ -89,6 +89,61 @@ interface Prospect {
   import_status: string;
 }
 
+function NotificationDeliveryPanel({
+  recipientId,
+  recipientName,
+}: {
+  recipientId: string;
+  recipientName: string;
+}) {
+  const { data, isLoading, isError } = useQuery<unknown[]>({
+    queryKey: ["/api/notifications", recipientId],
+    queryFn: async () => {
+      const response = await fetch(
+        `/api/notifications?recipientId=${encodeURIComponent(recipientId)}`,
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch notification history");
+      }
+      return response.json();
+    },
+  });
+
+  if (isLoading) {
+    return <p className="text-sm text-muted-foreground">Loading notification history…</p>;
+  }
+
+  if (isError) {
+    return <p className="text-sm text-destructive">Failed to load notification history.</p>;
+  }
+
+  const notifications = Array.isArray(data) ? data : [];
+
+  if (notifications.length === 0) {
+    return (
+      <p className="text-sm text-muted-foreground">
+        No notification records found for {recipientName}.
+      </p>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {notifications.map((notification, index) => (
+        <div
+          key={index}
+          className="rounded-md border p-3 text-sm"
+          data-testid={`notification-delivery-${index}`}
+        >
+          <pre className="whitespace-pre-wrap break-words text-xs">
+            {JSON.stringify(notification, null, 2)}
+          </pre>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function HubAdminDashboard() {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("overview");
@@ -1045,6 +1100,170 @@ export default function HubAdminDashboard() {
                   </Button>
                 </div>
               )}
+            </CardContent>
+          </Card>
+
+                    <Card data-testid="card-notification-delivery">
+            <CardHeader>
+              <CardTitle>Notification Delivery</CardTitle>
+              <CardDescription>
+                Delivery results are read from the existing notification record.
+                Select one prospect to inspect its notification history.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {selectedProspectIds.size === 1 ? (
+                (() => {
+                  const prospectId = Array.from(selectedProspectIds)[0];
+                  const prospect = prospects.find((p) => p.id === prospectId);
+                  return (
+                    <NotificationDeliveryPanel
+                      recipientId={prospectId}
+                      recipientName={prospect?.full_name ?? prospectId}
+                    />
+                  );
+                })()
+              ) : (
+                <p className="text-sm text-muted-foreground">
+                  Select exactly one prospect to inspect notification delivery.
+                </p>
+              )}
+            </CardContent>
+          </Card>
+          <Card data-testid="card-notification-trigger-matrix">
+            <CardHeader>
+              <CardTitle>Resend Notification Trigger Matrix</CardTitle>
+              <CardDescription>
+                Event-to-notification contract. LIVE indicates a runtime-certified trigger;
+                PLANNED indicates a defined future capability not yet wired.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="px-3 py-2 text-left">Notification</th>
+                      <th className="px-3 py-2 text-left">Trigger Event</th>
+                      <th className="px-3 py-2 text-left">Audience</th>
+                      <th className="px-3 py-2 text-left">Eligibility</th>
+                      <th className="px-3 py-2 text-left">Channel</th>
+                      <th className="px-3 py-2 text-left">Priority</th>
+                      <th className="px-3 py-2 text-left">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Registration confirmation</td>
+                      <td className="px-3 py-2 font-mono text-xs">prospect.registration.succeeded</td>
+                      <td className="px-3 py-2">Prospect</td>
+                      <td className="px-3 py-2">Registration succeeds with email</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">🟢 LIVE</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Journey selected</td>
+                      <td className="px-3 py-2 font-mono text-xs">journey.selected</td>
+                      <td className="px-3 py-2">Prospect</td>
+                      <td className="px-3 py-2">Prospect selects a journey</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Program opens</td>
+                      <td className="px-3 py-2 font-mono text-xs">program.opened</td>
+                      <td className="px-3 py-2">Prospect/Member</td>
+                      <td className="px-3 py-2">Interested or enrolled in matching program</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Event registration</td>
+                      <td className="px-3 py-2 font-mono text-xs">event.registration.succeeded</td>
+                      <td className="px-3 py-2">Prospect/Member</td>
+                      <td className="px-3 py-2">Registers for selected event</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Event reminder</td>
+                      <td className="px-3 py-2 font-mono text-xs">event.reminder.due</td>
+                      <td className="px-3 py-2">Prospect/Member</td>
+                      <td className="px-3 py-2">Registered participant before event</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Application submitted</td>
+                      <td className="px-3 py-2 font-mono text-xs">application.submitted</td>
+                      <td className="px-3 py-2">Prospect</td>
+                      <td className="px-3 py-2">Application submission succeeds</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Application action required</td>
+                      <td className="px-3 py-2 font-mono text-xs">application.action_required</td>
+                      <td className="px-3 py-2">Prospect</td>
+                      <td className="px-3 py-2">Required application action is outstanding</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Application status changed</td>
+                      <td className="px-3 py-2 font-mono text-xs">application.status.changed</td>
+                      <td className="px-3 py-2">Prospect</td>
+                      <td className="px-3 py-2">Application enters a new status</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Admission decision</td>
+                      <td className="px-3 py-2 font-mono text-xs">admission.decision.published</td>
+                      <td className="px-3 py-2">Prospect</td>
+                      <td className="px-3 py-2">Admission decision becomes available</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P0</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Community invitation</td>
+                      <td className="px-3 py-2 font-mono text-xs">community.invitation.created</td>
+                      <td className="px-3 py-2">Prospect/Member</td>
+                      <td className="px-3 py-2">Recipient is invited to a community</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P1</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-3 py-2">Community event</td>
+                      <td className="px-3 py-2 font-mono text-xs">community.event.published</td>
+                      <td className="px-3 py-2">Prospect/Member</td>
+                      <td className="px-3 py-2">Community participant matches event audience</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P1</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                    <tr>
+                      <td className="px-3 py-2">Opportunity match</td>
+                      <td className="px-3 py-2 font-mono text-xs">opportunity.matched</td>
+                      <td className="px-3 py-2">Prospect/Member</td>
+                      <td className="px-3 py-2">Interest, journey, or community profile matches opportunity</td>
+                      <td className="px-3 py-2">Resend</td>
+                      <td className="px-3 py-2">P1</td>
+                      <td className="px-3 py-2">Planned</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </CardContent>
           </Card>
 

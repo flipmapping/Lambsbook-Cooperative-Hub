@@ -123,6 +123,35 @@ export const insertFollowUpSchema = createInsertSchema(followUps).omit({ id: tru
 export type InsertFollowUp = z.infer<typeof insertFollowUpSchema>;
 export type FollowUp = typeof followUps.$inferSelect;
 
+export const notificationTemplates = pgTable("notification_templates", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  templateKey: text("template_key").notNull(),
+  version: integer("version").notNull().default(1),
+  status: text("status").notNull().default("draft"),
+  enSubject: text("en_subject").notNull(),
+  enMessage: text("en_message").notNull(),
+  viSubject: text("vi_subject"),
+  viMessage: text("vi_message"),
+  zhSubject: text("zh_subject"),
+  zhMessage: text("zh_message"),
+  approvedVariables: jsonb("approved_variables")
+    .$type<string[]>()
+    .notNull()
+    .default(sql`'[]'::jsonb`),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+  updatedBy: text("updated_by"),
+});
+
+export const insertNotificationTemplateSchema =
+  createInsertSchema(notificationTemplates).omit({ id: true, createdAt: true, updatedAt: true });
+
+export type InsertNotificationTemplate =
+  z.infer<typeof insertNotificationTemplateSchema>;
+
+export type NotificationTemplate =
+  typeof notificationTemplates.$inferSelect;
+
 export const notifications = pgTable("notifications", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   recipientId: text("recipient_id").notNull(),

@@ -32,6 +32,7 @@ import {
 } from "./services/supabase-auth";
 import adminRoutes from "./routes/admin";
 import memberRoutes from "./routes/member";
+import nonMemberInvitationRoutes from "./routes/non-member-invitation";
 import financialRoutes from "./routes/financialRoutes";
 import governanceRoute from "./routes/governanceRoute";
 import devTestAuthRoutes from "./routes/devTestAuth";
@@ -57,6 +58,7 @@ export async function registerRoutes(
   app.use(detectPlatformAdmin);
   app.use("/api/admin", adminRoutes);
   app.use("/api/member", memberRoutes);
+  app.use("/api/non-member-invitations", nonMemberInvitationRoutes);
   app.use("/api/notification-preferences", notificationPreferencesRoute);
   app.use(financialRoutes);
   app.use(governanceRoute);

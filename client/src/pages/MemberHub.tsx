@@ -527,9 +527,8 @@ export default function MemberHub() {
 
       queryClient.invalidateQueries({ queryKey: ["/api/member/invitations"] });
 
-      // APP-MEX-001B: Close modal so the newly created invitation is
-      // immediately visible in the Sent Invitations list below.
-      setInviteModalOpen(false);
+      // Keep the dialog open so the newly created invitation link
+      // remains immediately visible and shareable.
       setInvitedEmail("");
 
       toast({
