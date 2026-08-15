@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "authority": "RES-ARCH-002-R2",
+  "artifact": "Known-Good Checkpoint Registry",
+  "status": "ACTIVE",
+  "append_only": true,
+  "purpose": "Cross-stream recovery and release traceability",
+  "required_evidence": [
+    "commit_sha",
+    "branch",
+    "remote_sha",
+    "build_verification",
+    "runtime_verification",
+    "founder_verification",
+    "deployment_sha",
+    "verification_timestamp"
+  ],
+  "checkpoints": []
+}

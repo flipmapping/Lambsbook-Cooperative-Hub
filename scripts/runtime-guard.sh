@@ -45,7 +45,7 @@ fi
 
 echo
 echo "3) Start backend..."
-NODE_ENV=development npx tsx server/index.ts &
+PORT=5000 NODE_ENV=development npx tsx server/index.ts &
 SERVER_PID=$!
 
 echo
