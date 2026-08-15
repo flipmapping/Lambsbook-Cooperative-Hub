@@ -364,7 +364,24 @@ export default function MemberHub() {
 
   const { data: profile, isLoading: profileLoading } = useQuery({
     queryKey: ["/api/member/me"],
-    queryFn: () => fetchWithAuth("/api/member/me"),
+    queryFn: async () => {
+      const data = await fetchWithAuth("/api/member/me");
+      return {
+        ...data,
+        user: {
+          id: data.user_id,
+          email: data.email,
+        },
+        member: {
+          id: data.id,
+          membership_status: data.membership_status,
+          member_type: data.member_type,
+          activity_status: data.activity_status,
+          join_date: data.join_date,
+          user_id: data.user_id,
+        },
+      };
+    },
     enabled: isAuthenticated,
   });
 
