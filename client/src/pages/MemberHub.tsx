@@ -362,7 +362,7 @@ export default function MemberHub() {
     setIsAuthenticated(!!token);
   }, []);
 
-  const { data: profile, isLoading: profileLoading } = useQuery({
+  const { data: profile, isLoading: profileLoading, isError: profileError } = useQuery({
     queryKey: ["/api/member/me"],
     queryFn: async () => {
       const data = await fetchWithAuth("/api/member/me");
@@ -695,6 +695,7 @@ export default function MemberHub() {
     userId: profile?.user_id ?? null,
     role: profile?.role ?? null,
     isSuperAdmin: profile?.is_super_admin ?? null,
+    profileError: profileError ? String(profileError) : null,
     profile,
   });
 
