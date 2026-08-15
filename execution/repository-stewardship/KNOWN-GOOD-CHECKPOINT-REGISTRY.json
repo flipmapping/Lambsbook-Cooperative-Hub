@@ -15,5 +15,17 @@
     "deployment_sha",
     "verification_timestamp"
   ],
-  "checkpoints": []
+  "checkpoints": [
+    {
+      "checkpoint_id": "CHK-RES-ARCH-002-R2-0001",
+      "commit_sha": "fa4f04ebfc45b0e548997b0878e31d3c2c248403",
+      "branch": "app-rec-006-runtime-identity",
+      "remote_sha": "fa4f04ebfc45b0e548997b0878e31d3c2c248403",
+      "build_verification": "PENDING",
+      "runtime_verification": "VERIFIED",
+      "founder_verification": "PENDING",
+      "deployment_sha": "PENDING",
+      "verification_timestamp": "2026-08-15T16:52:10.126278+00:00"
+    }
+  ]
 }
