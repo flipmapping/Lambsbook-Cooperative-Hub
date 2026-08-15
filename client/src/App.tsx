@@ -211,26 +211,6 @@ console.log("[TRACE-P1] App.tsx: component rendered");
 
   useRef(null);
 
-  //
-  // SUPABASE_SESSION_BRIDGE
-  //
-  try {
-    const raw = localStorage.getItem('supabase.auth.token');
-
-    if (raw) {
-      const parsed = JSON.parse(raw);
-
-      if (parsed?.access_token && parsed?.refresh_token) {
-        const supabase = createClient();
-
-        supabase.auth.setSession({
-          access_token: parsed.access_token,
-          refresh_token: parsed.refresh_token,
-        }).catch(() => {});
-      }
-    }
-  } catch {}
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

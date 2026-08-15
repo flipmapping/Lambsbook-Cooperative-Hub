@@ -18,6 +18,7 @@ import {
   Lock, Shield, Camera, Plus, Trash2, QrCode, Phone,
   Compass
 } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 import { useMemberPurpose }  from "@/hooks/useMemberPurpose";
 import { PurposeCard }       from "@/components/member/PurposeCard";
 import { IdentityCard }      from "@/components/member/IdentityCard";
@@ -180,17 +181,6 @@ interface ActivityData {
   inactivity_threshold: string;
 }
 
-function getAuthToken(): string | null {
-  try {
-    const tokenData = localStorage.getItem("supabase.auth.token");
-    if (!tokenData) return null;
-    const parsed = JSON.parse(tokenData);
-    return parsed.access_token || null;
-  } catch {
-    return null;
-  }
-}
-
 // ============================================================================
 // APP-MEX-001D — Backend-backed Profile Preference Persistence
 // ----------------------------------------------------------------------------
@@ -279,8 +269,7 @@ async function postWithAuth(url: string, data?: unknown) {
 }
 
 async function putWithAuth(url: string, data?: unknown) {
-  const token = getAuthToken();
-  if (!token) throw new Error('Not authenticated');
+  const token = await getCanonicalAuthToken();
 
   const res = await fetch(url, {
     method: 'PUT',
@@ -299,8 +288,7 @@ async function putWithAuth(url: string, data?: unknown) {
 }
 
 async function deleteWithAuth(url: string) {
-  const token = getAuthToken();
-  if (!token) throw new Error('Not authenticated');
+  const token = await getCanonicalAuthToken();
 
   const res = await fetch(url, {
     method: 'DELETE',
@@ -358,8 +346,9 @@ export default function MemberHub() {
   const [deletingInvitationId, setDeletingInvitationId] = useState<string | null>(null);
 
   useEffect(() => {
-    const token = getAuthToken();
-    setIsAuthenticated(!!token);
+    createClient().auth.getSession().then(({ data }) => {
+      setIsAuthenticated(!!data.session?.access_token);
+    });
   }, []);
 
   const { data: profile, isLoading: profileLoading, isError: profileError } = useQuery({
@@ -476,13 +465,10 @@ export default function MemberHub() {
     });
   }, [profile, profileHydrated, profileVisibility, contactMethods, avatarDataUrl]);
 
-  const isDashboardLoading =
-    profileLoading ||
-    activityLoading ||
-    earningsLoading ||
-    invitationLoading ||
-    relationshipsLoading ||
-    false;
+  // APP-REC-008: Dashboard readiness is identity-first.
+  // Canonical identity (/api/member/me) is the only blocking dependency.
+  // Secondary modules must never prevent dashboard entry.
+  const isDashboardLoading = profileLoading;
 
   // APP-MEX-002A: Living Member Digital Twin — Purpose & Identity projections
   const { purpose, identity } = useMemberPurpose({

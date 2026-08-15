@@ -14,6 +14,7 @@ import {
   type ContinuationContext,
 } from "@/lib/auth/PostAuthenticationContinuation";
 import { resolvePostAuthenticationDestination } from "@/lib/auth/NavigationConsumptionAuthority";
+import { createClient } from "@/lib/supabase/client";
 
 
 /**
@@ -98,13 +99,14 @@ export default function HubAuthCallback() {
           return;
         }
 
-        const tokenData = {
+        const { error: sessionError } = await createClient().auth.setSession({
           access_token: accessToken,
-          refresh_token: refreshToken,
-          token_type: "bearer",
-        };
+          refresh_token: refreshToken ?? "",
+        });
 
-        localStorage.setItem("supabase.auth.token", JSON.stringify(tokenData));
+        if (sessionError) {
+          throw sessionError;
+        }
 
         if (inviteToken) {
           try {

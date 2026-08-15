@@ -1,4 +1,5 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import { createClient } from "./supabase/client";
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -7,17 +8,9 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
-function getAuthToken(): string | null {
-  try {
-    const tokenData = localStorage.getItem("supabase.auth.token");
-    if (tokenData) {
-      const parsed = JSON.parse(tokenData);
-      return parsed.access_token || null;
-    }
-  } catch (e) {
-    console.warn("Failed to parse auth token:", e);
-  }
-  return null;
+async function getCanonicalAuthToken(): Promise<string | null> {
+  const { data } = await createClient().auth.getSession();
+  return data.session?.access_token ?? null;
 }
 
 export async function apiRequest(
@@ -29,7 +22,7 @@ export async function apiRequest(
   if (data) {
     headers["Content-Type"] = "application/json";
   }
-  const token = getAuthToken();
+  const token = await getCanonicalAuthToken();
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
   }
@@ -52,7 +45,7 @@ export const getQueryFn: <T>(options: {
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
     const headers: Record<string, string> = {};
-    const token = getAuthToken();
+    const token = await getCanonicalAuthToken();
     if (token) {
       headers["Authorization"] = `Bearer ${token}`;
     }
