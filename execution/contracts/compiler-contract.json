@@ -1,5 +1,6 @@
 {
   "authority": "EMP-001M-08",
+  "compiler_fingerprint": "f8576017e9303bd952fe4aa95bf7b5b1a0b541667d34a083232574dd8c43c078",
   "contract_type": "EXECUTION_COMPILER_CONTRACT",
   "provider_lifecycle": [
     {
@@ -27,7 +28,6 @@
       "used": false
     }
   ],
-  "repository_sha": "b09cef920749797938aa484b8982e60cbb23b8bb",
   "schema_version": "1.0",
   "source_count": 8,
   "source_of_truth": "execution/compiler/*.py",
@@ -142,7 +142,7 @@
             "vararg": null
           },
           "async": false,
-          "name": "git_sha",
+          "name": "compiler_fingerprint",
           "returns": "str"
         },
         {
@@ -228,7 +228,7 @@
         }
       ],
       "path": "execution/compiler/contract_manifest.py",
-      "sha256": "8cc29562af5d836808d1d19bca1c38c668eed6f16b20b0f5162c3a088b1597bf"
+      "sha256": "00e52ae551dff5c3ccb25807a9c0f1188a0995a309a3dab3bea7f09abe3baf94"
     },
     {
       "classes": [

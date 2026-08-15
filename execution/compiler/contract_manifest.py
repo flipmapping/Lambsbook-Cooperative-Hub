@@ -27,11 +27,15 @@ COMPILER = ROOT / "execution" / "compiler"
 OUTPUT = ROOT / "execution" / "contracts" / "compiler-contract.json"
 
 
-def git_sha() -> str:
-    return subprocess.check_output(
-        ["git", "-C", str(ROOT), "rev-parse", "HEAD"],
-        text=True,
-    ).strip()
+def compiler_fingerprint() -> str:
+    """Stable fingerprint of compiler source, excluding generated evidence."""
+    digest = hashlib.sha256()
+    for path in sorted(COMPILER.glob("*.py")):
+        digest.update(str(path.relative_to(ROOT)).encode())
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return digest.hexdigest()
 
 
 def sha256(path: Path) -> str:
@@ -201,7 +205,7 @@ def build_manifest() -> dict[str, Any]:
         "contract_type": "EXECUTION_COMPILER_CONTRACT",
         "authority": "EMP-001M-08",
         "source_of_truth": "execution/compiler/*.py",
-        "repository_sha": git_sha(),
+        "compiler_fingerprint": compiler_fingerprint(),
         "source_count": len(modules),
         "sources": modules,
         "provider_lifecycle": provider_lifecycle(),
@@ -246,8 +250,8 @@ def verify_manifest() -> bool:
 
     if existing != expected:
         print("CONTRACT STALE: compiler contract does not match source.")
-        print(f"Expected repository SHA: {expected['repository_sha']}")
-        print(f"Actual repository SHA  : {existing.get('repository_sha')}")
+        print(f"Expected compiler fingerprint: {expected['compiler_fingerprint']}")
+        print(f"Actual compiler fingerprint  : {existing.get('compiler_fingerprint')}")
 
         expected_sources = {
             item["path"]: item["sha256"]
@@ -309,7 +313,7 @@ def main() -> None:
 
     print(f"Generated: {OUTPUT.relative_to(ROOT)}")
     print(f"Sources  : {manifest['source_count']}")
-    print(f"Git SHA  : {manifest['repository_sha']}")
+    print(f"Compiler fingerprint: {manifest['compiler_fingerprint']}")
 
 
 if __name__ == "__main__":
