@@ -15,8 +15,9 @@
     "dev:guarded": "bash scripts/runtime-guard.sh",
     "guard:runtime": "node scripts/runtime-guards/enforce-canonical-runtime.cjs",
     "guard:dead-strata": "node scripts/runtime-guards/detect-dead-strata.cjs",
-    "guard:all": "npm run guard:runtime && npm run guard:dead-strata && node scripts/runtime-guards/assert-canonical-topology.cjs && node scripts/runtime-guards/detect-runtime-backups.cjs && python3 -m execution.compiler.contract_manifest --verify",
-    "prebuild": "npm run guard:all"
+    "guard:all": "npm run guard:runtime && npm run guard:dead-strata && node scripts/runtime-guards/assert-canonical-topology.cjs && node scripts/runtime-guards/detect-runtime-backups.cjs && python3 -m execution.compiler.contract_manifest --verify && npm run guard:release",
+    "prebuild": "npm run guard:all",
+    "guard:release": "node scripts/runtime-guards/enforce-release-state.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
