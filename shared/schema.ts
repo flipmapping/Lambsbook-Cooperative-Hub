@@ -13,6 +13,22 @@ export const users = pgTable("users", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const communities = pgTable("communities", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  purpose: text("purpose").notNull(),
+  createdBy: text("created_by").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertCommunitySchema = createInsertSchema(communities).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertCommunity = z.infer<typeof insertCommunitySchema>;
+export type Community = typeof communities.$inferSelect;
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -147,7 +163,9 @@ export const insertNotificationTemplateSchema =
   createInsertSchema(notificationTemplates).omit({ id: true, createdAt: true, updatedAt: true });
 
 export type InsertNotificationTemplate =
-  z.infer<typeof insertNotificationTemplateSchema>;
+  Omit<z.infer<typeof insertNotificationTemplateSchema>, "approvedVariables"> & {
+    approvedVariables?: string[];
+  };
 
 export type NotificationTemplate =
   typeof notificationTemplates.$inferSelect;
@@ -258,6 +276,39 @@ export const activityLogs = pgTable("activity_logs", {
 export const insertActivityLogSchema = createInsertSchema(activityLogs).omit({ id: true, createdAt: true });
 export type InsertActivityLog = z.infer<typeof insertActivityLogSchema>;
 export type ActivityLog = typeof activityLogs.$inferSelect;
+
+// ============================================
+ // Phase-1 Non-Member Invitation Contract
+ // ============================================
+
+export const nonMemberInvitations = pgTable("non_member_invitations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  token: text("token").notNull().unique(),
+  targetType: text("target_type").notNull(),
+  targetId: text("target_id").notNull(),
+  inviterId: text("inviter_id").notNull(),
+  inviterDisplayName: text("inviter_display_name").notNull(),
+  targetName: text("target_name"),
+  targetPurpose: text("target_purpose"),
+  message: text("message"),
+  lifecycle: text("lifecycle").notNull().default("pending"),
+  participationState: text("participation_state").notNull().default("none"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export const insertNonMemberInvitationSchema =
+  createInsertSchema(nonMemberInvitations).omit({
+    id: true,
+    createdAt: true,
+    updatedAt: true,
+  });
+
+export type InsertNonMemberInvitation =
+  z.infer<typeof insertNonMemberInvitationSchema>;
+
+export type NonMemberInvitation =
+  typeof nonMemberInvitations.$inferSelect;
 
 // ============================================
 // Hub Partner & Revenue Sharing Schema

@@ -3,6 +3,7 @@ import {
   type Country, type InsertCountry, countries,
   type Service, type InsertService, services,
   type Member, type InsertMember, members,
+  type Community, type InsertCommunity, communities,
   type Partner, type InsertPartner, partners,
   type Enquiry, type InsertEnquiry, enquiries,
   type FollowUp, type InsertFollowUp, followUps,
@@ -11,7 +12,8 @@ import {
   type SiteContent, type InsertSiteContent, siteContent,
   type IntegrationConfig, type InsertIntegrationConfig, integrationConfigs,
   type ActivityLog, type InsertActivityLog, activityLogs,
-  type NotificationTemplate, notificationTemplates,
+  type NotificationTemplate, type InsertNotificationTemplate, notificationTemplates,
+  type NonMemberInvitation, type InsertNonMemberInvitation, nonMemberInvitations,
 } from "@shared/schema";
 import { notificationPreferences, InsertNotificationPreferences } from "@shared/schema";
 import { db } from "./db";
@@ -33,6 +35,17 @@ export interface IStorage {
   getMembers(): Promise<Member[]>;
   getMember(id: string): Promise<Member | undefined>;
   createMember(member: InsertMember): Promise<Member>;
+  createCommunity(community: InsertCommunity): Promise<Community>;
+  createNonMemberInvitation(
+    invitation: InsertNonMemberInvitation,
+  ): Promise<NonMemberInvitation>;
+  getNonMemberInvitationByToken(
+    token: string,
+  ): Promise<NonMemberInvitation | undefined>;
+  updateNonMemberInvitationParticipationState(
+    token: string,
+    participationState: NonMemberInvitation["participationState"],
+  ): Promise<NonMemberInvitation | undefined>;
   updateMember(id: string, member: Partial<InsertMember>): Promise<Member | undefined>;
 
   getPartners(): Promise<Partner[]>;
@@ -51,6 +64,8 @@ export interface IStorage {
 
   getNotifications(recipientId?: string): Promise<Notification[]>;
   getNotificationTemplates(): Promise<NotificationTemplate[]>;
+  createNotificationTemplate(template: InsertNotificationTemplate): Promise<NotificationTemplate>;
+  updateNotificationTemplate(id: string, template: Partial<InsertNotificationTemplate>): Promise<NotificationTemplate | undefined>;
   createNotification(notification: InsertNotification): Promise<Notification>;
   updateNotification(id: string, notification: Partial<InsertNotification>): Promise<Notification | undefined>;
 
@@ -138,6 +153,49 @@ export class DatabaseStorage implements IStorage {
     const [created] = await db.insert(members).values(member).returning();
     return created;
   }
+
+  async createCommunity(community: InsertCommunity): Promise<Community> {
+    const [created] = await db.insert(communities).values(community).returning();
+    return created;
+  }
+  async createNonMemberInvitation(
+    invitation: InsertNonMemberInvitation,
+  ): Promise<NonMemberInvitation> {
+    const [created] = await db
+      .insert(nonMemberInvitations)
+      .values(invitation)
+      .returning();
+
+    return created;
+  }
+  async getNonMemberInvitationByToken(
+    token: string,
+  ): Promise<NonMemberInvitation | undefined> {
+    const [invitation] = await db
+      .select()
+      .from(nonMemberInvitations)
+      .where(eq(nonMemberInvitations.token, token))
+      .limit(1);
+
+    return invitation;
+  }
+  async updateNonMemberInvitationParticipationState(
+    token: string,
+    participationState: NonMemberInvitation["participationState"],
+  ): Promise<NonMemberInvitation | undefined> {
+    const [updated] = await db
+      .update(nonMemberInvitations)
+      .set({
+        participationState,
+        lifecycle: "responded",
+        updatedAt: new Date(),
+      })
+      .where(eq(nonMemberInvitations.token, token))
+      .returning();
+
+    return updated;
+  }
+
 
   async updateMember(id: string, member: Partial<InsertMember>): Promise<Member | undefined> {
     const [updated] = await db.update(members).set(member).where(eq(members.id, id)).returning();
@@ -259,6 +317,28 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(notificationTemplates).orderBy(
       desc(notificationTemplates.updatedAt),
     );
+  }
+
+  async createNotificationTemplate(
+    template: InsertNotificationTemplate,
+  ): Promise<NotificationTemplate> {
+    const [created] = await db
+      .insert(notificationTemplates)
+      .values(template)
+      .returning();
+    return created;
+  }
+
+  async updateNotificationTemplate(
+    id: string,
+    template: Partial<InsertNotificationTemplate>,
+  ): Promise<NotificationTemplate | undefined> {
+    const [updated] = await db
+      .update(notificationTemplates)
+      .set(template)
+      .where(eq(notificationTemplates.id, id))
+      .returning();
+    return updated;
   }
 
   async createNotification(notification: InsertNotification): Promise<Notification> {

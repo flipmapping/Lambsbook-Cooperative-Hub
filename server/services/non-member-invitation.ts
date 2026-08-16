@@ -18,7 +18,8 @@ export type NonMemberInvitationParticipationState =
   | "none"
   | "interested"
   | "joined"
-  | "attended";
+  | "attended"
+  | "declined";
 
 export interface NonMemberInvitationInviter {
   id: string;
