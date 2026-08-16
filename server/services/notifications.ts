@@ -241,8 +241,16 @@ export async function sendCampaignEmail(
   const baseMessage = content.message ?? "";
 
   const results: CampaignEmailResult[] = [];
+  const seenRecipientIds = new Set<string>();
+  const recipients = request.recipients.filter((recipient) => {
+    if (seenRecipientIds.has(recipient.id)) {
+      return false;
+    }
+    seenRecipientIds.add(recipient.id);
+    return true;
+  });
 
-  for (const recipient of request.recipients) {
+  for (const recipient of recipients) {
     if (!recipient.email) {
       results.push({ recipientId: recipient.id, success: false, error: "No email on record" });
       continue;

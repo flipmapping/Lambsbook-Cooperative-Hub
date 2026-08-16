@@ -10,6 +10,7 @@ import {
   insertFollowUpSchema,
   insertSiteContentSchema,
   insertIntegrationConfigSchema,
+  insertNotificationTemplateSchema,
 } from "@shared/schema";
 import { z } from "zod";
 import { generateAIResponse, generateLeadScore } from "./services/ai";
@@ -657,6 +658,50 @@ export async function registerRoutes(
     } catch (error) {
       console.error("[Notification Templates] Failed to fetch templates:", error);
       res.status(500).json({ error: "Failed to fetch notification templates" });
+    }
+  });
+
+  app.post("/api/admin/notification-templates", async (req: Request, res: Response) => {
+    try {
+      const parsed = insertNotificationTemplateSchema.parse(req.body);
+      const data = {
+        ...parsed,
+        approvedVariables: Array.from(parsed.approvedVariables ?? [], String),
+      };
+      const template = await storage.createNotificationTemplate(data);
+      res.status(201).json(template);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      console.error("[Notification Templates] Failed to create template:", error);
+      res.status(500).json({ error: "Failed to create notification template" });
+    }
+  });
+
+  app.patch("/api/admin/notification-templates/:id", async (req: Request, res: Response) => {
+    try {
+      const parsed = insertNotificationTemplateSchema.partial().parse(req.body);
+      const { approvedVariables, ...templateFields } = parsed;
+      const data: Partial<import("@shared/schema").InsertNotificationTemplate> = {
+        ...templateFields,
+        ...(approvedVariables !== undefined
+          ? {
+              approvedVariables: Array.from(
+                approvedVariables as Iterable<unknown>,
+                String,
+              ) as string[],
+            }
+          : {}),
+      };
+      const template = await storage.updateNotificationTemplate(req.params.id, data);
+      if (!template) {
+        return res.status(404).json({ error: "Notification template not found" });
+      }
+      res.json(template);
+    } catch (error) {
+      console.error("[Notification Templates] Failed to update template:", error);
+      res.status(500).json({ error: "Failed to update notification template" });
     }
   });
 
