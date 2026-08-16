@@ -592,6 +592,11 @@ const user = authReq.user;
       const invitees =
         await supabaseDAL.getDirectInvitees(member.id);
 
+      const secondLevelInvitees =
+        await supabaseDAL.getSecondLevelInvitees(
+          invitees.map(invitee => invitee.id)
+        );
+
       // APP-MEX-001D: return business fields, not raw UUIDs
       return res.json({
         invitor: invitor
@@ -604,6 +609,12 @@ const user = authReq.user;
         invitees: invitees.map(invitee => ({
           member_type:  invitee.member_type ?? null,
           join_date:    (invitee as any).join_date ?? null,
+          activity_status: invitee.activity_status ?? null,
+        })),
+
+        second_level_invitees: secondLevelInvitees.map(invitee => ({
+          member_type: invitee.member_type ?? null,
+          join_date: (invitee as any).join_date ?? null,
           activity_status: invitee.activity_status ?? null,
         })),
       });

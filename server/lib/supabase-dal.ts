@@ -1448,6 +1448,42 @@ export class SupabaseDAL {
     return data || [];
   }
 
+  async getSecondLevelInvitees(directInviteeIds: string[]): Promise<Member[]> {
+    this.ensureConfigured();
+    const supabase = getSupabaseAdmin();
+
+    if (directInviteeIds.length === 0) return [];
+
+    const { data: collaborations, error: collaborationError } = await supabase
+      .from('collaborations')
+      .select('invitee_id')
+      .in('invitor_id', directInviteeIds)
+      .order('linked_at', { ascending: false });
+
+    if (collaborationError) {
+      throw new Error(
+        `Failed to get second-level collaborations: ${collaborationError.message}`
+      );
+    }
+
+    const inviteeIds = (collaborations || []).map(c => c.invitee_id);
+
+    if (inviteeIds.length === 0) return [];
+
+    const { data, error } = await supabase
+      .schema('meh').from('members')
+      .select('*')
+      .in('id', inviteeIds);
+
+    if (error) {
+      throw new Error(
+        `Failed to get second-level invitees: ${error.message}`
+      );
+    }
+
+    return data || [];
+  }
+
   async getGatewayInvitationsByInviter(
     inviterUserId: string
   ): Promise<GatewayInvitation[]> {

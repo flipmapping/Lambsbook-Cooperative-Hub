@@ -288,6 +288,23 @@ export default function HubAuth({ mode }: HubAuthProps) {
           const inviteToken =
             localStorage.getItem("gateway.invite.token") ?? undefined;
 
+          // P1: materialize the canonical member invitation before membership
+          // resolution so the newly authenticated invitee can resolve as pending.
+          if (inviteToken) {
+            try {
+              await fetch("/api/member/onboarding/materialize-invitation", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${result.session.access_token}`,
+                },
+                body: JSON.stringify({ inviteToken }),
+              });
+            } catch (e) {
+              console.warn("Failed to materialize invitation:", e);
+            }
+          }
+
           // APP-PIC-001: Resolve membership before constructing ContinuationContext.
           const membershipResolution = await _resolveMembership(
             result.session.access_token,

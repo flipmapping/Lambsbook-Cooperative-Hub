@@ -42,6 +42,7 @@ import { detectPlatformAdmin } from "./middleware/requirePlatformAdmin";
 
 import { requireSBURole } from "./middleware/requireSBURole";
 import { attachUserContext } from "./middleware/attachUserContext";
+import { insertCommunitySchema } from "@shared/schema";
 
 import type { AuthenticatedRequest } from "./types/requestContext";
 import { createAuthenticatedClient } from "./lib/supabase-member-client";
@@ -193,6 +194,29 @@ export async function registerRoutes(
       res.json(member);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch member" });
+    }
+  });
+
+  app.post("/api/communities", attachUserContext, async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+
+      if (!authReq.user?.id) {
+        return res.status(401).json({ error: "User not authenticated" });
+      }
+
+      const data = insertCommunitySchema.parse({
+        ...req.body,
+        createdBy: authReq.user.id,
+      });
+
+      const community = await storage.createCommunity(data);
+      res.status(201).json(community);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: error.errors });
+      }
+      res.status(500).json({ error: "Failed to create community" });
     }
   });
 
