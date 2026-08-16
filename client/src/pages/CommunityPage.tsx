@@ -25,6 +25,7 @@ export interface CommunityInvitationContext {
 }
 
 interface CommunityPageProps {
+  params: Record<string, string | undefined>;
   invitation?: CommunityInvitationContext;
   onRecipientAction?: (
     outcome: "join" | "express_interest" | "declined",
@@ -117,10 +118,24 @@ export default function CommunityPage({
                 className="flex-1 rounded-md border border-border bg-background px-3 py-2"
               />
               <button
+                type="button"
+                onClick={() => onRecipientAction?.("join")}
+                className="rounded-md bg-primary px-5 py-2.5 font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Join
+              </button>
+              <button
                 type="submit"
                 className="rounded-md bg-primary px-5 py-2.5 font-medium text-primary-foreground transition-opacity hover:opacity-90"
               >
                 Express Interest
+              </button>
+              <button
+                type="button"
+                onClick={() => onRecipientAction?.("declined")}
+                className="rounded-md border border-border px-5 py-2.5 font-medium transition-opacity hover:opacity-90"
+              >
+                Decline
               </button>
             </form>
           )}
