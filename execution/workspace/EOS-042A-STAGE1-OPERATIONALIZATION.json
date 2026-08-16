@@ -1,0 +1,20 @@
+{
+  "authority": "EOS-042A",
+  "artifact": "Stage-1 Repository Stewardship Operationalization",
+  "source_authority": "Lambsbook-Open-Brain",
+  "bridge_authority": "OB-SYNC-010",
+  "open_brain_publication_sha": "ac7573af2cd135490e8edb4f920f0b7c076b8aa8",
+  "contract_bundle_sha": "df8cf1d4869c71a84cbbac93f6aece9f9c642286475f8c5eac4b6617598616ad",
+  "consumer_authority": "Repository Stewardship",
+  "consumer_repository": "Lambsbook-Cooperative-Hub",
+  "stage1_contract_gate": "PASS",
+  "contract_present": true,
+  "contract_hash_valid": true,
+  "contract_publication_known": true,
+  "contract_not_stale": true,
+  "c0_05_checkpoint_lineage": "BLOCKED",
+  "c0_05_fail_closed": true,
+  "operationalized": true,
+  "stream_broadcast_required": false,
+  "evidence_timestamp": "2026-08-16T17:13:20.852508+00:00"
+}

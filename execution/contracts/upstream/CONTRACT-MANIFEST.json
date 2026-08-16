@@ -1,0 +1,56 @@
+{
+  "manifest_version": "1.0.0",
+  "authority": "Repository Stewardship",
+  "source_authority": "Lambsbook-Open-Brain",
+  "bridge_authority": "OB-SYNC-010",
+  "canonical_publication_sha": "ac7573af2cd135490e8edb4f920f0b7c076b8aa8",
+  "bridge_commit": "7b532b950dc9f09966d93e7ac773d9c09bb1f4ab",
+  "pic_commit": "df50609e93cd96ce91db6609fbe78a0a84e32753",
+  "contracts": {
+    "C0-01": {
+      "name": "Repository / Release Corridor",
+      "authority": "EOS-CRSG-001",
+      "status": "PUBLISHED"
+    },
+    "C0-02": {
+      "name": "First-Failure / Actor-State Corridor",
+      "authority": "EOS-080A",
+      "status": "PUBLISHED"
+    },
+    "C0-03": {
+      "name": "Truth-Reuse / Inspect-Before-Mutate",
+      "authority": "EOS-080",
+      "status": "PUBLISHED"
+    },
+    "C0-04": {
+      "name": "Surface-Based Mutation / Ownership",
+      "authority": "EOS-080",
+      "provenance": [
+        "EOS-LEAN-001",
+        "EOS-LEAN-002"
+      ],
+      "status": "PUBLISHED"
+    },
+    "C0-05": {
+      "name": "Known-Good Checkpoint / Recovery",
+      "authority": "EOS-031 \u2192 EOS-033",
+      "status": "BLOCKED",
+      "enforcement": "FAIL_CLOSED"
+    },
+    "C0-06": {
+      "name": "Evidence / PASS Truth Contract",
+      "authority": "EOS-080",
+      "provenance": [
+        "EOS-EVIDENCE-001"
+      ],
+      "status": "PUBLISHED"
+    }
+  },
+  "consumer_repository": "Lambsbook-Cooperative-Hub",
+  "consumer_authority": "Repository Stewardship",
+  "existing_release_authority": "execution/repository-stewardship/RELEASE-CONTRACT.json",
+  "existing_checkpoint_authority": "execution/repository-stewardship/KNOWN-GOOD-CHECKPOINT-REGISTRY.json",
+  "checkpoint_lineage": "EOS-031 \u2192 EOS-033",
+  "synchronization_status": "PINNED_PENDING_CONSUMER_VERIFICATION",
+  "materialization_timestamp": "2026-08-16T17:00:02.757797+00:00"
+}
