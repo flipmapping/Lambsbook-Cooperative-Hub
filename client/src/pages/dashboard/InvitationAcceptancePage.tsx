@@ -187,12 +187,17 @@ export default function InvitationAcceptancePage() {
             message: invitation.message ?? undefined,
           }}
           onRecipientAction={(outcome) => {
+            if (outcome === "join" && params.token) {
+              window.location.assign(
+                `/hub/signup?invite=${encodeURIComponent(params.token)}`
+              );
+              return;
+            }
+
             void respondToInvitation(
-              outcome === "join"
-                ? "joined"
-                : outcome === "express_interest"
-                  ? "interested"
-                  : "declined",
+              outcome === "express_interest"
+                ? "interested"
+                : "declined",
             );
           }}
         />
