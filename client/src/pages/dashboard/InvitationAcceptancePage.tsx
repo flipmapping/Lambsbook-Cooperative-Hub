@@ -12,7 +12,7 @@ const [invitationId, setInvitationId] = useState<string | null>(params.invitatio
 
   apiRequest("POST", "/api/member/onboarding/materialize-invitation", {
     inviteToken: params.token,
-  }).then((data: any) => {
+  }).then((response) => response.json()).then((data: any) => {
     if (data?.invitationId) setInvitationId(data.invitationId);
   }).catch((err) => {
     console.error(err);
