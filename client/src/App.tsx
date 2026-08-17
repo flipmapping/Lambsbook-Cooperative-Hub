@@ -33,6 +33,7 @@ import HubAuth from '@/pages/HubAuth';
 import HubAuthCallback from '@/pages/HubAuthCallback';
 import MemberDashboard from '@/pages/MemberDashboard';
 import InvitationAcceptancePage from '@/pages/dashboard/InvitationAcceptancePage';
+import NonMemberInvitationPage from '@/pages/dashboard/NonMemberInvitationPage';
 import SBUEducation from '@/pages/SBUEducation';
 import TropicanaProgram from '@/pages/TropicanaProgram';
 
@@ -165,6 +166,7 @@ function Router() {
         component={InvitationAcceptancePage}
       />
       <Route path="/invitation-link/:token" component={InvitationAcceptancePage} />
+      <Route path="/invitation/:token" component={NonMemberInvitationPage} />
       <Route path="/hub/accept-invitation" component={HubDashboard} />
       <Route path="/hub/member" component={HubDashboard} />
 
