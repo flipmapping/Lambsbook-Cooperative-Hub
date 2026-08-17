@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { createClient } from "@/lib/supabase/client";
 import {
   postAuthenticationContinuation,
   type AuthenticationMode,
@@ -280,6 +281,15 @@ export default function HubAuth({ mode }: HubAuthProps) {
     onSuccess: async (result) => {
       if (mode === "signup") {
         if (result.needsConfirmation === false && result.session) {
+          const { error: sessionError } = await createClient().auth.setSession({
+            access_token: result.session.access_token,
+            refresh_token: result.session.refresh_token ?? "",
+          });
+
+          if (sessionError) {
+            throw sessionError;
+          }
+
           localStorage.setItem(
             "supabase.auth.token",
             JSON.stringify(result.session),
@@ -372,6 +382,15 @@ export default function HubAuth({ mode }: HubAuthProps) {
       }
 
       if (result.session) {
+        const { error: sessionError } = await createClient().auth.setSession({
+          access_token: result.session.access_token,
+          refresh_token: result.session.refresh_token ?? "",
+        });
+
+        if (sessionError) {
+          throw sessionError;
+        }
+
         localStorage.setItem(
           "supabase.auth.token",
           JSON.stringify(result.session),
