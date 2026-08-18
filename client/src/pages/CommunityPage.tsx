@@ -27,6 +27,7 @@ export interface CommunityInvitationContext {
 interface CommunityPageProps {
   params: Record<string, string | undefined>;
   invitation?: CommunityInvitationContext;
+  community?: { id: string; name: string; matrix_room_id?: string; matrix_room_url?: string; };
   onRecipientAction?: (
     outcome: "join" | "express_interest" | "declined",
   ) => void;
@@ -34,6 +35,7 @@ interface CommunityPageProps {
 
 export default function CommunityPage({
   invitation,
+  community,
   onRecipientAction,
 }: CommunityPageProps) {
   const [submitted, setSubmitted] = useState(false);
@@ -68,6 +70,17 @@ export default function CommunityPage({
             </p>
           )}
         </header>
+
+        <section id="communication" className="mb-10">
+          <h2 className="mb-3 text-xl font-semibold">Community Communication</h2>
+          {community?.matrix_room_id && community.matrix_room_url ? (
+            <a href={community.matrix_room_url} target="_blank" rel="noreferrer" className="inline-flex rounded-md border border-border bg-card px-4 py-3 font-medium hover:opacity-90">
+              Open Community Communication
+            </a>
+          ) : (
+            <p className="text-sm text-muted-foreground">Community communication is not configured yet.</p>
+          )}
+        </section>
 
         <section id="story" className="mb-10">
           <h2 className="mb-3 text-xl font-semibold">Community Story</h2>
