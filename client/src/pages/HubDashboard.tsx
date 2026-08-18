@@ -76,11 +76,26 @@ export default function HubDashboard() {
       })
         .then((res) => {
           if (res.status === 200) {
-            if (!cancelled) {
-              setErrorMessage(null);
-              setEntryState("member");
-            }
-            return null;
+            return res.json().then((member) => {
+              if (
+                member?.membership_status === "pending" ||
+                member?.membership_status === "invited"
+              ) {
+                return fetch(`${HUB_API_BASE}/api/member/pending-invitation`, {
+                  headers: { Authorization: `Bearer ${token}` },
+                }).then(async (r) => ({
+                  status: r.status,
+                  body: await r.json().catch(() => ({})),
+                }));
+              }
+
+              if (!cancelled) {
+                setErrorMessage(null);
+                setEntryState("member");
+              }
+
+              return null;
+            });
           }
 
           if (res.status === 401 || res.status === 403) {

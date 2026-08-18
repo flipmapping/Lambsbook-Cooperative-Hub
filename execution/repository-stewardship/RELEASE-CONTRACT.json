@@ -115,5 +115,69 @@
       "timestamp": "2026-07-30T14:14:05.479310+00:00"
     },
     "head": "d9b072afc1fecdeccfe0f5010244f4c98f07dec1"
+  },
+  "certified_change_scope": [
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/pages/HubDashboard.tsx",
+    "execution/",
+    "governance/",
+    "scripts/runtime-guards/",
+    "scripts/builders/",
+    ".gitignore",
+    "client/src/pages/CommunityPage.tsx"
+  ],
+  "repository_root_admission": {
+    "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",
+    "allowed_root_directories": [
+      {
+        "pattern": "upload*",
+        "classification": "INGRESS",
+        "release_scope": "EXCLUDED",
+        "cleanup_policy": "REQUIRED"
+      }
+    ]
+  },
+  "repository_artifact_lifecycle": {
+    "authority": "RELEASE-CONTRACT",
+    "protected_classes": [
+      "PROTECTED",
+      "CONTROLLED"
+    ],
+    "automatic_cleanup": {
+      "enabled": true,
+      "scope": [
+        {
+          "pattern": "upload*",
+          "location": "repository_root",
+          "classification": "INGRESS",
+          "release_scope": "EXCLUDED",
+          "retention_days": 7,
+          "action": "DELETE_AFTER_TTL"
+        }
+      ]
+    },
+    "manual_review_classes": [
+      "HISTORICAL_EVIDENCE",
+      "ARCHIVE",
+      "BACKUP",
+      "GENERATED_PACKAGE",
+      "LOG"
+    ],
+    "cleanup_safety": {
+      "never_delete_protected": true,
+      "never_delete_controlled": true,
+      "never_delete_by_extension_only": true,
+      "require_path_classification": true
+    }
+  },
+  "repository_runtime_boundaries": {
+    "excluded_from_release_candidate": [
+      {
+        "path": ".venv-ctbc/",
+        "classification": "LOCAL_RUNTIME_POLLUTION",
+        "must_be_ignored": true
+      }
+    ]
   }
 }

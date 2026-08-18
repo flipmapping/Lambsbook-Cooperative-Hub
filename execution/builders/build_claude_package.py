@@ -455,6 +455,25 @@ def _assemble_artifacts(
             assembled.append(str(dest.relative_to(package_root)))
 
 
+    # Package-contract artifacts — preserve required root-level locations
+    package_contract_root = (
+        repo_root / "execution" / "packages" / "APP-INV-001-Claude-Package"
+    )
+
+    for artifact_name in ["README.md", "IMPLEMENT.md", "CLAUDE.md"]:
+        src = package_contract_root / artifact_name
+        if src.exists():
+            dest = _copy_artifact(src, package_root)
+            assembled.append(str(dest.relative_to(package_root)))
+
+    authorities_src = package_contract_root / "Authorities"
+    if authorities_src.exists():
+        authorities_dest = package_root / "Authorities"
+        shutil.copytree(authorities_src, authorities_dest, dirs_exist_ok=True)
+        for file_path in sorted(authorities_dest.rglob("*")):
+            if file_path.is_file():
+                assembled.append(str(file_path.relative_to(package_root)))
+
     # Implementation Context Manifest — parse, verify, and copy listed files
     icm_path = located.get("Implementation Context Manifest")
     if icm_path and icm_path.exists():

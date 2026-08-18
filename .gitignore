@@ -40,3 +40,5 @@ git-history-cleanup/
 git-transport-diagnostics/
 git-final-diagnostics/
 .git.backup.before-filter-repo/
+
+.venv-ctbc/
