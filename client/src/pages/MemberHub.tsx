@@ -15,13 +15,8 @@ import {
   User, CreditCard, Users, BookOpen, DollarSign, 
   GraduationCap, Activity, AlertTriangle, CheckCircle,
   ArrowUpCircle, Clock, Eye, EyeOff, RefreshCw,
-  Lock, Shield, Camera, Plus, Trash2, QrCode, Phone,
-  Compass
+  Lock, Shield, Camera, Plus, Trash2, QrCode, Phone
 } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
-import { useMemberPurpose }  from "@/hooks/useMemberPurpose";
-import { PurposeCard }       from "@/components/member/PurposeCard";
-import { IdentityCard }      from "@/components/member/IdentityCard";
 import HubAdminDashboard from "@/pages/HubAdminDashboard";
 
 type MembershipStatus = "free" | "paid";
@@ -181,6 +176,17 @@ interface ActivityData {
   inactivity_threshold: string;
 }
 
+function getAuthToken(): string | null {
+  try {
+    const tokenData = localStorage.getItem("supabase.auth.token");
+    if (!tokenData) return null;
+    const parsed = JSON.parse(tokenData);
+    return parsed.access_token || null;
+  } catch {
+    return null;
+  }
+}
+
 // ============================================================================
 // APP-MEX-001D — Backend-backed Profile Preference Persistence
 // ----------------------------------------------------------------------------
@@ -227,16 +233,9 @@ function saveLocalProfile(userId: string, data: PersistedProfile): void {
   }
 }
 
-async function getCanonicalAuthToken(): Promise<string> {
-  const { data, error } = await createClient().auth.getSession();
-  if (error || !data.session?.access_token) {
-    throw new Error('Not authenticated');
-  }
-  return data.session.access_token;
-}
-
 async function fetchWithAuth(url: string) {
-  const token = await getCanonicalAuthToken();
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
 
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` },
@@ -250,7 +249,8 @@ async function fetchWithAuth(url: string) {
 }
 
 async function postWithAuth(url: string, data?: unknown) {
-  const token = await getCanonicalAuthToken();
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
 
   const res = await fetch(url, {
     method: 'POST',
@@ -269,7 +269,8 @@ async function postWithAuth(url: string, data?: unknown) {
 }
 
 async function putWithAuth(url: string, data?: unknown) {
-  const token = await getCanonicalAuthToken();
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
 
   const res = await fetch(url, {
     method: 'PUT',
@@ -288,7 +289,8 @@ async function putWithAuth(url: string, data?: unknown) {
 }
 
 async function deleteWithAuth(url: string) {
-  const token = await getCanonicalAuthToken();
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
 
   const res = await fetch(url, {
     method: 'DELETE',
@@ -346,31 +348,13 @@ export default function MemberHub() {
   const [deletingInvitationId, setDeletingInvitationId] = useState<string | null>(null);
 
   useEffect(() => {
-    createClient().auth.getSession().then(({ data }) => {
-      setIsAuthenticated(!!data.session?.access_token);
-    });
+    const token = getAuthToken();
+    setIsAuthenticated(!!token);
   }, []);
 
-  const { data: profile, isLoading: profileLoading, isError: profileError } = useQuery({
+  const { data: profile, isLoading: profileLoading } = useQuery({
     queryKey: ["/api/member/me"],
-    queryFn: async () => {
-      const data = await fetchWithAuth("/api/member/me");
-      return {
-        ...data,
-        user: {
-          id: data.user_id,
-          email: data.email,
-        },
-        member: {
-          id: data.id,
-          membership_status: data.membership_status,
-          member_type: data.member_type,
-          activity_status: data.activity_status,
-          join_date: data.join_date,
-          user_id: data.user_id,
-        },
-      };
-    },
+    queryFn: () => fetchWithAuth("/api/member/me"),
     enabled: isAuthenticated,
   });
 
@@ -465,18 +449,7 @@ export default function MemberHub() {
     });
   }, [profile, profileHydrated, profileVisibility, contactMethods, avatarDataUrl]);
 
-  // APP-REC-008: Dashboard readiness is identity-first.
-  // Canonical identity (/api/member/me) is the only blocking dependency.
-  // Secondary modules must never prevent dashboard entry.
   const isDashboardLoading = profileLoading;
-
-  // APP-MEX-002A: Living Member Digital Twin — Purpose & Identity projections
-  const { purpose, identity } = useMemberPurpose({
-    profile,
-    activity,
-    relationships: relationshipsData,
-    isLoading:     isDashboardLoading,
-  });
 
   const selectProgramMutation = useMutation({
     mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/select`),
@@ -536,8 +509,9 @@ export default function MemberHub() {
 
       queryClient.invalidateQueries({ queryKey: ["/api/member/invitations"] });
 
-      // Keep the dialog open so the newly created invitation link
-      // remains immediately visible and shareable.
+      // APP-MEX-001B: Close modal so the newly created invitation is
+      // immediately visible in the Sent Invitations list below.
+      setInviteModalOpen(false);
       setInvitedEmail("");
 
       toast({
@@ -681,7 +655,6 @@ export default function MemberHub() {
     userId: profile?.user_id ?? null,
     role: profile?.role ?? null,
     isSuperAdmin: profile?.is_super_admin ?? null,
-    profileError: profileError ? String(profileError) : null,
     profile,
   });
 
@@ -766,9 +739,8 @@ export default function MemberHub() {
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid grid-cols-8 w-full" data-testid="tabs-member">
+        <TabsList className="grid grid-cols-7 w-full" data-testid="tabs-member">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
-          <TabsTrigger value="twin" data-testid="tab-twin">My Purpose</TabsTrigger>
           <TabsTrigger value="profile" data-testid="tab-profile">Profile</TabsTrigger>
           <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
           <TabsTrigger value="earnings" data-testid="tab-earnings">Earnings</TabsTrigger>
@@ -782,36 +754,7 @@ export default function MemberHub() {
             Consumes authenticated identity only.
             No authentication, role resolution, or routing here.
         ================================================================ */}
-        {/* ================================================================
-            DIGITAL TWIN TAB — APP-MEX-002A
-            MemberHub is a composition surface only.
-            PurposeCard and IdentityCard own their own semantic logic.
-            No business state lives here.
-        ================================================================ */}
-        <TabsContent value="twin" className="space-y-4" data-testid="tab-content-twin">
-
-          {(!purpose || !identity) ? (
-            <div className="flex items-center gap-3 text-sm text-muted-foreground py-8 justify-center">
-              <Compass className="h-5 w-5 animate-pulse" />
-              Loading your cooperative purpose...
-            </div>
-          ) : (
-            <div className="grid gap-4 lg:grid-cols-2">
-              <PurposeCard
-                projection={purpose}
-                data-testid="purpose-card"
-              />
-              <IdentityCard
-                projection={identity}
-                onNavigate={(dest) => setActiveTab(dest)}
-                data-testid="identity-card"
-              />
-            </div>
-          )}
-
-        </TabsContent>
-
-                <TabsContent value="profile" className="space-y-4" data-testid="tab-content-profile">
+        <TabsContent value="profile" className="space-y-4" data-testid="tab-content-profile">
 
           {/* ── 1. Identity card with Profile Image placeholder ─────────── */}
           <Card data-testid="card-member-identity">
