@@ -458,7 +458,15 @@ def _assemble_artifacts(
     # Package-contract artifacts — preserve required root-level locations
     package_contract_root = (
         repo_root / "execution" / "packages" / "APP-INV-001-Claude-Package"
-    )
+    ).resolve()
+
+    if package_root.resolve() == package_contract_root:
+        fail(
+            "Package output directory resolves to the package-contract source: "
+            f"{package_contract_root}. Use --output-dir to select a distinct "
+            "materialization directory.",
+            EXIT_PACKAGE_VERIFICATION,
+        )
 
     for artifact_name in ["README.md", "IMPLEMENT.md", "CLAUDE.md"]:
         src = package_contract_root / artifact_name
