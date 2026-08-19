@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
@@ -145,20 +146,126 @@ function NotificationDeliveryPanel({
 }
 
 interface NotificationTemplate {
+  id: string;
   templateKey: string;
   version: number;
   status: string;
   enSubject: string;
+  enMessage: string;
   viSubject: string | null;
+  viMessage: string | null;
   zhSubject: string | null;
+  zhMessage: string | null;
   approvedVariables: string[];
 }
 
 function NotificationTemplatesPanel() {
+  const { toast } = useToast();
+  const [selectedNotificationTemplateId, setSelectedNotificationTemplateId] =
+    useState<string | null>(null);
+
+  const [notificationTemplateForm, setNotificationTemplateForm] = useState({
+    templateKey: "",
+    version: 1,
+    status: "draft",
+    enSubject: "",
+    enMessage: "",
+    viSubject: "",
+    viMessage: "",
+    zhSubject: "",
+    zhMessage: "",
+    approvedVariables: "",
+  });
+
+
+  const createNotificationTemplateMutation = useMutation({
+    mutationFn: async (template: {
+      templateKey: string;
+      version?: number;
+      status?: string;
+      enSubject: string;
+      enMessage: string;
+      viSubject?: string;
+      viMessage?: string;
+      zhSubject?: string;
+      zhMessage?: string;
+      approvedVariables?: string[];
+    }) => {
+      const res = await apiRequest(
+        "POST",
+        "/api/admin/notification-templates",
+        template,
+      );
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["/api/admin/notification-templates"],
+      });
+      toast({ title: "Notification template created" });
+    },
+  });
+
+  const updateNotificationTemplateMutation = useMutation({
+    mutationFn: async ({
+      id,
+      template,
+    }: {
+      id: string;
+      template: {
+        templateKey: string;
+        version: number;
+        status: string;
+        enSubject: string;
+        enMessage: string;
+        viSubject?: string;
+        viMessage?: string;
+        zhSubject?: string;
+        zhMessage?: string;
+        approvedVariables?: string[];
+      };
+    }) => {
+      const res = await apiRequest(
+        "PATCH",
+        `/api/admin/notification-templates/${id}`,
+        template,
+      );
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["/api/admin/notification-templates"],
+      });
+      toast({ title: "Notification template updated" });
+    },
+  });
+
   const { data: templates = [], isLoading, isError } =
     useQuery<NotificationTemplate[]>({
       queryKey: ["/api/admin/notification-templates"],
     });
+
+  useEffect(() => {
+    if (!selectedNotificationTemplateId) return;
+
+    const template = templates.find(
+      (item) => item.id === selectedNotificationTemplateId,
+    );
+    if (!template) return;
+
+    setNotificationTemplateForm({
+      templateKey: template.templateKey,
+      version: template.version,
+      status: template.status,
+      enSubject: template.enSubject,
+      enMessage: template.enMessage,
+      viSubject: template.viSubject ?? "",
+      viMessage: template.viMessage ?? "",
+      zhSubject: template.zhSubject ?? "",
+      zhMessage: template.zhMessage ?? "",
+      approvedVariables: template.approvedVariables.join(", "),
+    });
+  }, [selectedNotificationTemplateId, templates]);
 
   if (isLoading) {
     return (
@@ -189,6 +296,164 @@ function NotificationTemplatesPanel() {
         </CardDescription>
       </CardHeader>
       <CardContent>
+        <div className="mb-6 rounded-lg border p-4 space-y-4">
+          <h3 className="font-semibold">Create Notification Template</h3>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <Input
+              placeholder="Template key"
+              value={notificationTemplateForm.templateKey}
+              onChange={(e) =>
+                setNotificationTemplateForm((f) => ({
+                  ...f,
+                  templateKey: e.target.value,
+                }))
+              }
+            />
+
+            <Input
+              placeholder="Version"
+              type="number"
+              min={1}
+              value={notificationTemplateForm.version}
+              onChange={(e) =>
+                setNotificationTemplateForm((f) => ({
+                  ...f,
+                  version: Number(e.target.value),
+                }))
+              }
+            />
+
+            <Input
+              placeholder="English subject"
+              value={notificationTemplateForm.enSubject}
+              onChange={(e) =>
+                setNotificationTemplateForm((f) => ({
+                  ...f,
+                  enSubject: e.target.value,
+                }))
+              }
+            />
+
+            <Input
+              placeholder="Vietnamese subject"
+              value={notificationTemplateForm.viSubject}
+              onChange={(e) =>
+                setNotificationTemplateForm((f) => ({
+                  ...f,
+                  viSubject: e.target.value,
+                }))
+              }
+            />
+
+            <Input
+              placeholder="Chinese subject"
+              value={notificationTemplateForm.zhSubject}
+              onChange={(e) =>
+                setNotificationTemplateForm((f) => ({
+                  ...f,
+                  zhSubject: e.target.value,
+                }))
+              }
+            />
+
+            <Input
+              placeholder="Approved variables, comma separated"
+              value={notificationTemplateForm.approvedVariables}
+              onChange={(e) =>
+                setNotificationTemplateForm((f) => ({
+                  ...f,
+                  approvedVariables: e.target.value,
+                }))
+              }
+            />
+          </div>
+
+          <Textarea
+            placeholder="English message"
+            value={notificationTemplateForm.enMessage}
+            onChange={(e) =>
+              setNotificationTemplateForm((f) => ({
+                ...f,
+                enMessage: e.target.value,
+              }))
+            }
+          />
+
+          <Textarea
+            placeholder="Vietnamese message"
+            value={notificationTemplateForm.viMessage}
+            onChange={(e) =>
+              setNotificationTemplateForm((f) => ({
+                ...f,
+                viMessage: e.target.value,
+              }))
+            }
+          />
+
+          <Textarea
+            placeholder="Chinese message"
+            value={notificationTemplateForm.zhMessage}
+            onChange={(e) =>
+              setNotificationTemplateForm((f) => ({
+                ...f,
+                zhMessage: e.target.value,
+              }))
+            }
+          />
+
+          <Button
+            type="button"
+            onClick={() => {
+              if (!selectedNotificationTemplateId) return;
+
+              updateNotificationTemplateMutation.mutate({
+                id: selectedNotificationTemplateId,
+                template: {
+                  templateKey: notificationTemplateForm.templateKey,
+                  version: notificationTemplateForm.version,
+                  status: notificationTemplateForm.status,
+                  enSubject: notificationTemplateForm.enSubject,
+                  enMessage: notificationTemplateForm.enMessage,
+                  viSubject: notificationTemplateForm.viSubject || undefined,
+                  viMessage: notificationTemplateForm.viMessage || undefined,
+                  zhSubject: notificationTemplateForm.zhSubject || undefined,
+                  zhMessage: notificationTemplateForm.zhMessage || undefined,
+                  approvedVariables: notificationTemplateForm.approvedVariables
+                    .split(",")
+                    .map((value) => value.trim())
+                    .filter(Boolean),
+                },
+              });
+            }}
+          >
+            Save Changes
+          </Button>
+
+          <Button
+            type="button"
+            onClick={() =>
+              createNotificationTemplateMutation.mutate({
+                templateKey: notificationTemplateForm.templateKey,
+                version: notificationTemplateForm.version,
+                status: notificationTemplateForm.status,
+                enSubject: notificationTemplateForm.enSubject,
+                enMessage: notificationTemplateForm.enMessage,
+                viSubject: notificationTemplateForm.viSubject || undefined,
+                viMessage: notificationTemplateForm.viMessage || undefined,
+                zhSubject: notificationTemplateForm.zhSubject || undefined,
+                zhMessage: notificationTemplateForm.zhMessage || undefined,
+                approvedVariables: notificationTemplateForm.approvedVariables
+                  .split(",")
+                  .map((value) => value.trim())
+                  .filter(Boolean),
+              })
+            }
+          >
+            Create Template
+          </Button>
+        </div>
+
         {templates.length === 0 ? (
           <p className="text-sm text-muted-foreground">
             No notification templates found.
@@ -226,6 +491,18 @@ function NotificationTemplatesPanel() {
                       {template.approvedVariables.length > 0
                         ? template.approvedVariables.join(", ")
                         : "—"}
+                    </td>
+                    <td className="p-2">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          setSelectedNotificationTemplateId(template.id)
+                        }
+                      >
+                        Edit
+                      </Button>
                     </td>
                   </tr>
                 ))}
@@ -287,6 +564,7 @@ export default function HubAdminDashboard() {
   const { data: prospects = [], isLoading: prospectsLoading } = useQuery<Prospect[]>({
     queryKey: ["/api/admin/prospects"],
   });
+
 
   const updateMembershipMutation = useMutation({
     mutationFn: async ({ id, status }: { id: string; status: MembershipStatus }) => {
