@@ -185,7 +185,16 @@ router.get("/invitations", attachUserContextSafe, async (req: Request, res: Resp
     const invitations =
       await supabaseDAL.getGatewayInvitationsByInviter(user.id);
 
-    return res.json({ invitations });
+    return res.json({
+      invitations: invitations.map((invitation) => ({
+        id: invitation.id,
+        invited_email: invitation.invited_email ?? null,
+        created_at: invitation.created_at,
+        expires_at: invitation.expires_at ?? null,
+        note: invitation.note ?? null,
+        status: invitation.status,
+      })),
+    });
   } catch (err) {
     console.error("GET_INVITATIONS_RUNTIME", err);
 
@@ -602,12 +611,14 @@ const user = authReq.user;
         invitor: invitor
           ? {
               member_type:  invitor.member_type ?? null,
+              email:        (invitor as any).email ?? null,
               join_date:    (invitor as any).join_date ?? null,
             }
           : null,
 
         invitees: invitees.map(invitee => ({
           member_type:  invitee.member_type ?? null,
+          email:        (invitee as any).email ?? null,
           join_date:    (invitee as any).join_date ?? null,
           activity_status: invitee.activity_status ?? null,
         })),
