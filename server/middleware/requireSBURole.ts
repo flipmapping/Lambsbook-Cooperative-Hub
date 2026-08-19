@@ -1,18 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { createClient } from "@supabase/supabase-js";
-import ws from "ws";
+import { getSupabaseAdmin } from "../lib/supabase-client";
 import type { SBURequest } from "./requireSBUAccess";
-import type { WebSocketLikeConstructor } from '@supabase/realtime-js';
 
-const supabaseAdmin = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    realtime: {
-      transport: ws as unknown as WebSocketLikeConstructor,
-    },
-  }
-);
+const supabaseAdmin = getSupabaseAdmin();
 
 export function requireSBURole(allowedRoles: string[]) {
   return async (req: Request, res: Response, next: NextFunction) => {
