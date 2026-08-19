@@ -148,6 +148,9 @@ export default function HubAuthCallback() {
             runtimeState,
           );
 
+        if (inviteToken) {
+          localStorage.removeItem("gateway.invite.token");
+        }
 
         if (referrer) {
           try {

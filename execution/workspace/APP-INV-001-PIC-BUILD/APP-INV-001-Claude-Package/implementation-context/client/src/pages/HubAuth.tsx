@@ -18,7 +18,6 @@ import {
   postAuthenticationContinuation,
   type AuthenticationMode,
   type ContinuationContext,
-  type MembershipResolution,
 } from "@/lib/auth/PostAuthenticationContinuation";
 import { resolvePostAuthenticationDestination } from "@/lib/auth/NavigationConsumptionAuthority";
 import {
@@ -79,42 +78,6 @@ interface FormErrors {
   fullName?: string | null;
   password?: string | null;
   confirmPassword?: string | null;
-}
-
-// ============================================================================
-// APP-PIC-001 — Membership Resolution
-// ----------------------------------------------------------------------------
-// HubAuth is responsible for calling GET /api/member/me and constructing
-// MembershipResolution. Classification is performed only inside
-// PostAuthenticationContinuation; this function performs no classification.
-// ============================================================================
-
-async function _resolveMembership(
-  accessToken: string,
-): Promise<MembershipResolution> {
-  try {
-    const response = await fetch("/api/member/me", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (response.ok) {
-      const data = await response.json() as { id?: string; member_id?: string };
-      return {
-        exists: true,
-        memberId: data.id ?? data.member_id,
-      };
-    }
-
-    // 404 → not a member; any other non-ok status treated as non-member
-    return { exists: false };
-  } catch {
-    // Network failure: treat as non-member; do not block authentication.
-    return { exists: false };
-  }
 }
 
 export default function HubAuth({ mode }: HubAuthProps) {
@@ -243,7 +206,6 @@ export default function HubAuth({ mode }: HubAuthProps) {
     readonly accessToken: string;
     readonly refreshToken?: string;
     readonly inviteToken?: string;
-    readonly membershipResolution: MembershipResolution;
   }
 
   function _buildContinuationContext(
@@ -255,7 +217,6 @@ export default function HubAuth({ mode }: HubAuthProps) {
       refreshToken: prepared.refreshToken,
       inviteToken: prepared.inviteToken,
       authenticationMode,
-      membershipResolution: prepared.membershipResolution,
     };
   }
 
@@ -316,15 +277,10 @@ export default function HubAuth({ mode }: HubAuthProps) {
           }
 
           // APP-PIC-001: Resolve membership before constructing ContinuationContext.
-          const membershipResolution = await _resolveMembership(
-            result.session.access_token,
-          );
-
           const prepared = _prepareContinuationValues({
             accessToken: result.session.access_token,
             refreshToken: result.session.refresh_token,
             inviteToken,
-            membershipResolution,
           });
 
           const continuationContext = _buildContinuationContext(
@@ -334,7 +290,6 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
           console.group("[APP-PIC-001] Authentication Runtime");
           console.log("mode:", mode);
-          console.log("membershipResolution:", membershipResolution);
           console.log("gateway.invite.token:", inviteToken);
           console.log("ContinuationContext:", continuationContext);
 
@@ -349,23 +304,10 @@ export default function HubAuth({ mode }: HubAuthProps) {
           console.log("Destination:", destination);
           console.groupEnd();
 
-          // Invitation materialization: only when not an existing member.
-          if (inviteToken && runtimeState.outcome === "pending_invitation") {
-            try {
-              await fetch("/api/member/onboarding/materialize-invitation", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${result.session.access_token}`,
-                },
-                body: JSON.stringify({ inviteToken }),
-              });
-            } catch (e) {
-              console.warn("Failed to materialize invitation:", e);
-            } finally {
-              // Consume the token so stale tokens cannot affect later authentications.
-              localStorage.removeItem("gateway.invite.token");
-            }
+          // Consume the invitation token after the canonical
+          // materialization/continuation lifecycle completes.
+          if (inviteToken) {
+            localStorage.removeItem("gateway.invite.token");
           }
 
           // APP-REC-006C: non_member with no pending invitation → invitation-only screen.
@@ -399,16 +341,26 @@ export default function HubAuth({ mode }: HubAuthProps) {
         const inviteToken =
           localStorage.getItem("gateway.invite.token") ?? undefined;
 
-        // APP-PIC-001: Resolve membership before constructing ContinuationContext.
-        const membershipResolution = await _resolveMembership(
-          result.session.access_token,
-        );
+        if (inviteToken) {
+          try {
+            await fetch("/api/member/onboarding/materialize-invitation", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${result.session.access_token}`,
+              },
+              body: JSON.stringify({ inviteToken }),
+            });
+          } catch (e) {
+            console.warn("Failed to materialize invitation:", e);
+          }
+        }
 
+        // APP-PIC-001: Resolve membership before constructing ContinuationContext.
         const prepared = _prepareContinuationValues({
           accessToken: result.session.access_token,
           refreshToken: result.session.refresh_token,
           inviteToken,
-          membershipResolution,
         });
 
         const continuationContext = _buildContinuationContext(
@@ -418,7 +370,6 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
         console.group("[APP-PIC-001] Authentication Runtime");
         console.log("mode:", mode);
-        console.log("membershipResolution:", membershipResolution);
         console.log("gateway.invite.token:", inviteToken);
         console.log("ContinuationContext:", continuationContext);
 
@@ -433,23 +384,10 @@ export default function HubAuth({ mode }: HubAuthProps) {
         console.log("Destination:", destination);
         console.groupEnd();
 
-        // Invitation materialization: only when not an existing member.
-        if (inviteToken && runtimeState.outcome === "pending_invitation") {
-          try {
-            await fetch("/api/member/onboarding/materialize-invitation", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${result.session.access_token}`,
-              },
-              body: JSON.stringify({ inviteToken }),
-            });
-          } catch (e) {
-            console.warn("Failed to materialize invitation:", e);
-          } finally {
-            // Consume the token so stale tokens cannot affect later authentications.
-            localStorage.removeItem("gateway.invite.token");
-          }
+        // Consume the invitation token after the canonical
+        // materialization/continuation lifecycle completes.
+        if (inviteToken) {
+          localStorage.removeItem("gateway.invite.token");
         }
 
         // APP-REC-006C: non_member with no pending invitation → invitation-only screen.
