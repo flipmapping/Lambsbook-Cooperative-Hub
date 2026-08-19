@@ -197,6 +197,18 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/communities/:id", attachUserContext, async (req: Request, res: Response) => {
+    try {
+      const community = await storage.getCanonicalCommunityById(req.params.id);
+      if (!community) {
+        return res.status(404).json({ error: "Community not found" });
+      }
+      return res.json(community);
+    } catch (error) {
+      return res.status(500).json({ error: "Failed to fetch Community" });
+    }
+  });
+
   app.post("/api/communities", attachUserContext, async (req: Request, res: Response) => {
     try {
       const authReq = req as AuthenticatedRequest;

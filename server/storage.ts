@@ -36,6 +36,13 @@ export interface IStorage {
   getMember(id: string): Promise<Member | undefined>;
   createMember(member: InsertMember): Promise<Member>;
   createCommunity(community: InsertCommunity): Promise<Community>;
+  getCanonicalCommunityById(id: string): Promise<{
+    id: string;
+    name: string;
+    description: string | null;
+    visibility: string;
+    status: string;
+  } | undefined>;
   createNonMemberInvitation(
     invitation: InsertNonMemberInvitation,
   ): Promise<NonMemberInvitation>;
@@ -158,6 +165,38 @@ export class DatabaseStorage implements IStorage {
     const [created] = await db.insert(communities).values(community).returning();
     return created;
   }
+
+  async getCanonicalCommunityById(id: string): Promise<{
+    id: string;
+    name: string;
+    description: string | null;
+    visibility: string;
+    status: string;
+    matrix_room_id: string | null;
+  } | undefined> {
+    const result = await db.execute(
+      sql`
+        select id, name, description, visibility, status, matrix_room_id
+        from meh.communities
+        where id = ${id}::uuid
+        limit 1
+      `,
+    );
+
+    const row = result.rows[0] as
+      | {
+          id: string;
+          name: string;
+          description: string | null;
+          visibility: string;
+          status: string;
+          matrix_room_id: string | null;
+        }
+      | undefined;
+
+    return row;
+  }
+
   async createNonMemberInvitation(
     invitation: InsertNonMemberInvitation,
   ): Promise<NonMemberInvitation> {
