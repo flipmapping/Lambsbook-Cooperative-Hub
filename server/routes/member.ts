@@ -121,7 +121,7 @@ const user = authReq.user;
 
     const { data, error } = await supabaseAdmin
       .from("member_invitations")
-      .select("id, inviter_member_id, status, created_at")
+      .select("id, inviter_member_id, status, created_at, invited_email")
       .eq("invited_user_id", user.id)
       .eq("status", "pending")
       .order("created_at", { ascending: false })
