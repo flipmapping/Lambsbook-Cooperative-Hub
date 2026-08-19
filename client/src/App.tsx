@@ -167,7 +167,7 @@ function Router() {
       />
       <Route path="/invitation-link/:token" component={InvitationAcceptancePage} />
       <Route path="/invitation/:token" component={NonMemberInvitationPage} />
-      <Route path="/hub/accept-invitation" component={HubDashboard} />
+      <Route path="/hub/accept-invitation" component={InvitationAcceptancePage} />
       <Route path="/hub/member" component={HubDashboard} />
 
       {/* Education programs */}
