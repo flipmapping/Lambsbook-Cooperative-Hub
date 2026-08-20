@@ -45,7 +45,7 @@ Invitation URL
 - client/src/pages/HubAuth.tsx
 - client/src/pages/HubAuthCallback.tsx
 - client/src/App.tsx
-- client/src/pages/dashboard/MemberHub.tsx
+- client/src/pages/MemberHub.tsx
 - web/src/components/dashboard/RelationshipTrustSection.tsx
 - server/routes/member.ts
 - server/routes.ts

@@ -64,6 +64,8 @@ interface SentInvitation {
   expires_at: string | null;
   note: string | null;
   status: "pending" | "accepted" | "expired" | string;
+  /** D2: Server-generated invitation URL for link retrieval from history */
+  invitation_url?: string | null;
 }
 
 interface MemberProfile {
@@ -499,24 +501,20 @@ export default function MemberHub() {
         invitedEmail
       }),
     onSuccess: (data:any) => {
-      setInviteLink(
+      const link =
         data?.inviteUrl ||
         data?.invitationUrl ||
         data?.url ||
         data?.link ||
-        ""
-      );
+        "";
 
+      setInviteLink(link);
       queryClient.invalidateQueries({ queryKey: ["/api/member/invitations"] });
 
-      // APP-MEX-001B: Close modal so the newly created invitation is
-      // immediately visible in the Sent Invitations list below.
-      setInviteModalOpen(false);
-      setInvitedEmail("");
-
+      // D1: Do NOT auto-close — keep modal open so inviter can copy and share the link.
       toast({
         title: "Invitation created",
-        description: "Your invitation is now visible in Sent Invitations.",
+        description: "Copy the link below to share with your invitee.",
       });
     },
     onError: (error: Error) => {
@@ -1377,7 +1375,13 @@ export default function MemberHub() {
 
               <Dialog
                 open={inviteModalOpen}
-                onOpenChange={setInviteModalOpen}
+                onOpenChange={(open) => {
+                  setInviteModalOpen(open);
+                  if (!open) {
+                    setInviteLink("");
+                    setInvitedEmail("");
+                  }
+                }}
               >
                 <DialogContent>
                   <div className="space-y-4">
@@ -1398,27 +1402,41 @@ export default function MemberHub() {
                       Create Invitation
                     </Button>
 
-                    {inviteLink && (
-                      <div className="space-y-2">
-                        <div className="text-xs">
-                          Invite Link
+                    {inviteLink ? (
+                      <div className="space-y-3 pt-2">
+                        <div className="rounded-lg border bg-muted/30 p-3 space-y-2">
+                          <div className="text-xs font-semibold text-foreground">Invitation Link</div>
+                          <div className="text-xs break-all text-muted-foreground font-mono select-all">
+                            {inviteLink}
+                          </div>
                         </div>
-
-                        <div className="text-xs break-all">
-                          {inviteLink}
-                        </div>
-
                         <Button
-                          variant="outline"
-                          onClick={() =>
-                            navigator.clipboard.writeText(inviteLink)
-                          }
+                          className="w-full"
+                          onClick={async () => {
+                            try {
+                              await navigator.clipboard.writeText(inviteLink);
+                              toast({ title: "Link copied to clipboard" });
+                            } catch {
+                              toast({ title: "Copy failed", description: "Select and copy the link above manually.", variant: "destructive" });
+                            }
+                          }}
                           data-testid="button-copy-invite-link"
                         >
-                          Copy Link
+                          Copy Invitation Link
                         </Button>
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          onClick={() => { setInviteModalOpen(false); setInviteLink(""); setInvitedEmail(""); }}
+                          data-testid="button-close-invite-modal"
+                        >
+                          Done
+                        </Button>
+                        <p className="text-[11px] text-muted-foreground text-center">
+                          This link is also saved in Sent Invitations below.
+                        </p>
                       </div>
-                    )}
+                    ) : null}
 
                   </div>
                 </DialogContent>
@@ -1504,9 +1522,9 @@ export default function MemberHub() {
                         className="border rounded-lg p-4 space-y-2"
                         data-testid={`invitation-row-${inv.id}`}
                       >
-                        {/* Email */}
+                        {/* Email + D2: copy-link access */}
                         <div className="flex items-center justify-between">
-                          <div>
+                          <div className="flex-1 min-w-0">
                             <div className="text-sm font-medium" data-testid={`invitation-email-${inv.id}`}>
                               {inv.invited_email ?? "—"}
                             </div>
@@ -1525,26 +1543,48 @@ export default function MemberHub() {
                             </Badge>
                           </div>
 
-                          {/* Delete — only for unaccepted */}
-                          {isPending && (
-                            <button
-                              type="button"
-                              className="text-muted-foreground hover:text-destructive transition-colors"
-                              aria-label="Delete invitation"
-                              data-testid={`button-delete-invitation-${inv.id}`}
-                              disabled={isDeleting || deleteInvitationMutation.isPending}
-                              onClick={() => {
-                                setDeletingInvitationId(inv.id);
-                                deleteInvitationMutation.mutate(inv.id);
-                              }}
-                            >
-                              {isDeleting ? (
-                                <RefreshCw className="h-4 w-4 animate-spin" />
-                              ) : (
-                                <Trash2 className="h-4 w-4" />
-                              )}
-                            </button>
-                          )}
+                          {/* D2: Copy link + Delete — only for unaccepted */}
+                          <div className="flex items-center gap-2 shrink-0">
+                            {inv.invitation_url && (
+                              <button
+                                type="button"
+                                className="text-muted-foreground hover:text-primary transition-colors"
+                                aria-label="Copy invitation link"
+                                data-testid={`button-copy-invitation-link-${inv.id}`}
+                                onClick={async () => {
+                                  try {
+                                    await navigator.clipboard.writeText(inv.invitation_url!);
+                                    toast({ title: "Link copied to clipboard" });
+                                  } catch {
+                                    toast({ title: "Copy failed", variant: "destructive" });
+                                  }
+                                }}
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                                </svg>
+                              </button>
+                            )}
+                            {isPending && (
+                              <button
+                                type="button"
+                                className="text-muted-foreground hover:text-destructive transition-colors"
+                                aria-label="Delete invitation"
+                                data-testid={`button-delete-invitation-${inv.id}`}
+                                disabled={isDeleting || deleteInvitationMutation.isPending}
+                                onClick={() => {
+                                  setDeletingInvitationId(inv.id);
+                                  deleteInvitationMutation.mutate(inv.id);
+                                }}
+                              >
+                                {isDeleting ? (
+                                  <RefreshCw className="h-4 w-4 animate-spin" />
+                                ) : (
+                                  <Trash2 className="h-4 w-4" />
+                                )}
+                              </button>
+                            )}
+                          </div>
                         </div>
 
                         {/* Created date */}
@@ -1628,6 +1668,19 @@ export default function MemberHub() {
                         Member since {new Date(relationshipsData.invitor.join_date).toLocaleDateString()}
                       </div>
                     )}
+                    {/* D7: Invitation metadata for this relationship */}
+                    {(relationshipsData.invitor as any).invitation_created_at && (
+                      <div className="text-xs text-muted-foreground border-t pt-1 mt-1 space-y-0.5">
+                        <div><span className="font-medium text-foreground">Invited: </span>
+                          {new Date((relationshipsData.invitor as any).invitation_created_at).toLocaleDateString()}
+                        </div>
+                        {(relationshipsData.invitor as any).invitation_status && (
+                          <div><span className="font-medium text-foreground">Status: </span>
+                            {(relationshipsData.invitor as any).invitation_status}
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <div className="text-xs text-muted-foreground mt-1">
                       Direct relationship source
                     </div>
@@ -1696,7 +1749,20 @@ export default function MemberHub() {
                               Member since {new Date(joinDate).toLocaleDateString()}
                             </div>
                           )}
-                          {!email && !joinDate && (
+                          {/* D7: Invitation metadata for this invitee relationship */}
+                          {(item as any).invitation_created_at && (
+                            <div className="text-xs text-muted-foreground border-t pt-1 mt-1 space-y-0.5">
+                              <div><span className="font-medium text-foreground">Invited: </span>
+                                {new Date((item as any).invitation_created_at).toLocaleDateString()}
+                              </div>
+                              {(item as any).invitation_status && (
+                                <div><span className="font-medium text-foreground">Status: </span>
+                                  {(item as any).invitation_status}
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          {!email && !joinDate && !(item as any).invitation_created_at && (
                             <div className="text-xs text-muted-foreground italic" data-testid={`invitee-limited-data-${idx}`}>
                               Member profile available after account activation.
                             </div>

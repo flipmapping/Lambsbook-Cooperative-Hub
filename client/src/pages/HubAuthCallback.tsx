@@ -108,6 +108,20 @@ export default function HubAuthCallback() {
           throw sessionError;
         }
 
+        // D5: Write to canonical storage key so MemberHub and other consumers
+        // can read the session without depending on Supabase SDK internals.
+        try {
+          localStorage.setItem(
+            "supabase.auth.token",
+            JSON.stringify({
+              access_token:  accessToken,
+              refresh_token: refreshToken ?? "",
+            })
+          );
+        } catch {
+          // Storage unavailable — session is in Supabase SDK storage; continue.
+        }
+
         if (inviteToken) {
           try {
             await fetch("/api/member/onboarding/materialize-invitation", {

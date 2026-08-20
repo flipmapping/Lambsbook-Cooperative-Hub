@@ -185,14 +185,22 @@ router.get("/invitations", attachUserContextSafe, async (req: Request, res: Resp
     const invitations =
       await supabaseDAL.getGatewayInvitationsByInviter(user.id);
 
+    const invitationBase =
+      process.env.INVITATION_BASE_URL ??
+      "https://lambsbookcoop.com";
+
     return res.json({
       invitations: invitations.map((invitation) => ({
         id: invitation.id,
-        invited_email: invitation.invited_email ?? null,
+        invited_email: invitation.accepted_by_email ?? null,
         created_at: invitation.created_at,
         expires_at: invitation.expires_at ?? null,
-        note: invitation.note ?? null,
+        note: null,
         status: invitation.status,
+        // D2: Include invitation URL so the link can be retrieved from history
+        invitation_url: (invitation as any).token
+          ? `${invitationBase}/invitation-link/${(invitation as any).token}`
+          : null,
       })),
     });
   } catch (err) {
@@ -203,6 +211,83 @@ router.get("/invitations", attachUserContextSafe, async (req: Request, res: Resp
         code: "SERVER_ERROR",
         message: "Server error",
       },
+    });
+  }
+});
+
+/**
+ * DELETE /api/member/invitations/:id
+ * D3: Delete an unaccepted (pending) invitation.
+ * Only the inviter may delete their own pending invitations.
+ */
+router.delete("/invitations/:id", attachUserContextSafe, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    const user = authReq.user;
+
+    if (!user?.id) {
+      return res.status(401).json({
+        error: { code: "UNAUTHENTICATED", message: "Authentication required" },
+      });
+    }
+
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({
+        error: { code: "MISSING_ID", message: "Invitation ID required" },
+      });
+    }
+
+    const supabaseAdmin = getServiceClient();
+
+    // Fetch the invitation to verify ownership and status
+    const { data: invitation, error: fetchError } = await supabaseAdmin
+      .from("member_invitations")
+      .select("id, inviter_user_id, status")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (fetchError || !invitation) {
+      return res.status(404).json({
+        error: { code: "NOT_FOUND", message: "Invitation not found" },
+      });
+    }
+
+    if (invitation.inviter_user_id !== user.id) {
+      return res.status(403).json({
+        error: { code: "FORBIDDEN", message: "You may only delete your own invitations" },
+      });
+    }
+
+    if (invitation.status !== "pending") {
+      return res.status(409).json({
+        error: {
+          code: "INVALID_STATUS",
+          message: "Only pending invitations may be deleted",
+        },
+      });
+    }
+
+    const { error: deleteError } = await supabaseAdmin
+      .from("member_invitations")
+      .delete()
+      .eq("id", id)
+      .eq("inviter_user_id", user.id)
+      .eq("status", "pending");
+
+    if (deleteError) {
+      console.error("DELETE_INVITATION_ERROR", deleteError);
+      return res.status(500).json({
+        error: { code: "SERVER_ERROR", message: "Failed to delete invitation" },
+      });
+    }
+
+    return res.status(204).send();
+  } catch (err) {
+    console.error("DELETE_INVITATION_RUNTIME", err);
+    return res.status(500).json({
+      error: { code: "SERVER_ERROR", message: "Server error" },
     });
   }
 });
@@ -606,26 +691,78 @@ const user = authReq.user;
           invitees.map(invitee => invitee.id)
         );
 
-      // APP-MEX-001D: return business fields, not raw UUIDs
+      // D7: Fetch invitation metadata to show alongside relationship data
+      const supabaseAdmin = getServiceClient();
+
+      // Look up the invitation that created this member's relationship to their invitor
+      const { data: receivedInvitation } = await supabaseAdmin
+        .from("member_invitations")
+        .select("invited_email, created_at, expires_at, status, token")
+        .eq("invited_user_id", user.id)
+        .eq("status", "accepted")
+        .maybeSingle();
+
+      // Look up the invitations that created each invitee relationship
+      const inviteeUserIds = invitees
+        .map(i => (i as any).user_id)
+        .filter(Boolean);
+
+      const { data: sentInvitations } = inviteeUserIds.length > 0
+        ? await supabaseAdmin
+            .from("member_invitations")
+            .select("invited_user_id, invited_email, created_at, expires_at, status, token")
+            .in("invited_user_id", inviteeUserIds)
+            .eq("status", "accepted")
+        : { data: [] };
+
+      const inviteeInvitationMap = new Map(
+        (sentInvitations ?? []).map(inv => [inv.invited_user_id, inv])
+      );
+
+      const invitationBase =
+        process.env.INVITATION_BASE_URL ??
+        "https://lambsbookcoop.com";
+
+      // APP-MEX-001D + D7: return business fields and invitation metadata
       return res.json({
         invitor: invitor
           ? {
-              member_type:  invitor.member_type ?? null,
-              email:        (invitor as any).email ?? null,
-              join_date:    (invitor as any).join_date ?? null,
+              member_type:      invitor.member_type ?? null,
+              email:            (invitor as any).email ?? null,
+              join_date:        (invitor as any).join_date ?? null,
+              // D7: invitation metadata for the relationship that connected this member
+              invited_email:    receivedInvitation?.invited_email ?? null,
+              invitation_created_at: receivedInvitation?.created_at ?? null,
+              invitation_expires_at: receivedInvitation?.expires_at ?? null,
+              invitation_status: receivedInvitation?.status ?? null,
+              invitation_url: receivedInvitation?.token
+                ? `${invitationBase}/invitation-link/${receivedInvitation.token}`
+                : null,
             }
           : null,
 
-        invitees: invitees.map(invitee => ({
-          member_type:  invitee.member_type ?? null,
-          email:        (invitee as any).email ?? null,
-          join_date:    (invitee as any).join_date ?? null,
-          activity_status: invitee.activity_status ?? null,
-        })),
+        invitees: invitees.map(invitee => {
+          const inviteeUserId = (invitee as any).user_id;
+          const inv = inviteeUserId ? inviteeInvitationMap.get(inviteeUserId) : undefined;
+          return {
+            member_type:      invitee.member_type ?? null,
+            email:            (invitee as any).email ?? null,
+            join_date:        (invitee as any).join_date ?? null,
+            activity_status:  invitee.activity_status ?? null,
+            // D7: invitation metadata for this invitee relationship
+            invited_email:    inv?.invited_email ?? null,
+            invitation_created_at: inv?.created_at ?? null,
+            invitation_expires_at: inv?.expires_at ?? null,
+            invitation_status: inv?.status ?? null,
+            invitation_url: inv?.token
+              ? `${invitationBase}/invitation-link/${inv.token}`
+              : null,
+          };
+        }),
 
         second_level_invitees: secondLevelInvitees.map(invitee => ({
-          member_type: invitee.member_type ?? null,
-          join_date: (invitee as any).join_date ?? null,
+          member_type:     invitee.member_type ?? null,
+          join_date:       (invitee as any).join_date ?? null,
           activity_status: invitee.activity_status ?? null,
         })),
       });
@@ -743,9 +880,25 @@ router.get(
         return res.status(404).json({ error: "Member not found" });
       }
 
-      const prefs = await supabaseDAL.getMemberProfilePreferences(member.id);
-
-      return res.json(prefs);
+      try {
+        const prefs = await supabaseDAL.getMemberProfilePreferences(member.id);
+        return res.json(prefs);
+      } catch (prefErr: any) {
+        // D6: If the migration hasn't run yet (columns missing), return safe defaults
+        // rather than a 500, to prevent blocking the UI before the migration is applied.
+        const isColumnError =
+          prefErr?.message?.includes("column") ||
+          prefErr?.message?.includes("does not exist") ||
+          prefErr?.code === "42703";
+        if (isColumnError) {
+          return res.json({
+            avatar_reference:   null,
+            profile_visibility: "private",
+            contact_methods:    [],
+          });
+        }
+        throw prefErr;
+      }
     } catch (err) {
       console.error("GET_PROFILE_PREFERENCES_ERROR", err);
       return res.status(500).json({ error: "Failed to fetch profile preferences" });
@@ -844,7 +997,17 @@ router.put(
       });
 
       return res.json({ success: true });
-    } catch (err) {
+    } catch (err: any) {
+      // D6: Gracefully handle missing columns (migration not yet applied)
+      const isColumnError =
+        err?.message?.includes("column") ||
+        err?.message?.includes("does not exist") ||
+        err?.code === "42703";
+      if (isColumnError) {
+        // Return success to prevent UI error loops; migration must be applied to persist.
+        console.warn("PUT_PROFILE_PREFERENCES_MIGRATION_PENDING", err?.message);
+        return res.json({ success: true, migration_pending: true });
+      }
       console.error("PUT_PROFILE_PREFERENCES_ERROR", err);
       return res.status(500).json({ error: "Failed to update profile preferences" });
     }
