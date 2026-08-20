@@ -1,0 +1,219 @@
+const { execFileSync } = require("node:child_process");
+const fs = require("node:fs");
+const crypto = require("node:crypto");
+
+function fail(message) {
+  console.error(`WORK-CYCLE FAILED: ${message}`);
+  process.exit(1);
+}
+
+function git(args) {
+  return execFileSync("git", args, {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  }).trim();
+}
+
+function readJson(path) {
+  if (!fs.existsSync(path)) fail(`MISSING:${path}`);
+
+  try {
+    return JSON.parse(fs.readFileSync(path, "utf8"));
+  } catch {
+    fail(`INVALID_JSON:${path}`);
+  }
+}
+
+function verifyDigest(manifestPath) {
+  const digestPath = `${manifestPath}.sha256`;
+
+  if (!fs.existsSync(digestPath)) {
+    fail(`MISSING_DIGEST:${digestPath}`);
+  }
+
+  const actual = crypto
+    .createHash("sha256")
+    .update(fs.readFileSync(manifestPath))
+    .digest("hex");
+
+  const expected = fs
+    .readFileSync(digestPath, "utf8")
+    .trim()
+    .split(/\s+/)[0];
+
+  if (actual !== expected) {
+    fail(`MANIFEST_DIGEST_MISMATCH:${manifestPath}`);
+  }
+
+  return actual;
+}
+
+function porcelainPaths(args) {
+  const output = execFileSync("git", args, {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+
+  return output
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function worktreePaths() {
+  return porcelainPaths(["status", "--porcelain=v1"]).map(
+    (line) => line.slice(3).trim()
+  );
+}
+
+function stagedPaths() {
+  return porcelainPaths(["diff", "--cached", "--name-only"]);
+}
+
+function committedPaths(baseline) {
+  return porcelainPaths([
+    "diff",
+    "--name-only",
+    `${baseline}..HEAD`,
+  ]);
+}
+
+function pathAllowed(filePath, allowedPaths) {
+  return allowedPaths.some((entry) => {
+    if (entry.endsWith("/")) return filePath.startsWith(entry);
+    return filePath === entry;
+  });
+}
+
+function requireString(value, field) {
+  if (typeof value !== "string" || !value.trim()) {
+    fail(`INVALID_FIELD:${field}`);
+  }
+}
+
+const manifestPath =
+  process.argv[2] ||
+  "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json";
+
+const manifest = readJson(manifestPath);
+const manifestSha = verifyDigest(manifestPath);
+
+requireString(manifest.authority_id, "authority_id");
+requireString(manifest.cycle_id, "cycle_id");
+requireString(manifest.baseline_sha, "baseline_sha");
+
+if (!Array.isArray(manifest.certified_mutation_paths) ||
+    manifest.certified_mutation_paths.length === 0) {
+  fail("CERTIFIED_MUTATION_PATHS_MISSING");
+}
+
+if (!Array.isArray(manifest.allowed_operations) ||
+    manifest.allowed_operations.length === 0) {
+  fail("ALLOWED_OPERATIONS_MISSING");
+}
+
+const head = git(["rev-parse", "HEAD"]);
+const upstream = git([
+  "rev-parse",
+  "--abbrev-ref",
+  "--symbolic-full-name",
+  "@{u}",
+]);
+
+const upstreamHead = git(["rev-parse", upstream]);
+
+const worktree = worktreePaths();
+const staged = stagedPaths();
+const committed = committedPaths(manifest.baseline_sha);
+
+const controlArtifacts = new Set([
+  manifestPath,
+  `${manifestPath}.sha256`,
+]);
+
+const allChanged = [
+  ...new Set([...worktree, ...staged, ...committed]),
+].filter((filePath) => !controlArtifacts.has(filePath));
+
+const unauthorized = allChanged.filter(
+  (filePath) =>
+    !pathAllowed(filePath, manifest.certified_mutation_paths)
+);
+
+const baselineMatches = head === manifest.baseline_sha;
+const scopePass = unauthorized.length === 0;
+
+const expiresAt = manifest.expires_at
+  ? Date.parse(manifest.expires_at)
+  : NaN;
+
+const expiryPass =
+  !Number.isNaN(expiresAt) && expiresAt > Date.now();
+
+let state = "AUTHORIZED";
+
+if (!baselineMatches) {
+  state = "INVALID";
+} else if (!expiryPass || !scopePass) {
+  state = "AUTHORIZED";
+} else if (committed.length > 0 && head === upstreamHead) {
+  state = "SYNCED";
+} else if (committed.length > 0) {
+  state = "COMMITTED";
+} else if (staged.length > 0) {
+  state = "STAGED";
+}
+
+const verificationPass =
+  manifest.verification?.status === "PASS";
+
+if (state === "COMMITTED" && verificationPass) {
+  state = head === upstreamHead ? "SYNCED" : "COMMITTED";
+}
+
+if (
+  state === "SYNCED" &&
+  verificationPass &&
+  manifest.allowed_operations.includes("deploy")
+) {
+  state = "DEPLOYABLE";
+}
+
+console.log("WORK-CYCLE STATE");
+console.log("----------------");
+console.log(`AUTHORITY=${manifest.authority_id}`);
+console.log(`CYCLE=${manifest.cycle_id}`);
+console.log(`MANIFEST_SHA256=${manifestSha}`);
+console.log(`BASELINE_SHA=${manifest.baseline_sha}`);
+console.log(`HEAD=${head}`);
+console.log(`UPSTREAM=${upstream}`);
+console.log(`UPSTREAM_HEAD=${upstreamHead}`);
+console.log(`BASELINE_MATCH=${baselineMatches}`);
+console.log(`EXPIRY_VALID=${expiryPass}`);
+console.log(`CERTIFIED=${allChanged.filter(
+  (filePath) => pathAllowed(filePath, manifest.certified_mutation_paths)
+).length}`);
+console.log(`OUT_OF_SCOPE=${unauthorized.length}`);
+const trackedFiles = new Set(
+  git(["ls-files"]).split("\n").filter(Boolean)
+);
+
+const untrackedCount = worktree.filter(
+  (filePath) => !trackedFiles.has(filePath)
+).length;
+
+console.log(`UNTRACKED=${untrackedCount}`);
+console.log(`STAGED=${staged.length}`);
+console.log(`COMMITTED=${committed.length}`);
+console.log(`VERIFICATION=${verificationPass ? "PASS" : "PENDING"}`);
+console.log(`STATE=${state}`);
+console.log("----------------");
+
+if (unauthorized.length) {
+  console.log("OUT_OF_SCOPE_PATHS=");
+  unauthorized.forEach((filePath) => console.log(filePath));
+}
+
+process.exit(
+  baselineMatches && expiryPass && scopePass ? 0 : 1
+);

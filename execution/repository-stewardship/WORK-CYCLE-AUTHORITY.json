@@ -1,0 +1,18 @@
+{
+  "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
+  "status": "TEST_ONLY",
+  "authority_id": "BLD-PIC-001",
+  "cycle_id": "WCT-001",
+  "baseline_sha": "5422f82d7b42e5388979a450c4be057cc2c2a0d6",
+  "certified_mutation_paths": [
+    "execution/builders/build_claude_package.py"
+  ],
+  "allowed_operations": [
+    "build",
+    "commit"
+  ],
+  "expires_at": "2026-08-21T23:59:59+07:00",
+  "verification": {
+    "status": "PENDING"
+  }
+}
