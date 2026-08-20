@@ -56,7 +56,7 @@ function porcelainPaths(args) {
 
   return output
     .split("\n")
-    .map((line) => line.trim())
+    .map((line) => line.replace(/\r$/, ""))
     .filter(Boolean);
 }
 

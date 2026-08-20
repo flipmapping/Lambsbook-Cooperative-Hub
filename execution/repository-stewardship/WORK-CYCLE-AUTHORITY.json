@@ -1,17 +1,25 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
-  "status": "TEST_ONLY",
-  "authority_id": "BLD-PIC-001",
-  "cycle_id": "WCT-001",
-  "baseline_sha": "5422f82d7b42e5388979a450c4be057cc2c2a0d6",
+  "status": "AUTHORIZED",
+  "authority_id": "APP-REL-001",
+  "cycle_id": "APP-REL-001-WC-001",
+  "baseline_sha": "89482edf4c79844eb0a48577bdecd4af32df82b6",
+  "branch": "app-rec-006-runtime-identity",
   "certified_mutation_paths": [
-    "execution/builders/build_claude_package.py"
+    "client/src/pages/HubAuth.tsx",
+    "client/src/pages/HubAuthCallback.tsx",
+    "client/src/pages/MemberHub.tsx",
+    "server/routes/member.ts",
+    "execution/implementation-authorities/",
+    "execution/packages/",
+    "execution/workspace/"
   ],
   "allowed_operations": [
     "build",
-    "commit"
+    "commit",
+    "deploy"
   ],
-  "expires_at": "2026-08-21T23:59:59+07:00",
+  "expires_at": "2026-08-22T23:59:59+07:00",
   "verification": {
     "status": "PENDING"
   }
