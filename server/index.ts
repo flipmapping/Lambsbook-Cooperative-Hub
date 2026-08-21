@@ -35,7 +35,12 @@ app.use((req, res, next) => {
 });
 
 
-app.get("/health", (_req, res) => res.status(200).send("ok"));
+app.get("/health", (_req, res) =>
+  res.status(200).json({
+    status: "ok",
+    revision: process.env.APP_BUILD_REVISION ?? null,
+  }),
+);
 app.head("/health", (_req, res) => res.status(200).end());
 
 const httpServer = createServer(app);
