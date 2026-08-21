@@ -24,6 +24,53 @@ function readJson(path) {
   }
 }
 
+function readDeploymentProvenance(head) {
+  const provenancePath =
+    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json";
+
+  if (!fs.existsSync(provenancePath)) {
+    return {
+      status: "FAIL",
+      reason: "DEPLOYMENT_PROVENANCE_MISSING",
+    };
+  }
+
+  let provenance;
+  try {
+    provenance = JSON.parse(
+      fs.readFileSync(provenancePath, "utf8")
+    );
+  } catch {
+    return {
+      status: "FAIL",
+      reason: "DEPLOYMENT_PROVENANCE_INVALID_JSON",
+    };
+  }
+
+  const pass =
+    provenance.schema === "EOS-DEPLOYMENT-PROVENANCE-v1" &&
+    provenance.status === "VERIFIED" &&
+    provenance.baseline_sha === head &&
+    provenance.deployment_revision === head &&
+    provenance.runtime_revision === head &&
+    Boolean(provenance.deployment_target) &&
+    Boolean(provenance.deployment_timestamp) &&
+    Boolean(provenance.verification_source);
+
+  return {
+    status: pass ? "PASS" : "FAIL",
+    reason: pass ? "DEPLOYMENT_PROVENANCE_VERIFIED" : "DEPLOYMENT_PROVENANCE_MISMATCH",
+    evidence: {
+      baseline_sha: provenance.baseline_sha ?? null,
+      deployment_revision: provenance.deployment_revision ?? null,
+      runtime_revision: provenance.runtime_revision ?? null,
+      deployment_target: provenance.deployment_target ?? null,
+      deployment_timestamp: provenance.deployment_timestamp ?? null,
+      verification_source: provenance.verification_source ?? null,
+    },
+  };
+}
+
 function verifyDigest(manifestPath) {
   const digestPath = `${manifestPath}.sha256`;
 
@@ -95,6 +142,12 @@ const manifestPath =
   process.argv[2] ||
   "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json";
 
+const operation = process.argv[3] || "build";
+
+if (operation !== "build" && operation !== "deploy") {
+  fail(`INVALID_OPERATION:${operation}`);
+}
+
 const manifest = readJson(manifestPath);
 const manifestSha = verifyDigest(manifestPath);
 
@@ -156,7 +209,7 @@ if (!baselineMatches) {
   state = "INVALID";
 } else if (!expiryPass || !scopePass) {
   state = "AUTHORIZED";
-} else if (committed.length > 0 && head === upstreamHead) {
+} else if (head === upstreamHead) {
   state = "SYNCED";
 } else if (committed.length > 0) {
   state = "COMMITTED";
@@ -167,6 +220,14 @@ if (!baselineMatches) {
 const verificationPass =
   manifest.verification?.status === "PASS";
 
+const deploymentProvenance =
+  operation === "deploy"
+    ? readDeploymentProvenance(head)
+    : {
+        status: "PASS",
+        reason: "DEPLOYMENT_PROVENANCE_NOT_REQUIRED_FOR_BUILD",
+      };
+
 if (state === "COMMITTED" && verificationPass) {
   state = head === upstreamHead ? "SYNCED" : "COMMITTED";
 }
@@ -174,6 +235,7 @@ if (state === "COMMITTED" && verificationPass) {
 if (
   state === "SYNCED" &&
   verificationPass &&
+  deploymentProvenance.status === "PASS" &&
   manifest.allowed_operations.includes("deploy")
 ) {
   state = "DEPLOYABLE";

@@ -1,0 +1,13 @@
+{
+  "schema": "EOS-DEPLOYMENT-PROVENANCE-v1",
+  "status": "PENDING",
+  "authority": "Repository Stewardship",
+  "cycle_id": null,
+  "baseline_sha": null,
+  "deployment_revision": null,
+  "deployment_target": null,
+  "deployment_timestamp": null,
+  "runtime_revision": null,
+  "runtime_build_identifier": null,
+  "verification_source": null
+}

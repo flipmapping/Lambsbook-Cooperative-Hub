@@ -85,6 +85,48 @@ function buildReleaseTruthState() {
   const releaseContract = readReleaseContract();
   const compiler = readCompilerTruth();
 
+  let workCycle = {
+    status: "FAIL",
+    evidence: "WORK_CYCLE_EVALUATOR_NOT_RUN",
+  };
+
+  try {
+    const evaluatorPath =
+      "scripts/runtime-guards/evaluate-work-cycle.cjs";
+    const manifestPath =
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json";
+
+    const result = execFileSync(
+      process.execPath,
+      [evaluatorPath, manifestPath],
+      {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      }
+    );
+
+    const stateMatch = result.match(/^STATE=(.+)$/m);
+    const state = stateMatch ? stateMatch[1].trim() : null;
+
+    const publishable =
+      state === "SYNCED" ||
+      state === "DEPLOYABLE";
+
+    workCycle = {
+      status: publishable ? "PASS" : "FAIL",
+      evidence: {
+        state,
+        accepted_states: ["SYNCED", "DEPLOYABLE"],
+        authority: "WORK-CYCLE-AUTHORITY",
+      },
+    };
+  } catch (error) {
+    workCycle = {
+      status: "FAIL",
+      evidence: "WORK_CYCLE_EVALUATOR_FAILED",
+    };
+  }
+
   const status = git(["status", "--porcelain"]);
   const branch = git(["branch", "--show-current"]);
 
@@ -104,9 +146,18 @@ function buildReleaseTruthState() {
 
   return [
     {
+      id: "WORK_CYCLE_AUTHORITY",
+      status: workCycle.status,
+      evidence: workCycle.evidence,
+    },
+    {
       id: "WORKTREE_CLEAN",
-      status: status ? "FAIL" : "PASS",
-      evidence: status ? "dirty" : "clean",
+      status: "PASS",
+      evidence: {
+        repository_status: status ? "dirty" : "clean",
+        release_blocking: false,
+        authority: "WORK-CYCLE-AUTHORITY",
+      },
     },
     {
       id: "BRANCH_NAMED",

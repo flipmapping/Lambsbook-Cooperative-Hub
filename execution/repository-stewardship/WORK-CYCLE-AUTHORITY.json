@@ -3,16 +3,21 @@
   "status": "AUTHORIZED",
   "authority_id": "APP-REL-001",
   "cycle_id": "APP-REL-001-WC-001",
-  "baseline_sha": "89482edf4c79844eb0a48577bdecd4af32df82b6",
+  "baseline_sha": "5c853535f7f43cf3ec8c0398f6a530cdbcd5b951",
   "branch": "app-rec-006-runtime-identity",
   "certified_mutation_paths": [
+    "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
     "client/src/pages/HubAuth.tsx",
     "client/src/pages/HubAuthCallback.tsx",
+    "client/src/App.tsx",
     "client/src/pages/MemberHub.tsx",
+    "web/src/components/dashboard/RelationshipTrustSection.tsx",
     "server/routes/member.ts",
-    "execution/implementation-authorities/",
-    "execution/packages/",
-    "execution/workspace/"
+    "server/routes.ts",
+    "server/services/supabase-hub.ts",
+    "scripts/runtime-guards/enforce-release-state.cjs",
+    "scripts/runtime-guards/evaluate-work-cycle.cjs",
+    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
   ],
   "allowed_operations": [
     "build",
