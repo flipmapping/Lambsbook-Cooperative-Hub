@@ -25,12 +25,10 @@ import { CheckCircle2, Loader2, XCircle } from "lucide-react";
 export default function InvitationAcceptancePage() {
   const params = useParams<{ token?: string; invitationId?: string }>();
 
-  // ── Invitation-link entry: redirect to signup preserving the token ──────────
+  // ── Invitation-link entry: preserve the token without bypassing acceptance ──
   useEffect(() => {
     if (params.token) {
-      window.location.assign(
-        `/hub/signup?invite=${encodeURIComponent(params.token)}`,
-      );
+      localStorage.setItem("gateway.invite.token", params.token);
     }
   }, [params.token]);
 
@@ -160,7 +158,7 @@ export default function InvitationAcceptancePage() {
     }
   };
 
-  // Redirect path: show minimal loading while redirect fires
+  // Invitation gateway: token is preserved; explicit authentication continuation follows.
   if (params.token) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
@@ -171,8 +169,25 @@ export default function InvitationAcceptancePage() {
             </div>
             <CardTitle>Preparing your invitation</CardTitle>
             <CardDescription>
-              Redirecting you to sign up...
+              Your invitation is ready. Please accept this invitation to continue.
+              After you press "Accept Invitation", you will be redirected to the
+              sign-up page where you can create your own account. After creating
+              your account, you will return to complete the invitation acceptance
+              process.
             </CardDescription>
+            <CardContent className="flex justify-center">
+              <Button
+                type="button"
+                onClick={() =>
+                  window.location.assign(
+                    `/hub/signup?invite=${encodeURIComponent(params.token!)}`,
+                  )
+                }
+                data-testid="button-accept-invitation-gateway"
+              >
+                Accept Invitation
+              </Button>
+            </CardContent>
           </CardHeader>
         </Card>
       </div>
