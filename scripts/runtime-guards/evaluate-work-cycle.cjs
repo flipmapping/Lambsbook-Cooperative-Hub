@@ -144,7 +144,7 @@ const manifestPath =
 
 const operation = process.argv[3] || "build";
 
-if (operation !== "build" && operation !== "deploy") {
+if (operation !== "build" && operation !== "deploy" && operation !== "certify") {
   fail(`INVALID_OPERATION:${operation}`);
 }
 
@@ -210,7 +210,7 @@ if (!baselineMatches) {
 } else if (!expiryPass || !scopePass) {
   state = "AUTHORIZED";
 } else if (head === upstreamHead) {
-  state = "SYNCED";
+  state = "DEPLOYMENT_CANDIDATE";
 } else if (committed.length > 0) {
   state = "COMMITTED";
 } else if (staged.length > 0) {
@@ -221,7 +221,7 @@ const verificationPass =
   manifest.verification?.status === "PASS";
 
 const deploymentProvenance =
-  operation === "deploy"
+  operation === "certify"
     ? readDeploymentProvenance(head)
     : {
         status: "PASS",

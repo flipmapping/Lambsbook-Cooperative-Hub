@@ -109,14 +109,14 @@ function buildReleaseTruthState() {
     const state = stateMatch ? stateMatch[1].trim() : null;
 
     const publishable =
-      state === "SYNCED" ||
+      state === "DEPLOYMENT_CANDIDATE" ||
       state === "DEPLOYABLE";
 
     workCycle = {
       status: publishable ? "PASS" : "FAIL",
       evidence: {
         state,
-        accepted_states: ["SYNCED", "DEPLOYABLE"],
+        accepted_states: ["DEPLOYMENT_CANDIDATE", "DEPLOYABLE"],
         authority: "WORK-CYCLE-AUTHORITY",
       },
     };
