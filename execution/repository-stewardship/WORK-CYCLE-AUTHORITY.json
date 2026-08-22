@@ -2,22 +2,11 @@
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
   "authority_id": "APP-REL-001",
-  "cycle_id": "APP-REL-001-WC-001",
-  "baseline_sha": "5c853535f7f43cf3ec8c0398f6a530cdbcd5b951",
+  "cycle_id": "APP-REL-001-WC-002",
+  "baseline_sha": "e203bc4df298abceeb2aeb14c68ad1394acadeb6",
   "branch": "app-rec-006-runtime-identity",
   "certified_mutation_paths": [
-    "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
-    "client/src/pages/HubAuth.tsx",
-    "client/src/pages/HubAuthCallback.tsx",
-    "client/src/App.tsx",
-    "client/src/pages/MemberHub.tsx",
-    "web/src/components/dashboard/RelationshipTrustSection.tsx",
-    "server/routes/member.ts",
-    "server/routes.ts",
-    "server/services/supabase-hub.ts",
-    "scripts/runtime-guards/enforce-release-state.cjs",
-    "scripts/runtime-guards/evaluate-work-cycle.cjs",
-    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
+    "client/src/pages/dashboard/InvitationAcceptancePage.tsx"
   ],
   "allowed_operations": [
     "build",

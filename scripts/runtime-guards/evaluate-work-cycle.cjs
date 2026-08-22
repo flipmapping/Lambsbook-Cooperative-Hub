@@ -199,7 +199,25 @@ const allChanged = [
   ...new Set([...worktree, ...staged, ...committed]),
 ].filter((filePath) => !controlArtifacts.has(filePath));
 
-const unauthorized = allChanged.filter(
+const releaseContractPath =
+  "execution/repository-stewardship/RELEASE-CONTRACT.json";
+
+const releaseContract = readJson(releaseContractPath);
+
+if (!Array.isArray(releaseContract.certified_change_scope)) {
+  fail("RELEASE_CONTRACT_CHANGE_SCOPE_MISSING");
+}
+
+const controlPlaneScope = releaseContract.certified_change_scope;
+
+const applicationChanges = allChanged.filter(
+  (filePath) => !controlPlaneScope.some((entry) => {
+    if (entry.endsWith("/")) return filePath.startsWith(entry);
+    return filePath === entry;
+  })
+);
+
+const unauthorized = applicationChanges.filter(
   (filePath) =>
     !pathAllowed(filePath, manifest.certified_mutation_paths)
 );
