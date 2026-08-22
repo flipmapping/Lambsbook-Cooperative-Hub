@@ -14,6 +14,17 @@ function git(args) {
   }).trim();
 }
 
+function isAncestor(ancestor, descendant) {
+  try {
+    execFileSync("git", ["merge-base", "--is-ancestor", ancestor, descendant], {
+      stdio: "ignore",
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function readJson(path) {
   if (!fs.existsSync(path)) fail(`MISSING:${path}`);
 
@@ -193,7 +204,7 @@ const unauthorized = allChanged.filter(
     !pathAllowed(filePath, manifest.certified_mutation_paths)
 );
 
-const baselineMatches = head === manifest.baseline_sha;
+const baselineMatches = isAncestor(manifest.baseline_sha, head);
 const scopePass = unauthorized.length === 0;
 
 const expiresAt = manifest.expires_at
