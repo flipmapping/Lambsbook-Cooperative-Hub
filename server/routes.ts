@@ -28,7 +28,6 @@ import {
   signUpWithPassword,
   signInWithPassword,
   signOut,
-  resetPassword,
   getUser,
 } from "./services/supabase-auth";
 import adminRoutes from "./routes/admin";
@@ -1089,21 +1088,6 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Signout error:", error);
       res.status(500).json({ error: "Failed to sign out" });
-    }
-  });
-
-  // Reset password
-  app.post("/api/auth/reset-password", async (req: Request, res: Response) => {
-    try {
-      const { email } = req.body;
-      if (!email) {
-        return res.status(400).json({ error: "Email is required" });
-      }
-      const result = await resetPassword(email);
-      res.json(result);
-    } catch (error) {
-      console.error("Reset password error:", error);
-      res.status(500).json({ error: "Failed to reset password" });
     }
   });
 

@@ -46,6 +46,7 @@ import LambsbookTutoring from '@/pages/LambsbookTutoring';
 import FarmstayVision from '@/pages/FarmstayVision';
 import AdminGovernance from '@/pages/AdminGovernance';
 import ResetPassword from '@/pages/ResetPassword';
+import RecoveryRedirect from '@/pages/RecoveryRedirect';
 import { JourneyContribute, JourneyLearn } from '@/pages/JourneyPages';
 
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
@@ -159,6 +160,7 @@ function Router() {
       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
       <Route path="/hub/auth/callback" component={HubAuthCallback} />
+      <Route path="/auth/recovery" component={RecoveryRedirect} />
       <Route path="/auth/reset" component={ResetPassword} />
       <Route path="/hub/dashboard" component={MemberHub} />
       <Route

@@ -1,0 +1,17 @@
+{
+  "authority": "APP-REL-011",
+  "timestamp": "2026-08-23T09:10:34.992013+00:00",
+  "release_contract_version": "2.0.0",
+  "release_contract_sha256": "40c03619cf373dac31d5e70335a54392d9bb80ab3426010c3af5ed855bc030ef",
+  "recovery_scope": [
+    "client/src/pages/RecoveryRedirect.tsx",
+    "client/src/App.tsx",
+    "client/src/pages/ResetPassword.tsx",
+    "server/routes.ts",
+    "server/services/supabase-hub.ts"
+  ],
+  "legacy_supabase_auth_in_scope": false,
+  "scope_basis": "Verified recovery dependency proof",
+  "contract_scope_verified": true,
+  "digest_evidence_verified": true
+}

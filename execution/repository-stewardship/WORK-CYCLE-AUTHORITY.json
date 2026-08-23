@@ -6,14 +6,18 @@
   "baseline_sha": "e203bc4df298abceeb2aeb14c68ad1394acadeb6",
   "branch": "app-rec-006-runtime-identity",
   "certified_mutation_paths": [
-    "client/src/pages/dashboard/InvitationAcceptancePage.tsx"
+    "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
+    "client/src/App.tsx",
+    "client/src/pages/RecoveryRedirect.tsx",
+    "server/routes.ts",
+    "server/services/supabase-hub.ts"
   ],
   "allowed_operations": [
     "build",
     "commit",
     "deploy"
   ],
-  "expires_at": "2026-08-22T23:59:59+07:00",
+  "expires_at": "2026-08-29T23:59:59+07:00",
   "verification": {
     "status": "PENDING"
   }

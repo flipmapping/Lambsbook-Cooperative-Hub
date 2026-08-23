@@ -81,8 +81,51 @@ function readReleaseContract() {
   };
 }
 
+function classifyRepositoryPath(path) {
+  if (path.startsWith("execution/workspace/")) return "WORKSPACE_EVIDENCE";
+  if (path.startsWith("execution/repository-stewardship/")) return "GOVERNANCE_CONTROL_PLANE";
+  if (path.startsWith("scripts/runtime-guards/")) return "GOVERNANCE_CONTROL_PLANE";
+  if (path.startsWith("client/") || path.startsWith("server/") || path.startsWith("web/")) return "PRODUCT_SURFACE";
+  return "UNCLASSIFIED";
+}
+
+function buildScopeAlignmentTruth(releaseContract, workCycleManifest) {
+  const authorityScope =
+    workCycleManifest.certified_mutation_paths || [];
+
+  const authorizedNotInContract = authorityScope
+    .filter((path) => !isInReleaseContractScope(path));
+
+  const contractNotAuthorized = [];
+
+  return {
+    status:
+      authorizedNotInContract.length === 0 &&
+      contractNotAuthorized.length === 0
+        ? "PASS"
+        : "FAIL",
+    evidence: {
+      mode: "RELEASE_CONTRACT_SCOPE_ADMISSION",
+      authorized_not_in_contract: authorizedNotInContract,
+      contract_not_authorized: contractNotAuthorized,
+    },
+  };
+}
+
 function buildReleaseTruthState() {
   const releaseContract = readReleaseContract();
+  const workCycleManifest = JSON.parse(
+    require("node:fs").readFileSync(
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "utf8"
+    )
+  );
+
+  const scopeAlignment = buildScopeAlignmentTruth(
+    releaseContract,
+    workCycleManifest
+  );
+
   const compiler = readCompilerTruth();
 
   let workCycle = {
@@ -123,7 +166,7 @@ function buildReleaseTruthState() {
   } catch (error) {
     workCycle = {
       status: "FAIL",
-      evidence: "WORK_CYCLE_EVALUATOR_FAILED",
+      evidence: error.stdout || error.stderr || "WORK_CYCLE_EVALUATOR_FAILED",
     };
   }
 
@@ -146,16 +189,21 @@ function buildReleaseTruthState() {
 
   return [
     {
+      id: "WORK_CYCLE_RELEASE_CONTRACT_ALIGNMENT",
+      status: scopeAlignment.status,
+      evidence: scopeAlignment.evidence,
+    },
+    {
       id: "WORK_CYCLE_AUTHORITY",
       status: workCycle.status,
       evidence: workCycle.evidence,
     },
     {
       id: "WORKTREE_CLEAN",
-      status: "PASS",
+      status: status ? "FAIL" : "PASS",
       evidence: {
         repository_status: status ? "dirty" : "clean",
-        release_blocking: false,
+        release_blocking: Boolean(status),
         authority: "WORK-CYCLE-AUTHORITY",
       },
     },
@@ -227,6 +275,15 @@ if (
 const releaseBaseline = releaseContract.repository_baseline.head;
 const certifiedRuntimeFiles = releaseContract.certified_runtime_files;
 const certifiedChangeScope = releaseContract.certified_change_scope;
+
+function isInReleaseContractScope(path) {
+  return certifiedChangeScope.some((entry) => {
+    if (entry.endsWith("/")) {
+      return path.startsWith(entry);
+    }
+    return path === entry;
+  });
+}
 
 if (
   !releaseContract.repository_runtime_boundaries ||
@@ -326,6 +383,8 @@ function isInCertifiedChangeScope(path) {
   });
 }
 
+const pathClassifications = changedFiles.map((path) => ({ path, classification: classifyRepositoryPath(path) }));
+
 const outOfScopeChanges = changedFiles.filter(
   (path) =>
     !isInCertifiedChangeScope(path) &&
@@ -335,6 +394,7 @@ const outOfScopeChanges = changedFiles.filter(
 
 const truthState = buildReleaseTruthState();
 
+console.log("PATH_CLASSIFICATIONS="+JSON.stringify(pathClassifications));
 console.log("RELEASE TRUTH-STATE TABLE");
 console.log("-------------------------");
 for (const row of truthState) {
@@ -345,6 +405,7 @@ console.log("-------------------------");
 const failedTruthRows = truthState.filter(
   (row) => row.status !== "PASS"
 );
+console.log("FAILED_TRUTH_EVIDENCE="+JSON.stringify(failedTruthRows));
 
 if (failedTruthRows.length) {
   fail(
@@ -355,8 +416,8 @@ if (failedTruthRows.length) {
 
 if (outOfScopeChanges.length) {
   fail(
-    "RELEASE_SCOPE_VIOLATION: " +
-      outOfScopeChanges.join(", ")
+    "RELEASE_SCOPE_VIOLATION_CLASSIFIED: " +
+      outOfScopeChanges.map((path) => classifyRepositoryPath(path) + ":" + path).join(", ")
   );
 }
 

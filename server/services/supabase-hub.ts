@@ -343,8 +343,15 @@ export class HubAuthError extends Error {
 }
 
 function hubRedirectUrl(referrerEmail?: string, inviteToken?: string) {
-  const base =
-    process.env.SITE_URL || process.env.APP_URL || "http://localhost:5000";
+  const base = process.env.SITE_URL || process.env.APP_URL;
+
+  if (!base) {
+    throw new HubAuthError(
+      "Application URL is not configured. Set SITE_URL or APP_URL before sending authentication emails.",
+      503,
+    );
+  }
+
   return `${base}/hub/auth/callback?referrer=${encodeURIComponent(referrerEmail || "")}&invite=${encodeURIComponent(inviteToken || "")}`;
 }
 
@@ -685,8 +692,17 @@ export async function forgotPassword(email: string) {
   }
 
   try {
+    const base = process.env.SITE_URL || process.env.APP_URL;
+
+    if (!base) {
+      throw new HubAuthError(
+        "Application URL is not configured. Set SITE_URL or APP_URL before sending password reset emails.",
+        503,
+      );
+    }
+
     const { error } = await supabaseAuth.auth.resetPasswordForEmail(email, {
-      redirectTo: `${process.env.SITE_URL || process.env.APP_URL || "http://localhost:5000"}/auth/reset`,
+      redirectTo: `${base}/auth/reset`,
     });
 
     if (error) {
@@ -758,6 +774,18 @@ export async function resetPassword(accessToken: string, newPassword: string) {
         throw new HubAuthError(
           "New password must be different from your current password.",
           400,
+          error,
+        );
+      }
+
+      if (
+        error.message.includes("Auth session missing") ||
+        error.message.includes("Invalid JWT") ||
+        error.message.includes("JWT expired")
+      ) {
+        throw new HubAuthError(
+          "This password reset link is invalid or has expired. Please request a new reset link.",
+          401,
           error,
         );
       }

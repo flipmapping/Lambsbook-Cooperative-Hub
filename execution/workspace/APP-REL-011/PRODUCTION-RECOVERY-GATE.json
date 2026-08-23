@@ -1,0 +1,13 @@
+{
+  "authority": "APP-REL-011",
+  "timestamp": "2026-08-23T11:45:47.400086+00:00",
+  "gate": "production-recovery-artifact",
+  "production_artifact_port": 5100,
+  "recovery_route_http_status": 200,
+  "recovery_api_http_status": 401,
+  "invalid_recovery_session_classification": "invalid_or_expired_reset_link",
+  "password_mutation": false,
+  "email_sent": false,
+  "deployment": false,
+  "gate_passed": true
+}

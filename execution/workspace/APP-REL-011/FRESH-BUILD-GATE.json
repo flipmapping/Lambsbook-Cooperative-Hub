@@ -1,0 +1,12 @@
+{
+  "authority": "APP-REL-011",
+  "timestamp": "2026-08-23T11:52:17.586863+00:00",
+  "gate": "fresh-build",
+  "frontend_build": "passed",
+  "backend_build": "passed",
+  "backend_recovery_marker": "verified",
+  "deployment": false,
+  "commit": false,
+  "push": false,
+  "gate_passed": true
+}

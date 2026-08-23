@@ -97,8 +97,8 @@
     }
   },
   "contract_sha256": "16d1a73f365be7f5add4dc862e4feec0ced7917f2b0965e2710adfa959e59471",
-  "contract_version": "1.0.0",
-  "generated_at": "2026-07-30T14:30:03.057316+00:00",
+  "contract_version": "2.0.0",
+  "generated_at": "2026-08-23T09:03:56.311217+00:00",
   "immutability": {
     "main_app_must_consume_without_modification": true,
     "manual_scope_expansion_permitted": false,
@@ -131,7 +131,10 @@
     "scripts/runtime-guards/",
     "scripts/builders/",
     ".gitignore",
-    "client/src/pages/CommunityPage.tsx"
+    "client/src/pages/CommunityPage.tsx",
+    "client/src/pages/RecoveryRedirect.tsx",
+    "client/src/pages/ResetPassword.tsx",
+    "server/routes.ts"
   ],
   "repository_root_admission": {
     "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",

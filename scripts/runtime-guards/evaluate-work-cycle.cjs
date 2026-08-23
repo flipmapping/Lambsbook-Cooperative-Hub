@@ -193,6 +193,8 @@ const committed = committedPaths(manifest.baseline_sha);
 const controlArtifacts = new Set([
   manifestPath,
   `${manifestPath}.sha256`,
+  "execution/repository-stewardship/RELEASE-CONTRACT.json",
+  "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
 ]);
 
 const allChanged = [
