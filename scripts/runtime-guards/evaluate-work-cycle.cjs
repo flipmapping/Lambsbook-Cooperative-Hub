@@ -188,7 +188,7 @@ const upstreamHead = git(["rev-parse", upstream]);
 
 const worktree = worktreePaths();
 const staged = stagedPaths();
-const committed = committedPaths(manifest.baseline_sha);
+const committed = committedPaths(upstreamHead);
 
 const controlArtifacts = new Set([
   manifestPath,
