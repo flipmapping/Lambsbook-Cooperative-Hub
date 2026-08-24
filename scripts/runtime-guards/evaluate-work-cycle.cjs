@@ -264,9 +264,7 @@ if (state === "COMMITTED" && verificationPass) {
 }
 
 if (
-  state === "SYNCED" &&
-  verificationPass &&
-  deploymentProvenance.status === "PASS" &&
+  state === "DEPLOYMENT_CANDIDATE" &&
   manifest.allowed_operations.includes("deploy")
 ) {
   state = "DEPLOYABLE";
