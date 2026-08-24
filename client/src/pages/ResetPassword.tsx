@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { createClient } from "@/lib/supabase/client";
 import { Lock, Eye, EyeOff, CheckCircle2, Loader2, AlertCircle, XCircle } from "lucide-react";
 
 export default function ResetPassword() {
@@ -44,9 +45,22 @@ export default function ResetPassword() {
 
     if (token && (tokenType === "recovery" || !tokenType)) {
       setAccessToken(token);
-    } else {
-      setTokenError(true);
+      return;
     }
+
+    if (!token && !error && tokenType === "recovery") {
+      createClient().auth.getSession().then(({ data }) => {
+        const sessionToken = data.session?.access_token ?? null;
+        if (sessionToken) {
+          setAccessToken(sessionToken);
+        } else {
+          setTokenError(true);
+        }
+      });
+      return;
+    }
+
+    setTokenError(true);
   }, [toast]);
 
   const handleBlur = (field: string) => {

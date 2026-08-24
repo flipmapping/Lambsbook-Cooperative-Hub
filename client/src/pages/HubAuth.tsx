@@ -263,7 +263,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
           // resolution so the newly authenticated invitee can resolve as pending.
           if (inviteToken) {
             try {
-              await fetch("/api/member/onboarding/materialize-invitation", {
+              const response = await fetch("/api/member/onboarding/materialize-invitation", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -271,6 +271,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
                 },
                 body: JSON.stringify({ inviteToken }),
               });
+              if (!response.ok) throw new Error(`Invitation materialization failed: HTTP ${response.status}`);
             } catch (e) {
               console.warn("Failed to materialize invitation:", e);
             }
@@ -343,7 +344,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
         if (inviteToken) {
           try {
-            await fetch("/api/member/onboarding/materialize-invitation", {
+            const response = await fetch("/api/member/onboarding/materialize-invitation", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -351,6 +352,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
               },
               body: JSON.stringify({ inviteToken }),
             });
+            if (!response.ok) throw new Error(`Invitation materialization failed: HTTP ${response.status}`);
           } catch (e) {
             console.warn("Failed to materialize invitation:", e);
           }
