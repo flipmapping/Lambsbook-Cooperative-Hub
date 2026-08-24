@@ -188,5 +188,36 @@
         "must_be_ignored": true
       }
     ]
+  },
+  "deployment_configuration": {
+    "authority": "REPLIT_DEPLOYMENT_CONFIGURATION",
+    "deployment_target": "autoscale",
+    "build_command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "run_command": [
+      "npm",
+      "run",
+      "start"
+    ],
+    "deployment_port_override": {
+      "required_absent": true
+    },
+    "production_port_mapping": {
+      "local_port": 5000,
+      "external_port": 80
+    },
+    "approved_port_mappings": [
+      {
+        "local_port": 5000,
+        "external_port": 80
+      },
+      {
+        "local_port": 5099,
+        "external_port": 3000
+      }
+    ]
   }
 }

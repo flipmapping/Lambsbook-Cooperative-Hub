@@ -112,8 +112,147 @@ function buildScopeAlignmentTruth(releaseContract, workCycleManifest) {
   };
 }
 
+
+function buildDeploymentConfigurationTruth(releaseContract) {
+  const fs = require("node:fs");
+
+  const path = ".replit";
+
+  if (!fs.existsSync(path)) {
+    return {
+      status: "FAIL",
+      evidence: {
+        reason: "REPLIT_CONFIG_MISSING",
+      },
+    };
+  }
+
+  const configuration = releaseContract.deployment_configuration;
+
+  if (!configuration) {
+    return {
+      status: "FAIL",
+      evidence: {
+        reason: "DEPLOYMENT_CONFIGURATION_CONTRACT_MISSING",
+      },
+    };
+  }
+
+  const text = fs.readFileSync(path, "utf8");
+
+  const deploymentMatch = text.match(
+    /\[deployment\]([\s\S]*?)(?=\n\[[^\n]+\]|\n\[\[[^\n]+\]\]|$)/
+  );
+
+  const deployment = deploymentMatch ? deploymentMatch[1] : "";
+
+  const deploymentTarget =
+    /(?:^|\n)\s*deploymentTarget\s*=\s*"([^"]+)"/.exec(deployment)?.[1] ??
+    null;
+
+  const buildCommandMatch =
+    /(?:^|\n)\s*build\s*=\s*\[([^\]]+)\]/.exec(deployment);
+
+  const runCommandMatch =
+    /(?:^|\n)\s*run\s*=\s*\[([^\]]+)\]/.exec(deployment);
+
+  const parseCommand = (value) =>
+    value
+      ? value
+          .split(",")
+          .map((item) => item.trim().replace(/^"|"$/g, ""))
+      : null;
+
+  const buildCommand = parseCommand(buildCommandMatch?.[1]);
+  const runCommand = parseCommand(runCommandMatch?.[1]);
+
+  const expectedMappings =
+    Array.isArray(configuration.approved_port_mappings) &&
+    configuration.approved_port_mappings.length > 0
+      ? configuration.approved_port_mappings
+      : [configuration.production_port_mapping || {}];
+
+  const portMappings = [];
+  const portPattern =
+    /\[\[ports\]\]([\s\S]*?)(?=\n\[\[|\n\[[^\n]+\]|$)/g;
+
+  let match;
+  while ((match = portPattern.exec(text)) !== null) {
+    const block = match[1];
+
+    const localPort =
+      /\blocalPort\s*=\s*(\d+)/.exec(block)?.[1] ?? null;
+
+    const externalPort =
+      /\bexternalPort\s*=\s*(\d+)/.exec(block)?.[1] ?? null;
+
+    if (localPort !== null || externalPort !== null) {
+      portMappings.push({
+        localPort,
+        externalPort,
+      });
+    }
+  }
+
+  const expectedPortMappings = expectedMappings.map((mapping) => ({
+    localPort: String(mapping.local_port),
+    externalPort: String(mapping.external_port),
+  }));
+
+  const productionMappingsMatchExactly =
+    JSON.stringify(portMappings) ===
+    JSON.stringify(expectedPortMappings);
+
+  const deploymentEnvPortOverride =
+    /\[env\]([\s\S]*?)(?=\n\[[^\n]+\]|\n\[\[[^\n]+\]\]|$)/.exec(text);
+
+  const hasPortOverride =
+    deploymentEnvPortOverride !== null &&
+    /(?:^|\n)\s*PORT\s*=/.test(deploymentEnvPortOverride[1]);
+
+  const checks = {
+    deployment_target:
+      deploymentTarget === configuration.deployment_target,
+
+    deployment_build:
+      JSON.stringify(buildCommand) ===
+      JSON.stringify(configuration.build_command),
+
+    deployment_run:
+      JSON.stringify(runCommand) ===
+      JSON.stringify(configuration.run_command),
+
+    production_port_mapping:
+      productionMappingsMatchExactly,
+
+    deployment_port_override_absent:
+      configuration.deployment_port_override?.required_absent === true
+        ? !hasPortOverride
+        : true,
+  };
+
+  const failed = Object.entries(checks)
+    .filter(([, passed]) => !passed)
+    .map(([name]) => name);
+
+  return {
+    status: failed.length === 0 ? "PASS" : "FAIL",
+    evidence: {
+      deployment_target: deploymentTarget,
+      deployment_build: buildCommand,
+      deployment_run: runCommand,
+      production_port_mapping: expectedPortMappings,
+      observed_port_mappings: portMappings,
+      deployment_port_override_present: hasPortOverride,
+      failed_checks: failed,
+      authority: configuration.authority,
+    },
+  };
+}
+
 function buildReleaseTruthState() {
-  const releaseContract = readReleaseContract();
+  const releaseContractState = readReleaseContract();
+  const releaseContract = releaseContractState.contract;
   const workCycleManifest = JSON.parse(
     require("node:fs").readFileSync(
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
@@ -125,6 +264,9 @@ function buildReleaseTruthState() {
     releaseContract,
     workCycleManifest
   );
+
+  const deploymentConfiguration =
+    buildDeploymentConfigurationTruth(releaseContract);
 
   const compiler = readCompilerTruth();
 
@@ -197,6 +339,11 @@ function buildReleaseTruthState() {
       id: "WORK_CYCLE_AUTHORITY",
       status: workCycle.status,
       evidence: workCycle.evidence,
+    },
+    {
+      id: "DEPLOYMENT_CONFIGURATION",
+      status: deploymentConfiguration.status,
+      evidence: deploymentConfiguration.evidence,
     },
     {
       id: "WORKTREE_CLEAN",
