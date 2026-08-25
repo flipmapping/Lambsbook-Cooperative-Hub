@@ -560,6 +560,7 @@ export async function linkReferrer(memberEmail: string, referrerEmail: string) {
   }
 
   const { data: referrer, error: referrerError } = await supabaseAuth
+    .schema("meh")
     .from("members")
     .select("id, email, full_name")
     .eq("email", referrerEmail)
@@ -573,8 +574,9 @@ export async function linkReferrer(memberEmail: string, referrerEmail: string) {
   }
 
   const { data: member, error: memberError } = await supabaseAuth
+    .schema("meh")
     .from("members")
-    .select("id, inviter_id")
+    .select("id, invitor_id")
     .eq("email", memberEmail)
     .maybeSingle();
 
@@ -582,13 +584,14 @@ export async function linkReferrer(memberEmail: string, referrerEmail: string) {
     return { success: false, error: "Member not found" };
   }
 
-  if (member.inviter_id) {
+  if (member.invitor_id) {
     return { success: false, error: "Already linked to a referrer" };
   }
 
   const { error: updateError } = await supabaseAuth
+    .schema("meh")
     .from("members")
-    .update({ inviter_id: referrer.id, updated_at: new Date().toISOString() })
+    .update({ invitor_id: referrer.id, updated_at: new Date().toISOString() })
     .eq("id", member.id);
 
   if (updateError) throw updateError;
