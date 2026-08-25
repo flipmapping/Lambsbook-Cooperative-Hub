@@ -744,26 +744,19 @@ export async function resetPassword(accessToken: string, newPassword: string) {
   }
 
   try {
-    const supabaseWithToken = createClient(
-      supabaseUrl,
-      supabaseAnonKey || supabaseServiceRoleKey!,
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        },
-        auth: {
-          autoRefreshToken: false,
-          persistSession: false,
-        },
-        realtime: {
-          transport: ws as unknown as WebSocketLikeConstructor,
-        },
-      },
-    );
+    const {
+      data: { user },
+      error: userError,
+    } = await supabaseAuth.auth.getUser(accessToken);
 
-    const { error } = await supabaseWithToken.auth.updateUser({
+    if (userError || !user) {
+      throw new HubAuthError(
+        userError?.message || "Invalid or expired access token.",
+        401,
+      );
+    }
+
+    const { error } = await supabaseAuth.auth.admin.updateUserById(user.id, {
       password: newPassword,
     });
 
