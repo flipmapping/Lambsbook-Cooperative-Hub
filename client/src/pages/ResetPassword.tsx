@@ -48,7 +48,7 @@ export default function ResetPassword() {
       return;
     }
 
-    if (!token && !error && tokenType === "recovery") {
+    if (!token && !error) {
       createClient().auth.getSession().then(({ data }) => {
         const sessionToken = data.session?.access_token ?? null;
         if (sessionToken) {
