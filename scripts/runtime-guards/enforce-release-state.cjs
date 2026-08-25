@@ -250,6 +250,38 @@ function buildDeploymentConfigurationTruth(releaseContract) {
   };
 }
 
+function readCanonicalRuntimeTruth() {
+  try {
+    const result = execFileSync(
+      process.execPath,
+      ["scripts/runtime-guards/enforce-canonical-runtime.cjs"],
+      {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      }
+    );
+
+    return {
+      status: "PASS",
+      evidence: {
+        guard: "scripts/runtime-guards/enforce-canonical-runtime.cjs",
+        output: result.trim(),
+      },
+    };
+  } catch (error) {
+    return {
+      status: "FAIL",
+      evidence: {
+        guard: "scripts/runtime-guards/enforce-canonical-runtime.cjs",
+        output:
+          error.stdout?.toString() ||
+          error.stderr?.toString() ||
+          "CANONICAL_RUNTIME_GUARD_FAILED",
+      },
+    };
+  }
+}
+
 function buildReleaseTruthState() {
   const releaseContractState = readReleaseContract();
   const releaseContract = releaseContractState.contract;
@@ -269,6 +301,7 @@ function buildReleaseTruthState() {
     buildDeploymentConfigurationTruth(releaseContract);
 
   const compiler = readCompilerTruth();
+  const canonicalRuntime = readCanonicalRuntimeTruth();
 
   let workCycle = {
     status: "FAIL",
@@ -373,6 +406,11 @@ function buildReleaseTruthState() {
       id: "COMPILER_CERTIFICATION",
       status: compiler.status,
       evidence: compiler,
+    },
+    {
+      id: "CANONICAL_RUNTIME",
+      status: canonicalRuntime.status,
+      evidence: canonicalRuntime.evidence,
     },
     {
       id: "RELEASE_CONTRACT_INTEGRITY",

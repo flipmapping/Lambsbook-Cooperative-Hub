@@ -1,3 +1,4 @@
+import { getUser } from "./supabase-auth";
 import { createClient, AuthApiError } from "@supabase/supabase-js";
 import ws from "ws";
 import { z } from "zod";
@@ -744,17 +745,16 @@ export async function resetPassword(accessToken: string, newPassword: string) {
   }
 
   try {
-    const {
-      data: { user },
-      error: userError,
-    } = await supabaseAuth.auth.getUser(accessToken);
+    const authResult = await getUser(accessToken);
 
-    if (userError || !user) {
+    if (!authResult.success || !authResult.data?.user) {
       throw new HubAuthError(
-        userError?.message || "Invalid or expired access token.",
+        authResult.message || "Invalid or expired access token.",
         401,
       );
     }
+
+    const user = authResult.data.user;
 
     const { error } = await supabaseAuth.auth.admin.updateUserById(user.id, {
       password: newPassword,
