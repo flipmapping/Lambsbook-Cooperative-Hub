@@ -702,7 +702,7 @@ export async function forgotPassword(email: string) {
     }
 
     const { error } = await supabaseAuth.auth.resetPasswordForEmail(email, {
-      redirectTo: `${base}/auth/reset`,
+      redirectTo: `${base}/auth/recovery`,
     });
 
     if (error) {
