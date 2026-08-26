@@ -98,26 +98,7 @@ const user = authReq.user;
       });
     }
 
-    const supabase = getUserClient(user.token);
-
-    const { data: userEmail, error: userEmailError } =
-      await supabase.rpc("get_my_auth_email");
-
-
-    if (userEmailError || !userEmail) {
-      return res.status(401).json({
-        error: "User email not found"
-      });
-    }
-
     const supabaseAdmin = getServiceClient();
-
-    await supabaseAdmin
-      .from("member_invitations")
-      .update({ invited_user_id: user.id })
-      .eq("status", "pending")
-      .is("invited_user_id", null)
-      .eq("invited_email", userEmail);
 
     const { data, error } = await supabaseAdmin
       .from("member_invitations")
