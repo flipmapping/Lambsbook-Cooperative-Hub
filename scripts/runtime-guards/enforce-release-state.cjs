@@ -2,6 +2,9 @@ const { execFileSync } = require("node:child_process");
 
 const RELEASE_GATE_TIMEOUT_MS = 120000;
 
+process.stdout.write("RELEASE_GATE_START\\n");
+
+
 function git(args) {
   const operation = `git ${args.join(" ")}`;
   console.log(`RELEASE_GATE_OPERATION=${operation}`);
