@@ -72,8 +72,8 @@ export default function HubAuthCallback() {
         const hashParams = new URLSearchParams(
           window.location.hash.substring(1),
         );
-        const accessToken = hashParams.get("access_token");
-        const refreshToken = hashParams.get("refresh_token");
+        let accessToken = hashParams.get("access_token");
+        let refreshToken = hashParams.get("refresh_token");
         const error = hashParams.get("error");
         const errorDescription = hashParams.get("error_description");
 
@@ -85,6 +85,22 @@ export default function HubAuthCallback() {
           urlParams.get("invite") ||
           localStorage.getItem("gateway.invite.token") ||
           undefined;
+
+        const authorizationCode = urlParams.get("code");
+
+        if (!accessToken && authorizationCode) {
+          const { data, error: exchangeError } =
+            await createClient().auth.exchangeCodeForSession(
+              authorizationCode,
+            );
+
+          if (exchangeError) {
+            throw exchangeError;
+          }
+
+          accessToken = data.session?.access_token ?? null;
+          refreshToken = data.session?.refresh_token ?? null;
+        }
 
         if (error || urlError) {
           setStatus("error");
