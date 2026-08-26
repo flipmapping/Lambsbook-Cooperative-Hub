@@ -1,10 +1,32 @@
 const { execFileSync } = require("node:child_process");
 
+const RELEASE_GATE_TIMEOUT_MS = 120000;
+
 function git(args) {
-  return execFileSync("git", args, {
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-  }).trim();
+  const operation = `git ${args.join(" ")}`;
+  console.log(`RELEASE_GATE_OPERATION=${operation}`);
+
+  try {
+    return execFileSync("git", args, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+      timeout: RELEASE_GATE_TIMEOUT_MS,
+    }).trim();
+  } catch (error) {
+    console.error("RELEASE_GATE=EXECUTION_ERROR");
+    console.error(
+      "RELEASE_GATE_EXECUTION_ERROR=" +
+        JSON.stringify({
+          phase: "GIT",
+          operation,
+          exit_status:
+            typeof error.status === "number" ? error.status : null,
+          signal: error.signal || null,
+          stderr: error.stderr?.toString() || "",
+        })
+    );
+    process.exit(2);
+  }
 }
 
 function fail(message) {
@@ -258,6 +280,7 @@ function readCanonicalRuntimeTruth() {
       {
         encoding: "utf8",
         stdio: ["ignore", "pipe", "pipe"],
+        timeout: RELEASE_GATE_TIMEOUT_MS,
       }
     );
 
@@ -320,6 +343,7 @@ function buildReleaseTruthState() {
       {
         encoding: "utf8",
         stdio: ["ignore", "pipe", "pipe"],
+        timeout: RELEASE_GATE_TIMEOUT_MS,
       }
     );
 
@@ -546,6 +570,7 @@ const workingTreeRaw = execFileSync(
   {
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
+        timeout: RELEASE_GATE_TIMEOUT_MS,
   }
 );
 
