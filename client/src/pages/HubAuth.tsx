@@ -273,7 +273,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
               });
               if (!response.ok) throw new Error(`Invitation materialization failed: HTTP ${response.status}`);
             } catch (e) {
-              console.warn("Failed to materialize invitation:", e);
+              throw new Error("Invitation materialization failed.");
             }
           }
 
@@ -354,7 +354,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
             });
             if (!response.ok) throw new Error(`Invitation materialization failed: HTTP ${response.status}`);
           } catch (e) {
-            console.warn("Failed to materialize invitation:", e);
+            throw new Error("Invitation materialization failed.");
           }
         }
 
