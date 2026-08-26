@@ -407,11 +407,20 @@ function buildReleaseTruthState() {
     },
     {
       id: "WORKTREE_CLEAN",
-      status: status ? "FAIL" : "PASS",
+      status:
+        upstream &&
+        upstreamHead === head
+          ? "PASS"
+          : "FAIL",
       evidence: {
         repository_status: status ? "dirty" : "clean",
-        release_blocking: Boolean(status),
-        authority: "WORK-CYCLE-AUTHORITY",
+        candidate_sha: head,
+        upstream_sha: upstreamHead,
+        candidate_synchronized:
+          Boolean(upstream && upstreamHead === head),
+        concurrent_wip_present: Boolean(status),
+        release_blocking: Boolean(upstream && upstreamHead !== head),
+        authority: "RELEASE-CANDIDATE-SHA",
       },
     },
     {
@@ -582,10 +591,7 @@ const workingTreeChanges = workingTreeRaw
   .map((line) => line.slice(3).trim())
   .filter(Boolean);
 
-const changedFiles = [...new Set([
-  ...committedChanges,
-  ...workingTreeChanges,
-])];
+const changedFiles = [...new Set(committedChanges)];
 
 function isInCertifiedChangeScope(path) {
   return certifiedChangeScope.some((entry) => {
