@@ -308,19 +308,95 @@ async function _determineRuntimeState(
   _validated: _ValidatedContinuationContext,
   _invitationStage: _InvitationContinuationStage,
 ): Promise<_DeterminedRuntimeState> {
-  // NOTE: _invitationStage (derived from the locally-cached
-  // gateway.invite.token) is intentionally NOT consulted for outcome
-  // resolution below. It remains advisory only — callers may still use
-  // it to materialize an invitation post-signup — but canonical
-  // membership authority (GET /api/member/me) alone determines routing.
   const membership = await _resolveCanonicalMembership(_validated.normalized);
 
-  return {
-    authenticationMode: _validated.normalized.authenticationMode,
-    outcome: membership.outcome,
-    memberId: membership.memberId,
-    pendingInvitationId: membership.pendingInvitationId,
-  };
+  if (
+    membership.outcome !== "non_member" ||
+    _invitationStage.kind !== "invitation"
+  ) {
+    return {
+      authenticationMode: _validated.normalized.authenticationMode,
+      outcome: membership.outcome,
+      memberId: membership.memberId,
+      pendingInvitationId: membership.pendingInvitationId,
+    };
+  }
+
+  try {
+    const pendingResponse = await fetch(
+      "/api/member/pending-invitation",
+      {
+        headers: {
+          Authorization: `Bearer ${_validated.normalized.accessToken}`,
+        },
+      },
+    );
+
+    if (!pendingResponse.ok) {
+      return {
+        authenticationMode: _validated.normalized.authenticationMode,
+        outcome: "non_member",
+        memberId: undefined,
+        pendingInvitationId: undefined,
+      };
+    }
+
+    const pendingData = (await pendingResponse.json()) as {
+      has_pending_invitation?: boolean;
+      invitation?: { id?: string };
+    };
+
+    const invitationId = pendingData.invitation?.id?.trim();
+
+    if (!pendingData.has_pending_invitation || !invitationId) {
+      return {
+        authenticationMode: _validated.normalized.authenticationMode,
+        outcome: "non_member",
+        memberId: undefined,
+        pendingInvitationId: undefined,
+      };
+    }
+
+    const acceptanceResponse = await fetch(
+      "/api/member/accept-invitation",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${_validated.normalized.accessToken}`,
+        },
+        body: JSON.stringify({
+          invitationId,
+        }),
+      },
+    );
+
+    if (!acceptanceResponse.ok) {
+      return {
+        authenticationMode: _validated.normalized.authenticationMode,
+        outcome: "non_member",
+        memberId: undefined,
+        pendingInvitationId: undefined,
+      };
+    }
+
+    const resolvedMembership =
+      await _resolveCanonicalMembership(_validated.normalized);
+
+    return {
+      authenticationMode: _validated.normalized.authenticationMode,
+      outcome: resolvedMembership.outcome,
+      memberId: resolvedMembership.memberId,
+      pendingInvitationId: resolvedMembership.pendingInvitationId,
+    };
+  } catch {
+    return {
+      authenticationMode: _validated.normalized.authenticationMode,
+      outcome: "non_member",
+      memberId: undefined,
+      pendingInvitationId: undefined,
+    };
+  }
 }
 
 function _prepareRuntimePublication(
