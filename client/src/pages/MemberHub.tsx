@@ -62,25 +62,11 @@ interface SentInvitation {
   invited_email: string | null;
   created_at: string;
   expires_at: string | null;
-  note: string | null;
   status: "pending" | "accepted" | "expired" | string;
   /** D2: Server-generated invitation URL for link retrieval from history */
   invitation_url?: string | null;
 }
 
-interface MemberProfile {
-  user: { id: string; email: string };
-  member: {
-    id: string;
-    member_type: string;
-    membership_status: MembershipStatus;
-    activity_status: ActivityStatus;
-    subscription_price_at_signup: number | null;
-    subscription_renewal_date: string | null;
-    join_date: string;
-    last_activity_at: string | null;
-  } | null;
-}
 
 interface SubscriptionData {
   member: {
@@ -685,14 +671,14 @@ export default function MemberHub() {
         <div>
           <h1 className="text-3xl font-bold" data-testid="text-page-title">Member Dashboard</h1>
           <p className="text-muted-foreground">
-            {profile?.user?.email || "Member account"}
+            {profile?.email || "Member account"}
           </p>
         </div>
         <Badge 
-          variant={profile?.member?.membership_status === "paid" ? "default" : "secondary"}
+          variant={profile?.membership_status === "paid" ? "default" : "secondary"}
           className="text-sm"
         >
-          {profile?.member?.membership_status === "paid" ? "Paid Member" : "Free Member"}
+          {profile?.membership_status === "paid" ? "Paid Member" : "Free Member"}
         </Badge>
       </div>
 
@@ -796,15 +782,15 @@ export default function MemberHub() {
 
                 <div className="min-w-0 flex-1">
                   <CardTitle className="text-lg truncate">
-                    {profile?.user?.email ?? "Member account"}
+                    {profile?.email ?? "Member account"}
                   </CardTitle>
                   <CardDescription className="flex items-center gap-2 mt-1">
                     <Badge
-                      variant={profile?.member?.membership_status === "paid" ? "default" : "secondary"}
+                      variant={profile?.membership_status === "paid" ? "default" : "secondary"}
                       className="text-xs"
                       data-testid="badge-membership-status"
                     >
-                      {profile?.member?.membership_status === "paid" ? "Paid Member" : "Free Member"}
+                      {profile?.membership_status === "paid" ? "Paid Member" : "Free Member"}
                     </Badge>
                     <Badge
                       variant={activity?.activity_status === "active" ? "outline" : "secondary"}
@@ -822,28 +808,28 @@ export default function MemberHub() {
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
                   <div className="text-xs text-muted-foreground mb-1">Member ID</div>
                   <div className="font-mono text-xs truncate" data-testid="text-member-id">
-                    {profile?.member?.id ?? "—"}
+                    {profile?.id ?? "—"}
                   </div>
                 </div>
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
                   <div className="text-xs text-muted-foreground mb-1">Member Type</div>
                   <div className="text-sm capitalize" data-testid="text-member-type">
-                    {profile?.member?.member_type ?? "—"}
+                    {profile?.member_type ?? "—"}
                   </div>
                 </div>
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
                   <div className="text-xs text-muted-foreground mb-1">Join Date</div>
                   <div className="text-sm" data-testid="text-join-date">
-                    {profile?.member?.join_date
-                      ? new Date(profile.member.join_date).toLocaleDateString()
+                    {profile?.join_date
+                      ? new Date(profile.join_date).toLocaleDateString()
                       : "—"}
                   </div>
                 </div>
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
                   <div className="text-xs text-muted-foreground mb-1">Last Active</div>
                   <div className="text-sm" data-testid="text-last-active">
-                    {profile?.member?.last_activity_at
-                      ? new Date(profile.member.last_activity_at).toLocaleDateString()
+                    {activity?.last_activity_at
+                      ? new Date(activity.last_activity_at).toLocaleDateString()
                       : "Recently"}
                   </div>
                 </div>
@@ -960,9 +946,9 @@ export default function MemberHub() {
                     )}
                   </div>
                   <div>
-                    <div className="font-semibold">{profile?.user?.email ?? "Member"}</div>
+                    <div className="font-semibold">{profile?.email ?? "Member"}</div>
                     <div className="text-xs text-muted-foreground capitalize">
-                      {profile?.member?.member_type ?? "Member"}
+                      {profile?.member_type ?? "Member"}
                     </div>
                   </div>
                 </div>
@@ -1119,9 +1105,9 @@ export default function MemberHub() {
                 <CreditCard className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold capitalize">{profile?.member?.membership_status || "Free"}</div>
+                <div className="text-2xl font-bold capitalize">{profile?.membership_status || "Free"}</div>
                 <p className="text-xs text-muted-foreground">
-                  {profile?.member?.membership_status === "paid" ? "Unlimited program access" : "2 programs"}
+                  {profile?.membership_status === "paid" ? "Unlimited program access" : "2 programs"}
                 </p>
               </CardContent>
             </Card>
@@ -1132,10 +1118,19 @@ export default function MemberHub() {
                 <Activity className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold capitalize">{activity?.activity_status || "Active"}</div>
-                <p className="text-xs text-muted-foreground">
-                  Last active: {activity?.last_activity_at ? new Date(activity.last_activity_at).toLocaleDateString() : "Recently"}
-                </p>
+                {activityLoading ? (
+                  <div className="flex items-center gap-2">
+                    <RefreshCw className="h-3 w-3 animate-spin text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">Loading...</span>
+                  </div>
+                ) : (
+                  <>
+                    <div className="text-2xl font-bold capitalize">{activity?.activity_status || "Active"}</div>
+                    <p className="text-xs text-muted-foreground">
+                      Last active: {activity?.last_activity_at ? new Date(activity.last_activity_at).toLocaleDateString() : "Recently"}
+                    </p>
+                  </>
+                )}
               </CardContent>
             </Card>
 
@@ -1224,7 +1219,7 @@ export default function MemberHub() {
               </CardContent>
             </Card>          </div>
 
-          {profile?.member?.membership_status === "free" && (
+          {profile?.membership_status === "free" && (
             <Card className="bg-gradient-to-r from-primary/10 to-primary/5" data-testid="card-upgrade-cta">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -1267,20 +1262,20 @@ export default function MemberHub() {
                 <div>
                   <div className="font-medium">Current Status</div>
                   <div className="text-sm text-muted-foreground">
-                    {profile?.member?.membership_status === "paid" 
+                    {profile?.membership_status === "paid" 
                       ? "You have full access to all programs and features"
                       : "Free tier with limited program access"}
                   </div>
                 </div>
-                <Badge variant={profile?.member?.membership_status === "paid" ? "default" : "secondary"} className="text-lg px-4 py-2">
-                  {profile?.member?.membership_status === "paid" ? "PAID" : "FREE"}
+                <Badge variant={profile?.membership_status === "paid" ? "default" : "secondary"} className="text-lg px-4 py-2">
+                  {profile?.membership_status === "paid" ? "PAID" : "FREE"}
                 </Badge>
               </div>
 
 
 
               <div className="grid md:grid-cols-2 gap-4 pt-4">
-                <Card className={profile?.member?.membership_status === "free" ? "border-primary" : ""}>
+                <Card className={profile?.membership_status === "free" ? "border-primary" : ""}>
                   <CardHeader>
                     <CardTitle className="text-lg">Free Tier</CardTitle>
                   </CardHeader>
@@ -1290,7 +1285,7 @@ export default function MemberHub() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className={profile?.member?.membership_status === "paid" ? "border-primary" : ""}>
+                <Card className={profile?.membership_status === "paid" ? "border-primary" : ""}>
                   <CardHeader>
                     <CardTitle className="text-lg">Paid Tier</CardTitle>
                   </CardHeader>
@@ -1317,7 +1312,12 @@ export default function MemberHub() {
             </CardHeader>
 
             <CardContent>
-              {!earnings?.length ? (
+              {earningsLoading ? (
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <RefreshCw className="h-4 w-4 animate-spin" />
+                  Loading earnings...
+                </div>
+              ) : !earnings?.length ? (
                 <div className="text-sm text-muted-foreground">
                   No earnings recorded yet.
                 </div>
@@ -1453,11 +1453,11 @@ export default function MemberHub() {
               </CardHeader>
               <CardContent>
                 <div className="border rounded-lg p-4 space-y-2">
-                  {invitationData?.invitation?.inviter_email && (
+                  {invitationData?.invitation?.invited_email && (
                     <div className="text-sm">
-                      <span className="font-medium">Invited by: </span>
-                      <span className="text-muted-foreground" data-testid="pending-inviter-email">
-                        {invitationData.invitation.inviter_email}
+                      <span className="font-medium">Invited: </span>
+                      <span className="text-muted-foreground" data-testid="pending-invited-email">
+                        {invitationData.invitation.invited_email}
                       </span>
                     </div>
                   )}
@@ -1472,12 +1472,7 @@ export default function MemberHub() {
                       Received {new Date(invitationData.invitation.created_at).toLocaleDateString()}
                     </div>
                   )}
-                  {invitationData?.invitation?.note && (
-                    <div className="text-xs text-muted-foreground border-t pt-2" data-testid="pending-invitation-note">
-                      <span className="font-medium text-foreground">Note: </span>
-                      {invitationData.invitation.note}
-                    </div>
-                  )}
+
                   <Button
                     className="mt-2"
                     onClick={() => acceptInvitationMutation.mutate()}
@@ -1610,12 +1605,7 @@ export default function MemberHub() {
                         </div>
 
                         {/* Notes */}
-                        {inv.note && (
-                          <div className="text-xs text-muted-foreground border-t pt-2" data-testid={`invitation-note-${inv.id}`}>
-                            <span className="font-medium text-foreground">Note: </span>
-                            {inv.note}
-                          </div>
-                        )}
+
                       </div>
                     );
                   })}

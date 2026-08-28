@@ -455,32 +455,181 @@ def _assemble_artifacts(
             assembled.append(str(dest.relative_to(package_root)))
 
 
-    # Package-contract artifacts — preserve required root-level locations
-    package_contract_root = (
-        repo_root / "execution" / "packages" / "APP-INV-001-Claude-Package"
-    ).resolve()
+    # Root contract artifacts are generated from the current CIB and
+    # Implementation Authority. Never read contract artifacts from the
+    # materialization directory itself; that would make stale package output
+    # become a Builder input.
+    ia = mandatory["Implementation Authority"]
+    repo = mandatory["Repository"]
+    surface = mandatory["Production Surface"]
 
-    if package_root.resolve() == package_contract_root:
-        fail(
-            "Package output directory resolves to the package-contract source: "
-            f"{package_contract_root}. Use --output-dir to select a distinct "
-            "materialization directory.",
-            EXIT_PACKAGE_VERIFICATION,
-        )
+    authority_path = located["Implementation Authority Artifact"]
+    authority_text = authority_path.read_text(encoding="utf-8")
 
-    for artifact_name in ["README.md", "IMPLEMENT.md", "CLAUDE.md"]:
-        src = package_contract_root / artifact_name
-        if src.exists():
-            dest = _copy_artifact(src, package_root)
-            assembled.append(str(dest.relative_to(package_root)))
+    task_match = re.search(
+        r"^## Task\\n\\n(.+?)$",
+        authority_text,
+        re.MULTILINE,
+    )
+    cib_text = cib_path.read_text(encoding="utf-8")
 
-    authorities_src = package_contract_root / "Authorities"
-    if authorities_src.exists():
-        authorities_dest = package_root / "Authorities"
-        shutil.copytree(authorities_src, authorities_dest, dirs_exist_ok=True)
-        for file_path in sorted(authorities_dest.rglob("*")):
-            if file_path.is_file():
-                assembled.append(str(file_path.relative_to(package_root)))
+    task_id_values = _extract_field(cib_text, "Task ID")
+    cycle_values = _extract_field(cib_text, "Cycle")
+
+    if len(task_id_values) != 1:
+        fail("CIB Task ID must appear exactly once.")
+    if len(cycle_values) != 1:
+        fail("CIB Cycle must appear exactly once.")
+
+    task_id = task_id_values[0]
+    cycle = cycle_values[0]
+
+    readme_content = f"""# {task_id} — PIC Package Reading Guide
+
+## Purpose
+
+This package is the generated implementation contract for {task_id}.
+
+The package is generated from the authoritative Cycle-{cycle} CIB and
+Implementation Authority for the MAIN_APP execution stream.
+
+Claude must consume the package as the sole authoritative implementation
+contract and must not infer implementation intent from conversational
+context.
+
+## Authority
+
+{ia}
+
+## Repository
+
+{repo}
+
+## Production Surface
+
+{surface}
+
+## Required Reading Order
+
+1. `START-HERE.md`
+2. `governance/cib/generated/{cib_path.name}`
+3. `governance/rmp/{authority_path.name}`
+4. `governance/execution-derivation/EXECUTION-DERIVATION.md`
+5. `governance/icm/generated/{mandatory["Implementation Context Manifest"].split("/")[-1]}`
+
+## Contract Rule
+
+Use only the authoritative contracts and Repository Truth contained in this
+package. Do not invent APIs, schemas, authorities, compatibility contracts,
+fallback contracts, or additional mutation scope.
+"""
+
+    implement_content = f"""# {task_id} — IMPLEMENTATION REQUEST
+
+## STATUS
+
+EXECUTE AFTER PIC PACKAGE SYNCHRONIZATION
+
+## AUTHORITY
+
+{ia}
+
+## TASK
+
+{task_id}
+
+## CYCLE
+
+{cycle}
+
+## REPOSITORY
+
+{repo}
+
+## PRODUCTION SURFACE
+
+{surface}
+
+## INPUT
+
+The generated PIC package is the sole implementation input.
+
+Read and synchronize the governance artifacts in the package before mutation.
+
+## EXECUTION BOUNDARY
+
+Implement only the Founder-approved {task_id} Cycle-{cycle} contract.
+
+Respect all protected surfaces, concurrent-WIP protections, authoritative
+backend contracts, mutation boundaries, acceptance criteria, hard stops, and
+final-boundary restrictions contained in the CIB.
+
+Do not commit, push, or deploy.
+"""
+
+    claude_content = f"""# {task_id} — CLAUDE EXECUTION BRIEF
+
+## Authority
+
+{ia}
+
+## Task
+
+{task_id}
+
+## Cycle
+
+{cycle}
+
+## Repository
+
+{repo}
+
+## Production Surface
+
+{surface}
+
+## Execution Contract
+
+The generated PIC package is the sole authoritative implementation contract.
+
+Read `START-HERE.md` first, then synchronize the governance artifacts
+contained in this package.
+
+Do not infer implementation intent from stale packages or conversational
+context.
+
+## Implementation Rule
+
+Follow the supplied CIB and Implementation Authority exactly.
+
+Perform only evidence-backed, in-scope mutations permitted by the frozen
+contract.
+
+Stop on any authoritative contradiction, protected-surface collision,
+concurrent-WIP collision, backend mutation requirement, missing contract,
+authentication/session issue, schema/RLS issue, financial architecture
+issue, Organization Studio issue, APP-REC-029R1 reopening, or scope expansion.
+
+## Final Boundary
+
+Do not commit.
+Do not push.
+Do not deploy.
+
+Return the explicit completion evidence required by the CIB.
+"""
+
+    generated_contracts = {
+        "README.md": readme_content,
+        "IMPLEMENT.md": implement_content,
+        "CLAUDE.md": claude_content,
+    }
+
+    for artifact_name, content in generated_contracts.items():
+        dest = package_root / artifact_name
+        dest.write_text(content, encoding="utf-8")
+        assembled.append(artifact_name)
 
     # Implementation Context Manifest — parse, verify, and copy listed files
     icm_path = located.get("Implementation Context Manifest")
