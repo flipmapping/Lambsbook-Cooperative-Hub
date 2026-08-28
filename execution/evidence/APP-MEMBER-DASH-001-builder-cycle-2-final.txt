@@ -1,0 +1,45 @@
+========================================
+Claude Package Builder
+========================================
+CIB: governance/cib/CIB-APP-MEMBER-DASH-001-CYCLE-2.md
+Sprint: 5 — Implementation Context Manifest (ICM)
+Repository Root: /home/runner/workspace
+
+PASS: CIB exists and is readable
+PASS: All mandatory fields present and unique
+
+Structured Metadata
+----------------------------------------
+Implementation Authority: MAIN_APP
+Repository: Main Application / Execution Runtime Repository (APP-RUNTIME-01)
+Production Surface: client/src/pages/MemberHub.tsx
+Implementation Context Manifest: governance/icm/generated/ICM-APP-REALIZATION-002H.md
+
+Repository Truth Consumption
+----------------------------------------
+Repository Truth
+----------------------------------------
+  ✓  Implementation Authority Artifact
+  ✓  Implementation Context Manifest
+  ✓  Sync:governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+  ✓  Sync:governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+  ✓  Sync:governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+  ✓  Sync:governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+  ✓  Sync:governance/BASELINE.md
+  ✓  Sync:governance/execution/EXECUTION-PIPELINE.md
+  ✓  Execution Derivation
+
+  Artifacts present: 9
+  Artifacts missing: 0
+
+PASS: Core Repository Truth artifacts located
+PASS: Authority consistency verified
+
+Package Materialization
+----------------------------------------
+  Package root: /home/runner/workspace/execution/packages/MAIN_APP-Claude-Package
+  Directory structure created
+
+FAIL: Implementation Context file not found: execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts
+
+Every file listed in the ICM must exist in the repository.

@@ -995,47 +995,4 @@ router.put(
   }
 );
 
-
-router.get(
-  "/notification-credits",
-  attachUserContextSafe,
-  async (req: Request, res: Response) => {
-    try {
-      const authReq = req as AuthenticatedRequest;
-      const user = authReq.user;
-
-      if (!user) {
-        return res.status(401).json({ error: "Unauthorized" });
-      }
-
-      const member = await supabaseDAL.getMemberByUserId(user.id);
-
-      if (!member) {
-        return res.status(404).json({ error: "Member not found" });
-      }
-
-      const supabase = getUserClient(user.token);
-
-      const { data, error } = await supabase.rpc(
-        "get_available_notification_credits",
-        { p_member_id: member.id }
-      );
-
-      if (error) {
-        console.error("Failed to load notification credits:", error);
-        return res.status(500).json({
-          error: "Failed to load notification credits",
-        });
-      }
-
-      return res.json(data?.[0] ?? null);
-    } catch (error) {
-      console.error("Notification credit endpoint error:", error);
-      return res.status(500).json({
-        error: "Failed to load notification credits",
-      });
-    }
-  }
-);
-
 export default router;

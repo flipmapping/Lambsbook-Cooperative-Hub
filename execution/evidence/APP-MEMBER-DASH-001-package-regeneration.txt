@@ -1,0 +1,188 @@
+========================================
+Claude Package Builder
+========================================
+CIB: governance/cib/CIB-APP-MEMBER-DASH-001-CYCLE-2.md
+Sprint: 5 — Implementation Context Manifest (ICM)
+Repository Root: /home/runner/workspace
+
+PASS: CIB exists and is readable
+PASS: All mandatory fields present and unique
+
+Structured Metadata
+----------------------------------------
+Implementation Authority: MAIN_APP
+Repository: Main Application / Execution Runtime Repository (APP-RUNTIME-01)
+Production Surface: client/src/pages/MemberHub.tsx
+Implementation Context Manifest: governance/icm/generated/ICM-APP-REALIZATION-002H.md
+
+Repository Truth Consumption
+----------------------------------------
+Repository Truth
+----------------------------------------
+  ✓  Implementation Authority Artifact
+  ✓  Implementation Context Manifest
+  ✓  Sync:governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+  ✓  Sync:governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+  ✓  Sync:governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+  ✓  Sync:governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+  ✓  Sync:governance/BASELINE.md
+  ✓  Sync:governance/execution/EXECUTION-PIPELINE.md
+  ✓  Execution Derivation
+
+  Artifacts present: 9
+  Artifacts missing: 0
+
+PASS: Core Repository Truth artifacts located
+PASS: Authority consistency verified
+
+Package Materialization
+----------------------------------------
+  Package root: /home/runner/workspace/execution/packages/MAIN_APP-Claude-Package
+  Directory structure created
+  Artifacts assembled: 117
+  START-HERE.md generated
+  PACKAGE-MANIFEST.md generated
+
+Package Materialization
+----------------------------------------
+  Package: /home/runner/workspace/execution/packages/MAIN_APP-Claude-Package
+  START-HERE.md: ✓
+  PACKAGE-MANIFEST.md: ✓
+  Artifacts assembled: 117
+    ✓  Authorities/APP-INV-001-IMPLEMENTATION-AUTHORITY.md
+    ✓  CLAUDE.md
+    ✓  IMPLEMENT.md
+    ✓  README.md
+    ✓  governance/BASELINE.md
+    ✓  governance/cib/generated/CIB-APP-MEMBER-DASH-001-CYCLE-2.md
+    ✓  governance/execution-derivation/EXECUTION-DERIVATION.md
+    ✓  governance/execution/EXECUTION-PIPELINE.md
+    ✓  governance/icm/generated/ICM-APP-REALIZATION-002H.md
+    ✓  governance/rmp/MAIN_APP-IMPLEMENTATION-AUTHORITY.md
+    ✓  governance/startup/AUTHORITY-NAMESPACE-RULE-v1.0.md
+    ✓  governance/startup/CLAUDE-NAMESPACE-SYNCHRONIZATION.md
+    ✓  governance/startup/EXECUTION-STARTUP-SYNCHRONIZATION.md
+    ✓  governance/startup/GOVERNANCE-SYNCHRONIZATION-INDEX.md
+    ✓  implementation-context/client/src/App.tsx
+    ✓  implementation-context/client/src/components/dashboard/InvitationAcceptanceSection.tsx
+    ✓  implementation-context/client/src/pages/HubDashboard.tsx
+    ✓  implementation-context/client/src/pages/MemberDashboard.tsx
+    ✓  implementation-context/client/src/pages/MemberHub.tsx
+    ✓  implementation-context/client/src/pages/member/MemberDashboard.tsx
+    ✓  implementation-context/docs/ai/02-runtime-contract-table.md
+    ✓  implementation-context/docs/ai/03-state-machine-and-flow.md
+    ✓  implementation-context/docs/ai/10-mvp-system-specification.md
+    ✓  implementation-context/docs/ai/system-control-plane.md
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE.manifest.txt
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE/MemberHub.pre-mutation.tsx
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE/hubauth-surface-discovery.txt
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE/invitation-creation-authority-certification.txt
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE/memberhub-mutation-targets.txt
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE/memberhub-pending-diff.patch
+    ✓  implementation-context/docs/implementation-evidence/PHASE-1-BASELINE/mutation-surface-evidence.txt
+    ✓  implementation-context/docs/operations/runtime-guard-and-merge-recovery.md
+    ✓  implementation-context/docs/runtime-recovery/post-recovery-auth-continuity-milestone.md
+    ✓  implementation-context/execution/builder-work/builder-work-package.json
+    ✓  implementation-context/execution/builder/APP-REALIZATION-002B.builder.json
+    ✓  implementation-context/execution/builder/incoming/APP-REC-003C-awaiting-builder.json
+    ✓  implementation-context/execution/builders/BUILDER-HANDOFF-CERTIFICATION.md
+    ✓  implementation-context/execution/mex-inspection/SUMMARY.md
+    ✓  implementation-context/execution/mex-inspection/inventory.json
+    ✓  implementation-context/execution/mex-inspection/repository_tree.txt
+    ✓  implementation-context/execution/packages/APP-REALIZATION-002B-PIC.zip
+    ✓  implementation-context/execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_AUTHORITY.md
+    ✓  implementation-context/execution/packages/APP-REALIZATION-002B-PIC/IMPLEMENTATION_CONTEXT_MANIFEST.md
+    ✓  implementation-context/execution/packages/APP-REALIZATION-002B-PIC/PRODUCTION_IMPLEMENTATION_CONTRACT.md
+    ✓  implementation-context/execution/packages/APP-REC-INVITE-002R/implementation-authority-package.json
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package.zip
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package.zip.sha256
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/PACKAGE-MANIFEST.md
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/START-HERE.md
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/execution-derivation/EXECUTION-DERIVATION.md
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/icm/generated/ICM-APP-REALIZATION-002B.md
+    ✓  implementation-context/execution/packages/FAB-APP-REALIZATION-002B-Claude-Package/governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md
+    ✓  implementation-context/execution/packages/GE-RMP-005-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-006-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-007-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-008-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-009-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-010-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-011-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/GE-RMP-012-Claude-Package/implementation-context/client/src/App.tsx
+    ✓  implementation-context/execution/packages/LEAP-IMPLEMENT-RDM-001/returned/SLICE-001/Build-Output.txt
+    ✓  implementation-context/execution/packages/MP-001/generated/MP-001-BUILD-VALIDATION.json
+    ✓  implementation-context/execution/reports/LER-001A-build-after-asset-fix.log
+    ✓  implementation-context/execution/runtime-certification/REPOSITORY-INVENTORY.txt
+    ✓  implementation-context/execution/runtime-certification/RUNTIME-DIVERGENCE-REPORT.md
+    ✓  implementation-context/execution/runtime-certification/RUNTIME-EVIDENCE-REPORT.md
+    ✓  implementation-context/execution/runtime-certification/RUNTIME-SURFACE-REPORT.md
+    ✓  implementation-context/execution/runtime-certification/reports/AUTHENTICATION-ENTRY.md
+    ✓  implementation-context/execution/runtime-certification/reports/DASHBOARD-ENTRY-CORRIDOR.md
+    ✓  implementation-context/execution/runtime-certification/runtime-files.txt
+    ✓  implementation-context/execution/runtime-certification/tools/certify.py
+    ✓  implementation-context/execution/runtime-certification/tools/inspect.py
+    ✓  implementation-context/execution/runtime-certification/tools/mutate.py
+    ✓  implementation-context/execution/runtime-validation/FDR-010E35A-003-runtime-dependency-analysis.json
+    ✓  implementation-context/execution/runtime-validation/FDR-010E35A-013-routing-entrypoints.json
+    ✓  implementation-context/execution/runtime-validation/FDR-010E35A-016-member-identity-contract.json
+    ✓  implementation-context/execution/runtime-validation/FDR-010E35A-017-live-member-identity.json
+    ✓  implementation-context/execution/runtime-validation/FDR-010E35A-028-runtime-capture.json
+    ✓  implementation-context/execution/runtime-validation/FDR-010E35A-029-runtime-truth-capture.json
+    ✓  implementation-context/execution/sprints/APP-REC-004/LIVE-TEST-CHECKLIST.md
+    ✓  implementation-context/execution/sprints/APP-REC-004/README.md
+    ✓  implementation-context/execution/sprints/APP-REC-005/IMPLEMENTATION-SPEC.md
+    ✓  implementation-context/execution/sprints/APP-REC-005/STAGE1-BASELINE.md
+    ✓  implementation-context/execution/sprints/APP-REC-005/STAGE1-IMPLEMENTATION-CERTIFICATION.md
+    ✓  implementation-context/execution/sprints/APP-REC-005/STAGE2-QUERY-STRUCTURAL-CAPTURE.json
+    ✓  implementation-context/execution/sprints/APP-REC-005/STAGE2-QUERY-STRUCTURAL-CAPTURE.md
+    ✓  implementation-context/execution/sprints/APP-REC-005/apply_stage1_gate.py
+    ✓  implementation-context/execution/sprints/APP-REC-005/fix_stage1_gate.py
+    ✓  implementation-context/execution/sprints/APP-REC-005/generate_stage1_patch.py
+    ✓  implementation-context/execution/sprints/APP-REC-005/inspect_memberhub_queries.py
+    ✓  implementation-context/execution/sprints/APP-REC-005/runtime_surface_capture.py
+    ✓  implementation-context/execution/sprints/APP-REC-005/runtime_truth_capture.py
+    ✓  implementation-context/execution/sprints/APP-REC-005/verify_stage1_gate.py
+    ✓  implementation-context/execution/sprints/LES-001/repository_mutation_package/inspection/LANDING-EXPERIENCE-TARGETS.json
+    ✓  implementation-context/execution/sprints/LES-001/repository_mutation_package/inspection/PRODUCTION-SURFACE-DISCOVERY.json
+    ✓  implementation-context/execution/sprints/LES-001/repository_truth/REPOSITORY-TRUTH.md
+    ✓  implementation-context/execution/workspace/APP-RMP-010E34B-013-backup/server/routes.ts
+    ✓  implementation-context/execution/workspace/APP-RMP-010E34B-016-backup/server/routes.ts
+    ✓  implementation-context/execution/workspace/FDR-010E35A-001-repository-truth.json
+    ✓  implementation-context/execution/workspace/FDR-010E35A-002-surface-inventory.json
+    ✓  implementation-context/execution/workspace/FDR-010E35A-016-backup/client/src/App.tsx
+    ✓  implementation-context/execution/workspace/FDR-010E35A-025-backup/member.ts
+    ✓  implementation-context/execution/workspace/FDR-010E35A-026-backup-member.ts
+    ✓  implementation-context/execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RANKING.json
+    ✓  implementation-context/execution/workspace/LES-001/authority_retrieval/CANONICAL-AUTHORITY-RESOLUTION.json
+    ✓  implementation-context/execution/workspace/LES-001/authority_retrieval/LES-001-AUTHORITY-INVENTORY.json
+    ✓  implementation-context/governance/cib/generated/CIB-APP-REALIZATION-002B-RUNTIME-IDENTITY.md
+    ✓  implementation-context/governance/execution-derivation/generated/EXECUTION-DERIVATION.md
+    ✓  implementation-context/governance/execution/evidence/APP-REALIZATION-002B-EXECUTION-DERIVATION-PRE-MUTATION.json
+    ✓  implementation-context/governance/icm/generated/ICM-APP-REALIZATION-002B.md
+    ✓  implementation-context/governance/rmp/FAB-APP-REALIZATION-002B-IMPLEMENTATION-AUTHORITY.md
+    ✓  implementation-context/server/middleware/attachUserContext.ts
+    ✓  implementation-context/server/routes.ts
+    ✓  implementation-context/server/routes/admin.ts
+    ✓  implementation-context/server/routes/devTestAuth.ts
+    ✓  implementation-context/server/routes/member.ts
+
+PASS: Package materialized and verified
+
+Package Finalization
+----------------------------------------
+  Archive generated: MAIN_APP-Claude-Package.zip
+  SHA256 digest written: MAIN_APP-Claude-Package.zip.sha256
+  Archive integrity verified
+
+Package Finalization
+----------------------------------------
+  Archive:  /home/runner/workspace/execution/packages/MAIN_APP-Claude-Package.zip
+  Size:     384,788 bytes
+  SHA256:   f7f86e2e51ed9c403e0d77d2422525bfeb8b010ad96ddfdbba613c2728f303e3
+  Digest:   /home/runner/workspace/execution/packages/MAIN_APP-Claude-Package.zip.sha256
+
+PASS: Package finalized and verified
+========================================
+PASS
+========================================
