@@ -358,6 +358,19 @@ export default function MemberHub() {
     enabled: isAuthenticated && !profileLoading && !!profile,
   });
 
+  const {
+    data: notificationCredits,
+    isLoading: notificationCreditsLoading,
+  } = useQuery<{
+    member_id: string;
+    monthly_allowance: number;
+    available_credits: number;
+  } | null>({
+    queryKey: ["/api/member/notification-credits"],
+    queryFn: () => fetchWithAuth("/api/member/notification-credits"),
+    enabled: isAuthenticated && !profileLoading && !!profile,
+  });
+
   const { data: invitationData, isLoading: invitationLoading } = useQuery<any>({
     queryKey: ["/api/member/pending-invitation"],
     queryFn: () => fetchWithAuth("/api/member/pending-invitation"),
@@ -1273,6 +1286,52 @@ export default function MemberHub() {
               </div>
 
 
+
+              <Card data-testid="card-notification-credits">
+                <CardHeader>
+                  <CardTitle className="text-lg">Notification Credits</CardTitle>
+                  <CardDescription>
+                    Your authoritative notification-credit allowance for the current month.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {notificationCreditsLoading ? (
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <RefreshCw className="h-4 w-4 animate-spin" />
+                      Loading notification credits...
+                    </div>
+                  ) : notificationCredits ? (
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="rounded-lg border p-3">
+                        <div className="text-sm text-muted-foreground">
+                          Monthly allowance
+                        </div>
+                        <div
+                          className="text-2xl font-semibold"
+                          data-testid="text-monthly-notification-credits"
+                        >
+                          {notificationCredits.monthly_allowance}
+                        </div>
+                      </div>
+                      <div className="rounded-lg border p-3">
+                        <div className="text-sm text-muted-foreground">
+                          Available credits
+                        </div>
+                        <div
+                          className="text-2xl font-semibold"
+                          data-testid="text-available-notification-credits"
+                        >
+                          {notificationCredits.available_credits}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-sm text-muted-foreground">
+                      Notification-credit availability is currently unavailable.
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
 
               <div className="grid md:grid-cols-2 gap-4 pt-4">
                 <Card className={profile?.membership_status === "free" ? "border-primary" : ""}>
