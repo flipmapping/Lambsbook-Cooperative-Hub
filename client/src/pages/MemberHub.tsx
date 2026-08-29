@@ -346,7 +346,11 @@ export default function MemberHub() {
     enabled: isAuthenticated,
   });
 
-  const { data: activity, isLoading: activityLoading } = useQuery<ActivityData>({
+  const {
+    data: activity,
+    isLoading: activityLoading,
+    isError: activityError,
+  } = useQuery<ActivityData>({
     queryKey: ["/api/member/recent-participation"],
     queryFn: () => fetchWithAuth("/api/member/recent-participation"),
     enabled: isAuthenticated && !profileLoading && !!profile,
@@ -1136,6 +1140,10 @@ export default function MemberHub() {
                     <RefreshCw className="h-3 w-3 animate-spin text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">Loading...</span>
                   </div>
+                ) : activityError ? (
+                  <div className="text-sm text-destructive">
+                    Activity data could not be loaded.
+                  </div>
                 ) : (
                   <>
                     <div className="text-2xl font-bold capitalize">{activity?.activity_status || "Active"}</div>
@@ -1186,7 +1194,11 @@ export default function MemberHub() {
                 </div>
               </CardHeader>
               <CardContent className="pt-2">
-                {activity?.recent_logs?.length ? (
+                {activityError ? (
+                  <div className="text-sm text-destructive">
+                    Recent cooperative participation could not be loaded.
+                  </div>
+                ) : activity?.recent_logs?.length ? (
                   <div className="space-y-4">
                     {activity.recent_logs.slice(0, 5).map((log) => (
                       <div
