@@ -23,6 +23,10 @@ export interface CommunityIntent {
   audience: string;
   visibility: Visibility;
   coverImageUrl: string;
+  country: string;
+  stateProvince: string;
+  city: string;
+  districtArea: string;
 }
 
 const EMPTY_INTENT: CommunityIntent = {
@@ -33,6 +37,10 @@ const EMPTY_INTENT: CommunityIntent = {
   audience: '',
   visibility: 'public',
   coverImageUrl: '',
+  country: '',
+  stateProvince: '',
+  city: '',
+  districtArea: '',
 };
 
 type Stage = 'goal' | 'define' | 'review' | 'readiness' | 'preview';
@@ -74,13 +82,31 @@ export default function CommunityIntentPage() {
     if (validateDefine()) setStage('review');
   };
 
-  const handleConfirmIntent = () => {
-    // Exit condition for OS-BAAAS-001A: a valid structured Community
-    // Intent exists in the runtime and can be handed to OS-BAAAS-001B.
-    // No certified handoff contract exists yet, so we surface the
-    // structured object here rather than inventing an endpoint.
-    // eslint-disable-next-line no-console
-    console.log('[CommunityIntent] structured intent ready for OS-BAAAS-001B:', intent);
+  const handleConfirmIntent = async () => {
+    const response = await fetch('/api/communities', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        name: intent.name,
+        description: intent.description,
+        goal: intent.goal,
+        category: intent.category,
+        audience: intent.audience,
+        visibility: intent.visibility,
+        coverImageUrl: intent.coverImageUrl,
+        country: intent.country,
+        stateProvince: intent.stateProvince,
+        city: intent.city,
+        districtArea: intent.districtArea,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to create Community');
+    }
+
+    return response.json();
   };
 
   return (
@@ -229,6 +255,58 @@ export default function CommunityIntentPage() {
               </div>
 
               <div>
+                <label className="mb-1 block text-sm font-medium" htmlFor="country">
+                  Country
+                </label>
+                <input
+                  id="country"
+                  type="text"
+                  value={intent.country}
+                  onChange={(e) => updateField('country', e.target.value)}
+                  className="w-full rounded-md border border-border bg-background px-3 py-2"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block text-sm font-medium" htmlFor="stateProvince">
+                  State / Province (optional)
+                </label>
+                <input
+                  id="stateProvince"
+                  type="text"
+                  value={intent.stateProvince}
+                  onChange={(e) => updateField('stateProvince', e.target.value)}
+                  className="w-full rounded-md border border-border bg-background px-3 py-2"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block text-sm font-medium" htmlFor="city">
+                  City
+                </label>
+                <input
+                  id="city"
+                  type="text"
+                  value={intent.city}
+                  onChange={(e) => updateField('city', e.target.value)}
+                  className="w-full rounded-md border border-border bg-background px-3 py-2"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block text-sm font-medium" htmlFor="districtArea">
+                  District / Area (optional)
+                </label>
+                <input
+                  id="districtArea"
+                  type="text"
+                  value={intent.districtArea}
+                  onChange={(e) => updateField('districtArea', e.target.value)}
+                  className="w-full rounded-md border border-border bg-background px-3 py-2"
+                />
+              </div>
+
+              <div>
                 <label className="mb-1 block text-sm font-medium" htmlFor="coverImageUrl">
                   Cover image URL <span className="text-muted-foreground">(optional)</span>
                 </label>
@@ -287,6 +365,22 @@ export default function CommunityIntentPage() {
               <div>
                 <dt className="text-sm font-medium text-muted-foreground">Audience</dt>
                 <dd className="mt-0.5">{intent.audience}</dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">Country</dt>
+                <dd className="mt-0.5">{intent.country || '—'}</dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">State / Province</dt>
+                <dd className="mt-0.5">{intent.stateProvince || '—'}</dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">City</dt>
+                <dd className="mt-0.5">{intent.city || '—'}</dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">District / Area</dt>
+                <dd className="mt-0.5">{intent.districtArea || '—'}</dd>
               </div>
               <div>
                 <dt className="text-sm font-medium text-muted-foreground">Visibility</dt>
@@ -395,6 +489,26 @@ export default function CommunityIntentPage() {
               </div>
 
               <div>
+                <dt className="text-sm font-medium text-muted-foreground">Country</dt>
+                <dd className="mt-1">{intent.country || '—'}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">State / Province</dt>
+                <dd className="mt-1">{intent.stateProvince || '—'}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">City</dt>
+                <dd className="mt-1">{intent.city || '—'}</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm font-medium text-muted-foreground">District / Area</dt>
+                <dd className="mt-1">{intent.districtArea || '—'}</dd>
+              </div>
+
+              <div>
                 <dt className="text-sm font-medium text-muted-foreground">Visibility</dt>
                 <dd className="mt-1">{intent.visibility}</dd>
               </div>
@@ -437,10 +551,10 @@ export default function CommunityIntentPage() {
               </button>
               <button
                 type="button"
-                onClick={() => setStage('define')}
+                onClick={handleConfirmIntent}
                 className="rounded-md border border-border bg-card px-4 py-2 transition-colors hover:bg-accent"
               >
-                Edit Intent
+                Create Community
               </button>
             </div>
           </section>

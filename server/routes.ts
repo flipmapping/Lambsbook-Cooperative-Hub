@@ -216,9 +216,15 @@ export async function registerRoutes(
         return res.status(401).json({ error: "User not authenticated" });
       }
 
+      const member = await supabaseDAL.getMemberByUserId(authReq.user.id);
+
+      if (!member) {
+        return res.status(403).json({ error: "Canonical member required" });
+      }
+
       const data = insertCommunitySchema.parse({
         ...req.body,
-        createdBy: authReq.user.id,
+        ownerMemberId: member.id,
       });
 
       const community = await storage.createCommunity(data);

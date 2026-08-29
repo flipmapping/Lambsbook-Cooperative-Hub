@@ -16,8 +16,17 @@ export const users = pgTable("users", {
 export const communities = pgTable("communities", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
-  purpose: text("purpose").notNull(),
-  createdBy: text("created_by").notNull(),
+  goal: text("goal"),
+  description: text("description"),
+  category: text("category"),
+  audience: text("audience"),
+  coverImageUrl: text("cover_image_url"),
+  ownerMemberId: text("owner_member_id").notNull(),
+  visibility: text("visibility").notNull().default("private"),
+  country: text("country"),
+  stateProvince: text("state_province"),
+  city: text("city"),
+  districtArea: text("district_area"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 

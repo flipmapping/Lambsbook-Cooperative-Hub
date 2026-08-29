@@ -17,6 +17,10 @@ export default function MemberDashboard() {
   const [invitationCreatedAt, setInvitationCreatedAt] = useState<string | null>(null);
   const [accepting, setAccepting] = useState(false);
   const [acceptedSuccessfully, setAcceptedSuccessfully] = useState(false);
+  const [notificationCredits, setNotificationCredits] = useState<{
+    available_credits: number;
+    monthly_allowance: number;
+  } | null>(null);
 
   useEffect(() => {
     const checkAccess = async () => {
@@ -53,6 +57,27 @@ export default function MemberDashboard() {
       const invData = await invRes.json();
 
       if (meRes.ok) {
+        try {
+          const creditsRes = await apiRequest(
+            "GET",
+            "/api/member/notification-credits"
+          );
+
+          if (creditsRes.ok) {
+            const creditsData = await creditsRes.json();
+            setNotificationCredits(creditsData);
+          } else {
+            console.error(
+              "[MemberDashboard] notification-credits unexpected status:",
+              creditsRes.status
+            );
+          }
+        } catch (err) {
+          console.error(
+            "[MemberDashboard] notification-credits request failed:",
+            err
+          );
+        }
         setAcceptedSuccessfully(true);
 
         setTimeout(() => {
@@ -196,6 +221,19 @@ export default function MemberDashboard() {
           <h2 className="text-lg font-semibold">
             Your participation space
           </h2>
+
+          {notificationCredits && (
+            <div className="rounded-md border bg-background p-3">
+              <div className="text-sm font-medium">
+                Notification credits
+              </div>
+              <div className="mt-1 text-sm text-muted-foreground">
+                Available: {notificationCredits.available_credits}
+                {" · "}
+                Monthly allowance: {notificationCredits.monthly_allowance}
+              </div>
+            </div>
+          )}
 
           <p className="text-sm text-muted-foreground">
             This lightweight member area is designed to help you stay connected
