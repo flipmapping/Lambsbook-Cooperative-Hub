@@ -224,7 +224,7 @@ router.delete("/invitations/:id", attachUserContextSafe, async (req: Request, re
 
     // Fetch the invitation to verify ownership and status
     const { data: invitation, error: fetchError } = await supabaseAdmin
-      .from("member_invitations")
+      .from("gateway_invitations")
       .select("id, inviter_user_id, status")
       .eq("id", id)
       .maybeSingle();
@@ -251,7 +251,7 @@ router.delete("/invitations/:id", attachUserContextSafe, async (req: Request, re
     }
 
     const { error: deleteError } = await supabaseAdmin
-      .from("member_invitations")
+      .from("gateway_invitations")
       .delete()
       .eq("id", id)
       .eq("inviter_user_id", user.id)
