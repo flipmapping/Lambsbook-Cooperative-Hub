@@ -197,8 +197,18 @@ const controlArtifacts = new Set([
   "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
 ]);
 
+/*
+ * RTST stream-local candidate boundary:
+ *
+ * The release candidate is the committed delta from upstream to HEAD.
+ * Concurrent working-tree and staged changes belong to their respective
+ * active streams and must not be reclassified as this candidate.
+ *
+ * They are still observed separately below so candidate files that have
+ * additional uncommitted/index changes cannot pass exact-source validation.
+ */
 const allChanged = [
-  ...new Set([...worktree, ...staged, ...committed]),
+  ...new Set(committed),
 ].filter((filePath) => !controlArtifacts.has(filePath));
 
 const releaseContractPath =

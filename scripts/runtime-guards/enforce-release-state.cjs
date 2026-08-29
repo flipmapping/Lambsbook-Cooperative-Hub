@@ -408,19 +408,21 @@ function buildReleaseTruthState() {
     {
       id: "WORKTREE_CLEAN",
       status:
-        upstream &&
-        upstreamHead === head
+        candidateWorktreeChanges.length === 0 &&
+        candidateStagedChanges.length === 0
           ? "PASS"
           : "FAIL",
       evidence: {
         repository_status: status ? "dirty" : "clean",
         candidate_sha: head,
         upstream_sha: upstreamHead,
-        candidate_synchronized:
-          Boolean(upstream && upstreamHead === head),
+        candidate_worktree_changes: candidateWorktreeChanges,
+        candidate_staged_changes: candidateStagedChanges,
         concurrent_wip_present: Boolean(status),
-        release_blocking: Boolean(upstream && upstreamHead !== head),
-        authority: "RELEASE-CANDIDATE-SHA",
+        release_blocking:
+          candidateWorktreeChanges.length > 0 ||
+          candidateStagedChanges.length > 0,
+        authority: "RELEASE-CANDIDATE-SURFACE",
       },
     },
     {
@@ -591,7 +593,29 @@ const workingTreeChanges = workingTreeRaw
   .map((line) => line.slice(3).trim())
   .filter(Boolean);
 
-const changedFiles = [...new Set(committedChanges)];
+const candidatePaths = [...new Set(committedChanges)];
+
+const candidateWorktreeChanges = workingTreeChanges.filter(
+  (filePath) => candidatePaths.includes(filePath)
+);
+
+const candidateStagedRaw = execFileSync(
+  "git",
+  ["diff", "--cached", "--name-only"],
+  {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+    timeout: RELEASE_GATE_TIMEOUT_MS,
+  }
+);
+
+const candidateStagedChanges = candidateStagedRaw
+  .split("\n")
+  .map((path) => path.trim())
+  .filter(Boolean)
+  .filter((filePath) => candidatePaths.includes(filePath));
+
+const changedFiles = candidatePaths;
 
 function isInCertifiedChangeScope(path) {
   return certifiedChangeScope.some((entry) => {
