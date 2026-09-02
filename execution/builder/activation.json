@@ -7,9 +7,11 @@
     "version": "1.2"
   },
   "activation": {
-    "entrypoint": "",
-    "runtime": "",
-    "arguments": []
+    "entrypoint": "execution/builder/launch.py",
+    "runtime": "python",
+    "arguments": [
+      "execution/builder/delivery/generated-cib/CIB-APP-REC-INVITE-002-CURRENT-WORK-CYCLE.md"
+    ]
   },
   "inputs": {
     "work_package": "execution/packages/<WORK_PACKAGE>",
