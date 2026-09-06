@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // NOTE: Placeholder content. Replace with real data once the CTBC community
 // roster, updates feed, and contribution log sources are available.
@@ -27,7 +27,7 @@ export interface CommunityInvitationContext {
 interface CommunityPageProps {
   params: Record<string, string | undefined>;
   invitation?: CommunityInvitationContext;
-  community?: { id: string; name: string; matrix_room_id?: string; matrix_room_url?: string; };
+  community?: { id: string; name: string; description?: string | null; matrix_room_id?: string; matrix_room_url?: string; };
   onRecipientAction?: (
     outcome: "join" | "express_interest" | "declined",
   ) => void;
@@ -40,6 +40,84 @@ export default function CommunityPage({
 }: CommunityPageProps) {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
+  const [resolvedCommunity, setResolvedCommunity] = useState<
+    CommunityPageProps['community'] | null
+  >(null);
+  const [loadingCommunity, setLoadingCommunity] = useState(false);
+  const [communityError, setCommunityError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    if (community) {
+      setResolvedCommunity(community);
+      setCommunityError(null);
+      setLoadingCommunity(false);
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    const communityId = new URLSearchParams(window.location.search).get('id')?.trim();
+
+    if (!communityId) {
+      setResolvedCommunity(null);
+      setCommunityError('Community ID is missing.');
+      setLoadingCommunity(false);
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    setLoadingCommunity(true);
+    setCommunityError(null);
+    setResolvedCommunity(null);
+
+    fetch(`/api/communities/${encodeURIComponent(communityId)}`, {
+      credentials: 'include',
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error('Failed to load Community');
+        }
+
+        const loadedCommunity = await response.json();
+        const loadedCommunityId =
+          typeof loadedCommunity?.id === 'string'
+            ? loadedCommunity.id.trim()
+            : '';
+
+        if (!loadedCommunityId) {
+          throw new Error(
+            'Community retrieval succeeded but no canonical Community ID was returned',
+          );
+        }
+
+        if (!cancelled) {
+          setResolvedCommunity(loadedCommunity);
+        }
+      })
+      .catch((error) => {
+        if (!cancelled) {
+          setCommunityError(
+            error instanceof Error
+              ? error.message
+              : 'Failed to load Community',
+          );
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setLoadingCommunity(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [community]);
+
+  const displayCommunity = community ?? resolvedCommunity;
 
   const handleExpressInterest = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,12 +131,23 @@ export default function CommunityPage({
       <main className="mx-auto max-w-4xl px-6 py-10">
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
-            {invitation?.targetName ?? "CTBC Community"}
+            {invitation?.targetName ?? displayCommunity?.name ?? "CTBC Community"}
           </h1>
           <p className="mt-1 text-muted-foreground">
             {invitation?.targetPurpose ??
+              displayCommunity?.description ??
               "The people and story behind the cooperative."}
           </p>
+          {loadingCommunity && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              Loading Community…
+            </p>
+          )}
+          {communityError && (
+            <p className="mt-3 text-sm font-medium text-destructive">
+              {communityError}
+            </p>
+          )}
           {invitation?.inviter && (
             <p className="mt-3 text-sm text-muted-foreground">
               Invited by {invitation.inviter}
@@ -73,8 +162,8 @@ export default function CommunityPage({
 
         <section id="communication" className="mb-10">
           <h2 className="mb-3 text-xl font-semibold">Community Communication</h2>
-          {community?.matrix_room_id && community.matrix_room_url ? (
-            <a href={community.matrix_room_url} target="_blank" rel="noreferrer" className="inline-flex rounded-md border border-border bg-card px-4 py-3 font-medium hover:opacity-90">
+          {displayCommunity?.matrix_room_id && displayCommunity.matrix_room_url ? (
+            <a href={displayCommunity.matrix_room_url} target="_blank" rel="noreferrer" className="inline-flex rounded-md border border-border bg-card px-4 py-3 font-medium hover:opacity-90">
               Open Community Communication
             </a>
           ) : (

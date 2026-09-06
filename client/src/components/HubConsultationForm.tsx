@@ -20,6 +20,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { useHubTranslation } from '@/lib/hubTranslations';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
+import { trackEvent } from '@/lib/analytics';
 
 interface InquiryOption {
   value: string;
@@ -89,14 +90,24 @@ export function HubConsultationForm({
         status: 'new',
       });
     },
-    onSuccess: () => {
+    onSuccess: (_result, variables) => {
+      trackEvent('consultation_submitted', {
+        inquiry_type: variables.inquiry || 'general',
+        source,
+        language,
+      });
       toast({
         title: t('hub_toast_sent_title'),
         description: t('hub_toast_sent_desc'),
       });
       setFormData({ name: '', email: '', phone: '', inquiry: '', message: '' });
     },
-    onError: () => {
+    onError: (_error, variables) => {
+      trackEvent('consultation_failed', {
+        inquiry_type: variables.inquiry || 'general',
+        source,
+        language,
+      });
       toast({
         title: t('hub_toast_error_title'),
         description: t('hub_toast_error_desc'),

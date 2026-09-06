@@ -14,6 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { createClient } from "@/lib/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 import {
   postAuthenticationContinuation,
   type AuthenticationMode,
@@ -239,7 +240,15 @@ export default function HubAuth({ mode }: HubAuthProps) {
       const res = await apiRequest("POST", `/api/hub/auth/${mode}`, data);
       return res.json();
     },
-    onSuccess: async (result) => {
+    onSuccess: async (result, variables) => {
+      const trackAuthCompleted = () => {
+        trackEvent("auth_completed", {
+          mode,
+          has_referrer: Boolean(variables.referrerEmail),
+          has_invite: Boolean(variables.inviteToken),
+        });
+      };
+
       if (mode === "signup") {
         if (result.needsConfirmation === false && result.session) {
           const { error: sessionError } = await createClient().auth.setSession({
@@ -313,12 +322,15 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
           // APP-REC-006C: non_member with no pending invitation → invitation-only screen.
           if (runtimeState.outcome === "non_member") {
+            trackAuthCompleted();
             setShowInvitationOnly(true);
             return;
           }
 
+          trackAuthCompleted();
           setLocation(destination);
         } else {
+          trackAuthCompleted();
           setSignupSuccess(true);
         }
         return;
@@ -394,14 +406,17 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
         // APP-REC-006C: non_member with no pending invitation → invitation-only screen.
         if (runtimeState.outcome === "non_member") {
+          trackAuthCompleted();
           setShowInvitationOnly(true);
           return;
         }
 
+        trackAuthCompleted();
         setLocation(destination);
       }
     },
     onError: (error: Error) => {
+      trackEvent("auth_failed", { mode });
       toast({
         title: "Error",
         description: error.message || "Something went wrong. Please try again.",

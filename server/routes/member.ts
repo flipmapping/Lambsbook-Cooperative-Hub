@@ -7,6 +7,7 @@ import {
   getServiceClient
 } from "../lib/supabaseClients";
 import { SupabaseDAL } from "../lib/supabase-dal";
+import { generateInvitationShareMessage, resolveLanguage } from "../services/invitation-delivery";
 
 const router = Router();
 
@@ -173,10 +174,10 @@ router.get("/invitations", attachUserContextSafe, async (req: Request, res: Resp
     return res.json({
       invitations: invitations.map((invitation) => ({
         id: invitation.id,
-        invited_email: invitation.accepted_by_email ?? null,
+        invited_email: invitation.invited_email ?? null,
         created_at: invitation.created_at,
         expires_at: invitation.expires_at ?? null,
-        note: null,
+        note: invitation.note ?? null,
         status: invitation.status,
         // D2: Include invitation URL so the link can be retrieved from history
         invitation_url: (invitation as any).token
@@ -269,6 +270,81 @@ router.delete("/invitations/:id", attachUserContextSafe, async (req: Request, re
     console.error("DELETE_INVITATION_RUNTIME", err);
     return res.status(500).json({
       error: { code: "SERVER_ERROR", message: "Server error" },
+    });
+  }
+});
+
+router.post("/invitations/share", attachUserContextSafe, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    const user = authReq.user;
+
+    if (!user?.id) {
+      return res.status(401).json({
+        error: {
+          code: "UNAUTHENTICATED",
+          message: "Authentication required",
+        },
+      });
+    }
+
+    const invitationLink = req.body?.invitationLink;
+    const language = req.body?.language;
+    const memberName = req.body?.memberName;
+
+    if (typeof invitationLink !== "string" || invitationLink.trim().length === 0) {
+      return res.status(400).json({
+        error: {
+          code: "INVALID_INVITATION_LINK",
+          message: "invitationLink is required",
+          field: "invitationLink",
+        },
+      });
+    }
+
+    if (language !== undefined && typeof language !== "string") {
+      return res.status(400).json({
+        error: {
+          code: "INVALID_LANGUAGE",
+          message: "language must be a string",
+          field: "language",
+        },
+      });
+    }
+
+    if (memberName !== undefined && typeof memberName !== "string") {
+      return res.status(400).json({
+        error: {
+          code: "INVALID_MEMBER_NAME",
+          message: "memberName must be a string",
+          field: "memberName",
+        },
+      });
+    }
+
+    const resolvedLanguage = resolveLanguage(language);
+
+    const message = generateInvitationShareMessage({
+      invitationLink,
+      language: resolvedLanguage,
+      ...(memberName?.trim()
+        ? { memberName: memberName.trim() }
+        : {}),
+    });
+
+    return res.json({
+      invitationLink,
+      language: resolvedLanguage,
+      message,
+    });
+  } catch (err) {
+    console.error("POST_INVITATION_SHARE_RUNTIME", err);
+
+    return res.status(500).json({
+      error: {
+        code: "SERVER_ERROR",
+        message: "Server error",
+      },
     });
   }
 });

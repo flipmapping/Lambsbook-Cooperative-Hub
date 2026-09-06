@@ -16,6 +16,12 @@ entrypoint = cfg["activation"]["entrypoint"].strip()
 runtime = cfg["activation"]["runtime"].strip()
 arguments = cfg["activation"]["arguments"]
 
+if len(sys.argv) != 2:
+    print("Usage: activate.py <path-to-cib>", file=sys.stderr)
+    sys.exit(2)
+
+runtime_cib = sys.argv[1]
+
 if not entrypoint:
     print("=" * 80)
     print("EOS GOVERNANCE FAILURE")
@@ -44,6 +50,7 @@ else:
     sys.exit(21)
 
 cmd.extend(arguments)
+cmd.append(runtime_cib)
 
 print("=" * 80)
 print("ACTIVATING BUILDER")

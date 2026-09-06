@@ -21,6 +21,7 @@ import { HubHeader } from "@/components/HubHeader";
 import { HubConsultationForm } from "@/components/HubConsultationForm";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useHubTranslation } from "@/lib/hubTranslations";
+import { trackEvent } from "@/lib/analytics";
 import {
   Accordion,
   AccordionContent,
@@ -146,6 +147,11 @@ export default function HubLanding() {
   });
 
   const chooseJourney = (journey: string) => {
+    trackEvent("journey_selected", {
+      journey,
+      language,
+      location: "hub_landing",
+    });
     setSelectedJourney(journey);
     try {
       localStorage.setItem("lambsbook_journey_preference", journey);

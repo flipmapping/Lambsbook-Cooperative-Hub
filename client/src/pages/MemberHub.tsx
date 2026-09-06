@@ -18,6 +18,8 @@ import {
   Lock, Shield, Camera, Plus, Trash2, QrCode, Phone
 } from "lucide-react";
 import HubAdminDashboard from "@/pages/HubAdminDashboard";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/lib/LanguageContext";
 
 type MembershipStatus = "free" | "paid";
 type ActivityStatus = "active" | "inactive";
@@ -63,6 +65,7 @@ interface SentInvitation {
   created_at: string;
   expires_at: string | null;
   status: "pending" | "accepted" | "expired" | string;
+  note?: string | null;
   /** D2: Server-generated invitation URL for link retrieval from history */
   invitation_url?: string | null;
 }
@@ -311,11 +314,14 @@ function QrPlaceholder({ platform, handle }: { platform: MessengerPlatform; hand
 
 export default function MemberHub() {
   const { toast } = useToast();
+  const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState("overview");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
   const [invitedEmail, setInvitedEmail] = useState("");
+  const [invitationNote, setInvitationNote] = useState("");
   const [inviteLink, setInviteLink] = useState("");
+  const [invitationShareMessage, setInvitationShareMessage] = useState("");
 
   // ── APP-MEX-001A / APP-MEX-001C: Profile state with persistence ──────────
   const [profileVisibility, setProfileVisibility] = useState<"private" | "public">("private");
@@ -501,7 +507,8 @@ export default function MemberHub() {
   const createInvitationMutation = useMutation({
     mutationFn: () =>
       postWithAuth("/api/member/invitations", {
-        invitedEmail
+        invitedEmail,
+        note: invitationNote.trim() || null
       }),
     onSuccess: (data:any) => {
       const link =
@@ -684,6 +691,9 @@ export default function MemberHub() {
 
   return (
     <div className="container mx-auto p-6 max-w-5xl">
+      <div className="flex justify-end mb-4">
+        <LanguageSwitcher />
+      </div>
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold" data-testid="text-page-title">Member Dashboard</h1>
@@ -744,7 +754,7 @@ export default function MemberHub() {
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
           <TabsTrigger value="profile" data-testid="tab-profile">Profile</TabsTrigger>
           <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
-          <TabsTrigger value="earnings" data-testid="tab-earnings">Earnings</TabsTrigger>
+          <TabsTrigger value="earnings" data-testid="tab-earnings">Credits</TabsTrigger>
           <TabsTrigger value="invitations" data-testid="tab-invitations">Invitations</TabsTrigger>
           <TabsTrigger value="relationships" data-testid="tab-relationships">Relationships</TabsTrigger>
           <TabsTrigger value="workspace" data-testid="tab-workspace">Workspace</TabsTrigger>
@@ -1251,13 +1261,13 @@ export default function MemberHub() {
                   <ArrowUpCircle className="h-5 w-5" />
                   Upgrade to Paid Membership
                 </CardTitle>
-                <CardDescription>Unlock unlimited earning potential across all programs</CardDescription>
+                <CardDescription>Unlock unlimited credit potential across all programs</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Earn from all programs automatically
+                    Receive credits from all programs automatically
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
@@ -1376,9 +1386,9 @@ export default function MemberHub() {
         <TabsContent value="earnings" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Earnings</CardTitle>
+              <CardTitle>Credits</CardTitle>
               <CardDescription>
-                Cooperative earnings recorded for your member account
+                Cooperative credits recorded for your member account
               </CardDescription>
             </CardHeader>
 
@@ -1386,11 +1396,11 @@ export default function MemberHub() {
               {earningsLoading ? (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <RefreshCw className="h-4 w-4 animate-spin" />
-                  Loading earnings...
+                  Loading credits...
                 </div>
               ) : !earnings?.length ? (
                 <div className="text-sm text-muted-foreground">
-                  No earnings recorded yet.
+                  No credits recorded yet.
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -1451,6 +1461,7 @@ export default function MemberHub() {
                   if (!open) {
                     setInviteLink("");
                     setInvitedEmail("");
+                    setInvitationNote("");
                   }
                 }}
               >
@@ -1463,6 +1474,15 @@ export default function MemberHub() {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInvitedEmail(e.target.value)}
                       placeholder="Invitee email"
                       data-testid="input-invited-email"
+                    />
+
+                    <textarea
+                      value={invitationNote}
+                      onChange={(e) => setInvitationNote(e.target.value)}
+                      placeholder="Invitation note (optional)"
+                      rows={3}
+                      className="flex min-h-[80px] w-full rounded-md border bg-background px-3 py-2 text-sm"
+                      data-testid="input-invitation-note"
                     />
 
                     <Button
@@ -1498,7 +1518,65 @@ export default function MemberHub() {
                         <Button
                           variant="outline"
                           className="w-full"
-                          onClick={() => { setInviteModalOpen(false); setInviteLink(""); setInvitedEmail(""); }}
+                          disabled={!inviteLink}
+                          onClick={async () => {
+                            try {
+                              const data = await postWithAuth("/api/member/invitations/share", {
+                                invitationLink: inviteLink,
+                                language,
+                              });
+                              setInvitationShareMessage(data.message);
+                              toast({ title: "Invitation message ready to personalize" });
+                            } catch {
+                              toast({ title: "Share message failed", description: "Please try again.", variant: "destructive" });
+                            }
+                          }}
+                          data-testid="button-share-invitation-message"
+                        >
+                          Share Invitation Message
+                        </Button>
+                        {invitationShareMessage ? (
+                          <div className="space-y-2">
+                            <label
+                              htmlFor="invitation-share-message"
+                              className="text-sm font-medium"
+                            >
+                              Invitation Message
+                            </label>
+                            <textarea
+                              id="invitation-share-message"
+                              value={invitationShareMessage}
+                              onChange={(event) => setInvitationShareMessage(event.target.value)}
+                              className="min-h-40 w-full rounded-md border bg-background px-3 py-2 text-sm"
+                              data-testid="textarea-invitation-share-message"
+                            />
+                            <Button
+                              variant="outline"
+                              className="w-full"
+                              onClick={async () => {
+                                try {
+                                  await navigator.clipboard.writeText(invitationShareMessage);
+                                  toast({ title: "Invitation message copied to clipboard" });
+                                } catch {
+                                  toast({ title: "Copy failed", description: "Please try again.", variant: "destructive" });
+                                }
+                              }}
+                              data-testid="button-copy-personalized-invitation-message"
+                            >
+                              Copy Invitation Message
+                            </Button>
+                          </div>
+                        ) : null}
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          onClick={() => {
+                            setInviteModalOpen(false);
+                            setInviteLink("");
+                            setInvitedEmail("");
+                            setInvitationNote("");
+                            setInvitationShareMessage("");
+                          }}
                           data-testid="button-close-invite-modal"
                         >
                           Done
@@ -1607,6 +1685,14 @@ export default function MemberHub() {
                             >
                               {inv.status ?? "pending"}
                             </Badge>
+                            {inv.note && (
+                              <div
+                                className="text-xs text-muted-foreground mt-2 whitespace-pre-wrap"
+                                data-testid={`invitation-note-${inv.id}`}
+                              >
+                                {inv.note}
+                              </div>
+                            )}
                           </div>
 
                           {/* D2: Copy link + Delete — only for unaccepted */}

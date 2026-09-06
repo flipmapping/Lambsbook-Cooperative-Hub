@@ -9,7 +9,6 @@ alter table meh.communities
   add column city text,
   add column district_area text,
   add column goal text,
-  add column description text,
   add column category text,
   add column audience text,
   add column cover_image_url text;

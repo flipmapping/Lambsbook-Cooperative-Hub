@@ -1,0 +1,13 @@
+{
+  "authority": "SEC-ENTRIES-RLS-001",
+  "operation": "SEC-ENTRIES-RLS-010",
+  "mode": "READ_ONLY",
+  "target_origin": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub",
+  "matches": [
+    {
+      "path": "/home/runner/workspace",
+      "origin": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub"
+    }
+  ],
+  "mutation_performed": false
+}

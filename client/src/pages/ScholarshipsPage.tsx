@@ -19,6 +19,7 @@ import { HubHeader } from '@/components/HubHeader';
 import { HubConsultationForm } from '@/components/HubConsultationForm';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useHubTranslation } from '@/lib/hubTranslations';
+import { trackEvent } from '@/lib/analytics';
 
 // ---------------------------------------------------------------------------
 // RDM-CTBC-001: CTBC asset slots
@@ -115,6 +116,11 @@ export default function ScholarshipsPage() {
   const { t } = useHubTranslation(language);
 
   const handleNavigate = (section: string) => {
+    trackEvent('scholarship_cta_clicked', {
+      action: section,
+      language,
+      location: 'scholarships_hero',
+    });
     const ref = sectionRefs[section as keyof typeof sectionRefs];
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -166,7 +172,16 @@ export default function ScholarshipsPage() {
               {t('hub_free_consultation')}
             </Button>
             {/* Learn More — official CTBC website */}
-            <a href={CTBC_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
+            <a
+              href={CTBC_WEBSITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('scholarship_cta_clicked', {
+                action: 'visit_ctbc',
+                language,
+                location: 'scholarships_hero',
+              })}
+            >
               <Button size="lg" variant="outline">
                 {t('hub_learn_more')} <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
@@ -327,7 +342,14 @@ export default function ScholarshipsPage() {
           <h2 className="text-2xl font-bold mb-3">{t('schol_cta_title')}</h2>
           <p className="text-muted-foreground mb-6">{t('schol_cta_desc')}</p>
           <div className="flex gap-3 justify-center flex-wrap">
-            <Link href="/hub/prospect-registration">
+            <Link
+              href="/hub/prospect-registration"
+              onClick={() => trackEvent('scholarship_cta_clicked', {
+                action: 'register',
+                language,
+                location: 'scholarships_banner',
+              })}
+            >
               <Button size="lg">
                 {t('schol_cta_register')} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -345,7 +367,10 @@ export default function ScholarshipsPage() {
       <section ref={sectionRefs.contact} className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-2xl font-bold text-center mb-4">{t('hub_free_consultation')}</h2>
-          <HubConsultationForm inquiryOptions={inquiryOptions} />
+          <HubConsultationForm
+            inquiryOptions={inquiryOptions}
+            source="scholarships_page"
+          />
         </div>
       </section>
 

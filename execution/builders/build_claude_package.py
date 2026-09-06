@@ -204,6 +204,34 @@ def locate_artifacts(
     # Implementation Authority artifact
     ia = mandatory["Implementation Authority"]
     ia_path = repo_root / IA_ARTIFACT_TEMPLATE.format(ia=ia)
+
+    # Current implementation packages may materialize the governing
+    # Implementation Authority through the Builder Authority package.
+    if not ia_path.exists():
+        builder_work_package = (
+            repo_root
+            / "execution"
+            / "builder-work"
+            / "builder-work-package.json"
+        )
+        if builder_work_package.exists():
+            import json
+
+            work_package = json.loads(
+                builder_work_package.read_text(encoding="utf-8")
+            )
+            execution = work_package.get("execution")
+            if execution:
+                package_path = (
+                    repo_root
+                    / "execution"
+                    / "packages"
+                    / f"{execution}R"
+                    / "implementation-authority-package.json"
+                )
+                if package_path.exists():
+                    ia_path = package_path
+
     located["Implementation Authority Artifact"] = ia_path
 
     # Implementation Context Manifest — path is the direct value from the CIB field
@@ -245,32 +273,52 @@ def verify_authority_consistency(
     ia = mandatory["Implementation Authority"]
     cib_stream = optional.get("Authority Stream")
 
-    if ia not in ia_artifact_path.name:
-        violations.append(
-            f"Implementation Authority '{ia}' "
-            f"not reflected in artifact filename '{ia_artifact_path.name}'"
-        )
-
-    if ia_artifact_path.exists():
+    if ia_artifact_path.name == "implementation-authority-package.json":
         try:
-            ia_text = ia_artifact_path.read_text(encoding="utf-8")
-            ia_values = _extract_field(ia_text, "Implementation Authority")
-            if ia_values and ia_values[0] != ia:
+            import json
+
+            package = json.loads(
+                ia_artifact_path.read_text(encoding="utf-8")
+            )
+            package_ia = package.get("implementation_authority")
+            if package_ia != ia:
                 violations.append(
                     f"Implementation Authority mismatch: "
-                    f"CIB='{ia}', IA artifact='{ia_values[0]}'"
+                    f"CIB='{ia}', IA package='{package_ia}'"
                 )
-            if cib_stream:
-                ia_streams = _extract_field(ia_text, "Authority Stream")
-                if ia_streams and ia_streams[0] != cib_stream:
-                    violations.append(
-                        f"Authority Stream mismatch: "
-                        f"CIB='{cib_stream}', IA artifact='{ia_streams[0]}'"
-                    )
-        except OSError:
+        except (OSError, json.JSONDecodeError) as exc:
             violations.append(
-                f"IA artifact unreadable: {ia_artifact_path}"
+                f"IA authority package unreadable or invalid: "
+                f"{ia_artifact_path} ({exc})"
             )
+    else:
+        if ia not in ia_artifact_path.name:
+            violations.append(
+                f"Implementation Authority '{ia}' "
+                f"not reflected in artifact filename "
+                f"'{ia_artifact_path.name}'"
+            )
+
+        if ia_artifact_path.exists():
+            try:
+                ia_text = ia_artifact_path.read_text(encoding="utf-8")
+                ia_values = _extract_field(ia_text, "Implementation Authority")
+                if ia_values and ia_values[0] != ia:
+                    violations.append(
+                        f"Implementation Authority mismatch: "
+                        f"CIB='{ia}', IA artifact='{ia_values[0]}'"
+                    )
+                if cib_stream:
+                    ia_streams = _extract_field(ia_text, "Authority Stream")
+                    if ia_streams and ia_streams[0] != cib_stream:
+                        violations.append(
+                            f"Authority Stream mismatch: "
+                            f"CIB='{cib_stream}', IA artifact='{ia_streams[0]}'"
+                        )
+            except OSError:
+                violations.append(
+                    f"IA artifact unreadable: {ia_artifact_path}"
+                )
 
     return violations
 
@@ -473,16 +521,20 @@ def _assemble_artifacts(
     )
     cib_text = cib_path.read_text(encoding="utf-8")
 
-    task_id_values = _extract_field(cib_text, "Task ID")
-    cycle_values = _extract_field(cib_text, "Cycle")
+    cib_title = cib_text.splitlines()[0] if cib_text.splitlines() else ""
 
-    if len(task_id_values) != 1:
-        fail("CIB Task ID must appear exactly once.")
-    if len(cycle_values) != 1:
-        fail("CIB Cycle must appear exactly once.")
+    title_match = re.match(
+        r"^#\s+([A-Za-z0-9][A-Za-z0-9-]*)\s+—\s+CURRENT WORK-CYCLE BUILDER CIB\s*$",
+        cib_title,
+    )
+    if not title_match:
+        fail(
+            "CIB authoritative title must identify the current work-cycle "
+            "Builder CIB."
+        )
 
-    task_id = task_id_values[0]
-    cycle = cycle_values[0]
+    task_id = title_match.group(1).strip()
+    cycle = "CURRENT WORK-CYCLE"
 
     readme_content = f"""# {task_id} — PIC Package Reading Guide
 

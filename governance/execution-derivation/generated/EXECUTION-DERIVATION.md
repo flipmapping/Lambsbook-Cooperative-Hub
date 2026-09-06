@@ -2,7 +2,7 @@
 
 Implementation Authority
 ------------------------
-MAIN_APP
+APP-COM-EXEC-001
 
 Change Intent Brief
 -------------------
@@ -10,4 +10,4 @@ Change Intent Brief
 
 Implementation Context Manifest
 -------------------------------
-governance/icm/generated/ICM-APP-REALIZATION-002H.md
+governance/icm/generated/ICM-APP-COM-EXEC-001.md

@@ -1,0 +1,150 @@
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1494[m[36m-[m    const { data, error } = await supabase
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1495[m[36m-[m      .from('gateway_invitations')
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1496[m[36m-[m      .select('*')
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1497[m[36m-[m      .eq('inviter_user_id', inviterUserId)
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1498[m[36m-[m      .order('created_at', { ascending: false });
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1499[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1500[m[36m-[m    if (error) {
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1501[m[36m-[m      throw new Error(
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1502[m[36m-[m        `Failed to get gateway invitations: ${error.message}`
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1503[m[36m-[m      );
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1504[m[36m-[m    }
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1505[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1506[m[36m-[m    return data || [];
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1507[m[36m-[m  }
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1508[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m:[m[32m1509[m[36m:[m  async [1;31mcreateGatewayInvitation([m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1510[m[36m-[m    data: GatewayInvitationInsert
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1511[m[36m-[m  ): Promise<GatewayInvitation> {
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1512[m[36m-[m    this.ensureConfigured();
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1513[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1514[m[36m-[m    const supabase = getSupabaseAdmin();
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1515[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1516[m[36m-[m    const { data: invitation, error } = await supabase
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1517[m[36m-[m      .from('gateway_invitations')
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1518[m[36m-[m      .insert({
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1519[m[36m-[m        token: data.token,
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1520[m[36m-[m        inviter_user_id: data.inviter_user_id,
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1521[m[36m-[m        inviter_email: data.inviter_email,
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1522[m[36m-[m        invited_email: data.invited_email ?? null,
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1523[m[36m-[m        phone_number: data.phone_number ?? null,
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1524[m[36m-[m        note: data.note ?? null,
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1525[m[36m-[m      })
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1526[m[36m-[m      .select()
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1527[m[36m-[m      .single();
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1528[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1529[m[36m-[m    if (error) {
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1530[m[36m-[m      throw new Error(
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1531[m[36m-[m        `Failed to create gateway invitation: ${error.message}`
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1532[m[36m-[m      );
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1533[m[36m-[m    }
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1534[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1535[m[36m-[m    return invitation;
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1536[m[36m-[m  }
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1537[m[36m-[m}
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1538[m[36m-[m
+[35mserver/lib/supabase-dal.ts[m[36m-[m[32m1539[m[36m-[mexport const supabaseDAL = new SupabaseDAL();
+[36m--[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m341[m[36m-[m      getUserClient(user.token);
+[35mserver/routes/member (copy).ts[m[36m-[m[32m342[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m343[m[36m-[m    const { data: userEmail, error: userEmailError } =
+[35mserver/routes/member (copy).ts[m[36m-[m[32m344[m[36m-[m      await supabase.rpc("get_my_auth_email");
+[35mserver/routes/member (copy).ts[m[36m-[m[32m345[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m346[m[36m-[m    if (userEmailError || !userEmail) {
+[35mserver/routes/member (copy).ts[m[36m-[m[32m347[m[36m-[m      return res.status(401).json({
+[35mserver/routes/member (copy).ts[m[36m-[m[32m348[m[36m-[m        error: {
+[35mserver/routes/member (copy).ts[m[36m-[m[32m349[m[36m-[m          code: "EMAIL_NOT_FOUND",
+[35mserver/routes/member (copy).ts[m[36m-[m[32m350[m[36m-[m          message: "User email not found"
+[35mserver/routes/member (copy).ts[m[36m-[m[32m351[m[36m-[m        }
+[35mserver/routes/member (copy).ts[m[36m-[m[32m352[m[36m-[m      });
+[35mserver/routes/member (copy).ts[m[36m-[m[32m353[m[36m-[m    }
+[35mserver/routes/member (copy).ts[m[36m-[m[32m354[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m355[m[36m-[m    const data =
+[35mserver/routes/member (copy).ts[m[36m:[m[32m356[m[36m:[m      await supabaseDAL.[1;31mcreateGatewayInvitation([m{
+[35mserver/routes/member (copy).ts[m[36m-[m[32m357[m[36m-[m        token,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m358[m[36m-[m        inviter_user_id: user.id,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m359[m[36m-[m        inviter_email: userEmail,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m360[m[36m-[m        invited_email: invitedEmail ?? null,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m361[m[36m-[m        phone_number: phoneNumber ?? null,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m362[m[36m-[m        note: note ?? null
+[35mserver/routes/member (copy).ts[m[36m-[m[32m363[m[36m-[m      });
+[35mserver/routes/member (copy).ts[m[36m-[m[32m364[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m365[m[36m-[m    const appOrigin =
+[35mserver/routes/member (copy).ts[m[36m-[m[32m366[m[36m-[m      process.env.APP_URL ??
+[35mserver/routes/member (copy).ts[m[36m-[m[32m367[m[36m-[m      (process.env.REPLIT_DEV_DOMAIN
+[35mserver/routes/member (copy).ts[m[36m-[m[32m368[m[36m-[m        ? `https://${process.env.REPLIT_DEV_DOMAIN}`
+[35mserver/routes/member (copy).ts[m[36m-[m[32m369[m[36m-[m        : "http://localhost:5000");
+[35mserver/routes/member (copy).ts[m[36m-[m[32m370[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m371[m[36m-[m    const invitationBase =
+[35mserver/routes/member (copy).ts[m[36m-[m[32m372[m[36m-[m      process.env.INVITATION_BASE_URL ??
+[35mserver/routes/member (copy).ts[m[36m-[m[32m373[m[36m-[m      "https://lambsbookcoop.com";
+[35mserver/routes/member (copy).ts[m[36m-[m[32m374[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m375[m[36m-[m    return res.status(201).json({
+[35mserver/routes/member (copy).ts[m[36m-[m[32m376[m[36m-[m      invitation: {
+[35mserver/routes/member (copy).ts[m[36m-[m[32m377[m[36m-[m        id: data.id,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m378[m[36m-[m        status: data.status,
+[35mserver/routes/member (copy).ts[m[36m-[m[32m379[m[36m-[m        token: data.token
+[35mserver/routes/member (copy).ts[m[36m-[m[32m380[m[36m-[m      },
+[35mserver/routes/member (copy).ts[m[36m-[m[32m381[m[36m-[m      invitationUrl: `${invitationBase}/invitation-link/${data.token}`
+[35mserver/routes/member (copy).ts[m[36m-[m[32m382[m[36m-[m    });
+[35mserver/routes/member (copy).ts[m[36m-[m[32m383[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m384[m[36m-[m  } catch (err) {
+[35mserver/routes/member (copy).ts[m[36m-[m[32m385[m[36m-[m    console.error(
+[35mserver/routes/member (copy).ts[m[36m-[m[32m386[m[36m-[m      "POST_INVITATIONS_RUNTIME",
+[35mserver/routes/member (copy).ts[m[36m-[m[32m387[m[36m-[m      err
+[35mserver/routes/member (copy).ts[m[36m-[m[32m388[m[36m-[m    );
+[35mserver/routes/member (copy).ts[m[36m-[m[32m389[m[36m-[m
+[35mserver/routes/member (copy).ts[m[36m-[m[32m390[m[36m-[m    return res.status(500).json({
+[35mserver/routes/member (copy).ts[m[36m-[m[32m391[m[36m-[m      error: {
+[36m--[m
+[35mserver/routes/member.ts[m[36m-[m[32m341[m[36m-[m      getUserClient(user.token);
+[35mserver/routes/member.ts[m[36m-[m[32m342[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m343[m[36m-[m    const { data: userEmail, error: userEmailError } =
+[35mserver/routes/member.ts[m[36m-[m[32m344[m[36m-[m      await supabase.rpc("get_my_auth_email");
+[35mserver/routes/member.ts[m[36m-[m[32m345[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m346[m[36m-[m    if (userEmailError || !userEmail) {
+[35mserver/routes/member.ts[m[36m-[m[32m347[m[36m-[m      return res.status(401).json({
+[35mserver/routes/member.ts[m[36m-[m[32m348[m[36m-[m        error: {
+[35mserver/routes/member.ts[m[36m-[m[32m349[m[36m-[m          code: "EMAIL_NOT_FOUND",
+[35mserver/routes/member.ts[m[36m-[m[32m350[m[36m-[m          message: "User email not found"
+[35mserver/routes/member.ts[m[36m-[m[32m351[m[36m-[m        }
+[35mserver/routes/member.ts[m[36m-[m[32m352[m[36m-[m      });
+[35mserver/routes/member.ts[m[36m-[m[32m353[m[36m-[m    }
+[35mserver/routes/member.ts[m[36m-[m[32m354[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m355[m[36m-[m    const data =
+[35mserver/routes/member.ts[m[36m:[m[32m356[m[36m:[m      await supabaseDAL.[1;31mcreateGatewayInvitation([m{
+[35mserver/routes/member.ts[m[36m-[m[32m357[m[36m-[m        token,
+[35mserver/routes/member.ts[m[36m-[m[32m358[m[36m-[m        inviter_user_id: user.id,
+[35mserver/routes/member.ts[m[36m-[m[32m359[m[36m-[m        inviter_email: userEmail,
+[35mserver/routes/member.ts[m[36m-[m[32m360[m[36m-[m        invited_email: invitedEmail ?? null,
+[35mserver/routes/member.ts[m[36m-[m[32m361[m[36m-[m        phone_number: phoneNumber ?? null,
+[35mserver/routes/member.ts[m[36m-[m[32m362[m[36m-[m        note: note ?? null
+[35mserver/routes/member.ts[m[36m-[m[32m363[m[36m-[m      });
+[35mserver/routes/member.ts[m[36m-[m[32m364[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m365[m[36m-[m    const appOrigin =
+[35mserver/routes/member.ts[m[36m-[m[32m366[m[36m-[m      process.env.APP_URL ??
+[35mserver/routes/member.ts[m[36m-[m[32m367[m[36m-[m      (process.env.REPLIT_DEV_DOMAIN
+[35mserver/routes/member.ts[m[36m-[m[32m368[m[36m-[m        ? `https://${process.env.REPLIT_DEV_DOMAIN}`
+[35mserver/routes/member.ts[m[36m-[m[32m369[m[36m-[m        : "http://localhost:5000");
+[35mserver/routes/member.ts[m[36m-[m[32m370[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m371[m[36m-[m    const invitationBase =
+[35mserver/routes/member.ts[m[36m-[m[32m372[m[36m-[m      process.env.INVITATION_BASE_URL ??
+[35mserver/routes/member.ts[m[36m-[m[32m373[m[36m-[m      "https://lambsbookcoop.com";
+[35mserver/routes/member.ts[m[36m-[m[32m374[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m375[m[36m-[m    return res.status(201).json({
+[35mserver/routes/member.ts[m[36m-[m[32m376[m[36m-[m      invitation: {
+[35mserver/routes/member.ts[m[36m-[m[32m377[m[36m-[m        id: data.id,
+[35mserver/routes/member.ts[m[36m-[m[32m378[m[36m-[m        status: data.status,
+[35mserver/routes/member.ts[m[36m-[m[32m379[m[36m-[m        token: data.token
+[35mserver/routes/member.ts[m[36m-[m[32m380[m[36m-[m      },
+[35mserver/routes/member.ts[m[36m-[m[32m381[m[36m-[m      invitationUrl: `${invitationBase}/invitation-link/${data.token}`
+[35mserver/routes/member.ts[m[36m-[m[32m382[m[36m-[m    });
+[35mserver/routes/member.ts[m[36m-[m[32m383[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m384[m[36m-[m  } catch (err) {
+[35mserver/routes/member.ts[m[36m-[m[32m385[m[36m-[m    console.error(
+[35mserver/routes/member.ts[m[36m-[m[32m386[m[36m-[m      "POST_INVITATIONS_RUNTIME",
+[35mserver/routes/member.ts[m[36m-[m[32m387[m[36m-[m      err
+[35mserver/routes/member.ts[m[36m-[m[32m388[m[36m-[m    );
+[35mserver/routes/member.ts[m[36m-[m[32m389[m[36m-[m
+[35mserver/routes/member.ts[m[36m-[m[32m390[m[36m-[m    return res.status(500).json({
+[35mserver/routes/member.ts[m[36m-[m[32m391[m[36m-[m      error: {

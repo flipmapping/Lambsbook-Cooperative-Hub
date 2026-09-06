@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { HubHeader } from "@/components/HubHeader";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useHubTranslation } from "@/lib/hubTranslations";
+import { trackEvent } from "@/lib/analytics";
 
 interface FormState {
   fullName: string;
@@ -70,6 +71,12 @@ export default function ProspectRegistration() {
       });
 
       if (!response.ok) {
+        trackEvent('prospect_registration_failed', {
+          language,
+          program: form.programOfInterest,
+          failure_stage: 'request',
+          status_code: response.status,
+        });
         const body = await response.json().catch(() => ({}));
         setSubmitError(
           (body as { error?: string }).error ?? t('pr_err_submit')
@@ -87,12 +94,26 @@ export default function ProspectRegistration() {
         result?.accepted !== true ||
         result?.status !== "validated"
       ) {
+        trackEvent('prospect_registration_failed', {
+          language,
+          program: form.programOfInterest,
+          failure_stage: 'response_validation',
+        });
         setSubmitError(t('pr_err_submit'));
         return;
       }
 
+      trackEvent('prospect_registration_completed', {
+        language,
+        program: form.programOfInterest,
+      });
       setSubmitted(true);
     } catch {
+      trackEvent('prospect_registration_failed', {
+        language,
+        program: form.programOfInterest,
+        failure_stage: 'network',
+      });
       setSubmitError(t('pr_err_network'));
     } finally {
       setLoading(false);

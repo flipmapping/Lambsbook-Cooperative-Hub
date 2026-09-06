@@ -1,23 +1,29 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "APP-REL-001",
-  "cycle_id": "APP-REL-001-WC-002",
-  "baseline_sha": "e203bc4df298abceeb2aeb14c68ad1394acadeb6",
+  "authority_id": "APP-V2",
+  "cycle_id": "APP-V2-WC-001",
+  "baseline_sha": "d75e0864e29c1774021c1da4c3cc6659f943230c",
   "branch": "app-rec-006-runtime-identity",
   "certified_mutation_paths": [
-    "client/src/pages/dashboard/InvitationAcceptancePage.tsx",
-    "client/src/App.tsx",
-    "client/src/pages/RecoveryRedirect.tsx",
-    "server/routes.ts",
-    "server/services/supabase-hub.ts"
+    "client/src/",
+    "server/",
+    "shared/",
+    "supabase/migrations/",
+    "tests/",
+    "test/",
+    "locales/",
+    "i18n/",
+    "public/",
+    "scripts/runtime-guards/",
+    "package.json",
+    "package-lock.json"
   ],
   "allowed_operations": [
     "build",
-    "commit",
-    "deploy"
+    "commit"
   ],
-  "expires_at": "2026-08-29T23:59:59+07:00",
+  "expires_at": "2026-09-12T23:59:59+07:00",
   "verification": {
     "status": "PENDING"
   }

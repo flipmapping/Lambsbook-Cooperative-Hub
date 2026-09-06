@@ -1,0 +1,10 @@
+{
+  "authority": "SEC-ENTRIES-RLS-001",
+  "operation": "SEC-ENTRIES-RLS-003",
+  "repository": "Lambsbook-Cooperative-Hub",
+  "repository_origin": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub",
+  "scope": "public.entries",
+  "mode": "READ_ONLY",
+  "mutation_performed": false,
+  "evidence": []
+}

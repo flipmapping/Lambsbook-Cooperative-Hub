@@ -1,0 +1,28 @@
+SEC-ENTRIES-RLS-001
+MODE=READ_ONLY
+SCOPE=public.entries
+
+REPOSITORY
+ROOT=/home/runner/workspace
+ORIGIN=https://github.com/flipmapping/Lambsbook-Cooperative-Hub
+
+SCHEMA
+------
+server/services/hub-partners.ts:306: Array.from(partnerShareAllocations.entries()).forEach(([id, alloc]) => {
+
+RLS_AND_POLICIES
+----------------
+<NONE FOUND>
+
+FOREIGN_KEYS
+------------
+<NONE FOUND>
+
+READ_WRITE_USAGE
+----------------
+<NONE FOUND>
+
+OWNERSHIP_SIGNALS
+-----------------
+<NONE FOUND>
+

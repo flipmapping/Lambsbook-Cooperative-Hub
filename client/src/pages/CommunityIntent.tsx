@@ -50,6 +50,8 @@ export default function CommunityIntentPage() {
   const [stage, setStage] = useState<Stage>('goal');
   const [intent, setIntent] = useState<CommunityIntent>(EMPTY_INTENT);
   const [errors, setErrors] = useState<Partial<Record<keyof CommunityIntent, string>>>({});
+  const [creationError, setCreationError] = useState<string | null>(null);
+  const [creating, setCreating] = useState(false);
 
   const updateField = <K extends keyof CommunityIntent>(field: K, value: CommunityIntent[K]) => {
     setIntent((prev) => ({ ...prev, [field]: value }));
@@ -83,30 +85,53 @@ export default function CommunityIntentPage() {
   };
 
   const handleConfirmIntent = async () => {
-    const response = await fetch('/api/communities', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({
-        name: intent.name,
-        description: intent.description,
-        goal: intent.goal,
-        category: intent.category,
-        audience: intent.audience,
-        visibility: intent.visibility,
-        coverImageUrl: intent.coverImageUrl,
-        country: intent.country,
-        stateProvince: intent.stateProvince,
-        city: intent.city,
-        districtArea: intent.districtArea,
-      }),
-    });
+    setCreationError(null);
+    setCreating(true);
 
-    if (!response.ok) {
-      throw new Error('Failed to create Community');
+    try {
+      const response = await fetch('/api/communities', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          name: intent.name,
+          description: intent.description,
+          goal: intent.goal,
+          category: intent.category,
+          audience: intent.audience,
+          visibility: intent.visibility,
+          coverImageUrl: intent.coverImageUrl,
+          country: intent.country,
+          stateProvince: intent.stateProvince,
+          city: intent.city,
+          districtArea: intent.districtArea,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create Community');
+      }
+
+      const community = await response.json();
+      const communityId =
+        typeof community?.id === 'string' ? community.id.trim() : '';
+
+      if (!communityId) {
+        throw new Error(
+          'Community creation succeeded but no canonical Community ID was returned',
+        );
+      }
+
+      setLocation(
+        `/organization/community?id=${encodeURIComponent(communityId)}`,
+      );
+    } catch (error) {
+      setCreationError(
+        error instanceof Error ? error.message : 'Community creation failed',
+      );
+    } finally {
+      setCreating(false);
     }
-
-    return response.json();
   };
 
   return (
@@ -533,12 +558,17 @@ export default function CommunityIntentPage() {
             <div className="mt-6 rounded-md border border-border p-4">
               <div className="font-medium">Creation status</div>
               <div className="mt-1 text-sm font-semibold">
-                NOT READY
+                Ready to create
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                This preview does not create, save, publish, or represent a
-                persistent Community.
+                Submitting will create the canonical Community and navigate to
+                its Community page.
               </p>
+              {creationError ? (
+                <p className="mt-3 text-sm font-medium text-destructive">
+                  {creationError}
+                </p>
+              ) : null}
             </div>
 
             <div className="mt-6 flex gap-3">
@@ -552,9 +582,10 @@ export default function CommunityIntentPage() {
               <button
                 type="button"
                 onClick={handleConfirmIntent}
+                disabled={creating}
                 className="rounded-md border border-border bg-card px-4 py-2 transition-colors hover:bg-accent"
               >
-                Create Community
+                {creating ? "Creating Community…" : "Create Community"}
               </button>
             </div>
           </section>

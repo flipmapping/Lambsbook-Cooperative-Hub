@@ -222,6 +222,9 @@ export interface GatewayInvitation {
   token: string;
   inviter_user_id: string;
   inviter_email: string;
+  invited_email: string | null;
+  phone_number: string | null;
+  note: string | null;
   status: string;
   expires_at: string;
   accepted_by_user_id: string | null;
