@@ -150,6 +150,109 @@ export const insertFollowUpSchema = createInsertSchema(followUps).omit({ id: tru
 export type InsertFollowUp = z.infer<typeof insertFollowUpSchema>;
 export type FollowUp = typeof followUps.$inferSelect;
 
+
+// APP-COM-EXEC-002 — communication runtime corridor
+// Schema-only materialization. No foreign keys are introduced.
+// Runtime authority/source mapping is resolved by the implementation gate.
+
+export const communicationIntents = pgTable("communication_intents", {
+  intentId: varchar("intent_id").primaryKey().default(sql`gen_random_uuid()`),
+  traceId: varchar("trace_id").notNull().unique(),
+  organizationId: text("organization_id"),
+  recipientId: text("recipient_id").notNull(),
+  recipientType: text("recipient_type").notNull(),
+  invitationId: text("invitation_id").notNull(),
+  requestedLanguage: text("requested_language").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const communicationResolutions = pgTable("communication_resolutions", {
+  resolutionId: varchar("resolution_id").primaryKey().default(sql`gen_random_uuid()`),
+  intentId: text("intent_id").notNull(),
+  traceId: text("trace_id").notNull(),
+  organizationId: text("organization_id"),
+  communicationProfileId: text("communication_profile_id"),
+  communicationPolicyId: text("communication_policy_id"),
+  templateKey: text("template_key").notNull(),
+  templateVersion: text("template_version").notNull(),
+  resolvedChannel: text("resolved_channel").notNull(),
+  resolvedProvider: text("resolved_provider").notNull(),
+  resolvedLanguage: text("resolved_language").notNull(),
+  resolvedAt: timestamp("resolved_at").defaultNow().notNull(),
+});
+
+export const communicationDispatches = pgTable("communication_dispatches", {
+  dispatchId: varchar("dispatch_id").primaryKey().default(sql`gen_random_uuid()`),
+  recordId: text("record_id").notNull(),
+  resolutionId: text("resolution_id").notNull(),
+  traceId: text("trace_id").notNull(),
+  organizationId: text("organization_id"),
+  approvedChannel: text("approved_channel").notNull(),
+  approvedProvider: text("approved_provider").notNull(),
+  dispatchAfter: timestamp("dispatch_after"),
+  priority: integer("priority").notNull().default(0),
+  decisionReason: text("decision_reason"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const communicationRecords = pgTable("communication_records", {
+  recordId: varchar("record_id").primaryKey().default(sql`gen_random_uuid()`),
+  intentId: text("intent_id").notNull(),
+  dispatchId: text("dispatch_id").notNull(),
+  traceId: text("trace_id").notNull(),
+  organizationId: text("organization_id"),
+  communicationProfileId: text("communication_profile_id"),
+  templateKey: text("template_key").notNull(),
+  templateVersion: text("template_version").notNull(),
+  selectedProvider: text("selected_provider").notNull(),
+  selectedChannel: text("selected_channel").notNull(),
+  runtimeStatus: text("runtime_status").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const deliveryAttempts = pgTable("delivery_attempts", {
+  attemptId: varchar("attempt_id").primaryKey().default(sql`gen_random_uuid()`),
+  recordId: text("record_id").notNull(),
+  traceId: text("trace_id").notNull(),
+  selectedProvider: text("selected_provider").notNull(),
+  selectedChannel: text("selected_channel").notNull(),
+  status: text("status").notNull(),
+  error: text("error"),
+  attemptedAt: timestamp("attempted_at").defaultNow().notNull(),
+});
+
+export const executionTraces = pgTable("execution_traces", {
+  traceId: varchar("trace_id").primaryKey(),
+  intentId: text("intent_id").notNull(),
+  resolutionId: text("resolution_id").notNull(),
+  dispatchId: text("dispatch_id").notNull(),
+  recordId: text("record_id").notNull(),
+  deliveryAttemptIds: text("delivery_attempt_ids").array().notNull(),
+  organizationId: text("organization_id"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// APP-COM-EXEC-002 — repository-standard inferred types
+export type CommunicationIntent = typeof communicationIntents.$inferSelect;
+export type InsertCommunicationIntent = typeof communicationIntents.$inferInsert;
+
+export type CommunicationResolution = typeof communicationResolutions.$inferSelect;
+export type InsertCommunicationResolution = typeof communicationResolutions.$inferInsert;
+
+export type CommunicationDispatch = typeof communicationDispatches.$inferSelect;
+export type InsertCommunicationDispatch = typeof communicationDispatches.$inferInsert;
+
+export type CommunicationRecord = typeof communicationRecords.$inferSelect;
+export type InsertCommunicationRecord = typeof communicationRecords.$inferInsert;
+
+export type DeliveryAttempt = typeof deliveryAttempts.$inferSelect;
+export type InsertDeliveryAttempt = typeof deliveryAttempts.$inferInsert;
+
+export type ExecutionTrace = typeof executionTraces.$inferSelect;
+export type InsertExecutionTrace = typeof executionTraces.$inferInsert;
+
+
 export const notificationTemplates = pgTable("notification_templates", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   templateKey: text("template_key").notNull(),

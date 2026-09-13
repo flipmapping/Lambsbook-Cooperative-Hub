@@ -29,7 +29,7 @@ export interface NotificationPayload {
   recipientEmail: string;
   recipientId: string;
   recipientType: "member" | "partner" | "admin" | "prospect";
-  type: "new_enquiry" | "enquiry_assigned" | "follow_up_reminder" | "status_change" | "registration_confirmation" | "campaign_email";
+  type: "new_enquiry" | "enquiry_assigned" | "follow_up_reminder" | "status_change" | "registration_confirmation" | "campaign_email" | "member-invitation";
   subject: string;
   message: string;
   enquiryId?: string;

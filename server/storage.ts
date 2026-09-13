@@ -14,6 +14,24 @@ import {
   type ActivityLog, type InsertActivityLog, activityLogs,
   type NotificationTemplate, type InsertNotificationTemplate, notificationTemplates,
   type NonMemberInvitation, type InsertNonMemberInvitation, nonMemberInvitations,
+  communicationIntents,
+  communicationResolutions,
+  communicationDispatches,
+  communicationRecords,
+  deliveryAttempts,
+  executionTraces,
+  CommunicationIntent,
+  InsertCommunicationIntent,
+  CommunicationResolution,
+  InsertCommunicationResolution,
+  CommunicationDispatch,
+  InsertCommunicationDispatch,
+  CommunicationRecord,
+  InsertCommunicationRecord,
+  DeliveryAttempt,
+  InsertDeliveryAttempt,
+  ExecutionTrace,
+  InsertExecutionTrace,
 } from "@shared/schema";
 import { notificationPreferences, InsertNotificationPreferences } from "@shared/schema";
 import { db } from "./db";
@@ -101,6 +119,17 @@ export interface IStorage {
     totalMembers: number;
     totalPartners: number;
   }>;
+  createCommunicationIntent(intent: InsertCommunicationIntent): Promise<CommunicationIntent>;
+  createCommunicationResolution(resolution: InsertCommunicationResolution): Promise<CommunicationResolution>;
+  createCommunicationDispatch(dispatch: InsertCommunicationDispatch): Promise<CommunicationDispatch>;
+  createCommunicationRecord(record: InsertCommunicationRecord): Promise<CommunicationRecord>;
+  updateCommunicationRecord(
+    id: string,
+    record: Partial<InsertCommunicationRecord>,
+  ): Promise<CommunicationRecord | undefined>;
+  createDeliveryAttempt(attempt: InsertDeliveryAttempt): Promise<DeliveryAttempt>;
+  createExecutionTrace(trace: InsertExecutionTrace): Promise<ExecutionTrace>;
+
 }
 
 export class DatabaseStorage implements IStorage {
@@ -500,6 +529,65 @@ export class DatabaseStorage implements IStorage {
       totalPartners: allPartners.length,
     };
   }
+
+  async createCommunicationIntent(
+    intent: InsertCommunicationIntent,
+  ): Promise<CommunicationIntent> {
+    const [created] = await db.insert(communicationIntents).values(intent).returning();
+    return created;
+  }
+
+  async createCommunicationResolution(
+    resolution: InsertCommunicationResolution,
+  ): Promise<CommunicationResolution> {
+    const [created] = await db.insert(communicationResolutions).values(resolution).returning();
+    return created;
+  }
+
+  async createCommunicationDispatch(
+    dispatch: InsertCommunicationDispatch,
+  ): Promise<CommunicationDispatch> {
+    const [created] = await db.insert(communicationDispatches).values(dispatch).returning();
+    return created;
+  }
+
+  async createCommunicationRecord(
+    record: InsertCommunicationRecord,
+  ): Promise<CommunicationRecord> {
+    const [created] = await db.insert(communicationRecords).values(record).returning();
+
+    if (!created) {
+      throw new Error("Failed to create communication record");
+    }
+    return created;
+  }
+
+  async updateCommunicationRecord(
+    id: string,
+    record: Partial<InsertCommunicationRecord>,
+  ): Promise<CommunicationRecord | undefined> {
+    const [updated] = await db
+      .update(communicationRecords)
+      .set(record)
+      .where(eq(communicationRecords.recordId, id))
+      .returning();
+    return updated;
+  }
+
+  async createDeliveryAttempt(
+    attempt: InsertDeliveryAttempt,
+  ): Promise<DeliveryAttempt> {
+    const [created] = await db.insert(deliveryAttempts).values(attempt).returning();
+    return created;
+  }
+
+  async createExecutionTrace(
+    trace: InsertExecutionTrace,
+  ): Promise<ExecutionTrace> {
+    const [created] = await db.insert(executionTraces).values(trace).returning();
+    return created;
+  }
+
 }
 
 export const storage = new DatabaseStorage();

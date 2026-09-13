@@ -7,6 +7,11 @@ import {
   getServiceClient
 } from "../lib/supabaseClients";
 import { SupabaseDAL } from "../lib/supabase-dal";
+import { storage } from "../storage";
+import { sendNotification } from "../services/notifications";
+import { resolveCommunication } from "../services/communication-resolution";
+import { dispatchCommunication } from "../services/communication-dispatch";
+import { updateCommunicationRecordStatus } from "../services/communication-record";
 import { generateInvitationShareMessage, resolveLanguage } from "../services/invitation-delivery";
 
 const router = Router();
@@ -438,15 +443,94 @@ const user = authReq.user;
         note: note ?? null
       });
 
+    const communicationTraceId = randomUUID();
+
+      const invitationBase =
+        process.env.INVITATION_BASE_URL ??
+        "https://lambsbookcoop.com";
+
+    try {
+      const communicationIntent = await storage.createCommunicationIntent({
+        traceId: communicationTraceId,
+        organizationId: null,
+        recipientId: user.id,
+        recipientType: "member",
+        invitationId: data.id,
+        requestedLanguage: "en"
+      });
+
+      const communicationResolution = await resolveCommunication({
+        intentId: communicationIntent.intentId,
+        traceId: communicationTraceId,
+        organizationId: null,
+        language: "en"
+      });
+
+      const communicationDispatch = await dispatchCommunication({
+        intentId: communicationIntent.intentId,
+        resolutionId: communicationResolution.resolutionId,
+        traceId: communicationTraceId,
+        organizationId: null,
+        templateKey: communicationResolution.templateKey,
+        templateVersion: communicationResolution.templateVersion,
+        selectedProvider: communicationResolution.resolvedProvider,
+        selectedChannel: communicationResolution.resolvedChannel,
+        decisionReason: "member-invitation"
+      });
+
+      if (!invitedEmail) {
+        throw new Error("Member invitation email recipient is not available");
+      }
+      const invitationMessage = generateInvitationShareMessage({
+        invitationLink: `${invitationBase}/invitation-link/${data.token}`,
+        language: resolveLanguage("en"),
+      });
+
+      const notificationResult = await sendNotification({
+        recipientEmail: invitedEmail,
+        recipientId: user.id,
+        recipientType: "member",
+        type: "member-invitation",
+        subject: "You have been invited to join",
+        message: invitationMessage
+      });
+
+      const deliveryAttempt = await storage.createDeliveryAttempt({
+        recordId: communicationDispatch.record.recordId,
+        traceId: communicationTraceId,
+        selectedProvider: communicationDispatch.record.selectedProvider,
+        selectedChannel: communicationDispatch.record.selectedChannel,
+        status: notificationResult.success ? "delivered" : "failed",
+        error: notificationResult.error ?? null
+      });
+
+      await updateCommunicationRecordStatus(
+        communicationDispatch.record.recordId,
+        notificationResult.success ? "delivered" : "failed"
+      );
+
+      await storage.createExecutionTrace({
+        traceId: communicationTraceId,
+        intentId: communicationIntent.intentId,
+        resolutionId: communicationResolution.resolutionId,
+        dispatchId: communicationDispatch.dispatch.dispatchId,
+        recordId: communicationDispatch.record.recordId,
+        deliveryAttemptIds: [deliveryAttempt.attemptId],
+        organizationId: null
+      });
+    } catch (communicationError) {
+      console.error(
+        "COMMUNICATION_CORRIDOR",
+        communicationError
+      );
+    }
+
     const appOrigin =
       process.env.APP_URL ??
       (process.env.REPLIT_DEV_DOMAIN
         ? `https://${process.env.REPLIT_DEV_DOMAIN}`
         : "http://localhost:5000");
 
-    const invitationBase =
-      process.env.INVITATION_BASE_URL ??
-      "https://lambsbookcoop.com";
 
     return res.status(201).json({
       invitation: {
@@ -936,6 +1020,10 @@ router.get(
       if (!member) {
         return res.status(404).json({ error: "Member not found" });
       }
+
+      const invitationBase =
+        process.env.INVITATION_BASE_URL ??
+        "https://lambsbookcoop.com";
 
       try {
         const prefs = await supabaseDAL.getMemberProfilePreferences(member.id);
