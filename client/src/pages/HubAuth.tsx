@@ -241,13 +241,6 @@ export default function HubAuth({ mode }: HubAuthProps) {
       return res.json();
     },
     onSuccess: async (result, variables) => {
-      const trackAuthCompleted = () => {
-        trackEvent("auth_completed", {
-          mode,
-          has_referrer: Boolean(variables.referrerEmail),
-          has_invite: Boolean(variables.inviteToken),
-        });
-      };
 
       if (mode === "signup") {
         if (result.needsConfirmation === false && result.session) {
@@ -322,15 +315,27 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
           // APP-REC-006C: non_member with no pending invitation → invitation-only screen.
           if (runtimeState.outcome === "non_member") {
-            trackAuthCompleted();
+                      trackEvent("auth_completed", {
+            mode,
+            has_referrer: Boolean(variables.referrerEmail),
+            has_invite: Boolean(variables.inviteToken),
+          });
             setShowInvitationOnly(true);
             return;
           }
 
-          trackAuthCompleted();
+                    trackEvent("auth_completed", {
+            mode,
+            has_referrer: Boolean(variables.referrerEmail),
+            has_invite: Boolean(variables.inviteToken),
+          });
           setLocation(destination);
         } else {
-          trackAuthCompleted();
+                    trackEvent("auth_completed", {
+            mode,
+            has_referrer: Boolean(variables.referrerEmail),
+            has_invite: Boolean(variables.inviteToken),
+          });
           setSignupSuccess(true);
         }
         return;
@@ -406,12 +411,20 @@ export default function HubAuth({ mode }: HubAuthProps) {
 
         // APP-REC-006C: non_member with no pending invitation → invitation-only screen.
         if (runtimeState.outcome === "non_member") {
-          trackAuthCompleted();
+                    trackEvent("auth_completed", {
+            mode,
+            has_referrer: Boolean(variables.referrerEmail),
+            has_invite: Boolean(variables.inviteToken),
+          });
           setShowInvitationOnly(true);
           return;
         }
 
-        trackAuthCompleted();
+                  trackEvent("auth_completed", {
+            mode,
+            has_referrer: Boolean(variables.referrerEmail),
+            has_invite: Boolean(variables.inviteToken),
+          });
         setLocation(destination);
       }
     },

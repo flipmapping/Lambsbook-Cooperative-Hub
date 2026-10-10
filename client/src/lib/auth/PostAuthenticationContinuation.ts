@@ -398,7 +398,6 @@ async function _determineRuntimeState(
     };
   }
 }
-
 function _prepareRuntimePublication(
   _determined: _DeterminedRuntimeState,
 ): _PreparedRuntimePublication {

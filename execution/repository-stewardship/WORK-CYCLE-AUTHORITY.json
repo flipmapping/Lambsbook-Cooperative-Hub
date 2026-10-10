@@ -6,24 +6,14 @@
   "baseline_sha": "d75e0864e29c1774021c1da4c3cc6659f943230c",
   "branch": "app-rec-006-runtime-identity",
   "certified_mutation_paths": [
-    "client/src/",
-    "server/",
-    "shared/",
-    "supabase/migrations/",
-    "tests/",
-    "test/",
-    "locales/",
-    "i18n/",
-    "public/",
-    "scripts/runtime-guards/",
-    "package.json",
-    "package-lock.json"
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/pages/HubAuth.tsx"
   ],
   "allowed_operations": [
     "build",
     "commit"
   ],
-  "expires_at": "2026-09-12T23:59:59+07:00",
+  "expires_at": "2026-10-17T22:49:34+00:00",
   "verification": {
     "status": "PENDING"
   }

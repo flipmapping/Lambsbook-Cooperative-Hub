@@ -31,7 +31,8 @@
     "server/routes/member.ts",
     "server/services/notifications.ts",
     "shared/organization/",
-    "shared/schema.ts"
+    "shared/schema.ts",
+    "client/src/lib/auth/PostAuthenticationContinuation.ts"
   ],
   "composition_summary": {
     "founder_decision_required": {
@@ -134,7 +135,8 @@
     "client/src/pages/CommunityPage.tsx",
     "client/src/pages/RecoveryRedirect.tsx",
     "client/src/pages/ResetPassword.tsx",
-    "server/routes.ts"
+    "server/routes.ts",
+    "client/src/lib/auth/PostAuthenticationContinuation.ts"
   ],
   "repository_root_admission": {
     "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",
