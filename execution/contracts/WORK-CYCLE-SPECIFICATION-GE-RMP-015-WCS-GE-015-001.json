@@ -21,7 +21,14 @@
       "Specify the mini-semantic-tree assistant interaction using an already-authorized assistant capability.",
       "Define the GE-to-SLL interface and its boundary against MVP-WCS-007C.",
       "Keep all mutations within the two authorized documentation artifacts.",
-      "Record downstream founder runtime acceptance without treating this specification as runtime verification."
+      "Record downstream founder runtime acceptance without treating this specification as runtime verification.",
+      "Show the same target-language task with English meaning support for en, English-Vietnamese support for vi, and English-Chinese support for zh.",
+      "Allow the visitor to choose a semantic field and construction level.",
+      "Progressively reveal how meaning, ideas, relationships, and reasoning form an English response.",
+      "Let the visitor construct a related response, change one semantic variable, and adapt it.",
+      "Withdraw scaffolding across attempts and include transfer to a changed question or context.",
+      "Use an already-authorized assistant capability only; do not create a provider, AI authority, or persistence authority.",
+      "Do not claim mastery, redefine SLL ontology, or alter SLL learner evidence or curriculum authority."
     ],
     "execution_class": "B",
     "approval_boundary": "FOUNDER_APPROVED_GE_RMP_015_WCS_GE_015_001",
@@ -111,5 +118,126 @@
     "CLAUDE_REMAINS_A_BOUNDED_IMPLEMENTATION_WORKER",
     "AUTOMATED_VERIFICATION_DOES_NOT_EQUAL_FOUNDER_VERIFICATION",
     "NO_WORK_CYCLE_IS_COMPLETE_UNTIL_FOUNDER_RUNTIME_VERIFIED"
-  ]
+  ],
+  "experience_contract": {
+    "capability_name": "INTERACTIVE-SLL-PROOF-OF-METHOD",
+    "purpose": "Let a visitor experience constructing, adapting, and transferring an answer rather than only reading about SLL.",
+    "visitor_journey": [
+      "RECOGNIZE the difficulty of building an answer",
+      "SEE the semantic structure",
+      "UNDERSTAND how the response is assembled",
+      "TRY a related response",
+      "SUCCEED by constructing a response",
+      "ADAPT one semantic variable",
+      "TRANSFER the structure to a changed question or context",
+      "WANT_MORE and discover the next SLL learning step"
+    ],
+    "locale_behavior": {
+      "en": {
+        "target_language": "English",
+        "meaning_support_language": "English"
+      },
+      "vi": {
+        "target_language": "English",
+        "meaning_support_language": "Vietnamese",
+        "demonstration": "English-Vietnamese"
+      },
+      "zh": {
+        "target_language": "English",
+        "meaning_support_language": "Chinese",
+        "demonstration": "English-Chinese"
+      },
+      "invariant": "Keep the semantic structure and target-language task consistent; change the meaning-support language by locale."
+    },
+    "visitor_choices": {
+      "semantic_fields": [
+        "People and Relationships",
+        "Daily Life",
+        "Work",
+        "Study",
+        "Travel",
+        "Opinions",
+        "Experiences",
+        "Problems and Solutions",
+        "Places",
+        "Events",
+        "Feelings and Emotions",
+        "Other"
+      ],
+      "construction_levels": [
+        {
+          "level": 1,
+          "name": "Basic",
+          "focus": "Who or what?"
+        },
+        {
+          "level": 2,
+          "name": "Developed",
+          "focus": "Who, what, when, and where?"
+        },
+        {
+          "level": 3,
+          "name": "Extended",
+          "focus": "Add reasons and supporting detail."
+        },
+        {
+          "level": 4,
+          "name": "Analytical",
+          "focus": "Meaning, ideas, relationships, reasoning, and language."
+        }
+      ]
+    },
+    "guided_construction": {
+      "sequence": [
+        "Show a question and reveal its meaning.",
+        "Reveal the semantic tree progressively.",
+        "Show how selected ideas and relationships produce an English response.",
+        "Invite the visitor to construct a response to a related question.",
+        "Ask the visitor to change one semantic variable and adapt the response.",
+        "Transfer the structure to a changed question or context."
+      ],
+      "scaffold_withdrawal": [
+        "Full tree and phrases",
+        "Partial tree and phrases",
+        "Keywords only",
+        "New question",
+        "Transfer to a new context"
+      ],
+      "design_rule": "Demonstrate construction and adaptation; do not turn the experience into a conventional right-answer quiz.",
+      "learner_realization": "I didn't memorise that. I built it."
+    },
+    "construction_assistant": {
+      "name": "SLL Construction Assistant",
+      "input": "Visitor intention, selected semantic field, and selected construction level.",
+      "output": "A bounded mini-semantic tree that scaffolds the visitor's own English response.",
+      "construction_path": [
+        "Meaning",
+        "Ideas",
+        "Relationships",
+        "Reasoning",
+        "Semantic structure",
+        "Lexical phrases",
+        "English response"
+      ],
+      "must_not": [
+        "Immediately replace the construction process with a polished answer.",
+        "Claim English proficiency or SLL mastery."
+      ],
+      "authority_boundary": "Use only an already-authorized assistant capability; create no provider or AI authority."
+    },
+    "data_boundary": {
+      "persistence": "Keep interaction state ephemeral unless an existing authority explicitly permits persistence.",
+      "analytics": "No new analytics authority is created by this experience specification."
+    },
+    "sll_boundary": {
+      "preserve": [
+        "SLL ontology",
+        "SLL semantic controls",
+        "SLL mastery evidence",
+        "SLL learner evidence",
+        "SLL curriculum authority"
+      ],
+      "scope_note": "This GE experience demonstrates the approved handoff and does not redefine the SLL capability or learning engine."
+    }
+  }
 }

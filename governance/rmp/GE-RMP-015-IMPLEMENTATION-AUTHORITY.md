@@ -75,3 +75,34 @@ Verification
 Current Status
 --------------
 READY FOR BOUNDED MATERIALIZATION
+
+Supplementary SLL-001 Experience Handoff
+----------------------------------------
+Capability: INTERACTIVE-SLL-PROOF-OF-METHOD
+
+Visitor journey:
+RECOGNIZE -> SEE -> UNDERSTAND -> TRY -> SUCCEED -> ADAPT -> TRANSFER -> WANT MORE.
+
+The visitor selects a semantic field and construction level. The experience
+reveals how meaning, ideas, relationships, reasoning, semantic structure, and
+lexical phrases support construction of an English response. The visitor then
+constructs a related response, changes one semantic variable, and transfers
+the structure to a changed question or context. Scaffolding withdraws from a
+full tree and phrases to a partial tree, keywords, a new question, and transfer.
+
+Locale behavior:
+- en: English target with English meaning support.
+- vi: English target with Vietnamese meaning support.
+- zh: English target with Chinese meaning support.
+The semantic structure and target-language task remain consistent across
+locales; only meaning support changes.
+
+The SLL Construction Assistant may produce a bounded mini-semantic tree from
+the visitor's intention, selected semantic field, and selected construction
+level. It scaffolds construction instead of immediately supplying a polished
+answer. Use only an already-authorized assistant capability. Interaction
+state remains ephemeral unless an existing authority permits persistence.
+
+Preserve SLL ontology, semantic controls, mastery evidence, learner evidence,
+and curriculum authority. This handoff creates no AI, analytics, or persistence
+authority and makes no mastery claim.
