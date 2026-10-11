@@ -1,19 +1,19 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "APP-V2",
-  "cycle_id": "APP-V2-WC-001",
-  "baseline_sha": "d75e0864e29c1774021c1da4c3cc6659f943230c",
-  "branch": "app-rec-006-runtime-identity",
+  "authority_id": "GE-RMP-015",
+  "cycle_id": "WCS-GE-015-001",
+  "baseline_sha": "ac2a975333d4486081f670788fcf06a250f28e42",
+  "branch": "ge-rmp-015-wcs001",
   "certified_mutation_paths": [
-    "client/src/lib/auth/PostAuthenticationContinuation.ts",
-    "client/src/pages/HubAuth.tsx"
+    "execution/contracts/",
+    "governance/rmp/"
   ],
   "allowed_operations": [
     "build",
     "commit"
   ],
-  "expires_at": "2026-10-17T22:49:34+00:00",
+  "expires_at": "2026-10-18T02:05:53+00:00",
   "verification": {
     "status": "PENDING"
   }

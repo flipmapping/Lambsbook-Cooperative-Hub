@@ -1,0 +1,115 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "FOUNDER_APPROVED",
+  "work_cycle_id": "WCS-GE-015-001",
+  "portfolio_id": "MVP-WCS-PORTFOLIO-001",
+  "execution_stream": "GROWTH_ENGINE",
+  "task_id": "WCS-GE-015-001",
+  "authority_binding": {
+    "authority_reference": "GE-RMP-015",
+    "work_cycle": "WCS-GE-015-001",
+    "candidate_base_sha_source": "WORK_CYCLE_AUTHORITY"
+  },
+  "execution": {
+    "stream": "GROWTH_ENGINE",
+    "task_id": "WCS-GE-015-001",
+    "objective": "Materialize the GE-owned SLL-001 handoff and controlled GE-to-SLL experience interface for MVP-WCS-007C, using the frozen SLL Authority Baseline v1.1 without changing SLL ontology.",
+    "success_criteria": [
+      "Trace each GE-to-SLL handoff element to the frozen SLL-001 authority input.",
+      "Define the same-structure/new-topic demonstration and transfer experience.",
+      "Specify Chinese-default to English-Chinese demonstration and Vietnamese-default to English-Vietnamese demonstration behavior.",
+      "Specify the mini-semantic-tree assistant interaction using an already-authorized assistant capability.",
+      "Define the GE-to-SLL interface and its boundary against MVP-WCS-007C.",
+      "Keep all mutations within the two authorized documentation artifacts.",
+      "Record downstream founder runtime acceptance without treating this specification as runtime verification."
+    ],
+    "execution_class": "B",
+    "approval_boundary": "FOUNDER_APPROVED_GE_RMP_015_WCS_GE_015_001",
+    "verification_profile": "WCS_SCHEMA_AND_JSON_VALIDATION; AUTHORITY_SCOPE_VALIDATION; RELEASE_GUARD; DOWNSTREAM_FOUNDER_RUNTIME_ACCEPTANCE"
+  },
+  "depends_on": [
+    "MVP-WCS-002",
+    "MVP-WCS-005"
+  ],
+  "unlocks": [
+    "MVP-WCS-007C"
+  ],
+  "portfolio_binding": {
+    "parent_work_cycle": "MVP-WCS-007C",
+    "parent_name": "SLL Capability and Learning Engine",
+    "authority_input": "SLL Authority Baseline v1.1",
+    "authority_input_status": "FROZEN_AUTHORITATIVE_HANDOFF",
+    "sequencing_note": "This GE handoff specification supports MVP-WCS-007C and does not replace its SLL implementation authority or prerequisites."
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-GE-RMP-015-WCS-GE-015-001.json",
+      "governance/rmp/GE-RMP-015-IMPLEMENTATION-AUTHORITY.md"
+    ],
+    "forbidden_surface": [
+      "client/",
+      "public/",
+      "locales/",
+      "i18n/",
+      "server/",
+      "shared/",
+      "supabase/",
+      "database/",
+      "RLS",
+      "financial/",
+      "ledger/",
+      "identity/",
+      "membership/",
+      "deployment/",
+      "release-certification/",
+      "SLL ontology",
+      "SLL semantic controls",
+      "SLL mastery evidence",
+      "SLL learner evidence",
+      "SLL curriculum authority",
+      "WORK-CYCLE-AUTHORITY.json"
+    ],
+    "candidate_worktree_required": true
+  },
+  "implementation_agent": {
+    "agent": "CLAUDE_CODE",
+    "role": "BOUNDED_IMPLEMENTATION_WORKER",
+    "authority_boundary": [
+      "MAY_IMPLEMENT_ONLY_WITHIN_AI_SAFE_AUTHORIZED_SURFACE",
+      "MAY_NOT_CREATE_OR_MODIFY_AUTHORITY",
+      "MAY_NOT_MODIFY_AI_SAFE",
+      "MAY_NOT_MODIFY_AEF_AUTHORITY",
+      "MAY_NOT_MODIFY_RELEASE_CERTIFICATION",
+      "MAY_NOT_DEPLOY",
+      "MAY_NOT_MODIFY_FORBIDDEN_SURFACES"
+    ]
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": "After the downstream SLL runtime is materialized, exercise the GE-to-SLL demonstration, transfer, language-default, and mini-semantic-tree flows in the deployed founder-test environment.",
+    "expected_outcome": "The experience follows the approved SLL-001 handoff and language rules, produces the requested mini-semantic-tree interaction, and leaves SLL ontology and authority unchanged.",
+    "evidence_required": [
+      "URL_OR_RUNTIME_ENTRYPOINT",
+      "FOUNDER_OBSERVATION",
+      "SCREENSHOT_OR_EQUIVALENT_RUNTIME_EVIDENCE",
+      "CONSOLE_OR_RUNTIME_STATUS"
+    ],
+    "terminal_state_on_pass": "FOUNDER_RUNTIME_VERIFIED",
+    "terminal_state_on_fail": "FOUNDER_RUNTIME_REJECTED"
+  },
+  "terminal_states": [
+    "STOP",
+    "AUTOMATED_VERIFIED",
+    "FOUNDER_RUNTIME_VERIFIED",
+    "FOUNDER_RUNTIME_REJECTED"
+  ],
+  "invariants": [
+    "SPECIFICATION_CANNOT_CREATE_AUTHORITY",
+    "SPECIFICATION_CANNOT_EXPAND_AUTHORIZED_SURFACE",
+    "AI_SAFE_REMAINS_THE_EXECUTION_GATE",
+    "CLAUDE_REMAINS_A_BOUNDED_IMPLEMENTATION_WORKER",
+    "AUTOMATED_VERIFICATION_DOES_NOT_EQUAL_FOUNDER_VERIFICATION",
+    "NO_WORK_CYCLE_IS_COMPLETE_UNTIL_FOUNDER_RUNTIME_VERIFIED"
+  ]
+}
