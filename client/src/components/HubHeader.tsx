@@ -2,6 +2,13 @@ import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ThemeToggle } from './ThemeToggle';
@@ -16,6 +23,37 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const { t } = useHubTranslation(language);
+  const authLabelsByLanguage: Record<string, {
+    signIn: string;
+    userSignIn: string;
+    memberSignIn: string;
+    createUserAccount: string;
+    memberInvitationNote: string;
+  }> = {
+    en: {
+      signIn: "Sign In",
+      userSignIn: "User Sign In",
+      memberSignIn: "Member Sign In",
+      createUserAccount: "Create User Account",
+      memberInvitationNote: "Membership is by invitation. Use your invitation link to join.",
+    },
+    vi: {
+      signIn: "Đăng nhập",
+      userSignIn: "Người dùng đăng nhập",
+      memberSignIn: "Thành viên đăng nhập",
+      createUserAccount: "Tạo tài khoản người dùng",
+      memberInvitationNote: "Tư cách thành viên cần có thư mời. Hãy dùng liên kết mời để tham gia.",
+    },
+    zh: {
+      signIn: "登录",
+      userSignIn: "用户登录",
+      memberSignIn: "会员登录",
+      createUserAccount: "创建用户账户",
+      memberInvitationNote: "会员资格需邀请。请使用邀请链接加入。",
+    },
+  };
+  const authLabels = authLabelsByLanguage[language] ?? authLabelsByLanguage.en;
+
 
   const handleNavClick = (section: string) => {
     if (onNavigate) {
@@ -86,14 +124,29 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
               {t('hub_free_consultation')}
             </Button>
           )}
-          <Link href="/hub/login">
-            <Button variant="ghost" size="sm" className="hidden sm:inline-flex" data-testid="button-header-signin">
-              {t('hub_login')}
-            </Button>
-          </Link>
-          <Link href="/hub/signup">
-            <Button variant="outline" size="sm" className="hidden sm:inline-flex" data-testid="button-header-join">
-              {t('hub_join_now')}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="hidden sm:inline-flex"
+                data-testid="button-header-signin">
+                {authLabels.signIn}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild>
+                <Link href="/hub/login?account=user">{authLabels.userSignIn}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/hub/login?account=member">{authLabels.memberSignIn}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuLabel className="max-w-64 whitespace-normal text-xs font-normal text-muted-foreground">
+                {authLabels.memberInvitationNote}
+              </DropdownMenuLabel>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link href="/hub/signup?account=user">
+            <Button variant="outline" size="sm" className="hidden sm:inline-flex"
+              data-testid="button-header-join">
+              {authLabels.createUserAccount}
             </Button>
           </Link>
 
@@ -137,26 +190,27 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
                   >
                     {t('hub_free_consultation')}
                   </Button>
-                  <Link href="/hub/login">
-                    <Button
-                      variant="ghost"
-                      className="justify-start w-full mt-2"
-                      onClick={() => setIsOpen(false)}
-                      data-testid="mobile-nav-signin"
-                    >
-                      {t('hub_login')}
+                  <Link href="/hub/login?account=user">
+                    <Button variant="ghost" className="justify-start w-full mt-2"
+                      onClick={() => setIsOpen(false)} data-testid="mobile-nav-user-signin">
+                      {authLabels.userSignIn}
                     </Button>
                   </Link>
-                  <Link href="/hub/signup">
-                    <Button
-                      variant="outline"
-                      className="justify-start w-full"
-                      onClick={() => setIsOpen(false)}
-                      data-testid="mobile-nav-join"
-                    >
-                      {t('hub_join_now')}
+                  <Link href="/hub/login?account=member">
+                    <Button variant="ghost" className="justify-start w-full"
+                      onClick={() => setIsOpen(false)} data-testid="mobile-nav-member-signin">
+                      {authLabels.memberSignIn}
                     </Button>
                   </Link>
+                  <Link href="/hub/signup?account=user">
+                    <Button variant="outline" className="justify-start w-full"
+                      onClick={() => setIsOpen(false)} data-testid="mobile-nav-join">
+                      {authLabels.createUserAccount}
+                    </Button>
+                  </Link>
+                  <p className="px-3 pt-2 text-xs text-muted-foreground">
+                    {authLabels.memberInvitationNote}
+                  </p>
                 </nav>
               </SheetContent>
             </Sheet>

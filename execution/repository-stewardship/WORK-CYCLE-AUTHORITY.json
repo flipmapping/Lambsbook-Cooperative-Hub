@@ -1,6 +1,6 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
-  "status": "AUTHORIZED",
+  "status": "DEPLOYMENT_CANDIDATE",
   "authority_id": "GE-RMP-015",
   "cycle_id": "WCS-GE-015-002",
   "baseline_sha": "e071c0ed3d58d9b82769585ecc55eb71f71a0f16",
@@ -18,7 +18,9 @@
     "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
     "client/src/pages/SBUEducation.tsx",
     "client/src/pages/HubLanding.tsx",
-    "client/src/pages/MemberHub.tsx"
+    "client/src/pages/MemberHub.tsx",
+    "client/src/components/HubHeader.tsx",
+    "client/src/pages/HubAuth.tsx"
   ],
   "allowed_operations": [
     "build",
@@ -26,6 +28,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PENDING"
+    "status": "PASS"
   }
 }

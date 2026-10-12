@@ -34,7 +34,7 @@ Run the release guard and production build. Founder runtime review at
 
 Current Status
 --------------
-READY FOR BOUNDED IMPLEMENTATION
+DEPLOYMENT CANDIDATE — compiler build and founder preview review passed
 
 Language coverage
 -----------------
@@ -56,3 +56,14 @@ Education program navigation
 - Show the visitor SLL allowance and free regular-user signup benefit clearly.
 - Add the Lambsbook Tutoring and SLL destination to the Education page Programs navigation.
 - Keep regular user access distinct from canonical membership.
+
+Public and member authentication navigation
+--------------------------------------------
+- Label regular-user signup and user sign-in separately from member sign-in.
+- Explain in English, Vietnamese, and Chinese that joining as a member requires an invitation.
+- client/src/pages/HubAuth.tsx — localized user/member authentication panel (EN/VI/ZH).
+
+Founder Runtime Review
+-----------------------
+- Preview confirmed working after the HubAuth language initialization fix.
+- User and member signup intro copy is localized for English, Vietnamese, and Chinese.

@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/lib/LanguageContext";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { createClient } from "@/lib/supabase/client";
@@ -81,7 +82,191 @@ interface FormErrors {
   confirmPassword?: string | null;
 }
 
+const authPageTranslations: Record<string, Record<string, string>> = {
+  "en": {
+    "3-50 characters: letters, numbers, underscores, hyphens": "3-50 characters: letters, numbers, underscores, hyphens",
+    "Account Created": "Account Created",
+    "Already have an account?": "Already have an account?",
+    "At least 8 characters": "At least 8 characters",
+    "Back to Hub": "Back to Hub",
+    "Back to Login": "Back to Login",
+    "Check Your Email": "Check Your Email",
+    "Click the link in your email to confirm your account, then you can log in with your password.": "Click the link in your email to confirm your account, then you can log in with your password.",
+    "Click the link in your email to reset your password. The link will expire in 1 hour.": "Click the link in your email to reset your password. The link will expire in 1 hour.",
+    "Confirm Password *": "Confirm Password *",
+    "Create an account": "Create an account",
+    "Create Account": "Create Account",
+    "Email Address": "Email Address",
+    "Email Address *": "Email Address *",
+    "Enter your email and we'll send you a link to reset your password": "Enter your email and we'll send you a link to reset your password",
+    "Forgot password?": "Forgot password?",
+    "Full Name *": "Full Name *",
+    "Go to Login": "Go to Login",
+    "Include country code (e.g., +84 for Vietnam)": "Include country code (e.g., +84 for Vietnam)",
+    "Know someone in the Hub? Enter their email to connect as their referral.": "Know someone in the Hub? Enter their email to connect as their referral.",
+    "Log in": "Log in",
+    "Membership Is By Invitation": "Membership Is By Invitation",
+    "New to Lambsbook Hub?": "New to Lambsbook Hub?",
+    "No member found with this email. You can still sign up and add a referrer later.": "No member found with this email. You can still sign up and add a referrer later.",
+    "Password *": "Password *",
+    "Please check": "Please check",
+    "Referrer Email (Optional)": "Referrer Email (Optional)",
+    "Reset Password": "Reset Password",
+    "Return Home": "Return Home",
+    "Send Reset Link": "Send Reset Link",
+    "Sending...": "Sending...",
+    "Sign In": "Sign In",
+    "This keeps the community high-trust and ensures every member is accountable to someone already inside.": "This keeps the community high-trust and ensures every member is accountable to someone already inside.",
+    "To join, ask an existing member to send you a personal invitation link.": "To join, ask an existing member to send you a personal invitation link.",
+    "Username *": "Username *",
+    "We've sent a password reset link to": "We've sent a password reset link to",
+    "You'll be connected to:": "You'll be connected to:",
+    "Your account has been created, but Lambsbook Cooperative is a members-only community.": "Your account has been created, but Lambsbook Cooperative is a members-only community.",
+    "for a confirmation link": "for a confirmation link",
+    "is a trusted relationship network. Membership is extended only through personal invitation from an existing member who knows and trusts you.": "is a trusted relationship network. Membership is extended only through personal invitation from an existing member who knows and trusts you."
+  },
+  "vi": {
+    "3-50 characters: letters, numbers, underscores, hyphens": "3–50 ký tự: chữ cái, số, dấu gạch dưới và dấu gạch nối",
+    "Account Created": "Đã tạo tài khoản",
+    "Already have an account?": "Đã có tài khoản?",
+    "At least 8 characters": "Ít nhất 8 ký tự",
+    "Back to Hub": "Quay lại Hub",
+    "Back to Login": "Quay lại đăng nhập",
+    "Check Your Email": "Kiểm tra email của bạn",
+    "Click the link in your email to confirm your account, then you can log in with your password.": "Nhấp vào liên kết trong email để xác nhận tài khoản, sau đó đăng nhập bằng mật khẩu.",
+    "Click the link in your email to reset your password. The link will expire in 1 hour.": "Nhấp vào liên kết trong email để đặt lại mật khẩu. Liên kết sẽ hết hạn sau 1 giờ.",
+    "Confirm Password *": "Xác nhận mật khẩu *",
+    "Create an account": "Tạo tài khoản",
+    "Create Account": "Tạo tài khoản",
+    "Email Address": "Địa chỉ email",
+    "Email Address *": "Địa chỉ email *",
+    "Enter your email and we'll send you a link to reset your password": "Nhập email để nhận liên kết đặt lại mật khẩu",
+    "Forgot password?": "Quên mật khẩu?",
+    "Full Name *": "Họ và tên *",
+    "Go to Login": "Đi tới đăng nhập",
+    "Include country code (e.g., +84 for Vietnam)": "Bao gồm mã quốc gia (ví dụ: +84 cho Việt Nam)",
+    "Know someone in the Hub? Enter their email to connect as their referral.": "Bạn quen ai trong Hub không? Nhập email của họ để ghi nhận người giới thiệu.",
+    "Log in": "Đăng nhập",
+    "Membership Is By Invitation": "Tư cách thành viên cần có thư mời",
+    "New to Lambsbook Hub?": "Bạn mới biết đến Lambsbook Hub?",
+    "No member found with this email. You can still sign up and add a referrer later.": "Không tìm thấy thành viên có email này. Bạn vẫn có thể đăng ký và thêm người giới thiệu sau.",
+    "Password *": "Mật khẩu *",
+    "Please check": "Vui lòng kiểm tra",
+    "Referrer Email (Optional)": "Email người giới thiệu (không bắt buộc)",
+    "Reset Password": "Đặt lại mật khẩu",
+    "Return Home": "Về trang chủ",
+    "Send Reset Link": "Gửi liên kết đặt lại",
+    "Sending...": "Đang gửi...",
+    "Sign In": "Đăng nhập",
+    "This keeps the community high-trust and ensures every member is accountable to someone already inside.": "Điều này giúp cộng đồng duy trì sự tin cậy và bảo đảm mỗi thành viên được một người đang tham gia giới thiệu.",
+    "To join, ask an existing member to send you a personal invitation link.": "Để tham gia, hãy nhờ một thành viên gửi cho bạn liên kết mời riêng.",
+    "Username *": "Tên người dùng *",
+    "We've sent a password reset link to": "Chúng tôi đã gửi liên kết đặt lại mật khẩu tới",
+    "You'll be connected to:": "Bạn sẽ được kết nối với:",
+    "Your account has been created, but Lambsbook Cooperative is a members-only community.": "Tài khoản đã được tạo, nhưng Lambsbook Cooperative là cộng đồng chỉ dành cho thành viên được mời.",
+    "for a confirmation link": "để nhận liên kết xác nhận",
+    "is a trusted relationship network. Membership is extended only through personal invitation from an existing member who knows and trusts you.": "là mạng lưới quan hệ đáng tin cậy. Chỉ thành viên hiện tại quen biết và tin tưởng bạn mới có thể gửi lời mời tham gia.",
+    "placeholder:Enter your full name": "placeholder:Nhập họ và tên",
+    "placeholder:Enter your password": "placeholder:Nhập mật khẩu",
+    "placeholder:Re-enter your password": "placeholder:Nhập lại mật khẩu",
+    "placeholder:referrer@example.com": "placeholder:email-nguoi-gioi-thieu@example.com",
+    "placeholder:you@example.com": "placeholder:ban@example.com",
+    "placeholder:your_username": "placeholder:ten_nguoi_dung"
+  },
+  "zh": {
+    "3-50 characters: letters, numbers, underscores, hyphens": "3–50 个字符：字母、数字、下划线和连字符",
+    "Account Created": "账户已创建",
+    "Already have an account?": "已有账户？",
+    "At least 8 characters": "至少 8 个字符",
+    "Back to Hub": "返回 Hub",
+    "Back to Login": "返回登录",
+    "Check Your Email": "请查收电子邮件",
+    "Click the link in your email to confirm your account, then you can log in with your password.": "请点击邮件中的链接确认账户，然后使用密码登录。",
+    "Click the link in your email to reset your password. The link will expire in 1 hour.": "请点击邮件中的链接重置密码。该链接将在 1 小时后失效。",
+    "Confirm Password *": "确认密码 *",
+    "Create an account": "创建账户",
+    "Create Account": "创建账户",
+    "Email Address": "电子邮件地址",
+    "Email Address *": "电子邮件地址 *",
+    "Enter your email and we'll send you a link to reset your password": "输入电子邮件，我们会向你发送重置密码链接",
+    "Forgot password?": "忘记密码？",
+    "Full Name *": "姓名 *",
+    "Go to Login": "前往登录",
+    "Include country code (e.g., +84 for Vietnam)": "请填写国家/地区代码（例如越南为 +84）",
+    "Know someone in the Hub? Enter their email to connect as their referral.": "你认识 Hub 中的成员吗？输入对方的电子邮件以关联推荐人。",
+    "Log in": "登录",
+    "Membership Is By Invitation": "会员资格仅限邀请加入",
+    "New to Lambsbook Hub?": "刚开始使用 Lambsbook Hub？",
+    "No member found with this email. You can still sign up and add a referrer later.": "未找到使用此电子邮件的会员。你仍可注册，之后再添加推荐人。",
+    "Password *": "密码 *",
+    "Please check": "请检查",
+    "Referrer Email (Optional)": "推荐人电子邮件（选填）",
+    "Reset Password": "重置密码",
+    "Return Home": "返回首页",
+    "Send Reset Link": "发送重置链接",
+    "Sending...": "正在发送…",
+    "Sign In": "登录",
+    "This keeps the community high-trust and ensures every member is accountable to someone already inside.": "这有助于维护社区信任，并确保每位会员都由现有成员引荐。",
+    "To join, ask an existing member to send you a personal invitation link.": "如需加入，请联系现有会员向你发送专属邀请链接。",
+    "Username *": "用户名 *",
+    "We've sent a password reset link to": "我们已发送密码重置链接至",
+    "You'll be connected to:": "你将关联至：",
+    "Your account has been created, but Lambsbook Cooperative is a members-only community.": "你的账户已创建，但 Lambsbook Cooperative 是仅限受邀会员加入的社群。",
+    "for a confirmation link": "以获取确认链接",
+    "is a trusted relationship network. Membership is extended only through personal invitation from an existing member who knows and trusts you.": "是一个可信关系网络。只有认识并信任你的现有会员才能邀请你加入。",
+    "placeholder:Enter your full name": "placeholder:请输入姓名",
+    "placeholder:Enter your password": "placeholder:请输入密码",
+    "placeholder:Re-enter your password": "placeholder:请再次输入密码",
+    "placeholder:referrer@example.com": "placeholder:推荐人@example.com",
+    "placeholder:you@example.com": "placeholder:你的邮箱@example.com",
+    "placeholder:your_username": "placeholder:你的用户名"
+  }
+};
+
 export default function HubAuth({ mode }: HubAuthProps) {
+  const { language } = useLanguage();
+  const authIntroByLanguage: Record<string, {
+    userSignupTitle: string;
+    userSignupDescription: string;
+    memberSignupTitle: string;
+    memberSignupDescription: string;
+    loginTitle: string;
+    userLoginDescription: string;
+    memberLoginDescription: string;
+  }> = {
+    en: {
+      userSignupTitle: "Create a User Account",
+      userSignupDescription: "Create your account to start learning.",
+      memberSignupTitle: "Join Lambsbook Hub",
+      memberSignupDescription: "Create your account to start earning.",
+      loginTitle: "Welcome Back",
+      userLoginDescription: "Log in with your email to continue learning.",
+      memberLoginDescription: "Log in with your email to continue.",
+    },
+    vi: {
+      userSignupTitle: "Tạo tài khoản người dùng",
+      userSignupDescription: "Tạo tài khoản để bắt đầu học tập.",
+      memberSignupTitle: "Tham gia Lambsbook Hub",
+      memberSignupDescription: "Tạo tài khoản để bắt đầu tích lũy tín dụng.",
+      loginTitle: "Chào mừng bạn trở lại",
+      userLoginDescription: "Đăng nhập bằng email để tiếp tục học tập.",
+      memberLoginDescription: "Đăng nhập bằng email để tiếp tục.",
+    },
+    zh: {
+      userSignupTitle: "创建用户账户",
+      userSignupDescription: "创建账户，开始学习。",
+      memberSignupTitle: "加入 Lambsbook Hub",
+      memberSignupDescription: "创建账户，开始赚取积分。",
+      loginTitle: "欢迎回来",
+      userLoginDescription: "使用电子邮件登录以继续学习。",
+      memberLoginDescription: "使用电子邮件登录以继续。",
+    },
+  };
+  const authIntro = authIntroByLanguage[language] ?? authIntroByLanguage.en;
+
+
+  const authText = (english: string) =>
+    authPageTranslations[language]?.[english] ?? english;
   const [, setLocation] = useLocation();
   const search = useSearch();
   const authParams = new URLSearchParams(search);
@@ -89,8 +274,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
     authParams.get("account") === "user" ||
     (mode === "signup" &&
       authParams.get("account") !== "member" &&
-      !authParams.get("invite") &&
-      !localStorage.getItem("gateway.invite.token"));
+      !authParams.get("invite"));
   const { toast } = useToast();
 
   const [email, setEmail] = useState("");
@@ -602,27 +786,22 @@ export default function HubAuth({ mode }: HubAuthProps) {
             <div className="mx-auto h-16 w-16 rounded-full bg-amber-500/10 flex items-center justify-center mb-4">
               <UserCheck className="h-8 w-8 text-amber-600" />
             </div>
-            <CardTitle>Membership Is By Invitation</CardTitle>
+            <CardTitle>{authText("Membership Is By Invitation")}</CardTitle>
             <CardDescription>
-              Your account has been created, but Lambsbook Cooperative is a
-              members-only community.
+              {authText("Your account has been created, but Lambsbook Cooperative is a members-only community.")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="rounded-lg border bg-muted/40 p-4 space-y-3 text-sm text-muted-foreground">
               <p>
                 <strong className="text-foreground">Lambsbook Cooperative</strong>{" "}
-                is a trusted relationship network. Membership is extended only
-                through personal invitation from an existing member who knows
-                and trusts you.
+                {authText("is a trusted relationship network. Membership is extended only through personal invitation from an existing member who knows and trusts you.")}
               </p>
               <p>
-                This keeps the community high-trust and ensures every member
-                is accountable to someone already inside.
+                {authText("This keeps the community high-trust and ensures every member is accountable to someone already inside.")}
               </p>
               <p>
-                To join, ask an existing member to send you a personal
-                invitation link.
+                {authText("To join, ask an existing member to send you a personal invitation link.")}
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -632,14 +811,14 @@ export default function HubAuth({ mode }: HubAuthProps) {
                 onClick={() => setLocation("/")}
                 data-testid="button-invitation-return-home"
               >
-                Return Home
+                {authText("Return Home")}
               </Button>
               <Button
                 className="w-full"
                 onClick={() => setLocation("/hub/login")}
                 data-testid="button-invitation-sign-in"
               >
-                Sign In
+                {authText("Sign In")}
               </Button>
             </div>
           </CardContent>
@@ -656,22 +835,21 @@ export default function HubAuth({ mode }: HubAuthProps) {
             <div className="mx-auto h-16 w-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
               <CheckCircle2 className="h-8 w-8 text-green-600" />
             </div>
-            <CardTitle>Account Created</CardTitle>
+            <CardTitle>{authText("Account Created")}</CardTitle>
             <CardDescription>
-              Please check <strong>{email}</strong> for a confirmation link
+              {authText("Please check")} <strong>{email}</strong> {authText("for a confirmation link")}
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <p className="text-sm text-muted-foreground">
-              Click the link in your email to confirm your account, then you can
-              log in with your password.
+              {authText("Click the link in your email to confirm your account, then you can log in with your password.")}
             </p>
             <Button
               variant="outline"
               onClick={() => setLocation(isRegularUserFlow ? "/hub/login?account=user" : "/hub/login")}
               data-testid="button-go-to-login"
             >
-              Go to Login
+              {authText("Go to Login")}
             </Button>
           </CardContent>
         </Card>
@@ -687,15 +865,14 @@ export default function HubAuth({ mode }: HubAuthProps) {
             <div className="mx-auto h-16 w-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
               <Mail className="h-8 w-8 text-green-600" />
             </div>
-            <CardTitle>Check Your Email</CardTitle>
+            <CardTitle>{authText("Check Your Email")}</CardTitle>
             <CardDescription>
-              We've sent a password reset link to <strong>{forgotEmail}</strong>
+              {authText("We've sent a password reset link to")} <strong>{forgotEmail}</strong>
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <p className="text-sm text-muted-foreground">
-              Click the link in your email to reset your password. The link will
-              expire in 1 hour.
+              {authText("Click the link in your email to reset your password. The link will expire in 1 hour.")}
             </p>
             <Button
               variant="outline"
@@ -705,7 +882,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
               }}
               data-testid="button-back-to-login"
             >
-              Back to Login
+              {authText("Back to Login")}
             </Button>
           </CardContent>
         </Card>
@@ -724,27 +901,26 @@ export default function HubAuth({ mode }: HubAuthProps) {
             data-testid="button-back-to-login"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Login
+            {authText("Back to Login")}
           </Button>
           <Card>
             <CardHeader className="text-center">
               <div className="mx-auto h-12 w-12 rounded-md bg-primary flex items-center justify-center mb-2">
                 <Lock className="h-6 w-6 text-primary-foreground" />
               </div>
-              <CardTitle>Reset Password</CardTitle>
+              <CardTitle>{authText("Reset Password")}</CardTitle>
               <CardDescription>
-                Enter your email and we'll send you a link to reset your
-                password
+                {authText("Enter your email and we'll send you a link to reset your password")}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleForgotPassword} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="forgotEmail">Email Address</Label>
+                  <Label htmlFor="forgotEmail">{authText("Email Address")}</Label>
                   <Input
                     id="forgotEmail"
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder={authText("placeholder:you@example.com")}
                     value={forgotEmail}
                     onChange={(e) => setForgotEmail(e.target.value)}
                     data-testid="input-forgot-email"
@@ -759,12 +935,12 @@ export default function HubAuth({ mode }: HubAuthProps) {
                   {forgotPasswordMutation.isPending ? (
                     <>
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Sending...
+                      {authText("Sending...")}
                     </>
                   ) : (
                     <>
                       <Mail className="h-4 w-4 mr-2" />
-                      Send Reset Link
+                      {authText("Send Reset Link")}
                     </>
                   )}
                 </Button>
@@ -786,7 +962,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
             data-testid="button-back-to-hub"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Hub
+            {authText("Back to Hub")}
           </Button>
         </Link>
 
@@ -796,12 +972,20 @@ export default function HubAuth({ mode }: HubAuthProps) {
               <span className="text-primary-foreground font-bold">LB</span>
             </div>
             <CardTitle>
-              {mode === "signup" ? "Join Lambsbook Hub" : "Welcome Back"}
+              {mode === "signup"
+                ? isRegularUserFlow
+                  ? authIntro.userSignupTitle
+                  : authIntro.memberSignupTitle
+                : authIntro.loginTitle}
             </CardTitle>
             <CardDescription>
               {mode === "signup"
-                ? "Create your account to start earning"
-                : "Log in with your email to continue"}
+                ? isRegularUserFlow
+                  ? authIntro.userSignupDescription
+                  : authIntro.memberSignupDescription
+                : isRegularUserFlow
+                  ? authIntro.userLoginDescription
+                  : authIntro.memberLoginDescription}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -809,10 +993,10 @@ export default function HubAuth({ mode }: HubAuthProps) {
               {mode === "signup" && (
                 <>
                   <div className="space-y-2">
-                    <Label htmlFor="fullName">Full Name *</Label>
+                    <Label htmlFor="fullName">{authText("Full Name *")}</Label>
                     <Input
                       id="fullName"
-                      placeholder="Enter your full name"
+                      placeholder={authText("placeholder:Enter your full name")}
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       onBlur={() => handleBlur("fullName")}
@@ -832,12 +1016,12 @@ export default function HubAuth({ mode }: HubAuthProps) {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="username">Username *</Label>
+                    <Label htmlFor="username">{authText("Username *")}</Label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                       <Input
                         id="username"
-                        placeholder="your_username"
+                        placeholder={authText("placeholder:your_username")}
                         value={username}
                         onChange={(e) =>
                           setUsername(e.target.value.toLowerCase())
@@ -858,7 +1042,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
                       </p>
                     ) : (
                       <p className="text-xs text-muted-foreground">
-                        3-50 characters: letters, numbers, underscores, hyphens
+                        {authText("3-50 characters: letters, numbers, underscores, hyphens")}
                       </p>
                     )}
                   </div>
@@ -889,7 +1073,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
                       </p>
                     ) : (
                       <p className="text-xs text-muted-foreground">
-                        Include country code (e.g., +84 for Vietnam)
+                        {authText("Include country code (e.g., +84 for Vietnam)")}
                       </p>
                     )}
                   </div>
@@ -897,11 +1081,11 @@ export default function HubAuth({ mode }: HubAuthProps) {
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
+                <Label htmlFor="email">{authText("Email Address *")}</Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder={authText("placeholder:you@example.com")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => handleBlur("email")}
@@ -919,13 +1103,13 @@ export default function HubAuth({ mode }: HubAuthProps) {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Password *</Label>
+                <Label htmlFor="password">{authText("Password *")}</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
+                    placeholder={authText("placeholder:Enter your password")}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onBlur={() => handleBlur("password")}
@@ -957,20 +1141,20 @@ export default function HubAuth({ mode }: HubAuthProps) {
                   </p>
                 ) : mode === "signup" ? (
                   <p className="text-xs text-muted-foreground">
-                    At least 8 characters
+                    {authText("At least 8 characters")}
                   </p>
                 ) : null}
               </div>
 
               {mode === "signup" && (
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword">Confirm Password *</Label>
+                  <Label htmlFor="confirmPassword">{authText("Confirm Password *")}</Label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="confirmPassword"
                       type={showConfirmPassword ? "text" : "password"}
-                      placeholder="Re-enter your password"
+                      placeholder={authText("placeholder:Re-enter your password")}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       onBlur={() => handleBlur("confirmPassword")}
@@ -1009,13 +1193,13 @@ export default function HubAuth({ mode }: HubAuthProps) {
               {mode === "signup" && (
                 <div className="space-y-2">
                   <Label htmlFor="referrerEmail">
-                    Referrer Email (Optional)
+                    {authText("Referrer Email (Optional)")}
                   </Label>
                   <div className="relative">
                     <Input
                       id="referrerEmail"
                       type="email"
-                      placeholder="referrer@example.com"
+                      placeholder={authText("placeholder:referrer@example.com")}
                       value={referrerEmail}
                       onChange={(e) => setReferrerEmail(e.target.value)}
                       className={
@@ -1043,21 +1227,19 @@ export default function HubAuth({ mode }: HubAuthProps) {
                     referrerValidation.name && (
                       <p className="text-xs text-green-600 flex items-center gap-1">
                         <CheckCircle2 className="h-3 w-3" />
-                        You'll be connected to: {referrerValidation.name}
+                        {authText("You'll be connected to:")} {referrerValidation.name}
                       </p>
                     )}
                   {referrerValidation.valid === false && (
                     <p className="text-xs text-amber-600 flex items-center gap-1">
                       <AlertCircle className="h-3 w-3" />
-                      No member found with this email. You can still sign up and
-                      add a referrer later.
+                      {authText("No member found with this email. You can still sign up and add a referrer later.")}
                     </p>
                   )}
                   {referrerValidation.valid === null &&
                     !referrerValidation.checking && (
                       <p className="text-xs text-muted-foreground">
-                        Know someone in the Hub? Enter their email to connect as
-                        their referral.
+                        {authText("Know someone in the Hub? Enter their email to connect as their referral.")}
                       </p>
                     )}
                 </div>
@@ -1079,7 +1261,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
                 ) : (
                   <>
                     <Lock className="h-4 w-4 mr-2" />
-                    {mode === "signup" ? "Create Account" : "Log In"}
+                    {mode === "signup" ? authText("Create Account") : "Log In"}
                   </>
                 )}
               </Button>
@@ -1095,7 +1277,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
                     className="text-sm text-muted-foreground hover:underline"
                     data-testid="link-forgot-password"
                   >
-                    Forgot password?
+                    {authText("Forgot password?")}
                   </button>
                 </div>
               )}
@@ -1104,24 +1286,24 @@ export default function HubAuth({ mode }: HubAuthProps) {
             <div className="mt-6 text-center text-sm">
               {mode === "signup" ? (
                 <p className="text-muted-foreground">
-                  Already have an account?{" "}
+                  {authText("Already have an account?")}{" "}
                   <Link
                     href="/hub/login"
                     className="text-primary hover:underline"
                     data-testid="link-login"
                   >
-                    Log in
+                    {authText("Log in")}
                   </Link>
                 </p>
               ) : (
                 <p className="text-muted-foreground">
-                  New to Lambsbook Hub?{" "}
+                  {authText("New to Lambsbook Hub?")}{" "}
                   <Link
                     href="/hub/signup"
                     className="text-primary hover:underline"
                     data-testid="link-signup"
                   >
-                    Create an account
+                    {authText("Create an account")}
                   </Link>
                 </p>
               )}

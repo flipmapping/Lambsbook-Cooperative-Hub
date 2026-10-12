@@ -38,7 +38,8 @@
     "server/services/sll-construction.ts",
     "client/src/pages/SBUEducation.tsx",
     "client/src/pages/HubLanding.tsx",
-    "client/src/pages/MemberHub.tsx"
+    "client/src/pages/MemberHub.tsx",
+    "client/src/components/HubHeader.tsx"
   ],
   "composition_summary": {
     "founder_decision_required": {
@@ -147,7 +148,8 @@
     "client/src/pages/LambsbookTutoring.tsx",
     "server/services/sll-construction.ts",
     "client/src/pages/SBUEducation.tsx",
-    "client/src/pages/HubLanding.tsx"
+    "client/src/pages/HubLanding.tsx",
+    "client/src/components/HubHeader.tsx"
   ],
   "repository_root_admission": {
     "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",

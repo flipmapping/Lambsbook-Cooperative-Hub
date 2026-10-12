@@ -566,7 +566,7 @@ export default function HubLanding() {
             {t('hub_cta_join_desc')}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/hub/signup">
+            <Link href="/hub/signup?account=user">
               <Button size="lg" variant="secondary" data-testid="button-cta-signup">
                 {language === "vi" ? "Tạo tài khoản người dùng miễn phí" : language === "zh" ? "免费创建用户账户" : "Create a free user account"}
                 <ArrowRight className="h-4 w-4 ml-2" />

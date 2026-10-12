@@ -31,7 +31,9 @@
       "Keep learner prompts and generated answers out of persistent storage and logs.",
       "Clearly tell signed-out visitors the SLL allowance is three examples per 24 hours and offer signup for a regular user account.",
       "Clearly distinguish regular user SLL access from canonical membership.",
-      "Add a Programs navigation path from the Education page to Lambsbook Tutoring and SLL, using an extensible program-list pattern."
+      "Add a Programs navigation path from the Education page to Lambsbook Tutoring and SLL, using an extensible program-list pattern.",
+      "Clearly distinguish public user signup, user sign-in, and invitation-based member sign-in in English, Vietnamese, and Chinese.",
+      "Render the user and invitation-based member sign-up/sign-in panel in English, Vietnamese, and Chinese."
     ],
     "execution_class": "B",
     "approval_boundary": "FOUNDER_APPROVED_GE_RMP_015_WCS_GE_015_002",
@@ -87,7 +89,9 @@
       "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
       "client/src/pages/SBUEducation.tsx",
       "client/src/pages/HubLanding.tsx",
-      "client/src/pages/MemberHub.tsx"
+      "client/src/pages/MemberHub.tsx",
+      "client/src/components/HubHeader.tsx",
+      "client/src/pages/HubAuth.tsx"
     ],
     "forbidden_surface": [
       "client/src/pages/JourneyPages.tsx",
