@@ -84,6 +84,13 @@ interface FormErrors {
 export default function HubAuth({ mode }: HubAuthProps) {
   const [, setLocation] = useLocation();
   const search = useSearch();
+  const authParams = new URLSearchParams(search);
+  const isRegularUserFlow =
+    authParams.get("account") === "user" ||
+    (mode === "signup" &&
+      authParams.get("account") !== "member" &&
+      !authParams.get("invite") &&
+      !localStorage.getItem("gateway.invite.token"));
   const { toast } = useToast();
 
   const [email, setEmail] = useState("");
@@ -237,10 +244,39 @@ export default function HubAuth({ mode }: HubAuthProps) {
       referrerEmail?: string;
       inviteToken?: string;
     }) => {
-      const res = await apiRequest("POST", `/api/hub/auth/${mode}`, data);
+      const endpoint = isRegularUserFlow
+        ? `/api/auth/${mode === "signup" ? "signup" : "signin"}`
+        : `/api/hub/auth/${mode}`;
+      const payload = isRegularUserFlow
+        ? { email: data.email, password: data.password, fullName: data.fullName }
+        : data;
+      const res = await apiRequest("POST", endpoint, payload);
       return res.json();
     },
     onSuccess: async (result, variables) => {
+
+      if (isRegularUserFlow) {
+        if (result.success === false) {
+          throw new Error(result.message || "Account authentication failed.");
+        }
+        const userSession = result.data?.session ?? result.session;
+        if (mode === "signup" && !userSession?.access_token) {
+          setSignupSuccess(true);
+          return;
+        }
+        if (!userSession?.access_token) {
+          throw new Error("Sign in did not return an active session.");
+        }
+        const { error: sessionError } = await createClient().auth.setSession({
+          access_token: userSession.access_token,
+          refresh_token: userSession.refresh_token ?? "",
+        });
+        if (sessionError) throw sessionError;
+        localStorage.setItem("supabase.auth.token", JSON.stringify(userSession));
+        trackEvent("auth_completed", { mode, account_type: "user" });
+        setLocation("/hub/sbu/education/lambsbook-tutoring");
+        return;
+      }
 
       if (mode === "signup") {
         if (result.needsConfirmation === false && result.session) {
@@ -632,7 +668,7 @@ export default function HubAuth({ mode }: HubAuthProps) {
             </p>
             <Button
               variant="outline"
-              onClick={() => setLocation("/hub/login")}
+              onClick={() => setLocation(isRegularUserFlow ? "/hub/login?account=user" : "/hub/login")}
               data-testid="button-go-to-login"
             >
               Go to Login

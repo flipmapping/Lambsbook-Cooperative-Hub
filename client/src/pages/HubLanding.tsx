@@ -36,7 +36,7 @@ const getSbus = (t: (key: string) => string) => [
     icon: GraduationCap,
     description: t('hub_sbu_education_desc'),
     color: "bg-blue-500/10 text-blue-600",
-    href: "/hub/scholarships",
+    href: "/hub/sbu/education",
     active: true,
     ctbc: true,
   },
@@ -568,7 +568,7 @@ export default function HubLanding() {
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/hub/signup">
               <Button size="lg" variant="secondary" data-testid="button-cta-signup">
-                {t('hub_cta_join_button')}
+                {language === "vi" ? "Tạo tài khoản người dùng miễn phí" : language === "zh" ? "免费创建用户账户" : "Create a free user account"}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>

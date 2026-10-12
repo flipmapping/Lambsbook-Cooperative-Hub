@@ -14,6 +14,7 @@ import {
 } from "@shared/schema";
 import { z } from "zod";
 import { generateAIResponse, generateLeadScore } from "./services/ai";
+import { generateSllConstruction } from "./services/sll-construction";
 import { notifyNewEnquiry } from "./services/notifications";
 import { submitProspectRegistration, listProspects, getProspect, updateProspectStage, recordProspectLifecycleEvent, getProspectLifecycleEvents, recordProspectActivity, getProspectActivities, createProspectFollowupTask, getProspectFollowupTasks, updateProspectFollowupTask, completeProspectFollowupTask, createProspectAppointment, getProspectAppointments, updateProspectAppointment, cancelProspectAppointment, completeProspectAppointment, createProspectDocument, getProspectDocuments, updateProspectDocument, archiveProspectDocument, recordProspectAdmissionDecision, getProspectAdmissionDecisions } from "./services/admissions";
 import {
@@ -956,6 +957,78 @@ export async function registerRoutes(
     }
   });
 
+
+  const sllRequestWindows = new Map<string, { start: number; count: number }>();
+  const sllGuestDailyUsage = new Map<string, { start: number; count: number }>();
+  app.post("/api/sll/generate", attachUserContext, async (req: Request, res: Response) => {
+    const parsed = z.object({
+      prompt: z.string().trim().min(4).max(2000),
+      mode: z.enum(["GENERAL_ENGLISH", "IELTS_PREPARATION"]),
+      level: z.enum(["basic", "developed", "extended", "analytical"]),
+      supportLanguage: z.enum(["en", "vi", "zh"]),
+    }).strict().safeParse(req.body);
+
+    if (!parsed.success) {
+      return res.status(400).json({ error: "Check the task and selected options." });
+    }
+
+    const now = Date.now();
+    const key = req.ip || "unknown";
+    const window = sllRequestWindows.get(key);
+    if (!window || now - window.start >= 15 * 60 * 1000) {
+      sllRequestWindows.set(key, { start: now, count: 1 });
+    } else if (window.count >= 8) {
+      return res.status(429).json({ error: "Please wait before requesting another example." });
+    } else {
+      window.count += 1;
+    }
+
+    if (sllRequestWindows.size > 5000) {
+      for (const [ip, entry] of sllRequestWindows) {
+        if (now - entry.start >= 15 * 60 * 1000) sllRequestWindows.delete(ip);
+      }
+    }
+
+    const authenticatedUserId = (req as AuthenticatedRequest).user?.id;
+    let guestQuotaKey: string | null = null;
+    if (!authenticatedUserId) {
+      const guestKey = req.ip || "unknown";
+      const guestWindow = sllGuestDailyUsage.get(guestKey);
+      if (!guestWindow || now - guestWindow.start >= 24 * 60 * 60 * 1000) {
+        sllGuestDailyUsage.set(guestKey, { start: now, count: 1 });
+      } else if (guestWindow.count >= 3) {
+        return res.status(429).json({
+          error: "Create a free user account for unlimited SLL access.",
+          code: "GUEST_DAILY_LIMIT",
+        });
+      } else {
+        guestWindow.count += 1;
+      }
+      guestQuotaKey = guestKey;
+    }
+
+    try {
+      const result = await generateSllConstruction(parsed.data);
+      return res.json(result);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "";
+      const code = /^(?:GEMINI_HTTP_[0-9]{3}|SLL_AI_NOT_CONFIGURED|GEMINI_OUTPUT_INVALID)$/.test(message)
+        ? message
+        : error instanceof Error && error.name === "TimeoutError"
+          ? "GEMINI_TIMEOUT"
+          : "GEMINI_NETWORK_ERROR";
+      if (guestQuotaKey) {
+        const entry = sllGuestDailyUsage.get(guestQuotaKey);
+        if (entry) entry.count = Math.max(0, entry.count - 1);
+      }
+      console.warn("[SLL_GENERATION_FAILED]", code);
+      return res.status(502).json({
+        error: "The example could not be generated. Please try again.",
+        code,
+      });
+    }
+  });
+
   app.post("/api/ai/chat", async (req: Request, res: Response) => {
     try {
       const { message, conversationHistory, sessionId } = req.body;
@@ -1052,7 +1125,7 @@ export async function registerRoutes(
   // Sign up with email and password
   app.post("/api/auth/signup", async (req: Request, res: Response) => {
     try {
-      const { email, password, fullName, role } = req.body;
+      const { email, password, fullName } = req.body;
       if (!email || !password) {
         return res
           .status(400)
@@ -1060,7 +1133,7 @@ export async function registerRoutes(
       }
       const result = await signUpWithPassword(email, password, {
         full_name: fullName,
-        role: role || "member",
+        role: "user",
       });
       res.json(result);
     } catch (error) {

@@ -2,18 +2,29 @@
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
   "authority_id": "GE-RMP-015",
-  "cycle_id": "WCS-GE-015-001",
-  "baseline_sha": "ac2a975333d4486081f670788fcf06a250f28e42",
+  "cycle_id": "WCS-GE-015-002",
+  "baseline_sha": "e071c0ed3d58d9b82769585ecc55eb71f71a0f16",
   "branch": "ge-rmp-015-wcs001",
   "certified_mutation_paths": [
-    "execution/contracts/",
-    "governance/rmp/"
+    "client/src/components/sll/InteractiveProofOfMethod.tsx",
+    "client/src/pages/LambsbookTutoring.tsx",
+    "server/routes.ts",
+    "server/services/sll-construction.ts",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-GE-RMP-015-WCS-GE-015-002.json",
+    "governance/rmp/GE-RMP-015-WCS-GE-015-002-IMPLEMENTATION-AUTHORITY.md",
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+    "execution/repository-stewardship/RELEASE-CONTRACT.json",
+    "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
+    "client/src/pages/SBUEducation.tsx",
+    "client/src/pages/HubLanding.tsx",
+    "client/src/pages/MemberHub.tsx"
   ],
   "allowed_operations": [
     "build",
     "commit"
   ],
-  "expires_at": "2026-10-18T02:05:53+00:00",
+  "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
     "status": "PENDING"
   }

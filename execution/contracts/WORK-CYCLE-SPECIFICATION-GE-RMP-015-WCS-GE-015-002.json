@@ -1,0 +1,152 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "FOUNDER_APPROVED",
+  "work_cycle_id": "WCS-GE-015-002",
+  "execution_stream": "GROWTH_ENGINE",
+  "task_id": "WCS-GE-015-002",
+  "authority_binding": {
+    "authority_reference": "GE-RMP-015",
+    "work_cycle": "WCS-GE-015-002",
+    "candidate_base_sha_source": "WORK_CYCLE_AUTHORITY"
+  },
+  "execution": {
+    "stream": "GROWTH_ENGINE",
+    "task_id": "WCS-GE-015-002",
+    "objective": "Provide a Gemini-generated SLL learning experience for English and IELTS, with a visitor allowance, regular user-account signup, and SLL ebook access.",
+    "success_criteria": [
+      "Show the SLL experience only on /hub/sbu/education/lambsbook-tutoring, not /journeys/learn.",
+      "Offer General English and IELTS preparation modes.",
+      "Generate an English model answer and semantic tree from the learner's question or task using Gemini.",
+      "Use the global English, Vietnamese, or Chinese selection for meaning support.",
+      "Keep GEMINI_API_KEY server-side; validate and bound input and output.",
+      "Disclose that prompts are sent to Gemini; do not persist or log prompts or answers.",
+      "Do not claim official IELTS scoring, mastery, or proficiency.",
+      "Pass release guard and production build; founder runtime review remains required.",
+      "Translate all visible Lambsbook Tutoring page copy using the selected global English, Vietnamese, or Chinese language.",
+      "Unauthenticated visitors can generate up to three examples per day.",
+      "A signed-in Supabase user can use SLL without becoming a canonical member.",
+      "SLL signup uses the regular user role and does not create a member record.",
+      "Explain the account benefit and SLL method in the selected English, Vietnamese, or Chinese language.",
+      "Provide a button to the free SLL ebook folder.",
+      "Keep learner prompts and generated answers out of persistent storage and logs.",
+      "Clearly tell signed-out visitors the SLL allowance is three examples per 24 hours and offer signup for a regular user account.",
+      "Clearly distinguish regular user SLL access from canonical membership.",
+      "Add a Programs navigation path from the Education page to Lambsbook Tutoring and SLL, using an extensible program-list pattern."
+    ],
+    "execution_class": "B",
+    "approval_boundary": "FOUNDER_APPROVED_GE_RMP_015_WCS_GE_015_002",
+    "verification_profile": "AUTHORIZED_SURFACE; REQUEST_VALIDATION; RELEASE_GUARD; PRODUCTION_BUILD; FOUNDER_RUNTIME_REVIEW"
+  },
+  "depends_on": [
+    "WCS-GE-015-001"
+  ],
+  "unlocks": [],
+  "experience_contract": {
+    "capability_name": "INTERACTIVE-SLL-PROOF-OF-METHOD",
+    "entry_point": "/hub/sbu/education/lambsbook-tutoring",
+    "modes": [
+      "GENERAL_ENGLISH",
+      "IELTS_PREPARATION"
+    ],
+    "provider": "GOOGLE_GEMINI",
+    "model": "gemini-3.5-flash-lite",
+    "api": "generateContent with structured JSON output",
+    "endpoint": "/api/sll/generate",
+    "secret_name": "GEMINI_API_KEY",
+    "input_limit_characters": 2000,
+    "output": [
+      "English model answer",
+      "mini-semantic tree",
+      "selected-language meaning support"
+    ],
+    "locale_source": "Existing global LanguageContext",
+    "privacy": "Disclose Gemini processing. Do not persist or log prompt or generated content.",
+    "sll_boundary": [
+      "Do not change SLL ontology or semantic controls.",
+      "Do not create or modify learner evidence or curriculum authority.",
+      "Do not add a database, analytics, or persistence."
+    ],
+    "visitor_daily_generation_limit": 3,
+    "account_signup": "Use regular Supabase user signup with explicit user role; do not use member signup or create canonical membership.",
+    "account_access": "Unlimited SLL generation for authenticated Supabase users, subject to abuse protection.",
+    "ebook_folder": "https://drive.google.com/drive/folders/1i16uFbYFiiJZdSnYccNa60olgSbz6LSD?usp=sharing",
+    "signup_entry": "/api/auth/signup",
+    "guest_quota_storage": "Server-side, non-persistent counter; do not store prompts or generated answers."
+  },
+  "surface": {
+    "authorized_surface": [
+      "client/src/components/sll/InteractiveProofOfMethod.tsx",
+      "client/src/pages/LambsbookTutoring.tsx",
+      "server/routes.ts",
+      "server/services/sll-construction.ts",
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-GE-RMP-015-WCS-GE-015-002.json",
+      "governance/rmp/GE-RMP-015-WCS-GE-015-002-IMPLEMENTATION-AUTHORITY.md",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/repository-stewardship/RELEASE-CONTRACT.json",
+      "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
+      "client/src/pages/SBUEducation.tsx",
+      "client/src/pages/HubLanding.tsx",
+      "client/src/pages/MemberHub.tsx"
+    ],
+    "forbidden_surface": [
+      "client/src/pages/JourneyPages.tsx",
+      "client/src/lib/LanguageContext.tsx",
+      "client/src/lib/i18n.ts",
+      "server/services/ai.ts",
+      "server/services/education-feedback.ts",
+      "database/",
+      "supabase/",
+      "analytics",
+      "persistent learner data",
+      "SLL ontology",
+      "SLL semantic controls",
+      "SLL mastery evidence",
+      "SLL learner evidence",
+      "SLL curriculum authority",
+      "deployment/",
+      "release-certification/"
+    ],
+    "candidate_worktree_required": true
+  },
+  "implementation_agent": {
+    "agent": "BOUNDED_IMPLEMENTATION_WORKER",
+    "role": "IMPLEMENT_ONLY_WITHIN_AUTHORIZED_RUNTIME_FILES",
+    "authority_boundary": [
+      "MAY_IMPLEMENT_ONLY_WITHIN_AI_SAFE_AUTHORIZED_SURFACE",
+      "MAY_NOT_CREATE_OR_MODIFY_AUTHORITY",
+      "MAY_NOT_MODIFY_AI_SAFE",
+      "MAY_NOT_MODIFY_AEF_AUTHORITY",
+      "MAY_NOT_MODIFY_RELEASE_CERTIFICATION",
+      "MAY_NOT_DEPLOY",
+      "MAY_NOT_MODIFY_FORBIDDEN_SURFACES"
+    ]
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": "On the Lambsbook Tutoring page, try both modes and switch the global language menu among English, Vietnamese, and Chinese.",
+    "expected_outcome": "Gemini returns a bounded model answer and semantic tree; meaning support follows the selected language; /journeys/learn has no SLL widget; learner content is not persisted.",
+    "evidence_required": [
+      "URL_OR_RUNTIME_ENTRYPOINT",
+      "FOUNDER_OBSERVATION",
+      "SCREENSHOT_OR_EQUIVALENT_RUNTIME_EVIDENCE",
+      "CONSOLE_OR_RUNTIME_STATUS"
+    ],
+    "terminal_state_on_pass": "FOUNDER_RUNTIME_VERIFIED",
+    "terminal_state_on_fail": "FOUNDER_RUNTIME_REJECTED"
+  },
+  "terminal_states": [
+    "STOP",
+    "AUTOMATED_VERIFIED",
+    "FOUNDER_RUNTIME_VERIFIED",
+    "FOUNDER_RUNTIME_REJECTED"
+  ],
+  "invariants": [
+    "SPECIFICATION_CANNOT_CREATE_AUTHORITY",
+    "SPECIFICATION_CANNOT_EXPAND_AUTHORIZED_SURFACE",
+    "AI_SAFE_REMAINS_THE_EXECUTION_GATE",
+    "AUTOMATED_VERIFICATION_DOES_NOT_EQUAL_FOUNDER_VERIFICATION",
+    "NO_WORK_CYCLE_IS_COMPLETE_UNTIL_FOUNDER_RUNTIME_VERIFIED"
+  ]
+}

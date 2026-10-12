@@ -4,7 +4,7 @@ hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
 channel = "stable-24_05"
-packages = ["mailutils", "unzip", "btrfs-progs", "linuxquota", "supabase-cli", "zip", "strace", "php83Packages.composer-local-repo-plugin", "php83"]
+packages = ["btrfs-progs", "linuxquota", "mailutils", "php83", "php83Packages.composer-local-repo-plugin", "strace", "supabase-cli", "unzip", "zip"]
 
 [deployment]
 deploymentTarget = "autoscale"

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect} from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,6 +23,15 @@ import { useHubTranslation } from '@/lib/hubTranslations';
 
 const programs = [
   {
+    id: 'lambsbook-sll',
+    name: 'Lambsbook Tutoring and SLL English Learning',
+    icon: Sparkles,
+    description: 'Explore online tutoring and see how SLL builds clear English answers.',
+    location: 'Online',
+    href: '/hub/sbu/education/lambsbook-tutoring',
+    color: 'bg-primary/10 text-primary',
+  },
+  {
     id: 'tropicana',
     name: 'Tropicana Academy',
     icon: ChefHat,
@@ -37,9 +46,8 @@ const programs = [
     icon: Building2,
     description: 'Business and financial education programs with industry partnerships',
     location: 'Taiwan',
-    href: '#',
+    href: '/hub/scholarships',
     color: 'bg-blue-500/10 text-blue-600',
-    comingSoon: true,
   },
   {
     id: 'lambsbook',
@@ -83,6 +91,10 @@ const inquiryOptions = [
 ];
 
 export default function SBUEducation() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { language } = useLanguage();
   const { t } = useHubTranslation(language);
 

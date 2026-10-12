@@ -312,9 +312,311 @@ function QrPlaceholder({ platform, handle }: { platform: MessengerPlatform; hand
   );
 }
 
+
+const memberHubTranslations: Record<string, Record<string, string>> = {
+  vi: {
+    "Welcome to Lambsbook Hub": "Chào mừng đến với Lambsbook Hub",
+    "Please sign in to access your member dashboard.": "Vui lòng đăng nhập để truy cập bảng điều khiển thành viên.",
+    "Sign In": "Đăng nhập",
+    "Create Account": "Tạo tài khoản",
+    "Dashboard unavailable": "Không thể mở bảng điều khiển",
+    "Some operational dashboard data could not be loaded. Please refresh and try again.": "Không thể tải một số dữ liệu. Vui lòng tải lại trang và thử lại.",
+    "Member Dashboard": "Bảng điều khiển thành viên",
+    "Member account": "Tài khoản thành viên",
+    "Inactivity Warning": "Cảnh báo không hoạt động",
+    "Account Inactive": "Tài khoản không hoạt động",
+    "Stay Active": "Duy trì hoạt động",
+    "Reactivate Now": "Kích hoạt lại ngay",
+    "Overview": "Tổng quan",
+    "Profile": "Hồ sơ",
+    "Membership": "Tư cách thành viên",
+    "Credits": "Tín dụng",
+    "Invitations": "Lời mời",
+    "Relationships": "Mối quan hệ",
+    "Workspace": "Không gian làm việc",
+    "Member ID": "Mã thành viên",
+    "Member Type": "Loại thành viên",
+    "Join Date": "Ngày tham gia",
+    "Last Active": "Hoạt động gần đây",
+    "Private": "Riêng tư",
+    "Public": "Công khai",
+    "Platform": "Nền tảng",
+    "Handle or phone number": "Tên tài khoản hoặc số điện thoại",
+    "Membership Overview": "Tổng quan tư cách thành viên",
+    "Your current membership status and benefits": "Trạng thái thành viên và quyền lợi hiện tại",
+    "Current Status": "Trạng thái hiện tại",
+    "Notification Credits": "Tín dụng thông báo",
+    "Send an Invitation": "Gửi lời mời",
+    "Invitee email": "Email người được mời",
+    "Invitation note (optional)": "Lời nhắn (không bắt buộc)",
+    "Generate Invitation": "Tạo lời mời",
+    "Preferred Contact Methods": "Phương thức liên hệ ưu tiên",
+    "Profile Visibility": "Hiển thị hồ sơ",
+    "Trusted Relationships": "Mối quan hệ đáng tin cậy",
+    "Recent Cooperative Participation": "Hoạt động hợp tác gần đây",
+    "Idea Pipeline": "Lộ trình ý tưởng",
+    "My Contributions": "Đóng góp của tôi",
+    "Learning History": "Lịch sử học tập",
+    "Language workspace": "Không gian đa ngôn ngữ",
+    "Accept Invitation": "Chấp nhận lời mời",
+    "Access available according to your membership status.": "Quyền truy cập tùy theo tư cách thành viên của bạn.",
+    "Activity Status": "Trạng thái hoạt động",
+    "Activity data could not be loaded.": "Không thể tải dữ liệu hoạt động.",
+    "Activity logged": "Đã ghi nhận hoạt động",
+    "Add": "Thêm",
+    "Available credits": "Tín dụng khả dụng",
+    "Cancel": "Hủy",
+    "Continue cooperative participation": "Tiếp tục tham gia hợp tác xã",
+    "Contribution participation": "Tham gia đóng góp",
+    "Control who can see your profile within the cooperative.": "Kiểm soát những người có thể xem hồ sơ của bạn trong hợp tác xã.",
+    "Cooperative credits recorded for your member account": "Tín dụng hợp tác xã được ghi nhận cho tài khoản thành viên của bạn",
+    "Cooperative idea lifecycle": "Vòng đời ý tưởng hợp tác",
+    "Cooperative participation activity": "Hoạt động tham gia hợp tác xã",
+    "Cooperative participation and operational modules": "Các mô-đun hoạt động và tham gia hợp tác xã",
+    "Cooperative programs": "Các chương trình hợp tác xã",
+    "Copy Invitation Link": "Sao chép liên kết lời mời",
+    "Copy Invitation Message": "Sao chép nội dung lời mời",
+    "Copy failed": "Sao chép không thành công",
+    "Copy invitation link": "Sao chép liên kết lời mời",
+    "Copy the link below to share with your invitee.": "Sao chép liên kết bên dưới để gửi cho người được mời.",
+    "Create Invitation": "Tạo lời mời",
+    "Created:": "Ngày tạo:",
+    "Delete invitation": "Xóa lời mời",
+    "Direct relationship source": "Nguồn mối quan hệ trực tiếp",
+    "Done": "Hoàn tất",
+    "Error": "Lỗi",
+    "Expires:": "Hết hạn:",
+    "Free Tier": "Gói miễn phí",
+    "Full access available for paid members.": "Thành viên trả phí được sử dụng đầy đủ tính năng.",
+    "IELTS": "IELTS",
+    "IELTS workspace": "Không gian IELTS",
+    "Image too large": "Ảnh quá lớn",
+    "Invitation Link": "Liên kết lời mời",
+    "Invitation Message": "Nội dung lời mời",
+    "Invitation accepted": "Đã chấp nhận lời mời",
+    "Invitation created": "Đã tạo lời mời",
+    "Invitation deleted": "Đã xóa lời mời",
+    "Invitation message copied to clipboard": "Đã sao chép lời mời vào bộ nhớ tạm",
+    "Invitation message ready to personalize": "Lời mời đã sẵn sàng để cá nhân hóa",
+    "Invitations you have created. Unaccepted invitations can be deleted.": "Các lời mời bạn đã tạo. Bạn có thể xóa những lời mời chưa được chấp nhận.",
+    "Invite someone you personally know and trust to join the cooperative.": "Mời người bạn quen biết và tin tưởng tham gia hợp tác xã.",
+    "Invited By": "Được mời bởi",
+    "Invited:": "Được mời:",
+    "Last active:": "Hoạt động gần nhất:",
+    "Learning participation": "Tham gia học tập",
+    "Link copied to clipboard": "Đã sao chép liên kết vào bộ nhớ tạm",
+    "Loading credits...": "Đang tải tín dụng...",
+    "Loading invitations...": "Đang tải lời mời...",
+    "Loading notification credits...": "Đang tải tín dụng thông báo...",
+    "Loading...": "Đang tải...",
+    "Maximum of 2 contact methods reached.": "Đã đạt tối đa 2 phương thức liên hệ.",
+    "Member profile available after account activation.": "Hồ sơ thành viên sẽ khả dụng sau khi kích hoạt tài khoản.",
+    "Member since": "Thành viên từ",
+    "Members You Have Welcomed": "Thành viên bạn đã chào đón",
+    "Monthly allowance": "Hạn mức hằng tháng",
+    "Multilingual": "Đa ngôn ngữ",
+    "No contact methods added yet.": "Chưa thêm phương thức liên hệ nào.",
+    "No credits recorded yet.": "Chưa có tín dụng nào được ghi nhận.",
+    "No invitations sent yet.": "Bạn chưa gửi lời mời nào.",
+    "No invitor recorded for this account.": "Tài khoản này chưa ghi nhận người mời.",
+    "No members welcomed yet. Send an invitation from the Invitations tab.": "Bạn chưa mời thành viên nào. Hãy gửi lời mời trong thẻ Lời mời.",
+    "No program selection limits": "Không giới hạn lựa chọn chương trình",
+    "No recent cooperative participation recorded yet.": "Chưa ghi nhận hoạt động hợp tác xã gần đây.",
+    "Notification-credit availability is currently unavailable.": "Hiện chưa thể kiểm tra tín dụng thông báo khả dụng.",
+    "Only you and cooperative administrators can view your profile.": "Chỉ bạn và quản trị viên hợp tác xã có thể xem hồ sơ này.",
+    "Paid Tier": "Gói trả phí",
+    "Pending Invitation": "Lời mời đang chờ",
+    "Period:": "Kỳ:",
+    "Please select an image under 2 MB.": "Vui lòng chọn ảnh có dung lượng dưới 2 MB.",
+    "Please try again.": "Vui lòng thử lại.",
+    "Preferred Contact Platforms": "Nền tảng liên hệ ưu tiên",
+    "Preparing your operational member dashboard...": "Đang chuẩn bị bảng điều khiển hoạt động thành viên...",
+    "Preview": "Xem trước",
+    "Priority support and features": "Hỗ trợ ưu tiên và các tính năng",
+    "Program deselected": "Đã bỏ chọn chương trình",
+    "Program selected": "Đã chọn chương trình",
+    "Programs": "Chương trình",
+    "Public Profile Preview": "Xem trước hồ sơ công khai",
+    "Receive credits from all programs automatically": "Tự động nhận tín dụng từ tất cả chương trình",
+    "Received": "Đã nhận",
+    "Recent cooperative participation activity and continuity.": "Hoạt động tham gia hợp tác xã gần đây và tính liên tục.",
+    "Recent cooperative participation could not be loaded.": "Không thể tải hoạt động hợp tác xã gần đây.",
+    "Scan QR to connect. Contact details are not shown publicly.": "Quét mã QR để kết nối. Thông tin liên hệ không hiển thị công khai.",
+    "Select and copy the link above manually.": "Vui lòng chọn và sao chép thủ công liên kết ở trên.",
+    "Sent Invitations": "Lời mời đã gửi",
+    "Share Invitation Message": "Chia sẻ nội dung lời mời",
+    "Share message failed": "Không thể chia sẻ tin nhắn",
+    "Status:": "Trạng thái:",
+    "This is how your profile appears to other cooperative members.": "Đây là cách hồ sơ của bạn hiển thị với các thành viên khác trong hợp tác xã.",
+    "This link is also saved in Sent Invitations below.": "Liên kết này cũng được lưu trong mục Lời mời đã gửi bên dưới.",
+    "Unlimited programs": "Không giới hạn chương trình",
+    "Unlock unlimited credit potential across all programs": "Mở khóa tiềm năng tín dụng không giới hạn trong mọi chương trình",
+    "Up to two contact methods. A QR code placeholder is shown for each.": "Tối đa hai phương thức liên hệ. Mỗi phương thức có mã QR minh họa.",
+    "Upgrade Now": "Nâng cấp ngay",
+    "Upgrade to Paid Membership": "Nâng cấp lên tư cách thành viên trả phí",
+    "Upload profile image": "Tải ảnh hồ sơ lên",
+    "Visible to all cooperative members.": "Hiển thị với tất cả thành viên hợp tác xã.",
+    "You have been invited to join the cooperative.": "Bạn được mời tham gia hợp tác xã.",
+    "Your account is now active": "Tài khoản của bạn hiện đang hoạt động",
+    "Your authoritative notification-credit allowance for the current month.": "Hạn mức tín dụng thông báo chính thức của bạn trong tháng hiện tại.",
+    "Your cooperative network — the members who invited you and those you have welcomed.": "Mạng lưới hợp tác xã của bạn — những thành viên đã mời bạn và những người bạn đã chào đón.",
+    "Profile avatar": "Ảnh đại diện hồ sơ",
+  },
+  zh: {
+    "IELTS": "IELTS",
+    "Welcome to Lambsbook Hub": "欢迎来到 Lambsbook Hub",
+    "Please sign in to access your member dashboard.": "请登录以访问会员控制面板。",
+    "Sign In": "登录",
+    "Create Account": "创建账户",
+    "Dashboard unavailable": "控制面板暂不可用",
+    "Some operational dashboard data could not be loaded. Please refresh and try again.": "部分控制面板数据无法加载。请刷新页面后重试。",
+    "Member Dashboard": "会员控制面板",
+    "Member account": "会员账户",
+    "Inactivity Warning": "不活跃提醒",
+    "Account Inactive": "账户处于不活跃状态",
+    "Stay Active": "保持活跃",
+    "Reactivate Now": "立即重新激活",
+    "Overview": "概览",
+    "Profile": "个人资料",
+    "Membership": "会员资格",
+    "Credits": "积分",
+    "Invitations": "邀请",
+    "Relationships": "关系",
+    "Workspace": "工作区",
+    "Member ID": "会员编号",
+    "Member Type": "会员类型",
+    "Join Date": "加入日期",
+    "Last Active": "最近活动",
+    "Private": "私密",
+    "Public": "公开",
+    "Platform": "平台",
+    "Handle or phone number": "用户名或电话号码",
+    "Membership Overview": "会员资格概览",
+    "Your current membership status and benefits": "当前会员状态与权益",
+    "Current Status": "当前状态",
+    "Notification Credits": "通知积分",
+    "Send an Invitation": "发送邀请",
+    "Invitee email": "受邀者邮箱",
+    "Invitation note (optional)": "邀请留言（选填）",
+    "Generate Invitation": "生成邀请",
+    "Preferred Contact Methods": "首选联系方式",
+    "Profile Visibility": "个人资料可见性",
+    "Trusted Relationships": "可信关系",
+    "Recent Cooperative Participation": "近期合作参与",
+    "Idea Pipeline": "创意流程",
+    "My Contributions": "我的贡献",
+    "Learning History": "学习记录",
+    "Language workspace": "多语言工作区",
+    "Access available according to your membership status.": "可用权限取决于你的会员状态。",
+    "Activity Status": "活动状态",
+    "Activity data could not be loaded.": "无法加载活动数据。",
+    "Activity logged": "已记录活动",
+    "Add": "添加",
+    "Available credits": "可用积分",
+    "Cancel": "取消",
+    "Continue cooperative participation": "继续参与合作社活动",
+    "Contribution participation": "参与贡献",
+    "Control who can see your profile within the cooperative.": "控制合作社内哪些人可以查看你的个人资料。",
+    "Cooperative credits recorded for your member account": "记录在你会员账户中的合作社积分",
+    "Cooperative idea lifecycle": "合作创意流程",
+    "Cooperative participation activity": "合作社参与活动",
+    "Cooperative participation and operational modules": "合作社参与和运营模块",
+    "Cooperative programs": "合作社项目",
+    "Copy Invitation Link": "复制邀请链接",
+    "Copy Invitation Message": "复制邀请消息",
+    "Copy failed": "复制失败",
+    "Copy invitation link": "复制邀请链接",
+    "Copy the link below to share with your invitee.": "复制下面的链接并分享给受邀者。",
+    "Create Invitation": "创建邀请",
+    "Created:": "创建时间：",
+    "Delete invitation": "删除邀请",
+    "Direct relationship source": "直接关系来源",
+    "Done": "完成",
+    "Error": "错误",
+    "Expires:": "到期时间：",
+    "Free Tier": "免费级别",
+    "Full access available for paid members.": "付费会员可使用全部功能。",
+    "IELTS workspace": "IELTS 工作区",
+    "Image too large": "图片过大",
+    "Invitation Link": "邀请链接",
+    "Invitation Message": "邀请消息",
+    "Invitation accepted": "已接受邀请",
+    "Invitation created": "已创建邀请",
+    "Invitation deleted": "已删除邀请",
+    "Invitation message copied to clipboard": "已将邀请消息复制到剪贴板",
+    "Invitation message ready to personalize": "邀请消息已准备好，可进行个性化编辑",
+    "Invitations you have created. Unaccepted invitations can be deleted.": "你创建的邀请。尚未接受的邀请可以删除。",
+    "Invite someone you personally know and trust to join the cooperative.": "邀请你认识且信任的人加入合作社。",
+    "Invited By": "邀请人",
+    "Invited:": "邀请时间：",
+    "Last active:": "最近活动：",
+    "Learning participation": "学习参与",
+    "Link copied to clipboard": "链接已复制到剪贴板",
+    "Loading credits...": "正在加载积分…",
+    "Loading invitations...": "正在加载邀请…",
+    "Loading notification credits...": "正在加载通知积分…",
+    "Loading...": "正在加载…",
+    "Maximum of 2 contact methods reached.": "已达到最多 2 种联系方式的上限。",
+    "Member profile available after account activation.": "账户激活后即可查看会员资料。",
+    "Member since": "会员加入时间",
+    "Members You Have Welcomed": "你邀请加入的成员",
+    "Monthly allowance": "每月额度",
+    "Multilingual": "多语言",
+    "No contact methods added yet.": "尚未添加联系方式。",
+    "No credits recorded yet.": "尚无积分记录。",
+    "No invitations sent yet.": "尚未发送邀请。",
+    "No invitor recorded for this account.": "此账户尚无邀请人记录。",
+    "No members welcomed yet. Send an invitation from the Invitations tab.": "你还没有邀请任何成员。请前往“邀请”选项卡发送邀请。",
+    "No program selection limits": "项目选择数量不限",
+    "No recent cooperative participation recorded yet.": "暂无近期合作社参与记录。",
+    "Notification-credit availability is currently unavailable.": "目前无法查询可用通知积分。",
+    "Only you and cooperative administrators can view your profile.": "只有你和合作社管理员可以查看你的个人资料。",
+    "Paid Tier": "付费级别",
+    "Pending Invitation": "待处理邀请",
+    "Period:": "周期：",
+    "Please select an image under 2 MB.": "请选择小于 2 MB 的图片。",
+    "Please try again.": "请重试。",
+    "Preferred Contact Platforms": "首选联系平台",
+    "Preparing your operational member dashboard...": "正在准备会员运营控制面板…",
+    "Preview": "预览",
+    "Priority support and features": "优先支持和功能",
+    "Program deselected": "已取消选择项目",
+    "Program selected": "已选择项目",
+    "Programs": "项目",
+    "Public Profile Preview": "公开个人资料预览",
+    "Receive credits from all programs automatically": "自动接收所有项目的积分",
+    "Received": "收到时间：",
+    "Recent cooperative participation activity and continuity.": "近期合作社参与活动及持续情况。",
+    "Recent cooperative participation could not be loaded.": "无法加载近期合作社参与记录。",
+    "Scan QR to connect. Contact details are not shown publicly.": "扫描二维码建立联系。联系方式不会公开显示。",
+    "Select and copy the link above manually.": "请手动选择并复制上方链接。",
+    "Sent Invitations": "已发送的邀请",
+    "Share Invitation Message": "分享邀请消息",
+    "Share message failed": "分享消息失败",
+    "Status:": "状态：",
+    "This is how your profile appears to other cooperative members.": "这是其他合作社成员看到的个人资料效果。",
+    "This link is also saved in Sent Invitations below.": "此链接也保存在下方的“已发送邀请”中。",
+    "Unlimited programs": "项目数量不限",
+    "Unlock unlimited credit potential across all programs": "解锁所有项目的无限积分潜力",
+    "Up to two contact methods. A QR code placeholder is shown for each.": "最多可添加两种联系方式，每种联系方式均显示二维码占位图。",
+    "Upgrade Now": "立即升级",
+    "Upgrade to Paid Membership": "升级为付费会员",
+    "Upload profile image": "上传个人资料图片",
+    "Visible to all cooperative members.": "对所有合作社成员可见。",
+    "You have been invited to join the cooperative.": "你已受邀加入合作社。",
+    "Your account is now active": "你的账户现已激活",
+    "Your authoritative notification-credit allowance for the current month.": "你本月的正式通知积分额度。",
+    "Your cooperative network — the members who invited you and those you have welcomed.": "你的合作社网络——邀请你加入的成员以及你邀请加入的成员。",
+    "Profile avatar": "个人资料头像",
+    "Accept Invitation": "接受邀请",
+  },
+};
+
 export default function MemberHub() {
   const { toast } = useToast();
   const { language } = useLanguage();
+  const dashboardText = (english: string) =>
+    memberHubTranslations[language]?.[english] ?? english;
   const [activeTab, setActiveTab] = useState("overview");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
@@ -466,10 +768,10 @@ export default function MemberHub() {
     mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/select`),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/member/programs"] });
-      toast({ title: "Program selected" });
+      toast({ title: dashboardText("Program selected") });
     },
     onError: (error: Error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast({ title: dashboardText("Error"), description: error.message, variant: "destructive" });
     },
   });
 
@@ -477,11 +779,11 @@ export default function MemberHub() {
     mutationFn: (programId: string) => postWithAuth(`/api/member/programs/${programId}/deselect`),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/member/programs"] });
-      toast({ title: "Program deselected" });
+      toast({ title: dashboardText("Program deselected") });
     },
     onError: (error: Error) => {
       toast({
-        title: "Error",
+        title: dashboardText("Error"),
         description: error.message,
         variant: "destructive"
       });
@@ -493,11 +795,11 @@ export default function MemberHub() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/member/activity"] });
       queryClient.invalidateQueries({ queryKey: ["/api/member/earnings"] });
-      toast({ title: "Activity logged", description: "Your account is now active" });
+      toast({ title: dashboardText("Activity logged"), description: dashboardText("Your account is now active") });
     },
     onError: (error: Error) => {
       toast({
-        title: "Error",
+        title: dashboardText("Error"),
         description: error.message,
         variant: "destructive"
       });
@@ -523,13 +825,13 @@ export default function MemberHub() {
 
       // D1: Do NOT auto-close — keep modal open so inviter can copy and share the link.
       toast({
-        title: "Invitation created",
-        description: "Copy the link below to share with your invitee.",
+        title: dashboardText("Invitation created"),
+        description: dashboardText("Copy the link below to share with your invitee."),
       });
     },
     onError: (error: Error) => {
       toast({
-        title: "Error",
+        title: dashboardText("Error"),
         description: error.message,
         variant: "destructive"
       });
@@ -544,11 +846,11 @@ export default function MemberHub() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/member/pending-invitation"] });
       queryClient.invalidateQueries({ queryKey: ["/api/member/me"] });
-      toast({ title: "Invitation accepted" });
+      toast({ title: dashboardText("Invitation accepted") });
     },
     onError: (error: Error) => {
       toast({
-        title: "Error",
+        title: dashboardText("Error"),
         description: error.message,
         variant: "destructive"
       });
@@ -562,11 +864,11 @@ export default function MemberHub() {
     onSuccess: () => {
       setDeletingInvitationId(null);
       queryClient.invalidateQueries({ queryKey: ["/api/member/invitations"] });
-      toast({ title: "Invitation deleted" });
+      toast({ title: dashboardText("Invitation deleted") });
     },
     onError: (error: Error) => {
       setDeletingInvitationId(null);
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast({ title: dashboardText("Error"), description: error.message, variant: "destructive" });
     },
   });
 
@@ -580,8 +882,8 @@ export default function MemberHub() {
       // Enforce reasonable size limit (2 MB) to stay within localStorage budget
       if (file.size > 2 * 1024 * 1024) {
         toast({
-          title: "Image too large",
-          description: "Please select an image under 2 MB.",
+          title: dashboardText("Image too large"),
+          description: dashboardText("Please select an image under 2 MB."),
           variant: "destructive",
         });
         return;
@@ -628,14 +930,14 @@ export default function MemberHub() {
         <Card className="text-center py-12">
           <CardContent>
             <User className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Welcome to Lambsbook Hub</h2>
-            <p className="text-muted-foreground mb-6">Please sign in to access your member dashboard.</p>
+            <h2 className="text-2xl font-bold mb-2">{dashboardText("Welcome to Lambsbook Hub")}</h2>
+            <p className="text-muted-foreground mb-6">{dashboardText("Please sign in to access your member dashboard.")}</p>
             <div className="flex justify-center gap-4">
               <Link href="/hub/login">
-                <Button data-testid="button-login">Sign In</Button>
+                <Button data-testid="button-login">{dashboardText("Sign In")}</Button>
               </Link>
               <Link href="/hub/signup">
-                <Button variant="outline" data-testid="button-signup">Create Account</Button>
+                <Button variant="outline" data-testid="button-signup">{dashboardText("Create Account")}</Button>
               </Link>
             </div>
           </CardContent>
@@ -650,7 +952,7 @@ export default function MemberHub() {
         <div className="text-center py-12">
           <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-muted-foreground" />
           <p className="text-muted-foreground">
-            Preparing your operational member dashboard...
+            {dashboardText("Preparing your operational member dashboard...")}
           </p>
         </div>
       </div>
@@ -675,10 +977,9 @@ export default function MemberHub() {
 
         <Alert variant="destructive">
           <AlertTriangle className="h-4 w-4" />
-          <AlertTitle>Dashboard unavailable</AlertTitle>
+          <AlertTitle>{dashboardText("Dashboard unavailable")}</AlertTitle>
           <AlertDescription>
-            Some operational dashboard data could not be loaded.
-            Please refresh and try again.
+            {dashboardText("Some operational dashboard data could not be loaded. Please refresh and try again.")}
           </AlertDescription>
         </Alert>
       </div>
@@ -696,7 +997,7 @@ export default function MemberHub() {
       </div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-3xl font-bold" data-testid="text-page-title">Member Dashboard</h1>
+          <h1 className="text-3xl font-bold" data-testid="text-page-title">{dashboardText("Member Dashboard")}</h1>
           <p className="text-muted-foreground">
             {profile?.email || "Member account"}
           </p>
@@ -712,7 +1013,7 @@ export default function MemberHub() {
       {activity?.warning && (
         <Alert variant="destructive" className="mb-6" data-testid="alert-inactivity-warning">
           <AlertTriangle className="h-4 w-4" />
-          <AlertTitle>Inactivity Warning</AlertTitle>
+          <AlertTitle>{dashboardText("Inactivity Warning")}</AlertTitle>
           <AlertDescription>
             {activity.warning.message} {activity.warning.consequence}
             <Button 
@@ -723,7 +1024,7 @@ export default function MemberHub() {
               data-testid="button-reactivate"
             >
               <RefreshCw className={`h-4 w-4 mr-2 ${logActivityMutation.isPending ? 'animate-spin' : ''}`} />
-              Stay Active
+              {dashboardText("Stay Active")}
             </Button>
           </AlertDescription>
         </Alert>
@@ -732,7 +1033,7 @@ export default function MemberHub() {
       {activity?.reactivation && (
         <Alert variant="destructive" className="mb-6" data-testid="alert-inactive-account">
           <AlertTriangle className="h-4 w-4" />
-          <AlertTitle>Account Inactive</AlertTitle>
+          <AlertTitle>{dashboardText("Account Inactive")}</AlertTitle>
           <AlertDescription>
             {activity.reactivation.message} {activity.reactivation.consequence}
             <Button 
@@ -743,7 +1044,7 @@ export default function MemberHub() {
               data-testid="button-reactivate-account"
             >
               <RefreshCw className={`h-4 w-4 mr-2 ${logActivityMutation.isPending ? 'animate-spin' : ''}`} />
-              Reactivate Now
+              {dashboardText("Reactivate Now")}
             </Button>
           </AlertDescription>
         </Alert>
@@ -751,13 +1052,13 @@ export default function MemberHub() {
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList className="grid grid-cols-7 w-full" data-testid="tabs-member">
-          <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
-          <TabsTrigger value="profile" data-testid="tab-profile">Profile</TabsTrigger>
-          <TabsTrigger value="membership" data-testid="tab-membership">Membership</TabsTrigger>
-          <TabsTrigger value="earnings" data-testid="tab-earnings">Credits</TabsTrigger>
-          <TabsTrigger value="invitations" data-testid="tab-invitations">Invitations</TabsTrigger>
-          <TabsTrigger value="relationships" data-testid="tab-relationships">Relationships</TabsTrigger>
-          <TabsTrigger value="workspace" data-testid="tab-workspace">Workspace</TabsTrigger>
+          <TabsTrigger value="overview" data-testid="tab-overview">{dashboardText("Overview")}</TabsTrigger>
+          <TabsTrigger value="profile" data-testid="tab-profile">{dashboardText("Profile")}</TabsTrigger>
+          <TabsTrigger value="membership" data-testid="tab-membership">{dashboardText("Membership")}</TabsTrigger>
+          <TabsTrigger value="earnings" data-testid="tab-earnings">{dashboardText("Credits")}</TabsTrigger>
+          <TabsTrigger value="invitations" data-testid="tab-invitations">{dashboardText("Invitations")}</TabsTrigger>
+          <TabsTrigger value="relationships" data-testid="tab-relationships">{dashboardText("Relationships")}</TabsTrigger>
+          <TabsTrigger value="workspace" data-testid="tab-workspace">{dashboardText("Workspace")}</TabsTrigger>
         </TabsList>
 
         {/* ================================================================
@@ -778,7 +1079,7 @@ export default function MemberHub() {
                     {avatarDataUrl ? (
                       <img
                         src={avatarDataUrl}
-                        alt="Profile avatar"
+                        alt={dashboardText("Profile avatar")}
                         className="h-full w-full object-cover"
                         data-testid="img-avatar"
                       />
@@ -799,7 +1100,7 @@ export default function MemberHub() {
                   <button
                     type="button"
                     className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-primary flex items-center justify-center border-2 border-background"
-                    aria-label="Upload profile image"
+                    aria-label={dashboardText("Upload profile image")}
                     data-testid="button-upload-avatar"
                     onClick={() => avatarInputRef.current?.click()}
                   >
@@ -833,19 +1134,19 @@ export default function MemberHub() {
             <CardContent className="space-y-3">
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
-                  <div className="text-xs text-muted-foreground mb-1">Member ID</div>
+                  <div className="text-xs text-muted-foreground mb-1">{dashboardText("Member ID")}</div>
                   <div className="font-mono text-xs truncate" data-testid="text-member-id">
                     {profile?.id ?? "—"}
                   </div>
                 </div>
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
-                  <div className="text-xs text-muted-foreground mb-1">Member Type</div>
+                  <div className="text-xs text-muted-foreground mb-1">{dashboardText("Member Type")}</div>
                   <div className="text-sm capitalize" data-testid="text-member-type">
                     {profile?.member_type ?? "—"}
                   </div>
                 </div>
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
-                  <div className="text-xs text-muted-foreground mb-1">Join Date</div>
+                  <div className="text-xs text-muted-foreground mb-1">{dashboardText("Join Date")}</div>
                   <div className="text-sm" data-testid="text-join-date">
                     {profile?.join_date
                       ? new Date(profile.join_date).toLocaleDateString()
@@ -853,7 +1154,7 @@ export default function MemberHub() {
                   </div>
                 </div>
                 <div className="rounded-lg border bg-muted/30 px-3 py-2">
-                  <div className="text-xs text-muted-foreground mb-1">Last Active</div>
+                  <div className="text-xs text-muted-foreground mb-1">{dashboardText("Last Active")}</div>
                   <div className="text-sm" data-testid="text-last-active">
                     {activity?.last_activity_at
                       ? new Date(activity.last_activity_at).toLocaleDateString()
@@ -870,7 +1171,7 @@ export default function MemberHub() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2 text-base">
                   <Shield className="h-4 w-4" />
-                  Profile Visibility
+                  {dashboardText("Profile Visibility")}
                 </CardTitle>
                 {profileVisibility === "public" && (
                   <Button
@@ -879,12 +1180,12 @@ export default function MemberHub() {
                     data-testid="button-preview-public-profile"
                   >
                     <Eye className="h-3 w-3 mr-1" />
-                    Preview
+                    {dashboardText("Preview")}
                   </Button>
                 )}
               </div>
               <CardDescription>
-                Control who can see your profile within the cooperative.
+                {dashboardText("Control who can see your profile within the cooperative.")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -909,9 +1210,9 @@ export default function MemberHub() {
                   }`} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="text-sm font-semibold text-foreground">Private</div>
+                  <div className="text-sm font-semibold text-foreground">{dashboardText("Private")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Only you and cooperative administrators can view your profile.
+                    {dashboardText("Only you and cooperative administrators can view your profile.")}
                   </div>
                 </div>
                 {profileVisibility === "private" && (
@@ -939,9 +1240,9 @@ export default function MemberHub() {
                   }`} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="text-sm font-semibold text-foreground">Public</div>
+                  <div className="text-sm font-semibold text-foreground">{dashboardText("Public")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Visible to all cooperative members.
+                    {dashboardText("Visible to all cooperative members.")}
                   </div>
                 </div>
                 {profileVisibility === "public" && (
@@ -957,14 +1258,14 @@ export default function MemberHub() {
             <DialogContent data-testid="dialog-public-profile-preview">
               <div className="space-y-4">
                 <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                  Public Profile Preview
+                  {dashboardText("Public Profile Preview")}
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="h-14 w-14 rounded-full bg-muted flex items-center justify-center shrink-0 overflow-hidden">
                     {avatarDataUrl ? (
                       <img
                         src={avatarDataUrl}
-                        alt="Profile avatar"
+                        alt={dashboardText("Profile avatar")}
                         className="h-full w-full object-cover"
                         data-testid="img-preview-avatar"
                       />
@@ -982,7 +1283,7 @@ export default function MemberHub() {
                 {contactMethods.length > 0 && (
                   <div className="space-y-3">
                     <div className="text-xs font-medium text-muted-foreground">
-                      Preferred Contact Platforms
+                      {dashboardText("Preferred Contact Platforms")}
                     </div>
                     {/* APP-MEX-001B: platform label + QR only — no phone numbers or messenger IDs */}
                     <div className="flex gap-3 flex-wrap">
@@ -1002,12 +1303,12 @@ export default function MemberHub() {
                       ))}
                     </div>
                     <div className="text-[10px] text-muted-foreground">
-                      Scan QR to connect. Contact details are not shown publicly.
+                      {dashboardText("Scan QR to connect. Contact details are not shown publicly.")}
                     </div>
                   </div>
                 )}
                 <div className="text-xs text-muted-foreground border-t pt-3">
-                  This is how your profile appears to other cooperative members.
+                  {dashboardText("This is how your profile appears to other cooperative members.")}
                 </div>
               </div>
             </DialogContent>
@@ -1019,7 +1320,7 @@ export default function MemberHub() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2 text-base">
                   <Phone className="h-4 w-4" />
-                  Preferred Contact Methods
+                  {dashboardText("Preferred Contact Methods")}
                 </CardTitle>
                 {contactMethods.length < 2 && !addingContact && (
                   <Button
@@ -1028,19 +1329,19 @@ export default function MemberHub() {
                     data-testid="button-add-contact-method"
                   >
                     <Plus className="h-3 w-3 mr-1" />
-                    Add
+                    {dashboardText("Add")}
                   </Button>
                 )}
               </div>
               <CardDescription>
-                Up to two contact methods. A QR code placeholder is shown for each.
+                {dashboardText("Up to two contact methods. A QR code placeholder is shown for each.")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
 
               {contactMethods.length === 0 && !addingContact && (
                 <div className="text-sm text-muted-foreground" data-testid="text-no-contact-methods">
-                  No contact methods added yet.
+                  {dashboardText("No contact methods added yet.")}
                 </div>
               )}
 
@@ -1070,7 +1371,7 @@ export default function MemberHub() {
               {addingContact && (
                 <div className="border rounded-lg p-4 space-y-3 bg-muted/20" data-testid="form-add-contact">
                   <div className="space-y-2">
-                    <div className="text-xs font-medium text-muted-foreground">Platform</div>
+                    <div className="text-xs font-medium text-muted-foreground">{dashboardText("Platform")}</div>
                     <select
                       className="w-full rounded-md border bg-background px-3 py-2 text-sm"
                       value={newContactPlatform}
@@ -1083,7 +1384,7 @@ export default function MemberHub() {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <div className="text-xs font-medium text-muted-foreground">Handle or phone number</div>
+                    <div className="text-xs font-medium text-muted-foreground">{dashboardText("Handle or phone number")}</div>
                     <Input
                       placeholder={`Your ${newContactPlatform} handle`}
                       value={newContactHandle}
@@ -1097,7 +1398,7 @@ export default function MemberHub() {
                       disabled={!newContactHandle.trim()}
                       data-testid="button-confirm-add-contact"
                     >
-                      Add
+                      {dashboardText("Add")}
                     </Button>
                     <Button
                       variant="outline"
@@ -1108,7 +1409,7 @@ export default function MemberHub() {
                       }}
                       data-testid="button-cancel-add-contact"
                     >
-                      Cancel
+                      {dashboardText("Cancel")}
                     </Button>
                   </div>
                 </div>
@@ -1116,7 +1417,7 @@ export default function MemberHub() {
 
               {contactMethods.length >= 2 && (
                 <div className="text-xs text-muted-foreground" data-testid="text-max-contacts-reached">
-                  Maximum of 2 contact methods reached.
+                  {dashboardText("Maximum of 2 contact methods reached.")}
                 </div>
               )}
             </CardContent>
@@ -1128,7 +1429,7 @@ export default function MemberHub() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card data-testid="stat-card-membership">
               <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
-                <CardTitle className="text-sm font-medium">Membership</CardTitle>
+                <CardTitle className="text-sm font-medium">{dashboardText("Membership")}</CardTitle>
                 <CreditCard className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
@@ -1141,24 +1442,24 @@ export default function MemberHub() {
 
             <Card data-testid="stat-card-activity">
               <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
-                <CardTitle className="text-sm font-medium">Activity Status</CardTitle>
+                <CardTitle className="text-sm font-medium">{dashboardText("Activity Status")}</CardTitle>
                 <Activity className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 {activityLoading ? (
                   <div className="flex items-center gap-2">
                     <RefreshCw className="h-3 w-3 animate-spin text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">Loading...</span>
+                    <span className="text-sm text-muted-foreground">{dashboardText("Loading...")}</span>
                   </div>
                 ) : activityError ? (
                   <div className="text-sm text-destructive">
-                    Activity data could not be loaded.
+                    {dashboardText("Activity data could not be loaded.")}
                   </div>
                 ) : (
                   <>
                     <div className="text-2xl font-bold capitalize">{activity?.activity_status || "Active"}</div>
                     <p className="text-xs text-muted-foreground">
-                      Last active: {activity?.last_activity_at ? new Date(activity.last_activity_at).toLocaleDateString() : "Recently"}
+                      {dashboardText("Last active:")} {activity?.last_activity_at ? new Date(activity.last_activity_at).toLocaleDateString() : "Recently"}
                     </p>
                   </>
                 )}
@@ -1168,7 +1469,7 @@ export default function MemberHub() {
             <Card className="md:col-span-2" data-testid="card-recent-participation">
               <CardHeader>
                 <div className="flex items-center justify-between gap-3">
-                  <CardTitle>Recent Cooperative Participation</CardTitle>
+                  <CardTitle>{dashboardText("Recent Cooperative Participation")}</CardTitle>
 
                   <div className="text-[10px] px-2 py-1 rounded-full border text-muted-foreground">
                     {activity?.recent_logs?.length
@@ -1177,7 +1478,7 @@ export default function MemberHub() {
                   </div>
                 </div>
                 <CardDescription>
-                  Recent cooperative participation activity and continuity.
+                  {dashboardText("Recent cooperative participation activity and continuity.")}
                 </CardDescription>
 
                 <div className="px-6 pb-2 space-y-1">
@@ -1198,7 +1499,7 @@ export default function MemberHub() {
                       className="text-xs border rounded-md px-3 py-1 hover:bg-muted transition-colors"
                       type="button"
                     >
-                      Continue cooperative participation
+                      {dashboardText("Continue cooperative participation")}
                     </button>
                   </div>
                 </div>
@@ -1206,7 +1507,7 @@ export default function MemberHub() {
               <CardContent className="pt-2">
                 {activityError ? (
                   <div className="text-sm text-destructive">
-                    Recent cooperative participation could not be loaded.
+                    {dashboardText("Recent cooperative participation could not be loaded.")}
                   </div>
                 ) : activity?.recent_logs?.length ? (
                   <div className="space-y-4">
@@ -1222,7 +1523,7 @@ export default function MemberHub() {
                               : log.activity_type.replaceAll("_", " ")}
                           </div>
                           <div className="text-xs text-muted-foreground">
-                            Cooperative participation activity
+                            {dashboardText("Cooperative participation activity")}
                           </div>
                         </div>
 
@@ -1248,7 +1549,7 @@ export default function MemberHub() {
                   </div>
                 ) : (
                   <div className="text-sm text-muted-foreground">
-                    No recent cooperative participation recorded yet.
+                    {dashboardText("No recent cooperative participation recorded yet.")}
                   </div>
                 )}
               </CardContent>
@@ -1259,28 +1560,28 @@ export default function MemberHub() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <ArrowUpCircle className="h-5 w-5" />
-                  Upgrade to Paid Membership
+                  {dashboardText("Upgrade to Paid Membership")}
                 </CardTitle>
-                <CardDescription>Unlock unlimited credit potential across all programs</CardDescription>
+                <CardDescription>{dashboardText("Unlock unlimited credit potential across all programs")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Receive credits from all programs automatically
+                    {dashboardText("Receive credits from all programs automatically")}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    No program selection limits
+                    {dashboardText("No program selection limits")}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Priority support and features
+                    {dashboardText("Priority support and features")}
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button data-testid="button-upgrade">Upgrade Now</Button>
+                <Button data-testid="button-upgrade">{dashboardText("Upgrade Now")}</Button>
               </CardFooter>
             </Card>
           )}
@@ -1289,13 +1590,13 @@ export default function MemberHub() {
         <TabsContent value="membership" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Membership Overview</CardTitle>
-              <CardDescription>Your current membership status and benefits</CardDescription>
+              <CardTitle>{dashboardText("Membership Overview")}</CardTitle>
+              <CardDescription>{dashboardText("Your current membership status and benefits")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between p-4 border rounded-lg">
                 <div>
-                  <div className="font-medium">Current Status</div>
+                  <div className="font-medium">{dashboardText("Current Status")}</div>
                   <div className="text-sm text-muted-foreground">
                     {profile?.membership_status === "paid" 
                       ? "You have full access to all programs and features"
@@ -1311,22 +1612,22 @@ export default function MemberHub() {
 
               <Card data-testid="card-notification-credits">
                 <CardHeader>
-                  <CardTitle className="text-lg">Notification Credits</CardTitle>
+                  <CardTitle className="text-lg">{dashboardText("Notification Credits")}</CardTitle>
                   <CardDescription>
-                    Your authoritative notification-credit allowance for the current month.
+                    {dashboardText("Your authoritative notification-credit allowance for the current month.")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   {notificationCreditsLoading ? (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <RefreshCw className="h-4 w-4 animate-spin" />
-                      Loading notification credits...
+                      {dashboardText("Loading notification credits...")}
                     </div>
                   ) : notificationCredits ? (
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-lg border p-3">
                         <div className="text-sm text-muted-foreground">
-                          Monthly allowance
+                          {dashboardText("Monthly allowance")}
                         </div>
                         <div
                           className="text-2xl font-semibold"
@@ -1337,7 +1638,7 @@ export default function MemberHub() {
                       </div>
                       <div className="rounded-lg border p-3">
                         <div className="text-sm text-muted-foreground">
-                          Available credits
+                          {dashboardText("Available credits")}
                         </div>
                         <div
                           className="text-2xl font-semibold"
@@ -1349,7 +1650,7 @@ export default function MemberHub() {
                     </div>
                   ) : (
                     <div className="text-sm text-muted-foreground">
-                      Notification-credit availability is currently unavailable.
+                      {dashboardText("Notification-credit availability is currently unavailable.")}
                     </div>
                   )}
                 </CardContent>
@@ -1358,24 +1659,24 @@ export default function MemberHub() {
               <div className="grid md:grid-cols-2 gap-4 pt-4">
                 <Card className={profile?.membership_status === "free" ? "border-primary" : ""}>
                   <CardHeader>
-                    <CardTitle className="text-lg">Free Tier</CardTitle>
+                    <CardTitle className="text-lg">{dashboardText("Free Tier")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Access available according to your membership status.
+                      {dashboardText("Access available according to your membership status.")}
                     </p>
                   </CardContent>
                 </Card>
                 <Card className={profile?.membership_status === "paid" ? "border-primary" : ""}>
                   <CardHeader>
-                    <CardTitle className="text-lg">Paid Tier</CardTitle>
+                    <CardTitle className="text-lg">{dashboardText("Paid Tier")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Full access available for paid members.
+                      {dashboardText("Full access available for paid members.")}
                     </p>
                     <div className="mt-4">
-                      <Badge>Unlimited programs</Badge>
+                      <Badge>{dashboardText("Unlimited programs")}</Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -1386,9 +1687,9 @@ export default function MemberHub() {
         <TabsContent value="earnings" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Credits</CardTitle>
+              <CardTitle>{dashboardText("Credits")}</CardTitle>
               <CardDescription>
-                Cooperative credits recorded for your member account
+                {dashboardText("Cooperative credits recorded for your member account")}
               </CardDescription>
             </CardHeader>
 
@@ -1396,11 +1697,11 @@ export default function MemberHub() {
               {earningsLoading ? (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <RefreshCw className="h-4 w-4 animate-spin" />
-                  Loading credits...
+                  {dashboardText("Loading credits...")}
                 </div>
               ) : !earnings?.length ? (
                 <div className="text-sm text-muted-foreground">
-                  No credits recorded yet.
+                  {dashboardText("No credits recorded yet.")}
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -1415,11 +1716,11 @@ export default function MemberHub() {
                         </div>
 
                         <div className="text-xs text-muted-foreground">
-                          Status: {earning.earning_status}
+                          {dashboardText("Status:")} {earning.earning_status}
                         </div>
 
                         <div className="text-xs text-muted-foreground">
-                          Period: {earning.period}
+                          {dashboardText("Period:")} {earning.period}
                         </div>
                       </div>
                     </div>
@@ -1440,9 +1741,9 @@ export default function MemberHub() {
           {/* Generate invitation card */}
           <Card>
             <CardHeader>
-              <CardTitle>Send an Invitation</CardTitle>
+              <CardTitle>{dashboardText("Send an Invitation")}</CardTitle>
               <CardDescription>
-                Invite someone you personally know and trust to join the cooperative.
+                {dashboardText("Invite someone you personally know and trust to join the cooperative.")}
               </CardDescription>
             </CardHeader>
 
@@ -1451,7 +1752,7 @@ export default function MemberHub() {
                 onClick={() => setInviteModalOpen(true)}
                 data-testid="button-open-invite-modal"
               >
-                Generate Invitation
+                {dashboardText("Generate Invitation")}
               </Button>
 
               <Dialog
@@ -1472,14 +1773,14 @@ export default function MemberHub() {
                       type="email"
                       value={invitedEmail}
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInvitedEmail(e.target.value)}
-                      placeholder="Invitee email"
+                      placeholder={dashboardText("Invitee email")}
                       data-testid="input-invited-email"
                     />
 
                     <textarea
                       value={invitationNote}
                       onChange={(e) => setInvitationNote(e.target.value)}
-                      placeholder="Invitation note (optional)"
+                      placeholder={dashboardText("Invitation note (optional)")}
                       rows={3}
                       className="flex min-h-[80px] w-full rounded-md border bg-background px-3 py-2 text-sm"
                       data-testid="input-invitation-note"
@@ -1490,13 +1791,13 @@ export default function MemberHub() {
                       disabled={createInvitationMutation.isPending}
                       data-testid="button-create-invitation"
                     >
-                      Create Invitation
+                      {dashboardText("Create Invitation")}
                     </Button>
 
                     {inviteLink ? (
                       <div className="space-y-3 pt-2">
                         <div className="rounded-lg border bg-muted/30 p-3 space-y-2">
-                          <div className="text-xs font-semibold text-foreground">Invitation Link</div>
+                          <div className="text-xs font-semibold text-foreground">{dashboardText("Invitation Link")}</div>
                           <div className="text-xs break-all text-muted-foreground font-mono select-all">
                             {inviteLink}
                           </div>
@@ -1506,14 +1807,14 @@ export default function MemberHub() {
                           onClick={async () => {
                             try {
                               await navigator.clipboard.writeText(inviteLink);
-                              toast({ title: "Link copied to clipboard" });
+                              toast({ title: dashboardText("Link copied to clipboard") });
                             } catch {
-                              toast({ title: "Copy failed", description: "Select and copy the link above manually.", variant: "destructive" });
+                              toast({ title: dashboardText("Copy failed"), description: dashboardText("Select and copy the link above manually."), variant: "destructive" });
                             }
                           }}
                           data-testid="button-copy-invite-link"
                         >
-                          Copy Invitation Link
+                          {dashboardText("Copy Invitation Link")}
                         </Button>
                         <Button
                           variant="outline"
@@ -1526,14 +1827,14 @@ export default function MemberHub() {
                                 language,
                               });
                               setInvitationShareMessage(data.message);
-                              toast({ title: "Invitation message ready to personalize" });
+                              toast({ title: dashboardText("Invitation message ready to personalize") });
                             } catch {
-                              toast({ title: "Share message failed", description: "Please try again.", variant: "destructive" });
+                              toast({ title: dashboardText("Share message failed"), description: dashboardText("Please try again."), variant: "destructive" });
                             }
                           }}
                           data-testid="button-share-invitation-message"
                         >
-                          Share Invitation Message
+                          {dashboardText("Share Invitation Message")}
                         </Button>
                         {invitationShareMessage ? (
                           <div className="space-y-2">
@@ -1541,7 +1842,7 @@ export default function MemberHub() {
                               htmlFor="invitation-share-message"
                               className="text-sm font-medium"
                             >
-                              Invitation Message
+                              {dashboardText("Invitation Message")}
                             </label>
                             <textarea
                               id="invitation-share-message"
@@ -1556,14 +1857,14 @@ export default function MemberHub() {
                               onClick={async () => {
                                 try {
                                   await navigator.clipboard.writeText(invitationShareMessage);
-                                  toast({ title: "Invitation message copied to clipboard" });
+                                  toast({ title: dashboardText("Invitation message copied to clipboard") });
                                 } catch {
-                                  toast({ title: "Copy failed", description: "Please try again.", variant: "destructive" });
+                                  toast({ title: dashboardText("Copy failed"), description: dashboardText("Please try again."), variant: "destructive" });
                                 }
                               }}
                               data-testid="button-copy-personalized-invitation-message"
                             >
-                              Copy Invitation Message
+                              {dashboardText("Copy Invitation Message")}
                             </Button>
                           </div>
                         ) : null}
@@ -1579,10 +1880,10 @@ export default function MemberHub() {
                           }}
                           data-testid="button-close-invite-modal"
                         >
-                          Done
+                          {dashboardText("Done")}
                         </Button>
                         <p className="text-[11px] text-muted-foreground text-center">
-                          This link is also saved in Sent Invitations below.
+                          {dashboardText("This link is also saved in Sent Invitations below.")}
                         </p>
                       </div>
                     ) : null}
@@ -1597,28 +1898,28 @@ export default function MemberHub() {
           {invitationData?.has_pending_invitation && (
             <Card data-testid="card-pending-invitation">
               <CardHeader>
-                <CardTitle>Pending Invitation</CardTitle>
-                <CardDescription>You have been invited to join the cooperative.</CardDescription>
+                <CardTitle>{dashboardText("Pending Invitation")}</CardTitle>
+                <CardDescription>{dashboardText("You have been invited to join the cooperative.")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="border rounded-lg p-4 space-y-2">
                   {invitationData?.invitation?.invited_email && (
                     <div className="text-sm">
-                      <span className="font-medium">Invited: </span>
+                      <span className="font-medium">{dashboardText("Invited:")} </span>
                       <span className="text-muted-foreground" data-testid="pending-invited-email">
                         {invitationData.invitation.invited_email}
                       </span>
                     </div>
                   )}
                   <div className="text-sm">
-                    <span className="font-medium">Status: </span>
+                    <span className="font-medium">{dashboardText("Status:")} </span>
                     <Badge variant="outline" className="text-xs" data-testid="pending-invitation-status">
                       {invitationData?.invitation?.status ?? "pending"}
                     </Badge>
                   </div>
                   {invitationData?.invitation?.created_at && (
                     <div className="text-xs text-muted-foreground" data-testid="pending-invitation-created">
-                      Received {new Date(invitationData.invitation.created_at).toLocaleDateString()}
+                      {dashboardText("Received")} {new Date(invitationData.invitation.created_at).toLocaleDateString()}
                     </div>
                   )}
 
@@ -1628,7 +1929,7 @@ export default function MemberHub() {
                     disabled={acceptInvitationMutation.isPending}
                     data-testid="button-accept-invitation"
                   >
-                    Accept Invitation
+                    {dashboardText("Accept Invitation")}
                   </Button>
                 </div>
               </CardContent>
@@ -1638,20 +1939,20 @@ export default function MemberHub() {
           {/* ── APP-MEX-001A: Sent Invitations Workspace ─────────────────── */}
           <Card data-testid="card-sent-invitations">
             <CardHeader>
-              <CardTitle>Sent Invitations</CardTitle>
+              <CardTitle>{dashboardText("Sent Invitations")}</CardTitle>
               <CardDescription>
-                Invitations you have created. Unaccepted invitations can be deleted.
+                {dashboardText("Invitations you have created. Unaccepted invitations can be deleted.")}
               </CardDescription>
             </CardHeader>
             <CardContent>
               {sentInvitationsLoading ? (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <RefreshCw className="h-4 w-4 animate-spin" />
-                  Loading invitations...
+                  {dashboardText("Loading invitations...")}
                 </div>
               ) : sentInvitations.length === 0 ? (
                 <div className="text-sm text-muted-foreground" data-testid="text-no-sent-invitations">
-                  No invitations sent yet.
+                  {dashboardText("No invitations sent yet.")}
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -1701,14 +2002,14 @@ export default function MemberHub() {
                               <button
                                 type="button"
                                 className="text-muted-foreground hover:text-primary transition-colors"
-                                aria-label="Copy invitation link"
+                                aria-label={dashboardText("Copy invitation link")}
                                 data-testid={`button-copy-invitation-link-${inv.id}`}
                                 onClick={async () => {
                                   try {
                                     await navigator.clipboard.writeText(inv.invitation_url!);
-                                    toast({ title: "Link copied to clipboard" });
+                                    toast({ title: dashboardText("Link copied to clipboard") });
                                   } catch {
-                                    toast({ title: "Copy failed", variant: "destructive" });
+                                    toast({ title: dashboardText("Copy failed"), variant: "destructive" });
                                   }
                                 }}
                               >
@@ -1721,7 +2022,7 @@ export default function MemberHub() {
                               <button
                                 type="button"
                                 className="text-muted-foreground hover:text-destructive transition-colors"
-                                aria-label="Delete invitation"
+                                aria-label={dashboardText("Delete invitation")}
                                 data-testid={`button-delete-invitation-${inv.id}`}
                                 disabled={isDeleting || deleteInvitationMutation.isPending}
                                 onClick={() => {
@@ -1742,7 +2043,7 @@ export default function MemberHub() {
                         {/* Created date */}
                         <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                           <div>
-                            <span className="font-medium text-foreground">Created: </span>
+                            <span className="font-medium text-foreground">{dashboardText("Created:")} </span>
                             <span data-testid={`invitation-created-${inv.id}`}>
                               {inv.created_at
                                 ? new Date(inv.created_at).toLocaleDateString()
@@ -1752,7 +2053,7 @@ export default function MemberHub() {
 
                           {/* Expiry date */}
                           <div>
-                            <span className="font-medium text-foreground">Expires: </span>
+                            <span className="font-medium text-foreground">{dashboardText("Expires:")} </span>
                             <span data-testid={`invitation-expires-${inv.id}`}>
                               {inv.expires_at
                                 ? new Date(inv.expires_at).toLocaleDateString()
@@ -1781,9 +2082,9 @@ export default function MemberHub() {
           ================================================================ */}
           <Card data-testid="card-trusted-relationships">
             <CardHeader>
-              <CardTitle>Trusted Relationships</CardTitle>
+              <CardTitle>{dashboardText("Trusted Relationships")}</CardTitle>
               <CardDescription>
-                Your cooperative network — the members who invited you and those you have welcomed.
+                {dashboardText("Your cooperative network — the members who invited you and those you have welcomed.")}
               </CardDescription>
             </CardHeader>
 
@@ -1792,11 +2093,11 @@ export default function MemberHub() {
               {/* ── Invitor ───────────────────────────────────────────────── */}
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">
-                  Invited By
+                  {dashboardText("Invited By")}
                 </div>
                 {!relationshipsData?.invitor ? (
                   <div className="rounded-lg border bg-muted/20 px-4 py-3 text-sm text-muted-foreground" data-testid="text-no-invitor">
-                    No invitor recorded for this account.
+                    {dashboardText("No invitor recorded for this account.")}
                   </div>
                 ) : (
                   <div className="rounded-lg border px-4 py-3 space-y-1" data-testid="card-invitor">
@@ -1812,24 +2113,24 @@ export default function MemberHub() {
                     )}
                     {relationshipsData.invitor.join_date && (
                       <div className="text-xs text-muted-foreground">
-                        Member since {new Date(relationshipsData.invitor.join_date).toLocaleDateString()}
+                        {dashboardText("Member since")} {new Date(relationshipsData.invitor.join_date).toLocaleDateString()}
                       </div>
                     )}
                     {/* D7: Invitation metadata for this relationship */}
                     {(relationshipsData.invitor as any).invitation_created_at && (
                       <div className="text-xs text-muted-foreground border-t pt-1 mt-1 space-y-0.5">
-                        <div><span className="font-medium text-foreground">Invited: </span>
+                        <div><span className="font-medium text-foreground">{dashboardText("Invited:")} </span>
                           {new Date((relationshipsData.invitor as any).invitation_created_at).toLocaleDateString()}
                         </div>
                         {(relationshipsData.invitor as any).invitation_status && (
-                          <div><span className="font-medium text-foreground">Status: </span>
+                          <div><span className="font-medium text-foreground">{dashboardText("Status:")} </span>
                             {(relationshipsData.invitor as any).invitation_status}
                           </div>
                         )}
                       </div>
                     )}
                     <div className="text-xs text-muted-foreground mt-1">
-                      Direct relationship source
+                      {dashboardText("Direct relationship source")}
                     </div>
                   </div>
                 )}
@@ -1839,7 +2140,7 @@ export default function MemberHub() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Members You Have Welcomed
+                    {dashboardText("Members You Have Welcomed")}
                   </div>
                   <Badge variant="outline" className="text-xs" data-testid="invitee-count">
                     {relationshipsData?.invitees?.length ?? 0}
@@ -1848,7 +2149,7 @@ export default function MemberHub() {
 
                 {!relationshipsData?.invitees?.length ? (
                   <div className="rounded-lg border bg-muted/20 px-4 py-3 text-sm text-muted-foreground" data-testid="text-no-invitees">
-                    No members welcomed yet. Send an invitation from the Invitations tab.
+                    {dashboardText("No members welcomed yet. Send an invitation from the Invitations tab.")}
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -1893,17 +2194,17 @@ export default function MemberHub() {
                           )}
                           {joinDate && (
                             <div className="text-xs text-muted-foreground">
-                              Member since {new Date(joinDate).toLocaleDateString()}
+                              {dashboardText("Member since")} {new Date(joinDate).toLocaleDateString()}
                             </div>
                           )}
                           {/* D7: Invitation metadata for this invitee relationship */}
                           {(item as any).invitation_created_at && (
                             <div className="text-xs text-muted-foreground border-t pt-1 mt-1 space-y-0.5">
-                              <div><span className="font-medium text-foreground">Invited: </span>
+                              <div><span className="font-medium text-foreground">{dashboardText("Invited:")} </span>
                                 {new Date((item as any).invitation_created_at).toLocaleDateString()}
                               </div>
                               {(item as any).invitation_status && (
-                                <div><span className="font-medium text-foreground">Status: </span>
+                                <div><span className="font-medium text-foreground">{dashboardText("Status:")} </span>
                                   {(item as any).invitation_status}
                                 </div>
                               )}
@@ -1911,7 +2212,7 @@ export default function MemberHub() {
                           )}
                           {!email && !joinDate && !(item as any).invitation_created_at && (
                             <div className="text-xs text-muted-foreground italic" data-testid={`invitee-limited-data-${idx}`}>
-                              Member profile available after account activation.
+                              {dashboardText("Member profile available after account activation.")}
                             </div>
                           )}
                         </div>
@@ -1928,9 +2229,9 @@ export default function MemberHub() {
         <TabsContent value="workspace" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Workspace</CardTitle>
+              <CardTitle>{dashboardText("Workspace")}</CardTitle>
               <CardDescription>
-                Cooperative participation and operational modules
+                {dashboardText("Cooperative participation and operational modules")}
               </CardDescription>
             </CardHeader>
 
@@ -1938,44 +2239,44 @@ export default function MemberHub() {
               <div className="grid gap-3 md:grid-cols-2">
 
                 <a href="/hub/dashboard#pipeline" className="block border rounded-lg p-3">
-                  <div className="font-medium">Idea Pipeline</div>
+                  <div className="font-medium">{dashboardText("Idea Pipeline")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Cooperative idea lifecycle
+                    {dashboardText("Cooperative idea lifecycle")}
                   </div>
                 </a>
 
                 <div className="border rounded-lg p-3">
-                  <div className="font-medium">My Contributions</div>
+                  <div className="font-medium">{dashboardText("My Contributions")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Contribution participation
+                    {dashboardText("Contribution participation")}
                   </div>
                 </div>
 
                 <div className="border rounded-lg p-3">
-                  <div className="font-medium">Programs</div>
+                  <div className="font-medium">{dashboardText("Programs")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Cooperative programs
+                    {dashboardText("Cooperative programs")}
                   </div>
                 </div>
 
                 <div className="border rounded-lg p-3">
-                  <div className="font-medium">Learning History</div>
+                  <div className="font-medium">{dashboardText("Learning History")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Learning participation
+                    {dashboardText("Learning participation")}
                   </div>
                 </div>
 
                 <div className="border rounded-lg p-3">
-                  <div className="font-medium">IELTS</div>
+                  <div className="font-medium">{dashboardText("IELTS")}</div>
                   <div className="text-xs text-muted-foreground">
-                    IELTS workspace
+                    {dashboardText("IELTS workspace")}
                   </div>
                 </div>
 
                 <div className="border rounded-lg p-3">
-                  <div className="font-medium">Multilingual</div>
+                  <div className="font-medium">{dashboardText("Multilingual")}</div>
                   <div className="text-xs text-muted-foreground">
-                    Language workspace
+                    {dashboardText("Language workspace")}
                   </div>
                 </div>
 

@@ -32,7 +32,13 @@
     "server/services/notifications.ts",
     "shared/organization/",
     "shared/schema.ts",
-    "client/src/lib/auth/PostAuthenticationContinuation.ts"
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/components/sll/InteractiveProofOfMethod.tsx",
+    "client/src/pages/LambsbookTutoring.tsx",
+    "server/services/sll-construction.ts",
+    "client/src/pages/SBUEducation.tsx",
+    "client/src/pages/HubLanding.tsx",
+    "client/src/pages/MemberHub.tsx"
   ],
   "composition_summary": {
     "founder_decision_required": {
@@ -136,7 +142,12 @@
     "client/src/pages/RecoveryRedirect.tsx",
     "client/src/pages/ResetPassword.tsx",
     "server/routes.ts",
-    "client/src/lib/auth/PostAuthenticationContinuation.ts"
+    "client/src/lib/auth/PostAuthenticationContinuation.ts",
+    "client/src/components/sll/InteractiveProofOfMethod.tsx",
+    "client/src/pages/LambsbookTutoring.tsx",
+    "server/services/sll-construction.ts",
+    "client/src/pages/SBUEducation.tsx",
+    "client/src/pages/HubLanding.tsx"
   ],
   "repository_root_admission": {
     "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",
