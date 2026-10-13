@@ -20,11 +20,14 @@
     "client/src/pages/HubLanding.tsx",
     "client/src/pages/MemberHub.tsx",
     "client/src/components/HubHeader.tsx",
-    "client/src/pages/HubAuth.tsx"
+    "client/src/pages/HubAuth.tsx",
+    "scripts/runtime-guards/evaluate-work-cycle.cjs",
+    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
   ],
   "allowed_operations": [
     "build",
-    "commit"
+    "commit",
+    "certify"
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {

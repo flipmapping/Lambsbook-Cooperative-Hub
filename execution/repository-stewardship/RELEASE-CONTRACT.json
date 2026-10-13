@@ -149,7 +149,9 @@
     "server/services/sll-construction.ts",
     "client/src/pages/SBUEducation.tsx",
     "client/src/pages/HubLanding.tsx",
-    "client/src/components/HubHeader.tsx"
+    "client/src/components/HubHeader.tsx",
+    "scripts/runtime-guards/evaluate-work-cycle.cjs",
+    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
   ],
   "repository_root_admission": {
     "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",

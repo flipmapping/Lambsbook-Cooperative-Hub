@@ -1,13 +1,13 @@
 {
   "schema": "EOS-DEPLOYMENT-PROVENANCE-v1",
-  "status": "PENDING",
+  "status": "VERIFIED",
   "authority": "Repository Stewardship",
-  "cycle_id": null,
-  "baseline_sha": null,
-  "deployment_revision": null,
-  "deployment_target": null,
-  "deployment_timestamp": null,
-  "runtime_revision": null,
-  "runtime_build_identifier": null,
-  "verification_source": null
+  "cycle_id": "WCS-GE-015-002",
+  "baseline_sha": "ff3b0ef2784829412cc66845e28e5824e5cb6db8",
+  "deployment_revision": "ff3b0ef2784829412cc66845e28e5824e5cb6db8",
+  "deployment_target": "Replit Autoscale production deployment",
+  "deployment_timestamp": "2026-10-12T17:24:23Z",
+  "runtime_revision": "ff3b0ef2784829412cc66845e28e5824e5cb6db8",
+  "runtime_build_identifier": "03386794-d436-46c9-a8ba-bcbca31038c1",
+  "verification_source": "Founder-confirmed runtime review and Replit deployment logs; deployment_id=e64e8716-32f5-4c99-a8c4-f43b11d0ea3b"
 }

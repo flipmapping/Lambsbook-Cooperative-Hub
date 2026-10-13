@@ -67,3 +67,13 @@ Founder Runtime Review
 -----------------------
 - Preview confirmed working after the HubAuth language initialization fix.
 - User and member signup intro copy is localized for English, Vietnamese, and Chinese.
+
+
+Approved deployment-provenance amendment
+-----------------------------------------
+Founder approved a narrow certification rule for Replit publish commits:
+the recorded runtime/deployment revision remains the actual build revision.
+Certification accepts later commits only when the runtime revision is an
+ancestor of HEAD and every intervening changed path is in the release
+contract's certified control-plane scope. Runtime application changes after
+deployment still fail certification.

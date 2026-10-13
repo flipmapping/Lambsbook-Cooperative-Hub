@@ -35,53 +35,79 @@ function readJson(path) {
   }
 }
 
-function readDeploymentProvenance(head) {
+function readDeploymentProvenance(head, controlPlaneScope) {
   const provenancePath =
     "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json";
 
   if (!fs.existsSync(provenancePath)) {
-    return {
-      status: "FAIL",
-      reason: "DEPLOYMENT_PROVENANCE_MISSING",
-    };
+    return { status: "FAIL", reason: "DEPLOYMENT_PROVENANCE_MISSING" };
   }
 
   let provenance;
   try {
-    provenance = JSON.parse(
-      fs.readFileSync(provenancePath, "utf8")
-    );
+    provenance = JSON.parse(fs.readFileSync(provenancePath, "utf8"));
   } catch {
-    return {
-      status: "FAIL",
-      reason: "DEPLOYMENT_PROVENANCE_INVALID_JSON",
-    };
+    return { status: "FAIL", reason: "DEPLOYMENT_PROVENANCE_INVALID_JSON" };
   }
+
+  const runtimeRevision = provenance.runtime_revision;
+  let runtimeIsAncestor = false;
+  let postDeploymentChanges = [];
+
+  if (typeof runtimeRevision === "string" && runtimeRevision.trim()) {
+    try {
+      execFileSync("git", ["merge-base", "--is-ancestor", runtimeRevision, head], {
+        stdio: "ignore",
+      });
+      runtimeIsAncestor = true;
+      postDeploymentChanges = execFileSync(
+        "git",
+        ["diff", "--name-only", `${runtimeRevision}..${head}`],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+      ).trim().split("\n").filter(Boolean);
+    } catch {
+      runtimeIsAncestor = false;
+      postDeploymentChanges = [];
+    }
+  }
+
+  const nonControlPlaneChanges = postDeploymentChanges.filter(
+    (filePath) =>
+      !controlPlaneScope.some((entry) => {
+        if (entry.endsWith("/")) return filePath.startsWith(entry);
+        return filePath === entry;
+      }),
+  );
 
   const pass =
     provenance.schema === "EOS-DEPLOYMENT-PROVENANCE-v1" &&
     provenance.status === "VERIFIED" &&
-    provenance.baseline_sha === head &&
-    provenance.deployment_revision === head &&
-    provenance.runtime_revision === head &&
+    provenance.baseline_sha === runtimeRevision &&
+    provenance.deployment_revision === runtimeRevision &&
+    runtimeIsAncestor &&
+    nonControlPlaneChanges.length === 0 &&
     Boolean(provenance.deployment_target) &&
     Boolean(provenance.deployment_timestamp) &&
     Boolean(provenance.verification_source);
 
   return {
     status: pass ? "PASS" : "FAIL",
-    reason: pass ? "DEPLOYMENT_PROVENANCE_VERIFIED" : "DEPLOYMENT_PROVENANCE_MISMATCH",
+    reason: pass
+      ? "DEPLOYMENT_PROVENANCE_VERIFIED"
+      : "DEPLOYMENT_PROVENANCE_MISMATCH",
     evidence: {
-      baseline_sha: provenance.baseline_sha ?? null,
-      deployment_revision: provenance.deployment_revision ?? null,
-      runtime_revision: provenance.runtime_revision ?? null,
+      deployed_revision: provenance.deployment_revision ?? null,
+      runtime_revision: runtimeRevision ?? null,
+      current_head: head,
+      runtime_is_ancestor: runtimeIsAncestor,
+      post_deployment_changes: postDeploymentChanges,
+      non_control_plane_changes: nonControlPlaneChanges,
       deployment_target: provenance.deployment_target ?? null,
       deployment_timestamp: provenance.deployment_timestamp ?? null,
       verification_source: provenance.verification_source ?? null,
     },
   };
 }
-
 function verifyDigest(manifestPath) {
   const digestPath = `${manifestPath}.sha256`;
 
@@ -263,7 +289,7 @@ const verificationPass =
 
 const deploymentProvenance =
   operation === "certify"
-    ? readDeploymentProvenance(head)
+    ? readDeploymentProvenance(head, controlPlaneScope)
     : {
         status: "PASS",
         reason: "DEPLOYMENT_PROVENANCE_NOT_REQUIRED_FOR_BUILD",
