@@ -39,7 +39,11 @@
     "client/src/pages/SBUEducation.tsx",
     "client/src/pages/HubLanding.tsx",
     "client/src/pages/MemberHub.tsx",
-    "client/src/components/HubHeader.tsx"
+    "client/src/components/HubHeader.tsx",
+    "client/src/pages/HubAdminDashboard.tsx",
+    "server/storage.ts",
+    "server/services/communication-resolution.ts",
+    "server/services/admin-email-drafting.ts"
   ],
   "composition_summary": {
     "founder_decision_required": {
@@ -151,7 +155,22 @@
     "client/src/pages/HubLanding.tsx",
     "client/src/components/HubHeader.tsx",
     "scripts/runtime-guards/evaluate-work-cycle.cjs",
-    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
+    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json",
+    "client/src/pages/HubAdminDashboard.tsx",
+    "server/storage.ts",
+    "shared/schema.ts",
+    "server/services/notifications.ts",
+    "server/services/communication-resolution.ts",
+    "server/services/admin-email-drafting.ts",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-APP-NOTIFY-001.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-APP-MEMBER-010.json",
+    "execution/contracts/WCS-PORTFOLIO-PRIORITIZATION-REVIEW.md",
+    "governance/rmp/APP-NOTIFY-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+    "execution/repository-stewardship/RELEASE-CONTRACT.json",
+    "execution/repository-stewardship/RELEASE-CONTRACT.json.sha256",
+    "execution/repository-stewardship/RELEASE-CONTRACT.sha256"
   ],
   "repository_root_admission": {
     "root_files": "FORBIDDEN_UNLESS_EXPLICITLY_CERTIFIED",

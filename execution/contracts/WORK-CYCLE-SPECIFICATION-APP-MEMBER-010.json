@@ -1,0 +1,193 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT_FOR_FOUNDER_REVIEW",
+  "work_cycle_id": "WCS-APP-MEMBER-010",
+  "portfolio_id": "APP-MEMBER-DASH-001",
+  "execution_stream": "MAIN_APP",
+  "task_id": "WCS-APP-MEMBER-010",
+  "priority": {
+    "rank": "P1_HIGH",
+    "rationale": "New users and members need a useful workspace and a safe way to present themselves to the website community."
+  },
+  "authority_binding": {
+    "authority_reference": "governance/rmp/MAIN_APP-IMPLEMENTATION-AUTHORITY.md",
+    "work_cycle": "WCS-APP-MEMBER-010",
+    "candidate_base_sha_source": "WORK_CYCLE_AUTHORITY",
+    "binding_status": "NEW_IMPLEMENTATION_AUTHORITY_REQUIRED"
+  },
+  "execution": {
+    "stream": "MAIN_APP",
+    "task_id": "WCS-APP-MEMBER-010",
+    "objective": "Specify a role-aware User and Member Workspace that reuses the established Member Dashboard experience, enables consent-based public profile display in website communities, and preserves the canonical invitation path for user-to-member conversion.",
+    "success_criteria": [
+      "A regular user has a useful dashboard with profile controls and learning entry points.",
+      "A member retains existing member dashboard capabilities and sees member-only features only when canonically authorized.",
+      "The shared workspace experience is based on the established MemberHub design; the primitive /hub/member page is not the design baseline.",
+      "The dashboard and server enforce user/member capability boundaries; hiding a control in the UI alone is insufficient.",
+      "A user can preview a public profile and explicitly choose whether to publish it.",
+      "A profile is private until its owner opts into publication.",
+      "The public profile projection contains only approved profile fields; private contact details are excluded unless their existing visibility settings permit disclosure.",
+      "Community cards and discovery consume the canonical profile projection and enforce visibility rules without duplicating identity data.",
+      "A user who accepts a member invitation follows APP-INV-001, keeps the same authenticated identity, and receives member capabilities only after canonical invitation acceptance.",
+      "No new identity, membership, invitation, or contact-visibility authority is created.",
+      "English, Vietnamese, and Chinese are supported for the user/member workspace entry and public-profile controls.",
+      "Founder runtime review verifies user and member access boundaries, profile visibility, community display, and invitation-based conversion.",
+      "Notification outcomes are visible and recoverable: delivery failures do not grant membership, lose invitation state, or create duplicate identities or invitations.",
+      "Notification content and recipient selection respect account state, invitation authority, privacy settings, and approved contact data.",
+      "The implementation reuses existing Resend integration, notification preferences, templates, and delivery records where available; it creates no parallel notification authority.",
+      "After admin email-template and notification management is completed and runtime-verified, required transactional messages for signup confirmation, invitation delivery/receipt, invitation acceptance, and canonical user-to-member transition use the approved existing notification pipeline.",
+      "Required onboarding and security messages remain system-managed and available regardless of a user's subscription or credit balance.",
+      "Delivery failures are visible and recoverable; they do not grant membership, lose invitation state, or create duplicate identities or invitations.",
+      "Premium notification campaigns or user-configurable paid notification services are not enabled by this WCS; a later WCS must define subscription/credit entitlements, consent, preferences, quotas, and delivery controls."
+    ],
+    "execution_class": "B",
+    "approval_boundary": "DRAFT_ONLY_IMPLEMENTATION_AUTHORITY_REQUIRED",
+    "verification_profile": "WCS_SCHEMA_AND_JSON_VALIDATION; PORTFOLIO_DEPENDENCY_REVIEW; ROLE_AND_PRIVACY_BOUNDARY_REVIEW; RELEASE_GUARD; PRODUCTION_BUILD; FOUNDER_RUNTIME_REVIEW"
+  },
+  "depends_on": [
+    "APP-MEMBER-005 — canonical member identity foundation/materialization; confirm the current runtime contract.",
+    "APP-INV-001 — reuse the canonical invitation, acceptance, and relationship journey.",
+    "APP-MEMBER-009 — consolidate the planned profile projection, contact visibility, and Community Square visibility work.",
+    "GE-RMP-014 — reuse the authorized Resend transport and preserved notification service contracts; verify current production status.",
+    "GEX-NOTIFY-001 — verify the canonical notification pipeline, templates, preferences, and delivery-status contracts.",
+    "WCS-APP-NOTIFY-001 — blocking predecessor; complete admin email-template and notification management and pass founder runtime review before dashboard onboarding notifications are enabled."
+  ],
+  "unlocks": [
+    "Role-aware User and Member Workspace MVP",
+    "Consent-based public profile cards and community discovery",
+    "A later WCS for subscription- or credit-enabled user/member notification services, after admin notification management is complete."
+  ],
+  "portfolio_binding": {
+    "parent_work_cycle": "APP-MEMBER-DASH-001",
+    "parent_name": "Main App member dashboard experience",
+    "consolidates": [
+      "APP-MEMBER-008 Sprint 5: public profile projection, contact visibility, and Community Square.",
+      "APP-MEMBER-009 Sprint 5/6: public profile projection and Community Square visibility enforcement."
+    ],
+    "related_work_cycles": [
+      "APP-INV-001",
+      "WCS-GE-015-001",
+      "WCS-GE-015-002",
+      "WCS-APP-NOTIFY-001"
+    ],
+    "sequencing_note": "The GE/SLL chain is a separate stream and does not block this work. Within this WCS, stabilize the role/visibility contract first; then build the shared dashboard and public-profile projection; then integrate community discovery and verify invitation-based role conversion."
+  },
+  "experience_contract": {
+    "capability_name": "ROLE-AWARE-USER-MEMBER-WORKSPACE",
+    "user_workspace": [
+      "Profile completion and privacy controls",
+      "Learning-related workspace entry points",
+      "Public-profile preview and opt-in publishing",
+      "Invitation receipt and a clear path to accept a member invitation"
+    ],
+    "member_workspace": [
+      "Existing member dashboard presentation and capabilities",
+      "Member-only invitations, relationships, membership, and credits, subject to canonical authorization",
+      "The same profile preview and visibility controls available to users"
+    ],
+    "public_profile": {
+      "publication": "Explicit owner opt-in after preview; private by default.",
+      "projection": "Use the canonical profile source and existing visibility registry.",
+      "community_display": "Community cards and discovery show only published, visibility-permitted fields.",
+      "private_contact_rule": "Do not expose private email, phone, or contact channels in public responses."
+    },
+    "user_to_member_transition": {
+      "authority": "APP-INV-001",
+      "trigger": "Canonical member invitation acceptance",
+      "identity_rule": "Keep the same authenticated user identity; do not create a duplicate account.",
+      "entitlement_rule": "Grant member-only capabilities only after canonical membership is established."
+    },
+    "privacy_and_authority": [
+      "Enforce visibility on server responses as well as in the interface.",
+      "Do not create a second profile, identity, membership, or invitation authority.",
+      "Do not silently publish a profile or expose unselected contact details."
+    ],
+    "notifications": {
+      "prerequisites": [
+        "Complete and runtime-verify admin email-template and notification management under its identified active WCS/authority.",
+        "Verify GE-RMP-014 Resend transport and GEX-NOTIFY-001 notification pipeline contracts and current production status."
+      ],
+      "onboarding_transactional_events": [
+        "User signup confirmation and relevant account status",
+        "Member invitation sent and received",
+        "Invitation acceptance and canonical member activation",
+        "User-to-member transition using the same authenticated identity"
+      ],
+      "transactional_rules": [
+        "Use the approved existing notification service, templates, preferences, and delivery records.",
+        "Keep necessary onboarding and security messages system-managed and independent of subscription or credit balance.",
+        "Email delivery or failure never grants membership; APP-INV-001 remains the authority for invitation acceptance.",
+        "Do not disclose private profile or contact details in notification content."
+      ],
+      "premium_notification_services": {
+        "status": "DEFERRED_TO_FUTURE_WCS",
+        "examples": [
+          "Premium-user or upgraded-member notification campaigns",
+          "Credit-funded notification top-ups or usage"
+        ],
+        "future_requirements": [
+          "Subscription and credit entitlement rules",
+          "User consent and notification preferences",
+          "Quotas, usage records, and billing/credit deduction behavior",
+          "Admin controls, abuse prevention, and delivery failure handling"
+        ]
+      }
+    }
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-APP-MEMBER-010.json",
+      "execution/contracts/WCS-PORTFOLIO-PRIORITIZATION-REVIEW.md"
+    ],
+    "forbidden_surface": [
+      "Runtime implementation before a separate implementation authority is approved",
+      "New identity or membership authority",
+      "New invitation authority",
+      "Unauthorised exposure of private profile or contact data",
+      "Granting member-only privileges to regular users",
+      "Deployment or release-certification mutation"
+    ],
+    "candidate_worktree_required": true
+  },
+  "implementation_agent": {
+    "agent": "BOUNDED_IMPLEMENTATION_WORKER",
+    "role": "SPECIFICATION_ONLY_UNTIL_NEW_AUTHORITY_IS_APPROVED",
+    "authority_boundary": [
+      "MAY_REVIEW_EXISTING_RUNTIME_AND_DEPENDENCIES",
+      "MAY_NOT_IMPLEMENT_RUNTIME_UNDER_THIS_DRAFT",
+      "MAY_NOT_CREATE_OR_MODIFY_IDENTITY_OR_MEMBERSHIP_AUTHORITY",
+      "MAY_NOT_BYPASS_APP-INV-001",
+      "MAY_NOT_EXPOSE_PRIVATE_PROFILE_DATA"
+    ]
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": "After implementation authority is approved and runtime is built, verify regular-user and member dashboards, public-profile opt-in and visibility, community display, and user-to-member invitation acceptance.",
+    "expected_outcome": "Users receive learning-oriented workspace access without member-only privileges; members retain authorized features; public profile data respects owner consent and visibility; invitation acceptance upgrades the same identity through the canonical path.",
+    "evidence_required": [
+      "URL_OR_RUNTIME_ENTRYPOINT",
+      "FOUNDER_OBSERVATION",
+      "SCREENSHOT_OR_EQUIVALENT_RUNTIME_EVIDENCE",
+      "ROLE_AND_VISIBILITY_CHECK",
+      "CONSOLE_OR_RUNTIME_STATUS"
+    ],
+    "terminal_state_on_pass": "FOUNDER_RUNTIME_VERIFIED",
+    "terminal_state_on_fail": "FOUNDER_RUNTIME_REJECTED"
+  },
+  "terminal_states": [
+    "STOP",
+    "AUTOMATED_VERIFIED",
+    "FOUNDER_RUNTIME_VERIFIED",
+    "FOUNDER_RUNTIME_REJECTED"
+  ],
+  "invariants": [
+    "THIS_DRAFT_DOES_NOT_CREATE_IMPLEMENTATION_AUTHORITY",
+    "REGULAR_USERS_NEVER_RECEIVE_MEMBER_ONLY_PRIVILEGES",
+    "PUBLIC_PROFILE_PUBLICATION_REQUIRES_OWNER_OPT_IN",
+    "PRIVATE_CONTACT_DETAILS_ARE_NOT_PUBLICLY_EXPOSED",
+    "APP-INV-001_REMAINS_THE_CANONICAL_INVITATION_PATH",
+    "NO_DUPLICATE_IDENTITY_PROFILE_MEMBERSHIP_OR_INVITATION_AUTHORITY",
+    "AUTOMATED_VERIFICATION_DOES_NOT_EQUAL_FOUNDER_VERIFICATION"
+  ]
+}

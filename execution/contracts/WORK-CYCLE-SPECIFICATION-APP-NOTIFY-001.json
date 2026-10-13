@@ -1,0 +1,198 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "FOUNDER_APPROVED",
+  "work_cycle_id": "WCS-APP-NOTIFY-001",
+  "portfolio_id": "APP-NOTIFICATION-MANAGEMENT",
+  "execution_stream": "MAIN_APP",
+  "task_id": "WCS-APP-NOTIFY-001",
+  "priority": {
+    "rank": "P1_BLOCKING",
+    "rationale": "Complete and verify administrator control of email templates and notification triggers before connecting onboarding notifications to new user and member dashboards."
+  },
+  "authority_binding": {
+    "authority_reference": "governance/rmp/APP-NOTIFY-001-IMPLEMENTATION-AUTHORITY.md",
+    "work_cycle": "WCS-APP-NOTIFY-001",
+    "candidate_base_sha_source": "WORK_CYCLE_AUTHORITY",
+    "binding_status": "ACTIVE",
+    "candidate_base_sha": "55adc27207bc567d956e9ecff4d46cb8a36f500e",
+    "current_authority_reconciliation_required": {
+      "prior_cycle": "WCS-GE-015-002",
+      "prior_cycle_status": "DEPLOYMENT_CANDIDATE",
+      "release_gate": "PASS",
+      "runtime_provenance_revision": "ff3b0ef2784829412cc66845e28e5824e5cb6db8",
+      "reconciled_at_baseline": "55adc27207bc567d956e9ecff4d46cb8a36f500e"
+    }
+  },
+  "execution": {
+    "stream": "MAIN_APP",
+    "task_id": "WCS-APP-NOTIFY-001",
+    "objective": "Complete and runtime-verify the admin notification-management workflow from multilingual template authoring through approved event triggering and auditable Resend delivery, reusing the existing authorized transport and canonical notification pipeline.",
+    "success_criteria": [
+      "Preserve the existing admin template list, create, and update capabilities and verify them against the canonical template schema.",
+      "Verify server-side administrator authorization for every template-management and notification-management endpoint.",
+      "Validate template variables against approved event payload contracts and provide an administrator preview before activation.",
+      "Define safe template lifecycle behavior, including draft and active states and a reversible retirement/archive path; preserve historical delivery records.",
+      "Make the admin trigger matrix reflect canonical runtime configuration and evidence, not a manually maintained status label alone.",
+      "Connect approved notification intents to the existing Resend delivery stage and persist accurate sent, failed, and retryable outcomes without duplicate sends.",
+      "Provide administrators with auditable delivery status and actionable failure information without exposing secrets or private recipient data.",
+      "Preserve English, Vietnamese, and Chinese template content and define behavior when a requested locale is unavailable.",
+      "Reuse GE-RMP-014 transport and GEX-NOTIFY-001 intent/pipeline contracts; do not create parallel provider, template, intent, or delivery authorities.",
+      "Keep required transactional onboarding and security notifications independent of subscription or credit balance.",
+      "Do not enable premium campaigns or credit-funded user/member notification services; those remain a later WCS.",
+      "Founder runtime review verifies administrator authorization, template lifecycle, preview/validation, trigger accuracy, successful delivery, failure handling, and audit visibility.",
+      "Administrators can create, save, and send email templates in English only, Vietnamese only, Chinese only, English and Vietnamese, or English and Chinese.",
+      "AI suggests copy for each subject and message field in every selected language; suggestions require administrator review before save, activation, or send.",
+      "Bilingual dispatch behavior is explicit and does not silently duplicate emails.",
+      "Identify the approved AI service and data-use authority before implementation; recipient personal data is not sent to the AI service."
+    ],
+    "execution_class": "B",
+    "approval_boundary": "DRAFT_ONLY_IMPLEMENTATION_AUTHORITY_REQUIRED",
+    "verification_profile": "WCS_SCHEMA_AND_JSON_VALIDATION; ADMIN_AUTHORIZATION_REVIEW; TEMPLATE_VARIABLE_AND_LIFECYCLE_REVIEW; TRIGGER_TO_RUNTIME_EVIDENCE; DELIVERY_FAILURE_AND_IDEMPOTENCY_REVIEW; RELEASE_GUARD; PRODUCTION_BUILD; FOUNDER_RUNTIME_REVIEW"
+  },
+  "depends_on": [
+    "GE-RMP-014 — reuse and verify the existing Resend transport and preserved sendNotification()/sendEmail() contracts.",
+    "GEX-NOTIFY-001 — verify the canonical notification intent, template resolver, delivery projection, and provider-adapter contracts.",
+    "Existing server-side Google Gemini integration — verify credential handling and safe template-only inputs before implementation."
+  ],
+  "unlocks": [
+    "WCS-APP-MEMBER-010 onboarding notification integration after admin notification management is runtime-verified.",
+    "A later WCS for subscription- or credit-enabled notification services, subject to explicit entitlement and consent rules."
+  ],
+  "portfolio_binding": {
+    "parent_work_cycle": "APP-MEMBER-DASH-001",
+    "related_work_cycles": [
+      "WCS-APP-MEMBER-010",
+      "APP-INV-001",
+      "GE-RMP-014",
+      "GEX-NOTIFY-001"
+    ],
+    "sequencing_note": "Complete and founder-verify this admin notification WCS before WCS-APP-MEMBER-010 wires onboarding messages into user/member dashboards. Paid notification services remain a later work cycle."
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-APP-NOTIFY-001.json"
+    ],
+    "forbidden_surface": [
+      "Runtime implementation before separate implementation authority approval",
+      "New notification provider, template, intent, or delivery authority",
+      "Subscription or credit entitlement implementation",
+      "Deployment or release-certification mutation"
+    ],
+    "candidate_worktree_required": true
+  },
+  "implementation_agent": {
+    "agent": "BOUNDED_IMPLEMENTATION_WORKER",
+    "role": "SPECIFICATION_ONLY_UNTIL_NEW_AUTHORITY_IS_APPROVED",
+    "authority_boundary": [
+      "MAY_REVIEW_EXISTING_ADMIN_AND_NOTIFICATION_RUNTIME",
+      "MAY_NOT_IMPLEMENT_RUNTIME_UNDER_THIS_DRAFT",
+      "MAY_NOT_CREATE_PARALLEL_NOTIFICATION_OR_PROVIDER_AUTHORITY",
+      "MAY_NOT_ENABLE_PAID_USER_NOTIFICATION_SERVICES"
+    ]
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": "After implementation authority is approved and runtime is built, verify administrator access, template lifecycle, event trigger accuracy, successful delivery, and failure reporting/recovery.",
+    "expected_outcome": "Authorized administrators can manage approved templates and notification triggers; runtime delivery state is accurate; provider failures remain visible and do not create duplicate or false-success outcomes.",
+    "evidence_required": [
+      "ADMIN_RUNTIME_ENTRYPOINT",
+      "FOUNDER_OBSERVATION",
+      "TEMPLATE_LIFECYCLE_EVIDENCE",
+      "TRIGGER_AND_DELIVERY_STATUS_EVIDENCE",
+      "AUTHORIZATION_AND_FAILURE_HANDLING_CHECK"
+    ],
+    "terminal_state_on_pass": "FOUNDER_RUNTIME_VERIFIED",
+    "terminal_state_on_fail": "FOUNDER_RUNTIME_REJECTED"
+  },
+  "terminal_states": [
+    "STOP",
+    "AUTOMATED_VERIFIED",
+    "FOUNDER_RUNTIME_VERIFIED",
+    "FOUNDER_RUNTIME_REJECTED"
+  ],
+  "invariants": [
+    "THIS_DRAFT_DOES_NOT_CREATE_IMPLEMENTATION_AUTHORITY",
+    "GE-RMP-014_REMAINS_THE_RESEND_TRANSPORT_AUTHORITY",
+    "GEX-NOTIFY-001_REMAINS_THE_CANONICAL_NOTIFICATION_PIPELINE",
+    "ADMIN_AUTHORIZATION_IS_ENFORCED_SERVER_SIDE",
+    "PAID_USER_NOTIFICATION_ENTITLEMENTS_ARE_OUT_OF_SCOPE",
+    "AUTOMATED_VERIFICATION_DOES_NOT_EQUAL_FOUNDER_VERIFICATION"
+  ],
+  "current_runtime_evidence": {
+    "admin_template_ui": {
+      "file": "client/src/pages/HubAdminDashboard.tsx",
+      "observed": [
+        "Template list query",
+        "Create and update controls",
+        "English, Vietnamese, and Chinese subject/message fields",
+        "Approved-variable input",
+        "Template status field"
+      ],
+      "not_established_by_inspection": [
+        "Rendered preview or test-send workflow",
+        "Template retirement/archive workflow",
+        "Whether status changes activate/deactivate templates at runtime"
+      ]
+    },
+    "template_api_and_storage": {
+      "files": [
+        "server/routes.ts",
+        "server/storage.ts",
+        "shared/schema.ts"
+      ],
+      "observed": [
+        "List, create, and partial-update handlers",
+        "Persistence methods for list, create, and update"
+      ],
+      "not_established_by_inspection": [
+        "Whether global middleware enforces administrator authorization on these routes",
+        "Template version immutability and uniqueness rules",
+        "Runtime validation of template variables against event payloads"
+      ]
+    },
+    "trigger_matrix": {
+      "file": "client/src/pages/HubAdminDashboard.tsx",
+      "observed": "The displayed event matrix is embedded in the page and labels events LIVE or Planned.",
+      "gap": "Verify each LIVE event against runtime evidence and ensure displayed statuses cannot drift from the actual trigger configuration."
+    },
+    "notification_pipeline": {
+      "file": "execution/workspace/GEX-NOTIFY-001/NOTIFICATION-PIPELINE-ACCEPTANCE.md",
+      "observed": [
+        "Creates a CommunicationIntent",
+        "Persists one NotificationIntent with pending status",
+        "Does not invoke a provider adapter at this pipeline stage"
+      ],
+      "gap": "Verify the separate delivery projection/provider stage, Resend outcome persistence, failure reporting, and retry/idempotency behavior."
+    }
+  },
+  "experience_contract": {
+    "admin_email_authoring": {
+      "supported_language_modes": [
+        "English only",
+        "Vietnamese only",
+        "Chinese only",
+        "English and Vietnamese",
+        "English and Chinese"
+      ],
+      "actions": [
+        "Create",
+        "Save",
+        "Send"
+      ],
+      "ai_assistance": {
+        "fields": [
+          "Subject",
+          "Message"
+        ],
+        "languages": "Every language selected for the template",
+        "review_rule": "Editable suggestions require explicit administrator review before saving, activation, or sending.",
+        "privacy_rule": "Do not send recipient personal data or private profile/contact details to the AI service.",
+        "authority_gate": "Founder approved Google Gemini for admin email-template drafting. Verify the existing server-side Gemini integration and credential handling before implementation; never expose credentials to the client.",
+        "provider": "Google Gemini",
+        "input_scope": "Email template subject/message text and selected language only; no recipient personal data."
+      },
+      "bilingual_dispatch": "Define whether paired languages are combined in one email or resolved by recipient preference; do not silently send duplicate emails."
+    }
+  }
+}
