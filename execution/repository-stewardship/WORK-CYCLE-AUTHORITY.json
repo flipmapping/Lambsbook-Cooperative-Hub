@@ -19,6 +19,9 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PENDING"
+    "status": "PASS",
+    "verification_owner": "REPOSITORY_STEWARD",
+    "evidence": "Read-only duplicate-package audit completed. One byte-identical LEAP-002 archive pair remains REVIEW because lifecycle status is unresolved; no cleanup was performed or authorized. Report SHA-256=29630a7f91507481b0eb1f428dd7a2cfde9d9ff55a0dec069ad333479f9a7c01; register SHA-256=658550e774e8182f51ac97d420b1fcb3b8c7a0b9c6c26abc77c217ac56e017f0.",
+    "recorded_on": "2026-10-15"
   }
 }
