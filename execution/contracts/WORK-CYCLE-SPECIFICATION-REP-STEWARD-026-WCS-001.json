@@ -1,16 +1,28 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-026-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-026-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
-    "cleanup_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
+    "cleanup_authority": "NOT_GRANTED_BY_THIS_POLICY_WCS",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Approve the recurring monthly review-and-cleanup policy direction and stage a separate WCS for implementing and activating it.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "This approval does not activate a schedule or authorize file deletion.",
+          "The implementation WCS requires separate approval.",
+          "Production artifacts and artifacts 90 days old or newer are never cleanup candidates.",
+          "Unknown production status, age, ownership, references, or recovery value excludes an artifact from automatic deletion."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Specify a recurring monthly repository hygiene cycle that reviews candidates, reports a cleanup recommendation list, and permanently removes only items satisfying the approved eligibility rules.",
