@@ -1,0 +1,109 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-027-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-027-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": []
+  },
+  "execution": {
+    "objective": "Implement and activate a recurring monthly repository hygiene review-and-cleanup process with a complete recommendation register and strict non-production and age eligibility gates.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DRAFT_FOR_IMPLEMENTATION_AND_SCHEDULE_ACTIVATION",
+    "cadence": {
+      "interval": "MONTHLY",
+      "run_day": "LAST_CALENDAR_DAY_OF_MONTH",
+      "timezone": "Asia/Singapore",
+      "order": [
+        "INVENTORY",
+        "CLASSIFY_AND_RECORD_EVIDENCE",
+        "WRITE_RECOMMENDATION_REGISTER",
+        "DELETE_ONLY_REGISTERED_ELIGIBLE_ITEMS",
+        "RECORD_DELETION_RESULTS"
+      ]
+    },
+    "deletion_policy": {
+      "production_artifacts": "NEVER_RECOMMEND_OR_DELETE",
+      "age": "Eligible only when reliable creation evidence proves age is greater than 90 days at execution time.",
+      "unknown_production_status_or_age": "EXCLUDE",
+      "uncertain_ownership_references_or_recovery_value": "EXCLUDE",
+      "approval_model": "One approved recurring WCS authorizes the eligible list as a whole; no per-item approval.",
+      "irreversibility": "Permanent deletion; record each deleted path and evidence in durable cycle output."
+    },
+    "success_criteria": [
+      "Materialize the review-and-cleanup procedure, read-only inventory, cleanup executor, review template, and monthly schedule definition.",
+      "Review and classify candidates before cleanup on each scheduled run.",
+      "Generate a complete dated report and machine-readable register before deleting anything.",
+      "Delete only paths present in that run's register with verified non-production status and reliable evidence of age greater than 90 days.",
+      "Exclude tracked or otherwise protected source-of-record items unless the implementation defines an explicit, auditable eligibility rule for them.",
+      "Fail closed when age, production status, ownership, references, or recovery value cannot be established.",
+      "Never invoke existing broad cleanup scripts.",
+      "Record schedule execution, candidate evidence, and each deletion in durable cycle evidence.",
+      "Do not change Builder behavior, runtime, packages, database, Supabase, or deployment."
+    ],
+    "proposed_outputs": [
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "scripts/repository-hygiene/cleanup-eligible-candidates.py",
+      "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+      "A last-calendar-day monthly schedule definition and durable run-evidence location"
+    ],
+    "verification_profile": "SCHEDULE_BOUNDARY; PRODUCTION_EXCLUSION; STRICT_90_DAY_GATE; FAIL_CLOSED; REGISTER_BEFORE_DELETE; DELETION_AUDIT_TRAIL"
+  },
+  "depends_on": [
+    "REP-STEWARD-025-WCS-001 Monthly Hygiene Process",
+    "REP-STEWARD-026-WCS-001 Approved Monthly Review and Cleanup Policy"
+  ],
+  "unlocks": [
+    "Recurring scheduled monthly review and cleanup after this WCS is separately approved and implementation verification passes."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "proposed_surface_if_approved": [
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "scripts/repository-hygiene/cleanup-eligible-candidates.py",
+      "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+      "A last-calendar-day monthly schedule definition and durable run-evidence location"
+    ],
+    "forbidden_surface": [
+      "Production artifacts",
+      "Artifacts 90 days old or newer",
+      "Candidates with unknown age or production status",
+      "Candidates with uncertain ownership, references, or recovery value",
+      "Existing broad cleanup scripts",
+      "Builder scripts and runtime behavior",
+      "Database, Supabase, and deployment changes"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_REPOSITORY_PROCESS",
+    "test_definition": "Validate eligibility decisions and scheduling without deleting repository files during setup.",
+    "expected_outcome": "Draft implementation WCS is staged; no schedule is activated and no cleanup is run."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_ACTIVATE_THE_SCHEDULE_UNDER_THIS_DRAFT",
+      "MAY_NOT_DELETE_OR_MOVE_FILES_UNDER_THIS_DRAFT",
+      "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS"
+    ]
+  }
+}

@@ -1,12 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-026",
-  "cycle_id": "REP-STEWARD-026-WCS-001",
-  "baseline_sha": "6a78c8c341255b6f4b6d6c6599d630d1b59c8787",
-  "branch": "rep-steward-026-oct-2026-hygiene-review",
+  "authority_id": "REP-STEWARD-027",
+  "cycle_id": "REP-STEWARD-027-WCS-001",
+  "baseline_sha": "9897194b9f3933857c073f0fb27c38f5c08c0cf5",
+  "branch": "rep-steward-027-scheduled-hygiene-review-cleanup",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-026-WCS-001.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -16,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "FOUNDER",
-    "evidence": "Founder approved the recurring last-day-of-month review-and-cleanup policy with permanent deletion limited to verified non-production artifacts older than 90 days. Schedule activation and deletion remain unauthorized until a separate implementation WCS is approved.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }
