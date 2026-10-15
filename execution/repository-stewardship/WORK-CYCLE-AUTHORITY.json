@@ -12,9 +12,11 @@
     "scripts/repository-hygiene/audit-candidates.py",
     "scripts/repository-hygiene/cleanup-eligible-candidates.py",
     "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
-    "A last-calendar-day monthly schedule definition and durable run-evidence location",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+    "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+    ".github/workflows/monthly-repository-hygiene.yml",
+    "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl"
   ],
   "allowed_operations": [
     "build",

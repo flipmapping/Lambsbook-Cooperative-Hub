@@ -61,16 +61,24 @@
       "Fail closed when age, production status, ownership, references, or recovery value cannot be established.",
       "Never invoke existing broad cleanup scripts.",
       "Record schedule execution, candidate evidence, and each deletion in durable cycle evidence.",
-      "Do not change Builder behavior, runtime, packages, database, Supabase, or deployment."
+      "Do not change Builder behavior, runtime, packages, database, Supabase, or deployment.",
+      "Create an initially empty eligibility evidence register; do not infer eligibility from filenames, modification times, or Git history alone."
     ],
     "proposed_outputs": [
       "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
       "scripts/repository-hygiene/audit-candidates.py",
       "scripts/repository-hygiene/cleanup-eligible-candidates.py",
       "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
-      "A last-calendar-day monthly schedule definition and durable run-evidence location"
+      "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      ".github/workflows/monthly-repository-hygiene.yml",
+      "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl"
     ],
-    "verification_profile": "SCHEDULE_BOUNDARY; PRODUCTION_EXCLUSION; STRICT_90_DAY_GATE; FAIL_CLOSED; REGISTER_BEFORE_DELETE; DELETION_AUDIT_TRAIL"
+    "verification_profile": "SCHEDULE_BOUNDARY; PRODUCTION_EXCLUSION; STRICT_90_DAY_GATE; FAIL_CLOSED; REGISTER_BEFORE_DELETE; DELETION_AUDIT_TRAIL",
+    "eligibility_evidence_source": {
+      "path": "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      "initial_records": [],
+      "rule": "A candidate is eligible only when this register supplies current, verifiable evidence for non-production status, creation date older than 90 days, ownership, references, and recovery value. Missing or stale evidence excludes it from both recommendation and deletion."
+    }
   },
   "depends_on": [
     "REP-STEWARD-025-WCS-001 Monthly Hygiene Process",
@@ -89,14 +97,19 @@
       "scripts/repository-hygiene/audit-candidates.py",
       "scripts/repository-hygiene/cleanup-eligible-candidates.py",
       "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
-      "A last-calendar-day monthly schedule definition and durable run-evidence location"
+      "A last-calendar-day monthly schedule definition and durable run-evidence location",
+      "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      ".github/workflows/monthly-repository-hygiene.yml",
+      "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl"
     ],
     "proposed_surface_if_approved": [
       "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
       "scripts/repository-hygiene/audit-candidates.py",
       "scripts/repository-hygiene/cleanup-eligible-candidates.py",
       "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
-      "A last-calendar-day monthly schedule definition and durable run-evidence location"
+      "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      ".github/workflows/monthly-repository-hygiene.yml",
+      "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl"
     ],
     "forbidden_surface": [
       "Production artifacts",
