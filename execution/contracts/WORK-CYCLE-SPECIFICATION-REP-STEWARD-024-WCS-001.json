@@ -1,13 +1,13 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-024-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-024-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
     "approved_amendments": [
@@ -19,6 +19,16 @@
           "The overall WCS remains a draft pending founder review.",
           "No automatic cleanup or deletion is authorized.",
           "Each cleanup run requires separate itemized authority."
+        ]
+      },
+      {
+        "scope": "Approve the monthly repository hygiene process direction and proceed to stage a separate implementation WCS.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "The monthly process must review candidates before cleanup.",
+          "No automatic deletion is authorized.",
+          "Each cleanup run requires separate itemized WCS and approval."
         ]
       }
     ]
