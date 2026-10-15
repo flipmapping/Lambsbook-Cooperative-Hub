@@ -16,6 +16,9 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PENDING"
+    "status": "PASS",
+    "verification_owner": "FOUNDER",
+    "evidence": "Founder approved the REP-STEWARD-021 lifecycle-policy direction and authorized staging a separate materialization WCS.",
+    "recorded_on": "2026-10-15"
   }
 }

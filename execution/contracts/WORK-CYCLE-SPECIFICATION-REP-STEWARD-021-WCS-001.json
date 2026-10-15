@@ -1,16 +1,27 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-021-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-021-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Approve the proposed direction in REP-STEWARD-021 and proceed to stage a separate draft WCS for lifecycle-standard materialization.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "This approval does not authorize Builder code changes.",
+          "This approval does not authorize package modification or cleanup.",
+          "WCS-022 remains a draft and requires separate review before materialization."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Prepare a bounded, reviewable Builder output lifecycle and qualification standard for this repository, based on the REP-STEWARD-020 evidence and the founder-approved direction.",
