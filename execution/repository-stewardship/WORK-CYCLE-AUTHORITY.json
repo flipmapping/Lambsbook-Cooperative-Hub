@@ -1,33 +1,29 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
-  "status": "DEPLOYMENT_CANDIDATE",
-  "authority_id": "GE-RMP-015",
-  "cycle_id": "WCS-GE-015-002",
-  "baseline_sha": "e071c0ed3d58d9b82769585ecc55eb71f71a0f16",
-  "branch": "ge-rmp-015-wcs001",
+  "status": "AUTHORIZED",
+  "authority_id": "SLL-EG-DEPTH-IELTS-001",
+  "cycle_id": "SLL-EG-DEPTH-IELTS-WCS-001",
+  "baseline_sha": "ff3b0ef2784829412cc66845e28e5824e5cb6db8",
+  "branch": "sll-example-depth-release",
   "certified_mutation_paths": [
     "client/src/components/sll/InteractiveProofOfMethod.tsx",
-    "client/src/pages/LambsbookTutoring.tsx",
-    "server/routes.ts",
-    "server/services/sll-construction.ts",
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-GE-RMP-015-WCS-GE-015-002.json",
-    "governance/rmp/GE-RMP-015-WCS-GE-015-002-IMPLEMENTATION-AUTHORITY.md",
+    "execution/contracts/SLL-EG-DEPTH-IELTS-WCS-001.json",
+    "governance/rmp/SLL-EG-DEPTH-IELTS-WCS-001-IMPLEMENTATION-AUTHORITY.md",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
-    "execution/repository-stewardship/RELEASE-CONTRACT.json",
-    "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
-    "client/src/pages/SBUEducation.tsx",
-    "client/src/pages/HubLanding.tsx",
-    "client/src/pages/MemberHub.tsx",
-    "client/src/components/HubHeader.tsx",
-    "client/src/pages/HubAuth.tsx"
+    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
   ],
   "allowed_operations": [
     "build",
-    "commit"
+    "commit",
+    "deploy",
+    "certify"
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS"
+    "status": "PASS",
+    "verification_owner": "FOUNDER",
+    "evidence": "Founder runtime review passed in English, Vietnamese, and Chinese; recorded in the SLL WCS.",
+    "recorded_on": "2026-10-15"
   }
 }
