@@ -28,6 +28,16 @@ const copy = {
     ielts: "IELTS preparation",
     level: "Example depth",
     levels: ["Basic", "Developed", "Extended", "Analytical"],
+    depthHelpTitle: "How to Use Example Depth",
+    depthHelpLead: "Learn how to build an answer—not just how to copy one.",
+    depthHelpIntro: "Choose the example depth that matches what you want to practise.",
+    depthHelpDepths: [["Basic", "See how to answer a question clearly and give a simple reason or detail."], ["Developed", "Learn how to support an idea with a reason, explanation or example."], ["Extended", "See how to connect several ideas into a fuller, well-organised response."], ["Analytical", "Learn how to compare ideas, explain consequences, consider different perspectives and qualify your opinions."]],
+    depthHelpIeltsHeading: "Which depth should I choose for IELTS?",
+    depthHelpIelts: ["Speaking Part 1: Start with Basic or Developed.", "Speaking Part 2: Practise with Developed or Extended.", "Speaking Part 3: Use Developed, Extended or Analytical, depending on the question."],
+    depthHelpIeltsNote: "These are learning suggestions, not IELTS band-score equivalents. A more complex answer does not automatically receive a higher score. Your ability to speak coherently, use vocabulary appropriately, control grammar and pronounce words clearly also matters.",
+    depthHelpMethodHeading: "The SLL practice method",
+    depthHelpSteps: ["Study the example and understand its main meaning.", "Deconstruct it to see how its ideas connect.", "Identify useful phrases and sentence patterns.", "Rebuild the answer in your own words.", "Adapt the structure to a different question.", "Speak independently without looking at the model."],
+    depthHelpReminder: "Use the example to learn how an answer works. Do not memorise it as a script. Your goal is to build a clear, natural response when the question changes.",
     task: "Your question or task",
     placeholder: "Example: What makes a good day at work?",
     generate: "Generate my example",
@@ -68,6 +78,16 @@ const copy = {
     ielts: "Luyện thi IELTS",
     level: "Độ sâu ví dụ",
     levels: ["Cơ bản", "Phát triển", "Mở rộng", "Phân tích"],
+    depthHelpTitle: "Cách sử dụng độ sâu của ví dụ",
+    depthHelpLead: "Học cách xây dựng câu trả lời—không chỉ sao chép câu trả lời mẫu.",
+    depthHelpIntro: "Hãy chọn độ sâu ví dụ phù hợp với điều bạn muốn luyện tập.",
+    depthHelpDepths: [["Cơ bản", "Xem cách trả lời câu hỏi rõ ràng và đưa ra một lý do hoặc chi tiết đơn giản."], ["Phát triển", "Học cách hỗ trợ một ý bằng lý do, lời giải thích hoặc ví dụ."], ["Mở rộng", "Xem cách kết nối nhiều ý thành một câu trả lời đầy đủ và có tổ chức."], ["Phân tích", "Học cách so sánh các ý, giải thích hệ quả, xem xét nhiều góc nhìn và nêu ý kiến có điều kiện."]],
+    depthHelpIeltsHeading: "Nên chọn độ sâu nào cho IELTS?",
+    depthHelpIelts: ["Speaking Part 1: Bắt đầu với Cơ bản hoặc Phát triển.", "Speaking Part 2: Luyện tập với Phát triển hoặc Mở rộng.", "Speaking Part 3: Tùy câu hỏi, sử dụng Phát triển, Mở rộng hoặc Phân tích."],
+    depthHelpIeltsNote: "Đây là gợi ý học tập, không tương đương với điểm band IELTS. Câu trả lời phức tạp hơn không tự động được điểm cao hơn. Khả năng nói mạch lạc, sử dụng từ vựng phù hợp, kiểm soát ngữ pháp và phát âm rõ ràng cũng rất quan trọng.",
+    depthHelpMethodHeading: "Phương pháp luyện tập SLL",
+    depthHelpSteps: ["Nghiên cứu ví dụ và hiểu ý nghĩa chính.", "Phân tích cách các ý liên kết với nhau.", "Nhận diện các cụm từ và mẫu câu hữu ích.", "Tự xây dựng lại câu trả lời bằng lời của bạn.", "Điều chỉnh cấu trúc cho một câu hỏi khác.", "Tự nói mà không nhìn vào câu trả lời mẫu."],
+    depthHelpReminder: "Hãy dùng ví dụ để học cách xây dựng câu trả lời. Đừng học thuộc ví dụ như một kịch bản. Mục tiêu là tự tạo câu trả lời rõ ràng, tự nhiên khi câu hỏi thay đổi.",
     task: "Câu hỏi hoặc đề bài",
     placeholder: "Ví dụ: Điều gì tạo nên một ngày làm việc tốt?",
     generate: "Tạo ví dụ cho tôi",
@@ -108,6 +128,16 @@ const copy = {
     ielts: "IELTS 备考",
     level: "示例深度",
     levels: ["基础", "发展", "扩展", "分析"],
+    depthHelpTitle: "如何使用示例深度",
+    depthHelpLead: "学习如何构建答案，而不只是照抄答案。",
+    depthHelpIntro: "请选择符合你练习目标的示例深度。",
+    depthHelpDepths: [["基础", "了解如何清楚地回答问题，并给出一个简单的理由或细节。"], ["展开", "学习如何用理由、解释或例子来支持一个观点。"], ["延伸", "了解如何连接多个观点，形成更完整、有条理的回答。"], ["分析", "学习如何比较观点、解释后果、考虑不同视角，并对自己的看法作出限定。"]],
+    depthHelpIeltsHeading: "备考雅思时应该选择哪种深度？",
+    depthHelpIelts: ["口语 Part 1：从基础或展开开始。", "口语 Part 2：练习展开或延伸。", "口语 Part 3：根据问题选择展开、延伸或分析。"],
+    depthHelpIeltsNote: "这些是学习建议，不代表雅思分数等级。回答更复杂并不意味着分数一定更高。表达连贯、恰当使用词汇、掌握语法以及发音清晰也同样重要。",
+    depthHelpMethodHeading: "SLL 练习方法",
+    depthHelpSteps: ["学习示例并理解其主要含义。", "拆解示例，观察观点之间如何连接。", "找出有用的短语和句型。", "用自己的话重新构建答案。", "将结构调整后用于不同的问题。", "不看示例，独立口头表达。"],
+    depthHelpReminder: "使用示例来学习答案的构建方式，不要把它背成讲稿。你的目标是在问题改变时，也能构建清晰、自然的回答。",
     task: "你的问题或题目",
     placeholder: "例如：怎样的一天才算工作顺利？",
     generate: "生成示例",
@@ -357,6 +387,37 @@ export function InteractiveProofOfMethod() {
               </select>
             </label>
           </div>
+
+          <details className="rounded-md border px-4 py-3 text-sm">
+            <summary className="cursor-pointer font-medium">
+              {t.depthHelpTitle}
+            </summary>
+            <div className="mt-3 space-y-4">
+              <div className="space-y-2">
+                <p className="font-medium">{t.depthHelpLead}</p>
+                <p>{t.depthHelpIntro}</p>
+                <ul className="list-disc space-y-1 pl-5">
+                  {t.depthHelpDepths.map(([name, description]) => (
+                    <li key={name}><strong>{name}</strong> — {description}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-semibold">{t.depthHelpIeltsHeading}</h3>
+                <ul className="list-disc space-y-1 pl-5">
+                  {t.depthHelpIelts.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+                <p className="text-muted-foreground">{t.depthHelpIeltsNote}</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-semibold">{t.depthHelpMethodHeading}</h3>
+                <ol className="list-decimal space-y-1 pl-5">
+                  {t.depthHelpSteps.map((step) => <li key={step}>{step}</li>)}
+                </ol>
+                <p>{t.depthHelpReminder}</p>
+              </div>
+            </div>
+          </details>
 
           <label className="block text-sm font-medium">
             {t.task}
