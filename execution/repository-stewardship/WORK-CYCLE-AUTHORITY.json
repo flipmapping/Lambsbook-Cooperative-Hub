@@ -1,15 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-022",
-  "cycle_id": "REP-STEWARD-022-WCS-001",
-  "baseline_sha": "6435a014d8a400f057d487430651375d3854a19b",
-  "branch": "rep-steward-022-builder-output-lifecycle-standard",
+  "authority_id": "REP-STEWARD-023",
+  "cycle_id": "REP-STEWARD-023-WCS-001",
+  "baseline_sha": "f0eb07b0496705935b3706399e39dab5657aa9fe",
+  "branch": "rep-steward-023-builder-spec-reconciliation",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-022-WCS-001.json",
-    "governance/rmp/REP-STEWARD-022-WCS-001-IMPLEMENTATION-AUTHORITY.md",
-    "execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md",
-    "execution/workspace/REP-STEWARD-022/LEAP-002-Lifecycle-Case-Record.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-023-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -19,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "REPOSITORY_STEWARD",
-    "evidence": "Materialized only the authorized lifecycle standard and LEAP-002 case record. The archive pair remains REVIEW; no Builder scripts were run and no package artifacts were changed. Standard SHA-256=d11b582c7a774d65dc7039e42d9d377ed5259deb5c07c3193356e2b209a954ce; case record SHA-256=3321b3134c44cffae4ec664a16c3b0f42e56e0e12c46b7205251971efbfb87aa.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }

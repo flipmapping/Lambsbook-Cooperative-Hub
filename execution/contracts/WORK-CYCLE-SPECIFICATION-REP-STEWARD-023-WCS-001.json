@@ -1,0 +1,84 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-023-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-023-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": []
+  },
+  "execution": {
+    "objective": "Reconcile the existing Builder process specifications with the approved Builder Output Lifecycle and Qualification Standard through bounded documentation edits.",
+    "execution_class": "C",
+    "approval_boundary": "DOCUMENTATION_ONLY_WCS_DRAFT",
+    "success_criteria": [
+      "Compare each authorized Builder document with execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md and record its current status, scope, and conflicts.",
+      "Align lifecycle terms, qualification language, lineage requirements, and delivery-candidate wording with the new standard.",
+      "Clarify the relationship between the Builder process specifications and PIC-001 without silently declaring any existing authority superseded.",
+      "Preserve BOQ-001 and PIC-001 unchanged; identify any unresolved precedence issue for a separate founder decision.",
+      "Retain each document's scope and requirements except where an explicit reconciliation is necessary and supported by this WCS.",
+      "Create a reconciliation report under execution/workspace/REP-STEWARD-023/ listing each document and its resulting alignment.",
+      "Do not edit, run, or regenerate Builder scripts or packages.",
+      "Do not move, rename, archive, or delete files.",
+      "No runtime, database, Supabase, deployment, or secret-value changes."
+    ],
+    "verification_profile": "DOCUMENT_SCOPE_REVIEW; LIFECYCLE_TERM_ALIGNMENT; PIC001_AND_BOQ001_PRESERVATION; DIFF_CHECK"
+  },
+  "depends_on": [
+    "REP-STEWARD-022-WCS-001 Builder Output Lifecycle Standard",
+    "PIC-001 Package Is The Contract",
+    "BOQ-001 Builder v1.2 Operational Qualification"
+  ],
+  "unlocks": [
+    "A separate Builder implementation WCS only if documentation reconciliation exposes a necessary runtime change.",
+    "Any package cleanup only under a separate itemized WCS and authority."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-023-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "proposed_documentation_surface_if_approved": [
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md",
+      "execution/builders/docs/BUILDER-RUNTIME-CONTRACT.md",
+      "execution/builder/delivery/BUILDER-MATERIALIZATION-SPECIFICATION.md",
+      "execution/workspace/REP-STEWARD-023/Builder-Specification-Reconciliation-Report.md"
+    ],
+    "forbidden_surface": [
+      "Builder scripts and runtime behavior",
+      "Package artifacts and package-generation outputs",
+      "Deletion, movement, rename, archive, or cleanup",
+      "PIC-001 and BOQ-001",
+      "Deployment, database, Supabase, and secret values"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_DOCUMENTATION_ONLY",
+    "test_definition": "No runtime change is authorized.",
+    "expected_outcome": "A draft WCS is staged for founder review; no Builder specification is edited in this cycle."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_EDIT_BUILDER_DOCUMENTS_UNTIL_THIS_WCS_IS_APPROVED",
+      "MAY_NOT_CHANGE_OR_RUN_BUILDER_SCRIPTS",
+      "MAY_NOT_MODIFY_OR_REMOVE_PACKAGES",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}
