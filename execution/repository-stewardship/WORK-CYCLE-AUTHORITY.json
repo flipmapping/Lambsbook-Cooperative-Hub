@@ -1,29 +1,21 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "SLL-EG-DEPTH-IELTS-001",
-  "cycle_id": "SLL-EG-DEPTH-IELTS-WCS-001",
-  "baseline_sha": "ff3b0ef2784829412cc66845e28e5824e5cb6db8",
-  "branch": "sll-example-depth-release",
+  "authority_id": "REP-STEWARD-018",
+  "cycle_id": "REP-STEWARD-018-WCS-001",
+  "baseline_sha": "f60b422f3611b502887196ccae82e846b0737627",
+  "branch": "rep-steward-018-dead-artifact-validation",
   "certified_mutation_paths": [
-    "client/src/components/sll/InteractiveProofOfMethod.tsx",
-    "execution/contracts/SLL-EG-DEPTH-IELTS-WCS-001.json",
-    "governance/rmp/SLL-EG-DEPTH-IELTS-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-018-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
-    "execution/repository-stewardship/DEPLOYMENT-PROVENANCE.json"
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
   "allowed_operations": [
     "build",
-    "commit",
-    "deploy",
-    "certify"
+    "commit"
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "FOUNDER",
-    "evidence": "Founder runtime review passed in English, Vietnamese, and Chinese; recorded in the SLL WCS.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }

@@ -1,0 +1,104 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-018-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-018-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Stage a read-only validation WCS for existing repository cleanup candidates.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "No deletion, movement, rename, archive, or ignore-rule changes.",
+          "Do not execute existing cleanup scripts.",
+          "Do not inspect secret contents or alter runtime files.",
+          "Any cleanup requires a later, itemized authority."
+        ]
+      }
+    ]
+  },
+  "execution": {
+    "objective": "Refresh and validate the existing repository cleanup candidate evidence against the current repository state, then produce an evidence-backed classification and recommendations without changing repository contents.",
+    "execution_class": "C",
+    "approval_boundary": "READ_ONLY_VALIDATION_WCS_DRAFT",
+    "success_criteria": [
+      "Reassess the July 2026 REP-STEWARD-009 and EOS-REPO-001A findings against the actual audit-time checkout; do not treat their classifications as current facts.",
+      "Inventory tracked, untracked, and ignored paths separately, recording metadata only for ignored and secret-related paths.",
+      "For each existing cleanup candidate, record current existence, Git tracking/status, relevant history or references, evidence source, confidence, and disposition: PROTECTED, ACTIVE, REVIEW, MISSING, or UNKNOWN.",
+      "Statically inspect the existing stage-two candidate and execution scripts; record their broad filename-pattern and recursive-deletion behavior without executing them.",
+      "Exclude .git internals, do not follow paths outside the repository root, and do not read secret values.",
+      "Produce a human-readable report and machine-readable candidate register under execution/workspace/REP-STEWARD-018/ only after a separate implementation authority is approved.",
+      "Make clear that a candidate classification or recommendation does not authorize deletion or movement.",
+      "No files are deleted, moved, renamed, archived, or edited during this validation cycle."
+    ],
+    "verification_profile": "CURRENT_CHECKOUT_EVIDENCE; GIT_STATUS_AND_HISTORY_REVIEW; STATIC_SCRIPT_REVIEW; NO_CLEANUP_EXECUTION"
+  },
+  "depends_on": [
+    "REP-STEWARD-009 Repository Stewardship Baseline",
+    "REP-STEWARD-007 Repository Contamination Register",
+    "EOS-REPO-001A cleanup candidate artifacts under GP-EXEC-010M-06A"
+  ],
+  "unlocks": [
+    "A separately reviewed, itemized cleanup WCS if the validation report supports cleanup."
+  ],
+  "current_state_evidence": {
+    "verified": [
+      "REP-STEWARD-009 records discovery complete and cleanup not started, with Dead Artifact Validation as the first recommended authority.",
+      "REP-STEWARD-014 through REP-STEWARD-017 concern authority registries, registry integrity, relationships, and adoption readiness.",
+      "The inspected EOS-REPO-001A execution script recursively removes broad classes of backup/candidate files and selected recovery directories."
+    ],
+    "not_yet_evidenced": [
+      "Whether the July 2026 candidate list matches current repository contents.",
+      "Whether each candidate is referenced by current authority, build, runtime, recovery, or audit workflows.",
+      "The current counts and disposition of tracked, untracked, and ignored candidate paths."
+    ]
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-018-WCS-001.json"
+    ],
+    "forbidden_surface": [
+      "All deletion, move, rename, archive, or cleanup execution",
+      "Existing stage-two cleanup execution script",
+      "Runtime application files",
+      "Secrets and environment values",
+      ".git internals",
+      "Deployment, database, and Supabase files"
+    ],
+    "candidate_worktree_required": true
+  },
+  "validation_cases": [
+    "A tracked backup or pre-mutation file is not classified as dead solely because of its name.",
+    "A missing historical candidate is reported as missing, not deleted or silently discarded.",
+    "Secret files are counted or classified by path metadata only; their contents are never read.",
+    "The existing recursive cleanup script is reviewed statically and never invoked.",
+    "Candidates with uncertain ownership, references, or recovery value remain UNKNOWN or REVIEW.",
+    "The validation report makes no cleanup recommendation without evidence and per-item disposition."
+  ],
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_READ_ONLY_REPOSITORY_VALIDATION",
+    "test_definition": "No application runtime change is authorized.",
+    "expected_outcome": "A reviewed, evidence-backed candidate assessment with no repository cleanup performed."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "NO_CLEANUP_IMPLEMENTATION_AUTHORITY",
+    "authority_boundary": [
+      "MAY_DERIVE_AND_REVIEW_THIS_WCS",
+      "MAY_NOT_DELETE_OR_MOVE_REPOSITORY_FILES",
+      "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}
