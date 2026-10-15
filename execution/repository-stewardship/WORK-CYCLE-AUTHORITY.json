@@ -1,12 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-024",
-  "cycle_id": "REP-STEWARD-024-WCS-001",
-  "baseline_sha": "21e96fe5d927abcbd1da36d53dc3f146e535450f",
-  "branch": "rep-steward-024-periodic-repository-hygiene",
+  "authority_id": "REP-STEWARD-025",
+  "cycle_id": "REP-STEWARD-025-WCS-001",
+  "baseline_sha": "e88285a38d48980d2ffe6db5e3c4f8050eea2562",
+  "branch": "rep-steward-025-monthly-hygiene-process",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-024-WCS-001.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-025-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -16,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "FOUNDER",
-    "evidence": "Founder approved the monthly cadence and the REP-STEWARD-024 periodic hygiene process direction.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }
