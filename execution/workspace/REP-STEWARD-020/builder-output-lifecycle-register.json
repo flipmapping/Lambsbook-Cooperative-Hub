@@ -1,0 +1,125 @@
+{
+  "schema": "REP-STEWARD-020-BUILDER-OUTPUT-LIFECYCLE-REGISTER-v1",
+  "cycle_id": "REP-STEWARD-020-WCS-001",
+  "review_timestamp_utc": "2026-10-15T08:44:37.332138+00:00",
+  "branch": "rep-steward-020-builder-output-governance",
+  "head_at_review": "a4b5865453eec9503dfe3bbe6a22f11f75f56e30",
+  "review_status": "FOUNDER_REVIEW_REQUIRED",
+  "cleanup_authority": "NOT_GRANTED",
+  "builder_scripts_executed": false,
+  "package_artifacts_modified": false,
+  "source_assessments": [
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "sha256": "cd064593a12503565422f5d96d92739f6f2f5c5b5147a6173271ee56f44c5b36",
+      "recorded_status_or_scope": "ACTIVE",
+      "review_finding": "Specifies one CIB input and outputs a package directory, ZIP, digest, manifest, and pass/fail report."
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "sha256": "b9063841676c19bad9e3b50c664caa8c84beb81104a3b741396546980063d922",
+      "recorded_status_or_scope": "ACTIVE",
+      "review_finding": "Requires Implementation Authority and CIB inputs; lists derived governance artifacts and package outputs."
+    },
+    {
+      "path": "execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md",
+      "sha256": "84bbccc37ec9cc9814b2b73504bb1737e6c05956d90d6e77b13bd3786e580a7f",
+      "recorded_status_or_scope": "ACTIVE",
+      "review_finding": "Describes a canonical package from certified artifacts, with bootstrap, approved Repository Truth, and materialized CIB preconditions."
+    },
+    {
+      "path": "execution/builders/docs/BUILDER-RUNTIME-CONTRACT.md",
+      "sha256": "d4fce60cdb380c6b683dee49e48546949bb498ce9c905416fd80f7e1a56cc23e",
+      "recorded_status_or_scope": "CERTIFIED",
+      "review_finding": "Names the Builder entrypoint, but launcher, canonical invocation, and qualification evidence remain to be recorded."
+    },
+    {
+      "path": "execution/builder/delivery/BUILDER-MATERIALIZATION-SPECIFICATION.md",
+      "sha256": "792c4bd98bba517da8031ebb8091ed02c67bd432dd9725ba07ef78ef1a76fbc2",
+      "recorded_status_or_scope": "FAB-GE-004 SPECIFICATION",
+      "review_finding": "A specific v1.2 package mission; repository mutation is not authorized by that specification."
+    },
+    {
+      "path": "execution/standards/PIC-001-PACKAGE-IS-THE-CONTRACT.md",
+      "sha256": "0050534d8074f996c170903cb15c88598ef9e1ea5b1887007a096ec36675eb74",
+      "recorded_status_or_scope": "APPROVED FOR BUILDER EVOLUTION",
+      "review_finding": "Says the certified package is the execution contract and requires deterministic, interpretation-free packaging."
+    },
+    {
+      "path": "governance/execution/BOQ-001-BUILDER-V1.2-OPERATIONAL-QUALIFICATION.md",
+      "sha256": "d36351e9f65763736788bc90edb36040ead10d49d14e3adeb4a50c84ebb5dc3c",
+      "recorded_status_or_scope": "CERTIFIED / FROZEN",
+      "review_finding": "Certifies Builder v1.2 and says mutation requires a separate bounded authority."
+    },
+    {
+      "path": "execution/builder-specifications/BUILDER-LIFECYCLE-CONFORMANCE-SPEC.json",
+      "sha256": "87ae46e71fbfa416e3028e5ab5e91ba3da0d1e5b133dc712a907016df1ee1a18",
+      "recorded_status_or_scope": "SEPARATE REPOSITORY SCOPE",
+      "review_finding": "Names Open Brain / Builder Repository; treat as comparative evidence, not controlling LCH authority."
+    },
+    {
+      "path": "execution/packages/LEAP-PKG-001/builder-review/LEAP-002-ARTIFACT-CLASSIFICATION.json",
+      "sha256": "6197a8028f4e66c52942d27328ff05c3c2e23d9f03941a5c1faaa3a233cf402f",
+      "recorded_status_or_scope": "LIFECYCLE UNRESOLVED",
+      "review_finding": "Requires a decision on whether derived artifacts exist before Builder invocation or are materialized by the pipeline."
+    },
+    {
+      "path": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC-QUALIFICATION.json",
+      "sha256": "d988aca5eb964fa3f21ef8c62ac938e1b574b5ac04f47c4bc4d5bacd83150c24",
+      "recorded_status_or_scope": "NOT_QUALIFIED",
+      "review_finding": "Generated LEAP-002 archive has one entry and is not qualified."
+    },
+    {
+      "path": "execution/builder/delivery/candidate-packages.json",
+      "sha256": "4f7810d4381ef83236b97732b7aa3c19e5d6e499c47b7a38c6b76ec45632b669",
+      "recorded_status_or_scope": "DELIVERY CANDIDATES",
+      "review_finding": "Lists generated and materialized LEAP-002 ZIPs with the same hash, empty builder evidence, and score zero."
+    }
+  ],
+  "authority_synthesis": {
+    "certified_builder": "BOQ-001 certifies Builder v1.2 as frozen; mutation requires a separate bounded authority.",
+    "document_alignment": "Three documents marked ACTIVE describe overlapping but differing input and materialization requirements; inspected sources do not establish a precedence rule.",
+    "runtime_contract_gap": "The certified runtime contract leaves canonical invocation and qualification evidence to be recorded.",
+    "external_spec_limit": "The lifecycle conformance spec targets a separate Open Brain / Builder repository and is not treated as LCH authority."
+  },
+  "leap_002_case": {
+    "generated_path": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+    "materialized_path": "execution/packages/LEAP-002/materialized/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+    "content_identity": "BYTE_IDENTICAL; same single 820-byte PIC member",
+    "qualification_status": "NOT_QUALIFIED",
+    "classification_status": "AWAITING_DERIVED_ARTIFACT_CLASSIFICATION",
+    "delivery_records": [
+      {
+        "path": "execution/packages/LEAP-002/generated/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+        "size": 628,
+        "sha256": "1c2e619e8ce40dd23ca2ea30253e58358b29cdfce184d267f38f3c2c322ce057",
+        "entries": 1,
+        "builder_evidence": [],
+        "builder_score": 0
+      },
+      {
+        "path": "execution/packages/LEAP-002/materialized/LEAP-IMPLEMENT-001-SLICE-001-PIC.zip",
+        "size": 628,
+        "sha256": "1c2e619e8ce40dd23ca2ea30253e58358b29cdfce184d267f38f3c2c322ce057",
+        "entries": 1,
+        "builder_evidence": [],
+        "builder_score": 0
+      }
+    ],
+    "disposition": "REVIEW",
+    "cleanup_recommendation": "NONE",
+    "reason": "The content matches, but artifact lifecycle and purpose remain unresolved by the controlling evidence reviewed."
+  },
+  "founder_decisions_requested": [
+    "Which current Builder contract/specification governs when the ACTIVE documents differ?",
+    "What is the authoritative transition from generated to materialized?",
+    "What qualification evidence is required before an artifact may enter delivery candidates?",
+    "Should a materialized copy be retained separately when byte-identical to its generated source?"
+  ],
+  "limitations": [
+    "This review interprets the listed documentation and records; it does not certify Builder runtime behavior.",
+    "No Builder or cleanup scripts were executed.",
+    "No package was regenerated, modified, moved, archived, or deleted.",
+    "Lifecycle classification does not authorize cleanup."
+  ]
+}
