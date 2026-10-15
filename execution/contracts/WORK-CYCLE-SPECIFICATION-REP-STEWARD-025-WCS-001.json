@@ -1,16 +1,28 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-025-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-025-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Implement the monthly repository hygiene process, read-only inventory tool, and review template described in this WCS.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "The inventory tool must not alter repository files.",
+          "No automatic deletion, movement, renaming, or archiving.",
+          "Each cleanup run requires separate itemized WCS and founder approval.",
+          "Do not execute existing broad cleanup scripts."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Implement the approved monthly, review-led repository hygiene process with read-only candidate discovery and a separate itemized approval gate for cleanup.",
@@ -54,7 +66,11 @@
     "authorized_surface": [
       "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-025-WCS-001.json",
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "governance/rmp/REP-STEWARD-025-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "execution/workspace/REP-STEWARD-025/monthly-review-template.md"
     ],
     "proposed_surface_if_approved": [
       "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
@@ -81,12 +97,12 @@
     "REJECTED"
   ],
   "implementation_agent": {
-    "role": "WCS_DRAFT_ONLY",
+    "role": "MONTHLY_READ_ONLY_HYGIENE_PROCESS",
     "authority_boundary": [
-      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
-      "MAY_NOT_RUN_MONTHLY_CLEANUP_UNDER_THIS_DRAFT",
+      "MAY_CREATE_ONLY_THE_AUTHORIZED_PROCESS_TOOL_AND_TEMPLATE",
       "MAY_NOT_DELETE_MOVE_RENAME_OR_ARCHIVE_FILES",
       "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS",
+      "MAY_NOT_CHANGE_BUILDER_RUNTIME_OR_PACKAGES",
       "MAY_NOT_DEPLOY"
     ]
   }

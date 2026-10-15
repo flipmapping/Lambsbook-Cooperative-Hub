@@ -7,6 +7,10 @@
   "branch": "rep-steward-025-monthly-hygiene-process",
   "certified_mutation_paths": [
     "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-025-WCS-001.json",
+    "governance/rmp/REP-STEWARD-025-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+    "scripts/repository-hygiene/audit-candidates.py",
+    "execution/workspace/REP-STEWARD-025/monthly-review-template.md",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
