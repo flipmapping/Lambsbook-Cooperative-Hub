@@ -30,16 +30,18 @@
     },
     "deletion_policy": {
       "production_artifacts": "NEVER_RECOMMEND_OR_DELETE",
-      "age": "Eligible only when reliable creation evidence proves age is greater than 90 days at execution time.",
-      "unknown_production_status_or_age": "EXCLUDE",
+      "age": "Artifacts 90 days old or newer must never be recommended or deleted. Recommend or delete only when reliable creation evidence proves age is greater than 90 days.",
+      "unknown_production_status_or_age": "NEVER_RECOMMEND_OR_DELETE",
       "uncertain_ownership_references_or_recovery_value": "EXCLUDE",
       "approval_model": "One approved recurring WCS authorizes the eligible list as a whole; no per-item approval.",
-      "irreversibility": "Permanent deletion; record each deleted path and evidence in durable cycle output."
+      "irreversibility": "Permanent deletion; record each deleted path and evidence in durable cycle output.",
+      "recommendation_eligibility": "Recommend and delete only when reliable evidence establishes non-production status and age greater than 90 days at run time."
     },
     "success_criteria": [
       "Materialize the review-and-cleanup procedure, read-only inventory, cleanup executor, review template, and monthly schedule definition.",
       "Review and classify candidates before cleanup on each scheduled run.",
       "Generate a complete dated report and machine-readable register before deleting anything.",
+      "Never include production artifacts or artifacts 90 days old or newer in the cleanup recommendation list or deletion set.",
       "Delete only paths present in that run's register with verified non-production status and reliable evidence of age greater than 90 days.",
       "Exclude tracked or otherwise protected source-of-record items unless the implementation defines an explicit, auditable eligibility rule for them.",
       "Fail closed when age, production status, ownership, references, or recovery value cannot be established.",
@@ -83,7 +85,9 @@
       "Candidates with uncertain ownership, references, or recovery value",
       "Existing broad cleanup scripts",
       "Builder scripts and runtime behavior",
-      "Database, Supabase, and deployment changes"
+      "Database, Supabase, and deployment changes",
+      "Recommendation or deletion of production artifacts",
+      "Recommendation or deletion of artifacts 90 days old or newer"
     ],
     "candidate_worktree_required": true
   },
