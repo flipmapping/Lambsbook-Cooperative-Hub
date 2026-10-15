@@ -1,15 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-020",
-  "cycle_id": "REP-STEWARD-020-WCS-001",
-  "baseline_sha": "bdcd2a2fccdd2977bf828a4023e0a01dbc87b0d9",
-  "branch": "rep-steward-020-builder-output-governance",
+  "authority_id": "REP-STEWARD-021",
+  "cycle_id": "REP-STEWARD-021-WCS-001",
+  "baseline_sha": "f3b4b7af1b81cd0a84a88adaebfb542b570ccf2b",
+  "branch": "rep-steward-021-builder-lifecycle-policy",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-020-WCS-001.json",
-    "governance/rmp/REP-STEWARD-020-WCS-001-IMPLEMENTATION-AUTHORITY.md",
-    "execution/workspace/REP-STEWARD-020/Builder-Output-Lifecycle-Review.md",
-    "execution/workspace/REP-STEWARD-020/builder-output-lifecycle-register.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-021-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -19,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "FOUNDER",
-    "evidence": "Founder reviewed and approved continuation from the bounded lifecycle review. LEAP-002 generated/materialized pair remains REVIEW; no cleanup or Builder changes were authorized. Report SHA-256=78eababda5c5a3612af0a5f000d3aa6ac3611b9664da27bd479ff0b2f74cc178; register SHA-256=b15d7fe3397bbab7beac4c7473d5659ea94af472ea642122d913a9da5e35fcf8.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }
