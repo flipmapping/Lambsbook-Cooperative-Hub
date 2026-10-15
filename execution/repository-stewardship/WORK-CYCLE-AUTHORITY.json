@@ -19,6 +19,9 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PENDING"
+    "status": "PASS",
+    "verification_owner": "REPOSITORY_STEWARD",
+    "evidence": "Read-only candidate inventory and static script review completed. Report SHA-256=6539073b49d101a7a3410dc1a4307dc446be7953c8743f65f35cb1135d58f40d; register SHA-256=fe0df3095e577d5687e2c01f9516fc23fd12ae83c47465e500b5cd9dd46621a1. No cleanup scripts were executed and no pre-existing repository files were modified.",
+    "recorded_on": "2026-10-15"
   }
 }
