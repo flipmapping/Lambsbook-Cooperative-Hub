@@ -1,16 +1,27 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-028-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-028-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Approve the bounded mainline-port plan and its enumerated path list.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "This WCS authorizes planning only.",
+          "A separate WCS is required to port implementation files.",
+          "No schedule activation or cleanup is authorized here."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Prepare a bounded mainline port plan for the approved monthly hygiene process, excluding unrelated historical changes.",
@@ -23,7 +34,21 @@
       "Do not copy or modify implementation files in this cycle.",
       "Do not activate the schedule or execute cleanup."
     ],
-    "verification_profile": "MAINLINE_BASELINE_REVIEW; EXACT_PATH_SCOPE; GOVERNANCE_CONTINUITY; NO_IMPLEMENTATION"
+    "verification_profile": "MAINLINE_BASELINE_REVIEW; EXACT_PATH_SCOPE; GOVERNANCE_CONTINUITY; NO_IMPLEMENTATION",
+    "proposed_mainline_port_paths": [
+      ".github/workflows/monthly-repository-hygiene.yml",
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+      "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl",
+      "governance/rmp/REP-STEWARD-027-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "scripts/repository-hygiene/cleanup-eligible-candidates.py"
+    ],
+    "port_boundary": "Port only these approved hygiene-cycle paths; do not import the source branch's unrelated historical commits. Rebind authority to the mainline baseline in the separate implementation WCS."
   },
   "depends_on": [
     "REP-STEWARD-027-WCS-001"
