@@ -1,0 +1,81 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-022-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-022-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": []
+  },
+  "execution": {
+    "objective": "Materialize a bounded repository Builder output lifecycle and qualification standard, plus a LEAP-002 case record, after this WCS receives separate founder approval.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DRAFT_ONLY",
+    "design_direction_for_review": [
+      "Use PIC-001 as the contract for the execution package consumed by implementation engines; document how the active Builder process specifications relate to it without silently superseding them.",
+      "Define generated output as a Builder-produced candidate and materialized output as a persisted artifact whose lineage and integrity are recorded.",
+      "Require a passing qualification record, integrity evidence, source authority lineage, and a manifest before representing an output as delivery-ready.",
+      "Keep the identical LEAP-002 generated/materialized pair under REVIEW until authoritative evidence establishes its lifecycle roles."
+    ],
+    "success_criteria": [
+      "Create the lifecycle standard at execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md.",
+      "Create a LEAP-002 case record under execution/workspace/REP-STEWARD-022/ documenting the identical pair, NOT_QUALIFIED state, empty builder evidence, score zero, and unresolved lifecycle classification.",
+      "Define lifecycle state ownership, provenance, allowed transitions, qualification requirements, delivery-candidate eligibility, and exception handling.",
+      "Reconcile PIC-001, the active Builder contract/specification documents, the certified runtime contract, and BOQ-001; document unresolved precedence questions.",
+      "State clearly that identical content does not establish redundant purpose or authorize deletion.",
+      "Do not edit or execute Builder scripts.",
+      "Do not regenerate, overwrite, move, archive, or delete package artifacts.",
+      "Do not deploy or change runtime, database, Supabase, or secret values."
+    ],
+    "verification_profile": "SOURCE_AUTHORITY_RECONCILIATION; LIFECYCLE_RULE_REVIEW; QUALIFICATION_GATE_REVIEW; LEAP_002_CASE_REVIEW; DIFF_CHECK"
+  },
+  "depends_on": [
+    "REP-STEWARD-019-WCS-001 Duplicate Package Validation",
+    "REP-STEWARD-020-WCS-001 Builder Output Lifecycle Review",
+    "REP-STEWARD-021-WCS-001 Builder Lifecycle Policy Direction"
+  ],
+  "unlocks": [
+    "Future Builder implementation changes only under a separate bounded authority.",
+    "Any package cleanup only under a separate itemized WCS and authority."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-022-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "forbidden_surface": [
+      "Builder scripts and runtime behavior",
+      "Package creation, regeneration, overwrite, or mutation",
+      "Deletion, movement, rename, archive, or cleanup",
+      "Deployment, database, Supabase, and secret values"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_DOCUMENTATION_ONLY",
+    "test_definition": "No runtime change is authorized.",
+    "expected_outcome": "A WCS draft is staged for founder review; no lifecycle standard or case record is created in this cycle."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_CREATE_THE_LIFECYCLE_STANDARD_UNDER_THIS_DRAFT",
+      "MAY_NOT_CHANGE_OR_RUN_BUILDER_SCRIPTS",
+      "MAY_NOT_REGENERATE_OR_MODIFY_PACKAGES",
+      "MAY_NOT_DELETE_OR_MOVE_FILES",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}

@@ -1,12 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-021",
-  "cycle_id": "REP-STEWARD-021-WCS-001",
-  "baseline_sha": "f3b4b7af1b81cd0a84a88adaebfb542b570ccf2b",
-  "branch": "rep-steward-021-builder-lifecycle-policy",
+  "authority_id": "REP-STEWARD-022",
+  "cycle_id": "REP-STEWARD-022-WCS-001",
+  "baseline_sha": "6435a014d8a400f057d487430651375d3854a19b",
+  "branch": "rep-steward-022-builder-output-lifecycle-standard",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-021-WCS-001.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-022-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -16,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "FOUNDER",
-    "evidence": "Founder approved the REP-STEWARD-021 lifecycle-policy direction and authorized staging a separate materialization WCS.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }
