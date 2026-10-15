@@ -1,0 +1,48 @@
+name: Monthly repository hygiene
+
+on:
+  schedule:
+    - cron: "17 23 28-31 * *"
+      timezone: "Asia/Singapore"
+    - cron: "47 23 28-31 * *"
+      timezone: "Asia/Singapore"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-repository-hygiene
+  cancel-in-progress: false
+
+jobs:
+  review-and-clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create current read-only inventory
+        run: python3 scripts/repository-hygiene/audit-candidates.py > "$RUNNER_TEMP/repository-inventory.json"
+      - name: Review and clean eligible registered artifacts
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            python3 scripts/repository-hygiene/cleanup-eligible-candidates.py \
+              --inventory "$RUNNER_TEMP/repository-inventory.json" --apply
+          else
+            python3 scripts/repository-hygiene/cleanup-eligible-candidates.py \
+              --inventory "$RUNNER_TEMP/repository-inventory.json" --dry-run
+          fi
+      - name: Persist scheduled run evidence and eligible deletions
+        if: github.event_name == 'schedule'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl
+          git add -u
+          if ! git diff --cached --quiet; then
+            git commit -m "Record monthly repository hygiene run"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

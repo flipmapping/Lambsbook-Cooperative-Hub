@@ -1,0 +1,5 @@
+{
+  "schema": "MONTHLY-HYGIENE-ELIGIBILITY-REGISTER-v1",
+  "policy": "Entries require current evidence for non-production status, age greater than 90 days, ownership, references, and recovery value. Missing or uncertain evidence excludes the item from recommendation and deletion.",
+  "entries": []
+}

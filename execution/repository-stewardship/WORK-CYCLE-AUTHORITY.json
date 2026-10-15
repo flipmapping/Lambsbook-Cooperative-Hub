@@ -24,6 +24,9 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PENDING"
+    "status": "PASS",
+    "verification_owner": "REPOSITORY_STEWARD",
+    "evidence": "Cleanup tool inventory handling was corrected for ignored-path metadata. Read-only inventory and cleanup dry run completed successfully: 4813 tracked, 4 untracked, 0 ignored; zero recommendations and zero deletions. Eligibility register remains empty. No cleanup was applied. Cleanup tool SHA-256=7658d6c75af3da209e40750a1f647ccf63bb5e51ef671590df52df291f7e19da; workflow SHA-256=083f40ded3c3a20624bc48ffb98916e0c3020150eb607d14a85c3b2d86e2ff52.",
+    "recorded_on": "2026-10-15"
   }
 }

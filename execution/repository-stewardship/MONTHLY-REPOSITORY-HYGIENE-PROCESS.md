@@ -2,51 +2,44 @@
 
 Status
 ------
-Founder-approved process under REP-STEWARD-025-WCS-001.
+Implemented under REP-STEWARD-027-WCS-001.
 
-## Cadence and ownership
+## Schedule
 
-Run one review each month. The Repository Steward initiates the cycle, records
-the repository branch and revision, and presents the report and candidate
-register for founder review.
+GitHub Actions checks on the 28th through 31st at 23:17 and 23:47
+Asia/Singapore time. The executor proceeds only on the actual last calendar
+day. A completed monthly run is idempotent; the second attempt is a no-op.
+GitHub runs scheduled workflows from the default branch, so this workflow
+becomes active only after it is merged there.
 
-This process performs inventory and review. It does not grant standing
-permission to delete, move, rename, or archive files.
+## Review and eligibility
 
-## Monthly cycle
+The read-only inventory is captured before each scheduled review. The eligibility
+register contains exact candidate paths and evidence. Only regular files listed
+there can be recommended or deleted. Unknown or stale evidence fails closed.
 
-1. Start from a clean, identified repository revision.
-2. Review current tracked, untracked, and ignored inventories separately.
-3. Supply an itemized candidate list derived from current evidence. Do not infer
-   candidates from filenames alone.
-4. Run the read-only inventory tool from the repository root. Keep its output
-   with the cycle record under a separately authorized monthly work cycle.
-5. Review each candidate's existence, Git status, history, references, owner,
-   and recovery value. Record evidence and confidence.
-6. Classify candidates using the Builder Output Lifecycle Standard and the
-   approved repository stewardship dispositions. Uncertain items remain REVIEW
-   or UNKNOWN.
-7. Submit the report and register for founder review. Record decisions and
-   close the monthly review cycle.
-8. If a specific item is approved for cleanup, create a separate itemized WCS
-   that lists exact paths and evidence. Wait for that WCS and its authority to
-   pass before performing any cleanup.
+A candidate must have:
+- `production_status` equal to `NON_PRODUCTION` and production evidence;
+- a timezone-qualified creation timestamp and creation evidence proving it is
+  more than 90 days old at run time;
+- an identified owner;
+- a current `NONE_FOUND` reference review with evidence;
+- recovery value `NOT_REQUIRED` with evidence; and
+- lifecycle status `OBSOLETE`.
 
-## Safety boundaries
+Production artifacts, artifacts 90 days old or newer, secret-named paths,
+symlinks, directories, protected repository control paths, and candidates
+missing any required evidence are never recommended or deleted.
 
-- The inventory tool never changes repository files.
-- Do not read secret values. Record metadata only for secret-related paths.
-- Do not follow symlinks or inspect paths outside the repository root.
-- Do not inspect `.git` internals.
-- Do not execute the existing broad cleanup scripts.
-- A missing, tracked, active, protected, uncertain, or recovery-relevant item is
-  not eligible for automatic removal.
-- Identical content does not establish redundant purpose.
-- Monthly process approval is not blanket cleanup authority.
+## Execution and evidence
 
-## Cycle evidence
+The scheduled run writes its complete candidate decisions and deleted-path list
+to `execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl`. It deletes
+only eligible registered regular files, then commits the run record and
+deletions. Manual workflow runs are dry-run only. No existing broad cleanup
+script is invoked.
 
-Each monthly cycle should record its timestamp, branch and revision, inventory
-counts, candidate dispositions, evidence sources, reviewer decisions, and any
-separate cleanup WCS reference. Preserve the report and machine-readable
-register according to their own approved cycle scope.
+An empty eligibility register yields zero cleanup recommendations and zero
+deletions. Register entries require evidence-backed classification; filenames
+and modification times alone are not evidence of production status or creation
+age.
