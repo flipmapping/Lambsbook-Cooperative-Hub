@@ -1,12 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-028",
-  "cycle_id": "REP-STEWARD-028-WCS-001",
-  "baseline_sha": "a8cad13cbddba7ac0375c1aa37cd98e60a122e3b",
-  "branch": "rep-steward-028-hygiene-mainline-port",
+  "authority_id": "REP-STEWARD-029",
+  "cycle_id": "REP-STEWARD-029-WCS-001",
+  "baseline_sha": "d4a890427f9939bc79c9958c2b03d4225843e8ad",
+  "branch": "rep-steward-029-hygiene-mainline-implementation",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-028-WCS-001.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-029-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -16,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "FOUNDER",
-    "evidence": "Founder approved REP-STEWARD-028. The plan records the exact hygiene paths from the approved REP-STEWARD-027 authority and excludes unrelated branch history.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }

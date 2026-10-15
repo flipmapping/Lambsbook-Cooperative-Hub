@@ -1,0 +1,107 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-029-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-029-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": []
+  },
+  "execution": {
+    "objective": "Port the approved monthly hygiene process to mainline using only the bounded paths approved for planning in WCS-028.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DRAFT_ONLY",
+    "base_commit": "d4a890427f9939bc79c9958c2b03d4225843e8ad",
+    "source_plan": "REP-STEWARD-028-WCS-001",
+    "proposed_port_paths": [
+      ".github/workflows/monthly-repository-hygiene.yml",
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+      "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl",
+      "governance/rmp/REP-STEWARD-027-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "scripts/repository-hygiene/cleanup-eligible-candidates.py"
+    ],
+    "cleanup_policy": {
+      "production_artifacts": "NEVER_RECOMMEND_OR_DELETE",
+      "age": "Never recommend or delete artifacts 90 days old or newer.",
+      "unknown_or_unverifiable_evidence": "FAIL_CLOSED",
+      "schedule": "LAST_CALENDAR_DAY_OF_MONTH",
+      "timezone": "Asia/Singapore",
+      "approval_model": "The approved recurring WCS applies to the eligible list as a whole."
+    },
+    "success_criteria": [
+      "Port only the enumerated hygiene and governance paths from WCS-028; do not import unrelated source-branch history.",
+      "Rebind the work-cycle authority to the mainline baseline and record valid checksum evidence.",
+      "Preserve the production exclusion and strict greater-than-90-day rule; unknown evidence fails closed.",
+      "Ensure a dated candidate register is produced before any scheduled deletion and every deletion is recorded.",
+      "Keep manual workflow dispatch in dry-run mode; scheduled cleanup may run only under the approved policy after the workflow reaches mainline.",
+      "Do not execute cleanup during implementation or validation.",
+      "Do not modify application runtime, Builder behavior, packages, databases, Supabase, or deployment configuration."
+    ],
+    "verification_profile": "EXACT_PATH_PORT; MAINLINE_AUTHORITY_REBIND; PRODUCTION_AND_AGE_EXCLUSIONS; DRY_RUN_VALIDATION; NO_SETUP_CLEANUP"
+  },
+  "depends_on": [
+    "REP-STEWARD-027-WCS-001 Approved Monthly Hygiene Review and Cleanup",
+    "REP-STEWARD-028-WCS-001 Approved Mainline Port Plan"
+  ],
+  "unlocks": [
+    "Mainline activation of the monthly scheduled process after this implementation WCS is approved, verified, and merged."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-029-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "proposed_surface_if_approved": [
+      ".github/workflows/monthly-repository-hygiene.yml",
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "execution/repository-stewardship/monthly-hygiene-eligibility-register.json",
+      "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+      "execution/workspace/REP-STEWARD-027/monthly-run-evidence.jsonl",
+      "governance/rmp/REP-STEWARD-027-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "scripts/repository-hygiene/cleanup-eligible-candidates.py",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "forbidden_surface": [
+      "Files outside the WCS-028 approved port-path list, except the new WCS-029 authority records",
+      "Production artifacts",
+      "Artifacts 90 days old or newer",
+      "Candidates with unknown or unverifiable eligibility evidence",
+      "Application runtime, Builder behavior, packages, database, Supabase, and deployment changes",
+      "Cleanup execution during implementation or validation"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_WCS_DRAFT",
+    "test_definition": "Validate port scope and policy without activating the schedule or deleting files.",
+    "expected_outcome": "A draft implementation WCS is staged for founder review."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_PORT_IMPLEMENTATION_FILES_UNTIL_APPROVED",
+      "MAY_NOT_ACTIVATE_THE_SCHEDULE_UNDER_THIS_DRAFT",
+      "MAY_NOT_DELETE_MOVE_RENAME_OR_ARCHIVE_FILES",
+      "MAY_NOT_RUN_CLEANUP"
+    ]
+  }
+}
