@@ -1,0 +1,87 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-026-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-026-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": []
+  },
+  "execution": {
+    "objective": "Conduct the first current-state monthly repository hygiene review using the approved read-only process and identify whether any exact paths meet the criteria for a separate cleanup WCS.",
+    "execution_class": "C",
+    "approval_boundary": "MONTHLY_REVIEW_WCS_DRAFT",
+    "cycle_month": "2026-10",
+    "cadence": "MONTHLY",
+    "success_criteria": [
+      "Create an input list from the previously reviewed repository hygiene and duplicate-package records; treat them as candidates for reassessment, not current facts.",
+      "Run the approved read-only inventory tool and record the current branch, revision, tracked, untracked, and ignored inventory.",
+      "Record current existence, Git status, references/history, ownership evidence, recovery value, confidence, and lifecycle disposition for every candidate.",
+      "Create the dated monthly report and machine-readable register at the authorized paths.",
+      "Leave uncertain, protected, active, or recovery-relevant items under REVIEW, PROTECTED, ACTIVE, or UNKNOWN.",
+      "Recommend an itemized cleanup WCS only for exact paths supported by current evidence and explicitly eligible under the lifecycle standard.",
+      "If no exact paths are eligible, record zero eligible items and make no cleanup recommendation.",
+      "Do not delete, move, rename, archive, or modify repository files.",
+      "Do not execute existing broad cleanup scripts or read secret values."
+    ],
+    "proposed_outputs": [
+      "execution/workspace/REP-STEWARD-026/October-2026-candidate-input.txt",
+      "execution/workspace/REP-STEWARD-026/Monthly-Hygiene-Review-2026-10.md",
+      "execution/workspace/REP-STEWARD-026/monthly-hygiene-register-2026-10.json"
+    ],
+    "verification_profile": "CURRENT_STATE_REVIEW; READ_ONLY_INVENTORY; CANDIDATE_EVIDENCE; ZERO_AUTOMATIC_CLEANUP"
+  },
+  "depends_on": [
+    "REP-STEWARD-018-WCS-001 Dead-Artifact Validation",
+    "REP-STEWARD-019-WCS-001 Duplicate Package Validation",
+    "REP-STEWARD-022-WCS-001 Builder Output Lifecycle Standard",
+    "REP-STEWARD-025-WCS-001 Monthly Hygiene Process"
+  ],
+  "unlocks": [
+    "A separate itemized cleanup WCS naming exact paths only if this review identifies eligible candidates."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-026-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "proposed_surface_if_approved": [
+      "execution/workspace/REP-STEWARD-026/October-2026-candidate-input.txt",
+      "execution/workspace/REP-STEWARD-026/Monthly-Hygiene-Review-2026-10.md",
+      "execution/workspace/REP-STEWARD-026/monthly-hygiene-register-2026-10.json"
+    ],
+    "forbidden_surface": [
+      "Deletion, movement, rename, archive, or cleanup execution",
+      "Existing broad cleanup scripts",
+      "Builder scripts and package artifacts",
+      "Runtime, database, Supabase, deployment, and secret values"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_READ_ONLY_REPOSITORY_REVIEW",
+    "test_definition": "No runtime change is authorized.",
+    "expected_outcome": "A current monthly review report identifies exact eligible candidates or records that none qualify."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_RUN_THE_MONTHLY_REVIEW_UNTIL_THIS_WCS_IS_APPROVED",
+      "MAY_NOT_DELETE_MOVE_RENAME_OR_ARCHIVE_FILES",
+      "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}

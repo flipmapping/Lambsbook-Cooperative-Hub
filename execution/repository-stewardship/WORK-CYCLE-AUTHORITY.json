@@ -1,16 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-025",
-  "cycle_id": "REP-STEWARD-025-WCS-001",
-  "baseline_sha": "e88285a38d48980d2ffe6db5e3c4f8050eea2562",
-  "branch": "rep-steward-025-monthly-hygiene-process",
+  "authority_id": "REP-STEWARD-026",
+  "cycle_id": "REP-STEWARD-026-WCS-001",
+  "baseline_sha": "6a78c8c341255b6f4b6d6c6599d630d1b59c8787",
+  "branch": "rep-steward-026-oct-2026-hygiene-review",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-025-WCS-001.json",
-    "governance/rmp/REP-STEWARD-025-WCS-001-IMPLEMENTATION-AUTHORITY.md",
-    "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
-    "scripts/repository-hygiene/audit-candidates.py",
-    "execution/workspace/REP-STEWARD-025/monthly-review-template.md",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-026-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -20,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "REPOSITORY_STEWARD",
-    "evidence": "Created the monthly hygiene runbook, read-only inventory tool, and review template. The tool was not run; no cleanup or repository artifact mutation was performed. Process SHA-256=4cbc74c8e13a37127071db08dd527d539ac724a16f5710f3ed8e0a772f824415; tool SHA-256=0205911cd5cb2c41ac72ed29fe604d66df9a5816bc41dbb2444ad19dcc46cc22; template SHA-256=413c464c82dcfdec5289d98a1dadd1807ec03be32a6a1525dd5d6082de05b342.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }
