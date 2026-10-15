@@ -1,19 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-023",
-  "cycle_id": "REP-STEWARD-023-WCS-001",
-  "baseline_sha": "f0eb07b0496705935b3706399e39dab5657aa9fe",
-  "branch": "rep-steward-023-builder-spec-reconciliation",
+  "authority_id": "REP-STEWARD-024",
+  "cycle_id": "REP-STEWARD-024-WCS-001",
+  "baseline_sha": "21e96fe5d927abcbd1da36d53dc3f146e535450f",
+  "branch": "rep-steward-024-periodic-repository-hygiene",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-023-WCS-001.json",
-    "governance/rmp/REP-STEWARD-023-WCS-001-IMPLEMENTATION-AUTHORITY.md",
-    "execution/workspace/REP-STEWARD-023/Builder-Specification-Reconciliation-Report.md",
-    "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
-    "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
-    "execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md",
-    "execution/builders/docs/BUILDER-RUNTIME-CONTRACT.md",
-    "execution/builder/delivery/BUILDER-MATERIALIZATION-SPECIFICATION.md",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-024-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -23,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "REPOSITORY_STEWARD",
-    "evidence": "Reconciled the five authorized Builder documentation files and created the report. PIC-001 and BOQ-001 were preserved; no scripts, packages, or runtime files were changed. Cleanup was not authorized or performed. Report SHA-256=953af3f0efdeb83412f67cffdf675cf7bf7e60a7bb59db409f89c2184807a903.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }

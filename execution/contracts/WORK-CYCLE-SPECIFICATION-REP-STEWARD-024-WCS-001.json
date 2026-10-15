@@ -1,0 +1,95 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-024-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-024-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Approve a monthly cadence for the proposed recurring repository hygiene process.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "The overall WCS remains a draft pending founder review.",
+          "No automatic cleanup or deletion is authorized.",
+          "Each cleanup run requires separate itemized authority."
+        ]
+      }
+    ]
+  },
+  "execution": {
+    "objective": "Define and materialize a repeatable repository hygiene cycle that reviews cleanup candidates periodically and permits removals only through separate itemized approval.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DRAFT_FOR_PERIODIC_PROCESS",
+    "proposed_cadence": {
+      "interval": "MONTHLY",
+      "status": "FOUNDER_APPROVED_IN_CONVERSATION",
+      "activation_requires": "Approval of the periodic process WCS before operation.",
+      "approval": "Founder approved the monthly cadence on 2026-10-15.",
+      "approved_on": "2026-10-15"
+    },
+    "success_criteria": [
+      "Define a monthly repository inventory and candidate-review cycle with dated reports and machine-readable registers.",
+      "Inventory tracked, untracked, and ignored paths separately; inspect secret-related paths by metadata only and never read secret values.",
+      "Classify each candidate using the lifecycle standard and record existence, Git state, references, ownership evidence, recovery value, confidence, and disposition.",
+      "Keep uncertain, protected, active, or recovery-relevant items out of cleanup eligibility.",
+      "Require a separate itemized WCS and authority for each cleanup run, listing exact paths, evidence, hashes where applicable, and rollback or recovery considerations.",
+      "Require founder review and approval of the itemized cleanup scope before any deletion, move, rename, or archive.",
+      "Do not execute existing broad cleanup scripts or perform automatic deletion.",
+      "Do not modify runtime, Builder scripts, packages, database, Supabase, or deployment files as part of the recurring inventory process.",
+      "Document how a cycle is started, reviewed, approved, recorded, and closed."
+    ],
+    "verification_profile": "REPEATABLE_INVENTORY; SAFE_PATH_HANDLING; CANDIDATE_EVIDENCE; ITEMIZED_APPROVAL_GATE; NO_AUTOMATIC_DELETION"
+  },
+  "depends_on": [
+    "REP-STEWARD-018-WCS-001 Dead-Artifact Validation",
+    "REP-STEWARD-019-WCS-001 Duplicate Package Validation",
+    "REP-STEWARD-022-WCS-001 Builder Output Lifecycle Standard",
+    "REP-STEWARD-023-WCS-001 Builder Specification Reconciliation"
+  ],
+  "unlocks": [
+    "A recurring read-only repository hygiene procedure after separate approval.",
+    "Separate itemized cleanup WCS cycles only for candidates that pass review."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-024-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "forbidden_surface": [
+      "Automatic deletion or cleanup execution",
+      "Existing broad cleanup execution scripts",
+      "Builder scripts and runtime behavior",
+      "Package creation, regeneration, overwrite, or mutation",
+      "Deployment, database, Supabase, and secret values"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_REPOSITORY_PROCESS",
+    "test_definition": "No runtime change is authorized.",
+    "expected_outcome": "A periodic hygiene process WCS draft is staged for founder review."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_RUN_A_CLEANUP_CYCLE_UNDER_THIS_DRAFT",
+      "MAY_NOT_DELETE_MOVE_RENAME_OR_ARCHIVE_FILES",
+      "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}
