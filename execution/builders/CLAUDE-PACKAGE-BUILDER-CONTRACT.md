@@ -76,3 +76,9 @@ Abort immediately if:
 - authority inconsistency detected
 - synchronization artifact missing
 - package verification fails
+
+---
+
+## Lifecycle standard alignment (REP-STEWARD-022)
+
+This contract remains the input/output contract for its stated Builder scope. Apply the lifecycle labels, lineage, qualification, and delivery-candidate definitions in `execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md` to outputs. The contract's one-CIB input rule and other process requirements are not superseded here; input-precedence conflicts with the other active specifications remain unresolved.

@@ -111,3 +111,8 @@ Builder output shall satisfy all mandatory governance artifacts.
 The resulting package shall be suitable for re-running the Builder Delivery
 Contract Compliance Audit.
 
+---
+
+## Lifecycle standard alignment (REP-STEWARD-022)
+
+This specification remains specific to its stated Builder v1.2 package mission and records repository mutation as not authorized by that specification. Apply `execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md` to classify and qualify resulting outputs. This addendum does not expand the mission or authorize package mutation.

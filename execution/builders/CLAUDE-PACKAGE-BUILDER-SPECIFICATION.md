@@ -111,3 +111,9 @@ Compatibility
 The builder SHALL remain namespace independent.
 
 Support for future authority streams SHALL require no source-code modification.
+
+---
+
+## Lifecycle standard alignment (REP-STEWARD-022)
+
+This specification remains process documentation for its stated materialization preconditions and outputs. A package directory or archive being produced does not mean it is qualified or delivery-ready. Apply `execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md` for lifecycle state, lineage, qualification, and delivery-candidate evidence. Conflicting input requirements are not silently superseded.

@@ -54,3 +54,9 @@ update this document from repository evidence before any Builder
 implementation mutation.
 
 STOP.
+
+---
+
+## Lifecycle standard alignment (REP-STEWARD-022)
+
+This certified runtime contract identifies the Builder entrypoint but still marks launcher, canonical invocation, and qualification evidence as items to record. The lifecycle standard defines output evidence labels; it does not fill those runtime-contract gaps or certify runtime behavior. Resolve those gaps through a separate authority if runtime work is needed.

@@ -111,3 +111,9 @@ Current authorities
 - INF
 
 Future authority streams without modification.
+
+---
+
+## Lifecycle standard alignment (REP-STEWARD-022)
+
+This specification remains process documentation for its stated Builder scope. Its listed inputs and derived artifacts do not by themselves establish output qualification. Apply `execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md` for lifecycle state, lineage, qualification, and delivery-candidate terms. Its input requirements remain in force pending an explicit precedence decision.
