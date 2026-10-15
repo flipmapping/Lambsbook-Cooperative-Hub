@@ -1,16 +1,31 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-022-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-022-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Materialize the bounded Builder output lifecycle standard and LEAP-002 case record specified in this WCS.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "authorized_outputs": [
+          "execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md",
+          "execution/workspace/REP-STEWARD-022/LEAP-002-Lifecycle-Case-Record.json"
+        ],
+        "limits": [
+          "No Builder script changes or execution.",
+          "No package regeneration, overwrite, movement, archiving, or deletion.",
+          "No deployment, runtime, database, Supabase, or secret-value changes."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Materialize a bounded repository Builder output lifecycle and qualification standard, plus a LEAP-002 case record, after this WCS receives separate founder approval.",
@@ -47,7 +62,10 @@
     "authorized_surface": [
       "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-022-WCS-001.json",
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "governance/rmp/REP-STEWARD-022-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md",
+      "execution/workspace/REP-STEWARD-022/LEAP-002-Lifecycle-Case-Record.json"
     ],
     "forbidden_surface": [
       "Builder scripts and runtime behavior",
@@ -68,13 +86,12 @@
     "REJECTED"
   ],
   "implementation_agent": {
-    "role": "WCS_DRAFT_ONLY",
+    "role": "BOUNDED_DOCUMENTATION_MATERIALIZATION",
     "authority_boundary": [
-      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
-      "MAY_NOT_CREATE_THE_LIFECYCLE_STANDARD_UNDER_THIS_DRAFT",
+      "MAY_CREATE_ONLY_THE_AUTHORIZED_STANDARD_AND_CASE_RECORD",
       "MAY_NOT_CHANGE_OR_RUN_BUILDER_SCRIPTS",
       "MAY_NOT_REGENERATE_OR_MODIFY_PACKAGES",
-      "MAY_NOT_DELETE_OR_MOVE_FILES",
+      "MAY_NOT_DELETE_MOVE_RENAME_OR_ARCHIVE_FILES",
       "MAY_NOT_DEPLOY"
     ]
   }

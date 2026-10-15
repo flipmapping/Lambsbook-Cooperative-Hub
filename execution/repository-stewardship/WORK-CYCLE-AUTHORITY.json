@@ -7,6 +7,9 @@
   "branch": "rep-steward-022-builder-output-lifecycle-standard",
   "certified_mutation_paths": [
     "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-022-WCS-001.json",
+    "governance/rmp/REP-STEWARD-022-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/standards/BUILDER-OUTPUT-LIFECYCLE-001.md",
+    "execution/workspace/REP-STEWARD-022/LEAP-002-Lifecycle-Case-Record.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
