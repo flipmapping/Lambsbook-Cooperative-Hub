@@ -7,6 +7,12 @@
   "branch": "rep-steward-027-scheduled-hygiene-review-cleanup",
   "certified_mutation_paths": [
     "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
+    "governance/rmp/REP-STEWARD-027-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+    "scripts/repository-hygiene/audit-candidates.py",
+    "scripts/repository-hygiene/cleanup-eligible-candidates.py",
+    "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+    "A last-calendar-day monthly schedule definition and durable run-evidence location",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],

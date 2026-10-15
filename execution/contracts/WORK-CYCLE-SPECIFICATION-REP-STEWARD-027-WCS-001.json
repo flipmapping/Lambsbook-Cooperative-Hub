@@ -1,16 +1,30 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-027-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-027-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
-    "cleanup_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
+    "cleanup_authority": "APPROVED_ONLY_FOR_ITEMS_PASSING_THIS_WCS_POLICY",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Implement and activate the scheduled monthly review-and-cleanup process defined in REP-STEWARD-027-WCS-001.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "Run on the last calendar day of each month in Asia/Singapore time.",
+          "Never recommend or delete production artifacts.",
+          "Never recommend or delete artifacts 90 days old or newer.",
+          "Unknown or unverifiable production status, age, ownership, references, or recovery value must fail closed.",
+          "Create the dated recommendation register before cleanup and record every deletion.",
+          "Do not invoke existing broad cleanup scripts."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Implement and activate a recurring monthly repository hygiene review-and-cleanup process with a complete recommendation register and strict non-production and age eligibility gates.",
@@ -69,7 +83,13 @@
     "authorized_surface": [
       "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-027-WCS-001.json",
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "governance/rmp/REP-STEWARD-027-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
+      "scripts/repository-hygiene/audit-candidates.py",
+      "scripts/repository-hygiene/cleanup-eligible-candidates.py",
+      "execution/workspace/REP-STEWARD-027/monthly-review-template.md",
+      "A last-calendar-day monthly schedule definition and durable run-evidence location"
     ],
     "proposed_surface_if_approved": [
       "execution/repository-stewardship/MONTHLY-REPOSITORY-HYGIENE-PROCESS.md",
@@ -102,12 +122,14 @@
     "REJECTED"
   ],
   "implementation_agent": {
-    "role": "WCS_DRAFT_ONLY",
+    "role": "BOUNDED_SCHEDULED_HYGIENE_IMPLEMENTATION",
     "authority_boundary": [
-      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
-      "MAY_NOT_ACTIVATE_THE_SCHEDULE_UNDER_THIS_DRAFT",
-      "MAY_NOT_DELETE_OR_MOVE_FILES_UNDER_THIS_DRAFT",
-      "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS"
+      "MAY_CREATE_ONLY_THE_AUTHORIZED_PROCESS_TOOL_TEMPLATE_AND_SCHEDULE_OUTPUTS",
+      "MAY_DELETE_ONLY_REGISTERED_ITEMS_PASSING_ALL_WCS_ELIGIBILITY_GATES",
+      "MUST_FAIL_CLOSED_ON_UNKNOWN_OR_UNVERIFIABLE_EVIDENCE",
+      "MUST_NOT_RECOMMEND_OR_DELETE_PRODUCTION_OR_90_DAYS_OR_NEWER_ARTIFACTS",
+      "MAY_NOT_EXECUTE_EXISTING_BROAD_CLEANUP_SCRIPTS",
+      "MAY_NOT_CHANGE_BUILDER_RUNTIME_PACKAGES_DATABASE_SUPABASE_OR_DEPLOYMENT"
     ]
   }
 }
