@@ -7,6 +7,9 @@
   "branch": "rep-steward-018-dead-artifact-validation",
   "certified_mutation_paths": [
     "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-018-WCS-001.json",
+    "governance/rmp/REP-STEWARD-018-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/workspace/REP-STEWARD-018/Dead-Artifact-Validation-Report.md",
+    "execution/workspace/REP-STEWARD-018/dead-artifact-candidate-register.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],

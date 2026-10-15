@@ -1,13 +1,13 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-018-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-018-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
     "approved_amendments": [
@@ -21,13 +21,29 @@
           "Do not inspect secret contents or alter runtime files.",
           "Any cleanup requires a later, itemized authority."
         ]
+      },
+      {
+        "scope": "Perform read-only dead-artifact candidate validation and create only the approved report and candidate register.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "authorized_outputs": [
+          "execution/workspace/REP-STEWARD-018/Dead-Artifact-Validation-Report.md",
+          "execution/workspace/REP-STEWARD-018/dead-artifact-candidate-register.json"
+        ],
+        "limits": [
+          "Do not delete, move, rename, archive, or modify pre-existing repository files.",
+          "Do not execute cleanup scripts.",
+          "Do not read secret values or follow paths outside the repository root.",
+          "No runtime, database, deployment, or publication changes.",
+          "Any cleanup requires a separate itemized WCS and authority."
+        ]
       }
     ]
   },
   "execution": {
     "objective": "Refresh and validate the existing repository cleanup candidate evidence against the current repository state, then produce an evidence-backed classification and recommendations without changing repository contents.",
     "execution_class": "C",
-    "approval_boundary": "READ_ONLY_VALIDATION_WCS_DRAFT",
+    "approval_boundary": "FOUNDER_APPROVED_READ_ONLY_VALIDATION",
     "success_criteria": [
       "Reassess the July 2026 REP-STEWARD-009 and EOS-REPO-001A findings against the actual audit-time checkout; do not treat their classifications as current facts.",
       "Inventory tracked, untracked, and ignored paths separately, recording metadata only for ignored and secret-related paths.",
@@ -36,7 +52,7 @@
       "Exclude .git internals, do not follow paths outside the repository root, and do not read secret values.",
       "Produce a human-readable report and machine-readable candidate register under execution/workspace/REP-STEWARD-018/ only after a separate implementation authority is approved.",
       "Make clear that a candidate classification or recommendation does not authorize deletion or movement.",
-      "No files are deleted, moved, renamed, archived, or edited during this validation cycle."
+      "No pre-existing repository files are deleted, moved, renamed, archived, or modified; only the two explicitly authorized audit output files may be created."
     ],
     "verification_profile": "CURRENT_CHECKOUT_EVIDENCE; GIT_STATUS_AND_HISTORY_REVIEW; STATIC_SCRIPT_REVIEW; NO_CLEANUP_EXECUTION"
   },
@@ -62,7 +78,12 @@
   },
   "surface": {
     "authorized_surface": [
-      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-018-WCS-001.json"
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-018-WCS-001.json",
+      "governance/rmp/REP-STEWARD-018-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/workspace/REP-STEWARD-018/Dead-Artifact-Validation-Report.md",
+      "execution/workspace/REP-STEWARD-018/dead-artifact-candidate-register.json"
     ],
     "forbidden_surface": [
       "All deletion, move, rename, archive, or cleanup execution",
@@ -93,11 +114,14 @@
     "REJECTED"
   ],
   "implementation_agent": {
-    "role": "NO_CLEANUP_IMPLEMENTATION_AUTHORITY",
+    "role": "READ_ONLY_REPOSITORY_VALIDATOR",
     "authority_boundary": [
-      "MAY_DERIVE_AND_REVIEW_THIS_WCS",
-      "MAY_NOT_DELETE_OR_MOVE_REPOSITORY_FILES",
-      "MAY_NOT_EXECUTE_EXISTING_CLEANUP_SCRIPTS",
+      "MAY_INSPECT_CURRENT_REPOSITORY_METADATA_AND_GIT_HISTORY",
+      "MAY_CREATE_ONLY_THE_AUTHORIZED_REPORT_AND_REGISTER",
+      "MAY_NOT_MODIFY_PRE_EXISTING_REPOSITORY_FILES",
+      "MAY_NOT_DELETE_MOVE_RENAME_OR_ARCHIVE_FILES",
+      "MAY_NOT_EXECUTE_CLEANUP_SCRIPTS",
+      "MAY_NOT_READ_SECRET_VALUES_OR_FOLLOW_EXTERNAL_PATHS",
       "MAY_NOT_DEPLOY"
     ]
   }
