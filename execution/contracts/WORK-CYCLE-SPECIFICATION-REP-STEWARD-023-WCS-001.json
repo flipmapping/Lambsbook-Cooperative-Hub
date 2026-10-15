@@ -1,16 +1,28 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-023-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-023-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
     "deployment_authority": "NOT_GRANTED",
-    "approved_amendments": []
+    "approved_amendments": [
+      {
+        "scope": "Reconcile the five listed Builder documentation files with the approved lifecycle standard and create the authorized reconciliation report.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "limits": [
+          "Preserve PIC-001 and BOQ-001 unchanged.",
+          "Do not modify or execute Builder scripts.",
+          "Do not modify, regenerate, move, archive, or delete package artifacts.",
+          "No cleanup, runtime, database, Supabase, or deployment changes."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Reconcile the existing Builder process specifications with the approved Builder Output Lifecycle and Qualification Standard through bounded documentation edits.",
@@ -42,7 +54,14 @@
     "authorized_surface": [
       "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-023-WCS-001.json",
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPEC.md",
+      "execution/builders/CLAUDE-PACKAGE-BUILDER-SPECIFICATION.md",
+      "execution/builders/docs/BUILDER-RUNTIME-CONTRACT.md",
+      "execution/builder/delivery/BUILDER-MATERIALIZATION-SPECIFICATION.md",
+      "execution/workspace/REP-STEWARD-023/Builder-Specification-Reconciliation-Report.md",
+      "governance/rmp/REP-STEWARD-023-WCS-001-IMPLEMENTATION-AUTHORITY.md"
     ],
     "proposed_documentation_surface_if_approved": [
       "execution/builders/CLAUDE-PACKAGE-BUILDER-CONTRACT.md",
@@ -72,13 +91,14 @@
     "REJECTED"
   ],
   "implementation_agent": {
-    "role": "WCS_DRAFT_ONLY",
+    "role": "BOUNDED_BUILDER_DOCUMENTATION_RECONCILIATION",
     "authority_boundary": [
-      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
-      "MAY_NOT_EDIT_BUILDER_DOCUMENTS_UNTIL_THIS_WCS_IS_APPROVED",
+      "MAY_EDIT_ONLY_THE_FIVE_AUTHORIZED_BUILDER_DOCUMENTS",
+      "MAY_CREATE_ONLY_THE_AUTHORIZED_RECONCILIATION_REPORT",
+      "MUST_PRESERVE_PIC001_AND_BOQ001",
       "MAY_NOT_CHANGE_OR_RUN_BUILDER_SCRIPTS",
-      "MAY_NOT_MODIFY_OR_REMOVE_PACKAGES",
-      "MAY_NOT_DEPLOY"
+      "MAY_NOT_MODIFY_OR_REMOVE_PACKAGE_ARTIFACTS",
+      "MAY_NOT_PERFORM_CLEANUP_OR_DEPLOY"
     ]
   }
 }
