@@ -7,6 +7,9 @@
   "branch": "rep-steward-020-builder-output-governance",
   "certified_mutation_paths": [
     "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-020-WCS-001.json",
+    "governance/rmp/REP-STEWARD-020-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/workspace/REP-STEWARD-020/Builder-Output-Lifecycle-Review.md",
+    "execution/workspace/REP-STEWARD-020/builder-output-lifecycle-register.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
