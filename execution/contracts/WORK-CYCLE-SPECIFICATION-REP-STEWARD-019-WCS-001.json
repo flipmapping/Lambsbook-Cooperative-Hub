@@ -1,20 +1,37 @@
 {
   "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
-  "status": "DRAFT",
+  "status": "FOUNDER_APPROVED",
   "work_cycle_id": "REP-STEWARD-019-WCS-001",
   "execution_stream": "REPOSITORY_STEWARDSHIP",
   "task_id": "REP-STEWARD-019-WCS-001",
   "authority_binding": {
     "authority_reference": "REP-STEWARD-009",
-    "binding_status": "DRAFT_ONLY",
-    "implementation_authority": "NOT_GRANTED",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "NOT_GRANTED",
-    "deployment_authority": "NOT_GRANTED"
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Perform read-only duplicate-package validation and create only its report and candidate register.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-15",
+        "authorized_outputs": [
+          "execution/workspace/REP-STEWARD-019/Duplicate-Package-Validation-Report.md",
+          "execution/workspace/REP-STEWARD-019/duplicate-package-candidate-register.json"
+        ],
+        "limits": [
+          "No package or repository artifact may be deleted, moved, renamed, archived, overwritten, or regenerated.",
+          "Do not execute cleanup or package-building scripts.",
+          "Do not read secret values or follow paths outside the repository root.",
+          "Cleanup requires a separate itemized WCS and authority."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Validate package-artifact duplication claims using current repository evidence, without changing package or repository contents.",
     "execution_class": "C",
-    "approval_boundary": "WCS_DERIVATION_ONLY",
+    "approval_boundary": "FOUNDER_APPROVED_READ_ONLY_PACKAGE_VALIDATION",
     "success_criteria": [
       "Reassess historical duplicate-package findings against current checkout state.",
       "Compare candidate packages using content hashes, archive contents, manifests, provenance, references, and Git history; names alone do not prove duplication.",
@@ -46,7 +63,12 @@
   },
   "surface": {
     "authorized_surface": [
-      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-019-WCS-001.json"
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-019-WCS-001.json",
+      "governance/rmp/REP-STEWARD-019-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/workspace/REP-STEWARD-019/Duplicate-Package-Validation-Report.md",
+      "execution/workspace/REP-STEWARD-019/duplicate-package-candidate-register.json"
     ],
     "forbidden_surface": [
       "Package creation, regeneration, overwrite, or mutation",
@@ -70,12 +92,13 @@
     "REJECTED"
   ],
   "implementation_agent": {
-    "role": "NO_PACKAGE_AUDIT_OR_CLEANUP_AUTHORITY",
+    "role": "READ_ONLY_PACKAGE_VALIDATOR",
     "authority_boundary": [
-      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
-      "MAY_NOT_PERFORM_THE_PACKAGE_AUDIT",
-      "MAY_NOT_CREATE_AUDIT_OUTPUTS",
+      "MAY_INSPECT_PACKAGE_METADATA_CONTENT_HASHES_MANIFESTS_AND_GIT_HISTORY",
+      "MAY_CREATE_ONLY_THE_AUTHORIZED_REPORT_AND_REGISTER",
       "MAY_NOT_MODIFY_OR_REMOVE_PACKAGE_ARTIFACTS",
+      "MAY_NOT_EXECUTE_CLEANUP_OR_PACKAGE_BUILDING_SCRIPTS",
+      "MAY_NOT_READ_SECRET_VALUES_OR_FOLLOW_EXTERNAL_PATHS",
       "MAY_NOT_DEPLOY"
     ]
   }

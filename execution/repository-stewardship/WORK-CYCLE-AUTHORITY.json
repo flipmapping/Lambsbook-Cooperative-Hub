@@ -7,6 +7,9 @@
   "branch": "rep-steward-019-duplicate-package-validation",
   "certified_mutation_paths": [
     "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-019-WCS-001.json",
+    "governance/rmp/REP-STEWARD-019-WCS-001-IMPLEMENTATION-AUTHORITY.md",
+    "execution/workspace/REP-STEWARD-019/Duplicate-Package-Validation-Report.md",
+    "execution/workspace/REP-STEWARD-019/duplicate-package-candidate-register.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
