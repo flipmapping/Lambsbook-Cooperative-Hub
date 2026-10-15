@@ -1,0 +1,84 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-020-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-020-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED"
+  },
+  "execution": {
+    "objective": "Define Builder output lifecycle and qualification governance for generated, materialized, and delivery-candidate artifacts.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DERIVATION_ONLY",
+    "success_criteria": [
+      "Resolve the LEAP-002 derived-artifact lifecycle question using the certified Builder contract and execution doctrine.",
+      "Define ownership, provenance, meaning, and allowed transitions for generated, materialized, qualified, and delivery-candidate artifacts.",
+      "Reconcile builder delivery entries with package paths, hashes, qualification records, and builder evidence.",
+      "Use the identical LEAP-002 generated/materialized archives as a case study; retain both unless authoritative lifecycle evidence establishes their roles.",
+      "Specify how unqualified outputs are represented and prevent them from being treated as certified or deliverable.",
+      "Define required lineage and manifest evidence for Builder outputs.",
+      "Do not modify or execute Builder scripts; do not regenerate, overwrite, move, archive, or delete package artifacts.",
+      "Do not read secret values or modify runtime, database, deployment, or Supabase files.",
+      "Any governance materialization or cleanup requires a separate, itemized authority."
+    ],
+    "verification_profile": "CERTIFIED_BUILDER_CONTRACT_REVIEW; LIFECYCLE_EVIDENCE_RECONCILIATION; PACKAGE_QUALIFICATION_REVIEW; NO_MUTATION"
+  },
+  "depends_on": [
+    "REP-STEWARD-019-WCS-001 Duplicate Package Validation",
+    "REP-STEWARD-009 Repository Stewardship Baseline"
+  ],
+  "unlocks": [
+    "A separately authorized Builder-output governance materialization WCS.",
+    "A separate itemized cleanup WCS only if lifecycle evidence supports cleanup."
+  ],
+  "current_state_evidence": {
+    "verified": [
+      "REP-STEWARD-019 found one byte-identical LEAP-002 archive pair under generated and materialized paths.",
+      "The delivery registry lists both with the same hash, empty builder evidence, and score zero.",
+      "The generated archive is marked NOT_QUALIFIED.",
+      "The LEAP-002 artifact classification says derived-artifact lifecycle is unresolved."
+    ],
+    "not_yet_evidenced": [
+      "Authoritative meaning and transition rules for generated versus materialized outputs.",
+      "Certified Builder requirements for output qualification and delivery registration.",
+      "Whether any package artifacts are redundant after lifecycle roles are resolved."
+    ]
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-020-WCS-001.json"
+    ],
+    "forbidden_surface": [
+      "Builder scripts and runtime behavior",
+      "Package creation, regeneration, overwrite, or mutation",
+      "Deletion, movement, rename, archive, or cleanup",
+      "Deployment, database, Supabase, and secret values"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_WCS_DRAFT",
+    "test_definition": "No runtime change is authorized.",
+    "expected_outcome": "Draft WCS staged for review; Builder and package contents unchanged."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "NO_BUILDER_OR_CLEANUP_IMPLEMENTATION_AUTHORITY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_CHANGE_OR_RUN_BUILDER_SCRIPTS",
+      "MAY_NOT_REGENERATE_OR_MODIFY_PACKAGES",
+      "MAY_NOT_DELETE_OR_MOVE_FILES",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}
