@@ -1,0 +1,82 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-019-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-019-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED"
+  },
+  "execution": {
+    "objective": "Validate package-artifact duplication claims using current repository evidence, without changing package or repository contents.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DERIVATION_ONLY",
+    "success_criteria": [
+      "Reassess historical duplicate-package findings against current checkout state.",
+      "Compare candidate packages using content hashes, archive contents, manifests, provenance, references, and Git history; names alone do not prove duplication.",
+      "Classify each candidate with evidence, confidence, and disposition: IDENTICAL_DUPLICATE_CANDIDATE, DISTINCT, ACTIVE, PROTECTED, REVIEW, MISSING, or UNKNOWN.",
+      "Preserve artifacts with uncertain ownership, purpose, recovery value, or audit significance.",
+      "Create any audit report or register only under a separately approved authority.",
+      "Do not delete, move, rename, archive, overwrite, regenerate, or modify package artifacts; do not execute cleanup or package-building scripts.",
+      "Do not read secret values, follow paths outside the repository root, or modify runtime, database, deployment, or Supabase files.",
+      "State that identifying a duplicate candidate does not authorize its removal; cleanup requires a separate itemized WCS and authority."
+    ],
+    "verification_profile": "CURRENT_INVENTORY; CONTENT_AND_MANIFEST_COMPARISON; HISTORY_AND_REFERENCE_REVIEW; STATIC_TOOL_REVIEW; NO_PACKAGE_MUTATION"
+  },
+  "depends_on": [
+    "REP-STEWARD-018-WCS-001 Dead-Artifact Validation",
+    "REP-STEWARD-009 Repository Stewardship Baseline"
+  ],
+  "unlocks": [
+    "A separately reviewed, itemized package cleanup WCS if evidence supports it."
+  ],
+  "current_state_evidence": {
+    "verified": [
+      "The REP-STEWARD-009 roadmap lists Duplicate Package Validation as the second recommended authority.",
+      "The repository contains package artifacts and manifests under execution/packages and builder delivery locations."
+    ],
+    "not_yet_evidenced": [
+      "Which current artifacts have identical contents or equivalent payloads.",
+      "Whether apparent duplicates have distinct authority, provenance, recovery, or audit purposes."
+    ]
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-019-WCS-001.json"
+    ],
+    "forbidden_surface": [
+      "Package creation, regeneration, overwrite, or mutation",
+      "Deletion, movement, rename, archive, or cleanup",
+      "Cleanup or package-building script execution",
+      "Runtime application files",
+      "Secrets and environment values",
+      ".git internals",
+      "Deployment, database, and Supabase files"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_READ_ONLY_PACKAGE_VALIDATION",
+    "test_definition": "No application runtime change is authorized.",
+    "expected_outcome": "Draft WCS staged for review; no package audit or repository mutation is performed."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "NO_PACKAGE_AUDIT_OR_CLEANUP_AUTHORITY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_PERFORM_THE_PACKAGE_AUDIT",
+      "MAY_NOT_CREATE_AUDIT_OUTPUTS",
+      "MAY_NOT_MODIFY_OR_REMOVE_PACKAGE_ARTIFACTS",
+      "MAY_NOT_DEPLOY"
+    ]
+  }
+}

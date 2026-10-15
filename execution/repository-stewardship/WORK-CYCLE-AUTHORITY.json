@@ -1,15 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-018",
-  "cycle_id": "REP-STEWARD-018-WCS-001",
-  "baseline_sha": "f60b422f3611b502887196ccae82e846b0737627",
-  "branch": "rep-steward-018-dead-artifact-validation",
+  "authority_id": "REP-STEWARD-019",
+  "cycle_id": "REP-STEWARD-019-WCS-001",
+  "baseline_sha": "dcdd47e7aaa5592c38b98dde99c8bf39e41d0957",
+  "branch": "rep-steward-019-duplicate-package-validation",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-018-WCS-001.json",
-    "governance/rmp/REP-STEWARD-018-WCS-001-IMPLEMENTATION-AUTHORITY.md",
-    "execution/workspace/REP-STEWARD-018/Dead-Artifact-Validation-Report.md",
-    "execution/workspace/REP-STEWARD-018/dead-artifact-candidate-register.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-019-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
@@ -19,9 +16,6 @@
   ],
   "expires_at": "2026-10-18T12:16:03+00:00",
   "verification": {
-    "status": "PASS",
-    "verification_owner": "REPOSITORY_STEWARD",
-    "evidence": "Read-only candidate inventory and static script review completed. Report SHA-256=6539073b49d101a7a3410dc1a4307dc446be7953c8743f65f35cb1135d58f40d; register SHA-256=fe0df3095e577d5687e2c01f9516fc23fd12ae83c47465e500b5cd9dd46621a1. No cleanup scripts were executed and no pre-existing repository files were modified.",
-    "recorded_on": "2026-10-15"
+    "status": "PENDING"
   }
 }
