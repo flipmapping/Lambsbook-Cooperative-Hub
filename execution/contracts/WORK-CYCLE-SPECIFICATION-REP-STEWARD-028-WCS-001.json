@@ -1,0 +1,66 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-028-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-028-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": []
+  },
+  "execution": {
+    "objective": "Prepare a bounded mainline port plan for the approved monthly hygiene process, excluding unrelated historical changes.",
+    "execution_class": "C",
+    "approval_boundary": "WCS_DRAFT_ONLY",
+    "success_criteria": [
+      "Identify the exact hygiene and governance files needed for a coherent mainline port.",
+      "Document required authority rebinding to the mainline baseline.",
+      "Exclude unrelated application, runtime, database, Supabase, package, and historical changes.",
+      "Do not copy or modify implementation files in this cycle.",
+      "Do not activate the schedule or execute cleanup."
+    ],
+    "verification_profile": "MAINLINE_BASELINE_REVIEW; EXACT_PATH_SCOPE; GOVERNANCE_CONTINUITY; NO_IMPLEMENTATION"
+  },
+  "depends_on": [
+    "REP-STEWARD-027-WCS-001"
+  ],
+  "unlocks": [
+    "A separate bounded WCS to port the approved hygiene process onto mainline."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-028-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "forbidden_surface": [
+      "Hygiene implementation files",
+      "Application, runtime, database, Supabase, deployment, and package changes",
+      "Schedule activation or cleanup execution"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_WCS_DRAFT",
+    "test_definition": "No implementation or runtime operation is authorized.",
+    "expected_outcome": "A draft mainline-port planning WCS is staged for review."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_WCS_DRAFT_ONLY",
+      "MAY_NOT_COPY_OR_EDIT_HYGIENE_IMPLEMENTATION_FILES",
+      "MAY_NOT_ACTIVATE_THE_SCHEDULE",
+      "MAY_NOT_DELETE_OR_MOVE_FILES"
+    ]
+  }
+}
