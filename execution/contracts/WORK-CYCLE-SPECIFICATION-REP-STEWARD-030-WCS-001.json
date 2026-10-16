@@ -13,7 +13,7 @@
     "approved_amendments": [
       {
         "scope": "Prepare a release authorization request and contract for the restored admin dashboard candidate.",
-        "approval": "FOUNDER_APPROVED_TO_PURSUЕ_RELEASE_AUTHORIZATION",
+        "approval": "FOUNDER_APPROVED_TO_PURSUE_RELEASE_AUTHORIZATION",
         "limits": [
           "This approval authorizes preparation of the request only.",
           "A stewardship-issued release contract is required before release-gate execution.",
@@ -71,7 +71,6 @@
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
     ],
     "proposed_surface_if_approved": [
-      "execution/contracts/WORK-CYCLE-SPECIFICATION-APP-ADMIN-RESTORATION-001.json",
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
       "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
       "execution/repository-stewardship/RELEASE-CONTRACT.json",
