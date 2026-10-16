@@ -1,0 +1,40 @@
+{
+  "schema": "EOS-AUTHORITY-TRANSITION-REQUEST-v1",
+  "status": "DRAFT",
+  "request_id": "HUB-RESTORE-AUTO-001-TRANSITION-REQUEST-001",
+  "baseline_sha": "5e459f146d90de2f21e52cdf0dd2dea6771aa012",
+  "current_authority": {
+    "authority_id": "REP-STEWARD-028",
+    "cycle_id": "REP-STEWARD-028-WCS-001",
+    "status": "AUTHORIZED",
+    "branch": "rep-steward-028-hygiene-mainline-port",
+    "expires_at": "2026-10-18T12:16:03+00:00"
+  },
+  "evidence": {
+    "merged_pr": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub/pull/3",
+    "merged_at": "2026-10-15T15:46:36Z",
+    "wcs_terminal_states": [
+      "DRAFT_READY_FOR_REVIEW",
+      "REJECTED"
+    ],
+    "wcs_authorizes_planning_only": true
+  },
+  "requested_current_authority_disposition": "REQUIRES_EXPLICIT_STEWARDSHIP_DECISION",
+  "proposed_successor": {
+    "authority_id": "HUB-RESTORE-AUTO-001",
+    "purpose": "Implement and qualify the bounded verified-feature restoration runner.",
+    "implementation_paths": [
+      "execution/restoration/__init__.py",
+      "execution/restoration/verified_feature_runner.py",
+      "execution/restoration/manifest.schema.json",
+      "tests/restoration/test_verified_feature_runner.py"
+    ],
+    "release_or_deployment_authority": "NOT_REQUESTED"
+  },
+  "invariants": [
+    "This request does not alter or supersede the active authority.",
+    "PR #3 merge is not treated as proof of cycle completion.",
+    "No successor authority is active until explicitly issued.",
+    "No release or deployment is authorized."
+  ]
+}

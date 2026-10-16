@@ -1,0 +1,103 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-002",
+  "execution_stream": "HUB_RESTORATION_AUTHORITY_TRANSITION",
+  "task_id": "HUB-RESTORE-AUTO-001-WCS-002",
+  "authority_binding": {
+    "authority_reference": "FOUNDER",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Prepare this authority-transition request for review.",
+        "approval": "FOUNDER_APPROVED_TO_PREPARE_TRANSITION_REQUEST",
+        "limits": [
+          "This approval authorizes preparation and review of the request only.",
+          "It does not change the active work-cycle authority.",
+          "Runner implementation requires a separately recorded active authority."
+        ]
+      }
+    ]
+  },
+  "execution": {
+    "objective": "Reconcile the active REP-STEWARD-028 planning authority and request a separate authority for implementing the verified-feature restoration runner.",
+    "execution_class": "C",
+    "approval_boundary": "DRAFT_TRANSITION_REQUEST_ONLY",
+    "baseline_sha": "5e459f146d90de2f21e52cdf0dd2dea6771aa012",
+    "evidence": {
+      "merged_planning_pr": 3,
+      "merged_planning_wcs": "REP-STEWARD-028-WCS-001",
+      "active_authority_at_review": "REP-STEWARD-028",
+      "authority_status_at_review": "AUTHORIZED",
+      "planning_wcs_terminal_states": [
+        "DRAFT_READY_FOR_REVIEW",
+        "REJECTED"
+      ],
+      "observed_mismatch": "The planning WCS has no completion state, while the active authority remains AUTHORIZED after PR #3 merged."
+    },
+    "requested_decisions": [
+      "Record the stewardship-approved terminal disposition of REP-STEWARD-028; do not infer that it is complete merely because PR #3 merged.",
+      "If REP-STEWARD-028 is formally closed or superseded, issue a successor authority for the restoration runner on a fresh baseline.",
+      "Limit any successor implementation scope to the four proposed runner and test paths in this WCS."
+    ],
+    "proposed_runner_paths": [
+      "execution/restoration/__init__.py",
+      "execution/restoration/verified_feature_runner.py",
+      "execution/restoration/manifest.schema.json",
+      "tests/restoration/test_verified_feature_runner.py"
+    ],
+    "success_criteria": [
+      "The REP-STEWARD-028 disposition is explicit and supported by an authorized decision.",
+      "The active authority transition is recorded with valid digest evidence.",
+      "A successor runner authority is explicitly issued before runner implementation begins.",
+      "No runner code, application code, release contract, database data, or deployment state is changed by this request."
+    ],
+    "verification_profile": "AUTHORITY_RECONCILIATION; EXPLICIT_SUCCESSOR_AUTHORITY; NO_IMPLEMENTATION"
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-002.json",
+      "execution/workspace/HUB-RESTORE-AUTO-001-AUTHORITY-TRANSITION-REQUEST.json"
+    ],
+    "proposed_successor_implementation_surface": [
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/restoration/__init__.py",
+      "execution/restoration/verified_feature_runner.py",
+      "execution/restoration/manifest.schema.json",
+      "tests/restoration/test_verified_feature_runner.py"
+    ],
+    "forbidden_surface": [
+      "REP-STEWARD-028 authority or WCS changes in this request",
+      "execution/framework/runner.py",
+      "Dashboard application paths",
+      "Release contracts and release guards",
+      "Production or development data",
+      "Merge, publication, or deployment of restored application code"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_TRANSITION_REQUEST",
+    "test_definition": "Governance records only.",
+    "expected_outcome": "A transition request is available for explicit review."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "TRANSITION_REQUEST_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THE_TWO_REQUEST_RECORDS",
+      "MAY_NOT_CHANGE_THE_ACTIVE_AUTHORITY",
+      "MAY_NOT_IMPLEMENT_THE_RUNNER",
+      "MAY_NOT_RESTORE_DASHBOARD_CODE",
+      "MAY_NOT_MERGE_OR_DEPLOY"
+    ]
+  }
+}
