@@ -1,0 +1,109 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "REP-STEWARD-030-WCS-001",
+  "execution_stream": "REPOSITORY_STEWARDSHIP",
+  "task_id": "REP-STEWARD-030-WCS-001",
+  "authority_binding": {
+    "authority_reference": "REP-STEWARD-009",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Prepare a release authorization request and contract for the restored admin dashboard candidate.",
+        "approval": "FOUNDER_APPROVED_TO_PURSUЕ_RELEASE_AUTHORIZATION",
+        "limits": [
+          "This approval authorizes preparation of the request only.",
+          "A stewardship-issued release contract is required before release-gate execution.",
+          "No deployment, merge, publication, or production data change is authorized by this draft."
+        ]
+      }
+    ]
+  },
+  "execution": {
+    "objective": "Obtain EOS and stewardship authorization for the exact admin dashboard candidate before release-gate execution.",
+    "execution_class": "C",
+    "approval_boundary": "DRAFT_RELEASE_AUTHORIZATION_REQUEST",
+    "candidate": {
+      "base_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+      "head_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+      "branch": "rep-steward-029-hygiene-mainline-implementation",
+      "exact_paths": [
+        ".gitignore",
+        ".replitignore",
+        "client/src/components/admin/NotificationTemplatesPanel.tsx",
+        "client/src/components/admin/ProspectsPanel.tsx",
+        "client/src/pages/HubAdminDashboard.tsx",
+        "server/routes.ts",
+        "server/routes/admin-dashboard-tabs.ts",
+        "server/storage/admin-dashboard-tabs.ts",
+        "shared/schema.ts",
+        "tests/admin-dashboard-tabs.browser.cjs",
+        "tests/admin-dashboard-tabs.test.ts"
+      ]
+    },
+    "success_criteria": [
+      "Reconcile the candidate with the active work-cycle authority without repurposing the REP-STEWARD-029 hygiene cycle.",
+      "Obtain the applicable approval through the established EOS process.",
+      "Obtain a stewardship-issued release contract bound to the verified candidate base, head, and exact paths.",
+      "Keep the release gate, existing contracts, application code, and production data unchanged until authorization is complete.",
+      "Do not merge, publish, or deploy during this authorization-request cycle."
+    ],
+    "proposed_outputs": [
+      "A separately approved dashboard release WCS and authority record.",
+      "A stewardship-issued release contract with digest bound to this exact candidate.",
+      "The required release-source certification and digest evidence, if mandated by EOS."
+    ],
+    "verification_profile": "EOS_AUTHORITY_RECONCILIATION; EXACT_CANDIDATE_BINDING; STEWARDSHIP_CONTRACT; NO_DEPLOYMENT"
+  },
+  "depends_on": [
+    "REP-STEWARD-029-WCS-001 hygiene authority must remain separate and unchanged."
+  ],
+  "unlocks": [
+    "Run the authorized release gate after the required approvals and contract are recorded."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-030-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    ],
+    "proposed_surface_if_approved": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-APP-ADMIN-RESTORATION-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/repository-stewardship/RELEASE-CONTRACT.json",
+      "execution/repository-stewardship/RELEASE-CONTRACT.json.sha256",
+      "execution/repository-stewardship/RELEASE-SOURCE-CERTIFICATION.json"
+    ],
+    "forbidden_surface": [
+      "Application feature paths",
+      ".private-recovery/",
+      "Production or development template data",
+      "Release guard or EOS evaluator changes",
+      "Merge, publication, or deployment"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_AUTHORIZATION_REQUEST",
+    "test_definition": "No runtime changes or production operations are authorized.",
+    "expected_outcome": "A draft EOS authorization request is ready for review."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THIS_AUTHORIZATION_REQUEST_DRAFT_ONLY",
+      "MAY_NOT_ISSUE_STEWARDSHIP_APPROVAL",
+      "MAY_NOT_CREATE_AN_APPROVED_RELEASE_CONTRACT",
+      "MAY_NOT_RUN_RELEASE_GATE_OR_DEPLOY"
+    ]
+  }
+}

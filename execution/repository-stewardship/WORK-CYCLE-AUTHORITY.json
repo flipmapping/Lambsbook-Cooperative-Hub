@@ -1,12 +1,12 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-029",
-  "cycle_id": "REP-STEWARD-029-WCS-001",
-  "baseline_sha": "d4a890427f9939bc79c9958c2b03d4225843e8ad",
-  "branch": "rep-steward-029-hygiene-mainline-implementation",
+  "authority_id": "REP-STEWARD-030",
+  "cycle_id": "REP-STEWARD-030-WCS-001",
+  "baseline_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+  "branch": "rep-steward-030-dashboard-release-authorization",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-029-WCS-001.json",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-030-WCS-001.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
   ],
