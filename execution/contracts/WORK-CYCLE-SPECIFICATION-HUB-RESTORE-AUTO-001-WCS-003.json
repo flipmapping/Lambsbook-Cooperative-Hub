@@ -1,0 +1,72 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "FOUNDER_APPROVED",
+  "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-003",
+  "execution_stream": "HUB_RESTORATION_RUNNER",
+  "task_id": "HUB-RESTORE-AUTO-001-WCS-003",
+  "authority_binding": {
+    "authority_reference": "FDR-HUB-002",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
+    "cleanup_authority": "RUNNER_CREATED_TEMPORARY_WORKTREES_ONLY",
+    "deployment_authority": "NOT_GRANTED"
+  },
+  "execution": {
+    "objective": "Implement and qualify a fail-closed verified-feature restoration runner.",
+    "execution_class": "C",
+    "approval_boundary": "RUNNER_IMPLEMENTATION_ONLY",
+    "baseline_sha": "1f066d56cccd715de91f069d2a1ef04a83d29a6e",
+    "first_qualification_case": {
+      "candidate_baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+      "candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+      "release_contract": "MISSING; runner must stop before target mutation"
+    },
+    "success_criteria": [
+      "Validate authority, contract, baseline, candidate, exact paths, patch checksum, and required checks.",
+      "Fail closed before target mutation if required release authority is missing or mismatched.",
+      "Use only an isolated runner-created worktree.",
+      "Run only checks required by a valid release contract.",
+      "Create a restoration PR only after all required checks pass.",
+      "Verify runner-created temporary worktrees are removed after success and failure.",
+      "Never merge, publish, deploy, modify database data, or expand scope."
+    ]
+  },
+  "surface": {
+    "authorized_surface": [
+      "governance/founder-decisions/FDR-HUB-002-RESTORATION-RUNNER-AUTHORITY.md",
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-003.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/restoration/__init__.py",
+      "execution/restoration/verified_feature_runner.py",
+      "execution/restoration/manifest.schema.json",
+      "tests/restoration/test_verified_feature_runner.py"
+    ],
+    "forbidden_surface": [
+      "execution/framework/runner.py",
+      "Dashboard application paths during this cycle",
+      "Release contracts and release guards",
+      "Production or development data",
+      "Application merge, publication, or deployment"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": [
+      "Verify the PR #7 case stops because no valid release contract exists.",
+      "Confirm the blocked run changes no target files.",
+      "Verify exact-path enforcement with a synthetic authorized fixture.",
+      "Verify runner-created temporary worktrees are cleaned up after success and failure.",
+      "Before any later dashboard restoration, sign in as an administrator and verify both tabs and their authorized workflows.",
+      "Before any later dashboard restoration, compare Development template fingerprints; cleanup requires separate authorization."
+    ],
+    "expected_outcome": "Founder records PASS or REJECTED with evidence before cycle closure."
+  },
+  "terminal_states": [
+    "FOUNDER_VERIFIED",
+    "FOUNDER_REJECTED",
+    "BLOCKED_MISSING_RELEASE_AUTHORITY"
+  ]
+}

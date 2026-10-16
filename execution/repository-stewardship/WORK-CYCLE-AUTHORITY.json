@@ -1,24 +1,28 @@
 {
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
-  "authority_id": "REP-STEWARD-028",
-  "cycle_id": "REP-STEWARD-028-WCS-001",
-  "baseline_sha": "a8cad13cbddba7ac0375c1aa37cd98e60a122e3b",
-  "branch": "rep-steward-028-hygiene-mainline-port",
+  "authority_id": "HUB-RESTORE-AUTO-001",
+  "cycle_id": "HUB-RESTORE-AUTO-001-WCS-003",
+  "baseline_sha": "1f066d56cccd715de91f069d2a1ef04a83d29a6e",
+  "branch": "hub-restore-auto-runner-implementation",
   "certified_mutation_paths": [
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-REP-STEWARD-028-WCS-001.json",
+    "governance/founder-decisions/FDR-HUB-002-RESTORATION-RUNNER-AUTHORITY.md",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-003.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
-    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256"
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+    "execution/restoration/__init__.py",
+    "execution/restoration/verified_feature_runner.py",
+    "execution/restoration/manifest.schema.json",
+    "tests/restoration/test_verified_feature_runner.py"
   ],
   "allowed_operations": [
     "build",
     "commit"
   ],
-  "expires_at": "2026-10-18T12:16:03+00:00",
+  "expires_at": "2026-10-23T13:55:10+00:00",
   "verification": {
-    "status": "PASS",
+    "status": "PENDING",
     "verification_owner": "FOUNDER",
-    "evidence": "Founder approved REP-STEWARD-028. The plan records the exact hygiene paths from the approved REP-STEWARD-027 authority and excludes unrelated branch history.",
-    "recorded_on": "2026-10-15"
+    "evidence": "Founder verification is required before cycle closure."
   }
 }
