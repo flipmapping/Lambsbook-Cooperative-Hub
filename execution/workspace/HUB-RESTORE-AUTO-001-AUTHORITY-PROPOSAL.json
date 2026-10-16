@@ -1,0 +1,22 @@
+{
+  "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
+  "status": "DRAFT",
+  "authority_id": "HUB-RESTORE-AUTO-001",
+  "cycle_id": "HUB-RESTORE-AUTO-001-WCS-001",
+  "baseline_sha": "d4a890427f9939bc79c9958c2b03d4225843e8ad",
+  "branch": "hub-restore-auto-implementation",
+  "allowed_operations": [
+    "build",
+    "commit"
+  ],
+  "certified_mutation_paths": [
+    "execution/restoration/__init__.py",
+    "execution/restoration/verified_feature_runner.py",
+    "execution/restoration/manifest.schema.json",
+    "tests/restoration/test_verified_feature_runner.py"
+  ],
+  "verification": {
+    "status": "PENDING",
+    "evidence": "Proposal only. Not active; requires separate Founder approval and EOS authority activation."
+  }
+}

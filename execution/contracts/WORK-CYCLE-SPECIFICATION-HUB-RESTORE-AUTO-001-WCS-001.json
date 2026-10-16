@@ -1,0 +1,108 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-001",
+  "execution_stream": "HUB",
+  "task_id": "HUB-RESTORE-AUTO-001-WCS-001",
+  "authority_binding": {
+    "authority_reference": "FOUNDER",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Prepare and stage this restoration-runner WCS and authority proposal only.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-16",
+        "limits": [
+          "This approval authorizes draft records only.",
+          "Runner implementation requires separate active EOS authority.",
+          "Do not modify execution/framework/runner.py or REP-STEWARD-028.",
+          "Do not merge, publish, deploy, or change production data."
+        ]
+      }
+    ]
+  },
+  "execution": {
+    "objective": "Propose a reusable, fail-closed runner for restoring Founder-approved verified features, using the PR #7 dashboard candidate as its first qualification case.",
+    "execution_class": "C",
+    "approval_boundary": "DRAFT_ONLY",
+    "target_baseline_sha": "d4a890427f9939bc79c9958c2b03d4225843e8ad",
+    "first_qualification_case": {
+      "candidate_baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+      "candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+      "exact_paths": [
+        ".gitignore",
+        ".replitignore",
+        "client/src/components/admin/NotificationTemplatesPanel.tsx",
+        "client/src/components/admin/ProspectsPanel.tsx",
+        "client/src/pages/HubAdminDashboard.tsx",
+        "server/routes.ts",
+        "server/routes/admin-dashboard-tabs.ts",
+        "server/storage/admin-dashboard-tabs.ts",
+        "shared/schema.ts",
+        "tests/admin-dashboard-tabs.browser.cjs",
+        "tests/admin-dashboard-tabs.test.ts"
+      ]
+    },
+    "success_criteria": [
+      "Accept a manifest containing the approved decision, release contract, baseline, candidate, exact paths, patch checksum, and required checks.",
+      "Verify authority, candidate identity, patch checksum, path scope, and target-baseline compatibility before changing files.",
+      "Prepare restorations in an isolated worktree and report exact results.",
+      "Run only the checks required by the applicable release contract.",
+      "Create a restoration PR only after all required checks pass.",
+      "Never merge, publish, deploy, change production data, or silently expand scope.",
+      "Demonstrate a stop result when the release contract or active release gate is missing.",
+      "Do not modify the existing execution/framework/runner.py mutation engine."
+    ],
+    "verification_profile": "MANIFEST_VALIDATION; AUTHORITY_AND_CONTRACT_CHECK; EXACT_PATH_CHECK; ISOLATED_RESTORATION; REQUIRED_RELEASE_GATE; NO_MERGE_OR_DEPLOY"
+  },
+  "depends_on": [
+    "A Hub-specific active work-cycle authority and applicable release contract must be issued before runner implementation.",
+    "The exact proposed runner paths must be reviewed before the WCS becomes active."
+  ],
+  "unlocks": [
+    "A separate manifest-driven restoration run for PR #7 after authority and release-gate prerequisites pass.",
+    "Reuse of the qualified runner for later verified-feature restorations."
+  ],
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-001.json",
+      "execution/workspace/HUB-RESTORE-AUTO-001-AUTHORITY-PROPOSAL.json"
+    ],
+    "proposed_surface_if_approved": [
+      "execution/restoration/__init__.py",
+      "execution/restoration/verified_feature_runner.py",
+      "execution/restoration/manifest.schema.json",
+      "tests/restoration/test_verified_feature_runner.py"
+    ],
+    "forbidden_surface": [
+      "execution/framework/runner.py",
+      "REP-STEWARD-028 WCS and authority records",
+      "Dashboard application paths during runner qualification",
+      "Production or development database data",
+      "Merge, publication, or deployment"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": false,
+    "verification_owner": "NOT_APPLICABLE_DRAFT",
+    "test_definition": "No runner or application code is changed by this draft.",
+    "expected_outcome": "Two draft governance records are staged for review."
+  },
+  "terminal_states": [
+    "DRAFT_READY_FOR_REVIEW",
+    "REJECTED"
+  ],
+  "implementation_agent": {
+    "role": "WCS_DRAFT_ONLY",
+    "authority_boundary": [
+      "MAY_STAGE_THESE_DRAFT_RECORDS_ONLY",
+      "MAY_NOT_IMPLEMENT_THE_RUNNER",
+      "MAY_NOT_RESTORE_THE_DASHBOARD",
+      "MAY_NOT_MERGE_OR_DEPLOY"
+    ]
+  }
+}
