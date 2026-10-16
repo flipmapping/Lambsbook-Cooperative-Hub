@@ -223,6 +223,14 @@ def resolve_target_baseline(root: Path, target: dict[str, str]) -> str:
     return actual_sha
 
 
+def cleanup_worktree(root: Path, worktree: Path, registered: bool) -> None:
+    if registered:
+        command(["git", "worktree", "remove", "--force", str(worktree)], root)
+        command(["git", "worktree", "prune"], root)
+    if worktree.exists():
+        shutil.rmtree(worktree)
+
+
 def run(manifest_path: Path, repo_root: Path) -> None:
     root = repo_root.resolve()
     manifest = read_json(manifest_path.resolve())
@@ -267,11 +275,7 @@ def run(manifest_path: Path, repo_root: Path) -> None:
         )
         print("RESTORATION_PR_CREATED=YES")
     finally:
-        if added:
-            command(["git", "worktree", "remove", "--force", str(worktree)], root)
-            command(["git", "worktree", "prune"], root)
-        if worktree.exists():
-            shutil.rmtree(worktree)
+        cleanup_worktree(root, worktree, added)
 
 
 def main() -> int:
