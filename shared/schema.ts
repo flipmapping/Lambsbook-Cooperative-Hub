@@ -21,6 +21,35 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 
+// Maps the existing table only. Restoring this declaration does not migrate or seed data.
+export const notificationTemplates = pgTable("notification_templates", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  templateKey: text("template_key").notNull(),
+  version: integer("version").notNull().default(1),
+  status: text("status").notNull().default("draft"),
+  enSubject: text("en_subject").notNull(),
+  enMessage: text("en_message").notNull(),
+  viSubject: text("vi_subject"),
+  viMessage: text("vi_message"),
+  zhSubject: text("zh_subject"),
+  zhMessage: text("zh_message"),
+  approvedVariables: jsonb("approved_variables").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+  updatedBy: text("updated_by"),
+});
+
+export const insertNotificationTemplateSchema = createInsertSchema(notificationTemplates)
+  .omit({ id: true, createdAt: true, updatedAt: true, updatedBy: true })
+  .extend({
+    templateKey: z.string().trim().min(1),
+    version: z.number().int().positive().default(1),
+    status: z.enum(["draft", "active", "retired"]).default("draft"),
+    approvedVariables: z.array(z.string().regex(/^\w+$/)).default([]),
+  }).strict();
+export type NotificationTemplate = typeof notificationTemplates.$inferSelect;
+export type InsertNotificationTemplate = z.infer<typeof insertNotificationTemplateSchema>;
+
 export const countries = pgTable("countries", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   code: text("code").notNull().unique(),
