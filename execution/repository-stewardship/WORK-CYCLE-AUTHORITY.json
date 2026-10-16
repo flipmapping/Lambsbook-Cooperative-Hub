@@ -2,27 +2,44 @@
   "schema": "EOS-WORK-CYCLE-AUTHORITY-v1",
   "status": "AUTHORIZED",
   "authority_id": "HUB-RESTORE-AUTO-001",
-  "cycle_id": "HUB-RESTORE-AUTO-001-WCS-003",
-  "baseline_sha": "1f066d56cccd715de91f069d2a1ef04a83d29a6e",
-  "branch": "hub-restore-auto-runner-implementation",
+  "cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+  "baseline_sha": "c2fde4596c9b5d707d828146d7e339e8e135880d",
+  "branch": "hub-restore-auto-release-restoration",
   "certified_mutation_paths": [
-    "governance/founder-decisions/FDR-HUB-002-RESTORATION-RUNNER-AUTHORITY.md",
-    "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-003.json",
+    "governance/founder-decisions/FDR-HUB-003-ADMIN-DASHBOARD-RELEASE.md",
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-004.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
     "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
-    "execution/restoration/__init__.py",
+    "execution/repository-stewardship/RELEASE-CONTRACT.json",
+    "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
+    "execution/workspace/HUB-RMP-003-CANDIDATE.patch.gz",
+    "execution/workspace/HUB-RMP-003-RESTORATION-MANIFEST.json",
     "execution/restoration/verified_feature_runner.py",
     "execution/restoration/manifest.schema.json",
-    "tests/restoration/test_verified_feature_runner.py"
+    "tests/restoration/test_verified_feature_runner.py",
+    ".gitignore",
+    ".replitignore",
+    "client/src/components/admin/NotificationTemplatesPanel.tsx",
+    "client/src/components/admin/ProspectsPanel.tsx",
+    "client/src/pages/HubAdminDashboard.tsx",
+    "server/routes.ts",
+    "server/routes/admin-dashboard-tabs.ts",
+    "server/storage/admin-dashboard-tabs.ts",
+    "shared/schema.ts",
+    "tests/admin-dashboard-tabs.browser.cjs",
+    "tests/admin-dashboard-tabs.test.ts"
   ],
   "allowed_operations": [
     "build",
-    "commit"
+    "commit",
+    "push",
+    "create_pull_request"
   ],
-  "expires_at": "2026-10-23T13:55:10+00:00",
+  "expires_at": "2026-10-23T16:23:10+00:00",
   "verification": {
-    "status": "PENDING",
+    "status": "PASS",
     "verification_owner": "FOUNDER",
-    "evidence": "Founder verification is required before cycle closure."
+    "evidence": "Founder explicitly approved WCS-004 scope in conversation on 2026-10-17.",
+    "recorded_on": "2026-10-17"
   }
 }
