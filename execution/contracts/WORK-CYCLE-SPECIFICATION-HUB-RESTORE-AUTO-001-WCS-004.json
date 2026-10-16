@@ -1,0 +1,120 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "DRAFT",
+  "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+  "execution_stream": "HUB_VERIFIED_FEATURE_RESTORATION",
+  "task_id": "HUB-RESTORE-AUTO-001-WCS-004",
+  "authority_binding": {
+    "authority_reference": "FOUNDER",
+    "binding_status": "DRAFT_ONLY",
+    "implementation_authority": "NOT_GRANTED_UNTIL_SUCCESSOR_AUTHORITY_IS_ACTIVE",
+    "cleanup_authority": "RUNNER_CREATED_TEMPORARY_WORKTREES_ONLY",
+    "deployment_authority": "NOT_GRANTED"
+  },
+  "execution": {
+    "objective": "Propose a bounded authority for issuing a release contract and attempting restoration of the Founder-approved admin dashboard candidate using the verified-feature runner.",
+    "execution_class": "C",
+    "approval_boundary": "DRAFT_PROPOSAL_ONLY",
+    "baseline_sha": "e1ff8f1ff885bb98cbcb2b688df04a3820ee97df",
+    "candidate": {
+      "baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+      "candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+      "exact_paths": [
+        ".gitignore",
+        ".replitignore",
+        "client/src/components/admin/NotificationTemplatesPanel.tsx",
+        "client/src/components/admin/ProspectsPanel.tsx",
+        "client/src/pages/HubAdminDashboard.tsx",
+        "server/routes.ts",
+        "server/routes/admin-dashboard-tabs.ts",
+        "server/storage/admin-dashboard-tabs.ts",
+        "shared/schema.ts",
+        "tests/admin-dashboard-tabs.browser.cjs",
+        "tests/admin-dashboard-tabs.test.ts"
+      ]
+    },
+    "proposed_checks": [
+      [
+        "npm",
+        "run",
+        "build"
+      ],
+      [
+        "node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/admin-dashboard-tabs.test.ts"
+      ],
+      [
+        "node",
+        "tests/admin-dashboard-tabs.browser.cjs"
+      ]
+    ],
+    "success_criteria": [
+      "Obtain explicit approval and activate a successor authority before any release contract or restoration worktree is created.",
+      "Update runner authority binding so it validates the active successor WCS instead of requiring WCS-003.",
+      "Bind the release contract and manifest to the exact baseline, candidate, and 11 application paths.",
+      "Require the build, targeted API test, and browser test listed in this proposal; stop if any required tool or check is unavailable.",
+      "Run restoration only in a runner-created isolated worktree and create a review PR only after all required checks pass.",
+      "Require Founder verification of the real signed-in administrator workflows and a read-only Development template fingerprint comparison before any release decision.",
+      "Never merge, deploy, publish, or modify database records in this cycle."
+    ],
+    "verification_profile": "SUCCESSOR_AUTHORITY; CONTRACT_BINDING; EXACT_PATH_SCOPE; ISOLATED_RESTORATION; BUILD_API_BROWSER_CHECKS; FOUNDER_VERIFICATION; NO_MERGE_OR_DEPLOY"
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-004.json",
+      "execution/workspace/HUB-RESTORE-AUTO-001-WCS-004-PROPOSAL.json"
+    ],
+    "proposed_successor_surface": [
+      "governance/founder-decisions/FDR-HUB-003-ADMIN-DASHBOARD-RELEASE.md",
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-004.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json.sha256",
+      "execution/repository-stewardship/RELEASE-CONTRACT.json",
+      "execution/repository-stewardship/RELEASE-CONTRACT.sha256",
+      "execution/workspace/HUB-RMP-003-CANDIDATE.patch.gz",
+      "execution/workspace/HUB-RMP-003-RESTORATION-MANIFEST.json",
+      "execution/restoration/verified_feature_runner.py",
+      "execution/restoration/manifest.schema.json",
+      "tests/restoration/test_verified_feature_runner.py",
+      ".gitignore",
+      ".replitignore",
+      "client/src/components/admin/NotificationTemplatesPanel.tsx",
+      "client/src/components/admin/ProspectsPanel.tsx",
+      "client/src/pages/HubAdminDashboard.tsx",
+      "server/routes.ts",
+      "server/routes/admin-dashboard-tabs.ts",
+      "server/storage/admin-dashboard-tabs.ts",
+      "shared/schema.ts",
+      "tests/admin-dashboard-tabs.browser.cjs",
+      "tests/admin-dashboard-tabs.test.ts"
+    ],
+    "forbidden_surface": [
+      "Production or Development database writes",
+      "Merge, publication, or deployment",
+      "Application paths outside the exact candidate list",
+      "Changes to execution/framework/runner.py",
+      "Cleanup outside temporary worktrees created by this runner"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": [
+      "Confirm the runner stops before target mutation when the contract is absent or mismatched.",
+      "Confirm exact-path enforcement and temporary-worktree cleanup.",
+      "Review build, API, and browser test results.",
+      "Sign in as an administrator and verify both restored tabs and their authorized workflows.",
+      "Compare Development notification-template fingerprints before and after; do not edit records."
+    ],
+    "expected_outcome": "Founder records PASS or REJECTED before any separate release decision."
+  },
+  "terminal_states": [
+    "FOUNDER_VERIFIED",
+    "FOUNDER_REJECTED",
+    "BLOCKED"
+  ]
+}
