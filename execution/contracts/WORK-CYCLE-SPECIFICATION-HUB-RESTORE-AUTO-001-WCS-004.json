@@ -9,7 +9,19 @@
     "binding_status": "FOUNDER_APPROVED",
     "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
     "cleanup_authority": "RUNNER_CREATED_TEMPORARY_WORKTREES_ONLY",
-    "deployment_authority": "NOT_GRANTED"
+    "deployment_authority": "NOT_GRANTED",
+    "approved_amendments": [
+      {
+        "scope": "Make the browser test a release gate only when it targets an isolated candidate preview; keep build, API, and baseline-versus-restored TypeScript comparison as required checks.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-17",
+        "limits": [
+          "Do not deploy or create a preview to satisfy the browser check.",
+          "Record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE if an isolated candidate preview is unavailable.",
+          "Keep Founder verification and all existing no-merge, no-deployment, and no-database-write limits."
+        ]
+      }
+    ]
   },
   "execution": {
     "objective": "Propose a bounded authority for issuing a release contract and attempting restoration of the Founder-approved admin dashboard candidate using the verified-feature runner.",
@@ -45,10 +57,6 @@
         "tsx",
         "--test",
         "tests/admin-dashboard-tabs.test.ts"
-      ],
-      [
-        "node",
-        "tests/admin-dashboard-tabs.browser.cjs"
       ]
     ],
     "success_criteria": [
@@ -56,12 +64,12 @@
       "Update the runner to validate the active WCS dynamically rather than requiring WCS-003.",
       "Create a digest-bound release contract and manifest for the exact candidate and 11 application paths.",
       "Run restoration only in an isolated runner-created worktree.",
-      "Run the build, targeted API test, browser test, and baseline-versus-restored TypeScript comparison.",
+      "Run the build, targeted API test, and baseline-versus-restored TypeScript comparison; run the browser test as a release gate only against an isolated candidate preview.",
       "Create a restoration review PR only after all required checks pass.",
       "Require Founder verification of signed-in administrator workflows and a read-only Development template fingerprint comparison.",
       "Never merge the restoration PR, deploy, publish, or modify database records."
     ],
-    "verification_profile": "SUCCESSOR_AUTHORITY; CONTRACT_BINDING; EXACT_PATH_SCOPE; ISOLATED_RESTORATION; BUILD_API_BROWSER_CHECKS; FOUNDER_VERIFICATION; NO_MERGE_OR_DEPLOY",
+    "verification_profile": "SUCCESSOR_AUTHORITY; CONTRACT_BINDING; EXACT_PATH_SCOPE; ISOLATED_RESTORATION; BUILD_API_TYPECHECK_AND_CONDITIONAL_CANDIDATE_BROWSER_CHECK; FOUNDER_VERIFICATION; NO_MERGE_OR_DEPLOY",
     "typecheck_comparison": {
       "baseline_command": [
         "npm",
@@ -81,9 +89,18 @@
       "Bind the contract to candidate baseline 90e044eb811b6370b1144833fd2b88cafd89aa02.",
       "Bind the contract to candidate 68e6a3031c473404dc56299ec5d7386203ce871f.",
       "List exactly the 11 approved application paths.",
-      "List the required build, API, and browser checks.",
+      "List the required build and API checks; qualify the browser test only when an isolated candidate preview is available.",
       "Compare TypeScript diagnostics on the target baseline and restored candidate; reject any new errors."
-    ]
+    ],
+    "browser_qualification": {
+      "command": [
+        "node",
+        "tests/admin-dashboard-tabs.browser.cjs"
+      ],
+      "required_only_when": "REPLIT_DEV_DOMAIN serves an isolated preview of the restored candidate.",
+      "if_unavailable": "Record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE; do not deploy or create a preview to satisfy this check.",
+      "ordinary_development_domain": "Supplemental only; it does not qualify the restored candidate."
+    }
   },
   "surface": {
     "authorized_surface": [
@@ -149,7 +166,7 @@
     "test_definition": [
       "Confirm contract absence or mismatch stops before target mutation.",
       "Confirm exact-path enforcement and cleanup of runner-created temporary worktrees.",
-      "Review build, API, browser, and TypeScript comparison evidence.",
+      "Review build, API, TypeScript comparison, and any browser result; a browser result counts as a gate only for an isolated candidate preview.",
       "Sign in as an administrator and verify the Prospects and Notification Templates workflows.",
       "Compare Development notification-template fingerprints before and after; do not edit records."
     ],
