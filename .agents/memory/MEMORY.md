@@ -1,2 +1,1 @@
 - [Deploy backup-guard trap](deploy-backup-guard-trap.md) — prebuild guard exits 1 on .bak files in runtime roots; gitignored but deploy scans live workspace, so deploys keep failing.
-- [Admin restoration boundaries](admin-restoration-boundaries.md) — restoring admin tabs is code-only; preserve multilingual template data and exclude Prospect bulk deletion.
