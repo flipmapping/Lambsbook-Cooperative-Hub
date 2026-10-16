@@ -1,0 +1,69 @@
+{
+  "schema": "EOS-WORK-CYCLE-AUTHORITY-PROPOSAL-v1",
+  "status": "DRAFT",
+  "proposal_id": "HUB-RESTORE-AUTO-001-WCS-004-PROPOSAL",
+  "baseline_sha": "e1ff8f1ff885bb98cbcb2b688df04a3820ee97df",
+  "current_authority": {
+    "authority_id": "HUB-RESTORE-AUTO-001",
+    "cycle_id": "HUB-RESTORE-AUTO-001-WCS-003",
+    "status": "AUTHORIZED"
+  },
+  "reason": "WCS-003 authorized runner implementation and qualification but forbids release-contract changes and dashboard application paths. The runner also currently binds to WCS-003.",
+  "requested_successor": {
+    "cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+    "purpose": "Authorize a candidate-bound release contract, runner authority-binding update, and isolated restoration attempt.",
+    "application_paths": [
+      ".gitignore",
+      ".replitignore",
+      "client/src/components/admin/NotificationTemplatesPanel.tsx",
+      "client/src/components/admin/ProspectsPanel.tsx",
+      "client/src/pages/HubAdminDashboard.tsx",
+      "server/routes.ts",
+      "server/routes/admin-dashboard-tabs.ts",
+      "server/storage/admin-dashboard-tabs.ts",
+      "shared/schema.ts",
+      "tests/admin-dashboard-tabs.browser.cjs",
+      "tests/admin-dashboard-tabs.test.ts"
+    ],
+    "required_checks": [
+      [
+        "npm",
+        "run",
+        "build"
+      ],
+      [
+        "node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/admin-dashboard-tabs.test.ts"
+      ],
+      [
+        "node",
+        "tests/admin-dashboard-tabs.browser.cjs"
+      ]
+    ],
+    "merge_or_deployment_authority": "NOT_REQUESTED",
+    "database_write_authority": "NOT_REQUESTED",
+    "typecheck_comparison": {
+      "baseline_command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "restored_candidate_command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "acceptance": "Compare diagnostics from the exact target baseline and restored candidate; fail if the restored candidate introduces any new TypeScript errors.",
+      "reported_baseline": "17 pre-existing errors, pending independent reproduction"
+    }
+  },
+  "invariants": [
+    "This draft does not change the active authority.",
+    "No release contract or restoration worktree may be created until successor authority is explicitly approved and active.",
+    "The exact candidate and path list must remain fixed unless a separately approved amendment is issued.",
+    "Founder verification is required before any release decision."
+  ]
+}
