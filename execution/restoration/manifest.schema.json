@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EOS-VERIFIED-FEATURE-RESTORATION-MANIFEST-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "authority", "wcs", "founder_decision",
+    "release_contract", "source", "target", "required_checks",
+    "pull_request"
+  ],
+  "properties": {
+    "schema": {
+      "const": "EOS-VERIFIED-FEATURE-RESTORATION-MANIFEST-v1"
+    },
+    "authority": {
+      "$ref": "#/$defs/bound_file"
+    },
+    "wcs": {
+      "$ref": "#/$defs/bound_file"
+    },
+    "founder_decision": {
+      "$ref": "#/$defs/bound_file"
+    },
+    "release_contract": {
+      "$ref": "#/$defs/bound_file"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_sha", "candidate_sha", "patch_path",
+        "patch_sha256", "exact_paths"
+      ],
+      "properties": {
+        "baseline_sha": {"$ref": "#/$defs/sha"},
+        "candidate_sha": {"$ref": "#/$defs/sha"},
+        "patch_path": {"type": "string", "minLength": 1},
+        "patch_sha256": {"$ref": "#/$defs/sha256"},
+        "exact_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["branch", "baseline_sha"],
+      "properties": {
+        "branch": {"type": "string", "minLength": 1},
+        "baseline_sha": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "required_checks": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string", "minLength": 1}
+      }
+    },
+    "pull_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "body"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "body": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "bound_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
