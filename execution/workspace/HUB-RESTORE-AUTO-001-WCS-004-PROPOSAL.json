@@ -44,7 +44,21 @@
       ]
     ],
     "merge_or_deployment_authority": "NOT_REQUESTED",
-    "database_write_authority": "NOT_REQUESTED"
+    "database_write_authority": "NOT_REQUESTED",
+    "typecheck_comparison": {
+      "baseline_command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "restored_candidate_command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "acceptance": "Compare diagnostics from the exact target baseline and restored candidate; fail if the restored candidate introduces any new TypeScript errors.",
+      "reported_baseline": "17 pre-existing errors, pending independent reproduction"
+    }
   },
   "invariants": [
     "This draft does not change the active authority.",

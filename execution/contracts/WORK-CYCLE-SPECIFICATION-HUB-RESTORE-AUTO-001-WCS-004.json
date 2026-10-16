@@ -58,9 +58,24 @@
       "Require the build, targeted API test, and browser test listed in this proposal; stop if any required tool or check is unavailable.",
       "Run restoration only in a runner-created isolated worktree and create a review PR only after all required checks pass.",
       "Require Founder verification of the real signed-in administrator workflows and a read-only Development template fingerprint comparison before any release decision.",
-      "Never merge, deploy, publish, or modify database records in this cycle."
+      "Never merge, deploy, publish, or modify database records in this cycle.",
+      "Compare TypeScript diagnostics on the target baseline and restored candidate; accept only if no new errors are introduced."
     ],
-    "verification_profile": "SUCCESSOR_AUTHORITY; CONTRACT_BINDING; EXACT_PATH_SCOPE; ISOLATED_RESTORATION; BUILD_API_BROWSER_CHECKS; FOUNDER_VERIFICATION; NO_MERGE_OR_DEPLOY"
+    "verification_profile": "SUCCESSOR_AUTHORITY; CONTRACT_BINDING; EXACT_PATH_SCOPE; ISOLATED_RESTORATION; BUILD_API_BROWSER_CHECKS; FOUNDER_VERIFICATION; NO_MERGE_OR_DEPLOY",
+    "typecheck_comparison": {
+      "baseline_command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "restored_candidate_command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "acceptance": "Compare diagnostics from the exact target baseline and restored candidate; fail if the restored candidate introduces any new TypeScript errors.",
+      "reported_baseline": "17 pre-existing errors, pending independent reproduction"
+    }
   },
   "surface": {
     "authorized_surface": [
