@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections import Counter
+
 import argparse
 import gzip
 import hashlib
@@ -83,6 +85,21 @@ def exact_paths(actual: list[str], expected: list[str]) -> None:
         )
 
 
+
+def verify_authority_wcs(authority: dict[str, Any], wcs: dict[str, Any]) -> None:
+    if authority.get("status") != "AUTHORIZED":
+        stop("AUTHORITY_NOT_ACTIVE")
+    if authority.get("authority_id") != "HUB-RESTORE-AUTO-001":
+        stop("UNEXPECTED_AUTHORITY")
+    cycle_id = authority.get("cycle_id")
+    if not isinstance(cycle_id, str) or not cycle_id:
+        stop("AUTHORITY_CYCLE_MISSING")
+    if wcs.get("status") != "FOUNDER_APPROVED":
+        stop("WCS_NOT_APPROVED")
+    if wcs.get("work_cycle_id") != cycle_id:
+        stop("WCS_AUTHORITY_CYCLE_MISMATCH")
+
+
 def release_contract(
     root: Path,
     item: dict[str, str],
@@ -139,8 +156,6 @@ def validate(root: Path, manifest: dict[str, Any]) -> tuple[bytes, list[str]]:
         stop("AUTHORITY_NOT_ACTIVE")
     if authority.get("authority_id") != "HUB-RESTORE-AUTO-001":
         stop("UNEXPECTED_AUTHORITY")
-    if authority.get("cycle_id") != "HUB-RESTORE-AUTO-001-WCS-003":
-        stop("UNEXPECTED_CYCLE")
 
     current_branch = command(
         ["git", "branch", "--show-current"], root
@@ -150,13 +165,23 @@ def validate(root: Path, manifest: dict[str, Any]) -> tuple[bytes, list[str]]:
 
     wcs_path = verify_bound_file(root, manifest["wcs"], "wcs")
     wcs = read_json(wcs_path)
-    if wcs.get("status") != "FOUNDER_APPROVED":
-        stop("WCS_NOT_APPROVED")
+    verify_authority_wcs(authority, wcs)
 
     verify_bound_file(root, manifest["founder_decision"], "founder_decision")
 
     source = manifest["source"]
     paths = source["exact_paths"]
+    approved_paths = (
+        wcs.get("execution", {})
+        .get("candidate", {})
+        .get("exact_paths")
+    )
+    if not isinstance(approved_paths, list):
+        stop("WCS_CANDIDATE_PATHS_MISSING")
+    exact_paths(paths, approved_paths)
+    certified_paths = authority.get("certified_mutation_paths")
+    if not isinstance(certified_paths, list) or not set(paths).issubset(certified_paths):
+        stop("PATHS_OUTSIDE_AUTHORITY")
     if not paths or len(paths) != len(set(paths)):
         stop("INVALID_EXACT_PATH_LIST")
     for item in paths:
@@ -223,11 +248,82 @@ def resolve_target_baseline(root: Path, target: dict[str, str]) -> str:
     return actual_sha
 
 
+
+def link_node_modules(root: Path, worktree: Path) -> None:
+    source = (root / "node_modules").resolve()
+    if not source.is_dir():
+        stop("NODE_MODULES_UNAVAILABLE", str(source))
+    target = worktree / "node_modules"
+    if target.exists() or target.is_symlink():
+        stop("WORKTREE_NODE_MODULES_ALREADY_EXISTS", str(target))
+    target.symlink_to(source, target_is_directory=True)
+
+
+def typecheck_diagnostics(worktree: Path, args: list[str]) -> Counter:
+    result = subprocess.run(
+        args,
+        cwd=worktree,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        check=False,
+    )
+    output = (result.stdout or "") + "\n" + (result.stderr or "")
+    pattern = re.compile(
+        r"^(?P<file>.+?)\(\d+,\d+\): error "
+        r"(?P<code>TS\d+): (?P<message>.*)$"
+    )
+    diagnostics = Counter()
+    unparsed_type_errors = []
+
+    for line in output.splitlines():
+        match = pattern.match(line.strip())
+        if match:
+            filename = match.group("file").replace("\\", "/")
+            prefix = str(worktree.resolve()).replace("\\", "/").rstrip("/") + "/"
+            if filename.startswith(prefix):
+                filename = filename[len(prefix):]
+            diagnostics[
+                (filename, match.group("code"), match.group("message"))
+            ] += 1
+        elif "error TS" in line:
+            unparsed_type_errors.append(line)
+
+    if unparsed_type_errors:
+        stop(
+            "TYPECHECK_DIAGNOSTIC_FORMAT_UNRECOGNIZED",
+            "; ".join(unparsed_type_errors[:3]),
+        )
+    if result.returncode != 0 and not diagnostics:
+        stop(
+            "TYPECHECK_COMMAND_FAILED_WITHOUT_DIAGNOSTICS",
+            f"exit={result.returncode}: {output.strip()[:1000]}",
+        )
+    return diagnostics
+
+
+def compare_typecheck_diagnostics(
+    baseline_worktree: Path,
+    candidate_worktree: Path,
+    args: list[str],
+) -> None:
+    baseline = typecheck_diagnostics(baseline_worktree, args)
+    candidate = typecheck_diagnostics(candidate_worktree, args)
+    introduced = candidate - baseline
+    if introduced:
+        details = [
+            f"{count}x {filename}: {code}: {message}"
+            for (filename, code, message), count in sorted(introduced.items())
+        ]
+        stop("NEW_TYPESCRIPT_DIAGNOSTICS", " | ".join(details))
+    print(f"TYPECHECK_COMPARISON=PASS baseline={sum(baseline.values())} candidate={sum(candidate.values())}")
+
+
 def cleanup_worktree(root: Path, worktree: Path, registered: bool) -> None:
     if registered:
         command(["git", "worktree", "remove", "--force", str(worktree)], root)
         command(["git", "worktree", "prune"], root)
-    if worktree.exists():
+    if worktree.exists() or worktree.is_symlink():
         shutil.rmtree(worktree)
 
 
@@ -243,24 +339,62 @@ def run(manifest_path: Path, repo_root: Path) -> None:
     if remote.strip() or local.strip():
         stop("RESTORATION_BRANCH_ALREADY_EXISTS", new_branch)
 
-    worktree = Path(tempfile.mkdtemp(prefix="hub-restore-"))
-    shutil.rmtree(worktree)
-    added = False
-    try:
-        command(["git", "worktree", "add", "-b", new_branch, str(worktree), target_sha], root)
-        added = True
-        command(["git", "apply", "--check", "--binary", "-"], worktree, patch)
-        command(["git", "apply", "--binary", "-"], worktree, patch)
+    candidate_worktree = Path(tempfile.mkdtemp(prefix="hub-restore-candidate-"))
+    baseline_worktree = Path(tempfile.mkdtemp(prefix="hub-restore-baseline-"))
+    shutil.rmtree(candidate_worktree)
+    shutil.rmtree(baseline_worktree)
+    candidate_added = False
+    baseline_added = False
 
-        changed = command(["git", "diff", "--name-only"], worktree).decode().splitlines()
+    try:
+        command(
+            ["git", "worktree", "add", "--detach", str(baseline_worktree), target_sha],
+            root,
+        )
+        baseline_added = True
+        command(
+            ["git", "worktree", "add", "-b", new_branch, str(candidate_worktree), target_sha],
+            root,
+        )
+        candidate_added = True
+
+        link_node_modules(root, baseline_worktree)
+        link_node_modules(root, candidate_worktree)
+
+        command(["git", "apply", "--check", "--binary", "-"], candidate_worktree, patch)
+        command(["git", "apply", "--binary", "-"], candidate_worktree, patch)
+
+        changed = command(
+            ["git", "diff", "--name-only"], candidate_worktree
+        ).decode().splitlines()
         exact_paths(changed, paths)
 
         for check in manifest["required_checks"]:
-            command(check, worktree)
+            command(check, candidate_worktree)
 
-        command(["git", "add", "--", *paths], worktree)
-        command(["git", "commit", "-m", "Restore Founder-approved verified feature"], worktree)
-        command(["git", "push", "-u", "origin", new_branch], worktree)
+        wcs_path = verify_bound_file(root, manifest["wcs"], "wcs")
+        wcs = read_json(wcs_path)
+        comparison = wcs.get("execution", {}).get("typecheck_comparison", {})
+        typecheck_command = comparison.get("restored_candidate_command")
+        if (
+            not isinstance(typecheck_command, list)
+            or not typecheck_command
+            or not all(isinstance(part, str) for part in typecheck_command)
+            or comparison.get("baseline_command") != typecheck_command
+        ):
+            stop("TYPECHECK_COMPARISON_NOT_VALIDLY_SPECIFIED")
+        compare_typecheck_diagnostics(
+            baseline_worktree,
+            candidate_worktree,
+            typecheck_command,
+        )
+
+        command(["git", "add", "--", *paths], candidate_worktree)
+        command(
+            ["git", "commit", "-m", "Restore Founder-approved verified feature"],
+            candidate_worktree,
+        )
+        command(["git", "push", "-u", "origin", new_branch], candidate_worktree)
 
         pr = manifest["pull_request"]
         command(
@@ -271,11 +405,12 @@ def run(manifest_path: Path, repo_root: Path) -> None:
                 "--title", pr["title"],
                 "--body", pr["body"],
             ],
-            worktree,
+            candidate_worktree,
         )
         print("RESTORATION_PR_CREATED=YES")
     finally:
-        cleanup_worktree(root, worktree, added)
+        cleanup_worktree(root, candidate_worktree, candidate_added)
+        cleanup_worktree(root, baseline_worktree, baseline_added)
 
 
 def main() -> int:

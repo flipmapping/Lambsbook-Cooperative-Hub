@@ -7,14 +7,57 @@ from unittest.mock import patch
 from execution.restoration.verified_feature_runner import (
     GateError,
     cleanup_worktree,
+    compare_typecheck_diagnostics,
     exact_paths,
     patch_bytes,
     release_contract,
     resolve_target_baseline,
+    verify_authority_wcs,
 )
 
 
 class VerifiedFeatureRunnerTests(unittest.TestCase):
+    def test_authority_accepts_matching_wcs004(self):
+        verify_authority_wcs(
+            {
+                "status": "AUTHORIZED",
+                "authority_id": "HUB-RESTORE-AUTO-001",
+                "cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+            },
+            {
+                "status": "FOUNDER_APPROVED",
+                "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+            },
+        )
+
+    def test_authority_rejects_wcs_cycle_mismatch(self):
+        with self.assertRaisesRegex(GateError, "WCS_AUTHORITY_CYCLE_MISMATCH"):
+            verify_authority_wcs(
+                {
+                    "status": "AUTHORIZED",
+                    "authority_id": "HUB-RESTORE-AUTO-001",
+                    "cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+                },
+                {
+                    "status": "FOUNDER_APPROVED",
+                    "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-003",
+                },
+            )
+
+    def test_authority_rejects_unapproved_wcs(self):
+        with self.assertRaisesRegex(GateError, "WCS_NOT_APPROVED"):
+            verify_authority_wcs(
+                {
+                    "status": "AUTHORIZED",
+                    "authority_id": "HUB-RESTORE-AUTO-001",
+                    "cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+                },
+                {
+                    "status": "DRAFT",
+                    "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-004",
+                },
+            )
+
     def test_exact_path_scope_passes_only_on_exact_match(self):
         exact_paths(["a.py", "b.py"], ["b.py", "a.py"])
 
@@ -103,6 +146,32 @@ class VerifiedFeatureRunnerTests(unittest.TestCase):
 
     def test_cleanup_after_failure(self):
         self.assert_cleanup_removes_registered_worktree()
+
+
+    @patch("execution.restoration.verified_feature_runner.subprocess.run")
+    def test_typecheck_comparison_allows_existing_errors_and_line_shifts(self, mocked_run):
+        from subprocess import CompletedProcess
+
+        mocked_run.side_effect = [
+            CompletedProcess([], 2, "src/a.ts(1,2): error TS2322: Existing issue\n", ""),
+            CompletedProcess([], 2, "src/a.ts(9,4): error TS2322: Existing issue\n", ""),
+        ]
+        compare_typecheck_diagnostics(
+            Path("/tmp/baseline"), Path("/tmp/candidate"), ["npm", "run", "check"]
+        )
+
+    @patch("execution.restoration.verified_feature_runner.subprocess.run")
+    def test_typecheck_comparison_rejects_new_error(self, mocked_run):
+        from subprocess import CompletedProcess
+
+        mocked_run.side_effect = [
+            CompletedProcess([], 0, "", ""),
+            CompletedProcess([], 2, "src/new.ts(3,1): error TS2304: New issue\n", ""),
+        ]
+        with self.assertRaisesRegex(GateError, "NEW_TYPESCRIPT_DIAGNOSTICS"):
+            compare_typecheck_diagnostics(
+                Path("/tmp/baseline"), Path("/tmp/candidate"), ["npm", "run", "check"]
+            )
 
 
 if __name__ == "__main__":
