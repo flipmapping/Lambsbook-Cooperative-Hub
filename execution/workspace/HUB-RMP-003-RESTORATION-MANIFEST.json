@@ -6,7 +6,7 @@
   },
   "wcs": {
     "path": "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-004.json",
-    "sha256": "260aea733f5783086036a8aaa8c425d049fa6bfd96548307461517bc9aa8edf0"
+    "sha256": "0b44ca94aad78097eda2406377f15ba21ac2737d3b653a1e57997ff2280d6e21"
   },
   "founder_decision": {
     "path": "governance/founder-decisions/FDR-HUB-003-ADMIN-DASHBOARD-RELEASE.md",

@@ -36,3 +36,8 @@ Limits
 ## Amendment — isolated PR #16 preview
 
 Founder approval: 2026-10-17. After steward review and activation, a temporary isolated preview may be used for PR #16 commit `5948cb503a861bd9dc9675f26bf31b9d9425c2a9` runtime verification. This permits no publishing, deployment, database writes, or merge of PR #16. If isolation requires any of those actions, stop and record NOT RUN.
+
+
+## One-time merge authorization — PR #15
+
+Founder approval: 2026-10-17. Authorizes one merge of PR #15 only, after steward approval of its current head. It does not authorize merging PR #16, publishing, deployment, or database writes. Authorization expires immediately after PR #15 is merged.

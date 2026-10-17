@@ -44,6 +44,20 @@
           "Use only the exact PR #16 candidate commit.",
           "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
         ]
+      },
+      {
+        "id": "HUB-RESTORE-AUTO-001-WCS-004-PR15-MERGE",
+        "pull_request": 15,
+        "scope": "One-time merge of PR #15 only, after steward approval of the current PR head.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-17",
+        "requires_steward_reapproval_on_current_head": true,
+        "expires": "Immediately after PR #15 is merged.",
+        "prohibitions": [
+          "Does not authorize merging PR #16.",
+          "Does not authorize publishing or deployment.",
+          "Does not authorize database writes."
+        ]
       }
     ]
   },
@@ -144,6 +158,19 @@
       "requires_steward_reapproval": true,
       "expires": "Immediately after PR #14 is merged.",
       "dashboard_restoration_pr_merge": "NOT_AUTHORIZED"
+    },
+    "subsequent_one_time_merge_authorization": {
+      "pull_request": 15,
+      "scope": "One-time merge of PR #15 only, after steward approval of the current PR head.",
+      "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+      "approved_on": "2026-10-17",
+      "requires_steward_reapproval_on_current_head": true,
+      "expires": "Immediately after PR #15 is merged.",
+      "prohibitions": [
+        "Does not authorize merging PR #16.",
+        "Does not authorize publishing or deployment.",
+        "Does not authorize database writes."
+      ]
     }
   },
   "surface": {
