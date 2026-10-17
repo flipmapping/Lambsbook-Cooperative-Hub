@@ -33,13 +33,14 @@
     "build",
     "commit",
     "push",
-    "create_pull_request"
+    "create_pull_request",
+    "merge_pull_request"
   ],
   "expires_at": "2026-10-23T16:23:10+00:00",
   "verification": {
     "status": "PASS",
     "verification_owner": "FOUNDER",
-    "evidence": "Founder explicitly approved WCS-004 scope in conversation on 2026-10-17.",
+    "evidence": "Founder approved a one-time merge authorization for PR #14 only in conversation on 2026-10-17; steward re-approval is required.",
     "recorded_on": "2026-10-17"
   }
 }
