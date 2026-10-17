@@ -19,6 +19,8 @@ import {
 import { EnrollmentWorkflow } from "@/components/admin/EnrollmentWorkflow";
 import { ProgramsManagement } from "@/components/admin/ProgramsManagement";
 import { AdmissionsWorkspace } from "@/pages/AdmissionsWorkspace";
+import { ProspectsPanel } from "@/components/admin/ProspectsPanel";
+import { NotificationTemplatesPanel } from "@/components/admin/NotificationTemplatesPanel";
 
 type MembershipStatus = "free" | "paid";
 type ActivityStatus = "active" | "inactive";
@@ -225,7 +227,7 @@ export default function HubAdminDashboard() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="flex flex-wrap w-full max-w-3xl gap-1" data-testid="tabs-admin">
+        <TabsList className="flex flex-wrap h-auto w-full max-w-3xl gap-1" data-testid="tabs-admin">
           <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
           <TabsTrigger value="programs" data-testid="tab-programs">Programs</TabsTrigger>
           <TabsTrigger value="members" data-testid="tab-members">Members</TabsTrigger>
@@ -235,8 +237,16 @@ export default function HubAdminDashboard() {
           <TabsTrigger value="settings" data-testid="tab-settings">Settings</TabsTrigger>
           <TabsTrigger value="enrollment" data-testid="tab-enrollment">Enrollment</TabsTrigger>
           <TabsTrigger value="admissions" data-testid="tab-admissions">Admissions</TabsTrigger>
+          <TabsTrigger value="prospects" data-testid="tab-prospects">Prospects</TabsTrigger>
+          <TabsTrigger value="notification-templates" data-testid="tab-notification-templates">Notification Templates</TabsTrigger>
         </TabsList>
 
+        <TabsContent value="prospects" className="space-y-4">
+          <ProspectsPanel />
+        </TabsContent>
+        <TabsContent value="notification-templates" className="space-y-4">
+          <NotificationTemplatesPanel />
+        </TabsContent>
         <TabsContent value="overview" className="space-y-6">
           {statsLoading ? (
             <div className="text-center py-8">Loading stats...</div>
