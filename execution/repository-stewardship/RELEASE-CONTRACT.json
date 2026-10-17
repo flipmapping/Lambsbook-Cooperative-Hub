@@ -75,8 +75,21 @@
       "node",
       "tests/admin-dashboard-tabs.browser.cjs"
     ],
-    "status": "NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE",
-    "evidence": "The available Replit development domain is not an isolated preview of the candidate worktree. No deployment or preview was created."
+    "status": "NOT_RUN_AMENDMENT_REQUIRES_REVIEW_AND_ACTIVATION",
+    "evidence": "No candidate preview was started. This amendment requires steward review and activation before any runtime verification.",
+    "authorization_amendment": {
+      "id": "HUB-RESTORE-AUTO-001-WCS-004-PR16-PREVIEW-AMENDMENT",
+      "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_REVIEW_REQUIRED",
+      "candidate_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+      "scope": "Run PR #16 in a temporary isolated candidate preview for Founder runtime verification.",
+      "limits": [
+        "No publish or deployment.",
+        "No database writes or record edits.",
+        "No merge of PR #16.",
+        "Use only the exact PR #16 candidate commit.",
+        "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
+      ]
+    }
   },
   "founder_verification": {
     "status": "PENDING",
@@ -152,5 +165,5 @@
       ]
     }
   },
-  "contract_sha256": "81cc80b1a13c75a3ff9776d45b128e3c54d9c7651ab0b9ae097b37d3d0bf0313"
+  "contract_sha256": "338b66b3866bc71ec7ab56ba78e8ce8fe3ffa7475b5e240054549a5f79e9a8de"
 }

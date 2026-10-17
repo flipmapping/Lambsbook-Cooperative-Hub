@@ -31,3 +31,8 @@ Limits
 - No release contract or restoration worktree before the successor authority is active.
 - No database writes, merge of the restoration PR, publication, or deployment.
 - Founder verification is required before any separate release decision.
+
+
+## Amendment — isolated PR #16 preview
+
+Founder approval: 2026-10-17. After steward review and activation, a temporary isolated preview may be used for PR #16 commit `5948cb503a861bd9dc9675f26bf31b9d9425c2a9` runtime verification. This permits no publishing, deployment, database writes, or merge of PR #16. If isolation requires any of those actions, stop and record NOT RUN.
