@@ -15,6 +15,9 @@ from execution.restoration.verified_feature_runner import (
     stage_and_verify_paths,
     verify_authority_wcs,
     verify_candidate_pr,
+    stop_preview_process,
+    wait_for_preview_start,
+    ensure_preview_port_available,
 )
 
 
@@ -196,6 +199,45 @@ class VerifiedFeatureRunnerTests(unittest.TestCase):
         mocked_command.return_value = b'{"state":"OPEN","headRefOid":"different"}'
         with self.assertRaisesRegex(GateError, "CANDIDATE_PR_HEAD_MISMATCH"):
             verify_candidate_pr(Path("/repo"), "5948cb503a861bd9dc9675f26bf31b9d9425c2a9")
+
+
+    def test_preview_port_guard_allows_unused_port(self):
+        with patch("execution.restoration.verified_feature_runner.socket.create_connection", side_effect=OSError("closed")):
+            ensure_preview_port_available()
+
+    def test_preview_port_guard_rejects_occupied_port(self):
+        with patch("execution.restoration.verified_feature_runner.socket.create_connection") as connect:
+            with self.assertRaisesRegex(GateError, "PREVIEW_PORT_IN_USE"):
+                ensure_preview_port_available()
+            connect.assert_called_once()
+
+    def test_preview_start_wait_rejects_early_process_exit(self):
+        process = unittest.mock.Mock()
+        process.poll.return_value = 7
+        with patch("execution.restoration.verified_feature_runner.time.monotonic", return_value=0):
+            with self.assertRaisesRegex(GateError, "CANDIDATE_PREVIEW_EXITED_EARLY"):
+                wait_for_preview_start(process, timeout=1)
+
+    def test_preview_start_wait_times_out(self):
+        process = unittest.mock.Mock()
+        process.poll.return_value = None
+        with patch("execution.restoration.verified_feature_runner.time.monotonic", side_effect=[0, 2]):
+            with self.assertRaisesRegex(GateError, "CANDIDATE_PREVIEW_START_TIMEOUT"):
+                wait_for_preview_start(process, timeout=1)
+
+    def test_preview_process_shutdown_escalates_and_waits(self):
+        process = unittest.mock.Mock()
+        process.pid = 123
+        process.poll.return_value = None
+        process.wait.side_effect = [
+            subprocess.TimeoutExpired("npm run dev", 10),
+            None,
+        ]
+        with patch("execution.restoration.verified_feature_runner.os.killpg") as killpg:
+            stop_preview_process(process)
+        self.assertEqual(killpg.call_count, 2)
+        self.assertEqual(process.wait.call_count, 2)
+
 
 
 if __name__ == "__main__":
