@@ -20,6 +20,17 @@
           "Record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE if an isolated candidate preview is unavailable.",
           "Keep Founder verification and all existing no-merge, no-deployment, and no-database-write limits."
         ]
+      },
+      {
+        "scope": "Authorize a one-time merge of PR #14 only, after steward re-approval of the amended PR. This does not authorize merging the dashboard restoration PR.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-17",
+        "limits": [
+          "Applies only to PR #14, the WCS-004 runner and its qualification changes.",
+          "Requires steward re-approval after this amendment is added.",
+          "Expires immediately after PR #14 is merged.",
+          "Does not authorize merging a dashboard restoration PR, deployment, publication, or database changes."
+        ]
       }
     ]
   },
@@ -100,6 +111,13 @@
       "required_only_when": "REPLIT_DEV_DOMAIN serves an isolated preview of the restored candidate.",
       "if_unavailable": "Record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE; do not deploy or create a preview to satisfy this check.",
       "ordinary_development_domain": "Supplemental only; it does not qualify the restored candidate."
+    },
+    "one_time_merge_authorization": {
+      "pull_request": 14,
+      "purpose": "Merge the reviewed WCS-004 runner implementation and qualification amendment only.",
+      "requires_steward_reapproval": true,
+      "expires": "Immediately after PR #14 is merged.",
+      "dashboard_restoration_pr_merge": "NOT_AUTHORIZED"
     }
   },
   "surface": {
