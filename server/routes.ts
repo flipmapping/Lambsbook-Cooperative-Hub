@@ -31,6 +31,7 @@ import {
   getUser,
 } from "./services/supabase-auth";
 import adminRoutes from "./routes/admin";
+import adminDashboardTabsRoutes from "./routes/admin-dashboard-tabs";
 import memberRoutes from "./routes/member";
 import financialRoutes from "./routes/financialRoutes";
 import governanceRoute from "./routes/governanceRoute";
@@ -53,6 +54,7 @@ export async function registerRoutes(
   app: Express,
 ): Promise<Server> {
   app.use(detectPlatformAdmin);
+  app.use("/api/admin", adminDashboardTabsRoutes);
   app.use("/api/admin", adminRoutes);
   app.use("/api/member", memberRoutes);
   app.use("/api/notification-preferences", notificationPreferencesRoute);
