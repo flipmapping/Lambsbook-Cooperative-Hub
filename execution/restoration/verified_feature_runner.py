@@ -319,6 +319,15 @@ def compare_typecheck_diagnostics(
     print(f"TYPECHECK_COMPARISON=PASS baseline={sum(baseline.values())} candidate={sum(candidate.values())}")
 
 
+def stage_and_verify_paths(worktree: Path, expected: list[str]) -> None:
+    # Staging only approved paths includes new files in the scope check.
+    command(["git", "add", "--", *expected], worktree)
+    staged = command(
+        ["git", "diff", "--cached", "--name-only"], worktree
+    ).decode().splitlines()
+    exact_paths(staged, expected)
+
+
 def cleanup_worktree(root: Path, worktree: Path, registered: bool) -> None:
     if registered:
         command(["git", "worktree", "remove", "--force", str(worktree)], root)
@@ -336,8 +345,19 @@ def run(manifest_path: Path, repo_root: Path) -> None:
     new_branch = f"restore/{manifest['source']['candidate_sha'][:12]}"
     remote = command(["git", "ls-remote", "--heads", "origin", new_branch], root)
     local = command(["git", "branch", "--list", new_branch], root)
-    if remote.strip() or local.strip():
+    local_exists = bool(local.strip())
+    local_sha = ""
+    if remote.strip():
         stop("RESTORATION_BRANCH_ALREADY_EXISTS", new_branch)
+    if local_exists:
+        local_sha = command(
+            ["git", "rev-parse", f"refs/heads/{new_branch}"], root
+        ).decode().strip()
+        if local_sha != target_sha:
+            stop(
+                "RESTORATION_BRANCH_NOT_AT_TARGET_BASELINE",
+                f"{new_branch}={local_sha}; target={target_sha}",
+            )
 
     candidate_worktree = Path(tempfile.mkdtemp(prefix="hub-restore-candidate-"))
     baseline_worktree = Path(tempfile.mkdtemp(prefix="hub-restore-baseline-"))
@@ -352,10 +372,16 @@ def run(manifest_path: Path, repo_root: Path) -> None:
             root,
         )
         baseline_added = True
-        command(
-            ["git", "worktree", "add", "-b", new_branch, str(candidate_worktree), target_sha],
-            root,
-        )
+        if local_exists:
+            command(
+                ["git", "worktree", "add", str(candidate_worktree), new_branch],
+                root,
+            )
+        else:
+            command(
+                ["git", "worktree", "add", "-b", new_branch, str(candidate_worktree), target_sha],
+                root,
+            )
         candidate_added = True
 
         link_node_modules(root, baseline_worktree)
@@ -364,10 +390,7 @@ def run(manifest_path: Path, repo_root: Path) -> None:
         command(["git", "apply", "--check", "--binary", "-"], candidate_worktree, patch)
         command(["git", "apply", "--binary", "-"], candidate_worktree, patch)
 
-        changed = command(
-            ["git", "diff", "--name-only"], candidate_worktree
-        ).decode().splitlines()
-        exact_paths(changed, paths)
+        stage_and_verify_paths(candidate_worktree, paths)
 
         for check in manifest["required_checks"]:
             command(check, candidate_worktree)
