@@ -41,3 +41,8 @@ Founder approval: 2026-10-17. After steward review and activation, a temporary i
 ## One-time merge authorization — PR #15
 
 Founder approval: 2026-10-17. Authorizes one merge of PR #15 only, after steward approval of its current head. It does not authorize merging PR #16, publishing, deployment, or database writes. Authorization expires immediately after PR #15 is merged.
+
+
+## One-time merge authorization — PR #17
+
+Founder approval: 2026-10-17. Authorizes one merge of PR #17 only, after steward approval of the updated PR head. It does not authorize merging PR #16, publishing, deployment, or database writes. Authorization expires immediately after PR #17 is merged.

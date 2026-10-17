@@ -9,6 +9,9 @@ import json
 import os
 import re
 import shutil
+import time
+import socket
+import signal
 import subprocess
 import sys
 import tempfile
@@ -436,13 +439,103 @@ def run(manifest_path: Path, repo_root: Path) -> None:
         cleanup_worktree(root, baseline_worktree, baseline_added)
 
 
+
+def verify_candidate_pr(root: Path, candidate_sha: str) -> None:
+    raw = command(
+        ["gh", "pr", "view", "16", "--json", "state,headRefOid"],
+        root,
+    )
+    try:
+        pr = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        stop("CANDIDATE_PR_RESPONSE_INVALID", str(exc))
+    if pr.get("state") != "OPEN" or pr.get("headRefOid") != candidate_sha:
+        stop(
+            "CANDIDATE_PR_HEAD_MISMATCH",
+            f"state={pr.get('state')}; head={pr.get('headRefOid')}; expected={candidate_sha}",
+        )
+
+
+def run_preview(manifest_path: Path, repo_root: Path) -> None:
+    root = repo_root.resolve()
+    manifest = read_json(manifest_path.resolve())
+    validate(root, manifest)
+    candidate_sha = manifest["source"]["candidate_sha"]
+    verify_candidate_pr(root, candidate_sha)
+
+    if not os.environ.get("REPLIT_DEV_DOMAIN"):
+        stop("REPLIT_PREVIEW_DOMAIN_UNAVAILABLE")
+    try:
+        with socket.create_connection(("127.0.0.1", 5000), timeout=1):
+            stop("PREVIEW_PORT_IN_USE", "Stop the existing Replit Project workflow, then retry.")
+    except OSError:
+        pass
+
+    worktree = Path(tempfile.mkdtemp(prefix="hub-restore-preview-"))
+    shutil.rmtree(worktree)
+    registered = False
+    process = None
+    try:
+        command(
+            ["git", "worktree", "add", "--detach", str(worktree), candidate_sha],
+            root,
+        )
+        registered = True
+        link_node_modules(root, worktree)
+
+        config = (worktree / ".replit").read_text(encoding="utf-8")
+        if 'PORT = "5000"' not in config or "localPort = 5000" not in config:
+            stop("CANDIDATE_PREVIEW_PORT_CONFIG_MISMATCH")
+
+        env = os.environ.copy()
+        env["PORT"] = "5000"
+        process = subprocess.Popen(
+            ["npm", "run", "dev"],
+            cwd=worktree,
+            env=env,
+            stdin=subprocess.DEVNULL,
+            start_new_session=True,
+        )
+
+        deadline = time.monotonic() + 120
+        while time.monotonic() < deadline:
+            if process.poll() is not None:
+                stop("CANDIDATE_PREVIEW_EXITED_EARLY", f"exit={process.returncode}")
+            try:
+                with socket.create_connection(("127.0.0.1", 5000), timeout=1):
+                    break
+            except OSError:
+                time.sleep(1)
+        else:
+            stop("CANDIDATE_PREVIEW_START_TIMEOUT")
+
+        domain = os.environ["REPLIT_DEV_DOMAIN"].removeprefix("https://").removeprefix("http://").rstrip("/")
+        print(f"CANDIDATE_PREVIEW_COMMIT={candidate_sha}", flush=True)
+        print(f"CANDIDATE_PREVIEW_URL=https://{domain}/hub/dashboard", flush=True)
+        print("Verify both tabs and read-only workflows in the browser.", flush=True)
+        input("After verification, return here and press Enter to stop and clean up: ")
+    finally:
+        if process is not None and process.poll() is None:
+            try:
+                os.killpg(process.pid, signal.SIGTERM)
+                process.wait(timeout=10)
+            except (ProcessLookupError, subprocess.TimeoutExpired):
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+        cleanup_worktree(root, worktree, registered)
+        print("CANDIDATE_PREVIEW_STOPPED_AND_WORKTREE_CLEANED", flush=True)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--repo-root", type=Path, default=Path.cwd())
+    parser.add_argument("--preview", action="store_true", help="Run an isolated preview of PR #16")
     args = parser.parse_args()
     try:
-        run(args.manifest, args.repo_root)
+        run_preview(args.manifest, args.repo_root) if args.preview else run(args.manifest, args.repo_root)
     except GateError as exc:
         print(f"RESTORATION_STOP={exc}", file=sys.stderr)
         return 2

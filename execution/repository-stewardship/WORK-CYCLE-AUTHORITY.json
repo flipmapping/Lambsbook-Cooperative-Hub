@@ -40,7 +40,7 @@
   "verification": {
     "status": "PASS",
     "verification_owner": "FOUNDER",
-    "evidence": "Founder authorized a one-time merge of PR #15 only in conversation on 2026-10-17, subject to steward approval on the current PR head.",
+    "evidence": "Founder authorized a one-time merge of PR #17 only in conversation on 2026-10-17, conditioned on steward approval of the updated PR head.",
     "recorded_on": "2026-10-17"
   }
 }
