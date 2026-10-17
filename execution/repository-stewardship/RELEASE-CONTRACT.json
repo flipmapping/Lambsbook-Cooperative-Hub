@@ -1,0 +1,169 @@
+{
+  "authority": "HUB-RMP-003",
+  "implementation_authority": "HUB-RMP-003",
+  "contract_version": "2.0.0",
+  "generated_at": "2026-10-17T00:48:07.584348+00:00",
+  "repository_baseline": {
+    "branch": "main",
+    "head": "93315291565281d4f739518a0524f19013af9244",
+    "divergence": {
+      "branch": "main",
+      "head": "93315291565281d4f739518a0524f19013af9244",
+      "ahead": 0,
+      "behind": 0,
+      "authority": "HUB-RESTORE-AUTO-001-WCS-004",
+      "timestamp": "2026-10-17T00:48:07.584378+00:00"
+    }
+  },
+  "source_candidate": {
+    "baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+    "candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+    "pull_request": 7
+  },
+  "certified_change_scope": [
+    ".gitignore",
+    ".replitignore",
+    "client/src/components/admin/NotificationTemplatesPanel.tsx",
+    "client/src/components/admin/ProspectsPanel.tsx",
+    "client/src/pages/HubAdminDashboard.tsx",
+    "server/routes.ts",
+    "server/routes/admin-dashboard-tabs.ts",
+    "server/storage/admin-dashboard-tabs.ts",
+    "shared/schema.ts",
+    "tests/admin-dashboard-tabs.browser.cjs",
+    "tests/admin-dashboard-tabs.test.ts"
+  ],
+  "certified_runtime_files": [
+    "client/src/components/admin/NotificationTemplatesPanel.tsx",
+    "client/src/components/admin/ProspectsPanel.tsx",
+    "client/src/pages/HubAdminDashboard.tsx",
+    "server/routes.ts",
+    "server/routes/admin-dashboard-tabs.ts",
+    "server/storage/admin-dashboard-tabs.ts",
+    "shared/schema.ts"
+  ],
+  "required_checks": [
+    [
+      "npm",
+      "run",
+      "build"
+    ],
+    [
+      "node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/admin-dashboard-tabs.test.ts"
+    ]
+  ],
+  "typecheck_comparison": {
+    "baseline_command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "restored_candidate_command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "acceptance": "Compare diagnostics from the exact target baseline and restored candidate; fail if the restored candidate introduces any new TypeScript errors.",
+    "reported_baseline": "17 pre-existing errors, pending independent reproduction"
+  },
+  "browser_qualification": {
+    "command": [
+      "node",
+      "tests/admin-dashboard-tabs.browser.cjs"
+    ],
+    "status": "NOT_RUN_AMENDMENT_REQUIRES_REVIEW_AND_ACTIVATION",
+    "evidence": "No candidate preview was started. This amendment requires steward review and activation before any runtime verification.",
+    "authorization_amendment": {
+      "id": "HUB-RESTORE-AUTO-001-WCS-004-PR16-PREVIEW-AMENDMENT",
+      "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_REVIEW_REQUIRED",
+      "candidate_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+      "scope": "Run PR #16 in a temporary isolated candidate preview for Founder runtime verification.",
+      "limits": [
+        "No publish or deployment.",
+        "No database writes or record edits.",
+        "No merge of PR #16.",
+        "Use only the exact PR #16 candidate commit.",
+        "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
+      ]
+    }
+  },
+  "founder_verification": {
+    "status": "PENDING",
+    "required_before_separate_release_decision": true,
+    "checks": [
+      "Confirm contract absence or mismatch stops before target mutation.",
+      "Confirm exact-path enforcement and cleanup of runner-created temporary worktrees.",
+      "Review build, API, TypeScript comparison, and any browser result; a browser result counts as a gate only for an isolated candidate preview.",
+      "Sign in as an administrator and verify the Prospects and Notification Templates workflows.",
+      "Compare Development notification-template fingerprints before and after; do not edit records."
+    ]
+  },
+  "deployment_configuration": {
+    "authority": "NOT_GRANTED",
+    "deployment_target": "NOT_AUTHORIZED",
+    "approved_port_mappings": [],
+    "deployment_port_override": null,
+    "production_port_mapping": null,
+    "build_command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "run_command": []
+  },
+  "immutability": {
+    "main_app_must_consume_without_modification": true,
+    "manual_scope_expansion_permitted": false,
+    "scope_change_requires_new_contract": true
+  },
+  "repository_artifact_lifecycle": {
+    "authority": "HUB-RESTORE-AUTO-001-WCS-004",
+    "automatic_cleanup": [
+      "runner-created temporary worktrees only"
+    ],
+    "cleanup_safety": [
+      "preserve all pre-existing worktrees and files"
+    ],
+    "manual_review_classes": [
+      "restoration pull request"
+    ],
+    "protected_classes": [
+      "database records",
+      "production data",
+      "deployment state"
+    ]
+  },
+  "repository_root_admission": {
+    "allowed_root_directories": [],
+    "root_files": [
+      ".gitignore",
+      ".replitignore"
+    ]
+  },
+  "repository_runtime_boundaries": {
+    "excluded_from_release_candidate": []
+  },
+  "composition_summary": {
+    "admin_dashboard_restoration": {
+      "count": 11,
+      "paths": [
+        ".gitignore",
+        ".replitignore",
+        "client/src/components/admin/NotificationTemplatesPanel.tsx",
+        "client/src/components/admin/ProspectsPanel.tsx",
+        "client/src/pages/HubAdminDashboard.tsx",
+        "server/routes.ts",
+        "server/routes/admin-dashboard-tabs.ts",
+        "server/storage/admin-dashboard-tabs.ts",
+        "shared/schema.ts",
+        "tests/admin-dashboard-tabs.browser.cjs",
+        "tests/admin-dashboard-tabs.test.ts"
+      ]
+    }
+  },
+  "contract_sha256": "338b66b3866bc71ec7ab56ba78e8ce8fe3ffa7475b5e240054549a5f79e9a8de"
+}

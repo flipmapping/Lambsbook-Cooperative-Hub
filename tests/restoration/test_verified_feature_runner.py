@@ -12,6 +12,7 @@ from execution.restoration.verified_feature_runner import (
     patch_bytes,
     release_contract,
     resolve_target_baseline,
+    stage_and_verify_paths,
     verify_authority_wcs,
 )
 
@@ -172,6 +173,14 @@ class VerifiedFeatureRunnerTests(unittest.TestCase):
             compare_typecheck_diagnostics(
                 Path("/tmp/baseline"), Path("/tmp/candidate"), ["npm", "run", "check"]
             )
+
+    def test_scope_check_includes_new_untracked_files(self):
+        with tempfile.TemporaryDirectory() as temp:
+            repo = Path(temp)
+            subprocess.run(["git", "init", "-q", str(repo)], check=True)
+            (repo / "new-a.txt").write_text("a", encoding="utf-8")
+            (repo / "new-b.txt").write_text("b", encoding="utf-8")
+            stage_and_verify_paths(repo, ["new-a.txt", "new-b.txt"])
 
 
 if __name__ == "__main__":

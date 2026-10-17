@@ -31,6 +31,33 @@
           "Expires immediately after PR #14 is merged.",
           "Does not authorize merging a dashboard restoration PR, deployment, publication, or database changes."
         ]
+      },
+      {
+        "id": "HUB-RESTORE-AUTO-001-WCS-004-PR16-PREVIEW-AMENDMENT",
+        "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_REVIEW_REQUIRED",
+        "candidate_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+        "scope": "Run PR #16 in a temporary isolated candidate preview for Founder runtime verification.",
+        "limits": [
+          "No publish or deployment.",
+          "No database writes or record edits.",
+          "No merge of PR #16.",
+          "Use only the exact PR #16 candidate commit.",
+          "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
+        ]
+      },
+      {
+        "id": "HUB-RESTORE-AUTO-001-WCS-004-PR15-MERGE",
+        "pull_request": 15,
+        "scope": "One-time merge of PR #15 only, after steward approval of the current PR head.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-17",
+        "requires_steward_reapproval_on_current_head": true,
+        "expires": "Immediately after PR #15 is merged.",
+        "prohibitions": [
+          "Does not authorize merging PR #16.",
+          "Does not authorize publishing or deployment.",
+          "Does not authorize database writes."
+        ]
       }
     ]
   },
@@ -108,9 +135,22 @@
         "node",
         "tests/admin-dashboard-tabs.browser.cjs"
       ],
-      "required_only_when": "REPLIT_DEV_DOMAIN serves an isolated preview of the restored candidate.",
-      "if_unavailable": "Record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE; do not deploy or create a preview to satisfy this check.",
-      "ordinary_development_domain": "Supplemental only; it does not qualify the restored candidate."
+      "required_only_when": "An isolated preview serves the exact PR #16 candidate commit after this amendment is approved and active.",
+      "if_unavailable": "Record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE; do not publish or deploy to create one.",
+      "ordinary_development_domain": "Supplemental only; it does not qualify the restored candidate.",
+      "founder_approved_amendment": {
+        "id": "HUB-RESTORE-AUTO-001-WCS-004-PR16-PREVIEW-AMENDMENT",
+        "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_REVIEW_REQUIRED",
+        "candidate_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+        "scope": "Run PR #16 in a temporary isolated candidate preview for Founder runtime verification.",
+        "limits": [
+          "No publish or deployment.",
+          "No database writes or record edits.",
+          "No merge of PR #16.",
+          "Use only the exact PR #16 candidate commit.",
+          "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
+        ]
+      }
     },
     "one_time_merge_authorization": {
       "pull_request": 14,
@@ -118,6 +158,19 @@
       "requires_steward_reapproval": true,
       "expires": "Immediately after PR #14 is merged.",
       "dashboard_restoration_pr_merge": "NOT_AUTHORIZED"
+    },
+    "subsequent_one_time_merge_authorization": {
+      "pull_request": 15,
+      "scope": "One-time merge of PR #15 only, after steward approval of the current PR head.",
+      "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+      "approved_on": "2026-10-17",
+      "requires_steward_reapproval_on_current_head": true,
+      "expires": "Immediately after PR #15 is merged.",
+      "prohibitions": [
+        "Does not authorize merging PR #16.",
+        "Does not authorize publishing or deployment.",
+        "Does not authorize database writes."
+      ]
     }
   },
   "surface": {

@@ -1,0 +1,60 @@
+{
+  "schema": "EOS-VERIFIED-FEATURE-RESTORATION-MANIFEST-v1",
+  "authority": {
+    "path": "execution/repository-stewardship/WORK-CYCLE-AUTHORITY.json",
+    "sha256": "ac97fe4406183a71d49330adc32e421b615f091cf014a74ce36d6ba6ddb88c69"
+  },
+  "wcs": {
+    "path": "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-004.json",
+    "sha256": "0b44ca94aad78097eda2406377f15ba21ac2737d3b653a1e57997ff2280d6e21"
+  },
+  "founder_decision": {
+    "path": "governance/founder-decisions/FDR-HUB-003-ADMIN-DASHBOARD-RELEASE.md",
+    "sha256": "7d59236b854b4c3240d232f70d5ec4efd5adb7e5d2d95493165e5e29a6fa40eb"
+  },
+  "release_contract": {
+    "path": "execution/repository-stewardship/RELEASE-CONTRACT.json",
+    "sha256": "1b63f62e8886fb33ab35e9d806bf241a265926651628f84c0a942954816ffd51"
+  },
+  "source": {
+    "baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+    "candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+    "patch_path": "execution/workspace/HUB-RMP-003-CANDIDATE.patch.gz",
+    "patch_sha256": "6ed6e0d08e35ef99a56ca96b7deb2c1f57f16efb47e421d7a30e25f8d39aef34",
+    "exact_paths": [
+      ".gitignore",
+      ".replitignore",
+      "client/src/components/admin/NotificationTemplatesPanel.tsx",
+      "client/src/components/admin/ProspectsPanel.tsx",
+      "client/src/pages/HubAdminDashboard.tsx",
+      "server/routes.ts",
+      "server/routes/admin-dashboard-tabs.ts",
+      "server/storage/admin-dashboard-tabs.ts",
+      "shared/schema.ts",
+      "tests/admin-dashboard-tabs.browser.cjs",
+      "tests/admin-dashboard-tabs.test.ts"
+    ]
+  },
+  "target": {
+    "branch": "main",
+    "baseline_sha": "93315291565281d4f739518a0524f19013af9244"
+  },
+  "required_checks": [
+    [
+      "npm",
+      "run",
+      "build"
+    ],
+    [
+      "node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/admin-dashboard-tabs.test.ts"
+    ]
+  ],
+  "pull_request": {
+    "title": "Restore Founder-approved admin dashboard tabs",
+    "body": "Restores the exact HUB-RMP-003 candidate paths under WCS-004. Build, API, and baseline-versus-candidate TypeScript checks are required. No database changes, merge, publication, or deployment are authorized. Founder verification remains required before any separate release decision."
+  }
+}
