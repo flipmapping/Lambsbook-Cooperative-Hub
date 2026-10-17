@@ -14,6 +14,7 @@ from execution.restoration.verified_feature_runner import (
     resolve_target_baseline,
     stage_and_verify_paths,
     verify_authority_wcs,
+    verify_candidate_pr,
 )
 
 
@@ -181,6 +182,20 @@ class VerifiedFeatureRunnerTests(unittest.TestCase):
             (repo / "new-a.txt").write_text("a", encoding="utf-8")
             (repo / "new-b.txt").write_text("b", encoding="utf-8")
             stage_and_verify_paths(repo, ["new-a.txt", "new-b.txt"])
+
+
+    @patch("execution.restoration.verified_feature_runner.command")
+    def test_candidate_pr_requires_exact_manifest_commit(self, mocked_command):
+        mocked_command.return_value = (
+            b'{"state":"OPEN","headRefOid":"5948cb503a861bd9dc9675f26bf31b9d9425c2a9"}'
+        )
+        verify_candidate_pr(Path("/repo"), "5948cb503a861bd9dc9675f26bf31b9d9425c2a9")
+
+    @patch("execution.restoration.verified_feature_runner.command")
+    def test_candidate_pr_rejects_different_head(self, mocked_command):
+        mocked_command.return_value = b'{"state":"OPEN","headRefOid":"different"}'
+        with self.assertRaisesRegex(GateError, "CANDIDATE_PR_HEAD_MISMATCH"):
+            verify_candidate_pr(Path("/repo"), "5948cb503a861bd9dc9675f26bf31b9d9425c2a9")
 
 
 if __name__ == "__main__":
