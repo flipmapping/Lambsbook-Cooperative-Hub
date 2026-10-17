@@ -456,6 +456,44 @@ def verify_candidate_pr(root: Path, candidate_sha: str) -> None:
         )
 
 
+def ensure_preview_port_available(port: int = 5000) -> None:
+    try:
+        with socket.create_connection(("127.0.0.1", port), timeout=1):
+            stop("PREVIEW_PORT_IN_USE", "Stop the existing Replit Project workflow, then retry.")
+    except OSError:
+        return
+
+
+def wait_for_preview_start(process: subprocess.Popen, port: int = 5000, timeout: int = 120) -> None:
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        if process.poll() is not None:
+            stop("CANDIDATE_PREVIEW_EXITED_EARLY", f"exit={process.returncode}")
+        try:
+            with socket.create_connection(("127.0.0.1", port), timeout=1):
+                return
+        except OSError:
+            time.sleep(1)
+    stop("CANDIDATE_PREVIEW_START_TIMEOUT")
+
+
+def stop_preview_process(process: subprocess.Popen | None) -> None:
+    if process is None or process.poll() is not None:
+        return
+    try:
+        os.killpg(process.pid, signal.SIGTERM)
+    except ProcessLookupError:
+        return
+    try:
+        process.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        process.wait()
+
+
 def run_preview(manifest_path: Path, repo_root: Path) -> None:
     root = repo_root.resolve()
     manifest = read_json(manifest_path.resolve())
@@ -465,11 +503,7 @@ def run_preview(manifest_path: Path, repo_root: Path) -> None:
 
     if not os.environ.get("REPLIT_DEV_DOMAIN"):
         stop("REPLIT_PREVIEW_DOMAIN_UNAVAILABLE")
-    try:
-        with socket.create_connection(("127.0.0.1", 5000), timeout=1):
-            stop("PREVIEW_PORT_IN_USE", "Stop the existing Replit Project workflow, then retry.")
-    except OSError:
-        pass
+    ensure_preview_port_available()
 
     worktree = Path(tempfile.mkdtemp(prefix="hub-restore-preview-"))
     shutil.rmtree(worktree)
@@ -497,17 +531,7 @@ def run_preview(manifest_path: Path, repo_root: Path) -> None:
             start_new_session=True,
         )
 
-        deadline = time.monotonic() + 120
-        while time.monotonic() < deadline:
-            if process.poll() is not None:
-                stop("CANDIDATE_PREVIEW_EXITED_EARLY", f"exit={process.returncode}")
-            try:
-                with socket.create_connection(("127.0.0.1", 5000), timeout=1):
-                    break
-            except OSError:
-                time.sleep(1)
-        else:
-            stop("CANDIDATE_PREVIEW_START_TIMEOUT")
+        wait_for_preview_start(process)
 
         domain = os.environ["REPLIT_DEV_DOMAIN"].removeprefix("https://").removeprefix("http://").rstrip("/")
         print(f"CANDIDATE_PREVIEW_COMMIT={candidate_sha}", flush=True)
@@ -515,15 +539,7 @@ def run_preview(manifest_path: Path, repo_root: Path) -> None:
         print("Verify both tabs and read-only workflows in the browser.", flush=True)
         input("After verification, return here and press Enter to stop and clean up: ")
     finally:
-        if process is not None and process.poll() is None:
-            try:
-                os.killpg(process.pid, signal.SIGTERM)
-                process.wait(timeout=10)
-            except (ProcessLookupError, subprocess.TimeoutExpired):
-                try:
-                    os.killpg(process.pid, signal.SIGKILL)
-                except ProcessLookupError:
-                    pass
+        stop_preview_process(process)
         cleanup_worktree(root, worktree, registered)
         print("CANDIDATE_PREVIEW_STOPPED_AND_WORKTREE_CLEANED", flush=True)
 

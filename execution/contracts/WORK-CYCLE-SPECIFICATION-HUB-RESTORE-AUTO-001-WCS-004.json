@@ -72,6 +72,21 @@
           "Does not authorize publishing or deployment.",
           "Does not authorize database writes."
         ]
+      },
+      {
+        "id": "HUB-RESTORE-AUTO-001-WCS-004-PR18-MERGE",
+        "pull_request": 18,
+        "scope": "One-time merge of PR #18 only, after steward approval of the updated PR head.",
+        "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+        "approved_on": "2026-10-17",
+        "requires_steward_reapproval_on_updated_head": true,
+        "expires": "Immediately after PR #18 is merged.",
+        "prohibitions": [
+          "Does not authorize merging PR #16.",
+          "Does not authorize merging any other pull request.",
+          "Does not authorize publishing or deployment.",
+          "Does not authorize database writes."
+        ]
       }
     ]
   },
@@ -195,6 +210,20 @@
       "expires": "Immediately after PR #17 is merged.",
       "prohibitions": [
         "Does not authorize merging PR #16.",
+        "Does not authorize publishing or deployment.",
+        "Does not authorize database writes."
+      ]
+    },
+    "pr18_one_time_merge_authorization": {
+      "pull_request": 18,
+      "scope": "One-time merge of PR #18 only, after steward approval of the updated PR head.",
+      "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+      "approved_on": "2026-10-17",
+      "requires_steward_reapproval_on_updated_head": true,
+      "expires": "Immediately after PR #18 is merged.",
+      "prohibitions": [
+        "Does not authorize merging PR #16.",
+        "Does not authorize merging any other pull request.",
         "Does not authorize publishing or deployment.",
         "Does not authorize database writes."
       ]
