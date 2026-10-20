@@ -34,7 +34,7 @@
       },
       {
         "id": "HUB-RESTORE-AUTO-001-WCS-004-PR16-PREVIEW-AMENDMENT",
-        "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_REVIEW_REQUIRED",
+        "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_APPROVED_FOR_ISOLATED_PREVIEW_ONLY",
         "candidate_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
         "scope": "Run PR #16 in a temporary isolated candidate preview for Founder runtime verification.",
         "limits": [
@@ -43,7 +43,16 @@
           "No merge of PR #16.",
           "Use only the exact PR #16 candidate commit.",
           "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
-        ]
+        ],
+        "steward_review": {
+          "review_id": 5587394817,
+          "reviewer": "skyhubedu-jpg",
+          "state": "APPROVED",
+          "submitted_at": "2026-10-20T15:28:32Z",
+          "reviewed_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+          "review_url": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub/pull/16#pullrequestreview-5587394817",
+          "decision_scope": "ISOLATED_PREVIEW_ONLY"
+        }
       },
       {
         "id": "HUB-RESTORE-AUTO-001-WCS-004-PR15-MERGE",
@@ -169,7 +178,7 @@
       "ordinary_development_domain": "Supplemental only; it does not qualify the restored candidate.",
       "founder_approved_amendment": {
         "id": "HUB-RESTORE-AUTO-001-WCS-004-PR16-PREVIEW-AMENDMENT",
-        "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_REVIEW_REQUIRED",
+        "status": "FOUNDER_APPROVED_IN_CONVERSATION; STEWARD_APPROVED_FOR_ISOLATED_PREVIEW_ONLY",
         "candidate_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
         "scope": "Run PR #16 in a temporary isolated candidate preview for Founder runtime verification.",
         "limits": [
@@ -178,7 +187,16 @@
           "No merge of PR #16.",
           "Use only the exact PR #16 candidate commit.",
           "If an isolated preview cannot be provided without publishing or deployment, stop and record NOT_RUN."
-        ]
+        ],
+        "steward_review": {
+          "review_id": 5587394817,
+          "reviewer": "skyhubedu-jpg",
+          "state": "APPROVED",
+          "submitted_at": "2026-10-20T15:28:32Z",
+          "reviewed_commit": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+          "review_url": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub/pull/16#pullrequestreview-5587394817",
+          "decision_scope": "ISOLATED_PREVIEW_ONLY"
+        }
       }
     },
     "one_time_merge_authorization": {
