@@ -1,0 +1,98 @@
+{
+  "schema": "EOS-WORK-CYCLE-AUTHORITY-PROPOSAL-v1",
+  "status": "FOUNDER_APPROVED_PENDING_STEWARD_REVIEW",
+  "proposal_id": "HUB-RESTORE-AUTO-001-WCS-005-AUTHORITY-PROPOSAL",
+  "authority_id": "HUB-RESTORE-AUTO-001",
+  "cycle_id": "HUB-RESTORE-AUTO-001-WCS-005",
+  "baseline_sha": "dfe10234550d30d5308a492ad7be0500bfabbca5",
+  "proposed_branch": "governance/hub-restore-auto-wcs-005-successor-authority",
+  "founder_approval": {
+    "status": "APPROVED_IN_CONVERSATION",
+    "approved_on": "2026-10-21",
+    "scope": "WCS-005 bounded runner qualification, exact-candidate preview safeguards, and subsequent governed restoration of the approved 11-path candidate.",
+    "term": "P1M"
+  },
+  "activation": {
+    "authority_pr_merge_activates": false,
+    "requires_separate_reviewed_activation_record": true,
+    "activation_timestamp": null,
+    "expires_at": null,
+    "term_rule": "One calendar month after the actual activation timestamp, recorded in the separate activation record.",
+    "execution_allowed_before_activation": false,
+    "runner_expiry_enforcement_and_regression_tests_required": true
+  },
+  "proposed_mutation_paths": [
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-HUB-RESTORE-AUTO-001-WCS-005.json",
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY-PROPOSAL-HUB-RESTORE-AUTO-001-WCS-005.json",
+    "governance/founder-decisions/FDR-HUB-003-WCS-005-SUCCESSOR-AUTHORITY.md"
+  ],
+  "post_activation_qualification_paths": [
+    "execution/restoration/verified_feature_runner.py",
+    "execution/restoration/manifest.schema.json",
+    "execution/workspace/HUB-RMP-003-RESTORATION-MANIFEST.json",
+    "tests/restoration/test_verified_feature_runner.py"
+  ],
+  "candidate": {
+    "target_branch": "main",
+    "target_baseline_rule": "Bind to origin/main at authorized runner invocation and record the exact SHA in the manifest.",
+    "source_baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+    "source_candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+    "exact_application_paths": [
+      ".gitignore",
+      ".replitignore",
+      "client/src/components/admin/NotificationTemplatesPanel.tsx",
+      "client/src/components/admin/ProspectsPanel.tsx",
+      "client/src/pages/HubAdminDashboard.tsx",
+      "server/routes.ts",
+      "server/routes/admin-dashboard-tabs.ts",
+      "server/storage/admin-dashboard-tabs.ts",
+      "shared/schema.ts",
+      "tests/admin-dashboard-tabs.browser.cjs",
+      "tests/admin-dashboard-tabs.test.ts"
+    ]
+  },
+  "preview": {
+    "pull_request": 16,
+    "required_state": "OPEN",
+    "exact_candidate_sha": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+    "status": "NOT_RUN",
+    "limits": [
+      "No publication or deployment.",
+      "No database writes or record edits.",
+      "Do not merge PR #16.",
+      "If an isolated preview cannot run without publishing or deploying, stop and record NOT_RUN."
+    ]
+  },
+  "required_checks": [
+    [
+      "npm",
+      "run",
+      "build"
+    ],
+    [
+      "node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/admin-dashboard-tabs.test.ts"
+    ],
+    [
+      "npm",
+      "run",
+      "check"
+    ],
+    "Compare baseline and restored-candidate TypeScript diagnostics; reject newly introduced errors.",
+    "Run the browser check only against an isolated preview of the exact approved candidate; otherwise record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE."
+  ],
+  "invariants": [
+    "Keep the canonical WCS-004 authority unchanged until the separately reviewed activation procedure.",
+    "Do not treat WCS-004 as valid after its recorded expiry.",
+    "No restoration, manifest rebinding, or preview execution before WCS-005 activation and applicable runner qualification.",
+    "Preserve execution/repository-stewardship/RELEASE-CONTRACT.json byte-for-byte.",
+    "No database writes, record edits, publication, deployment, or merge of PR #16 or the restoration PR.",
+    "No application changes outside the exact 11-path candidate list.",
+    "Cleanup only temporary resources created by the runner.",
+    "Founder runtime verification is required before any separate release decision."
+  ],
+  "execution_performed": false
+}

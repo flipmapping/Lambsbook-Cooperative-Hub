@@ -1,0 +1,117 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "FOUNDER_APPROVED_PENDING_STEWARD_REVIEW",
+  "work_cycle_id": "HUB-RESTORE-AUTO-001-WCS-005",
+  "execution_stream": "HUB_VERIFIED_FEATURE_RESTORATION",
+  "task_id": "HUB-RESTORE-AUTO-001-WCS-005",
+  "authority_binding": {
+    "authority_reference": "FDR-HUB-003",
+    "binding_status": "FOUNDER_APPROVED",
+    "implementation_authority": "FOUNDER_APPROVED_IN_CONVERSATION",
+    "cleanup_authority": "RUNNER_CREATED_TEMPORARY_RESOURCES_ONLY",
+    "deployment_authority": "NOT_GRANTED",
+    "approved_scope": {
+      "approval": "FOUNDER_APPROVED_IN_CONVERSATION",
+      "approved_on": "2026-10-21",
+      "scope": [
+        "Qualify bounded restoration-runner safeguards.",
+        "Validate PR #16 only against its exact Founder-approved candidate.",
+        "After activation and runner qualification, govern restoration of the approved 11-path candidate."
+      ],
+      "term": {
+        "duration": "P1M",
+        "starts": "Only when the separate activation record is reviewed and committed after the authority PR has merged.",
+        "expiry_rule": "One calendar month after the recorded activation timestamp.",
+        "direct_extension_of_existing_authority": false
+      }
+    }
+  },
+  "execution": {
+    "objective": "Safely qualify the verified-feature runner and restore the Founder-approved dashboard candidate without changing unrelated repository state.",
+    "execution_class": "C",
+    "approval_boundary": "AUTHORITY_PR_MERGE_DOES_NOT_ACTIVATE; SEPARATE_REVIEWED_ACTIVATION_RECORD_REQUIRED",
+    "baseline_sha": "dfe10234550d30d5308a492ad7be0500bfabbca5",
+    "activation_requirements": [
+      "The authority PR must receive steward approval for its exact head and be merged by the Founder.",
+      "That merge alone leaves WCS-005 inactive.",
+      "A separate activation record must be reviewed and committed with the actual activation timestamp and exact one-calendar-month expiry.",
+      "WCS-005 must not be treated as active before that activation record is committed.",
+      "The runner must reject expired authority and have regression tests for expiry before any restoration or manifest rebinding."
+    ],
+    "preview_scope": {
+      "pull_request": 16,
+      "required_state": "OPEN",
+      "exact_candidate_sha": "5948cb503a861bd9dc9675f26bf31b9d9425c2a9",
+      "execution_status": "NOT_RUN",
+      "limits": [
+        "No publication or deployment.",
+        "No database writes or record edits.",
+        "Do not merge PR #16.",
+        "Stop and record NOT_RUN if an isolated preview cannot be run without publishing or deploying."
+      ]
+    },
+    "candidate": {
+      "baseline_sha": "90e044eb811b6370b1144833fd2b88cafd89aa02",
+      "candidate_sha": "68e6a3031c473404dc56299ec5d7386203ce871f",
+      "exact_paths": [
+        ".gitignore",
+        ".replitignore",
+        "client/src/components/admin/NotificationTemplatesPanel.tsx",
+        "client/src/components/admin/ProspectsPanel.tsx",
+        "client/src/pages/HubAdminDashboard.tsx",
+        "server/routes.ts",
+        "server/routes/admin-dashboard-tabs.ts",
+        "server/storage/admin-dashboard-tabs.ts",
+        "shared/schema.ts",
+        "tests/admin-dashboard-tabs.browser.cjs",
+        "tests/admin-dashboard-tabs.test.ts"
+      ]
+    },
+    "runner_fixes": [
+      "Enforce activation and expiry before governed operations.",
+      "Separate isolated-preview validation from restoration-only candidate bindings.",
+      "Require PR #16 to remain OPEN and its head to match the exact approved candidate at validation and immediately before preview launch.",
+      "Clean up only temporary resources created by this runner; never run global git worktree prune."
+    ],
+    "required_checks": [
+      [
+        "npm",
+        "run",
+        "build"
+      ],
+      [
+        "node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/admin-dashboard-tabs.test.ts"
+      ],
+      [
+        "npm",
+        "run",
+        "check"
+      ],
+      "Compare TypeScript diagnostics for the exact target baseline and restored candidate; reject newly introduced errors.",
+      "Run the browser check only against an isolated preview of the exact approved candidate; otherwise record NOT_RUN_CANDIDATE_PREVIEW_UNAVAILABLE."
+    ],
+    "target_baseline_rule": "At authorized runner invocation, bind the restoration target to the then-current origin/main SHA and record it in the manifest.",
+    "invariants": [
+      "No restoration, manifest rebinding, or preview execution before WCS-005 activation and applicable runner qualification.",
+      "Preserve execution/repository-stewardship/RELEASE-CONTRACT.json byte-for-byte.",
+      "No database writes, record edits, publication, or deployment.",
+      "Do not merge PR #16 or the restoration PR.",
+      "No application changes outside the exact 11-path candidate list.",
+      "Founder runtime verification is required before any separate release decision."
+    ],
+    "founder_runtime_test": {
+      "required": true,
+      "verification_owner": "FOUNDER",
+      "expected_outcome": "FOUNDER_VERIFIED or FOUNDER_REJECTED before any separate release decision."
+    },
+    "terminal_states": [
+      "FOUNDER_VERIFIED",
+      "FOUNDER_REJECTED",
+      "BLOCKED"
+    ]
+  }
+}
