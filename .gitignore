@@ -18,6 +18,7 @@ backup-secure/
 
 # Private recovery and local-only artifacts
 _private_*
+/.private-recovery/
 
 tmp/
 *.bak*
