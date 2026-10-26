@@ -1,5 +1,7 @@
 import { useRef, lazy, Suspense } from 'react';
 import { Switch, Route } from 'wouter';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsOfUse from '@/pages/TermsOfUse';
 import { queryClient } from './lib/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
@@ -139,6 +141,8 @@ function Router() {
   return (
     <Switch>
       {/* Main landing - Education Hub (primary) */}
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={TermsOfUse} />
       <Route path="/" component={HubLanding} />
       <Route path="/hub" component={HubLanding} />
       <Route path="/journeys/contribute" component={JourneyContribute} />
@@ -186,9 +190,9 @@ function Router() {
       <Route path="/hub/education/feedback" component={EducationFeedback} />
       <Route path="/hub/education/submit" component={TranscriptSubmission} />
       
-      {/* Legacy immigration page (accessible but not primary) */}
+      {/* Legacy immigration route retired; direct visitors to the Lambsbook Cooperative Hub */}
       <Route path="/growth" component={GrowthLandingPage} />
-      <Route path="/immigration" component={ImmigrationWebsite} />
+      <Route path="/immigration" component={HubLanding} />
     </Switch>
   );
 }

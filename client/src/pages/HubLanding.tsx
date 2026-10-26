@@ -598,8 +598,16 @@ export default function HubLanding() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-muted-foreground" data-testid="text-footer-copyright">
-              © 2025 Lambsbook Cooperative Hub. {t('hub_footer_rights')}
+              © 2026 Skyhub Edu Co. Ltd. All rights reserved.
             </div>
+            <nav aria-label="Legal links" className="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <Link href="/privacy" className="underline underline-offset-4 hover:text-foreground">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="underline underline-offset-4 hover:text-foreground">
+                Terms of Use
+              </Link>
+            </nav>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/hub/sbu/education" className="text-muted-foreground hover-elevate px-2 py-1 rounded" data-testid="link-footer-education">
                 {t('hub_footer_education')}

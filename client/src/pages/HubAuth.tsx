@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useSearch } from "wouter";
+import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import {
 Card,
@@ -14,8 +15,9 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import {
-postAuthenticationContinuation,
-type ContinuationContext,
+  postAuthenticationContinuation,
+  type AuthenticationMode,
+  type ContinuationContext,
 } from "@/lib/auth/PostAuthenticationContinuation";
 import { resolvePostAuthenticationDestination } from "@/lib/auth/NavigationConsumptionAuthority";
 import {
@@ -81,6 +83,13 @@ confirmPassword?: string | null;
 export default function HubAuth({ mode }: HubAuthProps) {
 const [, setLocation] = useLocation();
 const search = useSearch();
+const authParams = new URLSearchParams(search);
+const isRegularUserFlow =
+  authParams.get("account") === "user" ||
+  (mode === "signup" &&
+    authParams.get("account") !== "member" &&
+    !authParams.get("invite") &&
+    !localStorage.getItem("gateway.invite.token"));
 const { toast } = useToast();
 
 const [email, setEmail] = useState("");
@@ -159,10 +168,10 @@ const newErrors = { ...errors };
 
 switch (field) {
 case "username":
-newErrors.username = validateUsername(username);
+newErrors.username = isRegularUserFlow ? null : validateUsername(username);
 break;
 case "phone":
-newErrors.phone = validatePhone(phone);
+newErrors.phone = isRegularUserFlow ? null : validatePhone(phone);
 break;
 case "email":
 newErrors.email = validateEmail(email);
@@ -234,10 +243,38 @@ phone?: string;
 referrerEmail?: string;
 inviteToken?: string;
 }) => {
-const res = await apiRequest("POST", `/api/hub/auth/${mode}`, data);
-return res.json();
+const endpoint = isRegularUserFlow
+  ? `/api/auth/${mode === "signup" ? "signup" : "signin"}`
+  : `/api/hub/auth/${mode}`;
+const payload = isRegularUserFlow
+  ? { email: data.email, password: data.password, fullName: data.fullName }
+  : data;
+const res = await apiRequest("POST", endpoint, payload);
+const result = await res.json();
+if (result.success === false) {
+  throw new Error(result.message || "Authentication failed.");
+}
+return result;
 },
 onSuccess: async (result) => {
+if (isRegularUserFlow) {
+  const session = result.data?.session ?? result.session;
+  if (mode === "signup" && !session?.access_token) {
+    setSignupSuccess(true);
+    return;
+  }
+  if (!session?.access_token) {
+    throw new Error("Sign in did not return an active session.");
+  }
+  const { error } = await createClient().auth.setSession({
+    access_token: session.access_token,
+    refresh_token: session.refresh_token ?? "",
+  });
+  if (error) throw error;
+  localStorage.setItem("supabase.auth.token", JSON.stringify(session));
+  setLocation("/hub/sbu/education/lambsbook-tutoring");
+  return;
+}
 if (mode === "signup") {
 if (result.needsConfirmation === false && result.session) {
 localStorage.setItem(
@@ -346,8 +383,8 @@ e.preventDefault();
 
 if (mode === "signup") {
 const emailError = validateEmail(email);
-const usernameError = validateUsername(username);
-const phoneError = validatePhone(phone);
+const usernameError = isRegularUserFlow ? null : validateUsername(username);
+const phoneError = isRegularUserFlow ? null : validatePhone(phone);
 const fullNameError = fullName.trim() ? null : "Full name is required";
 const passwordError =
 password.length < 8 ? "Password must be at least 8 characters" : null;

@@ -86,14 +86,19 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
               {t('hub_free_consultation')}
             </Button>
           )}
-          <Link href="/hub/login">
+          <Link href="/hub/login?account=user">
             <Button variant="ghost" size="sm" className="hidden sm:inline-flex" data-testid="button-header-signin">
               {t('hub_login')}
             </Button>
           </Link>
-          <Link href="/hub/signup">
+          <Link href="/hub/signup?account=user">
             <Button variant="outline" size="sm" className="hidden sm:inline-flex" data-testid="button-header-join">
               {t('hub_join_now')}
+            </Button>
+          </Link>
+          <Link href="/hub/login?account=member">
+            <Button variant="ghost" size="sm" className="hidden sm:inline-flex" data-testid="button-header-member-signin">
+              Member Sign In
             </Button>
           </Link>
 
@@ -137,7 +142,7 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
                   >
                     {t('hub_free_consultation')}
                   </Button>
-                  <Link href="/hub/login">
+                  <Link href="/hub/login?account=user">
                     <Button
                       variant="ghost"
                       className="justify-start w-full mt-2"
@@ -147,7 +152,7 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
                       {t('hub_login')}
                     </Button>
                   </Link>
-                  <Link href="/hub/signup">
+                  <Link href="/hub/signup?account=user">
                     <Button
                       variant="outline"
                       className="justify-start w-full"
@@ -155,6 +160,16 @@ export function HubHeader({ onNavigate }: HubHeaderProps) {
                       data-testid="mobile-nav-join"
                     >
                       {t('hub_join_now')}
+                    </Button>
+                  </Link>
+                  <Link href="/hub/login?account=member">
+                    <Button
+                      variant="ghost"
+                      className="justify-start w-full"
+                      onClick={() => setIsOpen(false)}
+                      data-testid="mobile-nav-member-signin"
+                    >
+                      Member Sign In
                     </Button>
                   </Link>
                 </nav>

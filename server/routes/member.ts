@@ -7,7 +7,9 @@ import {
   getServiceClient
 } from "../lib/supabaseClients";
 import { SupabaseDAL } from "../lib/supabase-dal";
+import { generateInvitationShareMessage, resolveLanguage } from "../services/invitation-delivery";
 
+import { getUserEmailFromToken } from "../lib/getUserEmailFromToken";
 const router = Router();
 
 const supabaseDAL = new SupabaseDAL();
@@ -48,7 +50,13 @@ const user = authReq.user;
       });
     }
 
+    const email = await getUserEmailFromToken(user.token);
+
     return res.json({
+      user: {
+        id: user.id,
+        email,
+      },
       id: member.id,
       membership_status: member.membership_status,
       member_type: member.member_type,
@@ -137,8 +145,169 @@ const user = authReq.user;
 });
 
 /**
+ * GET /api/member/sent-invitations
+ * Returns only display-safe fields for invitations created by the authenticated user.
+ * Invitation tokens are deliberately excluded.
+ */
+router.get("/sent-invitations", attachUserContextSafe, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    const user = authReq.user;
+
+    if (!user?.id || !user?.token) {
+      return res.status(401).json({
+        error: {
+          code: "UNAUTHENTICATED",
+          message: "Authentication required"
+        }
+      });
+    }
+
+    const supabase = getServiceClient();
+    const { data, error } = await supabase
+      .from("gateway_invitations")
+      .select("id, invited_email, note, status, created_at, expires_at, accepted_at")
+      .eq("inviter_user_id", user.id)
+      .order("created_at", { ascending: false })
+      .limit(50);
+
+    if (error) {
+      console.error("GET_SENT_INVITATIONS", error.message);
+      return res.status(500).json({
+        error: {
+          code: "SENT_INVITATIONS_UNAVAILABLE",
+          message: "Unable to load sent invitations"
+        }
+      });
+    }
+
+    return res.json({ invitations: data ?? [] });
+  } catch (err) {
+    console.error("GET_SENT_INVITATIONS_RUNTIME", err);
+    return res.status(500).json({
+      error: {
+        code: "SERVER_ERROR",
+        message: "Server error"
+      }
+    });
+  }
+});
+
+/**
  * POST /api/member/invitations
  */
+
+/**
+ * DELETE /api/member/invitations/:id
+ * Only the authenticated inviter may delete their own pending invitation.
+ */
+router.delete("/invitations/:id", attachUserContextSafe, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    const user = authReq.user;
+    if (!user?.id) {
+      return res.status(401).json({
+        error: { code: "UNAUTHENTICATED", message: "Authentication required" },
+      });
+    }
+
+    const id = req.params.id;
+    if (!id) {
+      return res.status(400).json({
+        error: { code: "MISSING_ID", message: "Invitation ID required" },
+      });
+    }
+
+    const admin = getServiceClient();
+    const { data: invitation, error: fetchError } = await admin
+      .from("gateway_invitations")
+      .select("id, inviter_user_id, status")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (fetchError || !invitation) {
+      return res.status(404).json({
+        error: { code: "NOT_FOUND", message: "Invitation not found" },
+      });
+    }
+    if (invitation.inviter_user_id !== user.id) {
+      return res.status(403).json({
+        error: { code: "FORBIDDEN", message: "You may only delete your own invitations" },
+      });
+    }
+    if (invitation.status !== "pending") {
+      return res.status(409).json({
+        error: { code: "INVALID_STATUS", message: "Only pending invitations may be deleted" },
+      });
+    }
+
+    const { error: deleteError } = await admin
+      .from("gateway_invitations")
+      .delete()
+      .eq("id", id)
+      .eq("inviter_user_id", user.id)
+      .eq("status", "pending");
+
+    if (deleteError) {
+      console.error("DELETE_INVITATION_ERROR", deleteError);
+      return res.status(500).json({
+        error: { code: "SERVER_ERROR", message: "Failed to delete invitation" },
+      });
+    }
+    return res.status(204).send();
+  } catch (err) {
+    console.error("DELETE_INVITATION_RUNTIME", err);
+    return res.status(500).json({
+      error: { code: "SERVER_ERROR", message: "Server error" },
+    });
+  }
+});
+
+
+router.post("/invitations/share", attachUserContextSafe, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as AuthenticatedRequest;
+    if (!authReq.user?.id) {
+      return res.status(401).json({
+        error: { code: "UNAUTHENTICATED", message: "Authentication required" },
+      });
+    }
+
+    const invitationLink = req.body?.invitationLink;
+    const language = req.body?.language;
+    const memberName = req.body?.memberName;
+
+    if (typeof invitationLink !== "string" || !invitationLink.trim()) {
+      return res.status(400).json({
+        error: { code: "INVALID_INVITATION_LINK", message: "invitationLink is required" },
+      });
+    }
+    if (language !== undefined && typeof language !== "string") {
+      return res.status(400).json({
+        error: { code: "INVALID_LANGUAGE", message: "language must be a string" },
+      });
+    }
+    if (memberName !== undefined && typeof memberName !== "string") {
+      return res.status(400).json({
+        error: { code: "INVALID_MEMBER_NAME", message: "memberName must be a string" },
+      });
+    }
+
+    const resolvedLanguage = resolveLanguage(language);
+    const message = generateInvitationShareMessage({
+      invitationLink,
+      language: resolvedLanguage,
+      ...(memberName?.trim() ? { memberName: memberName.trim() } : {}),
+    });
+    return res.json({ invitationLink, language: resolvedLanguage, message });
+  } catch (err) {
+    console.error("POST_INVITATION_SHARE_RUNTIME", err);
+    return res.status(500).json({
+      error: { code: "SERVER_ERROR", message: "Server error" },
+    });
+  }
+});
+
 router.post("/invitations", attachUserContextSafe, async (req: Request, res: Response) => {
   try {
     const authReq = req as AuthenticatedRequest;
@@ -218,6 +387,38 @@ const user = authReq.user;
       });
     }
 
+    const configuredSiteUrl = process.env.SITE_URL?.trim();
+    let siteUrl: URL;
+
+    try {
+      if (!configuredSiteUrl) {
+        throw new Error("SITE_URL is not configured");
+      }
+
+      siteUrl = new URL(configuredSiteUrl);
+
+      if (
+        !["https:", "http:"].includes(siteUrl.protocol) ||
+        !siteUrl.hostname ||
+        siteUrl.username ||
+        siteUrl.password ||
+        siteUrl.search ||
+        siteUrl.hash
+      ) {
+        throw new Error("SITE_URL is invalid");
+      }
+    } catch {
+      return res.status(503).json({
+        error: {
+          code: "INVITATION_URL_UNAVAILABLE",
+          message: "Invitation links are temporarily unavailable"
+        }
+      });
+    }
+
+    const inviteUrl = new URL("/hub/signup", siteUrl);
+    inviteUrl.searchParams.set("invite", token);
+
     const data =
       await supabaseDAL.createGatewayInvitation({
         token,
@@ -232,7 +433,8 @@ const user = authReq.user;
       invitation: {
         id: data.id,
         status: data.status
-      }
+      },
+      inviteUrl: inviteUrl.toString()
     });
 
   } catch (err) {

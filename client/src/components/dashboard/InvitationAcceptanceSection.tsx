@@ -46,7 +46,14 @@ export function InvitationAcceptanceSection({
 
     const token =
       typeof window !== "undefined"
-        ? localStorage.getItem("sb-access-token") ?? ""
+        ? (() => {
+            try {
+              const stored = localStorage.getItem("supabase.auth.token");
+              return stored ? JSON.parse(stored).access_token ?? "" : "";
+            } catch {
+              return "";
+            }
+          })()
         : "";
 
     try {

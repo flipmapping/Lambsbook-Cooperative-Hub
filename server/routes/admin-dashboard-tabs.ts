@@ -9,7 +9,12 @@ import { adminDashboardStorage } from "../storage/admin-dashboard-tabs";
 export function requireDashboardAdmin(req: Request, res: Response, next: NextFunction) {
   const identity = req as AuthenticatedRequest;
   if (!identity.user?.id) return res.status(401).json({ error: "Authentication required" });
-  if (identity.isPlatformAdmin !== true) return res.status(403).json({ error: "Platform administrator access required" });
+  if (
+    identity.isPlatformAdmin !== true &&
+    identity.user.is_super_admin !== true
+  ) {
+    return res.status(403).json({ error: "Platform administrator access required" });
+  }
   next();
 }
 
