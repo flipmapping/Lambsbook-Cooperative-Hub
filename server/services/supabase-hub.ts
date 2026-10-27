@@ -4,7 +4,7 @@ import { z } from "zod";
 import type { WebSocketLikeConstructor } from '@supabase/realtime-js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const supabasePublishableKey = process.env.SUPABASE_PUBLISHABLE_KEY;
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl || !supabaseServiceRoleKey) {
@@ -37,8 +37,8 @@ const supabaseAuth =
  * Do not rely on this for internal auth-governed lookups.
  */
 const supabase =
-  supabaseUrl && supabaseAnonKey
-    ? createClient(supabaseUrl, supabaseAnonKey, {
+  supabaseUrl && supabasePublishableKey
+    ? createClient(supabaseUrl, supabasePublishableKey, {
         auth: {
           autoRefreshToken: false,
           persistSession: false,
@@ -723,14 +723,14 @@ export async function forgotPassword(email: string) {
 }
 
 export async function resetPassword(accessToken: string, newPassword: string) {
-  if (!supabaseAuth || !supabaseUrl) {
-    throw new HubAuthError("Supabase auth not configured.", 503);
+  if (!supabaseAuth || !supabaseUrl || !supabasePublishableKey) {
+    throw new HubAuthError("Supabase auth is not fully configured.", 503);
   }
 
   try {
     const supabaseWithToken = createClient(
       supabaseUrl,
-      supabaseAnonKey || supabaseServiceRoleKey!,
+      supabasePublishableKey,
       {
         global: {
           headers: {

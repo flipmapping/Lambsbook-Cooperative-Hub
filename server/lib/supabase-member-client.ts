@@ -3,20 +3,20 @@ import ws from "ws";
 import type { WebSocketLikeConstructor } from '@supabase/realtime-js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const supabasePublishableKey = process.env.SUPABASE_PUBLISHABLE_KEY;
 
 if (!supabaseUrl) {
   console.warn('[Supabase Member] SUPABASE_URL not configured');
 }
 
-if (!supabaseAnonKey) {
-  console.warn('[Supabase Member] SUPABASE_ANON_KEY not configured - member operations will be disabled');
+if (!supabasePublishableKey) {
+  console.warn('[Supabase Member] SUPABASE_PUBLISHABLE_KEY not configured - member operations will be disabled');
 }
 
 let supabaseMember: SupabaseClient | null = null;
 
-if (supabaseUrl && supabaseAnonKey) {
-  supabaseMember = createClient(supabaseUrl, supabaseAnonKey, {
+if (supabaseUrl && supabasePublishableKey) {
+  supabaseMember = createClient(supabaseUrl, supabasePublishableKey, {
     realtime: {
       transport: ws as unknown as WebSocketLikeConstructor,
     },
@@ -25,7 +25,7 @@ if (supabaseUrl && supabaseAnonKey) {
 
 export function getSupabaseMember(): SupabaseClient {
   if (!supabaseMember) {
-    throw new Error('Supabase member client not configured. Ensure SUPABASE_URL and SUPABASE_ANON_KEY are set.');
+    throw new Error('Supabase member client not configured. Ensure SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY are set.');
   }
   return supabaseMember;
 }
@@ -35,11 +35,11 @@ export function isSupabaseMemberConfigured(): boolean {
 }
 
 export function createAuthenticatedClient(accessToken: string, schema?: string): SupabaseClient<any, any, any> {
-  if (!supabaseUrl || !supabaseAnonKey) {
+  if (!supabaseUrl || !supabasePublishableKey) {
     throw new Error('Supabase not configured');
   }
   
-  return createClient(supabaseUrl, supabaseAnonKey, {
+  return createClient(supabaseUrl, supabasePublishableKey, {
     db: { schema: schema || 'public' },
     global: {
       headers: {

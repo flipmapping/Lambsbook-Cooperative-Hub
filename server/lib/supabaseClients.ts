@@ -4,12 +4,12 @@ import type { WebSocketLikeConstructor } from '@supabase/realtime-js';
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
 
 function assertSupabaseEnvForUserClient() {
-  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
     throw new Error(
-      "Supabase user client is not properly configured. Missing SUPABASE_URL or SUPABASE_ANON_KEY."
+      "Supabase user client is not properly configured. Missing SUPABASE_URL or SUPABASE_PUBLISHABLE_KEY."
     );
   }
 }
@@ -33,7 +33,7 @@ export function getUserClient(jwt: string): SupabaseClient {
 
   assertSupabaseEnvForUserClient();
 
-  return createClient(SUPABASE_URL!, SUPABASE_ANON_KEY!, {
+  return createClient(SUPABASE_URL!, SUPABASE_PUBLISHABLE_KEY!, {
     global: {
       headers: {
         Authorization: `Bearer ${jwt}`,
@@ -80,5 +80,5 @@ export function getServiceClient(): SupabaseClient {
  * Non-throwing diagnostics helper.
  */
 export function isSupabaseConfigured(): boolean {
-  return Boolean(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY && SUPABASE_ANON_KEY);
+  return Boolean(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY && SUPABASE_PUBLISHABLE_KEY);
 }
