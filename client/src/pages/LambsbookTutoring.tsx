@@ -17,6 +17,7 @@ import { HubHeader } from '@/components/HubHeader';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useHubTranslation } from '@/lib/hubTranslations';
 import { lambsbookTutoringContent } from '@/lib/lambsbookTutoringContent';
+import { InteractiveProofOfMethod } from '@/components/sll/InteractiveProofOfMethod';
 
 export default function LambsbookTutoring() {
   const { language } = useLanguage();
@@ -225,6 +226,8 @@ export default function LambsbookTutoring() {
           </div>
         </div>
       </section>
+
+      <InteractiveProofOfMethod />
 
       {/* Tutor Highlight Section */}
       <section className="py-16 px-4 bg-muted/30">
