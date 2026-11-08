@@ -150,6 +150,9 @@ function Router() {
       <Route path="/login" component={Login} />
       <Route path="/auth/callback" component={AuthCallback} />
       
+      {/* LCH OAuth consent for registered third-party clients */}
+      <Route path="/oauth/consent" component={OAuthConsent} />
+
       {/* Hub authentication */}
       <Route path="/hub/login">{() => <HubAuth mode="login" />}</Route>
       <Route path="/hub/signup">{() => <HubAuth mode="signup" />}</Route>
