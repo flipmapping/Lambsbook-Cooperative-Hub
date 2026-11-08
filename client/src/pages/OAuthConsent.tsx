@@ -19,8 +19,9 @@ type OAuthClientDetails = {
 };
 
 type AuthorizationDetails = {
-  client?: OAuthClientDetails;
-  scopes?: string[];
+  authorization_id: string;
+  client: OAuthClientDetails;
+  scope?: string;
   redirect_uri?: string;
 };
 
@@ -95,9 +96,18 @@ export default function OAuthConsent() {
         if (!active) return;
         if (error) throw error;
 
+        if (!("authorization_id" in data)) {
+          const redirectUrl = (data as { redirect_url?: string }).redirect_url;
+          if (!redirectUrl) {
+            throw new Error("Supabase returned an incomplete authorization response.");
+          }
+          window.location.assign(redirectUrl);
+          return;
+        }
+
         const authorization = data as AuthorizationDetails;
-        if (!authorization || !authorization.client) {
-          throw new Error("Supabase returned incomplete authorization details.");
+        if (!authorization.client?.name) {
+          throw new Error("Supabase returned incomplete application details.");
         }
 
         setDetails(authorization);
@@ -155,7 +165,7 @@ export default function OAuthConsent() {
     details?.client?.name ??
     details?.client?.client_name ??
     "A third-party application";
-  const scopes = details?.scopes ?? [];
+  const scopes = details?.scope?.split(/\\s+/).filter(Boolean) ?? [];
 
   return (
     <main className="min-h-screen bg-background flex items-center justify-center p-4">
