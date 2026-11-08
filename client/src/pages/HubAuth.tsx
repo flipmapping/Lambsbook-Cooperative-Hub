@@ -310,7 +310,16 @@ resolvePostAuthenticationDestination(
 runtimeState,
 );
 
-setLocation(destination);
+const oauthAuthorizationId =
+mode === "login"
+? new URLSearchParams(search).get("oauth_authorization_id")
+: null;
+const nextDestination =
+oauthAuthorizationId && oauthAuthorizationId.length <= 512
+? `/oauth/consent?authorization_id=${encodeURIComponent(oauthAuthorizationId)}`
+: destination;
+
+setLocation(nextDestination);
 }
 },
 onError: (error: Error) => {
