@@ -24,9 +24,13 @@
       "client/src/components/community/SllCommunityPreview.tsx"
     ],
     "pre_mutation_preservation_gate": [
-      "Record branch, HEAD, complete porcelain status, and all tracked diffs.",
-      "Create a preservation snapshot outside the repository of the complete pre-existing dirty and untracked working-tree state, with a manifest and SHA-256 checksums.",
-      "Verify the snapshot can be read and its checksums match before any application mutation.",
+      "Before snapshot creation, record the exact candidate repository absolute path, current branch, HEAD SHA, complete `git status --porcelain=v2 --branch --untracked-files=all` output, staged and unstaged tracked diffs (including binary diff representation), and a complete untracked-file inventory.",
+      "Create the preservation snapshot outside the repository in a new, uniquely named destination that must not already exist; never overwrite or reuse an earlier snapshot.",
+      "Snapshot every tracked file with staged or unstaged changes, every tracked deletion/change state, and the complete contents of every untracked file. Record repository-relative paths, file types, executable/file modes, symlink targets where applicable, byte sizes, and SHA-256 hashes in a machine-readable manifest.",
+      "Record the source SHA-256 before copying and independently hash the copied destination; record both hashes and an explicit PASS result for every copied file.",
+      "After copying, re-inventory and re-hash the source files and compare branch, HEAD, porcelain status, tracked diffs, and untracked inventory with the pre-copy record. If any source file or repository state changes during snapshot creation or verification, stop; do not proceed with application mutation.",
+      "Verify the snapshot by reading every copied file and reconciling every manifest entry, path, mode, size, and hash. Record aggregate manifest hash, verification command, timestamp, and PASS/FAIL result.",
+      "Treat the verified snapshot as immutable for the entire work cycle: no edits, renames, additions, deletions, or replacement. Verify its manifest hash again before and after candidate verification. Retain it after the work cycle; do not delete it.",
       "Preserve the existing MemberHub.tsx changes, including sent-invitation history and deletion functionality, without reverting or replacing them.",
       "Do not claim the historical post-corruption fix set is complete; record unresolved forensic uncertainty."
     ],
@@ -42,8 +46,9 @@
       "Exact three-path mutation-boundary verification.",
       "Diff review proving existing MemberHub functionality is retained.",
       "Localization key parity and visible-string audit for EN, VI, and ZH.",
-      "Isolated candidate build that does not invoke the global project build or modify the live workspace.",
-      "Targeted tests and TypeScript comparison against the exact recorded baseline where safely reproducible.",
+      "Preservation snapshot completeness, per-file hash reconciliation, immutable manifest verification, and pre/post source-state equality.",
+      "Isolated candidate build after inspection of the complete build command and dependency chain; retain logs, exit code, source manifest, and post-build live-workspace integrity evidence.",
+      "Targeted tests and reproducible baseline-versus-candidate TypeScript diagnostic comparison using identical compiler, configuration, and relevant dependencies; retain both raw outputs and diagnostic delta.",
       "Founder visual verification of the complete dashboard in EN, VI, and ZH."
     ],
     "invariants": [
@@ -54,13 +59,108 @@
       "No global npm run build.",
       "No reset, stash, clean, prune, backup deletion, or overwriting unrelated work.",
       "No commit, push, pull request merge, publication, or deployment under this authority.",
-      "Stop if preservation snapshot integrity or isolated build safety cannot be established."
+      "Stop if preservation snapshot integrity or isolated build safety cannot be established.",
+      "If any source file or repository state changes during preservation snapshot creation or verification, stop and record BLOCKED.",
+      "The preservation snapshot must be outside the repository, independently hash-verified, immutable throughout the work cycle, and retained afterward.",
+      "The isolated build must use a separate candidate environment and must not write dependencies, caches, temporary files, or generated outputs into the live workspace.",
+      "Inspect the complete build command and transitive dependency chain before execution; stop if isolation cannot be demonstrated.",
+      "Baseline and candidate TypeScript checks must use identical compiler versions, configuration, Node version, and relevant dependency set; retain raw diagnostics and the classified delta.",
+      "If implementation inspection or verification identifies a required change to SLL/Lane 1, security or dependency/Lane 2, shared runtime infrastructure, identity, membership, backend, database, or release governance outside the authorized three paths, stop. Do not make the change or expand scope. Record the finding and request separate authority.",
+      "No implementation until a separate activation record has been reviewed and approved with explicit IMPLEMENTATION_AUTHORITY_ACTIVE state."
     ],
     "verification_profile": "PRESERVATION_SNAPSHOT; EXACT_THREE_PATH_SCOPE; MEMBER_DASHBOARD_LOCALIZATION; COMMUNITY_PREVIEW_ONLY; ISOLATED_BUILD; FOUNDER_VISUAL_VERIFICATION; NO_DEPLOYMENT",
     "terminal_states": [
       "FOUNDER_VERIFIED",
       "FOUNDER_REJECTED",
       "BLOCKED"
+    ],
+    "preservation_snapshot_spec": {
+      "required": true,
+      "destination": "OUTSIDE_REPOSITORY",
+      "destination_creation": "NEW_UNIQUE_PATH; MUST_NOT_ALREADY_EXIST; NO_OVERWRITE",
+      "repository_state_capture": [
+        "absolute repository path",
+        "branch name",
+        "HEAD SHA",
+        "git status --porcelain=v2 --branch --untracked-files=all",
+        "staged tracked diff",
+        "unstaged tracked diff",
+        "untracked file inventory with complete contents"
+      ],
+      "manifest_fields": [
+        "repository-relative path",
+        "file type",
+        "file mode and executable bit",
+        "symlink target when applicable",
+        "byte size",
+        "source SHA-256",
+        "snapshot SHA-256",
+        "per-file copy verification result"
+      ],
+      "verification": [
+        "rehash source before and after copy",
+        "read and hash every snapshot file",
+        "reconcile paths, modes, sizes, and hashes",
+        "compare repository state before and after snapshot creation",
+        "record manifest aggregate SHA-256, timestamp, commands, and PASS/FAIL"
+      ],
+      "immutability": "No modification, replacement, rename, or deletion during or after the work cycle; reverify aggregate manifest hash before and after candidate verification.",
+      "failure_state": "BLOCKED; NO APPLICATION MUTATION"
+    },
+    "isolated_build_spec": {
+      "required": true,
+      "candidate_origin": "Separate candidate worktree or equivalent isolated copy derived from the exact recorded baseline SHA plus only the authorized three-path candidate changes.",
+      "live_workspace": "Read-only for build execution; no dependency installation, generated output, cache, temporary file, or build artifact may be written into the live workspace.",
+      "before_execution_inspection": [
+        "Inspect package.json scripts and every transitive script invoked by the proposed build command.",
+        "Inspect the package manager and lockfile, Node and package-manager versions, Vite/build configuration, TypeScript configuration, relevant plugins, and dependency lifecycle/install scripts.",
+        "Trace the complete command and dependency chain, including prebuild, postbuild, prepare, code generation, bundling, and cleanup hooks.",
+        "Record the exact command, working directory, environment variables relevant to build behavior, tool versions, lockfile hash, and expected output paths."
+      ],
+      "dependency_boundary": "Install/use dependencies only within the isolated candidate environment from the recorded lockfile; do not share writable node_modules, caches, or generated-output directories with the live workspace.",
+      "execution_gate": "Execute only after inspection demonstrates that the complete command chain remains inside the isolated candidate environment and does not invoke unrelated project-wide or destructive scripts.",
+      "evidence": [
+        "candidate baseline SHA and candidate source manifest",
+        "inspected command and dependency-chain record",
+        "Node/package-manager/compiler versions",
+        "lockfile SHA-256",
+        "complete build log and exit code",
+        "generated-output inventory and locations",
+        "post-build live-workspace status proving no contamination"
+      ],
+      "failure_state": "If isolation cannot be demonstrated or shared/live files could be modified, do not execute; record BLOCKED with evidence."
+    },
+    "typescript_comparison_spec": {
+      "required": true,
+      "baseline": "Exact recorded baseline SHA.",
+      "candidate": "Exact isolated candidate source manifest and candidate revision identifier.",
+      "parity_requirements": [
+        "Same TypeScript compiler version.",
+        "Same tsconfig and inherited configuration files, verified by path and SHA-256.",
+        "Same package manager, lockfile, and relevant dependency versions.",
+        "Same Node version and compiler invocation/flags."
+      ],
+      "evidence": [
+        "baseline and candidate compiler version outputs",
+        "configuration and lockfile hashes",
+        "exact commands, working directories, timestamps, and exit codes",
+        "complete raw baseline diagnostics",
+        "complete raw candidate diagnostics",
+        "machine-readable and human-readable diagnostic delta"
+      ],
+      "interpretation": "Classify diagnostics as pre-existing, resolved, newly introduced, or changed. Do not attribute baseline diagnostics to the candidate; do not suppress or conceal new candidate diagnostics because baseline errors exist.",
+      "failure_state": "If toolchain/configuration/dependency parity cannot be established, mark the comparison BLOCKED and do not claim a reproducible TypeScript result."
+    },
+    "cross_lane_stop_condition": "If implementation inspection or verification identifies a required change to SLL/Lane 1, security or dependency/Lane 2, shared runtime infrastructure, identity, membership, backend, database, or release governance outside the authorized three paths, stop. Do not make the change or expand scope. Record the finding and request separate authority.",
+    "activation_record_requirements": [
+      "Steward approval reference and exact approved PR head SHA.",
+      "Exact candidate baseline SHA.",
+      "Exact application mutation paths, with no wildcard, directory-wide, or implicit expansion.",
+      "Actual activation timestamp and expiration timestamp, no more than 14 calendar days apart.",
+      "Named execution owner and named verification owner.",
+      "Evidence-backed confirmation that the preservation gate passed, including snapshot manifest aggregate SHA-256.",
+      "Explicit state IMPLEMENTATION_AUTHORITY_ACTIVE.",
+      "Separate steward review and approval of the activation record before implementation begins."
     ]
   },
   "surface": {
