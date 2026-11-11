@@ -1,0 +1,59 @@
+{
+  "schema": "EOS-WORK-CYCLE-AUTHORITY-PROPOSAL-v1",
+  "status": "FOUNDER_APPROVED_PENDING_STEWARD_REVIEW",
+  "proposal_id": "MEMBERHUB-SURFACE-RESTORE-001-WCS-001-AUTHORITY-PROPOSAL",
+  "authority_id": "MEMBERHUB-SURFACE-RESTORE-001",
+  "cycle_id": "MEMBERHUB-SURFACE-RESTORE-001-WCS-001",
+  "baseline_sha": "6a7c89b0d7af9cd360c131b0c4407ed46d91735f",
+  "baseline_branch": "release/sll-interactive-proof-20261103",
+  "baseline_commit_url": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub/commit/6a7c89b0d7af9cd360c131b0c4407ed46d91735f",
+  "proposed_branch": "governance/memberhub-surface-restore-001-review-20261111",
+  "founder_approval": {
+    "status": "APPROVED_IN_CONVERSATION",
+    "approved_on": "2026-11-11",
+    "scope": "Establish a separate Lane 3 authority for the exact three Member Dashboard surface paths, subject to steward review and separate activation."
+  },
+  "activation": {
+    "authority_pr_merge_activates": false,
+    "requires_separate_reviewed_activation_record": true,
+    "activation_timestamp": null,
+    "expires_at": null,
+    "term_rule": "A separately reviewed activation record must specify the actual activation timestamp and a term not exceeding 14 calendar days.",
+    "execution_allowed_before_activation": false
+  },
+  "proposed_mutation_paths": [
+    "execution/contracts/WORK-CYCLE-SPECIFICATION-MEMBERHUB-SURFACE-RESTORE-001-WCS-001.json",
+    "execution/repository-stewardship/WORK-CYCLE-AUTHORITY-PROPOSAL-MEMBERHUB-SURFACE-RESTORE-001-WCS-001.json"
+  ],
+  "application_mutation_paths_after_activation": [
+    "client/src/pages/MemberHub.tsx",
+    "client/src/lib/dashboardI18n.ts",
+    "client/src/components/community/SllCommunityPreview.tsx"
+  ],
+  "working_tree_preservation": {
+    "required_before_application_mutation": true,
+    "snapshot_location": "OUTSIDE_REPOSITORY",
+    "scope": "Complete pre-existing tracked diffs and untracked files, not only the three application paths.",
+    "integrity": "Manifest and SHA-256 checksums; verify before proceeding.",
+    "existing_memberhub_changes": "MUST_RETAIN",
+    "historical_corruption_boundary": "UNRESOLVED; DO_NOT_ASSERT_COMPLETE_RECOVERY"
+  },
+  "required_checks": [
+    "Exact three-path scope enforcement.",
+    "Preservation snapshot integrity.",
+    "EN/VI/ZH localization audit and Community tab translation parity.",
+    "Isolated build without global npm run build.",
+    "Targeted tests and baseline-versus-candidate TypeScript diagnostic comparison.",
+    "Founder visual verification in EN, VI, and ZH."
+  ],
+  "invariants": [
+    "No application execution before steward review and separate activation.",
+    "No changes outside the exact three application paths.",
+    "No backend, database, RLS, identity, membership, financial, or Matrix changes.",
+    "No global build, cleanup, reset, stash, prune, or deletion of backups.",
+    "No commit, push, merge, publication, or deployment.",
+    "Existing authority and release-contract records remain unchanged.",
+    "If isolated build or preservation cannot be safely achieved, stop and record BLOCKED."
+  ],
+  "execution_performed": false
+}
