@@ -16,9 +16,21 @@
   "activation": {
     "authority_pr_merge_activates": false,
     "requires_separate_reviewed_activation_record": true,
+    "implementation_state_before_activation": "IMPLEMENTATION_AUTHORITY_NOT_ACTIVE",
     "activation_timestamp": null,
     "expires_at": null,
-    "term_rule": "A separately reviewed activation record must specify the actual activation timestamp and a term not exceeding 14 calendar days.",
+    "term_rule": "A separately reviewed activation record must specify actual activation and expiration timestamps no more than 14 calendar days apart.",
+    "required_activation_evidence": [
+      "Steward approval reference and exact approved PR head SHA",
+      "Exact candidate baseline SHA",
+      "Exact application mutation paths, with no wildcard, directory-wide, or implicit expansion",
+      "Actual activation timestamp and expiration timestamp, no more than 14 calendar days apart",
+      "Named execution owner",
+      "Named verification owner",
+      "Evidence-backed confirmation that the preservation gate passed, including snapshot manifest aggregate SHA-256",
+      "Explicit IMPLEMENTATION_AUTHORITY_ACTIVE state",
+      "Separate steward review and approval of the activation record before implementation begins"
+    ],
     "execution_allowed_before_activation": false
   },
   "proposed_mutation_paths": [
@@ -33,17 +45,43 @@
   "working_tree_preservation": {
     "required_before_application_mutation": true,
     "snapshot_location": "OUTSIDE_REPOSITORY",
-    "scope": "Complete pre-existing tracked diffs and untracked files, not only the three application paths.",
-    "integrity": "Manifest and SHA-256 checksums; verify before proceeding.",
-    "existing_memberhub_changes": "MUST_RETAIN",
-    "historical_corruption_boundary": "UNRESOLVED; DO_NOT_ASSERT_COMPLETE_RECOVERY"
+    "snapshot_creation": "Create a new uniquely named destination that does not already exist; never overwrite or reuse an earlier snapshot.",
+    "scope": "Complete pre-existing tracked changes and deletions plus complete contents of every untracked file, not merely filenames or the three application paths.",
+    "pre_snapshot_record": [
+      "Exact candidate repository absolute path",
+      "Branch and HEAD SHA",
+      "Complete git status --porcelain=v2 --branch --untracked-files=all output",
+      "Staged and unstaged tracked diffs, including binary diff representation",
+      "Complete untracked-file inventory"
+    ],
+    "manifest": [
+      "Repository-relative path",
+      "File type and file mode/executable bit",
+      "Symlink target where applicable",
+      "Byte size",
+      "Source SHA-256",
+      "Snapshot SHA-256",
+      "Per-file copy verification result"
+    ],
+    "integrity": [
+      "Hash each source before copying and hash each copied destination independently.",
+      "Read every copied file and reconcile paths, modes, sizes, and hashes.",
+      "Re-inventory and re-hash source files after copying; compare repository branch, HEAD, status, tracked diffs, and untracked inventory against the pre-copy record.",
+      "Record aggregate manifest SHA-256, verification commands, timestamp, and PASS/FAIL result."
+    ],
+    "immutability": "Snapshot is immutable throughout and after the work cycle. Do not edit, rename, replace, or delete it. Reverify aggregate manifest hash before and after candidate verification.",
+    "change_during_capture": "If any source file or repository state changes during snapshot creation or verification, stop; do not proceed with application mutation.",
+    "existing_memberhub_changes": "MUST_RETAIN, including sent-invitation history and deletion functionality.",
+    "historical_corruption_boundary": "UNRESOLVED; DO_NOT_ASSERT_COMPLETE_RECOVERY",
+    "failure_state": "BLOCKED; NO APPLICATION MUTATION"
   },
   "required_checks": [
     "Exact three-path scope enforcement.",
-    "Preservation snapshot integrity.",
+    "Preservation snapshot completeness, per-file hash reconciliation, immutable manifest verification, and pre/post source-state equality.",
     "EN/VI/ZH localization audit and Community tab translation parity.",
-    "Isolated build without global npm run build.",
-    "Targeted tests and baseline-versus-candidate TypeScript diagnostic comparison.",
+    "Isolated candidate build only after inspection of the complete build command and dependency chain; retain logs, exit code, source manifest, and post-build live-workspace integrity evidence.",
+    "Targeted tests.",
+    "Reproducible baseline-versus-candidate TypeScript diagnostic comparison using identical compiler, configuration, Node version, and relevant dependencies; retain both raw outputs and classified diagnostic delta.",
     "Founder visual verification in EN, VI, and ZH."
   ],
   "invariants": [
@@ -53,7 +91,65 @@
     "No global build, cleanup, reset, stash, prune, or deletion of backups.",
     "No commit, push, merge, publication, or deployment.",
     "Existing authority and release-contract records remain unchanged.",
-    "If isolated build or preservation cannot be safely achieved, stop and record BLOCKED."
+    "If isolated build or preservation cannot be safely achieved, stop and record BLOCKED.",
+    "The preservation snapshot must be complete, outside the repository, independently hash-verified, immutable throughout the work cycle, and retained afterward.",
+    "Stop if any source file or repository state changes during preservation snapshot creation or verification.",
+    "Inspect the complete build command and transitive dependency chain before execution; do not build if isolation cannot be demonstrated.",
+    "The isolated build must not write dependencies, caches, temporary files, or generated outputs into the live workspace or shared writable directories.",
+    "Baseline and candidate TypeScript checks must use identical compiler versions, configuration, Node version, and relevant dependencies; retain raw diagnostics and classified delta.",
+    "If implementation inspection or verification identifies a required change to SLL/Lane 1, security or dependency/Lane 2, shared runtime infrastructure, identity, membership, backend, database, or release governance outside the authorized three paths, stop. Do not make the change or expand scope. Record the finding and request separate authority.",
+    "PR approval or merge does not activate implementation authority.",
+    "Implementation remains forbidden until a separate activation record is reviewed and approved with explicit IMPLEMENTATION_AUTHORITY_ACTIVE state."
   ],
-  "execution_performed": false
+  "execution_performed": false,
+  "isolated_build": {
+    "required": true,
+    "candidate_environment": "Separate candidate worktree or equivalent isolated copy derived from exact recorded baseline SHA plus only the authorized three application-path changes.",
+    "live_workspace": "Read-only during build. Dependencies, node_modules, caches, temporary files, generated outputs, and build artifacts must not be written into the live workspace or shared writable directories.",
+    "mandatory_pre_execution_inspection": [
+      "Inspect package.json scripts and every transitive script invoked by the proposed build command.",
+      "Inspect package manager, lockfile, Node/package-manager versions, Vite/build configuration, TypeScript configuration, relevant plugins, and dependency lifecycle/install scripts.",
+      "Trace prebuild, postbuild, prepare, code generation, bundling, cleanup hooks, and all other invoked commands.",
+      "Record exact command, working directory, relevant environment, tool versions, lockfile hash, and expected output paths."
+    ],
+    "execution_gate": "Execute only if inspection demonstrates the complete command and dependency chain remain within the isolated candidate environment and do not invoke unrelated project-wide or destructive scripts.",
+    "evidence": [
+      "Candidate baseline SHA and candidate source manifest",
+      "Inspected command and dependency-chain record",
+      "Node and package-manager versions",
+      "Lockfile SHA-256",
+      "Complete build log and exit code",
+      "Generated-output inventory and locations",
+      "Post-build live-workspace status proving no contamination"
+    ],
+    "failure_state": "If isolation cannot be demonstrated or shared/live files could be modified, do not execute; record BLOCKED with evidence."
+  },
+  "typescript_comparison": {
+    "required": true,
+    "baseline": "Exact recorded baseline SHA",
+    "candidate": "Exact isolated candidate source manifest and candidate revision identifier",
+    "parity": [
+      "Same TypeScript compiler version",
+      "Same tsconfig and inherited configuration files, verified by path and SHA-256",
+      "Same package manager, lockfile, and relevant dependency versions",
+      "Same Node version and compiler invocation/flags"
+    ],
+    "retained_evidence": [
+      "Baseline and candidate compiler version outputs",
+      "Configuration and lockfile hashes",
+      "Exact commands, working directories, timestamps, and exit codes",
+      "Complete raw baseline diagnostics",
+      "Complete raw candidate diagnostics",
+      "Machine-readable and human-readable diagnostic delta"
+    ],
+    "diagnostic_classification": [
+      "Pre-existing",
+      "Resolved",
+      "Newly introduced",
+      "Changed"
+    ],
+    "interpretation": "Do not attribute baseline diagnostics to the candidate. Do not suppress or conceal new candidate diagnostics because baseline errors exist.",
+    "failure_state": "If compiler/configuration/dependency parity cannot be established, mark comparison BLOCKED and do not claim a reproducible TypeScript result."
+  },
+  "cross_lane_stop_condition": "If implementation inspection or verification identifies a required change to SLL/Lane 1, security or dependency/Lane 2, shared runtime infrastructure, identity, membership, backend, database, or release governance outside the authorized three paths, stop. Do not make the change or expand scope. Record the finding and request separate authority."
 }
