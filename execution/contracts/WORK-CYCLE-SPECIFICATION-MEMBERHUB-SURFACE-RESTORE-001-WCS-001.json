@@ -1,0 +1,110 @@
+{
+  "schema": "EOS-WORK-CYCLE-SPECIFICATION-v1",
+  "status": "FOUNDER_APPROVED_PENDING_STEWARD_REVIEW",
+  "work_cycle_id": "MEMBERHUB-SURFACE-RESTORE-001-WCS-001",
+  "execution_stream": "LANE_3_MEMBER_HUB_COMMUNITY_SURFACE",
+  "task_id": "MEMBERHUB-SURFACE-RESTORE-001-WCS-001",
+  "authority_binding": {
+    "authority_reference": "FOUNDER_APPROVED_IN_CONVERSATION",
+    "binding_status": "FOUNDER_APPROVED_PENDING_STEWARD_REVIEW",
+    "implementation_authority": "NOT_ACTIVE_PENDING_SEPARATE_REVIEWED_ACTIVATION",
+    "cleanup_authority": "NOT_GRANTED",
+    "deployment_authority": "NOT_GRANTED"
+  },
+  "execution": {
+    "objective": "Restore the complete Member Dashboard surface coherently, including its Community preview tab and complete EN/VI/ZH localization, while preserving existing identity and invitation functionality and unrelated repository work.",
+    "execution_class": "C",
+    "approval_boundary": "NO_APPLICATION_MUTATION_BEFORE_STEWARD_REVIEW_AND_SEPARATE_ACTIVATION_RECORD",
+    "baseline_sha": "6a7c89b0d7af9cd360c131b0c4407ed46d91735f",
+    "baseline_branch": "release/sll-interactive-proof-20261103",
+    "baseline_commit_url": "https://github.com/flipmapping/Lambsbook-Cooperative-Hub/commit/6a7c89b0d7af9cd360c131b0c4407ed46d91735f",
+    "application_mutation_paths": [
+      "client/src/pages/MemberHub.tsx",
+      "client/src/lib/dashboardI18n.ts",
+      "client/src/components/community/SllCommunityPreview.tsx"
+    ],
+    "pre_mutation_preservation_gate": [
+      "Record branch, HEAD, complete porcelain status, and all tracked diffs.",
+      "Create a preservation snapshot outside the repository of the complete pre-existing dirty and untracked working-tree state, with a manifest and SHA-256 checksums.",
+      "Verify the snapshot can be read and its checksums match before any application mutation.",
+      "Preserve the existing MemberHub.tsx changes, including sent-invitation history and deletion functionality, without reverting or replacing them.",
+      "Do not claim the historical post-corruption fix set is complete; record unresolved forensic uncertainty."
+    ],
+    "scope_requirements": [
+      "Restore the eighth Community tab and its dashboard preview content.",
+      "Use the recoverable historical SllCommunityPreview presentation as the reference, retaining preview-only behavior.",
+      "Add the Community tab translation key in English, Vietnamese, and Chinese.",
+      "Audit all visible Member Dashboard text for EN/VI/ZH localization, including hardcoded labels.",
+      "Preserve existing dashboard behavior and current identity/invitation restoration.",
+      "Do not add Matrix connectivity, provisioning, synchronization, SSO, or chat embedding."
+    ],
+    "required_checks": [
+      "Exact three-path mutation-boundary verification.",
+      "Diff review proving existing MemberHub functionality is retained.",
+      "Localization key parity and visible-string audit for EN, VI, and ZH.",
+      "Isolated candidate build that does not invoke the global project build or modify the live workspace.",
+      "Targeted tests and TypeScript comparison against the exact recorded baseline where safely reproducible.",
+      "Founder visual verification of the complete dashboard in EN, VI, and ZH."
+    ],
+    "invariants": [
+      "No application mutation before steward review and a separate committed activation record.",
+      "No changes outside the exact three application mutation paths.",
+      "No backend, server, database, Supabase, RLS, identity API, membership, financial, or deployment changes.",
+      "No Matrix or Element integration activation.",
+      "No global npm run build.",
+      "No reset, stash, clean, prune, backup deletion, or overwriting unrelated work.",
+      "No commit, push, pull request merge, publication, or deployment under this authority.",
+      "Stop if preservation snapshot integrity or isolated build safety cannot be established."
+    ],
+    "verification_profile": "PRESERVATION_SNAPSHOT; EXACT_THREE_PATH_SCOPE; MEMBER_DASHBOARD_LOCALIZATION; COMMUNITY_PREVIEW_ONLY; ISOLATED_BUILD; FOUNDER_VISUAL_VERIFICATION; NO_DEPLOYMENT",
+    "terminal_states": [
+      "FOUNDER_VERIFIED",
+      "FOUNDER_REJECTED",
+      "BLOCKED"
+    ]
+  },
+  "surface": {
+    "authorized_surface": [
+      "execution/contracts/WORK-CYCLE-SPECIFICATION-MEMBERHUB-SURFACE-RESTORE-001-WCS-001.json",
+      "execution/repository-stewardship/WORK-CYCLE-AUTHORITY-PROPOSAL-MEMBERHUB-SURFACE-RESTORE-001-WCS-001.json"
+    ],
+    "application_mutation_surface_after_activation": [
+      "client/src/pages/MemberHub.tsx",
+      "client/src/lib/dashboardI18n.ts",
+      "client/src/components/community/SllCommunityPreview.tsx"
+    ],
+    "forbidden_surface": [
+      "All other application and repository paths",
+      "server/",
+      "shared/",
+      "supabase/",
+      "database and RLS objects",
+      "identity and membership APIs",
+      "Matrix and Element integration",
+      "deployment configuration and release operations",
+      "Existing authority and release-contract records"
+    ],
+    "candidate_worktree_required": true
+  },
+  "founder_runtime_test": {
+    "required": true,
+    "verification_owner": "FOUNDER",
+    "test_definition": [
+      "Verify the complete Member Dashboard in English, Vietnamese, and Chinese.",
+      "Verify all eight tabs, including Community, render and remain navigable.",
+      "Verify Community remains a preview and exposes no Matrix destination or live integration.",
+      "Verify existing identity and invitation functionality remains intact.",
+      "Review isolated build and test evidence before any separate release decision."
+    ],
+    "expected_outcome": "FOUNDER_VERIFIED or FOUNDER_REJECTED"
+  },
+  "implementation_agent": {
+    "role": "GOVERNED_MEMBERHUB_SURFACE_RESTORATION",
+    "authority_boundary": [
+      "MAY_EXECUTE_ONLY_AFTER_SEPARATE_REVIEWED_ACTIVATION",
+      "MAY_MUTATE_ONLY_THE_EXACT_THREE_APPLICATION_PATHS",
+      "MUST_PRESERVE_ALL_PRE_EXISTING_WORK",
+      "MAY_NOT_DEPLOY_COMMIT_PUSH_OR_MERGE"
+    ]
+  }
+}
